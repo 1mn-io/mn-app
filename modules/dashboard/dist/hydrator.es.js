@@ -1,4 +1,4 @@
-import { d as a, c as p } from "./vue.runtime.esm-bundler-xjh7zPY5.js";
+import { d as a, c as p } from "./runtime-dom.esm-bundler-Cq4yZKGC.js";
 const u = /* @__PURE__ */ a({
   __name: "index",
   props: {
