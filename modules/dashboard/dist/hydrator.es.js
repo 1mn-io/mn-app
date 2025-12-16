@@ -1,5 +1,5 @@
-import { defineComponent as p, createApp as a } from "vue";
-const u = /* @__PURE__ */ p({
+import { d as a, c as p } from "./vue.runtime.esm-bundler-xjh7zPY5.js";
+const u = /* @__PURE__ */ a({
   __name: "index",
   props: {
     _p: {},
@@ -9,10 +9,10 @@ const u = /* @__PURE__ */ p({
   setup(t) {
     return (n, e) => null;
   }
-}), l = async (t) => ({
+}), d = async (t) => ({
   set: async (n, e) => {
     console.log(`--hydrator [${n.data.curr.type}]`);
-    const r = a(u, {
+    const r = p(u, {
       _p: t,
       _$p: n,
       _$cb: e
@@ -25,11 +25,11 @@ const u = /* @__PURE__ */ p({
           e?.change({ _$p: n });
         }
       }
-    }, c = document.getElementById(t.f.name("vue-root"));
-    return r.mount(c), o;
+    }, s = document.getElementById(t.f.name("vue-root"));
+    return r.mount(s), o;
   }
 });
 export {
-  l as hydrator,
-  l as index
+  d as hydrator,
+  d as index
 };
