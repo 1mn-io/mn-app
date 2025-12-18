@@ -1,0 +1,1 @@
+"use strict";const l=require("./main-QBEymWFP.cjs");function o(){l.st({variableName:l.rr("scrollbar.width").name})}function r(){l.dt({variableName:l.rr("scrollbar.width").name})}exports.blockBodyScroll=o;exports.unblockBodyScroll=r;

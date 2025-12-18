@@ -1,32 +1,34 @@
-import { d as a, c as p } from "./runtime-dom.esm-bundler-Cq4yZKGC.js";
-const u = /* @__PURE__ */ a({
+import { d as c, c as p } from "./runtime-dom.esm-bundler-CEAeiVlj.js";
+const u = /* @__PURE__ */ c({
   __name: "index",
   props: {
     _p: {},
     _$p: {},
     _$cb: {}
   },
-  setup(t) {
-    return (n, e) => null;
+  setup(n) {
+    return (t, e) => null;
   }
-}), d = async (t) => ({
-  set: async (n, e) => {
-    console.log(`--hydrator [${n.data.curr.type}]`);
-    const r = p(u, {
-      _p: t,
-      _$p: n,
+}), d = async (n) => ({
+  set: async (t, e) => {
+    console.log(`--hydrator [${t.data.curr.type}]`);
+    const o = p(u, {
+      _p: n,
+      _$p: t,
       _$cb: e
-    }), o = {
+    });
+    await import("./main-DmGEeWOh.js").then((r) => r.aC);
+    const a = {
       r: "",
       style: "",
       //set..
       evt: {
         change: () => {
-          e?.change({ _$p: n });
+          e?.change({ _$p: t });
         }
       }
-    }, s = document.getElementById(t.f.name("vue-root"));
-    return r.mount(s), o;
+    }, s = document.getElementById(n.f.name("vue-root"));
+    return o.mount(s), a;
   }
 });
 export {
