@@ -1,0 +1,37 @@
+{
+    "config": {
+        "lazy_lib": {
+            "renderer_src": "https://cdn.jsdelivr.net/gh/1mn-io/mn-app/modules/{*}/dist/renderer.es.js",
+            "hydrator_src": "https://cdn.jsdelivr.net/gh/1mn-io/mn-app/modules/{*}/dist/hydrator.es.js",
+            "editor_src": "https://cdn.jsdelivr.net/gh/1mn-io/mn-app/modules/{*}/dist/editor.es.js"
+        }
+    },
+    "data": {
+        "l": [
+            {
+                "id": "signup-uuid-1234",
+                "type": "sign_up",
+                "description": "It contains User Registration.",
+                "data": {
+                    "api": {
+                        "register": "https://fastapi.dryutil.1mn.io/client-public/api/i/ona/public:auth?typ=register",
+                        "send_otp": "https://fastapi.dryutil.1mn.io/client-public/api/i/ona/public:auth?typ=send_otp",
+                        "verify_otp": "https://fastapi.dryutil.1mn.io/client-public/api/i/ona/public:auth?typ=verify_otp"
+                    },
+                    "labels": {
+                        "title": "Create your account",
+                        "subtitle": "Join our platform today"
+                    },
+                    "click": {
+                        "signup": "http://localhost:5173/signup"
+                    },
+                    "event": {
+                        "onLoginSuccess": "http://localhost:5173/dashboard",
+                        "onClickSignup": "http://localhost:5173/signup"
+                    },
+                    "theme": "light"
+                }
+            }
+        ]
+    }
+}
