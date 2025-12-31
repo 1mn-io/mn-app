@@ -10,8 +10,8 @@
         "l": [
             {
                 "id": "3e1bc78c-104f-4f6f-aa87-75a",
-                "type": "sample",
-                "slug": "sample",
+                "type": "forgot_pwd",
+                "slug": "forgot_pwd",
                 "data": {
                     "api": {
                         "register": "https://fastapi.dryutil.1mn.io/client-public/api/i/ona/public:auth?typ=register",
