@@ -1,0 +1,134 @@
+{
+    "config": {
+        "lazy_lib": {
+            "renderer_src": "https://cdn.jsdelivr.net/gh/1mn-io/mn-app/modules/{*}/dist/renderer.es.js",
+            "hydrator_src": "https://cdn.jsdelivr.net/gh/1mn-io/mn-app/modules/{*}/dist/hydrator.es.js",
+            "editor_src": "https://cdn.jsdelivr.net/gh/1mn-io/mn-app/modules/{*}/dist/editor.es.js"
+        }
+    },
+    "data": {
+        "l": [
+            {
+                "id": "3e1bc78c-104f-4f6f-aa87-75a",
+                "type": "product_filter",
+                "slug": "product_filter",
+                "data": {
+                    "raw_text": "Nike Men shirts",
+                    "collection": "products",
+                    "theme": "dark",
+                    "filters": [
+                        {
+                            "title": "Category",
+                            "typ": "category",
+                            "l": [
+                                {
+                                    "name": "Shirts",
+                                    "count": 45,
+                                    "selected": false
+                                },
+                                {
+                                    "name": "T-Shirts",
+                                    "count": 32,
+                                    "selected": false
+                                },
+                                {
+                                    "name": "Polo",
+                                    "count": 18,
+                                    "selected": false
+                                }
+                            ]
+                        },
+                        {
+                            "title": "Brand",
+                            "typ": "brand",
+                            "l": [
+                                {
+                                    "name": "Nike",
+                                    "count": 95,
+                                    "selected": false
+                                },
+                                {
+                                    "name": "Adidas",
+                                    "count": 45,
+                                    "selected": false
+                                },
+                                {
+                                    "name": "Puma",
+                                    "count": 32,
+                                    "selected": false
+                                }
+                            ]
+                        },
+                        {
+                            "title": "Size",
+                            "typ": "size",
+                            "l": [
+                                {
+                                    "name": "M",
+                                    "count": 88,
+                                    "selected": false
+                                },
+                                {
+                                    "name": "L",
+                                    "count": 85,
+                                    "selected": false
+                                },
+                                {
+                                    "name": "XL",
+                                    "count": 72,
+                                    "selected": false
+                                }
+                            ]
+                        },
+                        {
+                            "title": "Color",
+                            "typ": "color",
+                            "l": [
+                                {
+                                    "name": "Blue",
+                                    "count": 38,
+                                    "selected": false
+                                },
+                                {
+                                    "name": "Black",
+                                    "count": 35,
+                                    "selected": false
+                                },
+                                {
+                                    "name": "White",
+                                    "count": 22,
+                                    "selected": false
+                                }
+                            ]
+                        },
+                        {
+                            "title": "Price Range",
+                            "typ": "price",
+                            "l": [
+                                {
+                                    "name": "₹500 - ₹1000",
+                                    "min": 500,
+                                    "max": 1000,
+                                    "count": 25,
+                                    "selected": false
+                                },
+                                {
+                                    "name": "₹1000 - ₹1500",
+                                    "min": 1000,
+                                    "max": 1500,
+                                    "count": 35,
+                                    "selected": false
+                                }
+                            ]
+                        }
+                    ],
+                    "meta": {
+                        "total_results": 95,
+                        "search_time_ms": 12,
+                        "query": "Nike Men shirts"
+                    }
+                }
+            }
+        ]
+    }
+}
