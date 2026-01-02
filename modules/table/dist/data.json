@@ -1,0 +1,551 @@
+{
+    "config": {
+        "lazy_lib": {
+            "renderer_src": "https://cdn.jsdelivr.net/gh/1mn-io/mn-app/modules/{*}/dist/renderer.es.js",
+            "hydrator_src": "https://cdn.jsdelivr.net/gh/1mn-io/mn-app/modules/{*}/dist/hydrator.es.js",
+            "editor_src": "https://cdn.jsdelivr.net/gh/1mn-io/mn-app/modules/{*}/dist/editor.es.js"
+        }
+    },
+    "data": {
+        "l": [
+            {
+                "id": "3e1bc78c-104f-4f6f-aa87-75a",
+                "type": "table",
+                "slug": "table",
+                "data": {
+                    "theme": "light",
+                    "foo": {
+                        "txt": "Inventory"
+                    },
+                    "config": {
+                        "search": {
+                            "placeholder": "Search Products...",
+                            "field": "name"
+                        },
+                        "filter": {
+                            "label": "All Categories",
+                            "field": "category"
+                        },
+                        "filterOptions": [
+                            "Electronics",
+                            "Furniture",
+                            "Wearables",
+                            "Office",
+                            "Gaming"
+                        ]
+                    },
+                    "table": {
+                        "columns": [
+                            {
+                                "title": "ID",
+                                "field": "id",
+                                "width": 60,
+                                "headerSort": false
+                            },
+                            {
+                                "title": "Product Name",
+                                "field": "name",
+                                "widthGrow": 2,
+                                "minWidth": 140,
+                                "formatter": "html"
+                            },
+                            {
+                                "title": "Brand",
+                                "field": "brand",
+                                "widthGrow": 1,
+                                "minWidth": 100,
+                                "formatter": "html"
+                            },
+                            {
+                                "title": "SKU",
+                                "field": "sku",
+                                "width": 90,
+                                "formatter": "html"
+                            },
+                            {
+                                "title": "Category",
+                                "field": "category",
+                                "widthGrow": 1,
+                                "minWidth": 100,
+                                "formatter": "html"
+                            },
+                            {
+                                "title": "Rating",
+                                "field": "rating",
+                                "width": 70,
+                                "hozAlign": "center",
+                                "formatter": "html"
+                            },
+                            {
+                                "title": "Price",
+                                "field": "price",
+                                "formatter": "money",
+                                "formatterParams": {
+                                    "symbol": "$"
+                                },
+                                "width": 90,
+                                "hozAlign": "right"
+                            },
+                            {
+                                "title": "Stock",
+                                "field": "stock",
+                                "hozAlign": "center",
+                                "width": 70
+                            },
+                            {
+                                "title": "Status",
+                                "field": "status",
+                                "formatter": "html",
+                                "widthGrow": 1,
+                                "minWidth": 110,
+                                "hozAlign": "center"
+                            }
+                        ],
+                        "rows": [
+                            {
+                                "id": 1000,
+                                "sku": "SKU-1000",
+                                "name": "Product Item 1",
+                                "brand": "Apple",
+                                "category": "Gaming",
+                                "price": "140.43",
+                                "stock": 136,
+                                "rating": "3.7",
+                                "status": "<span class=\"inline-flex items-center justify-center px-2 py-1 rounded w-full text-xs font-bold border border-transparent bg-amber-100 text-amber-700 dark:bg-amber-500/10 dark:text-amber-400\">Low Stock</span>"
+                            },
+                            {
+                                "id": 1001,
+                                "sku": "SKU-1001",
+                                "name": "Product Item 2",
+                                "brand": "Dell",
+                                "category": "Wearables",
+                                "price": "814.80",
+                                "stock": 50,
+                                "rating": "4.1",
+                                "status": "<span class=\"inline-flex items-center justify-center px-2 py-1 rounded w-full text-xs font-bold border border-transparent bg-amber-100 text-amber-700 dark:bg-amber-500/10 dark:text-amber-400\">Low Stock</span>"
+                            },
+                            {
+                                "id": 1002,
+                                "sku": "SKU-1002",
+                                "name": "Product Item 3",
+                                "brand": "Razer",
+                                "category": "Wearables",
+                                "price": "794.57",
+                                "stock": 62,
+                                "rating": "4.6",
+                                "status": "<span class=\"inline-flex items-center justify-center px-2 py-1 rounded w-full text-xs font-bold border border-transparent bg-emerald-100 text-emerald-700 dark:bg-emerald-500/10 dark:text-emerald-400\">Active</span>"
+                            },
+                            {
+                                "id": 1003,
+                                "sku": "SKU-1003",
+                                "name": "Product Item 4",
+                                "brand": "Herman Miller",
+                                "category": "Gaming",
+                                "price": "768.60",
+                                "stock": 121,
+                                "rating": "4.8",
+                                "status": "<span class=\"inline-flex items-center justify-center px-2 py-1 rounded w-full text-xs font-bold border border-transparent bg-rose-100 text-rose-700 dark:bg-rose-500/10 dark:text-rose-400\">Out of Stock</span>"
+                            },
+                            {
+                                "id": 1004,
+                                "sku": "SKU-1004",
+                                "name": "Product Item 5",
+                                "brand": "Razer",
+                                "category": "Furniture",
+                                "price": "517.37",
+                                "stock": 69,
+                                "rating": "4.6",
+                                "status": "<span class=\"inline-flex items-center justify-center px-2 py-1 rounded w-full text-xs font-bold border border-transparent bg-rose-100 text-rose-700 dark:bg-rose-500/10 dark:text-rose-400\">Out of Stock</span>"
+                            },
+                            {
+                                "id": 1005,
+                                "sku": "SKU-1005",
+                                "name": "Product Item 6",
+                                "brand": "Asus",
+                                "category": "Gaming",
+                                "price": "711.77",
+                                "stock": 60,
+                                "rating": "4.5",
+                                "status": "<span class=\"inline-flex items-center justify-center px-2 py-1 rounded w-full text-xs font-bold border border-transparent bg-emerald-100 text-emerald-700 dark:bg-emerald-500/10 dark:text-emerald-400\">Active</span>"
+                            },
+                            {
+                                "id": 1006,
+                                "sku": "SKU-1006",
+                                "name": "Product Item 7",
+                                "brand": "Herman Miller",
+                                "category": "Wearables",
+                                "price": "342.63",
+                                "stock": 116,
+                                "rating": "4.4",
+                                "status": "<span class=\"inline-flex items-center justify-center px-2 py-1 rounded w-full text-xs font-bold border border-transparent bg-rose-100 text-rose-700 dark:bg-rose-500/10 dark:text-rose-400\">Out of Stock</span>"
+                            },
+                            {
+                                "id": 1007,
+                                "sku": "SKU-1007",
+                                "name": "Product Item 8",
+                                "brand": "Logitech",
+                                "category": "Gaming",
+                                "price": "437.63",
+                                "stock": 175,
+                                "rating": "4.7",
+                                "status": "<span class=\"inline-flex items-center justify-center px-2 py-1 rounded w-full text-xs font-bold border border-transparent bg-amber-100 text-amber-700 dark:bg-amber-500/10 dark:text-amber-400\">Low Stock</span>"
+                            },
+                            {
+                                "id": 1008,
+                                "sku": "SKU-1008",
+                                "name": "Product Item 9",
+                                "brand": "Sony",
+                                "category": "Gaming",
+                                "price": "493.61",
+                                "stock": 134,
+                                "rating": "3.9",
+                                "status": "<span class=\"inline-flex items-center justify-center px-2 py-1 rounded w-full text-xs font-bold border border-transparent bg-emerald-100 text-emerald-700 dark:bg-emerald-500/10 dark:text-emerald-400\">Active</span>"
+                            },
+                            {
+                                "id": 1009,
+                                "sku": "SKU-1009",
+                                "name": "Product Item 10",
+                                "brand": "Dell",
+                                "category": "Gaming",
+                                "price": "764.43",
+                                "stock": 189,
+                                "rating": "3.5",
+                                "status": "<span class=\"inline-flex items-center justify-center px-2 py-1 rounded w-full text-xs font-bold border border-transparent bg-slate-100 text-slate-700 dark:bg-slate-800 dark:text-slate-400\">Archived</span>"
+                            },
+                            {
+                                "id": 1010,
+                                "sku": "SKU-1010",
+                                "name": "Product Item 11",
+                                "brand": "Apple",
+                                "category": "Electronics",
+                                "price": "108.49",
+                                "stock": 75,
+                                "rating": "5.0",
+                                "status": "<span class=\"inline-flex items-center justify-center px-2 py-1 rounded w-full text-xs font-bold border border-transparent bg-amber-100 text-amber-700 dark:bg-amber-500/10 dark:text-amber-400\">Low Stock</span>"
+                            },
+                            {
+                                "id": 1011,
+                                "sku": "SKU-1011",
+                                "name": "Product Item 12",
+                                "brand": "Asus",
+                                "category": "Furniture",
+                                "price": "697.97",
+                                "stock": 27,
+                                "rating": "3.8",
+                                "status": "<span class=\"inline-flex items-center justify-center px-2 py-1 rounded w-full text-xs font-bold border border-transparent bg-slate-100 text-slate-700 dark:bg-slate-800 dark:text-slate-400\">Archived</span>"
+                            },
+                            {
+                                "id": 1012,
+                                "sku": "SKU-1012",
+                                "name": "Product Item 13",
+                                "brand": "Asus",
+                                "category": "Wearables",
+                                "price": "697.23",
+                                "stock": 199,
+                                "rating": "4.0",
+                                "status": "<span class=\"inline-flex items-center justify-center px-2 py-1 rounded w-full text-xs font-bold border border-transparent bg-slate-100 text-slate-700 dark:bg-slate-800 dark:text-slate-400\">Archived</span>"
+                            },
+                            {
+                                "id": 1013,
+                                "sku": "SKU-1013",
+                                "name": "Product Item 14",
+                                "brand": "Dell",
+                                "category": "Office",
+                                "price": "67.96",
+                                "stock": 185,
+                                "rating": "4.2",
+                                "status": "<span class=\"inline-flex items-center justify-center px-2 py-1 rounded w-full text-xs font-bold border border-transparent bg-slate-100 text-slate-700 dark:bg-slate-800 dark:text-slate-400\">Archived</span>"
+                            },
+                            {
+                                "id": 1014,
+                                "sku": "SKU-1014",
+                                "name": "Product Item 15",
+                                "brand": "Apple",
+                                "category": "Gaming",
+                                "price": "508.31",
+                                "stock": 17,
+                                "rating": "4.5",
+                                "status": "<span class=\"inline-flex items-center justify-center px-2 py-1 rounded w-full text-xs font-bold border border-transparent bg-amber-100 text-amber-700 dark:bg-amber-500/10 dark:text-amber-400\">Low Stock</span>"
+                            },
+                            {
+                                "id": 1015,
+                                "sku": "SKU-1015",
+                                "name": "Product Item 16",
+                                "brand": "Apple",
+                                "category": "Wearables",
+                                "price": "841.52",
+                                "stock": 147,
+                                "rating": "3.3",
+                                "status": "<span class=\"inline-flex items-center justify-center px-2 py-1 rounded w-full text-xs font-bold border border-transparent bg-emerald-100 text-emerald-700 dark:bg-emerald-500/10 dark:text-emerald-400\">Active</span>"
+                            },
+                            {
+                                "id": 1016,
+                                "sku": "SKU-1016",
+                                "name": "Product Item 17",
+                                "brand": "Apple",
+                                "category": "Wearables",
+                                "price": "587.76",
+                                "stock": 153,
+                                "rating": "4.9",
+                                "status": "<span class=\"inline-flex items-center justify-center px-2 py-1 rounded w-full text-xs font-bold border border-transparent bg-emerald-100 text-emerald-700 dark:bg-emerald-500/10 dark:text-emerald-400\">Active</span>"
+                            },
+                            {
+                                "id": 1017,
+                                "sku": "SKU-1017",
+                                "name": "Product Item 18",
+                                "brand": "Asus",
+                                "category": "Furniture",
+                                "price": "771.50",
+                                "stock": 43,
+                                "rating": "5.0",
+                                "status": "<span class=\"inline-flex items-center justify-center px-2 py-1 rounded w-full text-xs font-bold border border-transparent bg-slate-100 text-slate-700 dark:bg-slate-800 dark:text-slate-400\">Archived</span>"
+                            },
+                            {
+                                "id": 1018,
+                                "sku": "SKU-1018",
+                                "name": "Product Item 19",
+                                "brand": "Dell",
+                                "category": "Wearables",
+                                "price": "282.03",
+                                "stock": 159,
+                                "rating": "4.2",
+                                "status": "<span class=\"inline-flex items-center justify-center px-2 py-1 rounded w-full text-xs font-bold border border-transparent bg-rose-100 text-rose-700 dark:bg-rose-500/10 dark:text-rose-400\">Out of Stock</span>"
+                            },
+                            {
+                                "id": 1019,
+                                "sku": "SKU-1019",
+                                "name": "Product Item 20",
+                                "brand": "Herman Miller",
+                                "category": "Office",
+                                "price": "481.01",
+                                "stock": 93,
+                                "rating": "4.1",
+                                "status": "<span class=\"inline-flex items-center justify-center px-2 py-1 rounded w-full text-xs font-bold border border-transparent bg-amber-100 text-amber-700 dark:bg-amber-500/10 dark:text-amber-400\">Low Stock</span>"
+                            },
+                            {
+                                "id": 1020,
+                                "sku": "SKU-1020",
+                                "name": "Product Item 21",
+                                "brand": "Razer",
+                                "category": "Office",
+                                "price": "682.89",
+                                "stock": 89,
+                                "rating": "4.9",
+                                "status": "<span class=\"inline-flex items-center justify-center px-2 py-1 rounded w-full text-xs font-bold border border-transparent bg-emerald-100 text-emerald-700 dark:bg-emerald-500/10 dark:text-emerald-400\">Active</span>"
+                            },
+                            {
+                                "id": 1021,
+                                "sku": "SKU-1021",
+                                "name": "Product Item 22",
+                                "brand": "Herman Miller",
+                                "category": "Wearables",
+                                "price": "307.25",
+                                "stock": 149,
+                                "rating": "3.3",
+                                "status": "<span class=\"inline-flex items-center justify-center px-2 py-1 rounded w-full text-xs font-bold border border-transparent bg-amber-100 text-amber-700 dark:bg-amber-500/10 dark:text-amber-400\">Low Stock</span>"
+                            },
+                            {
+                                "id": 1022,
+                                "sku": "SKU-1022",
+                                "name": "Product Item 23",
+                                "brand": "Samsung",
+                                "category": "Wearables",
+                                "price": "706.57",
+                                "stock": 158,
+                                "rating": "3.2",
+                                "status": "<span class=\"inline-flex items-center justify-center px-2 py-1 rounded w-full text-xs font-bold border border-transparent bg-emerald-100 text-emerald-700 dark:bg-emerald-500/10 dark:text-emerald-400\">Active</span>"
+                            },
+                            {
+                                "id": 1023,
+                                "sku": "SKU-1023",
+                                "name": "Product Item 24",
+                                "brand": "Razer",
+                                "category": "Gaming",
+                                "price": "656.55",
+                                "stock": 188,
+                                "rating": "3.1",
+                                "status": "<span class=\"inline-flex items-center justify-center px-2 py-1 rounded w-full text-xs font-bold border border-transparent bg-amber-100 text-amber-700 dark:bg-amber-500/10 dark:text-amber-400\">Low Stock</span>"
+                            },
+                            {
+                                "id": 1024,
+                                "sku": "SKU-1024",
+                                "name": "Product Item 25",
+                                "brand": "Asus",
+                                "category": "Gaming",
+                                "price": "93.51",
+                                "stock": 180,
+                                "rating": "3.5",
+                                "status": "<span class=\"inline-flex items-center justify-center px-2 py-1 rounded w-full text-xs font-bold border border-transparent bg-rose-100 text-rose-700 dark:bg-rose-500/10 dark:text-rose-400\">Out of Stock</span>"
+                            },
+                            {
+                                "id": 1025,
+                                "sku": "SKU-1025",
+                                "name": "Product Item 26",
+                                "brand": "Dell",
+                                "category": "Wearables",
+                                "price": "533.35",
+                                "stock": 167,
+                                "rating": "4.5",
+                                "status": "<span class=\"inline-flex items-center justify-center px-2 py-1 rounded w-full text-xs font-bold border border-transparent bg-emerald-100 text-emerald-700 dark:bg-emerald-500/10 dark:text-emerald-400\">Active</span>"
+                            },
+                            {
+                                "id": 1026,
+                                "sku": "SKU-1026",
+                                "name": "Product Item 27",
+                                "brand": "Sony",
+                                "category": "Office",
+                                "price": "659.15",
+                                "stock": 184,
+                                "rating": "5.0",
+                                "status": "<span class=\"inline-flex items-center justify-center px-2 py-1 rounded w-full text-xs font-bold border border-transparent bg-rose-100 text-rose-700 dark:bg-rose-500/10 dark:text-rose-400\">Out of Stock</span>"
+                            },
+                            {
+                                "id": 1027,
+                                "sku": "SKU-1027",
+                                "name": "Product Item 28",
+                                "brand": "Sony",
+                                "category": "Electronics",
+                                "price": "245.52",
+                                "stock": 20,
+                                "rating": "3.1",
+                                "status": "<span class=\"inline-flex items-center justify-center px-2 py-1 rounded w-full text-xs font-bold border border-transparent bg-amber-100 text-amber-700 dark:bg-amber-500/10 dark:text-amber-400\">Low Stock</span>"
+                            },
+                            {
+                                "id": 1028,
+                                "sku": "SKU-1028",
+                                "name": "Product Item 29",
+                                "brand": "Sony",
+                                "category": "Electronics",
+                                "price": "741.88",
+                                "stock": 46,
+                                "rating": "3.7",
+                                "status": "<span class=\"inline-flex items-center justify-center px-2 py-1 rounded w-full text-xs font-bold border border-transparent bg-rose-100 text-rose-700 dark:bg-rose-500/10 dark:text-rose-400\">Out of Stock</span>"
+                            },
+                            {
+                                "id": 1029,
+                                "sku": "SKU-1029",
+                                "name": "Product Item 30",
+                                "brand": "Sony",
+                                "category": "Furniture",
+                                "price": "532.89",
+                                "stock": 103,
+                                "rating": "3.1",
+                                "status": "<span class=\"inline-flex items-center justify-center px-2 py-1 rounded w-full text-xs font-bold border border-transparent bg-slate-100 text-slate-700 dark:bg-slate-800 dark:text-slate-400\">Archived</span>"
+                            },
+                            {
+                                "id": 1030,
+                                "sku": "SKU-1030",
+                                "name": "Product Item 31",
+                                "brand": "Sony",
+                                "category": "Office",
+                                "price": "148.55",
+                                "stock": 112,
+                                "rating": "3.8",
+                                "status": "<span class=\"inline-flex items-center justify-center px-2 py-1 rounded w-full text-xs font-bold border border-transparent bg-slate-100 text-slate-700 dark:bg-slate-800 dark:text-slate-400\">Archived</span>"
+                            },
+                            {
+                                "id": 1031,
+                                "sku": "SKU-1031",
+                                "name": "Product Item 32",
+                                "brand": "Asus",
+                                "category": "Electronics",
+                                "price": "226.85",
+                                "stock": 86,
+                                "rating": "3.0",
+                                "status": "<span class=\"inline-flex items-center justify-center px-2 py-1 rounded w-full text-xs font-bold border border-transparent bg-slate-100 text-slate-700 dark:bg-slate-800 dark:text-slate-400\">Archived</span>"
+                            },
+                            {
+                                "id": 1032,
+                                "sku": "SKU-1032",
+                                "name": "Product Item 33",
+                                "brand": "Samsung",
+                                "category": "Furniture",
+                                "price": "605.14",
+                                "stock": 192,
+                                "rating": "4.7",
+                                "status": "<span class=\"inline-flex items-center justify-center px-2 py-1 rounded w-full text-xs font-bold border border-transparent bg-amber-100 text-amber-700 dark:bg-amber-500/10 dark:text-amber-400\">Low Stock</span>"
+                            },
+                            {
+                                "id": 1033,
+                                "sku": "SKU-1033",
+                                "name": "Product Item 34",
+                                "brand": "Logitech",
+                                "category": "Wearables",
+                                "price": "88.08",
+                                "stock": 118,
+                                "rating": "4.4",
+                                "status": "<span class=\"inline-flex items-center justify-center px-2 py-1 rounded w-full text-xs font-bold border border-transparent bg-rose-100 text-rose-700 dark:bg-rose-500/10 dark:text-rose-400\">Out of Stock</span>"
+                            },
+                            {
+                                "id": 1034,
+                                "sku": "SKU-1034",
+                                "name": "Product Item 35",
+                                "brand": "Sony",
+                                "category": "Wearables",
+                                "price": "130.82",
+                                "stock": 102,
+                                "rating": "3.5",
+                                "status": "<span class=\"inline-flex items-center justify-center px-2 py-1 rounded w-full text-xs font-bold border border-transparent bg-slate-100 text-slate-700 dark:bg-slate-800 dark:text-slate-400\">Archived</span>"
+                            },
+                            {
+                                "id": 1035,
+                                "sku": "SKU-1035",
+                                "name": "Product Item 36",
+                                "brand": "Dell",
+                                "category": "Gaming",
+                                "price": "678.71",
+                                "stock": 71,
+                                "rating": "3.8",
+                                "status": "<span class=\"inline-flex items-center justify-center px-2 py-1 rounded w-full text-xs font-bold border border-transparent bg-rose-100 text-rose-700 dark:bg-rose-500/10 dark:text-rose-400\">Out of Stock</span>"
+                            },
+                            {
+                                "id": 1036,
+                                "sku": "SKU-1036",
+                                "name": "Product Item 37",
+                                "brand": "Herman Miller",
+                                "category": "Gaming",
+                                "price": "332.88",
+                                "stock": 77,
+                                "rating": "4.7",
+                                "status": "<span class=\"inline-flex items-center justify-center px-2 py-1 rounded w-full text-xs font-bold border border-transparent bg-slate-100 text-slate-700 dark:bg-slate-800 dark:text-slate-400\">Archived</span>"
+                            },
+                            {
+                                "id": 1037,
+                                "sku": "SKU-1037",
+                                "name": "Product Item 38",
+                                "brand": "Logitech",
+                                "category": "Furniture",
+                                "price": "523.20",
+                                "stock": 147,
+                                "rating": "3.3",
+                                "status": "<span class=\"inline-flex items-center justify-center px-2 py-1 rounded w-full text-xs font-bold border border-transparent bg-amber-100 text-amber-700 dark:bg-amber-500/10 dark:text-amber-400\">Low Stock</span>"
+                            },
+                            {
+                                "id": 1038,
+                                "sku": "SKU-1038",
+                                "name": "Product Item 39",
+                                "brand": "Sony",
+                                "category": "Furniture",
+                                "price": "840.69",
+                                "stock": 157,
+                                "rating": "3.1",
+                                "status": "<span class=\"inline-flex items-center justify-center px-2 py-1 rounded w-full text-xs font-bold border border-transparent bg-amber-100 text-amber-700 dark:bg-amber-500/10 dark:text-amber-400\">Low Stock</span>"
+                            },
+                            {
+                                "id": 1039,
+                                "sku": "SKU-1039",
+                                "name": "Product Item 40",
+                                "brand": "Herman Miller",
+                                "category": "Office",
+                                "price": "390.58",
+                                "stock": 63,
+                                "rating": "4.3",
+                                "status": "<span class=\"inline-flex items-center justify-center px-2 py-1 rounded w-full text-xs font-bold border border-transparent bg-slate-100 text-slate-700 dark:bg-slate-800 dark:text-slate-400\">Archived</span>"
+                            }
+                        ]
+                    }
+                }
+            }
+        ]
+    }
+}
