@@ -1,4 +1,4 @@
-import { h as B, s as z, g as N, i as E, j as _, k as m, N as w, l as V, m as u, F as j, S as M, C as H, p as L, T as O, q as f, v as C, x as P, y as U, z as F, A as I, n as D, B as G, D as K, E as W, G as q, H as J, I as Q, J as X, K as Y, L as Z, M as ee, O as te, d as re, a as oe, e as ie, t as ae, b as ne, P as le } from "./runtime-dom.esm-bundler-DgP42HDy.js";
+import { k as B, s as z, j as N, l as E, m as _, p as m, N as w, q as V, t as u, F as j, S as M, C as U, v as H, T as L, x as f, y as C, z as O, A as P, B as F, D as I, h as D, E as G, G as K, H as W, I as q, J, K as Q, L as X, M as Y, O as Z, P as ee, Q as te, d as re, b as oe, f as ie, R as ae, e as ne, U as le } from "./runtime-dom.esm-bundler-BZthCCKq.js";
 function se(e, t) {
   t === void 0 && (t = {});
   var r = t.insertAt;
@@ -179,12 +179,12 @@ function x(e, t) {
 function b(e, t, r, o) {
   const { type: i, shapeFlag: a, children: n, dirs: l, props: c } = t;
   switch (l && (t.props = xe(t, c, l)), i) {
-    case O:
+    case L:
       e(f(n));
       break;
-    case H:
+    case U:
       e(
-        n ? `<!--${L(n)}-->` : "<!---->"
+        n ? `<!--${H(n)}-->` : "<!---->"
       );
       break;
     case M:
@@ -213,7 +213,7 @@ function ke(e, t, r, o) {
   let d = r, s = t;
   for (; d && s === d.subTree; )
     s = d.vnode, s.scopeId && (p += ` ${s.scopeId}`), d = d.parent;
-  if (o && (p += ` ${o}`), e(p + ">"), !U(i)) {
+  if (o && (p += ` ${o}`), e(p + ">"), !P(i)) {
     let h = !1;
     a && (a.innerHTML ? (h = !0, e(a.innerHTML)) : a.textContent ? (h = !0, e(f(a.textContent))) : i === "textarea" && a.value && (h = !0, e(f(a.value)))), h || (l & 8 ? e(f(n)) : l & 16 && v(
       e,
@@ -234,7 +234,7 @@ function xe(e, t, r) {
       l && o.push(l);
     }
   }
-  return P(t || {}, ...o);
+  return O(t || {}, ...o);
 }
 function ze(e, t, r, o) {
   const i = t.props && t.props.to, a = t.props && t.props.disabled;
@@ -260,7 +260,7 @@ function ze(e, t, r, o) {
 const { isVNode: _e } = z;
 function g(e, t, r) {
   if (!e.hasAsync)
-    return t + A(e);
+    return t + R(e);
   let o = t;
   for (let i = r; i < e.length; i += 1) {
     const a = e[i];
@@ -280,17 +280,17 @@ function g(e, t, r) {
 function $(e) {
   return g(e, "", 0);
 }
-function A(e) {
+function R(e) {
   let t = "";
   for (let r = 0; r < e.length; r++) {
     let o = e[r];
-    u(o) ? t += o : t += A(o);
+    u(o) ? t += o : t += R(o);
   }
   return t;
 }
-async function R(e, t = {}) {
+async function A(e, t = {}) {
   if (_e(e))
-    return R(N({ render: () => e }), t);
+    return A(N({ render: () => e }), t);
   const r = E(e._component, e._props);
   r.appContext = e._context, e.provide(_, t);
   const o = await T(r), i = await $(o);
@@ -326,18 +326,18 @@ const Se = ["id"], Te = /* @__PURE__ */ re({
   }
 });
 se(ce);
-const Ae = async (e) => ({
+const Re = async (e) => ({
   set: async (t, r) => {
     console.log(`--renderer [${t.data.curr.type}]`);
     const i = le(Te, {
       _p: e,
       _$p: t,
       _$cb: r
-    }), a = await R(i);
-    return console.log(e.f.path("/sample.css")), {
+    });
+    return {
       r: `
                  <div>
-                    ${a}
+                    ${await A(i)}
                     <div id="${e.f.name("vue-root")}"></div>
                   </div>
                 `,
@@ -354,6 +354,6 @@ const Ae = async (e) => ({
   }
 });
 export {
-  Ae as index,
-  Ae as renderer
+  Re as index,
+  Re as renderer
 };

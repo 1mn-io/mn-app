@@ -24,11 +24,13 @@ const p = async () => ({
           //Text
         }
       }, o = await y({
+        my: {},
         f: {
           ...a.f,
           name: (t) => r.f.name({ id: d.id, name: t })
         }
       }), m = await l({
+        my: {},
         f: {
           ...a.f,
           name: (t) => r.f.name({ id: d.id, name: t })
