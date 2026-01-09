@@ -13,131 +13,86 @@
                 "type": "form",
                 "slug": "form",
                 "data": {
-                    "api": {
-                        "submit": "https://api.example.com/user/profile/update"
-                    },
+                    "title": "FORM",
+                    "subtitle": "Complete your profile to access the developer dashboard.",
                     "fields": [
                         {
-                            "description": "Row 1: Names",
-                            "children": [
+                            "name": "firstName",
+                            "label": "First Name",
+                            "type": "text",
+                            "validation": "required",
+                            "columns": 6
+                        },
+                        {
+                            "name": "lastName",
+                            "label": "Last Name",
+                            "type": "text",
+                            "validation": "required",
+                            "columns": 6
+                        },
+                        {
+                            "name": "email",
+                            "label": "Work Email",
+                            "type": "email",
+                            "validation": "required|email",
+                            "columns": 6
+                        },
+                        {
+                            "name": "phone",
+                            "label": "Phone Number",
+                            "type": "tel",
+                            "columns": 6
+                        },
+                        {
+                            "name": "role",
+                            "label": "Primary Role",
+                            "type": "autocomplete",
+                            "columns": 6,
+                            "minChars": 0,
+                            "openOnClick": true
+                        },
+                        {
+                            "name": "company",
+                            "label": "Company / Organization",
+                            "type": "text",
+                            "columns": 6
+                        },
+                        {
+                            "name": "bio",
+                            "label": "Professional Bio",
+                            "type": "textarea",
+                            "validation": "length:0,200",
+                            "columns": 12
+                        },
+                        {
+                            "name": "experience",
+                            "label": "Years of Experience",
+                            "type": "number",
+                            "validation": "required|min:0|max:40",
+                            "columns": 6
+                        },
+                        {
+                            "name": "notifications",
+                            "label": "Email Preferences",
+                            "type": "radio",
+                            "columns": 12,
+                            "options": [
                                 {
-                                    "type": "text",
-                                    "name": "firstName",
-                                    "label": "First Name",
-                                    "placeholder": "Enter your first name",
-                                    "required": true,
-                                    "grid": 6
+                                    "label": "Everything",
+                                    "value": "all"
                                 },
                                 {
-                                    "type": "text",
-                                    "name": "lastName",
-                                    "label": "Last Name",
-                                    "placeholder": "Enter your last name",
-                                    "required": true,
-                                    "grid": 6
-                                }
-                            ]
-                        },
-                        {
-                            "description": "Row 2: Skills (Full Width)",
-                            "children": [
-                                {
-                                    "type": "multi-select",
-                                    "name": "skills",
-                                    "label": "Professional Skills",
-                                    "placeholder": "Type to search...",
-                                    "required": true,
-                                    "grid": 12,
-                                    "data": {
-                                        "api": "https://dummyjson.com/products/categories",
-                                        "method": "GET",
-                                        "valueField": "slug",
-                                        "labelField": "name",
-                                        "lazyLoad": false
-                                    },
-                                    "defaultValue": [
-                                        "laptops"
-                                    ]
-                                }
-                            ]
-                        },
-                        {
-                            "description": "Row 3: Source and Country",
-                            "children": [
-                                {
-                                    "type": "search-select",
-                                    "name": "referral",
-                                    "label": "How did you hear about us?",
-                                    "placeholder": "Select source...",
-                                    "grid": 6,
-                                    "data": {
-                                        "api": "https://dummyjson.com/products/categories",
-                                        "method": "GET",
-                                        "valueField": "slug",
-                                        "labelField": "name",
-                                        "lazyLoad": false
-                                    }
+                                    "label": "Important Only",
+                                    "value": "priority"
                                 },
                                 {
-                                    "type": "select",
-                                    "name": "country",
-                                    "label": "Country",
-                                    "placeholder": "Select your country",
-                                    "required": true,
-                                    "grid": 6,
-                                    "data": {
-                                        "api": "https://dummyjson.com/products/categories",
-                                        "method": "GET",
-                                        "valueField": "slug",
-                                        "labelField": "name",
-                                        "lazyLoad": false
-                                    }
-                                }
-                            ]
-                        },
-                        {
-                            "description": "Row 4: Biography",
-                            "children": [
-                                {
-                                    "type": "textarea",
-                                    "name": "bio",
-                                    "label": "Biography",
-                                    "placeholder": "Tell us about yourself...",
-                                    "validation": {
-                                        "maxLength": 500
-                                    },
-                                    "grid": 12
-                                }
-                            ]
-                        },
-                        {
-                            "description": "Row 5: Terms",
-                            "children": [
-                                {
-                                    "type": "checkbox",
-                                    "name": "terms",
-                                    "label": "I agree to the Terms & Conditions",
-                                    "required": true,
-                                    "grid": 12
+                                    "label": "None",
+                                    "value": "none"
                                 }
                             ]
                         }
                     ],
-                    "layout": {
-                        "title": "Extended Profile Features",
-                        "subtitle": "Nested grid layout with flexible column support",
-                        "theme": "light",
-                        "layout": "grid",
-                        "spacing": "comfortable",
-                        "submitButton": {
-                            "text": "Save Profile",
-                            "loadingText": "Saving..."
-                        }
-                    },
-                    "actions": {
-                        "primary": "save",
-                        "secondary": "Reset"
-                    }
+                    "theme": "light"
                 }
             }
         ]
