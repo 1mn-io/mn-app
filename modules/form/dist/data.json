@@ -9,76 +9,94 @@
     "data": {
         "l": [
             {
-                "id": "3e1bc78c-104f-4f6f-aa87-75a",
+                "id": "3e1bc78c-104f-aa87-75a-hfd5",
                 "type": "form",
                 "slug": "form",
                 "data": {
-                    "title": "FORM",
-                    "subtitle": "Complete your profile to access the developer dashboard.",
                     "fields": [
                         {
+                            "section": "Personal Information",
                             "name": "firstName",
                             "label": "First Name",
                             "type": "text",
-                            "validation": "required",
+                            "placeholder": "John",
+                            "validation": "required|length:2,40",
                             "columns": 6
                         },
                         {
                             "name": "lastName",
                             "label": "Last Name",
                             "type": "text",
-                            "validation": "required",
+                            "placeholder": "Doe",
+                            "validation": "required|length:2,40",
                             "columns": 6
                         },
                         {
+                            "section": "Contact Details",
                             "name": "email",
                             "label": "Work Email",
                             "type": "email",
+                            "placeholder": "john@company.com",
                             "validation": "required|email",
-                            "columns": 6
+                            "columns": 6,
+                            "help": "We’ll never share your email."
                         },
                         {
                             "name": "phone",
                             "label": "Phone Number",
                             "type": "tel",
+                            "placeholder": "+91 XXXXX XXXXX",
+                            "validation": "matches:/^[0-9+\\s-]{8,15}$/",
                             "columns": 6
                         },
                         {
+                            "section": "Professional Information",
                             "name": "role",
                             "label": "Primary Role",
                             "type": "autocomplete",
+                            "placeholder": "Select your role",
                             "columns": 6,
                             "minChars": 0,
-                            "openOnClick": true
+                            "openOnClick": true,
+                            "validation": "required"
                         },
                         {
                             "name": "company",
                             "label": "Company / Organization",
                             "type": "text",
+                            "placeholder": "Acme Inc.",
                             "columns": 6
                         },
                         {
-                            "name": "bio",
-                            "label": "Professional Bio",
-                            "type": "textarea",
-                            "validation": "length:0,200",
-                            "columns": 12
-                        },
-                        {
+                            "section": "Experience",
                             "name": "experience",
                             "label": "Years of Experience",
                             "type": "number",
                             "validation": "required|min:0|max:40",
-                            "columns": 6
+                            "placeholder": "Enter your experience",
+                            "columns": 6,
+                            "help": "Enter total professional experience."
                         },
                         {
+                            "section": "About You",
+                            "name": "bio",
+                            "label": "Professional Bio",
+                            "type": "textarea",
+                            "placeholder": "Briefly describe your background...",
+                            "validation": "length:0,200",
+                            "columns": 12,
+                            "help": "Max 200 characters."
+                        },
+                        {
+                            "section": "Preferences",
                             "name": "notifications",
                             "label": "Email Preferences",
                             "type": "radio",
+                            "validation": "required",
                             "columns": 12,
                             "options": [
                                 {
-                                    "label": "Everything",
+                                    "label": "Everything (recommended)",
                                     "value": "all"
                                 },
                                 {
@@ -86,13 +104,15 @@
                                     "value": "priority"
                                 },
                                 {
-                                    "label": "None",
+                                    "label": "No Emails",
                                     "value": "none"
                                 }
-                            ]
+                            ],
+                            "help": "You can change this anytime from settings."
                         }
                     ],
-                    "theme": "light"
+                    "theme": "light",
+                    "env": "dev"
                 }
             }
         ]
