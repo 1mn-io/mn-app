@@ -1,0 +1,22 @@
+{
+    "config": {
+        "lazy_lib": {
+            "renderer_src": "https://cdn.jsdelivr.net/gh/1mn-io/mn-app/modules/tabel/dist/renderer.es.js",
+            "hydrator_src": "https://cdn.jsdelivr.net/gh/1mn-io/mn-app/modules/table/dist/hydrator.es.js",
+            "editor_src": "https://cdn.jsdelivr.net/gh/1mn-io/mn-app/modules/tabel/dist/editor.es.js"
+        }
+    },
+    "data": {
+        "l": [
+            {
+                "id": "3e1bc78c-104f-4f6f-aa87-75a",
+                "type": "table",
+                "slug": "table",
+                "data": {
+                    "theme": "light",
+                    "data": ""
+                }
+            }
+        ]
+    }
+}
