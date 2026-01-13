@@ -1,9 +1,9 @@
 {
     "config": {
         "lazy_lib": {
-            "renderer_src": "https://cdn.jsdelivr.net/gh/1mn-io/mn-app@d4fdb95/modules/{*}/dist/renderer.es.js",
-            "hydrator_src": "https://cdn.jsdelivr.net/gh/1mn-io/mn-app@d4fdb95/modules/{*}/dist/hydrator.es.js",
-            "editor_src": "https://cdn.jsdelivr.net/gh/1mn-io/mn-app@d4fdb95/modules/{*}/dist/editor.es.js"
+            "renderer_src": "https://cdn.jsdelivr.net/gh/1mn-io/mn-app@latest/modules/{*}/dist/renderer.es.js",
+            "hydrator_src": "https://cdn.jsdelivr.net/gh/1mn-io/mn-app@latest/modules/{*}/dist/hydrator.es.js",
+            "editor_src": "https://cdn.jsdelivr.net/gh/1mn-io/mn-app@latest/modules/{*}/dist/editor.es.js"
         }
     },
     "data": {
@@ -15,7 +15,386 @@
                 "data": {
                     "data": "MN App Dashboard",
                     "theme": "light",
-                    "foo": ""
+                    "foo": "",
+                    "menu": [
+                        {
+                            "label": "Product management",
+                            "items": [
+                                {
+                                    "label": "Products",
+                                    "icon": "pi pi-fw pi-list",
+                                    "to": "/product-management/product"
+                                }
+                            ]
+                        },
+                        {
+                            "label": "Home",
+                            "items": [
+                                {
+                                    "label": "Dashboard",
+                                    "icon": "pi pi-fw pi-home",
+                                    "to": "/"
+                                }
+                            ]
+                        },
+                        {
+                            "label": "UI Components",
+                            "items": [
+                                {
+                                    "label": "Form Layout",
+                                    "icon": "pi pi-fw pi-id-card",
+                                    "to": "/uikit/formlayout"
+                                },
+                                {
+                                    "label": "Input",
+                                    "icon": "pi pi-fw pi-check-square",
+                                    "to": "/uikit/input"
+                                },
+                                {
+                                    "label": "Button",
+                                    "icon": "pi pi-fw pi-mobile",
+                                    "to": "/uikit/button",
+                                    "class": "rotated-icon"
+                                },
+                                {
+                                    "label": "Table",
+                                    "icon": "pi pi-fw pi-table",
+                                    "to": "/uikit/table"
+                                },
+                                {
+                                    "label": "List",
+                                    "icon": "pi pi-fw pi-list",
+                                    "to": "/uikit/list"
+                                },
+                                {
+                                    "label": "Tree",
+                                    "icon": "pi pi-fw pi-share-alt",
+                                    "to": "/uikit/tree"
+                                },
+                                {
+                                    "label": "Panel",
+                                    "icon": "pi pi-fw pi-tablet",
+                                    "to": "/uikit/panel"
+                                },
+                                {
+                                    "label": "Overlay",
+                                    "icon": "pi pi-fw pi-clone",
+                                    "to": "/uikit/overlay"
+                                },
+                                {
+                                    "label": "Media",
+                                    "icon": "pi pi-fw pi-image",
+                                    "to": "/uikit/media"
+                                },
+                                {
+                                    "label": "Menu",
+                                    "icon": "pi pi-fw pi-bars",
+                                    "to": "/uikit/menu"
+                                },
+                                {
+                                    "label": "Message",
+                                    "icon": "pi pi-fw pi-comment",
+                                    "to": "/uikit/message"
+                                },
+                                {
+                                    "label": "File",
+                                    "icon": "pi pi-fw pi-file",
+                                    "to": "/uikit/file"
+                                },
+                                {
+                                    "label": "Chart",
+                                    "icon": "pi pi-fw pi-chart-bar",
+                                    "to": "/uikit/charts"
+                                },
+                                {
+                                    "label": "Timeline",
+                                    "icon": "pi pi-fw pi-calendar",
+                                    "to": "/uikit/timeline"
+                                },
+                                {
+                                    "label": "Misc",
+                                    "icon": "pi pi-fw pi-circle",
+                                    "to": "/uikit/misc"
+                                }
+                            ]
+                        },
+                        {
+                            "label": "Prime Blocks",
+                            "icon": "pi pi-fw pi-prime",
+                            "items": [
+                                {
+                                    "label": "Free Blocks",
+                                    "icon": "pi pi-fw pi-eye",
+                                    "to": "/blocks"
+                                },
+                                {
+                                    "label": "All Blocks",
+                                    "icon": "pi pi-fw pi-globe",
+                                    "url": "https://blocks.primevue.org/",
+                                    "target": "_blank"
+                                }
+                            ]
+                        },
+                        {
+                            "label": "Pages",
+                            "icon": "pi pi-fw pi-briefcase",
+                            "to": "/pages",
+                            "items": [
+                                {
+                                    "label": "Landing",
+                                    "icon": "pi pi-fw pi-globe",
+                                    "to": "/landing"
+                                },
+                                {
+                                    "label": "Auth",
+                                    "icon": "pi pi-fw pi-user",
+                                    "items": [
+                                        {
+                                            "label": "Login",
+                                            "icon": "pi pi-fw pi-sign-in",
+                                            "to": "/auth/login"
+                                        },
+                                        {
+                                            "label": "Error",
+                                            "icon": "pi pi-fw pi-times-circle",
+                                            "to": "/auth/error"
+                                        },
+                                        {
+                                            "label": "Access Denied",
+                                            "icon": "pi pi-fw pi-lock",
+                                            "to": "/auth/access"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "label": "Crud",
+                                    "icon": "pi pi-fw pi-pencil",
+                                    "to": "/pages/crud"
+                                },
+                                {
+                                    "label": "Not Found",
+                                    "icon": "pi pi-fw pi-exclamation-circle",
+                                    "to": "/pages/notfound"
+                                },
+                                {
+                                    "label": "Empty",
+                                    "icon": "pi pi-fw pi-circle-off",
+                                    "to": "/pages/empty"
+                                }
+                            ]
+                        },
+                        {
+                            "label": "Hierarchy",
+                            "items": [
+                                {
+                                    "label": "Submenu 1",
+                                    "icon": "pi pi-fw pi-bookmark",
+                                    "items": [
+                                        {
+                                            "label": "Submenu 1.1",
+                                            "icon": "pi pi-fw pi-bookmark",
+                                            "items": [
+                                                {
+                                                    "label": "Submenu 1.1.1",
+                                                    "icon": "pi pi-fw pi-bookmark"
+                                                },
+                                                {
+                                                    "label": "Submenu 1.1.2",
+                                                    "icon": "pi pi-fw pi-bookmark"
+                                                },
+                                                {
+                                                    "label": "Submenu 1.1.3",
+                                                    "icon": "pi pi-fw pi-bookmark"
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            "label": "Submenu 1.2",
+                                            "icon": "pi pi-fw pi-bookmark",
+                                            "items": [
+                                                {
+                                                    "label": "Submenu 1.2.1",
+                                                    "icon": "pi pi-fw pi-bookmark"
+                                                }
+                                            ]
+                                        }
+                                    ]
+                                },
+                                {
+                                    "label": "Submenu 2",
+                                    "icon": "pi pi-fw pi-bookmark",
+                                    "items": [
+                                        {
+                                            "label": "Submenu 2.1",
+                                            "icon": "pi pi-fw pi-bookmark",
+                                            "items": [
+                                                {
+                                                    "label": "Submenu 2.1.1",
+                                                    "icon": "pi pi-fw pi-bookmark"
+                                                },
+                                                {
+                                                    "label": "Submenu 2.1.2",
+                                                    "icon": "pi pi-fw pi-bookmark"
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            "label": "Submenu 2.2",
+                                            "icon": "pi pi-fw pi-bookmark",
+                                            "items": [
+                                                {
+                                                    "label": "Submenu 2.2.1",
+                                                    "icon": "pi pi-fw pi-bookmark"
+                                                }
+                                            ]
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    ],
+                    "routes": [
+                        {
+                            "path": "/",
+                            "component": "../layout/AppLayout.vue",
+                            "children": [
+                                {
+                                    "path": "/product-management/product",
+                                    "name": "product",
+                                    "component": "../views/ContentEngine.vue",
+                                    "meta": {
+                                        "ce_file": "https://raw.githubusercontent.com/1mn-io/mn-app/refs/heads/main/modules/admin_product_fragment/dist/data.json"
+                                    }
+                                },
+                                {
+                                    "path": "/",
+                                    "name": "dashboard",
+                                    "component": "../views/Dashboard.vue"
+                                },
+                                {
+                                    "path": "/uikit/formlayout",
+                                    "name": "formlayout",
+                                    "component": "../views/uikit/FormLayout.vue"
+                                },
+                                {
+                                    "path": "/uikit/input",
+                                    "name": "input",
+                                    "component": "../views/uikit/InputDoc.vue"
+                                },
+                                {
+                                    "path": "/uikit/button",
+                                    "name": "button",
+                                    "component": "../views/uikit/ButtonDoc.vue"
+                                },
+                                {
+                                    "path": "/uikit/table",
+                                    "name": "table",
+                                    "component": "../views/uikit/TableDoc.vue"
+                                },
+                                {
+                                    "path": "/uikit/list",
+                                    "name": "list",
+                                    "component": "../views/uikit/ListDoc.vue"
+                                },
+                                {
+                                    "path": "/uikit/tree",
+                                    "name": "tree",
+                                    "component": "../views/uikit/TreeDoc.vue"
+                                },
+                                {
+                                    "path": "/uikit/panel",
+                                    "name": "panel",
+                                    "component": "../views/uikit/PanelsDoc.vue"
+                                },
+                                {
+                                    "path": "/uikit/overlay",
+                                    "name": "overlay",
+                                    "component": "../views/uikit/OverlayDoc.vue"
+                                },
+                                {
+                                    "path": "/uikit/media",
+                                    "name": "media",
+                                    "component": "../views/uikit/MediaDoc.vue"
+                                },
+                                {
+                                    "path": "/uikit/message",
+                                    "name": "message",
+                                    "component": "../views/uikit/MessagesDoc.vue"
+                                },
+                                {
+                                    "path": "/uikit/file",
+                                    "name": "file",
+                                    "component": "../views/uikit/FileDoc.vue"
+                                },
+                                {
+                                    "path": "/uikit/menu",
+                                    "name": "menu",
+                                    "component": "../views/uikit/MenuDoc.vue"
+                                },
+                                {
+                                    "path": "/uikit/charts",
+                                    "name": "charts",
+                                    "component": "../views/uikit/ChartDoc.vue"
+                                },
+                                {
+                                    "path": "/uikit/misc",
+                                    "name": "misc",
+                                    "component": "../views/uikit/MiscDoc.vue"
+                                },
+                                {
+                                    "path": "/uikit/timeline",
+                                    "name": "timeline",
+                                    "component": "../views/uikit/TimelineDoc.vue"
+                                },
+                                {
+                                    "path": "/blocks",
+                                    "name": "blocks",
+                                    "meta": {
+                                        "breadcrumb": [
+                                            "Prime Blocks",
+                                            "Free Blocks"
+                                        ]
+                                    },
+                                    "component": "../views/utilities/Blocks.vue"
+                                },
+                                {
+                                    "path": "/pages/empty",
+                                    "name": "empty",
+                                    "component": "../views/pages/Empty.vue"
+                                },
+                                {
+                                    "path": "/pages/crud",
+                                    "name": "crud",
+                                    "component": "../views/pages/Crud.vue"
+                                }
+                            ]
+                        },
+                        {
+                            "path": "/landing",
+                            "name": "landing",
+                            "component": "../views/pages/Landing.vue"
+                        },
+                        {
+                            "path": "/pages/notfound",
+                            "name": "notfound",
+                            "component": "../views/pages/NotFound.vue"
+                        },
+                        {
+                            "path": "/auth/login",
+                            "name": "login",
+                            "component": "../views/pages/auth/Login.vue"
+                        },
+                        {
+                            "path": "/auth/access",
+                            "name": "accessDenied",
+                            "component": "../views/pages/auth/Access.vue"
+                        },
+                        {
+                            "path": "/auth/error",
+                            "name": "error",
+                            "component": "../views/pages/auth/Error.vue"
+                        }
+                    ]
                 }
             }
         ]

@@ -1,4 +1,4 @@
-import { g as v, s as b, c as E, a as w, b as R, i as h, N as g, e as H, f as d, F as M, S as O, C as P, h as z, T as F, j as p, k as A, m as L, l as D, n as U, o as j, p as G, q as K, r as W, t as q, u as I, v as J, w as Q, x as X, y as Y, z as Z, A as ee, B as re, d as te, D as se } from "./runtime-dom.esm-bundler-CEAeiVlj.js";
+import { g as v, s as R, c as E, a as w, b, i as h, N as g, e as H, f as d, F as M, S as O, C as P, h as z, T as F, j as p, k as A, m as L, l as D, n as U, o as j, p as G, q as K, r as W, t as q, u as I, v as J, w as Q, x as X, y as Y, z as Z, A as ee, B as re, d as te, D as se } from "./runtime-dom.esm-bundler-C71lIG0B.js";
 const ne = /* @__PURE__ */ U(
   ",key,ref,innerHTML,textContent,ref_key,ref_for"
 );
@@ -42,7 +42,7 @@ function fe(e) {
 }
 function ce(e, r, t, s, n) {
   e("<!--teleport start-->");
-  const o = n.appContext.provides[R], i = o.__teleportBuffers || (o.__teleportBuffers = {}), l = i[t] || (i[t] = []), f = l.length;
+  const o = n.appContext.provides[b], i = o.__teleportBuffers || (o.__teleportBuffers = {}), l = i[t] || (i[t] = []), f = l.length;
   let u;
   if (s)
     r(e), u = "<!--teleport start anchor--><!--teleport anchor-->";
@@ -77,8 +77,8 @@ const {
   setCurrentRenderingInstance: T,
   setupComponent: de,
   renderComponentRoot: $,
-  normalizeVNode: _e
-} = b;
+  normalizeVNode: me
+} = R;
 function V() {
   let e = !1;
   const r = [];
@@ -190,14 +190,14 @@ function y(e, r, t, s) {
       ), e("<!--]-->");
       break;
     default:
-      o & 1 ? me(e, r, t, s) : o & 6 ? e(B(r, t, s)) : o & 64 ? ye(e, r, t, s) : o & 128 && y(e, r.ssContent, t, s);
+      o & 1 ? _e(e, r, t, s) : o & 6 ? e(B(r, t, s)) : o & 64 ? ye(e, r, t, s) : o & 128 && y(e, r.ssContent, t, s);
   }
 }
 function S(e, r, t, s) {
   for (let n = 0; n < r.length; n++)
-    y(e, _e(r[n]), t, s);
+    y(e, me(r[n]), t, s);
 }
-function me(e, r, t, s) {
+function _e(e, r, t, s) {
   const n = r.type;
   let { props: o, children: i, shapeFlag: l, scopeId: f } = r, u = `<${n}`;
   o && (u += oe(o, n)), f && (u += ` ${f}`);
@@ -205,8 +205,8 @@ function me(e, r, t, s) {
   for (; c && a === c.subTree; )
     a = c.vnode, a.scopeId && (u += ` ${a.scopeId}`), c = c.parent;
   if (s && (u += ` ${s}`), e(u + ">"), !D(n)) {
-    let _ = !1;
-    o && (o.innerHTML ? (_ = !0, e(o.innerHTML)) : o.textContent ? (_ = !0, e(p(o.textContent))) : n === "textarea" && o.value && (_ = !0, e(p(o.value)))), _ || (l & 8 ? e(p(i)) : l & 16 && S(
+    let m = !1;
+    o && (o.innerHTML ? (m = !0, e(o.innerHTML)) : o.textContent ? (m = !0, e(p(o.textContent))) : n === "textarea" && o.value && (m = !0, e(p(o.value)))), m || (l & 8 ? e(p(i)) : l & 16 && S(
       e,
       i,
       t,
@@ -248,8 +248,8 @@ function ye(e, r, t, s) {
     t
   );
 }
-const { isVNode: ge } = b;
-function m(e, r, t) {
+const { isVNode: ge } = R;
+function _(e, r, t) {
   if (!e.hasAsync)
     return r + x(e);
   let s = r;
@@ -260,16 +260,16 @@ function m(e, r, t) {
       continue;
     }
     if (h(o))
-      return o.then((l) => (e[n] = l, m(e, s, n)));
-    const i = m(o, s, 0);
+      return o.then((l) => (e[n] = l, _(e, s, n)));
+    const i = _(o, s, 0);
     if (h(i))
-      return i.then((l) => (e[n] = l, m(e, "", n)));
+      return i.then((l) => (e[n] = l, _(e, "", n)));
     s = i;
   }
   return s;
 }
 function N(e) {
-  return m(e, "", 0);
+  return _(e, "", 0);
 }
 function x(e) {
   let r = "";
@@ -283,7 +283,7 @@ async function k(e, r = {}) {
   if (ge(e))
     return k(E({ render: () => e }), r);
   const t = w(e._component, e._props);
-  t.appContext = e._context, e.provide(R, r);
+  t.appContext = e._context, e.provide(b, r);
   const s = await B(t), n = await N(s);
   if (await Se(r), r.__watcherHandles)
     for (const o of r.__watcherHandles)
@@ -304,36 +304,34 @@ const Te = /* @__PURE__ */ te({
   __name: "index",
   props: {
     _p: {},
-    _$p: {},
-    _$cb: {}
+    _$p: {}
   },
   setup(e) {
     return (r, t) => null;
   }
 }), Ce = async (e) => ({
-  set: async (r, t) => {
+  set: async (r) => {
     console.log(`--renderer [${r.data.curr.type}]`);
-    const n = se(Te, {
+    const s = se(Te, {
       _p: e,
-      _$p: r,
-      _$cb: t
+      _$p: r
     });
     return {
       r: `
                  <div>
-                    ${await k(n)}
+                    ${await k(s)}
                     <div id="${e.f.name("vue-root")}"></div>
                     <div id="app-3e1bg78c"></div>
 
                   </div>
                 `,
       style: (() => {
-        let l = "";
-        return l = `
+        let i = "";
+        return i = `
                 .${e.f.name("text")} {
                    background: transparent;
                 }
-                `, l;
+                `, i;
       })()
     };
   }

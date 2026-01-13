@@ -1,2 +1,2 @@
-export default router;
-declare const router: import('vue-router').Router;
+declare const index: (props: any) => Promise<import('vue-router').Router>;
+export { index as router };

@@ -1,73 +1,63 @@
-import { index as l } from "./hydrator.es.js";
-import { index as y } from "./renderer.es.js";
-const p = async () => ({
+import { index as m } from "./hydrator.es.js";
+import { index as u } from "./renderer.es.js";
+const y = async () => ({
   f: {
-    name: (a) => `${a.name}${a.id}`
+    name: (e) => `${e.name}${e.id}`
   }
-}), f = () => ({
-  set: () => "xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx".replace(/[xy]/g, function(a) {
-    const r = Math.random() * 16 | 0;
-    return (a == "x" ? r : r & 3 | 8).toString(16);
+}), p = () => ({
+  set: () => "xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx".replace(/[xy]/g, function(e) {
+    const n = Math.random() * 16 | 0;
+    return (e == "x" ? n : n & 3 | 8).toString(16);
   })
-}), E = async (a) => {
-  const r = await p();
+}), $ = async (e) => {
+  const n = await y();
   return {
-    set: async (x, i) => {
-      const c = {
+    set: async (x) => {
+      const d = {
         r: ""
         //style: ``,
-      }, d = x.data.curr || {
-        id: f().set(),
+      }, r = x.data.curr || {
+        id: p().set(),
         type: "text",
         data: {
           data: ""
           //Text
         }
-      }, o = await y({
+      }, i = await u({
+        my: {},
         f: {
-          ...a.f,
-          name: (t) => r.f.name({ id: d.id, name: t })
+          ...e.f,
+          name: (t) => n.f.name({ id: r.id, name: t })
         }
-      }), m = await l({
+      }), c = await m({
+        my: {},
         f: {
-          ...a.f,
-          name: (t) => r.f.name({ id: d.id, name: t })
+          ...e.f,
+          name: (t) => n.f.name({ id: r.id, name: t })
         }
-      }), s = await o.set({
+      }), s = await i.set({
         data: {
-          curr: d
+          curr: r
         }
       });
       return setTimeout(async () => {
-        const t = await m.set({
+        const t = await c.set({
           data: {
-            curr: d
-          }
-        }, {
-          add: (e) => {
-            let n = e.el;
-            n?.setAttribute("contenteditable", "true"), n?.classList.add("block-content"), n?.addEventListener("click", () => {
-            }), n?.addEventListener("input", function(h) {
-              const u = n.innerHTML;
-              e.$d.data = u, t.evt.change();
-            });
-          },
-          change: (e) => {
-            i?.change(e);
+            curr: r
           }
         });
-        ((e) => {
-          const n = document.createElement("style");
-          n.innerHTML = `${t.style}`, e.appendChild(n);
+        ((a) => {
+          const o = document.createElement("style");
+          o.innerHTML = `${t.style}`, a.appendChild(o);
         })(document.head);
-      }, 200), c.r = s.r, ((t) => {
-        const e = document.createElement("style");
-        e.innerHTML = `${s.style}`, t.appendChild(e);
-      })(document.head), c;
+      }, 200), d.r = s.r, ((t) => {
+        const a = document.createElement("style");
+        a.innerHTML = `${s.style}`, t.appendChild(a);
+      })(document.head), d;
     }
   };
 };
 export {
-  E as editor,
-  E as index
+  $ as editor,
+  $ as index
 };
