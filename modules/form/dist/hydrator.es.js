@@ -3774,8 +3774,12 @@ const Mh = _o({
     }, { handleSubmit: o, errors: a, defineField: i, setFieldValue: l, resetForm: p } = Yf({
       validationSchema: s()
     }), u = Pe(() => e.fields.map((h) => {
-      const [S, m] = i(h.name);
-      return { ...h, value: S, attrs: m };
+      const [S, m] = i(h.name, {});
+      return "value" in h && h.value !== void 0 && (S.value = h.value), {
+        ...h,
+        value: S,
+        attrs: m
+      };
     })), c = Ie({}), f = async (h, S) => {
       c.value[h.name] || (c.value[h.name] = { isOpen: !0, results: [], loading: !1 });
       const m = c.value[h.name];

@@ -9,6 +9,7 @@ interface FormField {
     options?: any;
     help?: string;
     section?: string;
+    value?: any;
 }
 declare const _default: import('vue').DefineComponent<import('vue').ExtractPropTypes<{
     fields: {
