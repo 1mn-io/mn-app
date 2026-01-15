@@ -1,9 +1,9 @@
 {
     "config": {
         "lazy_lib": {
-            "renderer_src": "https://cdn.jsdelivr.net/gh/1mn-io/mn-app/modules/{*}/dist/renderer.es.js",
-            "hydrator_src": "https://cdn.jsdelivr.net/gh/1mn-io/mn-app/modules/{*}/dist/hydrator.es.js",
-            "editor_src": "https://cdn.jsdelivr.net/gh/1mn-io/mn-app/modules/{*}/dist/editor.es.js"
+            "renderer_src": "https://cdn.jsdelivr.net/gh/1mn-io/mn-app@latest/modules/{*}/dist/renderer.es.js",
+            "hydrator_src": "https://cdn.jsdelivr.net/gh/1mn-io/mn-app@latest/modules/{*}/dist/hydrator.es.js",
+            "editor_src": "https://cdn.jsdelivr.net/gh/1mn-io/mn-app@latest/modules/{*}/dist/editor.es.js"
         }
     },
     "data": {
@@ -23,7 +23,17 @@
                                 {
                                     "label": "Products",
                                     "icon": "pi pi-fw pi-list",
-                                    "to": "/product-management/product"
+                                    "to": "/product-management/products"
+                                }
+                            ]
+                        },
+                        {
+                            "label": "Coupon management",
+                            "items": [
+                                {
+                                    "label": "Create Coupon",
+                                    "icon": "pi pi-fw pi-plus",
+                                    "to": "/coupon-management/coupon?mode=create"
                                 }
                             ]
                         },
@@ -259,11 +269,19 @@
                             "component": "../layout/AppLayout.vue",
                             "children": [
                                 {
-                                    "path": "/product-management/product",
+                                    "path": "/product-management/products",
                                     "name": "product",
                                     "component": "../views/ContentEngine.vue",
                                     "meta": {
                                         "ce_file": "https://raw.githubusercontent.com/1mn-io/mn-app/refs/heads/main/modules/admin_product_fragment/dist/data.json"
+                                    }
+                                },
+                                {
+                                    "path": "/coupon-management/coupon",
+                                    "name": "create_coupon",
+                                    "component": "../views/ContentEngine.vue",
+                                    "meta": {
+                                        "ce_file": "https://raw.githubusercontent.com/1mn-io/mn-app/refs/heads/main/modules/admin_coupon_upsert/dist/data.json"
                                     }
                                 },
                                 {
