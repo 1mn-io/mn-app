@@ -123,7 +123,7 @@ const _ENV = `dev`;
             if (_$.type==`load_more` && _$._$p.data.curr.id==`uuid-inventory-v2`) {
                 setTimeout(() => {
                     //set..
-                    const _new_rows = generateRows(40);
+                    const _new_rows = [];//generateRows(40);
                     _$._$p.data.curr.data.table.rows = _new_rows;
                     ce_call("msg", {
                         type: `load_more`,
@@ -138,6 +138,17 @@ const _ENV = `dev`;
                 }, 500);
             }
         });
+        //remove all rows..
+        /*setTimeout(() => {
+            ce_call("msg", {
+            type: `remove_all_rows`,
+            custom: {},
+            where: {
+                key: `id`,
+                value: `uuid-inventory-v2`,
+            }
+        });
+        }, 2000);*/
     })();
 
 

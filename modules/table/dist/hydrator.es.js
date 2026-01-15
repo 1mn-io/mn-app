@@ -11066,8 +11066,9 @@ const Ms = ["id"], Ls = { class: "infinite-scroll-container" }, Ss = { class: "f
         let p = [];
         for (const w of b._$p.data.curr.data.table?.rows || [])
           p.push(w);
-        t.value.updateOrAddData(p);
+        p.length > 0 && t.value.updateOrAddData(p);
       }
+      b.type == "remove_all_rows" && t.value.setData([]);
     });
     const a = () => {
       const b = {
