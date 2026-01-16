@@ -1,0 +1,73 @@
+{
+    "config": {
+        "lazy_lib": {
+            "renderer_src": "https://cdn.jsdelivr.net/gh/1mn-io/mn-app@latest/modules/{*}/dist/renderer.es.js",
+            "hydrator_src": "https://cdn.jsdelivr.net/gh/1mn-io/mn-app@latest/modules/{*}/dist/hydrator.es.js",
+            "editor_src": "https://cdn.jsdelivr.net/gh/1mn-io/mn-app@latest/modules/{*}/dist/editor.es.js"
+        }
+    },
+    "data": {
+        "l": [
+            {
+                "id": "3e1bk-storefront",
+                "type": "storefront",
+                "slug": "storefront",
+                "data": {
+                    "data": "",
+                    "theme": "light",
+                    "foo": "",
+                    "routes": [
+                        {
+                            "path": "/",
+                            "component": "../layout/AppLayout.vue",
+                            "children": [
+                                {
+                                    "path": "/",
+                                    "name": "product_details",
+                                    "component": "../views/ContentEngine.vue",
+                                    "meta": {
+                                        "ce_file": "https://raw.githubusercontent.com/1mn-io/mn-app/refs/heads/main/modules/product_details/dist/data.json"
+                                    }
+                                },
+                                {
+                                    "path": "/products",
+                                    "name": "product",
+                                    "component": "../views/ContentEngine.vue",
+                                    "meta": {
+                                        "ce_file": "https://raw.githubusercontent.com/1mn-io/mn-app/refs/heads/main/modules/product_list/dist/data.json"
+                                    }
+                                },
+                                {
+                                    "path": "/checkout",
+                                    "name": "checkout",
+                                    "component": "../views/ContentEngine.vue",
+                                    "meta": {
+                                        "ce_file": "https://raw.githubusercontent.com/1mn-io/mn-app/refs/heads/main/modules/checkout/dist/data.json"
+                                    }
+                                },
+                                {
+                                    "path": "/pages/empty",
+                                    "name": "empty",
+                                    "component": "../views/pages/Empty.vue"
+                                }
+                            ]
+                        },
+                        {
+                            "path": "/cart-popup",
+                            "name": "cart_popup",
+                            "component": "../views/ContentEngine.vue",
+                            "meta": {
+                                "ce_file": "https://raw.githubusercontent.com/1mn-io/mn-app/refs/heads/main/modules/cart_popup/dist/data.json"
+                            }
+                        },
+                        {
+                            "path": "/pages/notfound",
+                            "name": "notfound",
+                            "component": "../views/pages/NotFound.vue"
+                        }
+                    ]
+                }
+            }
+        ]
+    }
+}
