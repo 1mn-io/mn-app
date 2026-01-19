@@ -1,0 +1,23 @@
+{
+    "config": {
+        "lazy_lib": {
+            "renderer_src": "https://cdn.jsdelivr.net/gh/1mn-io/mn-app/modules/{*}/dist/renderer.es.js",
+            "hydrator_src": "https://cdn.jsdelivr.net/gh/1mn-io/mn-app/modules/{*}/dist/hydrator.es.js",
+            "editor_src": "https://cdn.jsdelivr.net/gh/1mn-io/mn-app/modules/{*}/dist/editor.es.js"
+        }
+    },
+    "data": {
+        "l": [
+            {
+                "id": "78c-orders_sf",
+                "type": "orders_sf",
+                "slug": "orders_sf",
+                "data": {
+                    "data": "",
+                    "theme": "light",
+                    "foo": ""
+                }
+            }
+        ]
+    }
+}
