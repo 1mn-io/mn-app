@@ -1189,7 +1189,7 @@ const At = { class: "font-sans antialiased text-gray-900 dark:text-gray-100" }, 
         const l = await fetch("https://fastapi.dryutil.1mn.io/client/api/i/ona/order_management", {
           method: "POST",
           headers: { "Content-Type": "application/json", Authorization: `Bearer ${_e}` },
-          body: JSON.stringify({ operation: "add_to_cart", user_id: "user_demo", product_id: n.value.id, variant_id: u.id, quantity: 1 })
+          body: JSON.stringify({ operation: "add_to_cart", user_id: "user_1", product_id: n.value.id, variant_id: u.id, quantity: 1 })
         }), m = await l.json();
         if (!l.ok) throw new Error(m.error || "Failed to add");
         await new Promise((_) => setTimeout(_, 600)), I(), setTimeout(() => {
@@ -1432,7 +1432,7 @@ const At = { class: "font-sans antialiased text-gray-900 dark:text-gray-100" }, 
   for (const [o, n] of t)
     a[o] = n;
   return a;
-}, da = /* @__PURE__ */ ia(la, [["__scopeId", "data-v-be18f6c1"]]), ua = { class: "w-full min-h-screen flex flex-col items-center justify-center bg-gray-100 dark:bg-[#0f172a] transition-colors duration-300" }, ca = {
+}, da = /* @__PURE__ */ ia(la, [["__scopeId", "data-v-858f1127"]]), ua = { class: "w-full min-h-screen flex flex-col items-center justify-center bg-gray-100 dark:bg-[#0f172a] transition-colors duration-300" }, ca = {
   key: 0,
   class: "p-8 bg-white dark:bg-[#1e293b] rounded-2xl shadow-xl border border-gray-100 dark:border-gray-700 flex flex-col gap-4"
 }, fa = /* @__PURE__ */ H({
