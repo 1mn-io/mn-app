@@ -654,7 +654,7 @@ const R = b(), A = b(), P = R.on, I = R.emit, J = A.emit, j = A.on, B = async (e
                 key: "id",
                 value: "3e1bc78c-104f-4f6f-aa87-75"
               }
-            }), t.value = s._p.query;
+            }), a.value = 1, t.value = s._p.query;
             let o = JSON.parse(JSON.stringify({
               data: {
                 curr: l.l[0]
