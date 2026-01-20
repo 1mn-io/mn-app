@@ -11107,6 +11107,7 @@ const Ms = ["id"], Ls = { class: "infinite-scroll-container" }, Ss = { class: "f
     const g = () => {
       if (!e.value) return;
       const b = new ks(e.value, {
+        //set..
         data: f.value,
         //[],
         columns: m.value,
@@ -11117,13 +11118,14 @@ const Ms = ["id"], Ls = { class: "infinite-scroll-container" }, Ss = { class: "f
         // 1. Disable pagination buttons
         height: "100%",
         // 2. Container must have a height for virtual scroll to work
-        /*renderVertical: "virtual", // 3. Enable Virtual DOM (renders only visible rows)
-        renderVerticalBuffer: 300, // Optional: buffer in pixels to render ahead of scroll
-        */
+        //renderVertical: "virtual", // 3. Enable Virtual DOM (renders only visible rows)
+        //renderVerticalBuffer: 300, // Optional: buffer in pixels to render ahead of scroll
         renderVertical: "basic",
         // ======================================
         rowHeight: 45,
-        placeholder: '<div class="py-20 text-center opacity-40 font-bold tracking-widest uppercase text-xs">No Data</div>'
+        placeholder: '<div class="py-20 text-center opacity-40 font-bold tracking-widest uppercase text-xs">No Data</div>',
+        //==Overwrite==//
+        ...l._$p.data.curr.data.table
       });
       t.value = b, t.value.on("rowClick", (p, w) => {
         w.getElement().animate(

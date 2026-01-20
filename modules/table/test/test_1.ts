@@ -64,7 +64,7 @@ const _ENV = `dev`;
                     },
                     // ==============================
 
-                    "table": {
+                    "table": { //It's a tabulator config..
                         "columns": [
                             { "title": "ID", "field": "id", "width": 60, "headerSort": false },
                             { "title": "Product Name", "field": "name", "widthGrow": 2, "minWidth": 140, "formatter": "html", "formatterFunction": (cell) => {
@@ -86,7 +86,11 @@ const _ENV = `dev`;
                             { "title": "Stock", "field": "stock", "hozAlign": "center", "width": 70 },
                             { "title": "Status", "field": "status", "formatter": "html", "widthGrow": 1, "minWidth": 110, "hozAlign": "center" }
                         ],
-                        "rows": generateRows(40)
+                        "rows": generateRows(40),
+                        //set..
+                        //rowHeight: 75,
+                        //dataTree: true,
+                        //dataTreeChildField: "_children",
                     }
                 },
             }
