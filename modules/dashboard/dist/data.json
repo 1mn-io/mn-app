@@ -53,6 +53,21 @@
                             ]
                         },
                         {
+                            "label": "UI management",
+                            "items": [
+                                {
+                                    "label": "Create Interface",
+                                    "icon": "pi pi-fw pi-plus",
+                                    "to": "/ui-management/interface?mode=create"
+                                },
+                                {
+                                    "label": "Interfaces",
+                                    "icon": "pi pi-fw pi-list",
+                                    "to": "/ui-management/interfaces"
+                                }
+                            ]
+                        },
+                        {
                             "label": "Home",
                             "items": [
                                 {
@@ -313,6 +328,22 @@
                                     "component": "../views/ContentEngine.vue",
                                     "meta": {
                                         "ce_file": "https://raw.githubusercontent.com/1mn-io/mn-app/refs/heads/main/modules/admin_order_fragment/dist/data.json"
+                                    }
+                                },
+                                {
+                                    "path": "/ui-management/interfaces",
+                                    "name": "interfaces",
+                                    "component": "../views/ContentEngine.vue",
+                                    "meta": {
+                                        "ce_file": "https://raw.githubusercontent.com/1mn-io/mn-app/refs/heads/main/modules/admin_ui_fragment/dist/data.json"
+                                    }
+                                },
+                                {
+                                    "path": "/ui-management/interface",
+                                    "name": "create_interface",
+                                    "component": "../views/ContentEngine.vue",
+                                    "meta": {
+                                        "ce_file": "https://raw.githubusercontent.com/1mn-io/mn-app/main/modules/ui_editor/dist/data.json"
                                     }
                                 },
                                 {
