@@ -1,5 +1,5 @@
 import { _ as o } from "./_plugin-vue_export-helper-CHgC5LLL.js";
-import { E as l, _ as i, H as n, $ as e, a0 as d, a as t, I as a } from "./runtime-dom.esm-bundler-DX3hrXra.js";
+import { E as l, _ as i, H as n, $ as e, a0 as d, a as t, I as a } from "./runtime-dom.esm-bundler-TRF-LAC0.js";
 const c = {}, f = { class: "flex items-center justify-center min-h-screen overflow-hidden" }, u = { class: "flex flex-col items-center justify-center" }, x = { style: { "border-radius": "56px", padding: "0.3rem", background: "linear-gradient(180deg, color-mix(in srgb, var(--primary-color), transparent 60%) 10%, var(--surface-ground) 30%)" } }, m = {
   class: "w-full bg-surface-0 dark:bg-surface-900 py-20 px-8 sm:px-20 flex flex-col items-center",
   style: { "border-radius": "53px" }

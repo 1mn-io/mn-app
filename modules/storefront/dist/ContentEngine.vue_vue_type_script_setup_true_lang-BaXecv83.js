@@ -1,5 +1,5 @@
-import { u as k } from "./main-C5JrDKuQ.js";
-import { d as T, X as h, _ as E, a1 as j, H as O } from "./runtime-dom.esm-bundler-DX3hrXra.js";
+import { u as k } from "./main-BPGO2N8a.js";
+import { d as T, X as h, _ as E, a1 as j, H as O } from "./runtime-dom.esm-bundler-TRF-LAC0.js";
 const w = () => ({
   set: () => "xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx".replace(/[xy]/g, function(e) {
     const n = Math.random() * 16 | 0;
@@ -346,8 +346,11 @@ const I = async (e) => {
     let a = "";
     return (async () => {
       try {
-        const f = await (await fetch(t.value.ce_file)).json();
-        l.value = f;
+        if (typeof t.value.ce_file == "string") {
+          const f = await (await fetch(t.value.ce_file)).json();
+          l.value = f;
+        } else
+          l.value = t.value.ce_file;
       } catch (_) {
         console.log(_);
         return;

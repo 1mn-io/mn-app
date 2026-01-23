@@ -1,4 +1,4 @@
-import { U as u, R as k, d as L, X as h, Y as w, _ as D, $ as m, a as l, K as _, L as b, E as r, p as E, F as I, H as V } from "./runtime-dom.esm-bundler-DX3hrXra.js";
+import { V as u, R as k, d as L, W as h, _ as w, $ as m, a as l, K as _, L as b, E as r, p as D, F as E, H as I, X as V } from "./runtime-dom.esm-bundler-TRF-LAC0.js";
 const n = k({
   preset: "Aura",
   primary: "emerald",
@@ -47,8 +47,8 @@ const x = { class: "layout-main-container" }, B = { class: "layout-main" }, O = 
     __p: {}
   },
   setup(p) {
-    const { layoutConfig: i, layoutState: t, isSidebarActive: f } = N(), o = h(null), s = p;
-    w(f, (a) => {
+    const { layoutConfig: i, layoutState: t, isSidebarActive: f } = N(), o = V(null), s = p;
+    h(f, (a) => {
       a ? y() : d();
     });
     const M = u(() => ({
@@ -72,9 +72,9 @@ const x = { class: "layout-main-container" }, B = { class: "layout-main" }, O = 
     }
     return (a, c) => {
       const v = r("app-topbar"), A = r("app-sidebar"), S = r("router-view"), C = r("app-footer"), T = r("Toast");
-      return V(), D(I, null, [
+      return I(), w(E, null, [
         m("div", {
-          class: E(["layout-wrapper", M.value])
+          class: D(["layout-wrapper", M.value])
         }, [
           l(v, _(b(s)), null, 16),
           l(A, _(b(s)), null, 16),
