@@ -1,0 +1,29 @@
+{
+    "config": {
+        "lazy_lib": {
+            "renderer_src": "https://cdn.jsdelivr.net/gh/1mn-io/mn-app@latest/modules/{*}/dist/renderer.es.js",
+            "hydrator_src": "https://cdn.jsdelivr.net/gh/1mn-io/mn-app@latest/modules/{*}/dist/hydrator.es.js",
+            "editor_src": "https://cdn.jsdelivr.net/gh/1mn-io/mn-app@latest/modules/{*}/dist/editor.es.js"
+        }
+    },
+    "data": {
+        "l": [
+            {
+                "id": "78c-address_upsert",
+                "type": "address_upsert",
+                "slug": "address_upsert",
+                "data": {
+                    "data": "",
+                    "theme": "light",
+                    "foo": "",
+                    "event": {
+                        "onNotFound": "/addresses",
+                        "onUpdated": "/addresses",
+                        "onCreated": "/addresses",
+                        "onCancel": "/addresses"
+                    }
+                }
+            }
+        ]
+    }
+}
