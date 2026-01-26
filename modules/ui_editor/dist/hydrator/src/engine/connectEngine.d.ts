@@ -21,4 +21,28 @@ export const engine: {
     moveUp: (uid: any) => void;
     moveDown: (uid: any) => void;
     toggleMinimize: (uid: any) => void;
+    formatBlock: (_v?: {
+        ce_file: null;
+        curr: null;
+    }) => {
+        uid: any;
+        type: string;
+        slug: string;
+        ce_file: string;
+        ce_config: {
+            lazy_lib: {
+                renderer_src: string;
+                hydrator_src: string;
+                editor_src: string;
+            };
+        };
+        ce_data: null[];
+        minimized: boolean;
+        collapsed: boolean;
+        state: {
+            theme: string;
+            env: string;
+        };
+        _created: number;
+    };
 };
