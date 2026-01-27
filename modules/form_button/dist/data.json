@@ -1,0 +1,24 @@
+{
+    "config": {
+        "lazy_lib": {
+            "renderer_src": "https://cdn.jsdelivr.net/gh/1mn-io/mn-app@latest/modules/{*}/dist/renderer.es.js",
+            "hydrator_src": "https://cdn.jsdelivr.net/gh/1mn-io/mn-app@latest/modules/{*}/dist/hydrator.es.js",
+            "editor_src": "https://cdn.jsdelivr.net/gh/1mn-io/mn-app@latest/modules/{*}/dist/editor.es.js"
+        }
+    },
+    "data": {
+        "l": [
+            {
+                "id": "38c-form_button",
+                "type": "form_button",
+                "slug": "form_button",
+                "data": {
+                    "data": "Hello world! ",
+                    "label": "My first content",
+                    "size": "normal",
+                    "variant": "filled"
+                }
+            }
+        ]
+    }
+}
