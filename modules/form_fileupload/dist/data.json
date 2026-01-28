@@ -1,0 +1,32 @@
+{
+    "config": {
+        "lazy_lib": {
+            "renderer_src": "https://cdn.jsdelivr.net/gh/1mn-io/mn-app@latest/modules/{*}/dist/renderer.es.js",
+            "hydrator_src": "https://cdn.jsdelivr.net/gh/1mn-io/mn-app@latest/modules/{*}/dist/hydrator.es.js",
+            "editor_src": "https://cdn.jsdelivr.net/gh/1mn-io/mn-app@latest/modules/{*}/dist/editor.es.js"
+        }
+    },
+    "data": {
+        "l": [
+            {
+                "id": "bc78c-form_fileupload",
+                "type": "form_fileupload",
+                "slug": "form_fileupload",
+                "data": {
+                    "data": "Hello world! ",
+                    "url": "/api/upload",
+                    "multiple": true,
+                    "accept": "image/*",
+                    "maxFileSize": 20000000,
+                    "auto": false,
+                    "emptyText": "Drag and drop files here to upload",
+                    "style": {},
+                    "class": "w-full",
+                    "mode": "advanced",
+                    "name": "fileUpload[]",
+                    "customUpload": false
+                }
+            }
+        ]
+    }
+}
