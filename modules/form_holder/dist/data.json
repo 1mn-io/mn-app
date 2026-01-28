@@ -9,9 +9,9 @@
     "data": {
         "l": [
             {
-                "id": "3e1bc78c-104f-4f6f-aa87-75a",
-                "type": "sample",
-                "slug": "sample",
+                "id": "c78c-form_holder",
+                "type": "form_holder",
+                "slug": "form_holder",
                 "data": {
                     "title": "On-Boarding",
                     "ce_file": {
