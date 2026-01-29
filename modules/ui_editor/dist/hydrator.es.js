@@ -56,6 +56,20 @@ const _ = zt({
       label: "Button (Form)",
       type: "form_button",
       ce_file: "https://raw.githubusercontent.com/1mn-io/mn-app/refs/heads/main/modules/form_button/dist/data.json"
+    },
+    //set..
+    {
+      id: "form_section",
+      label: "Section (Form)",
+      type: "form_section",
+      ce_file: "https://raw.githubusercontent.com/1mn-io/mn-app/refs/heads/main/modules/form_section/dist/data.json"
+    },
+    //set..
+    {
+      id: "form_holder",
+      label: "Form holder",
+      type: "form_holder",
+      ce_file: "https://raw.githubusercontent.com/1mn-io/mn-app/refs/heads/main/modules/form_holder/dist/data.json"
     }
   ],
   canvasModules: [
