@@ -46,6 +46,9 @@ type _$p_TYP = {
                 "data": string;
                 "ce_file": any;
                 "title": string;
+                "event": {
+                    "l": any[];
+                };
             };
         };
     };
