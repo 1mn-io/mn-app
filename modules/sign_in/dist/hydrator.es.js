@@ -1,4 +1,4 @@
-import { d as L, c as S, r as v, a as j, b as d, o as i, e as t, t as u, f as V, w as h, g as k, v as w, h as N, i as E, j as U, k as J, l as B, T as P, n as $, m as A, p as R } from "./runtime-dom.esm-bundler-BvynFkjI.js";
+import { d as M, c as T, r as v, a as j, b as d, o as i, e as t, t as u, f as N, w as h, g as k, v as C, h as L, i as E, j as U, k as J, l as B, T as P, n as $, m as A, p as R } from "./runtime-dom.esm-bundler-BvynFkjI.js";
 const D = { class: "h-full bg-white dark:bg-gray-900" }, Z = { class: "flex min-h-full flex-col justify-center px-6 py-12 lg:px-8 bg-white dark:bg-gray-900" }, F = { class: "sm:mx-auto sm:w-full sm:max-w-sm text-gray-900 dark:text-gray-100" }, G = { class: "mt-10 text-center text-2xl font-bold tracking-tight text-gray-900 dark:text-gray-100" }, X = {
   key: 0,
   class: "mt-2 text-center text-sm text-purple-600 dark:text-purple-400"
@@ -8,7 +8,7 @@ const D = { class: "h-full bg-white dark:bg-gray-900" }, Z = { class: "flex min-
 }, q = { class: "mt-10 sm:mx-auto sm:w-full sm:max-w-sm bg-white dark:bg-gray-900" }, Q = { class: "text-gray-900 dark:text-gray-100" }, H = ["disabled"], K = { class: "text-center text-gray-600 dark:text-gray-300" }, ee = ["disabled"], te = { key: 0 }, re = {
   key: 1,
   class: "font-semibold underline"
-}, se = { class: "text-gray-900 dark:text-gray-100" }, oe = { class: "mt-2" }, ae = ["disabled"], le = { class: "text-gray-900 dark:text-gray-100" }, ie = { class: "flex items-center justify-between" }, ne = { class: "text-sm" }, de = { class: "mt-2" }, ue = ["disabled"], ce = { class: "flex items-center text-gray-900 dark:text-gray-100" }, pe = ["disabled"], ge = ["disabled"], me = { key: 0 }, fe = { key: 1 }, ve = ["disabled"], ye = { class: "text-center w-full mr-5" }, be = ["disabled"], xe = { class: "text-center w-full mr-5" }, he = ["disabled"], ke = { class: "text-center w-full mr-5" }, we = ["disabled"], Ce = { class: "text-center w-full mr-5" }, _e = { class: "mt-10 text-center text-sm text-gray-500 dark:text-gray-400" }, ze = { class: "fixed left-1/2 -translate-x-1/2 bottom-10 z-50 w-full max-w-sm flex flex-col gap-3 px-4" }, Ie = { class: "bg-white dark:bg-gray-900 rounded-lg" }, Ve = { class: "flex-1 text-sm font-medium" }, Ne = { class: "flex-1 text-sm font-medium" }, Le = /* @__PURE__ */ L({
+}, se = { class: "text-gray-900 dark:text-gray-100" }, oe = { class: "mt-2" }, ae = ["disabled"], le = { class: "text-gray-900 dark:text-gray-100" }, ie = { class: "flex items-center justify-between" }, ne = { class: "text-sm" }, de = { class: "mt-2" }, ue = ["disabled"], ce = { class: "flex items-center text-gray-900 dark:text-gray-100" }, pe = ["disabled"], ge = ["disabled"], me = { key: 0 }, fe = { key: 1 }, ve = ["disabled"], ye = { class: "text-center w-full mr-5" }, be = ["disabled"], xe = { class: "text-center w-full mr-5" }, he = ["disabled"], ke = { class: "text-center w-full mr-5" }, we = ["disabled"], Ce = { class: "text-center w-full mr-5" }, _e = { class: "mt-10 text-center text-sm text-gray-500 dark:text-gray-400" }, ze = { class: "fixed left-1/2 -translate-x-1/2 bottom-10 z-50 w-full max-w-sm flex flex-col gap-3 px-4" }, Ie = { class: "bg-white dark:bg-gray-900 rounded-lg" }, Ve = { class: "flex-1 text-sm font-medium" }, Ne = { class: "flex-1 text-sm font-medium" }, Le = /* @__PURE__ */ M({
   __name: "Signin",
   props: {
     _p: {},
@@ -16,9 +16,9 @@ const D = { class: "h-full bg-white dark:bg-gray-900" }, Z = { class: "flex min-
     _$cb: {}
   },
   setup(p) {
-    const m = p, l = S(() => m._$p.data.curr.data || {}), s = v(!1), o = v(null), g = v(!1), y = v(""), b = v(""), f = v(0);
-    let C = null;
-    const _ = (a) => {
+    const m = p, l = T(() => m._$p.data.curr.data || {}), s = v(!1), o = v(null), g = v(!1), y = v(""), b = v(""), f = v(0);
+    let _ = null;
+    const z = (a) => {
       const e = l.value.click?.[a];
       if (!e) {
         console.warn(`No URL defined in JSON for: ${a}`);
@@ -47,7 +47,7 @@ const D = { class: "h-full bg-white dark:bg-gray-900" }, Z = { class: "flex min-
       } catch (e) {
         c("error", e.message), s.value = !1;
       }
-    }, z = async () => {
+    }, I = async () => {
       o.value = null;
       const a = l.value.api?.login;
       if (!a) {
@@ -70,13 +70,16 @@ const D = { class: "h-full bg-white dark:bg-gray-900" }, Z = { class: "flex min-
         }), r = await e.json().catch(() => ({}));
         if (!e.ok) {
           if (r.error === "User not verified" || r.message?.includes("not verified")) {
-            b.value = n.email, g.value = !0, await I(!0), c("error", "Account not verified. Please enter the OTP sent to your email.");
+            b.value = n.email, g.value = !0, await V(!0), c("error", "Account not verified. Please enter the OTP sent to your email.");
             return;
           }
-          const T = r.detail || r.message || "Invalid email or password.";
-          throw new Error(T);
+          const w = r.detail || r.message || "Invalid email or password.";
+          throw new Error(w);
         }
-        c("success", "Login successful! Redirecting..."), setTimeout(() => {
+        (async () => {
+          const w = r.data.token;
+          localStorage.setItem("token", w);
+        })(), c("success", "Login successful! Redirecting..."), setTimeout(() => {
           l.value.event?.onLoginSuccess && (window.location.href = l.value.event.onLoginSuccess);
         }, 1e3);
       } catch (e) {
@@ -84,11 +87,11 @@ const D = { class: "h-full bg-white dark:bg-gray-900" }, Z = { class: "flex min-
       } finally {
         s.value = !1;
       }
-    }, M = () => {
-      f.value = 60, C = setInterval(() => {
-        f.value > 0 ? f.value-- : clearInterval(C);
+    }, O = () => {
+      f.value = 60, _ = setInterval(() => {
+        f.value > 0 ? f.value-- : clearInterval(_);
       }, 1e3);
-    }, I = async (a = !1) => {
+    }, V = async (a = !1) => {
       try {
         if (!(await fetch(l.value.api.send_otp, {
           method: "POST",
@@ -99,11 +102,11 @@ const D = { class: "h-full bg-white dark:bg-gray-900" }, Z = { class: "flex min-
           },
           body: JSON.stringify({ email: n.email.toLowerCase().trim() })
         })).ok) throw new Error("Could not send verification code");
-        M(), a || c("success", "Verification code sent!");
+        O(), a || c("success", "Verification code sent!");
       } catch (e) {
         c("error", e.message);
       }
-    }, O = async () => {
+    }, S = async () => {
       s.value = !0, o.value = null;
       try {
         if (!(await fetch(l.value.api?.verify_otp, {
@@ -119,7 +122,7 @@ const D = { class: "h-full bg-white dark:bg-gray-900" }, Z = { class: "flex min-
           })
         })).ok) throw new Error("Invalid OTP code.");
         c("success", "Email verified! Logging you in..."), setTimeout(() => {
-          g.value = !1, z();
+          g.value = !1, I();
         }, 1500);
       } catch (a) {
         c("error", a.message);
@@ -135,7 +138,7 @@ const D = { class: "h-full bg-white dark:bg-gray-900" }, Z = { class: "flex min-
           t("div", F, [
             t("h2", G, u(g.value ? "Verify your email" : l.value.labels?.title || "Welcome Back"), 1),
             g.value ? (i(), d("p", X, [
-              e[13] || (e[13] = V(" We sent a code to ", -1)),
+              e[13] || (e[13] = N(" We sent a code to ", -1)),
               t("span", Y, u(n.email), 1)
             ])) : (i(), d("p", W, u(l.value.labels?.subtitle || "Please enter your details to sign in."), 1))
           ]),
@@ -143,7 +146,7 @@ const D = { class: "h-full bg-white dark:bg-gray-900" }, Z = { class: "flex min-
             g.value ? (i(), d("form", {
               key: 0,
               class: "space-y-6 bg-white dark:bg-gray-900",
-              onSubmit: h(O, ["prevent"])
+              onSubmit: h(S, ["prevent"])
             }, [
               t("div", Q, [
                 e[14] || (e[14] = t("label", {
@@ -159,7 +162,7 @@ const D = { class: "h-full bg-white dark:bg-gray-900" }, Z = { class: "flex min-
                   placeholder: "000000",
                   class: "mt-2 block w-full text-center tracking-[1em] text-2xl font-mono rounded-md border-0 py-2 px-3 text-gray-900 dark:text-gray-100 shadow-sm outline outline-1 -outline-offset-1 outline-gray-300 dark:outline-gray-700 placeholder:text-gray-400 focus:outline-2 focus:-outline-offset-2 focus:outline-purple-600 dark:focus:outline-purple-500 bg-gray-50 dark:bg-gray-800"
                 }, null, 512), [
-                  [w, y.value]
+                  [C, y.value]
                 ])
               ]),
               t("button", {
@@ -170,7 +173,7 @@ const D = { class: "h-full bg-white dark:bg-gray-900" }, Z = { class: "flex min-
               t("div", K, [
                 t("button", {
                   type: "button",
-                  onClick: e[1] || (e[1] = (r) => I(!1)),
+                  onClick: e[1] || (e[1] = (r) => V(!1)),
                   disabled: s.value || f.value > 0,
                   class: "text-sm text-purple-600 dark:text-purple-400 hover:text-purple-800 dark:hover:text-purple-300 disabled:text-gray-400 dark:disabled:text-gray-500"
                 }, [
@@ -180,7 +183,7 @@ const D = { class: "h-full bg-white dark:bg-gray-900" }, Z = { class: "flex min-
             ], 32)) : (i(), d("form", {
               key: 1,
               class: "space-y-6 bg-white dark:bg-gray-900",
-              onSubmit: h(z, ["prevent"])
+              onSubmit: h(I, ["prevent"])
             }, [
               t("div", se, [
                 e[15] || (e[15] = t("label", {
@@ -198,7 +201,7 @@ const D = { class: "h-full bg-white dark:bg-gray-900" }, Z = { class: "flex min-
                     class: "block w-full rounded-md bg-white dark:bg-gray-800 px-3 py-2.5 text-base text-gray-900 dark:text-gray-100 outline outline-1 -outline-offset-1 outline-gray-300 dark:outline-gray-700 placeholder:text-gray-400 focus:outline-2 focus:-outline-offset-2 focus:outline-purple-600 dark:focus:outline-purple-500 sm:text-sm",
                     placeholder: "you@example.com"
                   }, null, 8, ae), [
-                    [w, n.email]
+                    [C, n.email]
                   ])
                 ])
               ]),
@@ -211,7 +214,7 @@ const D = { class: "h-full bg-white dark:bg-gray-900" }, Z = { class: "flex min-
                   t("div", ne, [
                     t("a", {
                       href: "#",
-                      onClick: e[3] || (e[3] = h((r) => _("forgot_pwd"), ["prevent"])),
+                      onClick: e[3] || (e[3] = h((r) => z("forgot_pwd"), ["prevent"])),
                       class: "font-semibold text-purple-600 dark:text-purple-400 hover:text-purple-800 dark:hover:text-purple-300 underline-offset-4 hover:underline"
                     }, " Forgot password? ")
                   ])
@@ -227,7 +230,7 @@ const D = { class: "h-full bg-white dark:bg-gray-900" }, Z = { class: "flex min-
                     class: "block w-full rounded-md bg-white dark:bg-gray-800 px-3 py-2.5 text-base text-gray-900 dark:text-gray-100 outline outline-1 -outline-offset-1 outline-gray-300 dark:outline-gray-700 placeholder:text-gray-400 focus:outline-2 focus:-outline-offset-2 focus:outline-purple-600 dark:focus:outline-purple-500 sm:text-sm",
                     placeholder: "••••••••"
                   }, null, 8, ue), [
-                    [w, n.password]
+                    [C, n.password]
                   ])
                 ])
               ]),
@@ -253,14 +256,14 @@ const D = { class: "h-full bg-white dark:bg-gray-900" }, Z = { class: "flex min-
               }, [
                 s.value ? (i(), d("span", me, "Signing in...")) : (i(), d("span", fe, "Sign In"))
               ], 8, ge),
-              e[22] || (e[22] = N('<div class="relative mt-8 border-gray-200 dark:border-gray-700 text-gray-400 dark:text-gray-500 bg-white dark:bg-gray-900"><div class="absolute inset-0 flex items-center" aria-hidden="true"><div class="w-full border-t border-gray-200 dark:border-gray-700"></div></div><div class="relative flex justify-center text-sm font-medium"><span class="bg-white dark:bg-gray-900 px-4 text-gray-400 dark:text-gray-500">OR</span></div></div>', 1)),
+              e[22] || (e[22] = L('<div class="relative mt-8 border-gray-200 dark:border-gray-700 text-gray-400 dark:text-gray-500 bg-white dark:bg-gray-900"><div class="absolute inset-0 flex items-center" aria-hidden="true"><div class="w-full border-t border-gray-200 dark:border-gray-700"></div></div><div class="relative flex justify-center text-sm font-medium"><span class="bg-white dark:bg-gray-900 px-4 text-gray-400 dark:text-gray-500">OR</span></div></div>', 1)),
               t("button", {
                 type: "button",
                 onClick: e[6] || (e[6] = (r) => x("google")),
                 disabled: s.value,
                 class: "flex w-full items-center justify-center gap-3 rounded-md border border-gray-300 dark:border-gray-700 bg-white dark:bg-gray-800 px-3 py-2.5 text-sm font-semibold text-gray-900 dark:text-gray-100 shadow-sm hover:bg-gray-50 dark:hover:bg-gray-700 focus-visible:ring-transparent disabled:opacity-50 transition-colors"
               }, [
-                e[18] || (e[18] = N('<svg class="h-5 w-5" viewBox="0 0 24 24"><path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" fill="#4285F4"></path><path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"></path><path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l3.66-2.84z" fill="#FBBC05"></path><path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" fill="#EA4335"></path></svg>', 1)),
+                e[18] || (e[18] = L('<svg class="h-5 w-5" viewBox="0 0 24 24"><path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" fill="#4285F4"></path><path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"></path><path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l3.66-2.84z" fill="#FBBC05"></path><path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" fill="#EA4335"></path></svg>', 1)),
                 t("div", ye, u(s.value ? "Connecting..." : "Continue with Google"), 1)
               ], 8, ve),
               t("button", {
@@ -384,10 +387,10 @@ const D = { class: "h-full bg-white dark:bg-gray-900" }, Z = { class: "flex min-
               ], 8, we)
             ], 32)),
             t("p", _e, [
-              e[23] || (e[23] = V(" Don't have an account yet? ", -1)),
+              e[23] || (e[23] = N(" Don't have an account yet? ", -1)),
               t("button", {
                 href: "#",
-                onClick: e[10] || (e[10] = h((r) => _("sign_up"), ["prevent"])),
+                onClick: e[10] || (e[10] = h((r) => z("sign_up"), ["prevent"])),
                 class: "font-semibold text-purple-600 dark:text-purple-400 hover:text-purple-800 dark:hover:text-purple-300 underline underline-offset-4 ml-1"
               }, " Sign up ")
             ])
@@ -485,7 +488,7 @@ const D = { class: "h-full bg-white dark:bg-gray-900" }, Z = { class: "flex min-
       ])
     ], 2));
   }
-}), Me = /* @__PURE__ */ L({
+}), Me = /* @__PURE__ */ M({
   __name: "index",
   props: {
     _p: {},
@@ -499,7 +502,7 @@ const D = { class: "h-full bg-white dark:bg-gray-900" }, Z = { class: "flex min-
       _$cb: p._$cb
     }, null, 8, ["_p", "_$p", "_$cb"]));
   }
-}), Te = async (p) => ({
+}), Se = async (p) => ({
   set: async (m, l) => {
     console.log(`--hydrator [${m.data.curr.type}]`);
     const o = R(Me, {
@@ -520,6 +523,6 @@ const D = { class: "h-full bg-white dark:bg-gray-900" }, Z = { class: "flex min-
   }
 });
 export {
-  Te as hydrator,
-  Te as index
+  Se as hydrator,
+  Se as index
 };
