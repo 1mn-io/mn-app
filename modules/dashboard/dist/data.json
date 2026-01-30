@@ -349,7 +349,10 @@
                                 {
                                     "path": "/",
                                     "name": "dashboard",
-                                    "component": "../views/Dashboard.vue"
+                                    "component": "../views/Dashboard.vue",
+                                    "meta": {
+                                      "auth": false
+                                    }
                                 },
                                 {
                                     "path": "/uikit/formlayout",
