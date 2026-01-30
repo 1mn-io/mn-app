@@ -20,7 +20,7 @@
                                 "name": "open_homepage",
                                 "typ": "redirect",
                                 "data": "/home",
-                                "delay": 2000
+                                "delay": 2
                             },
                             {
                                 "name": "error_toast",
