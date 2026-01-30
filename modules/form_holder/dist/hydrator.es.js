@@ -17,7 +17,7 @@ const S = () => ({
       const e = t.name, n = document.getElementById(t.el_id);
       if (!n)
         throw new Error("[el_id] is invalid");
-      ((o) => {
+      ((l) => {
         const r = (a) => {
           ((i) => {
             const d = i.getAttribute("data-ce");
@@ -36,9 +36,9 @@ const S = () => ({
               }
           })(a);
         };
-        for (const a of o.getElementsByTagName("*"))
+        for (const a of l.getElementsByTagName("*"))
           r(a);
-        r(o);
+        r(l);
       })(n);
     } catch (e) {
       const n = `err: [theme] ${e}`;
@@ -50,11 +50,11 @@ function B(t, e = 1e3) {
   let n = {
     cnt: 0
   };
-  return new Promise((o) => {
+  return new Promise((l) => {
     const r = () => {
       console.log(`[setInterval] is running.. [count=${n.cnt}]`);
       try {
-        t() && (clearInterval(a), o());
+        t() && (clearInterval(a), l());
       } catch {
         console.log(`warn: [wait_until] ignoring the exception in setInterval and will check again after [interval=${e}]`);
       }
@@ -87,9 +87,9 @@ let Z = class {
     for (const n of this.listeners[t] ?? [])
       try {
         await n(...e);
-      } catch (o) {
+      } catch (l) {
         this.listeners.error?.forEach(
-          (r) => r(o)
+          (r) => r(l)
         );
       }
   };
@@ -131,8 +131,8 @@ let y = {
     l: {},
     set: async (t) => {
       const e = t?.lib || [];
-      for (const [n, o] of e.entries()) {
-        const r = o, a = `${r.name}:${t.run_from}`, i = `${t.run_from}_src`;
+      for (const [n, l] of e.entries()) {
+        const r = l, a = `${r.name}:${t.run_from}`, i = `${t.run_from}_src`;
         let d = r[i];
         const f = `${t.run_from}_src`;
         let c = t?.lazy_lib?.[f] || null;
@@ -189,15 +189,15 @@ let y = {
   path: {
     set: (t) => {
       let e = "", n = "";
-      const o = t.src.split("/");
-      if (t.src.indexOf("://localhost") !== -1 || t.src.indexOf("://127.0.0.1") !== -1 || (n = "/dist"), o.indexOf(t.type) !== -1)
-        for (const [r, a] of o.entries()) {
+      const l = t.src.split("/");
+      if (t.src.indexOf("://localhost") !== -1 || t.src.indexOf("://127.0.0.1") !== -1 || (n = "/dist"), l.indexOf(t.type) !== -1)
+        for (const [r, a] of l.entries()) {
           let i = r == 0 ? "" : "/";
           if (e += `${i}${a}`, a == t.type)
             return `${e}${n}${t.name}`;
         }
       else
-        for (const [r, a] of o.entries()) {
+        for (const [r, a] of l.entries()) {
           let i = r == 0 ? "" : "/";
           if (e += `${i}${a}`, a == "src")
             return `${e}${n}${t.name}`;
@@ -211,8 +211,8 @@ const P = j(), W = j(), G = P.on, R = P.emit, K = W.emit, L = W.on, Q = async (t
   return await y.lib.set({ lib: t.lib, run_from: "renderer", lazy_lib: t.lazy_lib }), {
     set: async (n) => {
       console.log("--renderer [set]"), n.return = n?.return || {}, n.return.r = n?.return?.r || "full";
-      const o = new J();
-      o.start();
+      const l = new J();
+      l.start();
       let r = n.data?.value?.l || n.data.l, a = {
         r: null,
         //``
@@ -245,7 +245,7 @@ const P = j(), W = j(), G = P.on, R = P.emit, K = W.emit, L = W.on, Q = async (t
           );
           n?.return?.r == "full" ? a.r += f?.r || "" : a.r.push(f?.r || ""), a.style += f?.style || "", a.head += f?.head || "";
         }
-      })(), o.stop(), a.benchmark = o.result(), a;
+      })(), l.stop(), a.benchmark = l.result(), a;
     }
   };
 }, X = async (t) => {
@@ -253,8 +253,8 @@ const P = j(), W = j(), G = P.on, R = P.emit, K = W.emit, L = W.on, Q = async (t
   return await y.lib.set({ lib: t.lib, run_from: "hydrator", lazy_lib: t.lazy_lib }), {
     set: async (n) => {
       console.log("--hydrator [set]");
-      const o = new J();
-      o.start();
+      const l = new J();
+      l.start();
       let r = {
         r: "",
         style: ""
@@ -268,10 +268,10 @@ const P = j(), W = j(), G = P.on, R = P.emit, K = W.emit, L = W.on, Q = async (t
             my: {},
             //NOTE: We cannot add or use any variable of this object, It's reserved for module.
             f: {
-              name: (l) => e.f.name({ id: f.id, name: l }),
-              get_lib: async (l) => await await y.lib.get({ name: l.name, run_from: l.run_from, lazy_lib: t.lazy_lib }),
-              set_theme: async (l) => await (await C()).set(l),
-              path: (l) => y.path.set({ src: c.src, type: f.type, name: l }),
+              name: (o) => e.f.name({ id: f.id, name: o }),
+              get_lib: async (o) => await await y.lib.get({ name: o.name, run_from: o.run_from, lazy_lib: t.lazy_lib }),
+              set_theme: async (o) => await (await C()).set(o),
+              path: (o) => y.path.set({ src: c.src, type: f.type, name: o }),
               //set..
               uuid: () => S().set(),
               wait_until: B,
@@ -289,17 +289,17 @@ const P = j(), W = j(), G = P.on, R = P.emit, K = W.emit, L = W.on, Q = async (t
             }
             /*_$cb*/
           );
-          G("msg", async (l) => {
+          G("msg", async (o) => {
             try {
-              if (Object.keys(l.where || {}).length == 0) {
-                await b.emit("msg", l);
+              if (Object.keys(o.where || {}).length == 0) {
+                await b.emit("msg", o);
                 return;
               }
             } catch {
             }
             try {
-              if (f?.[l.where?.key || ""] == l.where?.value) {
-                await b.emit("msg", l);
+              if (f?.[o.where?.key || ""] == o.where?.value) {
+                await b.emit("msg", o);
                 return;
               }
             } catch {
@@ -321,19 +321,19 @@ const P = j(), W = j(), G = P.on, R = P.emit, K = W.emit, L = W.on, Q = async (t
       } catch (f) {
         console.log(`${f}, Failed to set style..`);
       }
-      return o.stop(), {
+      return l.stop(), {
         //style_id:_ins.style_id,
         //total:_l.length,
-        benchmark: o.result()
+        benchmark: l.result()
       };
     }
   };
 };
 function Y(t, e) {
-  return e.split(".").reduce((n, o) => n?.[o], t);
+  return e.split(".").reduce((n, l) => n?.[l], t);
 }
 function tt(t, e) {
-  const { open: n, close: o } = e, r = [];
+  const { open: n, close: l } = e, r = [];
   let a = 0;
   for (; a < t.length; ) {
     const i = t.indexOf(n, a);
@@ -342,19 +342,19 @@ function tt(t, e) {
       break;
     }
     i > a && r.push({ type: "text", value: t.slice(a, i) });
-    const d = t.indexOf(o, i + n.length);
+    const d = t.indexOf(l, i + n.length);
     if (d === -1)
       throw new Error(`Unclosed template placeholder starting at ${i}`);
     const f = t.slice(i + n.length, d).trim(), [c, h] = f.split("=");
-    r.push({ type: "param", value: c, defaultValue: h }), a = d + o.length;
+    r.push({ type: "param", value: c, defaultValue: h }), a = d + l.length;
   }
   return r;
 }
 function et(t, e, n) {
-  const o = /* @__PURE__ */ new Set(), r = t.map((a) => {
+  const l = /* @__PURE__ */ new Set(), r = t.map((a) => {
     if (a.type === "text") return a.value;
     const i = Y(e, a.value);
-    if (o.add(a.value.split(".")[0]), i === void 0 || i === "") {
+    if (l.add(a.value.split(".")[0]), i === void 0 || i === "") {
       if (a.defaultValue !== void 0) return a.defaultValue;
       if (n.strict) throw new Error(`Missing param: ${a.value}`);
       return "";
@@ -363,7 +363,7 @@ function et(t, e, n) {
   }).join("");
   if (n.strict) {
     for (const a of Object.keys(e))
-      if (!o.has(a))
+      if (!l.has(a))
         throw new Error(`Unused param provided: ${a}`);
   }
   return r;
@@ -374,8 +374,8 @@ function nt(t, e) {
     close: e?.close,
     encode: e?.encode ?? !1,
     strict: e?.strict ?? !1
-  }, o = tt(t, n);
-  return (r) => et(o, r, n);
+  }, l = tt(t, n);
+  return (r) => et(l, r, n);
 }
 const at = { class: "bg-gray-100 flex items-center justify-center min-h-screen" }, st = {
   "class-old": "bg-white shadow-lg rounded-lg p-8 w-full max-w-sm",
@@ -391,8 +391,17 @@ const at = { class: "bg-gray-100 flex items-center justify-center min-h-screen" 
   },
   setup(t) {
     const e = t;
-    let n = [];
-    const o = E(!1);
+    let n = [
+      {
+        id: "c77697833678c-form_toast",
+        type: "form_toast",
+        slug: "form_toast",
+        data: {
+          //"env": "dev",
+        }
+      }
+    ];
+    const l = E(!1);
     let r = [];
     const a = e._$p;
     e._p;
@@ -402,10 +411,10 @@ const at = { class: "bg-gray-100 flex items-center justify-center min-h-screen" 
       var: {
         event: {
           typ: {
-            redirect: async (s, l) => {
+            redirect: async (s, o) => {
               location.href = s.data;
             },
-            toast: async (s, l) => {
+            toast: async (s, o) => {
               await R("msg", {
                 type: "show",
                 _p: {},
@@ -417,10 +426,10 @@ const at = { class: "bg-gray-100 flex items-center justify-center min-h-screen" 
                 //},
               });
             },
-            api: async (s, l) => {
-              console.log(s, l);
+            api: async (s, o) => {
+              console.log(s, o);
               try {
-                s.data.body = l.body;
+                s.data.body = o.body;
                 const g = nt(`${JSON.stringify(s.data.headers)}`, {
                   open: "<",
                   close: ">"
@@ -461,9 +470,9 @@ const at = { class: "bg-gray-100 flex items-center justify-center min-h-screen" 
                 });
               }
             },
-            body: async (s, l) => {
+            body: async (s, o) => {
               let p = null;
-              console.log(s, l);
+              console.log(s, o);
               try {
                 p = {};
                 for (const u of n)
@@ -495,7 +504,7 @@ const at = { class: "bg-gray-100 flex items-center justify-center min-h-screen" 
       fn: {
         call_event_for_ce_listen: async (s) => {
           try {
-            const l = s._$, p = l.type, g = l._$p.data.curr.data.form.event.l, m = a.data.curr.data.event.l || [], u = g.find((w) => w.on == p);
+            const o = s._$, p = o.type, g = o._$p.data.curr.data.form.event.l, m = a.data.curr.data.event.l || [], u = g.find((w) => w.on == p);
             let _ = {};
             for (const w of u.call) {
               const $ = m.find((V) => V.name == w), x = $.delay || -1;
@@ -509,7 +518,7 @@ const at = { class: "bg-gray-100 flex items-center justify-center min-h-screen" 
         },
         call_event: async (s) => {
           try {
-            const l = s.event.l, p = a.data.curr.data.event.l || [], g = s.on, m = l.find((_) => _.on == g);
+            const o = s.event.l, p = a.data.curr.data.event.l || [], g = s.on, m = o.find((_) => _.on == g);
             let u = {};
             for (const _ of m.call) {
               const w = p.find((k) => k.name == _), $ = w.delay || -1;
@@ -528,12 +537,12 @@ const at = { class: "bg-gray-100 flex items-center justify-center min-h-screen" 
     }))();
     const h = async () => {
       r = [];
-      const s = n, l = [...s.keys()].filter((m) => s[m].type == "form_section"), g = [...[...s.keys()].filter((m) => s[m].type == "form_toast")];
+      const s = n, o = [...s.keys()].filter((m) => s[m].type == "form_section"), g = [...[...s.keys()].filter((m) => s[m].type == "form_toast")];
       for (const m of g)
         r.push(`
         ${d.value[m]} 
         `);
-      for (const m of l) {
+      for (const m of o) {
         let u = {
           _s: ""
         };
@@ -557,7 +566,7 @@ const at = { class: "bg-gray-100 flex items-center justify-center min-h-screen" 
         
         `);
       }
-      o.value = !0;
+      l.value = !0;
     }, b = async () => {
       (async () => {
         i.value = {
@@ -604,7 +613,7 @@ const at = { class: "bg-gray-100 flex items-center justify-center min-h-screen" 
               }
             }
           ]
-        }, l = {
+        }, o = {
           lib: [],
           lazy_lib: {
             renderer_src: "https://cdn.jsdelivr.net/gh/coreutility/content-engine@latest/modules/{*}/dist/renderer.es.js",
@@ -612,8 +621,8 @@ const at = { class: "bg-gray-100 flex items-center justify-center min-h-screen" 
             editor_src: "https://cdn.jsdelivr.net/gh/coreutility/content-engine@latest/modules/{*}/dist/editor.es.js"
           }
         };
-        s = i.value.data, l.lazy_lib = i.value.config.lazy_lib;
-        const p = await Q(l), g = await X(l);
+        s = i.value.data, o.lazy_lib = i.value.config.lazy_lib;
+        const p = await Q(o), g = await X(o);
         await (async () => {
           const u = await p.set({
             data: s,
@@ -631,29 +640,26 @@ const at = { class: "bg-gray-100 flex items-center justify-center min-h-screen" 
         })();
       })();
     }, v = () => {
-      o.value || (console.log("--_start [form_holder]"), (async () => {
+      l.value || (console.log("--_start [form_holder]"), (async () => {
         try {
-          typeof e._$p.data.curr.data.ce_file == "string" ? n = (await (await fetch(e._$p.data.curr.data.ce_file)).json()).data.l : n = e._$p.data.curr.data.ce_file.data.l;
+          if (typeof e._$p.data.curr.data.ce_file == "string") {
+            const o = await (await fetch(e._$p.data.curr.data.ce_file)).json();
+            n.push(...o.data.l);
+          } else
+            n.push(...e._$p.data.curr.data.ce_file.data.l);
         } catch (s) {
           console.log(s);
           return;
         }
-        n.push({
-          id: "c77697833678c-form_toast",
-          type: "form_toast",
-          slug: "form_toast",
-          data: {
-            //"env": "dev",
-          }
-        }), console.log(n), await b();
+        console.log(n), await b();
       })());
     };
     return H(() => {
       v();
-    }), (s, l) => (z(), T("div", at, [
+    }), (s, o) => (z(), T("div", at, [
       I("div", st, [
         O(a).data.curr.data.title ? (z(), T("h2", rt, A(O(a).data.curr.data.title), 1)) : N("", !0),
-        o.value ? (z(!0), T(U, { key: 1 }, q(O(r), (p) => (z(), T("div", null, [
+        l.value ? (z(!0), T(U, { key: 1 }, q(O(r), (p) => (z(), T("div", null, [
           I("div", { innerHTML: p }, null, 8, ot)
         ]))), 256)) : N("", !0)
       ])
@@ -662,7 +668,7 @@ const at = { class: "bg-gray-100 flex items-center justify-center min-h-screen" 
 }), ct = async (t) => ({
   set: async (e) => {
     console.log(`--hydrator [${e.data.curr.type}]`);
-    const o = D(lt, {
+    const l = D(lt, {
       _p: t,
       _$p: e
     }), r = {
@@ -680,7 +686,7 @@ const at = { class: "bg-gray-100 flex items-center justify-center min-h-screen" 
         }
       }
     }, a = document.getElementById(t.f.name("vue-root"));
-    return o.mount(a), r;
+    return l.mount(a), r;
   }
 });
 export {
