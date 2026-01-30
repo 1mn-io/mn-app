@@ -1,101 +1,101 @@
-import { d as P, o as x, c as k, a as O, u as S, t as W, b as V, F, r as H, e as z, f as A } from "./runtime-dom.esm-bundler-BPmzUvV_.js";
-const E = () => ({
+import { d as H, o as A, a as T, c as z, b as I, u as N, t as U, e as q, F as D, r as Z, f as E, n as R, g as G } from "./runtime-dom.esm-bundler-b9SlkuPz.js";
+const S = () => ({
   set: () => "xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx".replace(/[xy]/g, function(t) {
     const e = Math.random() * 16 | 0;
     return (t == "x" ? e : e & 3 | 8).toString(16);
   })
-}), N = async () => ({
+}), C = async () => ({
   f: {
     name: (t) => `${t.name}${t.id}`
   }
-}), R = async () => ({
+}), J = async () => ({
   set: async (t) => {
     console.log("--theme");
     try {
       if (!t.el_id)
         throw new Error("[el_id] is required");
-      const e = t.name, n = document.getElementById(t.el_id);
-      if (!n)
+      const e = t.name, a = document.getElementById(t.el_id);
+      if (!a)
         throw new Error("[el_id] is invalid");
-      ((r) => {
-        const l = (a) => {
+      ((l) => {
+        const r = (s) => {
           ((o) => {
             const c = o.getAttribute("data-ce");
             if (!c)
               return;
-            const d = JSON.parse(c).filter((i) => i?.k.startsWith("t-"));
-            if (d.length != 0)
-              for (const i of d) {
-                const w = i.k, s = i.v.split(" ");
-                if (w == `t-${e}-class`)
-                  for (const u of s)
-                    o.classList.add(u);
+            const u = JSON.parse(c).filter((i) => i?.k.startsWith("t-"));
+            if (u.length != 0)
+              for (const i of u) {
+                const m = i.k, b = i.v.split(" ");
+                if (m == `t-${e}-class`)
+                  for (const $ of b)
+                    o.classList.add($);
                 else
-                  for (const u of s)
-                    o.classList.remove(u);
+                  for (const $ of b)
+                    o.classList.remove($);
               }
-          })(a);
+          })(s);
         };
-        for (const a of r.getElementsByTagName("*"))
-          l(a);
-        l(r);
-      })(n);
+        for (const s of l.getElementsByTagName("*"))
+          r(s);
+        r(l);
+      })(a);
     } catch (e) {
-      const n = `err: [theme] ${e}`;
-      throw console.log(n), n;
+      const a = `err: [theme] ${e}`;
+      throw console.log(a), a;
     }
   }
 });
-function j(t, e = 1e3) {
-  let n = {
+function B(t, e = 1e3) {
+  let a = {
     cnt: 0
   };
-  return new Promise((r) => {
-    const l = () => {
-      console.log(`[setInterval] is running.. [count=${n.cnt}]`);
+  return new Promise((l) => {
+    const r = () => {
+      console.log(`[setInterval] is running.. [count=${a.cnt}]`);
       try {
-        t() && (clearInterval(a), r());
+        t() && (clearInterval(s), l());
       } catch {
         console.log(`warn: [wait_until] ignoring the exception in setInterval and will check again after [interval=${e}]`);
       }
-      n.cnt += 1;
-    }, a = setInterval(() => {
-      l();
+      a.cnt += 1;
+    }, s = setInterval(() => {
+      r();
     }, e);
-    l();
+    r();
   });
 }
-let U = class {
+let K = class {
   listeners = {};
   on = (t, e) => ((this.listeners[t] ||= []).push(e), () => this.off(t, e));
   off = (t, e) => {
-    this.listeners[t] = this.listeners[t]?.filter((n) => n !== e);
+    this.listeners[t] = this.listeners[t]?.filter((a) => a !== e);
   };
   /** Sequential execution (await each listener) */
   emit = async (t, ...e) => {
-    for (const n of this.listeners[t] ?? [])
-      await n(...e);
+    for (const a of this.listeners[t] ?? [])
+      await a(...e);
   };
   /** Parallel execution (await all listeners) */
   emitParallel = async (t, ...e) => {
     await Promise.all(
-      (this.listeners[t] ?? []).map((n) => n(...e))
+      (this.listeners[t] ?? []).map((a) => a(...e))
     );
   };
   //Error-safe emit
   emitSafe = async (t, ...e) => {
-    for (const n of this.listeners[t] ?? [])
+    for (const a of this.listeners[t] ?? [])
       try {
-        await n(...e);
-      } catch (r) {
+        await a(...e);
+      } catch (l) {
         this.listeners.error?.forEach(
-          (l) => l(r)
+          (r) => r(l)
         );
       }
   };
 };
-const T = () => new U();
-class L {
+const j = () => new K();
+class P {
   startTime;
   endTime;
   isRunning;
@@ -124,54 +124,54 @@ class L {
   }
 }
 console.log("content-engine-lib");
-let p = {
+let h = {
   lib: {
     inbuilt_lib: [],
     // <any>[], // [`text`,`table`,`editor`]
     l: {},
     set: async (t) => {
       const e = t?.lib || [];
-      for (const [n, r] of e.entries()) {
-        const l = r, a = `${l.name}:${t.run_from}`, o = `${t.run_from}_src`;
-        let c = l[o];
-        const d = `${t.run_from}_src`;
-        let i = t?.lazy_lib?.[d] || null;
-        if (i && (i = i.replace("{*}", `${l.name}`)), console.log(`_lazy_src: ${i}`), console.log(`_src: ${c}`), p.lib.l.hasOwnProperty(`${a}`) == !1) {
-          if (/^[a-zA-Z0-9]/.test(c) && c.includes("/") == !1 && p.lib.inbuilt_lib.indexOf(`${l.name}`) === -1)
+      for (const [a, l] of e.entries()) {
+        const r = l, s = `${r.name}:${t.run_from}`, o = `${t.run_from}_src`;
+        let c = r[o];
+        const u = `${t.run_from}_src`;
+        let i = t?.lazy_lib?.[u] || null;
+        if (i && (i = i.replace("{*}", `${r.name}`)), console.log(`_lazy_src: ${i}`), console.log(`_src: ${c}`), h.lib.l.hasOwnProperty(`${s}`) == !1) {
+          if (/^[a-zA-Z0-9]/.test(c) && c.includes("/") == !1 && h.lib.inbuilt_lib.indexOf(`${r.name}`) === -1)
             if (i)
               c = i;
             else
-              throw `[lib-name=${l.name},lib-src=${c}] not allowed or available in in-build mode. Need to use lazy-lib config.`;
+              throw `[lib-name=${r.name},lib-src=${c}] not allowed or available in in-build mode. Need to use lazy-lib config.`;
           if (c.startsWith("./") || c.startsWith("../")) {
-            const w = await import(
+            const m = await import(
               /* @vite-ignore */
               /* webpackIgnore: true */
               `${c}`
             );
-            p.lib.l[`${a}`] = {
-              lib: w,
+            h.lib.l[`${s}`] = {
+              lib: m,
               src: c
             };
           }
           if (c.startsWith("http://") || c.startsWith("https://")) {
-            const w = await import(
+            const m = await import(
               /* @vite-ignore */
               /* webpackIgnore: true */
               `${c}`
             );
-            p.lib.l[`${a}`] = {
-              lib: w,
+            h.lib.l[`${s}`] = {
+              lib: m,
               src: c
             };
           }
         }
       }
-      console.log(await p.lib.get_all({}));
+      console.log(await h.lib.get_all({}));
     },
     get: async (t) => {
       let e = null;
-      const n = `${t.name}:${t.run_from}`;
-      return p.lib.l.hasOwnProperty(`${n}`) == !1 && await p.lib.set({
+      const a = `${t.name}:${t.run_from}`;
+      return h.lib.l.hasOwnProperty(`${a}`) == !1 && await h.lib.set({
         lib: [
           {
             renderer_src: t.name,
@@ -182,38 +182,38 @@ let p = {
         ],
         run_from: t.run_from,
         lazy_lib: t.lazy_lib
-      }), e = p.lib.l[`${n}`], e;
+      }), e = h.lib.l[`${a}`], e;
     },
-    get_all: async (t) => p.lib.l
+    get_all: async (t) => h.lib.l
   },
   path: {
     set: (t) => {
-      let e = "", n = "";
-      const r = t.src.split("/");
-      if (t.src.indexOf("://localhost") !== -1 || t.src.indexOf("://127.0.0.1") !== -1 || (n = "/dist"), r.indexOf(t.type) !== -1)
-        for (const [l, a] of r.entries()) {
-          let o = l == 0 ? "" : "/";
-          if (e += `${o}${a}`, a == t.type)
-            return `${e}${n}${t.name}`;
+      let e = "", a = "";
+      const l = t.src.split("/");
+      if (t.src.indexOf("://localhost") !== -1 || t.src.indexOf("://127.0.0.1") !== -1 || (a = "/dist"), l.indexOf(t.type) !== -1)
+        for (const [r, s] of l.entries()) {
+          let o = r == 0 ? "" : "/";
+          if (e += `${o}${s}`, s == t.type)
+            return `${e}${a}${t.name}`;
         }
       else
-        for (const [l, a] of r.entries()) {
-          let o = l == 0 ? "" : "/";
-          if (e += `${o}${a}`, a == "src")
-            return `${e}${n}${t.name}`;
+        for (const [r, s] of l.entries()) {
+          let o = r == 0 ? "" : "/";
+          if (e += `${o}${s}`, s == "src")
+            return `${e}${a}${t.name}`;
         }
-      return `${e}${n}${t.name}`;
+      return `${e}${a}${t.name}`;
     }
   }
 };
-const C = T(), J = T(), q = C.on, B = C.emit, D = J.emit, I = J.on, Z = async (t) => {
-  const e = await N();
-  return await p.lib.set({ lib: t.lib, run_from: "renderer", lazy_lib: t.lazy_lib }), {
-    set: async (n) => {
-      console.log("--renderer [set]"), n.return = n?.return || {}, n.return.r = n?.return?.r || "full";
-      const r = new L();
-      r.start();
-      let l = n.data?.value?.l || n.data.l, a = {
+const W = j(), V = j(), Q = W.on, L = W.emit, X = V.emit, M = V.on, Y = async (t) => {
+  const e = await C();
+  return await h.lib.set({ lib: t.lib, run_from: "renderer", lazy_lib: t.lazy_lib }), {
+    set: async (a) => {
+      console.log("--renderer [set]"), a.return = a?.return || {}, a.return.r = a?.return?.r || "full";
+      const l = new P();
+      l.start();
+      let r = a.data?.value?.l || a.data.l, s = {
         r: null,
         //``
         style: "",
@@ -223,17 +223,17 @@ const C = T(), J = T(), q = C.on, B = C.emit, D = J.emit, I = J.on, Z = async (t
         //total:_l.length,
         benchmark: null
       };
-      return n.return.r == "full" ? a.r = "" : a.r = [], await (async () => {
-        for (const o of l) {
-          const c = await await p.lib.get({ name: o.type, run_from: "renderer", lazy_lib: t.lazy_lib }), d = await (await c.lib.index({
+      return a.return.r == "full" ? s.r = "" : s.r = [], await (async () => {
+        for (const o of r) {
+          const c = await await h.lib.get({ name: o.type, run_from: "renderer", lazy_lib: t.lazy_lib }), u = await (await c.lib.index({
             f: {
               name: (i) => e.f.name({ id: o.id, name: i }),
-              get_lib: async (i) => await await p.lib.get({ name: i.name, run_from: i.run_from, lazy_lib: t.lazy_lib }),
-              set_theme: async (i) => await (await R()).set(i),
-              path: (i) => p.path.set({ src: c.src, type: o.type, name: i }),
+              get_lib: async (i) => await await h.lib.get({ name: i.name, run_from: i.run_from, lazy_lib: t.lazy_lib }),
+              set_theme: async (i) => await (await J()).set(i),
+              path: (i) => h.path.set({ src: c.src, type: o.type, name: i }),
               //set..
-              uuid: () => E().set(),
-              wait_until: j
+              uuid: () => S().set(),
+              wait_until: B
             }
           })).set(
             {
@@ -243,147 +243,147 @@ const C = T(), J = T(), q = C.on, B = C.emit, D = J.emit, I = J.on, Z = async (t
             }
             /*_$cb*/
           );
-          n?.return?.r == "full" ? a.r += d?.r || "" : a.r.push(d?.r || ""), a.style += d?.style || "", a.head += d?.head || "";
+          a?.return?.r == "full" ? s.r += u?.r || "" : s.r.push(u?.r || ""), s.style += u?.style || "", s.head += u?.head || "";
         }
-      })(), r.stop(), a.benchmark = r.result(), a;
+      })(), l.stop(), s.benchmark = l.result(), s;
     }
   };
-}, G = async (t) => {
-  const e = await N();
-  return await p.lib.set({ lib: t.lib, run_from: "hydrator", lazy_lib: t.lazy_lib }), {
-    set: async (n) => {
+}, tt = async (t) => {
+  const e = await C();
+  return await h.lib.set({ lib: t.lib, run_from: "hydrator", lazy_lib: t.lazy_lib }), {
+    set: async (a) => {
       console.log("--hydrator [set]");
-      const r = new L();
-      r.start();
-      let l = {
+      const l = new P();
+      l.start();
+      let r = {
         r: "",
         style: ""
-      }, a = {
-        style_id: `${E().set()}_stl`
-      }, o = n.data?.value?.l || n.data.l;
+      }, s = {
+        style_id: `${S().set()}_stl`
+      }, o = a.data?.value?.l || a.data.l;
       const c = async () => {
-        for (const d of o) {
-          const i = await await p.lib.get({ name: d.type, run_from: "hydrator", lazy_lib: t.lazy_lib }), w = i.lib, s = T(), u = s.on, h = await (await w.index({
+        for (const u of o) {
+          const i = await await h.lib.get({ name: u.type, run_from: "hydrator", lazy_lib: t.lazy_lib }), m = i.lib, b = j(), $ = b.on, O = await (await m.index({
             /**@my module can use it to set custom variables. */
             my: {},
             //NOTE: We cannot add or use any variable of this object, It's reserved for module.
             f: {
-              name: (f) => e.f.name({ id: d.id, name: f }),
-              get_lib: async (f) => await await p.lib.get({ name: f.name, run_from: f.run_from, lazy_lib: t.lazy_lib }),
-              set_theme: async (f) => await (await R()).set(f),
-              path: (f) => p.path.set({ src: i.src, type: d.type, name: f }),
+              name: (n) => e.f.name({ id: u.id, name: n }),
+              get_lib: async (n) => await await h.lib.get({ name: n.name, run_from: n.run_from, lazy_lib: t.lazy_lib }),
+              set_theme: async (n) => await (await J()).set(n),
+              path: (n) => h.path.set({ src: i.src, type: u.type, name: n }),
               //set..
-              uuid: () => E().set(),
-              wait_until: j,
+              uuid: () => S().set(),
+              wait_until: B,
               //set..
-              call: D,
-              listen: u,
+              call: X,
+              listen: $,
               //set..
-              new_emitter: () => T()
+              new_emitter: () => j()
             }
           })).set(
             {
               data: {
-                curr: d
+                curr: u
               }
             }
             /*_$cb*/
           );
-          q("msg", async (f) => {
+          Q("msg", async (n) => {
             try {
-              if (Object.keys(f.where || {}).length == 0) {
-                await s.emit("msg", f);
+              if (Object.keys(n.where || {}).length == 0) {
+                await b.emit("msg", n);
                 return;
               }
             } catch {
             }
             try {
-              if (d?.[f.where?.key || ""] == f.where?.value) {
-                await s.emit("msg", f);
+              if (u?.[n.where?.key || ""] == n.where?.value) {
+                await b.emit("msg", n);
                 return;
               }
             } catch {
             }
-          }), l.style += h.style;
+          }), r.style += O.style;
         }
       };
-      await j(
+      await B(
         () => document.readyState === "complete" || typeof window < "u",
         50
       ), await c();
       try {
-        ((d) => {
-          const i = document.getElementById(`${a.style_id}`);
+        ((u) => {
+          const i = document.getElementById(`${s.style_id}`);
           i && i.remove();
-          const w = document.createElement("style");
-          w.id = `${a.style_id}`, w.innerHTML = `${l.style}`, d.appendChild(w);
+          const m = document.createElement("style");
+          m.id = `${s.style_id}`, m.innerHTML = `${r.style}`, u.appendChild(m);
         })(document.head);
-      } catch (d) {
-        console.log(`${d}, Failed to set style..`);
+      } catch (u) {
+        console.log(`${u}, Failed to set style..`);
       }
-      return r.stop(), {
+      return l.stop(), {
         //style_id:_ins.style_id,
         //total:_l.length,
-        benchmark: r.result()
+        benchmark: l.result()
       };
     }
   };
 };
-function K(t, e) {
-  return e.split(".").reduce((n, r) => n?.[r], t);
+function et(t, e) {
+  return e.split(".").reduce((a, l) => a?.[l], t);
 }
-function Q(t, e) {
-  const { open: n, close: r } = e, l = [];
-  let a = 0;
-  for (; a < t.length; ) {
-    const o = t.indexOf(n, a);
+function at(t, e) {
+  const { open: a, close: l } = e, r = [];
+  let s = 0;
+  for (; s < t.length; ) {
+    const o = t.indexOf(a, s);
     if (o === -1) {
-      l.push({ type: "text", value: t.slice(a) });
+      r.push({ type: "text", value: t.slice(s) });
       break;
     }
-    o > a && l.push({ type: "text", value: t.slice(a, o) });
-    const c = t.indexOf(r, o + n.length);
+    o > s && r.push({ type: "text", value: t.slice(s, o) });
+    const c = t.indexOf(l, o + a.length);
     if (c === -1)
       throw new Error(`Unclosed template placeholder starting at ${o}`);
-    const d = t.slice(o + n.length, c).trim(), [i, w] = d.split("=");
-    l.push({ type: "param", value: i, defaultValue: w }), a = c + r.length;
+    const u = t.slice(o + a.length, c).trim(), [i, m] = u.split("=");
+    r.push({ type: "param", value: i, defaultValue: m }), s = c + l.length;
   }
-  return l;
+  return r;
 }
-function X(t, e, n) {
-  const r = /* @__PURE__ */ new Set(), l = t.map((a) => {
-    if (a.type === "text") return a.value;
-    const o = K(e, a.value);
-    if (r.add(a.value.split(".")[0]), o === void 0 || o === "") {
-      if (a.defaultValue !== void 0) return a.defaultValue;
-      if (n.strict) throw new Error(`Missing param: ${a.value}`);
+function nt(t, e, a) {
+  const l = /* @__PURE__ */ new Set(), r = t.map((s) => {
+    if (s.type === "text") return s.value;
+    const o = et(e, s.value);
+    if (l.add(s.value.split(".")[0]), o === void 0 || o === "") {
+      if (s.defaultValue !== void 0) return s.defaultValue;
+      if (a.strict) throw new Error(`Missing param: ${s.value}`);
       return "";
     }
-    return n.encode ? encodeURIComponent(String(o)) : String(o);
+    return a.encode ? encodeURIComponent(String(o)) : String(o);
   }).join("");
-  if (n.strict) {
-    for (const a of Object.keys(e))
-      if (!r.has(a))
-        throw new Error(`Unused param provided: ${a}`);
+  if (a.strict) {
+    for (const s of Object.keys(e))
+      if (!l.has(s))
+        throw new Error(`Unused param provided: ${s}`);
   }
-  return l;
+  return r;
 }
-function Y(t, e) {
-  const n = {
+function st(t, e) {
+  const a = {
     open: e?.open,
     close: e?.close,
     encode: e?.encode ?? !1,
     strict: e?.strict ?? !1
-  }, r = Q(t, n);
-  return (l) => X(r, l, n);
+  }, l = at(t, a);
+  return (r) => nt(l, r, a);
 }
-const tt = { class: "bg-gray-100 flex items-center justify-center min-h-screen" }, et = {
+const rt = { class: "bg-gray-100 flex items-center justify-center min-h-screen" }, lt = {
   "class-old": "bg-white shadow-lg rounded-lg p-8 w-full max-w-sm",
   class: "bg-white shadow-lg rounded-lg p-8 w-full max-w-xl"
-}, nt = {
+}, ot = {
   key: 0,
   class: "text-2xl font-bold text-center mb-6"
-}, at = ["innerHTML"], st = /* @__PURE__ */ P({
+}, it = ["innerHTML"], ct = /* @__PURE__ */ H({
   __name: "index",
   props: {
     _p: {},
@@ -391,33 +391,33 @@ const tt = { class: "bg-gray-100 flex items-center justify-center min-h-screen" 
   },
   setup(t) {
     const e = t;
-    let n = [];
-    const r = z([]), l = e._$p, a = z(null), o = z(null);
-    let c = "";
-    const d = z({
+    let a = [];
+    const l = E([]), r = e._$p, s = E(null), o = E(null);
+    let c = "", u = !1, i = !1;
+    const m = E({
       var: {
         event: {
           typ: {
-            redirect: async (s, u) => {
-              location.href = s.data;
+            redirect: async (n, f) => {
+              location.href = n.data;
             },
-            toast: async (s, u) => {
-              await B("msg", {
+            toast: async (n, f) => {
+              await L("msg", {
                 type: "show",
                 _p: {},
                 _$p: {},
-                custom: s.data
+                custom: n.data
                 //where:{
                 //key:`type`,
                 //value:`editor`
                 //},
               });
             },
-            api: async (s, u) => {
-              console.log(s, u);
+            api: async (n, f) => {
+              console.log(n, f);
               try {
-                s.data.body = u.body;
-                const f = Y(`${JSON.stringify(s.data.headers)}`, {
+                n.data.body = f.body;
+                const w = st(`${JSON.stringify(n.data.headers)}`, {
                   open: "<",
                   close: ">"
                 })({
@@ -425,18 +425,18 @@ const tt = { class: "bg-gray-100 flex items-center justify-center min-h-screen" 
                     token: localStorage.getItem("token") || ""
                   }
                 });
-                let y = s.data.headers;
+                let y = n.data.headers;
                 try {
-                  y = JSON.parse(f);
+                  y = JSON.parse(w);
                 } catch {
                 }
                 console.log(y);
-                const _ = await fetch(s.data.url, {
-                  method: s.data.method,
+                const d = await fetch(n.data.url, {
+                  method: n.data.method,
                   headers: y,
                   //_v[`data`].headers,
                   body: JSON.stringify(
-                    s.data.body
+                    n.data.body
                     /*{
                         title: 'foo',
                         body: 'bar',
@@ -444,101 +444,101 @@ const tt = { class: "bg-gray-100 flex items-center justify-center min-h-screen" 
                     }*/
                   )
                 });
-                if ([200, 201].indexOf(_.status) == -1)
-                  throw new Error(`err: ${_.statusText}, code=${_.status}`);
-                console.log(_.statusText), console.log(_.status), d.value.fn.call_event({
+                if ([200, 201].indexOf(d.status) == -1)
+                  throw new Error(`err: ${d.statusText}, code=${d.status}`);
+                console.log(d.statusText), console.log(d.status), m.value.fn.call_event({
                   on: "success",
-                  event: s.event
+                  event: n.event
                 });
-              } catch (h) {
-                console.log(h), d.value.fn.call_event({
+              } catch (p) {
+                console.log(p), m.value.fn.call_event({
                   on: "error",
-                  event: s.event
+                  event: n.event
                 });
               }
             },
-            body: async (s, u) => {
-              let h = null;
-              console.log(s, u);
+            body: async (n, f) => {
+              let p = null;
+              console.log(n, f);
               try {
-                h = {};
-                for (const _ of n)
+                p = {};
+                for (const d of a)
                   try {
-                    _.data.form.body_key && (I("msg", async (m) => {
-                      _.id == m._$p.data.curr.id && (h[_.data.form.body_key] = m.custom.value);
-                    }), await B("msg", {
+                    d.data.form.body_key && (M("msg", async (_) => {
+                      d.id == _._$p.data.curr.id && (p[d.data.form.body_key] = _.custom.value);
+                    }), await L("msg", {
                       type: "get_value",
                       where: {
                         key: "id",
-                        value: _.id
+                        value: d.id
                       }
                     }));
                   } catch {
                   }
-              } catch (_) {
-                throw new Error(`${_}`);
+              } catch (d) {
+                throw new Error(`${d}`);
               }
-              let f = !1;
+              let w = !1;
               return setTimeout(() => {
-                f = !0;
-              }, 500), await e._p.f.wait_until(() => f, 100), JSON.parse(`${JSON.stringify(s.data)}`, function(_, m) {
-                return m == "<body>" && (m = h), m;
+                w = !0;
+              }, 500), await e._p.f.wait_until(() => w, 100), JSON.parse(`${JSON.stringify(n.data)}`, function(d, _) {
+                return _ == "<body>" && (_ = p), _;
               });
             }
           }
         }
       },
       fn: {
-        call_event_for_ce_listen: async (s) => {
+        call_event_for_ce_listen: async (n) => {
           try {
-            const u = s._$, h = u.type, f = u._$p.data.curr.data.form.event.l, y = l.data.curr.data.event.l || [], _ = f.find((g) => g.on == h);
-            let m = {};
-            for (const g of _.call) {
-              const b = y.find((M) => M.name == g), v = b.delay || -1;
-              let $ = !1;
-              v != -1 && (setTimeout(() => {
-                $ = !0;
-              }, v), await e._p.f.wait_until(() => $, 100)), m[b.typ] = await d.value.var.event.typ[b.typ](b, m);
+            const f = n._$, p = f.type, w = f._$p.data.curr.data.form.event.l, y = r.data.curr.data.event.l || [], d = w.find((g) => g.on == p);
+            let _ = {};
+            for (const g of d.call) {
+              const v = y.find((F) => F.name == g), x = v.delay || -1;
+              let k = !1;
+              x != -1 && (setTimeout(() => {
+                k = !0;
+              }, x), await e._p.f.wait_until(() => k, 100)), _[v.typ] = await m.value.var.event.typ[v.typ](v, _);
             }
           } catch {
           }
         },
-        call_event: async (s) => {
+        call_event: async (n) => {
           try {
-            const u = s.event.l, h = l.data.curr.data.event.l || [], f = s.on, y = u.find((m) => m.on == f);
-            let _ = {};
-            for (const m of y.call) {
-              const g = h.find(($) => $.name == m), b = g.delay || -1;
-              let v = !1;
-              b != -1 && (setTimeout(() => {
-                v = !0;
-              }, b), await e._p.f.wait_until(() => v, 100)), _[g.typ] = await d.value.var.event.typ[g.typ](g, _);
+            const f = n.event.l, p = r.data.curr.data.event.l || [], w = n.on, y = f.find((_) => _.on == w);
+            let d = {};
+            for (const _ of y.call) {
+              const g = p.find((k) => k.name == _), v = g.delay || -1;
+              let x = !1;
+              v != -1 && (setTimeout(() => {
+                x = !0;
+              }, v), await e._p.f.wait_until(() => x, 100)), d[g.typ] = await m.value.var.event.typ[g.typ](g, d);
             }
           } catch {
           }
         }
       }
     });
-    (async () => I("msg", async (s) => {
-      await d.value.fn.call_event_for_ce_listen({ _$: s });
+    (async () => M("msg", async (n) => {
+      await m.value.fn.call_event_for_ce_listen({ _$: n });
     }))();
-    const i = () => {
-      r.value = [];
-      const s = n, u = [...s.keys()].filter((y) => s[y].type == "form_section"), f = [...[...s.keys()].filter((y) => s[y].type == "form_toast")];
-      for (const y of f)
-        r.value.push(`
+    const b = async () => {
+      await R(), l.value = [];
+      const n = a, f = [...n.keys()].filter((y) => n[y].type == "form_section"), w = [...[...n.keys()].filter((y) => n[y].type == "form_toast")];
+      for (const y of w)
+        l.value.push(`
         ${o.value[y]} 
         `);
-      for (const y of u) {
-        let _ = {
+      for (const y of f) {
+        let d = {
           _s: ""
         };
-        for (const [m, g] of s.entries())
+        for (const [_, g] of n.entries())
           try {
-            s[y].id == g.data.form.section_id && (_._s += ` ${o.value[m]} `);
+            n[y].id == g.data.form.section_id && (d._s += ` ${o.value[_]} `);
           } catch {
           }
-        r.value.push(` 
+        l.value.push(` 
         <div class='p-2'>
         
         <div>
@@ -546,16 +546,16 @@ const tt = { class: "bg-gray-100 flex items-center justify-center min-h-screen" 
         </div>
 
         <div class='flex flex-wrap gap-2 md:gap-3' >
-        ${_._s}
+        ${d._s}
         </div>
 
         </div>
         
         `);
       }
-    }, w = async () => {
-      (async () => {
-        a.value = {
+    }, $ = async () => {
+      i || (i = !0, (async () => {
+        s.value = {
           config: {
             lazy_lib: {
               renderer_src: "https://cdn.jsdelivr.net/gh/1mn-io/mn-app/modules/{*}/dist/renderer.es.js",
@@ -586,10 +586,10 @@ const tt = { class: "bg-gray-100 flex items-center justify-center min-h-screen" 
             //         }
             //     }
             // ]
-            l: n
+            l: a
           }
         };
-        let s = {
+        let n = {
           l: [
             {
               id: "3e1bc78c-104f-4f6f-aa87-ee295db8ad8c",
@@ -599,7 +599,7 @@ const tt = { class: "bg-gray-100 flex items-center justify-center min-h-screen" 
               }
             }
           ]
-        }, u = {
+        }, f = {
           lib: [],
           lazy_lib: {
             renderer_src: "https://cdn.jsdelivr.net/gh/coreutility/content-engine@latest/modules/{*}/dist/renderer.es.js",
@@ -607,56 +607,60 @@ const tt = { class: "bg-gray-100 flex items-center justify-center min-h-screen" 
             editor_src: "https://cdn.jsdelivr.net/gh/coreutility/content-engine@latest/modules/{*}/dist/editor.es.js"
           }
         };
-        s = a.value.data, u.lazy_lib = a.value.config.lazy_lib;
-        const h = await Z(u), f = await G(u);
+        n = s.value.data, f.lazy_lib = s.value.config.lazy_lib;
+        const p = await Y(f), w = await tt(f);
         await (async () => {
-          const _ = await h.set({
-            data: s,
+          const d = await p.set({
+            data: n,
             return: {
               r: "chunk"
             }
           });
-          console.log(_.r), o.value = _.r, c = _.style, r.value = o.value, i();
-          const m = document.createElement("style");
-          document.head.appendChild(m), m.innerHTML = c, setTimeout(async () => {
-            await f.set({
-              data: s
+          console.log(d.r), await R(), o.value = d.r, c = d.style, await b();
+          const _ = document.createElement("style");
+          document.head.appendChild(_), _.innerHTML = c, setTimeout(async () => {
+            await w.set({
+              data: n
             });
           }, 10);
         })();
+      })());
+    }, O = async () => {
+      (async () => {
+        try {
+          typeof e._$p.data.curr.data.ce_file == "string" ? a = (await (await fetch(e._$p.data.curr.data.ce_file)).json()).data.l : a = e._$p.data.curr.data.ce_file.data.l;
+        } catch (n) {
+          console.log(n);
+          return;
+        }
+        a.push({
+          id: "c77697833678c-form_toast",
+          type: "form_toast",
+          slug: "form_toast",
+          data: {
+            //"env": "dev",
+          }
+        }), console.log(a), await $();
       })();
     };
-    return (async () => {
-      try {
-        typeof e._$p.data.curr.data.ce_file == "string" ? n = (await (await fetch(e._$p.data.curr.data.ce_file)).json()).data.l : n = e._$p.data.curr.data.ce_file.data.l;
-      } catch (s) {
-        console.log(s);
-        return;
-      }
-      n.push({
-        id: "c77697833678c-form_toast",
-        type: "form_toast",
-        slug: "form_toast",
-        data: {
-          //"env": "dev",
-        }
-      }), console.log(n), await w();
-    })(), (s, u) => (x(), k("div", tt, [
-      O("div", et, [
-        S(l).data.curr.data.title ? (x(), k("h2", nt, W(S(l).data.curr.data.title), 1)) : V("", !0),
-        (x(!0), k(F, null, H(r.value, (h) => (x(), k("div", null, [
-          O("div", { innerHTML: h }, null, 8, at)
+    return A(async () => {
+      u || (u = !0, await O());
+    }), (n, f) => (T(), z("div", rt, [
+      I("div", lt, [
+        N(r).data.curr.data.title ? (T(), z("h2", ot, U(N(r).data.curr.data.title), 1)) : q("", !0),
+        (T(!0), z(D, null, Z(l.value, (p) => (T(), z("div", null, [
+          I("div", { innerHTML: p }, null, 8, it)
         ]))), 256))
       ])
     ]));
   }
-}), lt = async (t) => ({
+}), ut = async (t) => ({
   set: async (e) => {
     console.log(`--hydrator [${e.data.curr.type}]`);
-    const r = A(st, {
+    const l = G(ct, {
       _p: t,
       _$p: e
-    }), l = {
+    }), r = {
       r: "",
       style: "",
       //set..
@@ -670,11 +674,11 @@ const tt = { class: "bg-gray-100 flex items-center justify-center min-h-screen" 
           });
         }
       }
-    }, a = document.getElementById(t.f.name("vue-root"));
-    return r.mount(a), l;
+    }, s = document.getElementById(t.f.name("vue-root"));
+    return l.mount(s), r;
   }
 });
 export {
-  lt as hydrator,
-  lt as index
+  ut as hydrator,
+  ut as index
 };
