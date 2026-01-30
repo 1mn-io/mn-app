@@ -34,7 +34,7 @@
                                     "name": "product",
                                     "component": "../views/ContentEngine.vue",
                                     "meta": {
-                                        "ce_file": "http://localhost:5173/test/ce_files/product_list.json"
+                                        "ce_file": "https://raw.githubusercontent.com/1mn-io/mn-app/refs/heads/main/modules/product_list/dist/data.json"
                                     }
                                 },
                                 {
@@ -90,6 +90,31 @@
                             "component": "../views/ContentEngine.vue",
                             "meta": {
                                 "ce_file": "https://raw.githubusercontent.com/1mn-io/mn-app/refs/heads/main/modules/address_upsert/dist/data.json"
+                            }
+                        },
+                        {
+                            "path": "/wishlist",
+                            "name": "product_fav",
+                            "component": "../views/ContentEngine.vue",
+                            "meta": {
+                                "ce_file": "https://raw.githubusercontent.com/1mn-io/mn-app/refs/heads/main/modules/product_fav/dist/data.json"
+                            }
+                        },
+                        {
+                            "path": "/dashboard",
+                            "name": "dashboard",
+                            "component": "../views/ContentEngine.vue",
+                            "meta": {
+                                "ce_file": "https://raw.githubusercontent.com/1mn-io/mn-app/refs/heads/main/modules/dashboard_sf/dist/data.json",
+                                "auth": false
+                            }
+                        },
+                        {
+                            "path": "/login",
+                            "name": "login",
+                            "component": "../views/ContentEngine.vue",
+                            "meta": {
+                                "ce_file": "https://raw.githubusercontent.com/1mn-io/mn-app/refs/heads/main/modules/sign_in/dist/data.json"
                             }
                         },
                         {
