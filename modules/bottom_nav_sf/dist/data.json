@@ -1,0 +1,23 @@
+{
+    "config": {
+        "lazy_lib": {
+            "renderer_src": "https://cdn.jsdelivr.net/gh/1mn-io/mn-app@latest/modules/{*}/dist/renderer.es.js",
+            "hydrator_src": "https://cdn.jsdelivr.net/gh/1mn-io/mn-app@latest/modules/{*}/dist/hydrator.es.js",
+            "editor_src": "https://cdn.jsdelivr.net/gh/1mn-io/mn-app@latest/modules/{*}/dist/editor.es.js"
+        }
+    },
+    "data": {
+        "l": [
+            {
+                "id": "7648c-bottom_nav_sf",
+                "type": "bottom_nav_sf",
+                "slug": "bottom_nav_sf",
+                "data": {
+                    "data": "",
+                    "theme": "light",
+                    "foo": ""
+                }
+            }
+        ]
+    }
+}
