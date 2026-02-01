@@ -22,6 +22,7 @@ let _data = {
       type: "sample",
       data: {
         title: "On-Boarding",
+        mode: "auto", //auto | manual
         event: {
           l: [
             {
@@ -75,7 +76,9 @@ let _data = {
                 headers:{
                   //'Authorization': `Bearer <localStorage.token>`,
                   //'Authorization': `Bearer eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImYwZTNlMDRiLTVkNDAtNDg1ZS05OGU4LWEzOTI3NWU3MzM0OCIsInNlY3VyaXR5Ijp7InBhcnR5IjpbInBhcnR5XzEiLCJwYXJ0eV8yIl19LCJzdWIiOiJmMGUzZTA0Yi01ZDQwLTQ4NWUtOThlOC1hMzkyNzVlNzMzNDgiLCJpYXQiOjE3NjU4MTI4Mjh9.OoClnPtlxI71L-e555nbNSmenmGufxewp78SlmdZCNxeuauXao5RRvqwOKQ77SJFqJXk0ng6GZ7VOgYECdEf-3k1UGX7w1NE_D5A6SP3UkVsSG8orYACFuvTyesbFwkpnEhdu0PBd6n8wuLkgU6nZ1bLDzKVg1zd8fFeJrwmUqk`,
-                  'Content-type': 'application/json; charset=UTF-8',
+                  //'Content-type': 'application/json; charset=UTF-8',
+                  "Content-Type": "application/json",
+                  
                 },
                 //body:{},
               },
@@ -393,18 +396,21 @@ await _run();
 
 //test..
 setTimeout(async() => {
- ce_listen("msg", async(_$) => {
+ /*ce_listen("msg", async(_$) => {
     console.log(`ce_listen`, _$);
- });
- await ce_call("msg",{
+ });*/
+ /*await ce_call("msg",{
   type:`change`,
   _p:{},
   _$p:{},
   custom:{},
-  /*where:{
-    key:`type`,
-    value:`editor`
-  },*/
+  //where:{
+   // key:`type`,
+    //value:`editor`
+ // },
+ });*/
+  ce_listen("child:msg"as any, async(_$:any) => {
+    console.log(`ce_listen`, _$);
  });
 }, 200);
 

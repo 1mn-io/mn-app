@@ -12,7 +12,7 @@ type _$ = {
     /**can be used to pass eg=> `HTMLElement` */
     el?: any;
 };
-type Events = "msg";
+type Events = "msg" | any;
 type _p_TYP = {
     /**@my module can use it to set custom variables. */
     my: any;
@@ -44,6 +44,7 @@ type _$p_TYP = {
             "type": "text";
             "data": {
                 "data": string;
+                "mode": "auto" | "manual";
                 "ce_file": any;
                 "title": string;
                 "event": {
