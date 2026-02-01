@@ -24,6 +24,11 @@
                                     "label": "Products",
                                     "icon": "pi pi-fw pi-list",
                                     "to": "/product-management/products"
+                                },
+                                {
+                                    "label": "Upload Products",
+                                    "icon": "pi pi-fw pi-list",
+                                    "to": "/product-management/upload-products"
                                 }
                             ]
                         },
@@ -64,6 +69,16 @@
                                     "label": "Interfaces",
                                     "icon": "pi pi-fw pi-list",
                                     "to": "/ui-management/interfaces"
+                                }
+                            ]
+                        },
+                        {
+                            "label": "Custom data",
+                            "items": [
+                                {
+                                    "label": "Data list",
+                                    "icon": "pi pi-fw pi-list",
+                                    "to": "/custom-data/data-list"
                                 }
                             ]
                         },
@@ -307,6 +322,14 @@
                                     }
                                 },
                                 {
+                                    "path": "/product-management/upload-products",
+                                    "name": "upload_products",
+                                    "component": "../views/ContentEngine.vue",
+                                    "meta": {
+                                        "ce_file": "https://raw.githubusercontent.com/1mn-io/mn-app/main/modules/admin_product_upload/dist/data.json"
+                                    }
+                                },
+                                {
                                     "path": "/coupon-management/coupon",
                                     "name": "create_coupon",
                                     "component": "../views/ContentEngine.vue",
@@ -347,11 +370,19 @@
                                     }
                                 },
                                 {
+                                    "path": "/custom-data/data-list",
+                                    "name": "custom_data_list",
+                                    "component": "../views/ContentEngine.vue",
+                                    "meta": {
+                                        "ce_file": "https://raw.githubusercontent.com/1mn-io/mn-app/main/modules/admin_custom_data_fragment/dist/data.json"
+                                    }
+                                },
+                                {
                                     "path": "/",
                                     "name": "dashboard",
                                     "component": "../views/Dashboard.vue",
                                     "meta": {
-                                      "auth": false
+                                        "auth": false
                                     }
                                 },
                                 {
