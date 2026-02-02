@@ -46,6 +46,10 @@ type _$p_TYP = {
                 "data": string;
                 "theme": string;
                 "menu": any[];
+                "routes": any[];
+                "component": {
+                    "l": any[];
+                };
             };
         };
     };

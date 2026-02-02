@@ -16,6 +16,22 @@
                     "data": "",
                     "theme": "light",
                     "foo": "",
+                    "component": {
+                        "l": [
+                            {
+                                "name": "header",
+                                "ce_file": "https://raw.githubusercontent.com/1mn-io/mn-app/refs/heads/main/modules/header_sf/dist/data.json"
+                            },
+                            {
+                                "name": "footer",
+                                "ce_file": "https://raw.githubusercontent.com/1mn-io/mn-app/refs/heads/main/modules/footer_sf/dist/data.json"
+                            },
+                            {
+                                "name": "bottom_nav",
+                                "ce_file": "https://raw.githubusercontent.com/1mn-io/mn-app/refs/heads/main/modules/bottom_nav_sf/dist/data.json"
+                            }
+                        ]
+                    },
                     "routes": [
                         {
                             "path": "/",
@@ -23,6 +39,46 @@
                             "children": [
                                 {
                                     "path": "/",
+                                    "name": "home",
+                                    "component": "../views/ContentEngine.vue",
+                                    "meta": {
+                                        "ce_file": {
+                                            "config": {
+                                                "lazy_lib": {
+                                                    "renderer_src": "https://cdn.jsdelivr.net/gh/1mn-io/mn-app@latest/modules/{*}/dist/renderer.es.js",
+                                                    "hydrator_src": "https://cdn.jsdelivr.net/gh/1mn-io/mn-app@latest/modules/{*}/dist/hydrator.es.js",
+                                                    "editor_src": "https://cdn.jsdelivr.net/gh/1mn-io/mn-app@latest/modules/{*}/dist/editor.es.js"
+                                                }
+                                            },
+                                            "data": {
+                                                "l": [
+                                                    {
+                                                        "id": "7bc78c-carousel",
+                                                        "type": "carousel",
+                                                        "slug": "carousel",
+                                                        "data": {
+                                                            "data": "",
+                                                            "theme": "light",
+                                                            "foo": ""
+                                                        }
+                                                    },
+                                                    {
+                                                        "id": "3e1bc78c-104f-4f6f-aa87-75a",
+                                                        "type": "product_list",
+                                                        "slug": "product_list",
+                                                        "data": {
+                                                            "data": "",
+                                                            "theme": "light",
+                                                            "foo": ""
+                                                        }
+                                                    }
+                                                ]
+                                            }
+                                        }
+                                    }
+                                },
+                                {
+                                    "path": "/product-details",
                                     "name": "product_details",
                                     "component": "../views/ContentEngine.vue",
                                     "meta": {

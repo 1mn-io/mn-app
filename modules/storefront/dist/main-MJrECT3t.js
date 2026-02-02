@@ -1156,7 +1156,7 @@ function Dn(e) {
   return W(Ne);
 }
 const Sn = async (e) => {
-  const o = { .../* @__PURE__ */ Object.assign({ "../views/ContentEngine.vue": () => import("./ContentEngine-DO08pEKf.js"), "../views/pages/Empty.vue": () => import("./Empty-B8RCfZre.js"), "../views/pages/NotFound.vue": () => import("./NotFound-BtYwpfDC.js") }), .../* @__PURE__ */ Object.assign({ "../layout/AppLayout.vue": () => import("./AppLayout-DbwsfyZr.js") }), .../* @__PURE__ */ Object.assign({ "../components/ContentEngine.vue": () => import("./ContentEngine-DxUCTNEa.js") }) };
+  const o = { .../* @__PURE__ */ Object.assign({ "../views/ContentEngine.vue": () => import("./ContentEngine-COCH6iay.js"), "../views/pages/Empty.vue": () => import("./Empty-B8RCfZre.js"), "../views/pages/NotFound.vue": () => import("./NotFound-BtYwpfDC.js") }), .../* @__PURE__ */ Object.assign({ "../layout/AppLayout.vue": () => import("./AppLayout-B5gLLzJM.js") }), .../* @__PURE__ */ Object.assign({ "../components/CEWidget.vue": () => import("./CEWidget-CmwZu5UR.js"), "../components/ContentEngine.vue": () => import("./ContentEngine--VRfKvT6.js") }) };
   function f(l) {
     return l.map((h) => {
       const i = { ...h };
