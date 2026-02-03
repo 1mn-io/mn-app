@@ -1,1 +1,0 @@
-"use strict";Object.defineProperty(exports,Symbol.toStringTag,{value:"Module"});const t=require("./_plugin-vue_export-helper-BHFhmbuH.cjs"),e=require("./runtime-dom.esm-bundler-DOal7cnu.cjs"),r={},n={class:"h-32 bg-white rounded-xl p-4"};function c(s,u){return e.openBlock(),e.createElementBlock("div",n," Returns ")}const o=t._export_sfc(r,[["render",c]]);exports.default=o;
