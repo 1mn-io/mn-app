@@ -1,0 +1,59 @@
+{
+    "config": {
+        "lazy_lib": {
+            "renderer_src": "https://cdn.jsdelivr.net/gh/1mn-io/mn-app@latest/modules/{*}/dist/renderer.es.js",
+            "hydrator_src": "https://cdn.jsdelivr.net/gh/1mn-io/mn-app@latest/modules/{*}/dist/hydrator.es.js",
+            "editor_src": "https://cdn.jsdelivr.net/gh/1mn-io/mn-app@latest/modules/{*}/dist/editor.es.js"
+        }
+    },
+    "data": {
+        "l": [
+            {
+                "id": "38c-dialog",
+                "type": "dialog",
+                "slug": "dialog",
+                "data": {
+                    "label": "Dialog",
+                    "visible": true,
+                    "modal": true,
+                    "style": "",
+                    "class": "w-sm md:w-md",
+                    "positive": {
+                        "label": "Ok"
+                    },
+                    "negative": {
+                        "label": "Cancel"
+                    },
+                    "content": {
+                        "ce_file": {
+                            "config": {
+                                "lazy_lib": {
+                                    "renderer_src": "https://cdn.jsdelivr.net/gh/1mn-io/mn-app@latest/modules/{*}/dist/renderer.es.js",
+                                    "hydrator_src": "https://cdn.jsdelivr.net/gh/1mn-io/mn-app@latest/modules/{*}/dist/hydrator.es.js",
+                                    "editor_src": "https://cdn.jsdelivr.net/gh/1mn-io/mn-app@latest/modules/{*}/dist/editor.es.js"
+                                }
+                            },
+                            "data": {
+                                "l": [
+                                    {
+                                        "id": "c78c-form_inputtext",
+                                        "type": "form_inputtext",
+                                        "slug": "form_inputtext",
+                                        "data": {
+                                            "value": "Hello text! ",
+                                            "placeholder": "Enter bio",
+                                            "style": {},
+                                            "class": "",
+                                            "variant": "outlined"
+                                        }
+                                    }
+                                ]
+                            }
+                        },
+                        "value": "<div>Hello world!</div>"
+                    }
+                }
+            }
+        ]
+    }
+}
