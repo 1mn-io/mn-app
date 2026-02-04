@@ -215,11 +215,6 @@
                                     "icon": "pi pi-fw pi-user",
                                     "items": [
                                         {
-                                            "label": "Login",
-                                            "icon": "pi pi-fw pi-sign-in",
-                                            "to": "/auth/login"
-                                        },
-                                        {
                                             "label": "Error",
                                             "icon": "pi pi-fw pi-times-circle",
                                             "to": "/auth/error"
@@ -320,6 +315,14 @@
                     ],
                     "routes": [
                         {
+                            "path": "/login",
+                            "name": "login",
+                            "component": "../views/ContentEngine.vue",
+                            "meta": {
+                                "ce_file": "https://raw.githubusercontent.com/1mn-io/mn-app/main/modules/signin_app/dist/data.json"
+                            }
+                        },
+                        {
                             "path": "/",
                             "component": "../layout/AppLayout.vue",
                             "children": [
@@ -328,7 +331,8 @@
                                     "name": "product",
                                     "component": "../views/ContentEngine.vue",
                                     "meta": {
-                                        "ce_file": "https://raw.githubusercontent.com/1mn-io/mn-app/refs/heads/main/modules/admin_product_fragment/dist/data.json"
+                                        "ce_file": "https://raw.githubusercontent.com/1mn-io/mn-app/refs/heads/main/modules/admin_product_fragment/dist/data.json",
+                                        "auth": true
                                     }
                                 },
                                 {
@@ -336,7 +340,8 @@
                                     "name": "upload_products",
                                     "component": "../views/ContentEngine.vue",
                                     "meta": {
-                                        "ce_file": "https://raw.githubusercontent.com/1mn-io/mn-app/main/modules/admin_product_upload/dist/data.json"
+                                        "ce_file": "https://raw.githubusercontent.com/1mn-io/mn-app/main/modules/admin_product_upload/dist/data.json",
+                                        "auth": true
                                     }
                                 },
                                 {
@@ -344,7 +349,8 @@
                                     "name": "create_coupon",
                                     "component": "../views/ContentEngine.vue",
                                     "meta": {
-                                        "ce_file": "https://raw.githubusercontent.com/1mn-io/mn-app/refs/heads/main/modules/admin_coupon_upsert/dist/data.json"
+                                        "ce_file": "https://raw.githubusercontent.com/1mn-io/mn-app/refs/heads/main/modules/admin_coupon_upsert/dist/data.json",
+                                        "auth": true
                                     }
                                 },
                                 {
@@ -352,7 +358,8 @@
                                     "name": "coupon",
                                     "component": "../views/ContentEngine.vue",
                                     "meta": {
-                                        "ce_file": "https://raw.githubusercontent.com/1mn-io/mn-app/refs/heads/main/modules/admin_coupon_fragment/dist/data.json"
+                                        "ce_file": "https://raw.githubusercontent.com/1mn-io/mn-app/refs/heads/main/modules/admin_coupon_fragment/dist/data.json",
+                                        "auth": true
                                     }
                                 },
                                 {
@@ -360,7 +367,8 @@
                                     "name": "order",
                                     "component": "../views/ContentEngine.vue",
                                     "meta": {
-                                        "ce_file": "https://raw.githubusercontent.com/1mn-io/mn-app/refs/heads/main/modules/admin_order_fragment/dist/data.json"
+                                        "ce_file": "https://raw.githubusercontent.com/1mn-io/mn-app/refs/heads/main/modules/admin_order_fragment/dist/data.json",
+                                        "auth": true
                                     }
                                 },
                                 {
@@ -368,7 +376,8 @@
                                     "name": "interfaces",
                                     "component": "../views/ContentEngine.vue",
                                     "meta": {
-                                        "ce_file": "https://raw.githubusercontent.com/1mn-io/mn-app/refs/heads/main/modules/admin_ui_fragment/dist/data.json"
+                                        "ce_file": "https://raw.githubusercontent.com/1mn-io/mn-app/refs/heads/main/modules/admin_ui_fragment/dist/data.json",
+                                        "auth": true
                                     }
                                 },
                                 {
@@ -376,7 +385,8 @@
                                     "name": "create_interface",
                                     "component": "../views/ContentEngine.vue",
                                     "meta": {
-                                        "ce_file": "https://raw.githubusercontent.com/1mn-io/mn-app/main/modules/ui_editor/dist/data.json"
+                                        "ce_file": "https://raw.githubusercontent.com/1mn-io/mn-app/main/modules/ui_editor/dist/data.json",
+                                        "auth": true
                                     }
                                 },
                                 {
@@ -384,7 +394,8 @@
                                     "name": "custom_data_list",
                                     "component": "../views/ContentEngine.vue",
                                     "meta": {
-                                        "ce_file": "https://raw.githubusercontent.com/1mn-io/mn-app/main/modules/admin_custom_data_fragment/dist/data.json"
+                                        "ce_file": "https://raw.githubusercontent.com/1mn-io/mn-app/main/modules/admin_custom_data_fragment/dist/data.json",
+                                        "auth": true
                                     }
                                 },
                                 {
@@ -392,7 +403,8 @@
                                     "name": "users",
                                     "component": "../views/ContentEngine.vue",
                                     "meta": {
-                                        "ce_file": "https://raw.githubusercontent.com/1mn-io/mn-app/main/modules/admin_users_fragment/dist/data.json"
+                                        "ce_file": "https://raw.githubusercontent.com/1mn-io/mn-app/main/modules/admin_users_fragment/dist/data.json",
+                                        "auth": true
                                     }
                                 },
                                 {
@@ -510,11 +522,6 @@
                             "path": "/pages/notfound",
                             "name": "notfound",
                             "component": "../views/pages/NotFound.vue"
-                        },
-                        {
-                            "path": "/auth/login",
-                            "name": "login",
-                            "component": "../views/pages/auth/Login.vue"
                         },
                         {
                             "path": "/auth/access",
