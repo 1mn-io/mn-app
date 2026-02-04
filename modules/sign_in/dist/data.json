@@ -25,11 +25,11 @@
                         "subtitle": "Enter your details to login."
                     },
                     "click": {
-                        "sign_up": "http://localhost:5173/signup",
-                        "forgot_pwd": "http://localhost:5173/forgot-password"
+                        "sign_up": "/signup",
+                        "forgot_pwd": "/forgot-password"
                     },
                     "event": {
-                        "onLoginSuccess": "http://localhost:5173/dashboard"
+                        "onLoginSuccess": "/"
                     },
                     "theme": "light"
                 }

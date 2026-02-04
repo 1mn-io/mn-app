@@ -1,23 +1,23 @@
-import { index as l } from "./hydrator.es.js";
+import { hydrator as l } from "./hydrator.es.js";
 import { index as y } from "./renderer.es.js";
-const p = async () => ({
+const h = async () => ({
   f: {
     name: (a) => `${a.name}${a.id}`
   }
-}), f = () => ({
+}), p = () => ({
   set: () => "xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx".replace(/[xy]/g, function(a) {
     const r = Math.random() * 16 | 0;
     return (a == "x" ? r : r & 3 | 8).toString(16);
   })
 }), E = async (a) => {
-  const r = await p();
+  const r = await h();
   return {
     set: async (x, i) => {
       const c = {
         r: ""
         //style: ``,
       }, d = x.data.curr || {
-        id: f().set(),
+        id: p().set(),
         type: "text",
         data: {
           data: ""
@@ -47,7 +47,7 @@ const p = async () => ({
           add: (e) => {
             let n = e.el;
             n?.setAttribute("contenteditable", "true"), n?.classList.add("block-content"), n?.addEventListener("click", () => {
-            }), n?.addEventListener("input", function(h) {
+            }), n?.addEventListener("input", function(f) {
               const u = n.innerHTML;
               e.$d.data = u, t.evt.change();
             });
