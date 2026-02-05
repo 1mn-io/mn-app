@@ -45,6 +45,14 @@ type _$p_TYP = {
             "data": {
                 "data": string;
                 "theme": string;
+                "api": {
+                    "url": string;
+                    "token": string;
+                };
+                "event": {
+                    "onPaymentSuccess": string;
+                    "onPaymentFail": string;
+                };
             };
         };
     };

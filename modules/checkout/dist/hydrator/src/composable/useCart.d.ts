@@ -1,7 +1,12 @@
+import { _p_TYP } from '../../../shared/types';
 interface CartItem {
     pricing: any;
 }
-export declare const useCart: () => {
+export declare const useCart: (_v: {
+    _ins: any;
+    _p: _p_TYP;
+    _$p: any;
+}) => {
     items: import('vue').Ref<{
         pricing: any;
     }[], CartItem[] | {

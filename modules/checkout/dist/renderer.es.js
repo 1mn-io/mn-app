@@ -1,4 +1,4 @@
-import { s as B, x as z, q as E, e as N, y as _, z as u, N as v, A as V, B as h, F as j, S as M, C as U, D as H, T as L, E as p, G as C, H as O, I as P, J as F, K as I, n as D, L as G, M as K, O as W, P as q, Q as J, R as Q, U as X, V as Y, W as Z, X as ee, Y as re, k as te, a as oe, o as ae, Z as ie } from "./runtime-dom.esm-bundler-CO4_3xJR.js";
+import { y as B, z, x as E, f as N, A as _, B as u, N as v, C as V, D as h, F as j, S as M, E as U, G as H, T as L, H as p, I as C, J as O, K as P, L as F, M as I, n as D, O as G, P as K, Q as W, R as q, U as J, V as Q, W as X, X as Y, Y as Z, Z as ee, _ as re, d as te, a as oe, o as ae, $ as ie } from "./runtime-dom.esm-bundler-BAuQH-MH.js";
 function ne(e, r) {
   r === void 0 && (r = {});
   var t = r.insertAt;
@@ -260,7 +260,7 @@ function ye(e, r, t, o) {
 const { isVNode: ke } = z;
 function w(e, r, t) {
   if (!e.hasAsync)
-    return r + A(e);
+    return r + $(e);
   let o = r;
   for (let a = t; a < e.length; a += 1) {
     const i = e[a];
@@ -280,17 +280,17 @@ function w(e, r, t) {
 function R(e) {
   return w(e, "", 0);
 }
-function A(e) {
+function $(e) {
   let r = "";
   for (let t = 0; t < e.length; t++) {
     let o = e[t];
-    h(o) ? r += o : r += A(o);
+    h(o) ? r += o : r += $(o);
   }
   return r;
 }
-async function $(e, r = {}) {
+async function A(e, r = {}) {
   if (ke(e))
-    return $(E({ render: () => e }), r);
+    return A(E({ render: () => e }), r);
   const t = N(e._component, e._props);
   t.appContext = e._context, e.provide(_, r);
   const o = await T(t), a = await R(o);
@@ -333,7 +333,7 @@ const Te = async (e) => ({
     return {
       r: `
                  <div>
-                    ${await $(o)}
+                    ${await A(o)}
                     <div id="${e.f.name("vue-root")}"></div>
                   </div>
                 `,

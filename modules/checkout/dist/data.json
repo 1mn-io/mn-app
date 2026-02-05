@@ -1,9 +1,9 @@
 {
     "config": {
         "lazy_lib": {
-            "renderer_src": "https://cdn.jsdelivr.net/gh/1mn-io/mn-app@latest/modules/{*}/dist/renderer.es.js",
-            "hydrator_src": "https://cdn.jsdelivr.net/gh/1mn-io/mn-app@latest/modules/{*}/dist/hydrator.es.js",
-            "editor_src": "https://cdn.jsdelivr.net/gh/1mn-io/mn-app@latest/modules/{*}/dist/editor.es.js"
+            "renderer_src": "https://cdn.jsdelivr.net/gh/1mn-io/mn-app/modules/{*}/dist/renderer.es.js",
+            "hydrator_src": "https://cdn.jsdelivr.net/gh/1mn-io/mn-app/modules/{*}/dist/hydrator.es.js",
+            "editor_src": "https://cdn.jsdelivr.net/gh/1mn-io/mn-app/modules/{*}/dist/editor.es.js"
         }
     },
     "data": {
@@ -14,7 +14,15 @@
                 "slug": "checkout",
                 "data": {
                     "data": "Hello world! ",
-                    "theme": "light"
+                    "theme": "light",
+                    "api": {
+                        "url": "https://fastapi.dryutil.1mn.io/client/api/i/ona/order_management",
+                        "token": "Bearer <localStorage.token>"
+                    },
+                    "event": {
+                        "onPaymentSuccess": "https://storefront.1mn.io/orders",
+                        "onPaymentFail": "https://storefront.1mn.io/orders"
+                    }
                 }
             }
         ]
