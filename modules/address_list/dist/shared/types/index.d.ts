@@ -44,6 +44,7 @@ type _$p_TYP = {
             "type": "text";
             "data": {
                 "data": string;
+                "mode": string;
                 "event": any;
             };
         };

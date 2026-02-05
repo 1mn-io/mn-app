@@ -16,6 +16,7 @@
                     "data": "",
                     "theme": "light",
                     "foo": "",
+                    "mode": "normal",
                     "event": {
                         "onClickAdd": "/address/add",
                         "onClickEdit": "/address/edit?id={id}"
