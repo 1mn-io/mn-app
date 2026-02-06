@@ -42,6 +42,31 @@ let _data = {
         //set..
         "routes": [
 
+
+          //set..
+          {
+            path: '/login',
+            name: 'login',
+            component: '../views/ContentEngine.vue',
+            meta: {
+              ce_file: "https://raw.githubusercontent.com/1mn-io/mn-app/refs/heads/main/modules/sign_in/dist/data.json",
+            }
+          },
+          {
+            path: '/signup',
+            name: 'signup',
+            component: '../views/ContentEngine.vue',
+            meta: {
+              ce_file: "https://raw.githubusercontent.com/1mn-io/mn-app/refs/heads/main/modules/sign_up/dist/data.json",
+            }
+          },
+
+
+          
+
+
+
+
           //set..
           {
             path: '/',
@@ -86,8 +111,48 @@ let _data = {
                           "slug": "product_list",
                           "data": {
                             "data": "",
-                            "theme": "light",
-                            "foo": ""
+                            //set..
+                            "mode": "only_list", //normal, only_list
+                            "api": {
+                              //"url": "https://fastapi.dryutil.1mn.io/client-public/api/i/ona/product_dir?typ=view_product",
+                              "url": "https://fastapi.dryutil.1mn.io/client-public/api/i/ona/product_dir?typ=get_product_list",
+                              "token": "Bearer <localStorage.token>",
+                            },
+                            "cart_popup": {
+                              "ce_file": {
+                                "config": {
+                                  "lazy_lib": {
+                                    "renderer_src": "https://cdn.jsdelivr.net/gh/1mn-io/mn-app@latest/modules/{*}/dist/renderer.es.js",
+                                    "hydrator_src": "https://cdn.jsdelivr.net/gh/1mn-io/mn-app@latest/modules/{*}/dist/hydrator.es.js",
+                                    "editor_src": "https://cdn.jsdelivr.net/gh/1mn-io/mn-app@latest/modules/{*}/dist/editor.es.js"
+                                  }
+                                },
+                                "data": {
+                                  "l": [
+                                    {
+                                      "id": "3e1bc78c-cart_popup",
+                                      "type": "cart_popup",
+                                      "slug": "cart_popup",
+                                      "data": {
+                                        "data": "",
+                                        "theme": "light",
+                                        "env": "prod", //dev, prod
+                                        //set..
+                                        "api": {
+                                          "0": {
+                                            "url": "https://fastapi.dryutil.1mn.io/client-public/api/i/ona/product_dir?typ=view_product"
+                                          },
+                                          "1": {
+                                            "url": "https://fastapi.dryutil.1mn.io/client-public/api/i/ona/order_management"
+                                          },
+                                          "token": "Bearer <localStorage.token>"
+                                        }
+                                      }
+                                    }
+                                  ]
+                                }
+                              }
+                            }
                           }
                         }
 
@@ -237,20 +302,6 @@ let _data = {
               auth: false,
             }
           },
-
-
-
-
-          //set..
-          {
-            path: '/login',
-            name: 'login',
-            component: '../views/ContentEngine.vue',
-            meta: {
-              ce_file: "https://raw.githubusercontent.com/1mn-io/mn-app/refs/heads/main/modules/sign_in/dist/data.json",
-            }
-          },
-
 
 
 
