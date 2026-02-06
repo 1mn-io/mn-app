@@ -2338,7 +2338,8 @@ const Lr = { class: "bg-gray-50 dark:bg-[#0b1120] min-h-screen pb-20 font-sans t
       y.value.ce_call("msg", {
         type: "product:open",
         custom: {
-          product_id: _.document.id
+          product_id: _.document.slug
+          // _v.document.id, 
         },
         _p: {},
         _$p: {}
