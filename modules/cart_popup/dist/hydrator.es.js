@@ -732,14 +732,14 @@ function Tt(e) {
     collapse: typeof e.collapse > "u" ? !0 : e.collapse,
     collapseDuration: e.collapseDuration || u.COLLAPSE_DURATION
   }), l = s.done || St, y = _(() => s.appendPosition ? `${s.enter}--${s.position}` : s.enter), p = _(() => s.appendPosition ? `${s.exit}--${s.position}` : s.exit), x = _(() => e.pauseOnHover ? {
-    onMouseenter: B,
-    onMouseleave: $
+    onMouseenter: $,
+    onMouseleave: B
   } : {});
   function d() {
     const A = y.value.split(" ");
     f().addEventListener(
       pe.ENTRANCE_ANIMATION_END,
-      $,
+      B,
       { once: !0 }
     );
     const N = (F) => {
@@ -766,15 +766,15 @@ function Tt(e) {
     return e.toastRef.value;
   }
   function C() {
-    document.hasFocus() || B(), window.addEventListener("focus", $), window.addEventListener("blur", B);
+    document.hasFocus() || $(), window.addEventListener("focus", B), window.addEventListener("blur", $);
   }
   function g() {
-    window.removeEventListener("focus", $), window.removeEventListener("blur", B);
-  }
-  function $() {
-    (!e.loading.value || e.isLoading === void 0) && (t.value = !0);
+    window.removeEventListener("focus", B), window.removeEventListener("blur", $);
   }
   function B() {
+    (!e.loading.value || e.isLoading === void 0) && (t.value = !0);
+  }
+  function $() {
     t.value = !1;
   }
   function M(A) {
@@ -784,7 +784,7 @@ function Tt(e) {
     const A = W();
     a.value = A.findIndex((N) => N.toastId === s.toastId) > -1;
   }), ee(() => {
-    e.isLoading !== void 0 && (e.loading.value ? B() : $());
+    e.isLoading !== void 0 && (e.loading.value ? $() : B());
   }), Se(d), ke(() => {
     e.pauseOnFocusLoss && g();
   }), {
@@ -881,8 +881,8 @@ const At = /* @__PURE__ */ J({
   }
 });
 let K = 0;
-function $e() {
-  typeof window > "u" || (K && window.cancelAnimationFrame(K), K = window.requestAnimationFrame($e), se.lastUrl !== window.location.href && (se.lastUrl = window.location.href, I.clear()));
+function Be() {
+  typeof window > "u" || (K && window.cancelAnimationFrame(K), K = window.requestAnimationFrame(Be), se.lastUrl !== window.location.href && (se.lastUrl = window.location.href, I.clear()));
 }
 const It = /* @__PURE__ */ J({
   name: "ToastifyContainer",
@@ -892,7 +892,7 @@ const It = /* @__PURE__ */ J({
   setup(e) {
     const t = _(() => e.containerId), a = _(() => w[t.value] || []), n = _(() => a.value.filter((o) => o.position === e.position));
     return Se(() => {
-      typeof window < "u" && e.clearOnUrlChange && window.requestAnimationFrame($e);
+      typeof window < "u" && e.clearOnUrlChange && window.requestAnimationFrame(Be);
     }), ke(() => {
       typeof window < "u" && K && (window.cancelAnimationFrame(K), se.lastUrl = "");
     }), () => m(fe, null, [n.value.map((o) => {
@@ -906,7 +906,7 @@ const It = /* @__PURE__ */ J({
   }
 });
 let ce = !1;
-const Be = {
+const $e = {
   isLoading: !0,
   autoClose: !1,
   closeOnClick: !1,
@@ -938,7 +938,7 @@ function U(e, t, a = {}) {
     type: t
   }, L(a)), (!a.toastId || typeof a.toastId != "string" && typeof a.toastId != "number") && (a.toastId = Oe()), a = {
     ...a,
-    ...a.type === "loading" ? Be : {},
+    ...a.type === "loading" ? $e : {},
     content: e,
     containerId: a.containerId || String(a.position)
   };
@@ -967,7 +967,7 @@ c.success = (e, t) => U(e, T.DEFAULT, {
   ...t,
   type: T.SUCCESS
 });
-c.loading = (e, t) => U(e, T.DEFAULT, le(t, Be));
+c.loading = (e, t) => U(e, T.DEFAULT, le(t, $e));
 c.dark = (e, t) => U(e, T.DEFAULT, le(t, {
   theme: V.DARK
 }));
@@ -1028,28 +1028,28 @@ function Ot(e, {
     isLoading: void 0,
     draggable: null,
     delay: 100
-  }, E = (C, g, $) => {
+  }, E = (C, g, B) => {
     if (g == null) {
       c.remove(p);
       return;
     }
-    const B = {
+    const $ = {
       type: C,
       ...d,
       ...o,
-      data: $
+      data: B
     }, M = ye(g) ? {
       render: g
     } : g;
     return p ? c.update(p, {
-      ...B,
+      ...$,
       ...M,
       isLoading: !1
     }) : c(M.render, {
-      ...B,
+      ...$,
       ...M,
       isLoading: !1
-    }), $;
+    }), B;
   }, f = G(e) ? e() : e;
   return f.then((C) => {
     E("success", n, C);
@@ -1064,15 +1064,15 @@ c.TRANSITIONS = He;
 const Lt = {
   install(e, t = {}) {
     ut.useHandler = t.useHandler || (() => {
-    }), $t(t);
+    }), Bt(t);
   }
 };
 typeof window < "u" && (window.Vue3Toastify = Lt);
-function $t(e = {}) {
+function Bt(e = {}) {
   const t = le(Ae, e);
   ft(t);
 }
-function Bt(e, t) {
+function $t(e, t) {
   return t.split(".").reduce((a, n) => a?.[n], e);
 }
 function Mt(e, t) {
@@ -1096,7 +1096,7 @@ function Mt(e, t) {
 function qt(e, t, a) {
   const n = /* @__PURE__ */ new Set(), o = e.map((s) => {
     if (s.type === "text") return s.value;
-    const l = Bt(t, s.value);
+    const l = $t(t, s.value);
     if (n.add(s.value.split(".")[0]), l === void 0 || l === "") {
       if (s.defaultValue !== void 0) return s.defaultValue;
       if (a.strict) throw new Error(`Missing param: ${s.value}`);
@@ -1161,9 +1161,9 @@ const Rt = { class: "font-sans antialiased text-gray-900 dark:text-gray-100" }, 
       localStorage: {
         token: localStorage.getItem("token") || ""
       }
-    }), l = n?.data.curr.data.api[0].url, y = s, p = S(!1), x = S(!1), d = S({}), E = S(""), f = S(""), C = S(!1), g = S(""), $ = S(""), B = async (v = "") => {
+    }).replace("Bearer ", ""), l = n?.data.curr.data.api[0].url, y = s, p = S(!1), x = S(!1), d = S({}), E = S(""), f = S(""), C = S(!1), g = S(""), B = S(""), $ = async (v = "") => {
       if (!(!v || x.value)) {
-        $.value = v, d.value = {}, E.value = "", f.value = "", g.value = "", p.value = !0, x.value = !0;
+        B.value = v, d.value = {}, E.value = "", f.value = "", g.value = "", p.value = !0, x.value = !0;
         try {
           const i = await fetch(l, {
             method: "POST",
@@ -1266,7 +1266,7 @@ const Rt = { class: "font-sans antialiased text-gray-900 dark:text-gray-100" }, 
         C.value = !1;
       }
     };
-    return t({ openProduct: B }), (v, i) => (b(), h("div", Rt, [
+    return t({ openProduct: $ }), (v, i) => (b(), h("div", Rt, [
       m(de, {
         "enter-active-class": "transition duration-500 ease-out",
         "enter-from-class": "opacity-0",
@@ -1491,7 +1491,7 @@ const Rt = { class: "font-sans antialiased text-gray-900 dark:text-gray-100" }, 
   for (const [n, o] of t)
     a[n] = o;
   return a;
-}, ya = /* @__PURE__ */ ga(va, [["__scopeId", "data-v-4c2bc883"]]), ha = { class: "w-full min-h-screen flex flex-col items-center justify-center bg-gray-100 dark:bg-[#0f172a] transition-colors duration-300" }, ba = {
+}, ya = /* @__PURE__ */ ga(va, [["__scopeId", "data-v-6efe37bc"]]), ha = { class: "w-full min-h-screen flex flex-col items-center justify-center bg-gray-100 dark:bg-[#0f172a] transition-colors duration-300" }, ba = {
   key: 0,
   class: "p-8 bg-white dark:bg-[#1e293b] rounded-2xl shadow-xl border border-gray-100 dark:border-gray-700 flex flex-col gap-4"
 }, _a = /* @__PURE__ */ J({
