@@ -1,9 +1,9 @@
 {
     "config": {
         "lazy_lib": {
-            "renderer_src": "https://cdn.jsdelivr.net/gh/1mn-io/mn-app@latest/modules/{*}/dist/renderer.es.js",
-            "hydrator_src": "https://cdn.jsdelivr.net/gh/1mn-io/mn-app@latest/modules/{*}/dist/hydrator.es.js",
-            "editor_src": "https://cdn.jsdelivr.net/gh/1mn-io/mn-app@latest/modules/{*}/dist/editor.es.js"
+            "renderer_src": "https://cdn.jsdelivr.net/gh/1mn-io/mn-app/modules/{*}/dist/renderer.es.js",
+            "hydrator_src": "https://cdn.jsdelivr.net/gh/1mn-io/mn-app/modules/{*}/dist/hydrator.es.js",
+            "editor_src": "https://cdn.jsdelivr.net/gh/1mn-io/mn-app/modules/{*}/dist/editor.es.js"
         }
     },
     "data": {
@@ -15,7 +15,16 @@
                 "data": {
                     "data": "",
                     "theme": "light",
-                    "env": "dev"
+                    "env": "dev",
+                    "api": {
+                        "0": {
+                            "url": "https://fastapi.dryutil.1mn.io/client-public/api/i/ona/product_dir?typ=view_product"
+                        },
+                        "1": {
+                            "url": "https://fastapi.dryutil.1mn.io/client-public/api/i/ona/order_management"
+                        },
+                        "token": "Bearer <localStorage.token>"
+                    }
                 }
             }
         ]
