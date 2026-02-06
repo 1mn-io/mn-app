@@ -13,9 +13,12 @@
                 "type": "orders_sf",
                 "slug": "orders_sf",
                 "data": {
-                    "data": "",
+                    "data": "Hello world!",
                     "theme": "light",
-                    "foo": ""
+                    "api": {
+                        "token": "Bearer <localStorage.token>",
+                        "url": "https://fastapi.dryutil.1mn.io/client-public/api/i/ona/order_management"
+                    }
                 }
             }
         ]
