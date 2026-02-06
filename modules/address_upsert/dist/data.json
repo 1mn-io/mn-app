@@ -13,14 +13,17 @@
                 "type": "address_upsert",
                 "slug": "address_upsert",
                 "data": {
-                    "data": "",
+                    "data": "Hello world! ",
                     "theme": "light",
-                    "foo": "",
                     "event": {
                         "onNotFound": "/addresses",
                         "onUpdated": "/addresses",
                         "onCreated": "/addresses",
                         "onCancel": "/addresses"
+                    },
+                    "api": {
+                        "token": "Bearer <localStorage.token>",
+                        "url": "https://fastapi.dryutil.1mn.io/client-public/api/i/ona/order_management"
                     }
                 }
             }
