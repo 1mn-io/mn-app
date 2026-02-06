@@ -16,7 +16,7 @@
                     "data": "Hello world! ",
                     "theme": "light",
                     "api": {
-                        "url": "https://fastapi.dryutil.1mn.io/client-public/api/i/ona/order_management",
+                        "url": "https://fastapi.dryutil.1mn.io/client-public/api/i/ona/public:order_management",
                         "token": "Bearer <localStorage.token>"
                     },
                     "event": {
