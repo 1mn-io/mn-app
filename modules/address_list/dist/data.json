@@ -13,13 +13,16 @@
                 "type": "address_list",
                 "slug": "address_list",
                 "data": {
-                    "data": "",
+                    "data": "Hello world! ",
                     "theme": "light",
-                    "foo": "",
                     "mode": "normal",
                     "event": {
                         "onClickAdd": "/address/add",
                         "onClickEdit": "/address/edit?id={id}"
+                    },
+                    "api": {
+                        "url": "https://fastapi.dryutil.1mn.io/client-public/api/i/ona/order_management",
+                        "token": "Bearer <localStorage.token>"
                     }
                 }
             }

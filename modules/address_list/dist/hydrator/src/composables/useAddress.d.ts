@@ -1,4 +1,7 @@
-export declare const useAddress: () => {
+import { _$p_TYP } from '../../../shared/types';
+export declare const useAddress: (_v: {
+    _$p: _$p_TYP;
+}) => {
     addresses: import('vue').Ref<any, any>;
     getAddress: () => Promise<void>;
     createAddress: () => Promise<void>;

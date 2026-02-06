@@ -24,12 +24,19 @@ let _data = {
           "event": {
             "onClickAdd": "/address/add",
             "onClickEdit": "/address/edit?id={id}",
+          },
+          "api": {
+            "url": "https://fastapi.dryutil.1mn.io/client-public/api/i/ona/order_management",
+            "token": "Bearer <localStorage.token>", // 'eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImYwZTNlMDRiLTVkNDAtNDg1ZS05OGU4LWEzOTI3NWU3MzM0OCIsInNlY3VyaXR5Ijp7InBhcnR5IjpbInBhcnR5XzEiLCJwYXJ0eV8yIl19LCJzdWIiOiJmMGUzZTA0Yi01ZDQwLTQ4NWUtOThlOC1hMzkyNzVlNzMzNDgiLCJpYXQiOjE3NjU4MTI4Mjh9.OoClnPtlxI71L-e555nbNSmenmGufxewp78SlmdZCNxeuauXao5RRvqwOKQ77SJFqJXk0ng6GZ7VOgYECdEf-3k1UGX7w1NE_D5A6SP3UkVsSG8orYACFuvTyesbFwkpnEhdu0PBd6n8wuLkgU6nZ1bLDzKVg1zd8fFeJrwmUqk'
           }
+
+
         },
       }
 
     ]
 };
+console.log(_data.l[0]);
 
 
 const _cnf = {
