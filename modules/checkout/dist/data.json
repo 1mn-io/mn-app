@@ -22,6 +22,27 @@
                     "event": {
                         "onPaymentSuccess": "https://storefront.1mn.io/orders",
                         "onPaymentFail": "https://storefront.1mn.io/orders"
+                    },
+                    "address_list": {
+                        "ce_file": {
+                            "id": "378c-address_list",
+                            "type": "address_list",
+                            "slug": "address_list",
+                            "data": {
+                                "data": "",
+                                "theme": "light",
+                                "foo": "",
+                                "mode": "picker",
+                                "event": {
+                                    "onClickAdd": "/address/add",
+                                    "onClickEdit": "/address/edit?id={id}"
+                                },
+                                "api": {
+                                    "url": "https://fastapi.dryutil.1mn.io/client-public/api/i/ona/order_management",
+                                    "token": "Bearer <localStorage.token>"
+                                }
+                            }
+                        }
                     }
                 }
             }

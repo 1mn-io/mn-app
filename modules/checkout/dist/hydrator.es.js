@@ -2714,21 +2714,7 @@ const go = Qt.emit, xo = Qt.on, wo = async (e) => {
       (async () => {
         let n = "", s = {
           l: [
-            {
-              id: "378c-address_list",
-              type: "address_list",
-              slug: "address_list",
-              data: {
-                data: "",
-                theme: "light",
-                foo: "",
-                mode: "picker",
-                event: {
-                  onClickAdd: "/address/add",
-                  onClickEdit: "/address/edit?id={id}"
-                }
-              }
-            }
+            e._$p.data.curr.data.address_list.ce_file
           ]
         };
         const r = {

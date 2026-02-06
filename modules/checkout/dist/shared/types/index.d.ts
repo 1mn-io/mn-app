@@ -53,6 +53,7 @@ type _$p_TYP = {
                     "onPaymentSuccess": string;
                     "onPaymentFail": string;
                 };
+                "address_list": any;
             };
         };
     };
