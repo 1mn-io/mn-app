@@ -36,6 +36,9 @@ type _$p_TYP = {
             "type": "text";
             "data": {
                 "data": string;
+                "mode": string;
+                "api": any;
+                "cart_popup": any;
             };
         };
     };
