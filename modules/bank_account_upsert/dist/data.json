@@ -1,0 +1,28 @@
+{
+    "config": {
+        "lazy_lib": {
+            "renderer_src": "https://cdn.jsdelivr.net/gh/1mn-io/mn-app@latest/modules/{*}/dist/renderer.es.js",
+            "hydrator_src": "https://cdn.jsdelivr.net/gh/1mn-io/mn-app@latest/modules/{*}/dist/hydrator.es.js",
+            "editor_src": "https://cdn.jsdelivr.net/gh/1mn-io/mn-app@latest/modules/{*}/dist/editor.es.js"
+        }
+    },
+    "data": {
+        "l": [
+            {
+                "id": "78c-bank_account_upsert",
+                "type": "bank_account_upsert",
+                "slug": "bank_account_upsert",
+                "data": {
+                    "data": "Hello world! ",
+                    "theme": "light",
+                    "event": {
+                        "onNotFound": "/bank",
+                        "onUpdated": "/bank",
+                        "onCreated": "/bank",
+                        "onCancel": "/bank"
+                    }
+                }
+            }
+        ]
+    }
+}
