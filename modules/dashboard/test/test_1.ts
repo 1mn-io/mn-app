@@ -24,12 +24,27 @@ let _data = {
         //set..
         "menu": [
           {
+            label: 'File management',
+            items: [
+              { 
+                label: 'Create File', 
+                icon: 'pi pi-fw pi-plus', 
+                to: '/file-management/file?mode=create'
+              }, 
+            ]
+          },
+          {
             label: 'Product management',
             items: [
               { 
                 label: 'Products', 
                 icon: 'pi pi-fw pi-list', 
                 to: '/product-management/products' 
+              },
+              { 
+                label: 'Create Product', 
+                icon: 'pi pi-fw pi-plus', 
+                to: '/product-management/product?mode=create'
               },
               { 
                 label: 'Upload Products', 
@@ -285,6 +300,19 @@ let _data = {
             }),*/
             children: [
               //set.. 
+
+              {
+                path: '/file-management/file',
+                name: 'create_file',
+                component: '../views/ContentEngine.vue',
+                meta:{
+                  ce_file: "https://raw.githubusercontent.com/1mn-io/mn-app/refs/heads/main/modules/admin_file_upload/dist/data.json", //eg=> https://raw.githubusercontent.com/1mn-io/mn-app/refs/heads/main/modules/admin_product_fragment/dist/data.json
+                  auth:true
+                }
+              },
+
+
+              //set.. 
               {
                 path: '/product-management/products',
                 name: 'product',
@@ -294,6 +322,20 @@ let _data = {
                   auth:true
                 }
               },
+
+              {
+                path: '/product-management/product',
+                name: 'create_product',
+                component: '../views/ContentEngine.vue',
+                meta:{
+                  ce_file: "https://raw.githubusercontent.com/1mn-io/mn-app/refs/heads/main/modules/admin_product_upsert/dist/data.json", //eg=> https://raw.githubusercontent.com/1mn-io/mn-app/refs/heads/main/modules/admin_product_fragment/dist/data.json
+                  auth:true
+                }
+              },
+
+              
+
+
               {
                 path: '/product-management/upload-products',
                 name: 'upload_products',
