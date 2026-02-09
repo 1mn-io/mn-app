@@ -367,7 +367,9 @@ const R = b(), A = b(), P = R.on, I = R.emit, J = A.emit, j = A.on, B = async (e
             search: r,
             //"wireless",
             page: l,
-            limit: y
+            limit: y,
+            //set..
+            exclude_key: ["user_id"]
           })
         });
         if (!m.ok)
