@@ -14,6 +14,7 @@
                 "slug": "form_holder",
                 "data": {
                     "title": "On-Boarding",
+                    "mode": "auto",
                     "event": {
                         "l": [
                             {
@@ -60,7 +61,7 @@
                                     "url": "https://jsonplaceholder.typicode.com/posts",
                                     "method": "POST",
                                     "headers": {
-                                        "Content-type": "application/json; charset=UTF-8"
+                                        "Content-Type": "application/json"
                                     }
                                 },
                                 "event": {
@@ -185,15 +186,13 @@
                                             }
                                         }
                                     }
-                                },
-                                {
-                                    "id": "c77697833678c-form_toast",
-                                    "type": "form_toast",
-                                    "slug": "form_toast",
-                                    "data": {}
                                 }
                             ]
                         }
+                    },
+                    "class": {
+                        "a": "bg-gray-100 flex items-center justify-center min-h-screen",
+                        "b": "bg-white shadow-lg rounded-lg p-8 w-full max-w-sm"
                     }
                 }
             }

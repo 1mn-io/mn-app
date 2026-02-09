@@ -97,7 +97,6 @@ let _data = {
             }
           ]
         },
-
         ce_file: 
         //"https://raw.githubusercontent.com/1mn-io/mn-app/main/modules/form_section/dist/data.json"
         //"https://fastapi.dryutil.1mn.io/client-public/api/i/ona/ui_management?typ=ce_file&id=c8c4bbde-c232-4e16-8985-60db13563005"
@@ -213,6 +212,12 @@ let _data = {
 
             ],
           }
+        },
+
+        //set..
+        class: {
+          a: "bg-gray-100 flex items-center justify-center min-h-screen", // bg-gray-100 flex items-center justify-center min-h-screen
+          b: "bg-white shadow-lg rounded-lg p-8 w-full max-w-sm", // bg-white shadow-lg rounded-lg p-8 w-full max-w-xl
         },
 
 

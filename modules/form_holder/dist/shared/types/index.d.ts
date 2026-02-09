@@ -50,6 +50,10 @@ type _$p_TYP = {
                 "event": {
                     "l": any[];
                 };
+                "class": {
+                    "a": string;
+                    "b": string;
+                };
             };
         };
     };
