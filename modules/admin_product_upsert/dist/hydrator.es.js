@@ -3316,7 +3316,9 @@ const im = { key: 0 }, lm = ["innerHTML"], sm = "https://fastapi.dryutil.1mn.io/
             representation: { url: "" }
           },
           hashtags: [],
-          lang: "en"
+          lang: "en",
+          //set..
+          country: ""
         }
       ]
     }, { post: n } = am(), i = async () => {
@@ -3333,7 +3335,7 @@ const im = { key: 0 }, lm = ["innerHTML"], sm = "https://fastapi.dryutil.1mn.io/
       }
     }, l = () => {
       const u = t.l[0];
-      u.collection = e["input-collection"] || "products", u.title = e["input-title"] || "", u.url = e["input-image-url"] || "", u.brand = e["input-brand-name"] || "", u.lang = "en", u.size = (r["form_datatable-size"] || []).map((p) => ({
+      u.collection = e["input-collection"] || "products", u.title = e["input-title"] || "", u.url = e["input-image-url"] || "", u.brand = e["input-brand-name"] || "", u.lang = "en", u.country = e["input-country"] || "", u.size = (r["form_datatable-size"] || []).map((p) => ({
         id: p._uid,
         name: p.sizename,
         measurements: [{ name: p.name, unit: p.unit, value: p.value }]
@@ -3395,6 +3397,9 @@ const im = { key: 0 }, lm = ["innerHTML"], sm = "https://fastapi.dryutil.1mn.io/
               data: {
                 title: "Admin product upsert",
                 mode: "manual",
+                class: {
+                  b: "bg-white shadow-lg rounded-lg p-8 w-full max-w-5xl"
+                },
                 ce_file: {
                   data: {
                     l: [
@@ -3436,6 +3441,16 @@ const im = { key: 0 }, lm = ["innerHTML"], sm = "https://fastapi.dryutil.1mn.io/
                         }
                       },
                       {
+                        id: "section-country",
+                        type: "form_section",
+                        slug: "form_section",
+                        data: {
+                          label: "Product country",
+                          l: [],
+                          theme: "light"
+                        }
+                      },
+                      {
                         id: "input-title",
                         type: "form_inputtext",
                         slug: "form_inputtext",
@@ -3447,6 +3462,21 @@ const im = { key: 0 }, lm = ["innerHTML"], sm = "https://fastapi.dryutil.1mn.io/
                           variant: "outlined",
                           form: {
                             section_id: "section-title"
+                          }
+                        }
+                      },
+                      {
+                        id: "input-country",
+                        type: "form_inputtext",
+                        slug: "form_inputtext",
+                        data: {
+                          value: "",
+                          placeholder: "Enter country",
+                          style: {},
+                          class: "",
+                          variant: "outlined",
+                          form: {
+                            section_id: "section-country"
                           }
                         }
                       },
@@ -3797,9 +3827,9 @@ const im = { key: 0 }, lm = ["innerHTML"], sm = "https://fastapi.dryutil.1mn.io/
         const b = {
           lib: [],
           lazy_lib: {
-            renderer_src: "https://cdn.jsdelivr.net/gh/1mn-io/mn-app/modules/{*}/dist/renderer.es.js",
-            hydrator_src: "https://cdn.jsdelivr.net/gh/1mn-io/mn-app/modules/{*}/dist/hydrator.es.js",
-            editor_src: "https://cdn.jsdelivr.net/gh/1mn-io/mn-app/modules/{*}/dist/editor.es.js"
+            renderer_src: "https://cdn.jsdelivr.net/gh/1mn-io/mn-app@latest/modules/{*}/dist/renderer.es.js",
+            hydrator_src: "https://cdn.jsdelivr.net/gh/1mn-io/mn-app@latest/modules/{*}/dist/hydrator.es.js",
+            editor_src: "https://cdn.jsdelivr.net/gh/1mn-io/mn-app@latest/modules/{*}/dist/editor.es.js"
           }
         }, g = await _0(b), p = await O0(b);
         (async () => S0("child:msg", async (v) => {
