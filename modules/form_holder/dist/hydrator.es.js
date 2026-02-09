@@ -1,14 +1,14 @@
-import { d as A, o as U, a as T, c as E, b as L, u as k, t as q, e as C, F as D, r as Z, n as M, f as j, g as G } from "./runtime-dom.esm-bundler-DPpVWBhz.js";
+import { d as A, o as U, a as T, c as E, b as L, u as k, t as q, e as C, F as D, r as Z, n as M, f as O, g as G } from "./runtime-dom.esm-bundler-DPpVWBhz.js";
 const N = () => ({
   set: () => "xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx".replace(/[xy]/g, function(t) {
     const e = Math.random() * 16 | 0;
     return (t == "x" ? e : e & 3 | 8).toString(16);
   })
-}), J = async () => ({
+}), P = async () => ({
   f: {
     name: (t) => `${t.name}${t.id}`
   }
-}), P = async () => ({
+}), J = async () => ({
   set: async (t) => {
     console.log("--theme");
     try {
@@ -94,7 +94,7 @@ let K = class {
       }
   };
 };
-const O = () => new K();
+const j = () => new K();
 class W {
   startTime;
   endTime;
@@ -206,8 +206,8 @@ let h = {
     }
   }
 };
-const V = O(), F = O(), Q = V.on, B = V.emit, X = F.emit, I = F.on, Y = async (t) => {
-  const e = await J();
+const V = j(), F = j(), Q = V.on, B = V.emit, X = F.emit, I = F.on, Y = async (t) => {
+  const e = await P();
   return await h.lib.set({ lib: t.lib, run_from: "renderer", lazy_lib: t.lazy_lib }), {
     set: async (a) => {
       console.log("--renderer [set]"), a.return = a?.return || {}, a.return.r = a?.return?.r || "full";
@@ -229,7 +229,7 @@ const V = O(), F = O(), Q = V.on, B = V.emit, X = F.emit, I = F.on, Y = async (t
             f: {
               name: (i) => e.f.name({ id: o.id, name: i }),
               get_lib: async (i) => await await h.lib.get({ name: i.name, run_from: i.run_from, lazy_lib: t.lazy_lib }),
-              set_theme: async (i) => await (await P()).set(i),
+              set_theme: async (i) => await (await J()).set(i),
               path: (i) => h.path.set({ src: c.src, type: o.type, name: i }),
               //set..
               uuid: () => N().set(),
@@ -249,7 +249,7 @@ const V = O(), F = O(), Q = V.on, B = V.emit, X = F.emit, I = F.on, Y = async (t
     }
   };
 }, tt = async (t) => {
-  const e = await J();
+  const e = await P();
   return await h.lib.set({ lib: t.lib, run_from: "hydrator", lazy_lib: t.lazy_lib }), {
     set: async (a) => {
       console.log("--hydrator [set]");
@@ -263,14 +263,14 @@ const V = O(), F = O(), Q = V.on, B = V.emit, X = F.emit, I = F.on, Y = async (t
       }, o = a.data?.value?.l || a.data.l;
       const c = async () => {
         for (const d of o) {
-          const i = await await h.lib.get({ name: d.type, run_from: "hydrator", lazy_lib: t.lazy_lib }), _ = i.lib, b = O(), v = b.on, S = await (await _.index({
+          const i = await await h.lib.get({ name: d.type, run_from: "hydrator", lazy_lib: t.lazy_lib }), _ = i.lib, b = j(), v = b.on, S = await (await _.index({
             /**@my module can use it to set custom variables. */
             my: {},
             //NOTE: We cannot add or use any variable of this object, It's reserved for module.
             f: {
               name: (n) => e.f.name({ id: d.id, name: n }),
               get_lib: async (n) => await await h.lib.get({ name: n.name, run_from: n.run_from, lazy_lib: t.lazy_lib }),
-              set_theme: async (n) => await (await P()).set(n),
+              set_theme: async (n) => await (await J()).set(n),
               path: (n) => h.path.set({ src: i.src, type: d.type, name: n }),
               //set..
               uuid: () => N().set(),
@@ -279,7 +279,7 @@ const V = O(), F = O(), Q = V.on, B = V.emit, X = F.emit, I = F.on, Y = async (t
               call: X,
               listen: v,
               //set..
-              new_emitter: () => O()
+              new_emitter: () => j()
             }
           })).set(
             {
@@ -388,6 +388,7 @@ const rt = {
   },
   setup(t) {
     const e = t;
+    e._$p.data.curr.data.hasOwnProperty("class") == !1 && (e._$p.data.curr.data.class = {});
     let a = [
       {
         id: "c77697833678c-form_toast",
@@ -398,11 +399,11 @@ const rt = {
         }
       }
     ];
-    const l = j(!1);
+    const l = O(!1);
     let r = [];
-    const s = e._$p, o = e._p, c = j(null), d = j(null);
+    const s = e._$p, o = e._p, c = O(null), d = O(null);
     let i = "";
-    const _ = j({
+    const _ = O({
       var: {
         event: {
           typ: {
