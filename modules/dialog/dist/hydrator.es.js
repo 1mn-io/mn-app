@@ -4800,9 +4800,19 @@ const Vr = oe(), Ur = oe(), Lp = Vr.on, jp = Vr.emit, Ep = Ur.emit, Dp = Ur.on, 
       console.log("Hydrator received msg:", a), !a.type.startsWith("child:") && (a.type === "open" && (console.log("Action: Opening Dialog"), e.visible = !0), a.type === "close" && (console.log("Action: Hiding Dialog (Type is 'close')"), e.visible = !1), a.custom?.theme && (a.custom.theme === "dark" ? document.documentElement.classList.add("dark") : document.documentElement.classList.remove("dark")));
     });
     const r = () => {
-      e.visible = !1;
+      e.visible = !1, o._p.f.call("msg", {
+        type: "btn:positive",
+        custom: {},
+        _p: o._p,
+        _$p: o._$p
+      });
     }, t = () => {
-      e.visible = !1;
+      e.visible = !1, o._p.f.call("msg", {
+        type: "btn:negative",
+        custom: {},
+        _p: o._p,
+        _$p: o._$p
+      });
     }, n = Ro(null);
     return ir(() => {
       (async () => {
