@@ -48,6 +48,10 @@ type _$p_TYP = {
                 "options": any[];
                 "api": any;
                 "style": any;
+                "optionLabel": string;
+                "showClear": boolean;
+                "dropdown": boolean;
+                "value": any;
             };
         };
     };
