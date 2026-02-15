@@ -5681,13 +5681,12 @@ const _sfc_main = /* @__PURE__ */ defineComponent({
       }, 250);
     }, searchOptions = async (e) => {
       const q = (e?.query || "").trim();
+      let _l = [];
       if (console.log("[AutoComplete query]", q), !q.length) {
-        filteredOptions.value = [];
+        _l = __props._$p.data.curr.data.options, setSugg(q, _l);
         return;
       }
-      _loading.value = !0, console.log("[AutoComplete query]", q);
-      let _l = [];
-      filteredOptions.value = [];
+      _loading.value = !0, console.log("[AutoComplete query]", q), filteredOptions.value = [];
       try {
         if (__props._$p.data.curr.data.api.url) {
           const api = __props._$p.data.curr.data.api, _url_t = h(api.url), _head_t = h(JSON.stringify(api.headers), { open: "<", close: ">" }), _url = _url_t({
