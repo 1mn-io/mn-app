@@ -5660,7 +5660,7 @@ const _sfc_main = /* @__PURE__ */ defineComponent({
     _$p: {}
   },
   setup(__props) {
-    __props._$p.data.curr.data.optionLabel || (__props._$p.data.curr.data.optionLabel = "name"), __props._$p.data.curr.data.options || (__props._$p.data.curr.data.options = []);
+    __props._$p.data.curr.data.optionLabel || (__props._$p.data.curr.data.optionLabel = "name"), __props._$p.data.curr.data.options || (__props._$p.data.curr.data.options = []), __props._$p.data.curr.data.appendTo || (__props._$p.data.curr.data.appendTo = "body");
     const value = ref(__props._$p.data.curr.data.value || null), filteredOptions = ref([]), _loading = ref(!1);
     watch(value, (B) => {
       B && __props._p.f.call("msg", {
@@ -5690,26 +5690,34 @@ const _sfc_main = /* @__PURE__ */ defineComponent({
       filteredOptions.value = [];
       try {
         if (__props._$p.data.curr.data.api.url) {
-          const api = __props._$p.data.curr.data.api, _url_t = h(api.url), _body_t = h(JSON.stringify(api.body), { open: "<", close: ">" }), _head_t = h(JSON.stringify(api.headers), { open: "<", close: ">" }), _url = _url_t({
+          const api = __props._$p.data.curr.data.api, _url_t = h(api.url), _head_t = h(JSON.stringify(api.headers), { open: "<", close: ">" }), _url = _url_t({
             search: q
-          }), _body = _body_t({
-            search: q
-          }), _head = _head_t({
+          });
+          let _body = null;
+          try {
+            _body = h(JSON.stringify(api.body), { open: "<", close: ">" })({
+              search: q
+            });
+          } catch (B) {
+          }
+          const _head = _head_t({
             localStorage: {
               token: localStorage.getItem("token") || ""
             }
-          }), res = await fetch(_url, {
+          });
+          let _r_p = {
             method: api.method,
             headers: (
               /*{ 
                 'Content-Type': 'application/json', ...api.headers 
               }*/
               JSON.parse(_head)
-            ),
+            )
             //body: JSON.stringify({ ...api.body, q }) // send input as q
-            body: _body
-            // send input as q
-          }), json = await res.json();
+            //body: _body // send input as q
+          };
+          _body && (_r_p.body = _body), console.log(_r_p);
+          const res = await fetch(_url, _r_p), json = await res.json();
           _l = eval(`${__props._$p.data.curr.data.api.rsp_path}`), setSugg(q, _l);
         } else
           throw new Error("api not set");
@@ -5730,8 +5738,9 @@ const _sfc_main = /* @__PURE__ */ defineComponent({
       onClear,
       "complete-on-focus": !0,
       dropdown: __props._$p.data.curr.data.dropdown,
-      loading: _loading.value
-    }, null, 8, ["modelValue", "suggestions", "placeholder", "style", "show-clear", "option-label", "dropdown", "loading"]));
+      loading: _loading.value,
+      "append-to": __props._$p.data.curr.data.appendTo
+    }, null, 8, ["modelValue", "suggestions", "placeholder", "style", "show-clear", "option-label", "dropdown", "loading", "append-to"]));
   }
 }), index = async (B) => ({
   set: async (_) => {

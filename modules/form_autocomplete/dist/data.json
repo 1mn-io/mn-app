@@ -18,6 +18,7 @@
                     "optionLabel": "title",
                     "showClear": true,
                     "dropdown": false,
+                    "appendTo": "body",
                     "value": {
                         "title": "Rome",
                         "id": "2"

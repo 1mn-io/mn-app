@@ -52,6 +52,7 @@ type _$p_TYP = {
                 "showClear": boolean;
                 "dropdown": boolean;
                 "value": any;
+                "appendTo": string;
             };
         };
     };

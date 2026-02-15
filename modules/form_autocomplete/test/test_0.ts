@@ -22,6 +22,7 @@ let _data = {
           "optionLabel": "title", //"name",
           "showClear": true,
           "dropdown": false,
+          "appendTo": "body", //body, self
           "value": {
               "title": 'Rome',
               "id": "2",
@@ -53,11 +54,11 @@ let _data = {
             "url": "https://fastapi.dryutil.1mn.io/client/api/i/ona/product_dir?typ=get_product_list&search={search}",
             "method": "post",
             "rsp_path": "json.data.products",
-            "body": {  
+            /*"body": {  
                 "q": "<search>",
                 "page": 1,
                 "per_page": 20
-              },
+            },*/
             "headers": {
               'Content-Type': 'application/json',
               //"Authorization": "Bearer eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImYwZTNlMDRiLTVkNDAtNDg1ZS05OGU4LWEzOTI3NWU3MzM0OCIsInNlY3VyaXR5Ijp7InBhcnR5IjpbInBhcnR5XzEiLCJwYXJ0eV8yIl19LCJzdWIiOiJmMGUzZTA0Yi01ZDQwLTQ4NWUtOThlOC1hMzkyNzVlNzMzNDgiLCJpYXQiOjE3NjU4MTI4Mjh9.OoClnPtlxI71L-e555nbNSmenmGufxewp78SlmdZCNxeuauXao5RRvqwOKQ77SJFqJXk0ng6GZ7VOgYECdEf-3k1UGX7w1NE_D5A6SP3UkVsSG8orYACFuvTyesbFwkpnEhdu0PBd6n8wuLkgU6nZ1bLDzKVg1zd8fFeJrwmUqk"
