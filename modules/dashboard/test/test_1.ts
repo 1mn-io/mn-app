@@ -24,6 +24,46 @@ let _data = {
         //set..
         "menu": [
           {
+            label: 'Dryutil',
+             items: [
+              {
+                label: 'User management',
+                icon: 'pi pi-fw pi-bookmark',
+                items: [
+                  /*{
+                    label: 'Create File',
+                    icon: 'pi pi-fw pi-plus',
+                    to: '/dryutil/file-management/file?mode=create'
+                  }, */
+                  {
+                    label: 'Users',
+                    icon: 'pi pi-fw pi-list',
+                    to: '/dryutil/user-management/users'
+                  }
+                ]
+              },
+              {
+                label: 'Instance management',
+                icon: 'pi pi-fw pi-bookmark',
+                items: [
+                  /*{
+                    label: 'Create File',
+                    icon: 'pi pi-fw pi-plus',
+                    to: '/dryutil/file-management/file?mode=create'
+                  }, */
+                  {
+                    label: 'Instances',
+                    icon: 'pi pi-fw pi-list',
+                    to: '/dryutil/instance-management/instances'
+                  }
+                ]
+              },
+              
+            ]
+          },
+
+
+          {
             label: 'File management',
             items: [
               { 
@@ -31,6 +71,11 @@ let _data = {
                 icon: 'pi pi-fw pi-plus', 
                 to: '/file-management/file?mode=create'
               }, 
+              { 
+                label: 'Files', 
+                icon: 'pi pi-fw pi-list', 
+                to: '/file-management/files' 
+              },
             ]
           },
           {
@@ -76,6 +121,11 @@ let _data = {
                 label: 'Orders', 
                 icon: 'pi pi-fw pi-list', 
                 to: '/order-management/orders' 
+              },
+              { 
+                label: 'Refunds', 
+                icon: 'pi pi-fw pi-list', 
+                to: '/order-management/refunds' 
               }
             ]
           },
@@ -299,8 +349,31 @@ let _data = {
               //_p:props._p,
             }),*/
             children: [
-              //set.. 
 
+              //==dryutil==//
+              {
+                path: '/dryutil/user-management/users',
+                name: 'dryutil_users',
+                component: '../views/ContentEngine.vue',
+                meta:{
+                  ce_file: "https://raw.githubusercontent.com/1mn-io/mn-app/refs/heads/main/modules/users_fragment_app/dist/data.json", //eg=> https://raw.githubusercontent.com/1mn-io/mn-app/refs/heads/main/modules/admin_product_fragment/dist/data.json
+                  auth:true
+                }
+              },
+              {
+                path: '/dryutil/instance-management/instances',
+                name: 'dryutil_instances',
+                component: '../views/ContentEngine.vue',
+                meta:{
+                  ce_file: "https://raw.githubusercontent.com/1mn-io/mn-app/refs/heads/main/modules/instance_fragment_app/dist/data.json", //eg=> https://raw.githubusercontent.com/1mn-io/mn-app/refs/heads/main/modules/admin_product_fragment/dist/data.json
+                  auth:true
+                }
+              },
+              //==dryutil==//
+
+
+
+              //set.. 
               {
                 path: '/file-management/file',
                 name: 'create_file',
@@ -310,6 +383,19 @@ let _data = {
                   auth:true
                 }
               },
+ 
+
+              {
+                path: '/file-management/files',
+                name: 'files',
+                component: '../views/ContentEngine.vue',
+                meta:{
+                  ce_file: "https://raw.githubusercontent.com/1mn-io/mn-app/refs/heads/main/modules/admin_file_fragment/dist/data.json", //eg=> https://raw.githubusercontent.com/1mn-io/mn-app/refs/heads/main/modules/admin_product_fragment/dist/data.json
+                  auth:true
+                }
+              },
+
+
 
 
               //set.. 
@@ -375,6 +461,18 @@ let _data = {
                   auth:true
                 }
               },
+
+              {
+                path: '/order-management/refunds',
+                name: 'order',
+                component: '../views/ContentEngine.vue',
+                meta:{
+                  ce_file: "https://raw.githubusercontent.com/1mn-io/mn-app/refs/heads/main/modules/admin_refund_fragment/dist/data.json", //eg=> https://raw.githubusercontent.com/1mn-io/mn-app/refs/heads/main/modules/admin_product_fragment/dist/data.json
+                  auth:true
+                }
+              },
+
+
               {
                 path: '/ui-management/interfaces',
                 name: 'interfaces',

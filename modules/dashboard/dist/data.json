@@ -18,12 +18,44 @@
                     "foo": "",
                     "menu": [
                         {
+                            "label": "Dryutil",
+                            "items": [
+                                {
+                                    "label": "User management",
+                                    "icon": "pi pi-fw pi-bookmark",
+                                    "items": [
+                                        {
+                                            "label": "Users",
+                                            "icon": "pi pi-fw pi-list",
+                                            "to": "/dryutil/user-management/users"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "label": "Instance management",
+                                    "icon": "pi pi-fw pi-bookmark",
+                                    "items": [
+                                        {
+                                            "label": "Instances",
+                                            "icon": "pi pi-fw pi-list",
+                                            "to": "/dryutil/instance-management/instances"
+                                        }
+                                    ]
+                                }
+                            ]
+                        },
+                        {
                             "label": "File management",
                             "items": [
                                 {
                                     "label": "Create File",
                                     "icon": "pi pi-fw pi-plus",
                                     "to": "/file-management/file?mode=create"
+                                },
+                                {
+                                    "label": "Files",
+                                    "icon": "pi pi-fw pi-list",
+                                    "to": "/file-management/files"
                                 }
                             ]
                         },
@@ -69,6 +101,11 @@
                                     "label": "Orders",
                                     "icon": "pi pi-fw pi-list",
                                     "to": "/order-management/orders"
+                                },
+                                {
+                                    "label": "Refunds",
+                                    "icon": "pi pi-fw pi-list",
+                                    "to": "/order-management/refunds"
                                 }
                             ]
                         },
@@ -342,11 +379,38 @@
                             "component": "../layout/AppLayout.vue",
                             "children": [
                                 {
+                                    "path": "/dryutil/user-management/users",
+                                    "name": "dryutil_users",
+                                    "component": "../views/ContentEngine.vue",
+                                    "meta": {
+                                        "ce_file": "https://raw.githubusercontent.com/1mn-io/mn-app/refs/heads/main/modules/users_fragment_app/dist/data.json",
+                                        "auth": true
+                                    }
+                                },
+                                {
+                                    "path": "/dryutil/instance-management/instances",
+                                    "name": "dryutil_instances",
+                                    "component": "../views/ContentEngine.vue",
+                                    "meta": {
+                                        "ce_file": "https://raw.githubusercontent.com/1mn-io/mn-app/refs/heads/main/modules/instance_fragment_app/dist/data.json",
+                                        "auth": true
+                                    }
+                                },
+                                {
                                     "path": "/file-management/file",
                                     "name": "create_file",
                                     "component": "../views/ContentEngine.vue",
                                     "meta": {
                                         "ce_file": "https://raw.githubusercontent.com/1mn-io/mn-app/refs/heads/main/modules/admin_file_upload/dist/data.json",
+                                        "auth": true
+                                    }
+                                },
+                                {
+                                    "path": "/file-management/files",
+                                    "name": "files",
+                                    "component": "../views/ContentEngine.vue",
+                                    "meta": {
+                                        "ce_file": "https://raw.githubusercontent.com/1mn-io/mn-app/refs/heads/main/modules/admin_file_fragment/dist/data.json",
                                         "auth": true
                                     }
                                 },
@@ -401,6 +465,15 @@
                                     "component": "../views/ContentEngine.vue",
                                     "meta": {
                                         "ce_file": "https://raw.githubusercontent.com/1mn-io/mn-app/refs/heads/main/modules/admin_order_fragment/dist/data.json",
+                                        "auth": true
+                                    }
+                                },
+                                {
+                                    "path": "/order-management/refunds",
+                                    "name": "order",
+                                    "component": "../views/ContentEngine.vue",
+                                    "meta": {
+                                        "ce_file": "https://raw.githubusercontent.com/1mn-io/mn-app/refs/heads/main/modules/admin_refund_fragment/dist/data.json",
                                         "auth": true
                                     }
                                 },
