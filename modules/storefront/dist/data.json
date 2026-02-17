@@ -36,6 +36,11 @@
                         {
                             "path": "/",
                             "component": "../layout/AppLayout.vue",
+                            "meta": {
+                                "layout": {
+                                    "class": "pt-30 md:pt-20"
+                                }
+                            },
                             "children": [
                                 {
                                     "path": "/",

@@ -77,6 +77,15 @@ let _data = {
               //_$p: route.meta._$p,
               //_p:props._p,
             }),*/
+
+            meta:{
+              layout:{
+                class:"pt-30 md:pt-20", //(It will use) => in mobile first-value, in desktop second-value.
+              }
+            },
+
+
+            //set..
             children: [
 
               //set..
@@ -183,36 +192,7 @@ let _data = {
                   //ce_file: "http://localhost:5173/test/ce_files/product_list.json",
                 }
               },
-              {
-                path: '/checkout',
-                name: 'checkout',
-                component: '../views/ContentEngine.vue',
-                meta:{
-                  ce_file: "https://raw.githubusercontent.com/1mn-io/mn-app/refs/heads/main/modules/checkout/dist/data.json",
-                  /*ce_file: {
-                    "config": {
-                      "lazy_lib": {
-                        "renderer_src": "https://cdn.jsdelivr.net/gh/1mn-io/mn-app@latest/modules/{*}/dist/renderer.es.js",
-                        "hydrator_src": "https://cdn.jsdelivr.net/gh/1mn-io/mn-app@latest/modules/{*}/dist/hydrator.es.js",
-                        "editor_src": "https://cdn.jsdelivr.net/gh/1mn-io/mn-app@latest/modules/{*}/dist/editor.es.js"
-                      }
-                    },
-                    "data": {
-                      "l": [
-                        {
-                          "id": "3e1bc78c-checkout",
-                          "type": "checkout",
-                          "slug": "checkout",
-                          "data": {
-                            "data": "Hello world! ",
-                            "theme": "light"
-                          }
-                        }
-                      ]
-                    }
-                  }*/
-                }
-              },
+              
 
 
 
@@ -249,6 +229,38 @@ let _data = {
               ce_file: "https://raw.githubusercontent.com/1mn-io/mn-app/refs/heads/main/modules/orders_sf/dist/data.json",
             }
           },
+
+          {
+            path: '/checkout',
+            name: 'checkout',
+            component: '../views/ContentEngine.vue',
+            meta: {
+              ce_file: "https://raw.githubusercontent.com/1mn-io/mn-app/refs/heads/main/modules/checkout/dist/data.json",
+              /*ce_file: {
+                "config": {
+                  "lazy_lib": {
+                    "renderer_src": "https://cdn.jsdelivr.net/gh/1mn-io/mn-app@latest/modules/{*}/dist/renderer.es.js",
+                    "hydrator_src": "https://cdn.jsdelivr.net/gh/1mn-io/mn-app@latest/modules/{*}/dist/hydrator.es.js",
+                    "editor_src": "https://cdn.jsdelivr.net/gh/1mn-io/mn-app@latest/modules/{*}/dist/editor.es.js"
+                  }
+                },
+                "data": {
+                  "l": [
+                    {
+                      "id": "3e1bc78c-checkout",
+                      "type": "checkout",
+                      "slug": "checkout",
+                      "data": {
+                        "data": "Hello world! ",
+                        "theme": "light"
+                      }
+                    }
+                  ]
+                }
+              }*/
+            }
+          },
+
 
 
           //set..
