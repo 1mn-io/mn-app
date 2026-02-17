@@ -44,6 +44,14 @@ type _$p_TYP = {
             "type": "text";
             "data": {
                 "data": string;
+                "logo": {
+                    "src": any;
+                    "class": string;
+                };
+                "event": any;
+                "itemA": {
+                    "label": string;
+                };
             };
         };
     };

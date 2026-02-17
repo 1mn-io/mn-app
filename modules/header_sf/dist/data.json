@@ -15,7 +15,20 @@
                 "data": {
                     "data": "",
                     "theme": "light",
-                    "foo": ""
+                    "logo": {
+                        "src": "https://app.1mn.io/logo.svg",
+                        "class": "w-15 md:w-17"
+                    },
+                    "itemA": {
+                        "label": "Work at MN"
+                    },
+                    "event": {
+                        "onClickAddresses": "/addresses",
+                        "onClickCart": "/checkout",
+                        "onClickLogin": "/login",
+                        "onClickAccount": "/dashboard",
+                        "onClickItemA": "/"
+                    }
                 }
             }
         ]
