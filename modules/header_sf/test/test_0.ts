@@ -22,7 +22,8 @@ let _data = {
           //set..
           "logo": {
             "src": "https://app.1mn.io/logo.svg",
-            "class": "w-15 md:w-17"
+            "class": "",//"w-15 md:w-17",
+            "style": "width:8vh; height:8vh",
           },
           "itemA": {
             "label": "Work at MN",

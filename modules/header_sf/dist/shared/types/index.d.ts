@@ -47,6 +47,7 @@ type _$p_TYP = {
                 "logo": {
                     "src": any;
                     "class": string;
+                    "style": string;
                 };
                 "event": any;
                 "itemA": {
