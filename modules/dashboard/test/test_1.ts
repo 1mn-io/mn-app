@@ -464,7 +464,7 @@ let _data = {
 
               {
                 path: '/order-management/refunds',
-                name: 'order',
+                name: 'refund',
                 component: '../views/ContentEngine.vue',
                 meta:{
                   ce_file: "https://raw.githubusercontent.com/1mn-io/mn-app/refs/heads/main/modules/admin_refund_fragment/dist/data.json", //eg=> https://raw.githubusercontent.com/1mn-io/mn-app/refs/heads/main/modules/admin_product_fragment/dist/data.json
