@@ -1,6 +1,6 @@
-import { index as m } from "./hydrator.es.js";
-import { index as u } from "./renderer.es.js";
-const y = async () => ({
+import { hydrator as m } from "./hydrator.es.js";
+import { index as y } from "./renderer.es.js";
+const u = async () => ({
   f: {
     name: (e) => `${e.name}${e.id}`
   }
@@ -9,8 +9,8 @@ const y = async () => ({
     const n = Math.random() * 16 | 0;
     return (e == "x" ? n : n & 3 | 8).toString(16);
   })
-}), $ = async (e) => {
-  const n = await y();
+}), h = async (e) => {
+  const n = await u();
   return {
     set: async (x) => {
       const d = {
@@ -23,25 +23,25 @@ const y = async () => ({
           data: ""
           //Text
         }
-      }, i = await u({
+      }, c = await y({
         my: {},
         f: {
           ...e.f,
           name: (t) => n.f.name({ id: r.id, name: t })
         }
-      }), c = await m({
+      }), i = await m({
         my: {},
         f: {
           ...e.f,
           name: (t) => n.f.name({ id: r.id, name: t })
         }
-      }), s = await i.set({
+      }), s = await c.set({
         data: {
           curr: r
         }
       });
       return setTimeout(async () => {
-        const t = await c.set({
+        const t = await i.set({
           data: {
             curr: r
           }
@@ -58,6 +58,6 @@ const y = async () => ({
   };
 };
 export {
-  $ as editor,
-  $ as index
+  h as editor,
+  h as index
 };
