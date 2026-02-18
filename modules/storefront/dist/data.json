@@ -38,7 +38,8 @@
                             "component": "../layout/AppLayout.vue",
                             "meta": {
                                 "layout": {
-                                    "class": "pt-30 md:pt-20"
+                                    "class": "",
+                                    "style":"padding-top:8vh;"
                                 }
                             },
                             "children": [

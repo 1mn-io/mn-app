@@ -80,7 +80,8 @@ let _data = {
 
             meta:{
               layout:{
-                class:"pt-30 md:pt-20", //(It will use) => in mobile first-value, in desktop second-value.
+                class:"",//"pt-30 md:pt-20", //(It will use) => in mobile first-value, in desktop second-value.
+                style:"padding-top:8vh;",
               }
             },
 
