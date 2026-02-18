@@ -1,73 +1,72 @@
-import { index as l } from "./hydrator.es.js";
-import { index as y } from "./renderer.es.js";
-const p = async () => ({
+import { index as u } from "./hydrator.es.js";
+import { index as l } from "./renderer.es.js";
+const y = async () => ({
   f: {
     name: (a) => `${a.name}${a.id}`
   }
-}), f = () => ({
+}), p = () => ({
   set: () => "xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx".replace(/[xy]/g, function(a) {
     const r = Math.random() * 16 | 0;
     return (a == "x" ? r : r & 3 | 8).toString(16);
   })
-}), E = async (a) => {
-  const r = await p();
+}), _ = async (a) => {
+  const r = await y();
   return {
     set: async (x, i) => {
-      const c = {
+      const s = {
         r: ""
         //style: ``,
       }, d = x.data.curr || {
-        id: f().set(),
+        id: p().set(),
         type: "text",
         data: {
           data: ""
           //Text
         }
-      }, o = await y({
+      }, o = await l({
         f: {
           ...a.f,
-          name: (t) => r.f.name({ id: d.id, name: t })
+          name: (e) => r.f.name({ id: d.id, name: e })
         }
-      }), m = await l({
+      }), m = await u({
         f: {
           ...a.f,
-          name: (t) => r.f.name({ id: d.id, name: t })
+          name: (e) => r.f.name({ id: d.id, name: e })
         }
-      }), s = await o.set({
+      }), c = await o.set({
         data: {
           curr: d
         }
       });
       return setTimeout(async () => {
-        const t = await m.set({
+        const e = await m.set({
           data: {
             curr: d
           }
         }, {
-          add: (e) => {
-            let n = e.el;
+          add: (t) => {
+            let n = t.el;
             n?.setAttribute("contenteditable", "true"), n?.classList.add("block-content"), n?.addEventListener("click", () => {
-            }), n?.addEventListener("input", function(h) {
-              const u = n.innerHTML;
-              e.$d.data = u, t.evt.change();
+            }), n?.addEventListener("input", function(f) {
+              n.innerHTML, e.evt.change();
             });
           },
-          change: (e) => {
-            i?.change(e);
+          change: (t) => {
+            i?.change(t);
           }
         });
-        ((e) => {
+        ((t) => {
           const n = document.createElement("style");
-          n.innerHTML = `${t.style}`, e.appendChild(n);
+          n.innerHTML = `${e.style}`, t.appendChild(n);
         })(document.head);
-      }, 200), c.r = s.r, ((t) => {
-        const e = document.createElement("style");
-        e.innerHTML = `${s.style}`, t.appendChild(e);
-      })(document.head), c;
+      }, 200), s.r = c.r, ((e) => {
+        const t = document.createElement("style");
+        t.innerHTML = `${c.style}`, e.appendChild(t);
+      })(document.head), s;
     }
   };
 };
 export {
-  E as editor,
-  E as index
+  _ as editor,
+  _ as index
 };

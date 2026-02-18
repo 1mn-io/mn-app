@@ -15,10 +15,26 @@ type _p_TYP = {
 type _$p_TYP = {
     data: {
         curr: {
-            "id": "";
-            "type": "text";
+            "id": string;
+            "type": string;
             "data": {
-                "data": string;
+                theme?: 'light' | 'dark';
+                foo?: {
+                    txt?: string;
+                };
+                "value": {
+                    "l": any;
+                };
+                "api": any;
+                "map": {
+                    title: string;
+                    desc: string;
+                    image: string;
+                    tag: string;
+                    ctaText: string;
+                    linkId: string;
+                    onClick: string;
+                };
             };
         };
     };

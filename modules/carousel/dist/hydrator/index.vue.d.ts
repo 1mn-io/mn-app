@@ -1,4 +1,4 @@
-import { _p_TYP, _$cb_TYP, _$p_TYP } from './src/shared/types';
+import { _p_TYP, _$cb_TYP, _$p_TYP } from '../shared/types';
 type __VLS_Props = {
     _p: _p_TYP;
     $p: _$p_TYP;
