@@ -39,7 +39,7 @@
                             "meta": {
                                 "layout": {
                                     "class": "",
-                                    "style":"padding-top:8vh;"
+                                    "style": "padding-top:8vh;"
                                 }
                             },
                             "children": [
@@ -63,9 +63,50 @@
                                                         "type": "carousel",
                                                         "slug": "carousel",
                                                         "data": {
-                                                            "data": "",
-                                                            "theme": "light",
-                                                            "foo": ""
+                                                            "map": {
+                                                                "title": "caption",
+                                                                "image": "image",
+                                                                "tag": "tag",
+                                                                "ctaText": "ctaText",
+                                                                "linkId": "linkId",
+                                                                "onClick": "onClick"
+                                                            },
+                                                            "value": {
+                                                                "l": [
+                                                                    {
+                                                                        "image": "https://images.unsplash.com/photo-1505740420928-5e560c06d30e?q=80&w=2070&auto=format&fit=crop",
+                                                                        "onClick": "/"
+                                                                    },
+                                                                    {
+                                                                        "title": "Urban Streetwear",
+                                                                        "desc": "Redefine your style with our limited edition summer drops.",
+                                                                        "image": "https://images.unsplash.com/photo-1523381210434-271e8be1f52b?q=80&w=2070&auto=format&fit=crop",
+                                                                        "tag": "Fashion",
+                                                                        "ctaText": "View Collection",
+                                                                        "linkId": "fashion",
+                                                                        "onClick": "/"
+                                                                    },
+                                                                    {
+                                                                        "title": "Travel in Style",
+                                                                        "desc": "Explore the world with our durable and stylish luggage collection.",
+                                                                        "image": "https://images.unsplash.com/photo-1506744038136-46273834b3fb?q=80&w=2070&auto=format&fit=crop",
+                                                                        "tag": "Travel",
+                                                                        "ctaText": "Discover More",
+                                                                        "linkId": "travel",
+                                                                        "onClick": "/"
+                                                                    },
+                                                                    {
+                                                                        "title": "Culinary Delights",
+                                                                        "desc": "Upgrade your kitchen with our premium cookware and gadgets.",
+                                                                        "image": "https://images.unsplash.com/photo-1504674900247-0877df9cc836?q=80&w=2070&auto=format&fit=crop",
+                                                                        "tag": "Kitchenware",
+                                                                        "ctaText": "Cook Now",
+                                                                        "linkId": "kitchen",
+                                                                        "onClick": "/"
+                                                                    }
+                                                                ]
+                                                            },
+                                                            "api": {}
                                                         }
                                                     },
                                                     {
