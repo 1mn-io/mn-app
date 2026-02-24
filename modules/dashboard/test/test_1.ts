@@ -95,7 +95,29 @@ let _data = {
                 label: 'Upload Products', 
                 icon: 'pi pi-fw pi-list', 
                 to: '/product-management/upload-products' 
-              }
+              },
+              { 
+                label: 'Download DB Collection', 
+                icon: 'pi pi-fw pi-list', 
+                to: '/product-management/download-db-collection' 
+              },
+              { 
+                label: 'Upload DB Collection', 
+                icon: 'pi pi-fw pi-list', 
+                to: '/product-management/upload-db-collection' 
+              },
+              { 
+                label: 'DB Collections', 
+                icon: 'pi pi-fw pi-list', 
+                to: '/product-management/db-collections'
+              },
+              { 
+                label: 'DB Collection docs', 
+                icon: 'pi pi-fw pi-list', 
+                to: '/product-management/db-collection-docs'
+              },
+
+
             ]
           },
           {
@@ -431,6 +453,48 @@ let _data = {
                   auth:true
                 }
               },
+
+            
+
+              {
+                path: '/product-management/download-db-collection',
+                name: 'download_db_collection',
+                component: '../views/ContentEngine.vue',
+                meta:{
+                  ce_file: "https://raw.githubusercontent.com/1mn-io/mn-app/main/modules/admin_collection_download/dist/data.json", //eg=> https://raw.githubusercontent.com/1mn-io/mn-app/refs/heads/main/modules/admin_product_fragment/dist/data.json
+                  auth:true
+                }
+              },
+              {
+                path: '/product-management/upload-db-collection',
+                name: 'upload_db_collection',
+                component: '../views/ContentEngine.vue',
+                meta:{
+                  ce_file: "https://raw.githubusercontent.com/1mn-io/mn-app/main/modules/admin_collection_upload/dist/data.json", //eg=> https://raw.githubusercontent.com/1mn-io/mn-app/refs/heads/main/modules/admin_product_fragment/dist/data.json
+                  auth:true
+                }
+              },
+              {
+                path: '/product-management/db-collections',
+                name: 'db_collections',
+                component: '../views/ContentEngine.vue',
+                meta:{
+                  ce_file: "https://raw.githubusercontent.com/1mn-io/mn-app/main/modules/admin_collection_fragment/dist/data.json", //eg=> https://raw.githubusercontent.com/1mn-io/mn-app/refs/heads/main/modules/admin_product_fragment/dist/data.json
+                  auth:true
+                }
+              },
+              {
+                path: '/product-management/db-collection-docs',
+                name: 'db_collection_docs',
+                component: '../views/ContentEngine.vue',
+                meta:{
+                  ce_file: "https://raw.githubusercontent.com/1mn-io/mn-app/main/modules/admin_collection_doc_fragment/dist/data.json", //eg=> https://raw.githubusercontent.com/1mn-io/mn-app/refs/heads/main/modules/admin_product_fragment/dist/data.json
+                  auth:true
+                }
+              },
+
+
+
 
 
               //set..
