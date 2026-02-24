@@ -1,0 +1,498 @@
+import { d as O, o as k, a as C, c as I, b as N, e as L, r as b, f as R } from "./runtime-dom.esm-bundler-D2b0Kur0.js";
+const w = () => ({
+  set: () => "xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx".replace(/[xy]/g, function(e) {
+    const t = Math.random() * 16 | 0;
+    return (e == "x" ? t : t & 3 | 8).toString(16);
+  })
+}), $ = async () => ({
+  f: {
+    name: (e) => `${e.name}${e.id}`
+  }
+}), T = async () => ({
+  set: async (e) => {
+    console.log("--theme");
+    try {
+      if (!e.el_id)
+        throw new Error("[el_id] is required");
+      const t = e.name, n = document.getElementById(e.el_id);
+      if (!n)
+        throw new Error("[el_id] is invalid");
+      ((l) => {
+        const i = (o) => {
+          ((c) => {
+            const a = c.getAttribute("data-ce");
+            if (!a)
+              return;
+            const s = JSON.parse(a).filter((r) => r?.k.startsWith("t-"));
+            if (s.length != 0)
+              for (const r of s) {
+                const f = r.k, h = r.v.split(" ");
+                if (f == `t-${t}-class`)
+                  for (const m of h)
+                    c.classList.add(m);
+                else
+                  for (const m of h)
+                    c.classList.remove(m);
+              }
+          })(o);
+        };
+        for (const o of l.getElementsByTagName("*"))
+          i(o);
+        i(l);
+      })(n);
+    } catch (t) {
+      const n = `err: [theme] ${t}`;
+      throw console.log(n), n;
+    }
+  }
+});
+function _(e, t = 1e3) {
+  let n = {
+    cnt: 0
+  };
+  return new Promise((l) => {
+    const i = () => {
+      console.log(`[setInterval] is running.. [count=${n.cnt}]`);
+      try {
+        e() && (clearInterval(o), l());
+      } catch {
+        console.log(`warn: [wait_until] ignoring the exception in setInterval and will check again after [interval=${t}]`);
+      }
+      n.cnt += 1;
+    }, o = setInterval(() => {
+      i();
+    }, t);
+    i();
+  });
+}
+let D = class {
+  listeners = {};
+  on = (e, t) => ((this.listeners[e] ||= []).push(t), () => this.off(e, t));
+  off = (e, t) => {
+    this.listeners[e] = this.listeners[e]?.filter((n) => n !== t);
+  };
+  /** Sequential execution (await each listener) */
+  emit = async (e, ...t) => {
+    for (const n of this.listeners[e] ?? [])
+      await n(...t);
+  };
+  /** Parallel execution (await all listeners) */
+  emitParallel = async (e, ...t) => {
+    await Promise.all(
+      (this.listeners[e] ?? []).map((n) => n(...t))
+    );
+  };
+  //Error-safe emit
+  emitSafe = async (e, ...t) => {
+    for (const n of this.listeners[e] ?? [])
+      try {
+        await n(...t);
+      } catch (l) {
+        this.listeners.error?.forEach(
+          (i) => i(l)
+        );
+      }
+  };
+};
+const p = () => new D();
+class v {
+  startTime;
+  endTime;
+  isRunning;
+  constructor() {
+    this.startTime = 0, this.endTime = 0, this.isRunning = !1;
+  }
+  // Starts the timer
+  start() {
+    if (this.isRunning)
+      throw new Error("Benchmark has already started.");
+    this.startTime = performance.now(), this.isRunning = !0;
+  }
+  // Stops the timer and records the end time
+  stop() {
+    if (!this.isRunning)
+      throw new Error("Benchmark hasn't started.");
+    this.endTime = performance.now(), this.isRunning = !1;
+  }
+  // Get the result in milliseconds
+  result() {
+    if (this.isRunning)
+      throw new Error("Benchmark is still running.");
+    return {
+      time_taken_ms: (this.endTime - this.startTime).toFixed(4)
+    };
+  }
+}
+console.log("content-engine-lib");
+let u = {
+  lib: {
+    inbuilt_lib: [],
+    // <any>[], // [`text`,`table`,`editor`]
+    l: {},
+    set: async (e) => {
+      const t = e?.lib || [];
+      for (const [n, l] of t.entries()) {
+        const i = l, o = `${i.name}:${e.run_from}`, c = `${e.run_from}_src`;
+        let a = i[c];
+        const s = `${e.run_from}_src`;
+        let r = e?.lazy_lib?.[s] || null;
+        if (r && (r = r.replace("{*}", `${i.name}`)), console.log(`_lazy_src: ${r}`), console.log(`_src: ${a}`), u.lib.l.hasOwnProperty(`${o}`) == !1) {
+          if (/^[a-zA-Z0-9]/.test(a) && a.includes("/") == !1 && u.lib.inbuilt_lib.indexOf(`${i.name}`) === -1)
+            if (r)
+              a = r;
+            else
+              throw `[lib-name=${i.name},lib-src=${a}] not allowed or available in in-build mode. Need to use lazy-lib config.`;
+          if (a.startsWith("./") || a.startsWith("../")) {
+            const f = await import(
+              /* @vite-ignore */
+              /* webpackIgnore: true */
+              `${a}`
+            );
+            u.lib.l[`${o}`] = {
+              lib: f,
+              src: a
+            };
+          }
+          if (a.startsWith("http://") || a.startsWith("https://")) {
+            const f = await import(
+              /* @vite-ignore */
+              /* webpackIgnore: true */
+              `${a}`
+            );
+            u.lib.l[`${o}`] = {
+              lib: f,
+              src: a
+            };
+          }
+        }
+      }
+      console.log(await u.lib.get_all({}));
+    },
+    get: async (e) => {
+      let t = null;
+      const n = `${e.name}:${e.run_from}`;
+      return u.lib.l.hasOwnProperty(`${n}`) == !1 && await u.lib.set({
+        lib: [
+          {
+            renderer_src: e.name,
+            hydrator_src: e.name,
+            editor_src: e.name,
+            name: e.name
+          }
+        ],
+        run_from: e.run_from,
+        lazy_lib: e.lazy_lib
+      }), t = u.lib.l[`${n}`], t;
+    },
+    get_all: async (e) => u.lib.l
+  },
+  path: {
+    set: (e) => {
+      let t = "", n = "";
+      const l = e.src.split("/");
+      if (e.src.indexOf("://localhost") !== -1 || e.src.indexOf("://127.0.0.1") !== -1 || (n = "/dist"), l.indexOf(e.type) !== -1)
+        for (const [i, o] of l.entries()) {
+          let c = i == 0 ? "" : "/";
+          if (t += `${c}${o}`, o == e.type)
+            return `${t}${n}${e.name}`;
+        }
+      else
+        for (const [i, o] of l.entries()) {
+          let c = i == 0 ? "" : "/";
+          if (t += `${c}${o}`, o == "src")
+            return `${t}${n}${e.name}`;
+        }
+      return `${t}${n}${e.name}`;
+    }
+  }
+};
+const E = p(), z = p(), S = E.on, U = E.emit, j = z.emit, A = z.on, B = async (e) => {
+  const t = await $();
+  return await u.lib.set({ lib: e.lib, run_from: "renderer", lazy_lib: e.lazy_lib }), {
+    set: async (n) => {
+      console.log("--renderer [set]"), n.return = n?.return || {}, n.return.r = n?.return?.r || "full";
+      const l = new v();
+      l.start();
+      let i = n.data?.value?.l || n.data.l, o = {
+        r: null,
+        //``
+        style: "",
+        head: "",
+        // `<test>head-1</test>`
+        //set..
+        //total:_l.length,
+        benchmark: null
+      };
+      return n.return.r == "full" ? o.r = "" : o.r = [], await (async () => {
+        for (const c of i) {
+          const a = await await u.lib.get({ name: c.type, run_from: "renderer", lazy_lib: e.lazy_lib }), s = await (await a.lib.index({
+            f: {
+              name: (r) => t.f.name({ id: c.id, name: r }),
+              get_lib: async (r) => await await u.lib.get({ name: r.name, run_from: r.run_from, lazy_lib: e.lazy_lib }),
+              set_theme: async (r) => await (await T()).set(r),
+              path: (r) => u.path.set({ src: a.src, type: c.type, name: r }),
+              //set..
+              uuid: () => w().set(),
+              wait_until: _
+            }
+          })).set(
+            {
+              data: {
+                curr: c
+              }
+            }
+            /*_$cb*/
+          );
+          n?.return?.r == "full" ? o.r += s?.r || "" : o.r.push(s?.r || ""), o.style += s?.style || "", o.head += s?.head || "";
+        }
+      })(), l.stop(), o.benchmark = l.result(), o;
+    }
+  };
+}, J = async (e) => {
+  const t = await $();
+  return await u.lib.set({ lib: e.lib, run_from: "hydrator", lazy_lib: e.lazy_lib }), {
+    set: async (n) => {
+      console.log("--hydrator [set]");
+      const l = new v();
+      l.start();
+      let i = {
+        r: "",
+        style: ""
+      }, o = {
+        style_id: `${w().set()}_stl`
+      }, c = n.data?.value?.l || n.data.l;
+      const a = async () => {
+        for (const s of c) {
+          const r = await await u.lib.get({ name: s.type, run_from: "hydrator", lazy_lib: e.lazy_lib }), f = r.lib, h = p(), m = h.on, y = await (await f.index({
+            /**@my module can use it to set custom variables. */
+            my: {},
+            //NOTE: We cannot add or use any variable of this object, It's reserved for module.
+            f: {
+              name: (d) => t.f.name({ id: s.id, name: d }),
+              get_lib: async (d) => await await u.lib.get({ name: d.name, run_from: d.run_from, lazy_lib: e.lazy_lib }),
+              set_theme: async (d) => await (await T()).set(d),
+              path: (d) => u.path.set({ src: r.src, type: s.type, name: d }),
+              //set..
+              uuid: () => w().set(),
+              wait_until: _,
+              //set..
+              call: j,
+              listen: m,
+              //set..
+              new_emitter: () => p()
+            }
+          })).set(
+            {
+              data: {
+                curr: s
+              }
+            }
+            /*_$cb*/
+          );
+          S("msg", async (d) => {
+            try {
+              if (Object.keys(d.where || {}).length == 0) {
+                await h.emit("msg", d);
+                return;
+              }
+            } catch {
+            }
+            try {
+              if (s?.[d.where?.key || ""] == d.where?.value) {
+                await h.emit("msg", d);
+                return;
+              }
+            } catch {
+            }
+          }), i.style += y.style;
+        }
+      };
+      await _(
+        () => document.readyState === "complete" || typeof window < "u",
+        50
+      ), await a();
+      try {
+        ((s) => {
+          const r = document.getElementById(`${o.style_id}`);
+          r && r.remove();
+          const f = document.createElement("style");
+          f.id = `${o.style_id}`, f.innerHTML = `${i.style}`, s.appendChild(f);
+        })(document.head);
+      } catch (s) {
+        console.log(`${s}, Failed to set style..`);
+      }
+      return l.stop(), {
+        //style_id:_ins.style_id,
+        //total:_l.length,
+        benchmark: l.result()
+      };
+    }
+  };
+}, M = { key: 0 }, V = ["innerHTML"], g = "https://fastapi.dryutil.1mn.io/client/api/i/ona/product_dir", x = "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImYwZTNlMDRiLTVkNDAtNDg1ZS05OGU4LWEzOTI3NWU3MzM0OCIsInNlY3VyaXR5Ijp7InBhcnR5IjpbInBhcnR5XzEiLCJwYXJ0eV8yIl19LCJzdWIiOiJmMGUzZTA0Yi01ZDQwLTQ4NWUtOThlOC1hMzkyNzVlNzMzNDgiLCJpYXQiOjE3NjU4MTI4Mjh9.OoClnPtlxI71L-e555nbNSmenmGufxewp78SlmdZCNxeuauXao5RRvqwOKQ77SJFqJXk0ng6GZ7VOgYECdEf-3k1UGX7w1NE_D5A6SP3UkVsSG8orYACFuvTyesbFwkpnEhdu0PBd6n8wuLkgU6nZ1bLDzKVg1zd8fFeJrwmUqk", W = /* @__PURE__ */ O({
+  __name: "index",
+  props: {
+    _p: {},
+    _$p: {}
+  },
+  setup(e) {
+    const t = `${g}?typ=list_collection`, n = `${g}?typ=download_collection`, l = b(null), i = b(null), o = async (a, s = "info") => {
+      await U("msg", {
+        type: "show",
+        _p: {},
+        _$p: {},
+        custom: {
+          msg: a,
+          options: { type: s, position: "top-right", autoClose: 3e3, theme: "light" }
+        }
+      });
+    }, c = async () => {
+      if (console.log("🚀 DOWNLOAD FUNCTION STARTED"), !l.value) {
+        console.warn("❌ No collection selected."), o("Please select a collection first", "warn");
+        return;
+      }
+      const a = l.value.name || l.value;
+      console.log("📦 REQUEST BODY PAYLOAD:", a), o(`Downloading: ${a}...`, "info");
+      try {
+        const s = await fetch(n, {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+            Authorization: `Bearer ${x}`
+          },
+          body: JSON.stringify({
+            collection: a
+          })
+        });
+        if (!s.ok) throw new Error(`Server error: ${s.status}`);
+        const r = await s.blob(), f = window.URL.createObjectURL(r), h = document.createElement("a");
+        h.href = f, h.download = `${a}.json`, document.body.appendChild(h), h.click(), document.body.removeChild(h), window.URL.revokeObjectURL(f), o("Download started successfully", "success");
+      } catch (s) {
+        console.error("❌ DOWNLOAD ERROR:", s), o("Failed to download collection", "error");
+      }
+    };
+    return k(() => {
+      (async () => {
+        setTimeout(async () => {
+          console.log("🎧 LISTENER ATTACHED"), A("child:msg", async (m) => {
+            const y = m.type, d = m._$p?.data?.curr?.id;
+            console.log(`👉 RAW EVENT: [${y}] ID: [${d}]`, m.custom), y === "autocomplete:select" && d === "input-autocomplete-final" && (m.custom && m.custom.selectedValue ? (l.value = m.custom.selectedValue, console.log("✅ SELECTED (from selectedValue):", l.value)) : m.custom && (l.value = m.custom, console.log("✅ SELECTED (direct):", l.value))), y === "click" && d === "form_button_download" && await c();
+          });
+        }, 500);
+        let a = {
+          l: [
+            {
+              id: "c78c-form_holder",
+              type: "form_holder",
+              slug: "form_holder",
+              data: {
+                title: "Download Collection",
+                mode: "manual",
+                class: { b: "bg-white shadow-lg rounded-lg p-8 w-full max-w-md" },
+                ce_file: {
+                  data: {
+                    l: [
+                      { id: "c78c-form_toast", type: "form_toast", slug: "form_toast", data: { env: "prod" } },
+                      {
+                        id: "section-autocomplete",
+                        type: "form_section",
+                        slug: "form_section",
+                        data: { label: "Select Collection", l: [], theme: "light" }
+                      },
+                      {
+                        id: "input-autocomplete-final",
+                        type: "form_autocomplete",
+                        slug: "form_autocomplete",
+                        data: {
+                          placeholder: "Start typing collection name...",
+                          optionLabel: "name",
+                          showClear: !0,
+                          dropdown: !0,
+                          appendTo: "body",
+                          class: "w-full mb-4",
+                          //"style": "width:100%",
+                          form: { section_id: "section-autocomplete" },
+                          api: {
+                            url: t,
+                            method: "post",
+                            rsp_path: "json.collections",
+                            body: {},
+                            headers: {
+                              "Content-Type": "application/json",
+                              Authorization: `Bearer ${x}`
+                            }
+                          }
+                        }
+                      },
+                      {
+                        id: "form_section-download",
+                        type: "form_section",
+                        slug: "form_section",
+                        data: { label: "", l: [], theme: "light" }
+                      },
+                      {
+                        id: "form_button_download",
+                        type: "form_button",
+                        slug: "form_button",
+                        data: {
+                          label: "Download",
+                          variant: "contained",
+                          class: "w-full bg-blue-600 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded",
+                          form: { section_id: "form_section-download" }
+                        }
+                      }
+                    ]
+                  }
+                }
+              }
+            }
+          ]
+        };
+        const s = {
+          lib: [],
+          lazy_lib: {
+            renderer_src: "https://cdn.jsdelivr.net/gh/1mn-io/mn-app@latest/modules/{*}/dist/renderer.es.js",
+            hydrator_src: "https://cdn.jsdelivr.net/gh/1mn-io/mn-app@latest/modules/{*}/dist/hydrator.es.js",
+            editor_src: "https://cdn.jsdelivr.net/gh/1mn-io/mn-app@latest/modules/{*}/dist/editor.es.js"
+          }
+        }, r = await B(s), f = await J(s);
+        await (async () => {
+          const m = await r.set({ data: a });
+          i.value = m.r || "";
+          const y = document.createElement("style");
+          document.head.appendChild(y), y.innerHTML = m.style, setTimeout(async () => {
+            await f.set({ data: a });
+          }, 200);
+        })();
+      })();
+    }), (a, s) => i.value ? (C(), I("div", M, [
+      N("div", { innerHTML: i.value }, null, 8, V)
+    ])) : L("", !0);
+  }
+}), Y = async (e) => ({
+  set: async (t) => {
+    console.log(`--hydrator [${t.data.curr.type}]`);
+    const l = R(W, {
+      _p: e,
+      _$p: t
+    }), i = {
+      r: "",
+      style: "",
+      //set..
+      evt: {
+        change: () => {
+          e.f.call("msg", {
+            type: "change",
+            _p: e,
+            _$p: t,
+            custom: {}
+          });
+        }
+      }
+    }, o = document.getElementById(e.f.name("vue-root"));
+    return l.mount(o), i;
+  }
+});
+export {
+  Y as hydrator,
+  Y as index
+};
