@@ -1568,6 +1568,7 @@ function Qn(e, t, n, s, r) {
       W && ct(e, W) && W.el[De] && W.el[De](), $(O, [P]);
     },
     enter(P) {
+      if (M[m] === e) return;
       let O = h, W = u, T = d;
       if (!n.isMounted)
         if (i)
@@ -4229,7 +4230,7 @@ function Wl(e, t, n) {
     bn(1);
   }
 }
-const kl = "3.5.28", Gl = {
+const kl = "3.5.29", Gl = {
   createComponentInstance: wi,
   setupComponent: Pi,
   renderComponentRoot: fn,

@@ -5,4 +5,6 @@ export declare const useOrder: () => {
     payment_status: import('vue').Ref<null, null>;
     page_state: import('vue').Ref<string, string>;
     returnRequest: (order_id: any, order_item_id: any, return_reason: string, return_desc: string) => Promise<void>;
+    getDeliveredOrder: () => Promise<void>;
+    deliveredOrder: import('vue').Ref<never[], never[]>;
 };
