@@ -1,0 +1,22 @@
+{
+    "config": {
+        "lazy_lib": {
+            "renderer_src": "https://cdn.jsdelivr.net/gh/1mn-io/mn-app/modules/{*}/dist/renderer.es.js",
+            "hydrator_src": "https://cdn.jsdelivr.net/gh/1mn-io/mn-app/modules/{*}/dist/hydrator.es.js",
+            "editor_src": "https://cdn.jsdelivr.net/gh/1mn-io/mn-app/modules/{*}/dist/editor.es.js"
+        }
+    },
+    "data": {
+        "l": [
+            {
+                "id": "c76c-admin_collection_fragment",
+                "type": "admin_collection_fragment",
+                "slug": "admin_collection_fragment",
+                "data": {
+                    "theme": "light",
+                    "data": ""
+                }
+            }
+        ]
+    }
+}
