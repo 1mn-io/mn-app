@@ -1,0 +1,63 @@
+{
+    "config": {
+        "lazy_lib": {
+            "renderer_src": "https://cdn.jsdelivr.net/gh/1mn-io/mn-app@latest/modules/{*}/dist/renderer.es.js",
+            "hydrator_src": "https://cdn.jsdelivr.net/gh/1mn-io/mn-app@latest/modules/{*}/dist/hydrator.es.js",
+            "editor_src": "https://cdn.jsdelivr.net/gh/1mn-io/mn-app@latest/modules/{*}/dist/editor.es.js"
+        }
+    },
+    "data": {
+        "l": [
+            {
+                "id": "3e1bc78c-product_search_sf",
+                "type": "product_search_sf",
+                "slug": "product_search_sf",
+                "data": {
+                    "data": "",
+                    "mode": "normal",
+                    "api": {
+                        "url": "https://fastapi.dryutil.1mn.io/client-public/api/i/ona/product_dir?typ=get_product_list",
+                        "token": "Bearer <localStorage.token>"
+                    },
+                    "cart_popup": {
+                        "ce_file": {
+                            "config": {
+                                "lazy_lib": {
+                                    "renderer_src": "https://cdn.jsdelivr.net/gh/1mn-io/mn-app@latest/modules/{*}/dist/renderer.es.js",
+                                    "hydrator_src": "https://cdn.jsdelivr.net/gh/1mn-io/mn-app@latest/modules/{*}/dist/hydrator.es.js",
+                                    "editor_src": "https://cdn.jsdelivr.net/gh/1mn-io/mn-app@latest/modules/{*}/dist/editor.es.js"
+                                }
+                            },
+                            "data": {
+                                "l": [
+                                    {
+                                        "id": "3e1bc78c-cart_popup",
+                                        "type": "cart_popup",
+                                        "slug": "cart_popup",
+                                        "data": {
+                                            "data": "",
+                                            "theme": "light",
+                                            "env": "prod",
+                                            "api": {
+                                                "0": {
+                                                    "url": "https://fastapi.dryutil.1mn.io/client-public/api/i/ona/product_dir?typ=view_product"
+                                                },
+                                                "1": {
+                                                    "url": "https://fastapi.dryutil.1mn.io/client-public/api/i/ona/order_management"
+                                                },
+                                                "token": "Bearer <localStorage.token>"
+                                            }
+                                        }
+                                    }
+                                ]
+                            }
+                        }
+                    },
+                    "event": {
+                        "onProductClick": "/product/{slug}"
+                    }
+                }
+            }
+        ]
+    }
+}
