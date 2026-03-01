@@ -1,4 +1,4 @@
-import { D as B, E as _, C as j, G as N, H as z, I as v, N as u, J as E, K as b, F as V, S as M, L as U, M as F, T as I, O as w, P as C, Q as H, R as L, U as O, V as P, m as D, B as G, W as K, X as W, Y as J, Z as Q, _ as X, $ as Y, a0 as Z, a1 as q, a2 as rr, a3 as tr, d as ar, j as or, k as er, x as ir, o as lr, a4 as nr } from "./runtime-dom.esm-bundler-DJF6oUPJ.js";
+import { q as B, s as _, p as N, u as j, x as z, y as v, N as u, z as E, A as b, F as V, S as M, C as U, B as F, T as I, D as w, E as C, G as H, H as L, I as O, J as P, n as D, l as G, K, L as W, M as q, O as J, P as Q, Q as X, R as Y, U as Z, V as rr, W as tr, d as ar, a as or, e as er, t as ir, b as lr, X as nr } from "./runtime-dom.esm-bundler-DY68UAjC.js";
 function sr(r, t) {
   t === void 0 && (t = {});
   var a = t.insertAt;
@@ -24,8 +24,8 @@ function pr(r, t) {
 function wr(r, t, a) {
   if (!W(t))
     return "";
-  const o = a && (a.indexOf("-") > 0 || J(a)) ? r : Q[r] || r.toLowerCase();
-  return X(o) ? Y(t) ? ` ${o}` : "" : Z(o) ? t === "" ? ` ${o}` : ` ${o}="${w(t)}"` : (console.warn(
+  const o = a && (a.indexOf("-") > 0 || q(a)) ? r : J[r] || r.toLowerCase();
+  return Q(o) ? X(t) ? ` ${o}` : "" : Y(o) ? t === "" ? ` ${o}` : ` ${o}="${w(t)}"` : (console.warn(
     `[@vue/server-renderer] Skipped rendering unsafe attribute name: ${o}`
   ), "");
 }
@@ -41,7 +41,7 @@ function hr(r) {
   return w(K(t));
 }
 function gr(r) {
-  if (!C(r) && q(r)) {
+  if (!C(r) && Z(r)) {
     const t = {};
     for (const a in r)
       a.startsWith(":--") ? t[a.slice(1)] = rr(r[a]) : t[a] = r[a];
@@ -260,7 +260,7 @@ function _r(r, t, a, o) {
 const { isVNode: zr } = _;
 function g(r, t, a) {
   if (!r.hasAsync)
-    return t + R(r);
+    return t + A(r);
   let o = t;
   for (let e = a; e < r.length; e += 1) {
     const i = r[e];
@@ -280,18 +280,18 @@ function g(r, t, a) {
 function $(r) {
   return g(r, "", 0);
 }
-function R(r) {
+function A(r) {
   let t = "";
   for (let a = 0; a < r.length; a++) {
     let o = r[a];
-    b(o) ? t += o : t += R(o);
+    b(o) ? t += o : t += A(o);
   }
   return t;
 }
-async function A(r, t = {}) {
+async function R(r, t = {}) {
   if (zr(r))
-    return A(j({ render: () => r }), t);
-  const a = N(r._component, r._props);
+    return R(N({ render: () => r }), t);
+  const a = j(r._component, r._props);
   a.appContext = r._context, r.provide(z, t);
   const o = await T(a), e = await $(o);
   if (await Cr(t), t.__watcherHandles)
@@ -326,7 +326,7 @@ const Sr = ["id"], Tr = /* @__PURE__ */ ar({
   }
 });
 sr(cr);
-const Rr = async (r) => ({
+const Ar = async (r) => ({
   set: async (t, a) => {
     console.log(`--renderer [${t.data.curr.type}]`);
     const e = nr(Tr, {
@@ -337,7 +337,7 @@ const Rr = async (r) => ({
     return {
       r: `
                  <div>
-                    ${await A(e)}
+                    ${await R(e)}
                     <div id="${r.f.name("vue-root")}"></div>
                   </div>
                 `,
@@ -353,6 +353,6 @@ const Rr = async (r) => ({
   }
 });
 export {
-  Rr as index,
-  Rr as renderer
+  Ar as index,
+  Ar as renderer
 };
