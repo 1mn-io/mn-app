@@ -218,7 +218,7 @@ const _ENV = `dev`; // dev | prod //import.meta.env.VITE_ENV;
 
                 //set..
                 {
-                  path: '/product-details',
+                  path: '/product/:id', // '/product-details'
                   name: 'product_details',
                   component: '../views/ContentEngine.vue',
                   meta: {
@@ -226,12 +226,13 @@ const _ENV = `dev`; // dev | prod //import.meta.env.VITE_ENV;
                   }
                 },
                 {
-                  path: '/products',
-                  name: 'product',
+                  path: '/search', //'/products'
+                  name: 'product_search', // 'product'
                   component: '../views/ContentEngine.vue',
                   meta: {
-                    ce_file: "https://raw.githubusercontent.com/1mn-io/mn-app/refs/heads/main/modules/product_list/dist/data.json",
+                    //ce_file: "https://raw.githubusercontent.com/1mn-io/mn-app/refs/heads/main/modules/product_list/dist/data.json",
                     //ce_file: "http://localhost:5173/test/ce_files/product_list.json",
+                    ce_file: "https://raw.githubusercontent.com/1mn-io/mn-app/refs/heads/main/modules/product_search_sf/dist/data.json",
                   }
                 },
 
