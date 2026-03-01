@@ -39,6 +39,7 @@ type _$p_TYP = {
                 "mode": string;
                 "api": any;
                 "cart_popup": any;
+                "event": any;
             };
         };
     };

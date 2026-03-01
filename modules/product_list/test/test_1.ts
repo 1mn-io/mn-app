@@ -59,6 +59,10 @@ let _data = {
                 ]
               }
             }
+          },
+          //set..
+          "event": {
+             "onProductClick": "/product/{slug}", // "/product/{slug}" // "/product/{id}"  // "{slug}"
           }
         },
       }
