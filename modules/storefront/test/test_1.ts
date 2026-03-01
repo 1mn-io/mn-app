@@ -203,6 +203,9 @@ const _ENV = `dev`; // dev | prod //import.meta.env.VITE_ENV;
                                     ]
                                   }
                                 }
+                              },
+                              "event": {
+                                "onProductClick": "/product/{slug}"
                               }
                             }
                           }
