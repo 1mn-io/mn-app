@@ -1,0 +1,1 @@
+.animate-spin{animation:spin 1s linear infinite}@keyframes spin{to{transform:rotate(360deg)}}::-webkit-scrollbar{width:8px}::-webkit-scrollbar-track{background:transparent}::-webkit-scrollbar-thumb{background-color:#cbd5e1;border-radius:20px}

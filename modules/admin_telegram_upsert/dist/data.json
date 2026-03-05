@@ -9,12 +9,13 @@
     "data": {
         "l": [
             {
-                "id": "3e1bc78c-4f6f-aa87-75a-654a",
-                "type": "admin_product_fragment",
-                "slug": "admin_product_fragment",
+                "id": "678c-admin_telegram_upsert",
+                "type": "admin_telegram_upsert",
+                "slug": "admin_telegram_upsert",
                 "data": {
+                    "data": "",
                     "theme": "light",
-                    "data": ""
+                    "foo": ""
                 }
             }
         ]
