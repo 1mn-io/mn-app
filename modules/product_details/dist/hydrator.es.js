@@ -1,247 +1,298 @@
-import { d as ut, r as V, c as M, o as Lt, w as jt, a as y, b as w, e as a, f as z, n as d, g as be, h as se, F as j, i as U, t as S, j as Ut, k as Dt, v as Mt, l as zt, m as It, p as $t } from "./runtime-dom.esm-bundler-DY68UAjC.js";
-function dt(e, t) {
+import { d as _t, r as j, w as rt, o as Zt, n as nt, a as v, c as g, b as n, e as u, f as ge, g as ne, F as M, h as D, t as C, i as q, j as Qt, k as Me, v as De, l as z, m as es, p as ts, q as ss } from "./runtime-dom.esm-bundler-B1F-qcLg.js";
+import { ce_renderer as rs, ce_hydrator as ns } from "content-engine-lib";
+function kt(t, e) {
   return function() {
-    return e.apply(t, arguments);
+    return t.apply(e, arguments);
   };
 }
-const { toString: qt } = Object.prototype, { getPrototypeOf: $e } = Object, { iterator: Ae, toStringTag: ft } = Symbol, Ne = /* @__PURE__ */ ((e) => (t) => {
-  const s = qt.call(t);
-  return e[s] || (e[s] = s.slice(8, -1).toLowerCase());
-})(/* @__PURE__ */ Object.create(null)), X = (e) => (e = e.toLowerCase(), (t) => Ne(t) === e), Pe = (e) => (t) => typeof t === e, { isArray: de } = Array, ue = Pe("undefined");
-function ge(e) {
-  return e !== null && !ue(e) && e.constructor !== null && !ue(e.constructor) && I(e.constructor.isBuffer) && e.constructor.isBuffer(e);
+const { toString: os } = Object.prototype, { getPrototypeOf: Ke } = Object, { iterator: Be, toStringTag: Et } = Symbol, Le = /* @__PURE__ */ ((t) => (e) => {
+  const s = os.call(e);
+  return t[s] || (t[s] = s.slice(8, -1).toLowerCase());
+})(/* @__PURE__ */ Object.create(null)), Q = (t) => (t = t.toLowerCase(), (e) => Le(e) === t), Pe = (t) => (e) => typeof e === t, { isArray: xe } = Array, be = Pe("undefined");
+function we(t) {
+  return t !== null && !be(t) && t.constructor !== null && !be(t.constructor) && H(t.constructor.isBuffer) && t.constructor.isBuffer(t);
 }
-const pt = X("ArrayBuffer");
-function Ht(e) {
-  let t;
-  return typeof ArrayBuffer < "u" && ArrayBuffer.isView ? t = ArrayBuffer.isView(e) : t = e && e.buffer && pt(e.buffer), t;
+const St = Q("ArrayBuffer");
+function as(t) {
+  let e;
+  return typeof ArrayBuffer < "u" && ArrayBuffer.isView ? e = ArrayBuffer.isView(t) : e = t && t.buffer && St(t.buffer), e;
 }
-const Jt = Pe("string"), I = Pe("function"), ht = Pe("number"), ve = (e) => e !== null && typeof e == "object", Vt = (e) => e === !0 || e === !1, Re = (e) => {
-  if (Ne(e) !== "object")
+const ls = Pe("string"), H = Pe("function"), Ct = Pe("number"), _e = (t) => t !== null && typeof t == "object", is = (t) => t === !0 || t === !1, Te = (t) => {
+  if (Le(t) !== "object")
     return !1;
-  const t = $e(e);
-  return (t === null || t === Object.prototype || Object.getPrototypeOf(t) === null) && !(ft in e) && !(Ae in e);
-}, Wt = (e) => {
-  if (!ve(e) || ge(e))
+  const e = Ke(t);
+  return (e === null || e === Object.prototype || Object.getPrototypeOf(e) === null) && !(Et in t) && !(Be in t);
+}, ds = (t) => {
+  if (!_e(t) || we(t))
     return !1;
   try {
-    return Object.keys(e).length === 0 && Object.getPrototypeOf(e) === Object.prototype;
+    return Object.keys(t).length === 0 && Object.getPrototypeOf(t) === Object.prototype;
   } catch {
     return !1;
   }
-}, Xt = X("Date"), Kt = X("File"), Gt = X("Blob"), Yt = X("FileList"), Zt = (e) => ve(e) && I(e.pipe), Qt = (e) => {
-  let t;
-  return e && (typeof FormData == "function" && e instanceof FormData || I(e.append) && ((t = Ne(e)) === "formdata" || // detect form-data instance
-  t === "object" && I(e.toString) && e.toString() === "[object FormData]"));
-}, es = X("URLSearchParams"), [ts, ss, rs, ns] = ["ReadableStream", "Request", "Response", "Headers"].map(X), os = (e) => e.trim ? e.trim() : e.replace(/^[\s\uFEFF\xA0]+|[\s\uFEFF\xA0]+$/g, "");
-function we(e, t, { allOwnKeys: s = !1 } = {}) {
-  if (e === null || typeof e > "u")
+}, cs = Q("Date"), us = Q("File"), fs = (t) => !!(t && typeof t.uri < "u"), ps = (t) => t && typeof t.getParts < "u", hs = Q("Blob"), ms = Q("FileList"), bs = (t) => _e(t) && H(t.pipe);
+function xs() {
+  return typeof globalThis < "u" ? globalThis : typeof self < "u" ? self : typeof window < "u" ? window : typeof global < "u" ? global : {};
+}
+const ot = xs(), at = typeof ot.FormData < "u" ? ot.FormData : void 0, vs = (t) => {
+  let e;
+  return t && (at && t instanceof at || H(t.append) && ((e = Le(t)) === "formdata" || // detect form-data instance
+  e === "object" && H(t.toString) && t.toString() === "[object FormData]"));
+}, gs = Q("URLSearchParams"), [ys, ws, _s, ks] = [
+  "ReadableStream",
+  "Request",
+  "Response",
+  "Headers"
+].map(Q), Es = (t) => t.trim ? t.trim() : t.replace(/^[\s\uFEFF\xA0]+|[\s\uFEFF\xA0]+$/g, "");
+function ke(t, e, { allOwnKeys: s = !1 } = {}) {
+  if (t === null || typeof t > "u")
     return;
-  let r, n;
-  if (typeof e != "object" && (e = [e]), de(e))
-    for (r = 0, n = e.length; r < n; r++)
-      t.call(null, e[r], r, e);
+  let r, o;
+  if (typeof t != "object" && (t = [t]), xe(t))
+    for (r = 0, o = t.length; r < o; r++)
+      e.call(null, t[r], r, t);
   else {
-    if (ge(e))
+    if (we(t))
       return;
-    const o = s ? Object.getOwnPropertyNames(e) : Object.keys(e), l = o.length;
-    let u;
-    for (r = 0; r < l; r++)
-      u = o[r], t.call(null, e[u], u, e);
+    const a = s ? Object.getOwnPropertyNames(t) : Object.keys(t), i = a.length;
+    let f;
+    for (r = 0; r < i; r++)
+      f = a[r], e.call(null, t[f], f, t);
   }
 }
-function mt(e, t) {
-  if (ge(e))
+function Rt(t, e) {
+  if (we(t))
     return null;
-  t = t.toLowerCase();
-  const s = Object.keys(e);
-  let r = s.length, n;
+  e = e.toLowerCase();
+  const s = Object.keys(t);
+  let r = s.length, o;
   for (; r-- > 0; )
-    if (n = s[r], t === n.toLowerCase())
-      return n;
+    if (o = s[r], e === o.toLowerCase())
+      return o;
   return null;
 }
-const ne = typeof globalThis < "u" ? globalThis : typeof self < "u" ? self : typeof window < "u" ? window : global, bt = (e) => !ue(e) && e !== ne;
-function De() {
-  const { caseless: e, skipUndefined: t } = bt(this) && this || {}, s = {}, r = (n, o) => {
-    const l = e && mt(s, o) || o;
-    Re(s[l]) && Re(n) ? s[l] = De(s[l], n) : Re(n) ? s[l] = De({}, n) : de(n) ? s[l] = n.slice() : (!t || !ue(n)) && (s[l] = n);
+const fe = typeof globalThis < "u" ? globalThis : typeof self < "u" ? self : typeof window < "u" ? window : global, Ot = (t) => !be(t) && t !== fe;
+function Je() {
+  const { caseless: t, skipUndefined: e } = Ot(this) && this || {}, s = {}, r = (o, a) => {
+    if (a === "__proto__" || a === "constructor" || a === "prototype")
+      return;
+    const i = t && Rt(s, a) || a;
+    Te(s[i]) && Te(o) ? s[i] = Je(s[i], o) : Te(o) ? s[i] = Je({}, o) : xe(o) ? s[i] = o.slice() : (!e || !be(o)) && (s[i] = o);
   };
-  for (let n = 0, o = arguments.length; n < o; n++)
-    arguments[n] && we(arguments[n], r);
+  for (let o = 0, a = arguments.length; o < a; o++)
+    arguments[o] && ke(arguments[o], r);
   return s;
 }
-const as = (e, t, s, { allOwnKeys: r } = {}) => (we(t, (n, o) => {
-  s && I(n) ? e[o] = dt(n, s) : e[o] = n;
-}, { allOwnKeys: r }), e), ls = (e) => (e.charCodeAt(0) === 65279 && (e = e.slice(1)), e), is = (e, t, s, r) => {
-  e.prototype = Object.create(t.prototype, r), e.prototype.constructor = e, Object.defineProperty(e, "super", {
-    value: t.prototype
-  }), s && Object.assign(e.prototype, s);
-}, cs = (e, t, s, r) => {
-  let n, o, l;
-  const u = {};
-  if (t = t || {}, e == null) return t;
+const Ss = (t, e, s, { allOwnKeys: r } = {}) => (ke(
+  e,
+  (o, a) => {
+    s && H(o) ? Object.defineProperty(t, a, {
+      value: kt(o, s),
+      writable: !0,
+      enumerable: !0,
+      configurable: !0
+    }) : Object.defineProperty(t, a, {
+      value: o,
+      writable: !0,
+      enumerable: !0,
+      configurable: !0
+    });
+  },
+  { allOwnKeys: r }
+), t), Cs = (t) => (t.charCodeAt(0) === 65279 && (t = t.slice(1)), t), Rs = (t, e, s, r) => {
+  t.prototype = Object.create(e.prototype, r), Object.defineProperty(t.prototype, "constructor", {
+    value: t,
+    writable: !0,
+    enumerable: !1,
+    configurable: !0
+  }), Object.defineProperty(t, "super", {
+    value: e.prototype
+  }), s && Object.assign(t.prototype, s);
+}, Os = (t, e, s, r) => {
+  let o, a, i;
+  const f = {};
+  if (e = e || {}, t == null) return e;
   do {
-    for (n = Object.getOwnPropertyNames(e), o = n.length; o-- > 0; )
-      l = n[o], (!r || r(l, e, t)) && !u[l] && (t[l] = e[l], u[l] = !0);
-    e = s !== !1 && $e(e);
-  } while (e && (!s || s(e, t)) && e !== Object.prototype);
-  return t;
-}, us = (e, t, s) => {
-  e = String(e), (s === void 0 || s > e.length) && (s = e.length), s -= t.length;
-  const r = e.indexOf(t, s);
+    for (o = Object.getOwnPropertyNames(t), a = o.length; a-- > 0; )
+      i = o[a], (!r || r(i, t, e)) && !f[i] && (e[i] = t[i], f[i] = !0);
+    t = s !== !1 && Ke(t);
+  } while (t && (!s || s(t, e)) && t !== Object.prototype);
+  return e;
+}, Ts = (t, e, s) => {
+  t = String(t), (s === void 0 || s > t.length) && (s = t.length), s -= e.length;
+  const r = t.indexOf(e, s);
   return r !== -1 && r === s;
-}, ds = (e) => {
-  if (!e) return null;
-  if (de(e)) return e;
-  let t = e.length;
-  if (!ht(t)) return null;
-  const s = new Array(t);
-  for (; t-- > 0; )
-    s[t] = e[t];
+}, As = (t) => {
+  if (!t) return null;
+  if (xe(t)) return t;
+  let e = t.length;
+  if (!Ct(e)) return null;
+  const s = new Array(e);
+  for (; e-- > 0; )
+    s[e] = t[e];
   return s;
-}, fs = /* @__PURE__ */ ((e) => (t) => e && t instanceof e)(typeof Uint8Array < "u" && $e(Uint8Array)), ps = (e, t) => {
-  const r = (e && e[Ae]).call(e);
-  let n;
-  for (; (n = r.next()) && !n.done; ) {
-    const o = n.value;
-    t.call(e, o[0], o[1]);
+}, Ns = /* @__PURE__ */ ((t) => (e) => t && e instanceof t)(typeof Uint8Array < "u" && Ke(Uint8Array)), Fs = (t, e) => {
+  const r = (t && t[Be]).call(t);
+  let o;
+  for (; (o = r.next()) && !o.done; ) {
+    const a = o.value;
+    e.call(t, a[0], a[1]);
   }
-}, hs = (e, t) => {
+}, Bs = (t, e) => {
   let s;
   const r = [];
-  for (; (s = e.exec(t)) !== null; )
+  for (; (s = t.exec(e)) !== null; )
     r.push(s);
   return r;
-}, ms = X("HTMLFormElement"), bs = (e) => e.toLowerCase().replace(
-  /[-_\s]([a-z\d])(\w*)/g,
-  function(s, r, n) {
-    return r.toUpperCase() + n;
-  }
-), Xe = (({ hasOwnProperty: e }) => (t, s) => e.call(t, s))(Object.prototype), xs = X("RegExp"), xt = (e, t) => {
-  const s = Object.getOwnPropertyDescriptors(e), r = {};
-  we(s, (n, o) => {
-    let l;
-    (l = t(n, o, e)) !== !1 && (r[o] = l || n);
-  }), Object.defineProperties(e, r);
-}, gs = (e) => {
-  xt(e, (t, s) => {
-    if (I(e) && ["arguments", "caller", "callee"].indexOf(s) !== -1)
+}, Ls = Q("HTMLFormElement"), Ps = (t) => t.toLowerCase().replace(/[-_\s]([a-z\d])(\w*)/g, function(s, r, o) {
+  return r.toUpperCase() + o;
+}), lt = (({ hasOwnProperty: t }) => (e, s) => t.call(e, s))(Object.prototype), js = Q("RegExp"), Tt = (t, e) => {
+  const s = Object.getOwnPropertyDescriptors(t), r = {};
+  ke(s, (o, a) => {
+    let i;
+    (i = e(o, a, t)) !== !1 && (r[a] = i || o);
+  }), Object.defineProperties(t, r);
+}, Is = (t) => {
+  Tt(t, (e, s) => {
+    if (H(t) && ["arguments", "caller", "callee"].indexOf(s) !== -1)
       return !1;
-    const r = e[s];
-    if (I(r)) {
-      if (t.enumerable = !1, "writable" in t) {
-        t.writable = !1;
+    const r = t[s];
+    if (H(r)) {
+      if (e.enumerable = !1, "writable" in e) {
+        e.writable = !1;
         return;
       }
-      t.set || (t.set = () => {
+      e.set || (e.set = () => {
         throw Error("Can not rewrite read-only method '" + s + "'");
       });
     }
   });
-}, vs = (e, t) => {
-  const s = {}, r = (n) => {
-    n.forEach((o) => {
-      s[o] = !0;
+}, Us = (t, e) => {
+  const s = {}, r = (o) => {
+    o.forEach((a) => {
+      s[a] = !0;
     });
   };
-  return de(e) ? r(e) : r(String(e).split(t)), s;
-}, ws = () => {
-}, ys = (e, t) => e != null && Number.isFinite(e = +e) ? e : t;
-function _s(e) {
-  return !!(e && I(e.append) && e[ft] === "FormData" && e[Ae]);
+  return xe(t) ? r(t) : r(String(t).split(e)), s;
+}, Ms = () => {
+}, Ds = (t, e) => t != null && Number.isFinite(t = +t) ? t : e;
+function zs(t) {
+  return !!(t && H(t.append) && t[Et] === "FormData" && t[Be]);
 }
-const ks = (e) => {
-  const t = new Array(10), s = (r, n) => {
-    if (ve(r)) {
-      if (t.indexOf(r) >= 0)
+const $s = (t) => {
+  const e = new Array(10), s = (r, o) => {
+    if (_e(r)) {
+      if (e.indexOf(r) >= 0)
         return;
-      if (ge(r))
+      if (we(r))
         return r;
       if (!("toJSON" in r)) {
-        t[n] = r;
-        const o = de(r) ? [] : {};
-        return we(r, (l, u) => {
-          const x = s(l, n + 1);
-          !ue(x) && (o[u] = x);
-        }), t[n] = void 0, o;
+        e[o] = r;
+        const a = xe(r) ? [] : {};
+        return ke(r, (i, f) => {
+          const x = s(i, o + 1);
+          !be(x) && (a[f] = x);
+        }), e[o] = void 0, a;
       }
     }
     return r;
   };
-  return s(e, 0);
-}, Ss = X("AsyncFunction"), Es = (e) => e && (ve(e) || I(e)) && I(e.then) && I(e.catch), gt = ((e, t) => e ? setImmediate : t ? ((s, r) => (ne.addEventListener("message", ({ source: n, data: o }) => {
-  n === ne && o === s && r.length && r.shift()();
-}, !1), (n) => {
-  r.push(n), ne.postMessage(s, "*");
-}))(`axios@${Math.random()}`, []) : (s) => setTimeout(s))(
-  typeof setImmediate == "function",
-  I(ne.postMessage)
-), Rs = typeof queueMicrotask < "u" ? queueMicrotask.bind(ne) : typeof process < "u" && process.nextTick || gt, Os = (e) => e != null && I(e[Ae]), i = {
-  isArray: de,
-  isArrayBuffer: pt,
-  isBuffer: ge,
-  isFormData: Qt,
-  isArrayBufferView: Ht,
-  isString: Jt,
-  isNumber: ht,
-  isBoolean: Vt,
-  isObject: ve,
-  isPlainObject: Re,
-  isEmptyObject: Wt,
-  isReadableStream: ts,
-  isRequest: ss,
-  isResponse: rs,
-  isHeaders: ns,
-  isUndefined: ue,
-  isDate: Xt,
-  isFile: Kt,
-  isBlob: Gt,
-  isRegExp: xs,
-  isFunction: I,
-  isStream: Zt,
-  isURLSearchParams: es,
-  isTypedArray: fs,
-  isFileList: Yt,
-  forEach: we,
-  merge: De,
-  extend: as,
-  trim: os,
-  stripBOM: ls,
-  inherits: is,
-  toFlatObject: cs,
-  kindOf: Ne,
-  kindOfTest: X,
-  endsWith: us,
-  toArray: ds,
-  forEachEntry: ps,
-  matchAll: hs,
-  isHTMLForm: ms,
-  hasOwnProperty: Xe,
-  hasOwnProp: Xe,
+  return s(t, 0);
+}, qs = Q("AsyncFunction"), Hs = (t) => t && (_e(t) || H(t)) && H(t.then) && H(t.catch), At = ((t, e) => t ? setImmediate : e ? ((s, r) => (fe.addEventListener(
+  "message",
+  ({ source: o, data: a }) => {
+    o === fe && a === s && r.length && r.shift()();
+  },
+  !1
+), (o) => {
+  r.push(o), fe.postMessage(s, "*");
+}))(`axios@${Math.random()}`, []) : (s) => setTimeout(s))(typeof setImmediate == "function", H(fe.postMessage)), Js = typeof queueMicrotask < "u" ? queueMicrotask.bind(fe) : typeof process < "u" && process.nextTick || At, Vs = (t) => t != null && H(t[Be]), c = {
+  isArray: xe,
+  isArrayBuffer: St,
+  isBuffer: we,
+  isFormData: vs,
+  isArrayBufferView: as,
+  isString: ls,
+  isNumber: Ct,
+  isBoolean: is,
+  isObject: _e,
+  isPlainObject: Te,
+  isEmptyObject: ds,
+  isReadableStream: ys,
+  isRequest: ws,
+  isResponse: _s,
+  isHeaders: ks,
+  isUndefined: be,
+  isDate: cs,
+  isFile: us,
+  isReactNativeBlob: fs,
+  isReactNative: ps,
+  isBlob: hs,
+  isRegExp: js,
+  isFunction: H,
+  isStream: bs,
+  isURLSearchParams: gs,
+  isTypedArray: Ns,
+  isFileList: ms,
+  forEach: ke,
+  merge: Je,
+  extend: Ss,
+  trim: Es,
+  stripBOM: Cs,
+  inherits: Rs,
+  toFlatObject: Os,
+  kindOf: Le,
+  kindOfTest: Q,
+  endsWith: Ts,
+  toArray: As,
+  forEachEntry: Fs,
+  matchAll: Bs,
+  isHTMLForm: Ls,
+  hasOwnProperty: lt,
+  hasOwnProp: lt,
   // an alias to avoid ESLint no-prototype-builtins detection
-  reduceDescriptors: xt,
-  freezeMethods: gs,
-  toObjectSet: vs,
-  toCamelCase: bs,
-  noop: ws,
-  toFiniteNumber: ys,
-  findKey: mt,
-  global: ne,
-  isContextDefined: bt,
-  isSpecCompliantForm: _s,
-  toJSONObject: ks,
-  isAsyncFn: Ss,
-  isThenable: Es,
-  setImmediate: gt,
-  asap: Rs,
-  isIterable: Os
+  reduceDescriptors: Tt,
+  freezeMethods: Is,
+  toObjectSet: Us,
+  toCamelCase: Ps,
+  noop: Ms,
+  toFiniteNumber: Ds,
+  findKey: Rt,
+  global: fe,
+  isContextDefined: Ot,
+  isSpecCompliantForm: zs,
+  toJSONObject: $s,
+  isAsyncFn: qs,
+  isThenable: Hs,
+  setImmediate: At,
+  asap: Js,
+  isIterable: Vs
 };
-function E(e, t, s, r, n) {
-  Error.call(this), Error.captureStackTrace ? Error.captureStackTrace(this, this.constructor) : this.stack = new Error().stack, this.message = e, this.name = "AxiosError", t && (this.code = t), s && (this.config = s), r && (this.request = r), n && (this.response = n, this.status = n.status ? n.status : null);
-}
-i.inherits(E, Error, {
-  toJSON: function() {
+let S = class Nt extends Error {
+  static from(e, s, r, o, a, i) {
+    const f = new Nt(e.message, s || e.code, r, o, a);
+    return f.cause = e, f.name = e.name, e.status != null && f.status == null && (f.status = e.status), i && Object.assign(f, i), f;
+  }
+  /**
+   * Create an Error with the specified message, config, error code, request and response.
+   *
+   * @param {string} message The error message.
+   * @param {string} [code] The error code (for example, 'ECONNABORTED').
+   * @param {Object} [config] The config.
+   * @param {Object} [request] The request.
+   * @param {Object} [response] The response.
+   *
+   * @returns {Error} The created error.
+   */
+  constructor(e, s, r, o, a) {
+    super(e), Object.defineProperty(this, "message", {
+      value: e,
+      enumerable: !0,
+      writable: !0,
+      configurable: !0
+    }), this.name = "AxiosError", this.isAxiosError = !0, s && (this.code = s), r && (this.config = r), o && (this.request = o), a && (this.response = a, this.status = a.status);
+  }
+  toJSON() {
     return {
       // Standard
       message: this.message,
@@ -255,123 +306,108 @@ i.inherits(E, Error, {
       columnNumber: this.columnNumber,
       stack: this.stack,
       // Axios
-      config: i.toJSONObject(this.config),
+      config: c.toJSONObject(this.config),
       code: this.code,
       status: this.status
     };
   }
-});
-const vt = E.prototype, wt = {};
-[
-  "ERR_BAD_OPTION_VALUE",
-  "ERR_BAD_OPTION",
-  "ECONNABORTED",
-  "ETIMEDOUT",
-  "ERR_NETWORK",
-  "ERR_FR_TOO_MANY_REDIRECTS",
-  "ERR_DEPRECATED",
-  "ERR_BAD_RESPONSE",
-  "ERR_BAD_REQUEST",
-  "ERR_CANCELED",
-  "ERR_NOT_SUPPORT",
-  "ERR_INVALID_URL"
-  // eslint-disable-next-line func-names
-].forEach((e) => {
-  wt[e] = { value: e };
-});
-Object.defineProperties(E, wt);
-Object.defineProperty(vt, "isAxiosError", { value: !0 });
-E.from = (e, t, s, r, n, o) => {
-  const l = Object.create(vt);
-  i.toFlatObject(e, l, function(f) {
-    return f !== Error.prototype;
-  }, (p) => p !== "isAxiosError");
-  const u = e && e.message ? e.message : "Error", x = t == null && e ? e.code : t;
-  return E.call(l, u, x, s, r, n), e && l.cause == null && Object.defineProperty(l, "cause", { value: e, configurable: !0 }), l.name = e && e.name || "Error", o && Object.assign(l, o), l;
 };
-const Cs = null;
-function Me(e) {
-  return i.isPlainObject(e) || i.isArray(e);
+S.ERR_BAD_OPTION_VALUE = "ERR_BAD_OPTION_VALUE";
+S.ERR_BAD_OPTION = "ERR_BAD_OPTION";
+S.ECONNABORTED = "ECONNABORTED";
+S.ETIMEDOUT = "ETIMEDOUT";
+S.ERR_NETWORK = "ERR_NETWORK";
+S.ERR_FR_TOO_MANY_REDIRECTS = "ERR_FR_TOO_MANY_REDIRECTS";
+S.ERR_DEPRECATED = "ERR_DEPRECATED";
+S.ERR_BAD_RESPONSE = "ERR_BAD_RESPONSE";
+S.ERR_BAD_REQUEST = "ERR_BAD_REQUEST";
+S.ERR_CANCELED = "ERR_CANCELED";
+S.ERR_NOT_SUPPORT = "ERR_NOT_SUPPORT";
+S.ERR_INVALID_URL = "ERR_INVALID_URL";
+const Ws = null;
+function Ve(t) {
+  return c.isPlainObject(t) || c.isArray(t);
 }
-function yt(e) {
-  return i.endsWith(e, "[]") ? e.slice(0, -2) : e;
+function Ft(t) {
+  return c.endsWith(t, "[]") ? t.slice(0, -2) : t;
 }
-function Ke(e, t, s) {
-  return e ? e.concat(t).map(function(n, o) {
-    return n = yt(n), !s && o ? "[" + n + "]" : n;
-  }).join(s ? "." : "") : t;
+function ze(t, e, s) {
+  return t ? t.concat(e).map(function(o, a) {
+    return o = Ft(o), !s && a ? "[" + o + "]" : o;
+  }).join(s ? "." : "") : e;
 }
-function Ts(e) {
-  return i.isArray(e) && !e.some(Me);
+function Xs(t) {
+  return c.isArray(t) && !t.some(Ve);
 }
-const As = i.toFlatObject(i, {}, null, function(t) {
-  return /^is[A-Z]/.test(t);
+const Ks = c.toFlatObject(c, {}, null, function(e) {
+  return /^is[A-Z]/.test(e);
 });
-function Be(e, t, s) {
-  if (!i.isObject(e))
+function je(t, e, s) {
+  if (!c.isObject(t))
     throw new TypeError("target must be an object");
-  t = t || new FormData(), s = i.toFlatObject(s, {
-    metaTokens: !0,
-    dots: !1,
-    indexes: !1
-  }, !1, function(_, g) {
-    return !i.isUndefined(g[_]);
-  });
-  const r = s.metaTokens, n = s.visitor || f, o = s.dots, l = s.indexes, x = (s.Blob || typeof Blob < "u" && Blob) && i.isSpecCompliantForm(t);
-  if (!i.isFunction(n))
+  e = e || new FormData(), s = c.toFlatObject(
+    s,
+    {
+      metaTokens: !0,
+      dots: !1,
+      indexes: !1
+    },
+    !1,
+    function(E, y) {
+      return !c.isUndefined(y[E]);
+    }
+  );
+  const r = s.metaTokens, o = s.visitor || h, a = s.dots, i = s.indexes, x = (s.Blob || typeof Blob < "u" && Blob) && c.isSpecCompliantForm(e);
+  if (!c.isFunction(o))
     throw new TypeError("visitor must be a function");
-  function p(h) {
-    if (h === null) return "";
-    if (i.isDate(h))
-      return h.toISOString();
-    if (i.isBoolean(h))
-      return h.toString();
-    if (!x && i.isBlob(h))
-      throw new E("Blob is not supported. Use a Buffer instead.");
-    return i.isArrayBuffer(h) || i.isTypedArray(h) ? x && typeof Blob == "function" ? new Blob([h]) : Buffer.from(h) : h;
+  function m(b) {
+    if (b === null) return "";
+    if (c.isDate(b))
+      return b.toISOString();
+    if (c.isBoolean(b))
+      return b.toString();
+    if (!x && c.isBlob(b))
+      throw new S("Blob is not supported. Use a Buffer instead.");
+    return c.isArrayBuffer(b) || c.isTypedArray(b) ? x && typeof Blob == "function" ? new Blob([b]) : Buffer.from(b) : b;
   }
-  function f(h, _, g) {
-    let c = h;
-    if (h && !g && typeof h == "object") {
-      if (i.endsWith(_, "{}"))
-        _ = r ? _ : _.slice(0, -2), h = JSON.stringify(h);
-      else if (i.isArray(h) && Ts(h) || (i.isFileList(h) || i.endsWith(_, "[]")) && (c = i.toArray(h)))
-        return _ = yt(_), c.forEach(function(C, N) {
-          !(i.isUndefined(C) || C === null) && t.append(
+  function h(b, E, y) {
+    let T = b;
+    if (c.isReactNative(e) && c.isReactNativeBlob(b))
+      return e.append(ze(y, E, a), m(b)), !1;
+    if (b && !y && typeof b == "object") {
+      if (c.endsWith(E, "{}"))
+        E = r ? E : E.slice(0, -2), b = JSON.stringify(b);
+      else if (c.isArray(b) && Xs(b) || (c.isFileList(b) || c.endsWith(E, "[]")) && (T = c.toArray(b)))
+        return E = Ft(E), T.forEach(function(d, B) {
+          !(c.isUndefined(d) || d === null) && e.append(
             // eslint-disable-next-line no-nested-ternary
-            l === !0 ? Ke([_], N, o) : l === null ? _ : _ + "[]",
-            p(C)
+            i === !0 ? ze([E], B, a) : i === null ? E : E + "[]",
+            m(d)
           );
         }), !1;
     }
-    return Me(h) ? !0 : (t.append(Ke(g, _, o), p(h)), !1);
+    return Ve(b) ? !0 : (e.append(ze(y, E, a), m(b)), !1);
   }
-  const v = [], O = Object.assign(As, {
-    defaultVisitor: f,
-    convertValue: p,
-    isVisitable: Me
+  const k = [], R = Object.assign(Ks, {
+    defaultVisitor: h,
+    convertValue: m,
+    isVisitable: Ve
   });
-  function T(h, _) {
-    if (!i.isUndefined(h)) {
-      if (v.indexOf(h) !== -1)
-        throw Error("Circular reference detected in " + _.join("."));
-      v.push(h), i.forEach(h, function(c, P) {
-        (!(i.isUndefined(c) || c === null) && n.call(
-          t,
-          c,
-          i.isString(P) ? P.trim() : P,
-          _,
-          O
-        )) === !0 && T(c, _ ? _.concat(P) : [P]);
-      }), v.pop();
+  function N(b, E) {
+    if (!c.isUndefined(b)) {
+      if (k.indexOf(b) !== -1)
+        throw Error("Circular reference detected in " + E.join("."));
+      k.push(b), c.forEach(b, function(T, I) {
+        (!(c.isUndefined(T) || T === null) && o.call(e, T, c.isString(I) ? I.trim() : I, E, R)) === !0 && N(T, E ? E.concat(I) : [I]);
+      }), k.pop();
     }
   }
-  if (!i.isObject(e))
+  if (!c.isObject(t))
     throw new TypeError("data must be an object");
-  return T(e), t;
+  return N(t), e;
 }
-function Ge(e) {
-  const t = {
+function it(t) {
+  const e = {
     "!": "%21",
     "'": "%27",
     "(": "%28",
@@ -380,44 +416,42 @@ function Ge(e) {
     "%20": "+",
     "%00": "\0"
   };
-  return encodeURIComponent(e).replace(/[!'()~]|%20|%00/g, function(r) {
-    return t[r];
+  return encodeURIComponent(t).replace(/[!'()~]|%20|%00/g, function(r) {
+    return e[r];
   });
 }
-function qe(e, t) {
-  this._pairs = [], e && Be(e, this, t);
+function Ge(t, e) {
+  this._pairs = [], t && je(t, this, e);
 }
-const _t = qe.prototype;
-_t.append = function(t, s) {
-  this._pairs.push([t, s]);
+const Bt = Ge.prototype;
+Bt.append = function(e, s) {
+  this._pairs.push([e, s]);
 };
-_t.toString = function(t) {
-  const s = t ? function(r) {
-    return t.call(this, r, Ge);
-  } : Ge;
-  return this._pairs.map(function(n) {
-    return s(n[0]) + "=" + s(n[1]);
+Bt.toString = function(e) {
+  const s = e ? function(r) {
+    return e.call(this, r, it);
+  } : it;
+  return this._pairs.map(function(o) {
+    return s(o[0]) + "=" + s(o[1]);
   }, "").join("&");
 };
-function Ns(e) {
-  return encodeURIComponent(e).replace(/%3A/gi, ":").replace(/%24/g, "$").replace(/%2C/gi, ",").replace(/%20/g, "+");
+function Gs(t) {
+  return encodeURIComponent(t).replace(/%3A/gi, ":").replace(/%24/g, "$").replace(/%2C/gi, ",").replace(/%20/g, "+");
 }
-function kt(e, t, s) {
-  if (!t)
-    return e;
-  const r = s && s.encode || Ns;
-  i.isFunction(s) && (s = {
+function Lt(t, e, s) {
+  if (!e)
+    return t;
+  const r = s && s.encode || Gs, o = c.isFunction(s) ? {
     serialize: s
-  });
-  const n = s && s.serialize;
-  let o;
-  if (n ? o = n(t, s) : o = i.isURLSearchParams(t) ? t.toString() : new qe(t, s).toString(r), o) {
-    const l = e.indexOf("#");
-    l !== -1 && (e = e.slice(0, l)), e += (e.indexOf("?") === -1 ? "?" : "&") + o;
+  } : s, a = o && o.serialize;
+  let i;
+  if (a ? i = a(e, o) : i = c.isURLSearchParams(e) ? e.toString() : new Ge(e, o).toString(r), i) {
+    const f = t.indexOf("#");
+    f !== -1 && (t = t.slice(0, f)), t += (t.indexOf("?") === -1 ? "?" : "&") + i;
   }
-  return e;
+  return t;
 }
-class Ye {
+class dt {
   constructor() {
     this.handlers = [];
   }
@@ -426,12 +460,13 @@ class Ye {
    *
    * @param {Function} fulfilled The function to handle `then` for a `Promise`
    * @param {Function} rejected The function to handle `reject` for a `Promise`
+   * @param {Object} options The options for the interceptor, synchronous and runWhen
    *
    * @return {Number} An ID used to remove interceptor later
    */
-  use(t, s, r) {
+  use(e, s, r) {
     return this.handlers.push({
-      fulfilled: t,
+      fulfilled: e,
       rejected: s,
       synchronous: r ? r.synchronous : !1,
       runWhen: r ? r.runWhen : null
@@ -444,8 +479,8 @@ class Ye {
    *
    * @returns {void}
    */
-  eject(t) {
-    this.handlers[t] && (this.handlers[t] = null);
+  eject(e) {
+    this.handlers[e] && (this.handlers[e] = null);
   }
   /**
    * Clear all interceptors from the stack
@@ -465,124 +500,129 @@ class Ye {
    *
    * @returns {void}
    */
-  forEach(t) {
-    i.forEach(this.handlers, function(r) {
-      r !== null && t(r);
+  forEach(e) {
+    c.forEach(this.handlers, function(r) {
+      r !== null && e(r);
     });
   }
 }
-const St = {
+const Ye = {
   silentJSONParsing: !0,
   forcedJSONParsing: !0,
-  clarifyTimeoutError: !1
-}, Ps = typeof URLSearchParams < "u" ? URLSearchParams : qe, Bs = typeof FormData < "u" ? FormData : null, Fs = typeof Blob < "u" ? Blob : null, Ls = {
+  clarifyTimeoutError: !1,
+  legacyInterceptorReqResOrdering: !0
+}, Ys = typeof URLSearchParams < "u" ? URLSearchParams : Ge, Zs = typeof FormData < "u" ? FormData : null, Qs = typeof Blob < "u" ? Blob : null, er = {
   isBrowser: !0,
   classes: {
-    URLSearchParams: Ps,
-    FormData: Bs,
-    Blob: Fs
+    URLSearchParams: Ys,
+    FormData: Zs,
+    Blob: Qs
   },
   protocols: ["http", "https", "file", "blob", "url", "data"]
-}, He = typeof window < "u" && typeof document < "u", ze = typeof navigator == "object" && navigator || void 0, js = He && (!ze || ["ReactNative", "NativeScript", "NS"].indexOf(ze.product) < 0), Us = typeof WorkerGlobalScope < "u" && // eslint-disable-next-line no-undef
-self instanceof WorkerGlobalScope && typeof self.importScripts == "function", Ds = He && window.location.href || "http://localhost", Ms = /* @__PURE__ */ Object.freeze(/* @__PURE__ */ Object.defineProperty({
+}, Ze = typeof window < "u" && typeof document < "u", We = typeof navigator == "object" && navigator || void 0, tr = Ze && (!We || ["ReactNative", "NativeScript", "NS"].indexOf(We.product) < 0), sr = typeof WorkerGlobalScope < "u" && // eslint-disable-next-line no-undef
+self instanceof WorkerGlobalScope && typeof self.importScripts == "function", rr = Ze && window.location.href || "http://localhost", nr = /* @__PURE__ */ Object.freeze(/* @__PURE__ */ Object.defineProperty({
   __proto__: null,
-  hasBrowserEnv: He,
-  hasStandardBrowserEnv: js,
-  hasStandardBrowserWebWorkerEnv: Us,
-  navigator: ze,
-  origin: Ds
-}, Symbol.toStringTag, { value: "Module" })), L = {
-  ...Ms,
-  ...Ls
+  hasBrowserEnv: Ze,
+  hasStandardBrowserEnv: tr,
+  hasStandardBrowserWebWorkerEnv: sr,
+  navigator: We,
+  origin: rr
+}, Symbol.toStringTag, { value: "Module" })), U = {
+  ...nr,
+  ...er
 };
-function zs(e, t) {
-  return Be(e, new L.classes.URLSearchParams(), {
-    visitor: function(s, r, n, o) {
-      return L.isNode && i.isBuffer(s) ? (this.append(r, s.toString("base64")), !1) : o.defaultVisitor.apply(this, arguments);
+function or(t, e) {
+  return je(t, new U.classes.URLSearchParams(), {
+    visitor: function(s, r, o, a) {
+      return U.isNode && c.isBuffer(s) ? (this.append(r, s.toString("base64")), !1) : a.defaultVisitor.apply(this, arguments);
     },
-    ...t
+    ...e
   });
 }
-function Is(e) {
-  return i.matchAll(/\w+|\[(\w*)]/g, e).map((t) => t[0] === "[]" ? "" : t[1] || t[0]);
+function ar(t) {
+  return c.matchAll(/\w+|\[(\w*)]/g, t).map((e) => e[0] === "[]" ? "" : e[1] || e[0]);
 }
-function $s(e) {
-  const t = {}, s = Object.keys(e);
+function lr(t) {
+  const e = {}, s = Object.keys(t);
   let r;
-  const n = s.length;
-  let o;
-  for (r = 0; r < n; r++)
-    o = s[r], t[o] = e[o];
-  return t;
+  const o = s.length;
+  let a;
+  for (r = 0; r < o; r++)
+    a = s[r], e[a] = t[a];
+  return e;
 }
-function Et(e) {
-  function t(s, r, n, o) {
-    let l = s[o++];
-    if (l === "__proto__") return !0;
-    const u = Number.isFinite(+l), x = o >= s.length;
-    return l = !l && i.isArray(n) ? n.length : l, x ? (i.hasOwnProp(n, l) ? n[l] = [n[l], r] : n[l] = r, !u) : ((!n[l] || !i.isObject(n[l])) && (n[l] = []), t(s, r, n[l], o) && i.isArray(n[l]) && (n[l] = $s(n[l])), !u);
+function Pt(t) {
+  function e(s, r, o, a) {
+    let i = s[a++];
+    if (i === "__proto__") return !0;
+    const f = Number.isFinite(+i), x = a >= s.length;
+    return i = !i && c.isArray(o) ? o.length : i, x ? (c.hasOwnProp(o, i) ? o[i] = [o[i], r] : o[i] = r, !f) : ((!o[i] || !c.isObject(o[i])) && (o[i] = []), e(s, r, o[i], a) && c.isArray(o[i]) && (o[i] = lr(o[i])), !f);
   }
-  if (i.isFormData(e) && i.isFunction(e.entries)) {
+  if (c.isFormData(t) && c.isFunction(t.entries)) {
     const s = {};
-    return i.forEachEntry(e, (r, n) => {
-      t(Is(r), n, s, 0);
+    return c.forEachEntry(t, (r, o) => {
+      e(ar(r), o, s, 0);
     }), s;
   }
   return null;
 }
-function qs(e, t, s) {
-  if (i.isString(e))
+function ir(t, e, s) {
+  if (c.isString(t))
     try {
-      return (t || JSON.parse)(e), i.trim(e);
+      return (e || JSON.parse)(t), c.trim(t);
     } catch (r) {
       if (r.name !== "SyntaxError")
         throw r;
     }
-  return (s || JSON.stringify)(e);
+  return (s || JSON.stringify)(t);
 }
-const ye = {
-  transitional: St,
+const Ee = {
+  transitional: Ye,
   adapter: ["xhr", "http", "fetch"],
-  transformRequest: [function(t, s) {
-    const r = s.getContentType() || "", n = r.indexOf("application/json") > -1, o = i.isObject(t);
-    if (o && i.isHTMLForm(t) && (t = new FormData(t)), i.isFormData(t))
-      return n ? JSON.stringify(Et(t)) : t;
-    if (i.isArrayBuffer(t) || i.isBuffer(t) || i.isStream(t) || i.isFile(t) || i.isBlob(t) || i.isReadableStream(t))
-      return t;
-    if (i.isArrayBufferView(t))
-      return t.buffer;
-    if (i.isURLSearchParams(t))
-      return s.setContentType("application/x-www-form-urlencoded;charset=utf-8", !1), t.toString();
-    let u;
-    if (o) {
-      if (r.indexOf("application/x-www-form-urlencoded") > -1)
-        return zs(t, this.formSerializer).toString();
-      if ((u = i.isFileList(t)) || r.indexOf("multipart/form-data") > -1) {
-        const x = this.env && this.env.FormData;
-        return Be(
-          u ? { "files[]": t } : t,
-          x && new x(),
-          this.formSerializer
-        );
+  transformRequest: [
+    function(e, s) {
+      const r = s.getContentType() || "", o = r.indexOf("application/json") > -1, a = c.isObject(e);
+      if (a && c.isHTMLForm(e) && (e = new FormData(e)), c.isFormData(e))
+        return o ? JSON.stringify(Pt(e)) : e;
+      if (c.isArrayBuffer(e) || c.isBuffer(e) || c.isStream(e) || c.isFile(e) || c.isBlob(e) || c.isReadableStream(e))
+        return e;
+      if (c.isArrayBufferView(e))
+        return e.buffer;
+      if (c.isURLSearchParams(e))
+        return s.setContentType("application/x-www-form-urlencoded;charset=utf-8", !1), e.toString();
+      let f;
+      if (a) {
+        if (r.indexOf("application/x-www-form-urlencoded") > -1)
+          return or(e, this.formSerializer).toString();
+        if ((f = c.isFileList(e)) || r.indexOf("multipart/form-data") > -1) {
+          const x = this.env && this.env.FormData;
+          return je(
+            f ? { "files[]": e } : e,
+            x && new x(),
+            this.formSerializer
+          );
+        }
       }
+      return a || o ? (s.setContentType("application/json", !1), ir(e)) : e;
     }
-    return o || n ? (s.setContentType("application/json", !1), qs(t)) : t;
-  }],
-  transformResponse: [function(t) {
-    const s = this.transitional || ye.transitional, r = s && s.forcedJSONParsing, n = this.responseType === "json";
-    if (i.isResponse(t) || i.isReadableStream(t))
-      return t;
-    if (t && i.isString(t) && (r && !this.responseType || n)) {
-      const l = !(s && s.silentJSONParsing) && n;
-      try {
-        return JSON.parse(t, this.parseReviver);
-      } catch (u) {
-        if (l)
-          throw u.name === "SyntaxError" ? E.from(u, E.ERR_BAD_RESPONSE, this, null, this.response) : u;
+  ],
+  transformResponse: [
+    function(e) {
+      const s = this.transitional || Ee.transitional, r = s && s.forcedJSONParsing, o = this.responseType === "json";
+      if (c.isResponse(e) || c.isReadableStream(e))
+        return e;
+      if (e && c.isString(e) && (r && !this.responseType || o)) {
+        const i = !(s && s.silentJSONParsing) && o;
+        try {
+          return JSON.parse(e, this.parseReviver);
+        } catch (f) {
+          if (i)
+            throw f.name === "SyntaxError" ? S.from(f, S.ERR_BAD_RESPONSE, this, null, this.response) : f;
+        }
       }
+      return e;
     }
-    return t;
-  }],
+  ],
   /**
    * A timeout in milliseconds to abort a request. If set to 0 (default) a
    * timeout is not created.
@@ -593,11 +633,11 @@ const ye = {
   maxContentLength: -1,
   maxBodyLength: -1,
   env: {
-    FormData: L.classes.FormData,
-    Blob: L.classes.Blob
+    FormData: U.classes.FormData,
+    Blob: U.classes.Blob
   },
-  validateStatus: function(t) {
-    return t >= 200 && t < 300;
+  validateStatus: function(e) {
+    return e >= 200 && e < 300;
   },
   headers: {
     common: {
@@ -606,10 +646,10 @@ const ye = {
     }
   }
 };
-i.forEach(["delete", "get", "head", "post", "put", "patch"], (e) => {
-  ye.headers[e] = {};
+c.forEach(["delete", "get", "head", "post", "put", "patch"], (t) => {
+  Ee.headers[t] = {};
 });
-const Hs = i.toObjectSet([
+const dr = c.toObjectSet([
   "age",
   "authorization",
   "content-length",
@@ -627,152 +667,152 @@ const Hs = i.toObjectSet([
   "referer",
   "retry-after",
   "user-agent"
-]), Js = (e) => {
-  const t = {};
-  let s, r, n;
-  return e && e.split(`
-`).forEach(function(l) {
-    n = l.indexOf(":"), s = l.substring(0, n).trim().toLowerCase(), r = l.substring(n + 1).trim(), !(!s || t[s] && Hs[s]) && (s === "set-cookie" ? t[s] ? t[s].push(r) : t[s] = [r] : t[s] = t[s] ? t[s] + ", " + r : r);
-  }), t;
-}, Ze = /* @__PURE__ */ Symbol("internals");
-function xe(e) {
-  return e && String(e).trim().toLowerCase();
+]), cr = (t) => {
+  const e = {};
+  let s, r, o;
+  return t && t.split(`
+`).forEach(function(i) {
+    o = i.indexOf(":"), s = i.substring(0, o).trim().toLowerCase(), r = i.substring(o + 1).trim(), !(!s || e[s] && dr[s]) && (s === "set-cookie" ? e[s] ? e[s].push(r) : e[s] = [r] : e[s] = e[s] ? e[s] + ", " + r : r);
+  }), e;
+}, ct = /* @__PURE__ */ Symbol("internals");
+function ye(t) {
+  return t && String(t).trim().toLowerCase();
 }
-function Oe(e) {
-  return e === !1 || e == null ? e : i.isArray(e) ? e.map(Oe) : String(e);
+function Ae(t) {
+  return t === !1 || t == null ? t : c.isArray(t) ? t.map(Ae) : String(t);
 }
-function Vs(e) {
-  const t = /* @__PURE__ */ Object.create(null), s = /([^\s,;=]+)\s*(?:=\s*([^,;]+))?/g;
+function ur(t) {
+  const e = /* @__PURE__ */ Object.create(null), s = /([^\s,;=]+)\s*(?:=\s*([^,;]+))?/g;
   let r;
-  for (; r = s.exec(e); )
-    t[r[1]] = r[2];
-  return t;
+  for (; r = s.exec(t); )
+    e[r[1]] = r[2];
+  return e;
 }
-const Ws = (e) => /^[-_a-zA-Z0-9^`|~,!#$%&'*+.]+$/.test(e.trim());
-function Le(e, t, s, r, n) {
-  if (i.isFunction(r))
-    return r.call(this, t, s);
-  if (n && (t = s), !!i.isString(t)) {
-    if (i.isString(r))
-      return t.indexOf(r) !== -1;
-    if (i.isRegExp(r))
-      return r.test(t);
+const fr = (t) => /^[-_a-zA-Z0-9^`|~,!#$%&'*+.]+$/.test(t.trim());
+function $e(t, e, s, r, o) {
+  if (c.isFunction(r))
+    return r.call(this, e, s);
+  if (o && (e = s), !!c.isString(e)) {
+    if (c.isString(r))
+      return e.indexOf(r) !== -1;
+    if (c.isRegExp(r))
+      return r.test(e);
   }
 }
-function Xs(e) {
-  return e.trim().toLowerCase().replace(/([a-z\d])(\w*)/g, (t, s, r) => s.toUpperCase() + r);
+function pr(t) {
+  return t.trim().toLowerCase().replace(/([a-z\d])(\w*)/g, (e, s, r) => s.toUpperCase() + r);
 }
-function Ks(e, t) {
-  const s = i.toCamelCase(" " + t);
+function hr(t, e) {
+  const s = c.toCamelCase(" " + e);
   ["get", "set", "has"].forEach((r) => {
-    Object.defineProperty(e, r + s, {
-      value: function(n, o, l) {
-        return this[r].call(this, t, n, o, l);
+    Object.defineProperty(t, r + s, {
+      value: function(o, a, i) {
+        return this[r].call(this, e, o, a, i);
       },
       configurable: !0
     });
   });
 }
-let $ = class {
-  constructor(t) {
-    t && this.set(t);
+let J = class {
+  constructor(e) {
+    e && this.set(e);
   }
-  set(t, s, r) {
-    const n = this;
-    function o(u, x, p) {
-      const f = xe(x);
-      if (!f)
+  set(e, s, r) {
+    const o = this;
+    function a(f, x, m) {
+      const h = ye(x);
+      if (!h)
         throw new Error("header name must be a non-empty string");
-      const v = i.findKey(n, f);
-      (!v || n[v] === void 0 || p === !0 || p === void 0 && n[v] !== !1) && (n[v || x] = Oe(u));
+      const k = c.findKey(o, h);
+      (!k || o[k] === void 0 || m === !0 || m === void 0 && o[k] !== !1) && (o[k || x] = Ae(f));
     }
-    const l = (u, x) => i.forEach(u, (p, f) => o(p, f, x));
-    if (i.isPlainObject(t) || t instanceof this.constructor)
-      l(t, s);
-    else if (i.isString(t) && (t = t.trim()) && !Ws(t))
-      l(Js(t), s);
-    else if (i.isObject(t) && i.isIterable(t)) {
-      let u = {}, x, p;
-      for (const f of t) {
-        if (!i.isArray(f))
+    const i = (f, x) => c.forEach(f, (m, h) => a(m, h, x));
+    if (c.isPlainObject(e) || e instanceof this.constructor)
+      i(e, s);
+    else if (c.isString(e) && (e = e.trim()) && !fr(e))
+      i(cr(e), s);
+    else if (c.isObject(e) && c.isIterable(e)) {
+      let f = {}, x, m;
+      for (const h of e) {
+        if (!c.isArray(h))
           throw TypeError("Object iterator must return a key-value pair");
-        u[p = f[0]] = (x = u[p]) ? i.isArray(x) ? [...x, f[1]] : [x, f[1]] : f[1];
+        f[m = h[0]] = (x = f[m]) ? c.isArray(x) ? [...x, h[1]] : [x, h[1]] : h[1];
       }
-      l(u, s);
+      i(f, s);
     } else
-      t != null && o(s, t, r);
+      e != null && a(s, e, r);
     return this;
   }
-  get(t, s) {
-    if (t = xe(t), t) {
-      const r = i.findKey(this, t);
+  get(e, s) {
+    if (e = ye(e), e) {
+      const r = c.findKey(this, e);
       if (r) {
-        const n = this[r];
+        const o = this[r];
         if (!s)
-          return n;
+          return o;
         if (s === !0)
-          return Vs(n);
-        if (i.isFunction(s))
-          return s.call(this, n, r);
-        if (i.isRegExp(s))
-          return s.exec(n);
+          return ur(o);
+        if (c.isFunction(s))
+          return s.call(this, o, r);
+        if (c.isRegExp(s))
+          return s.exec(o);
         throw new TypeError("parser must be boolean|regexp|function");
       }
     }
   }
-  has(t, s) {
-    if (t = xe(t), t) {
-      const r = i.findKey(this, t);
-      return !!(r && this[r] !== void 0 && (!s || Le(this, this[r], r, s)));
+  has(e, s) {
+    if (e = ye(e), e) {
+      const r = c.findKey(this, e);
+      return !!(r && this[r] !== void 0 && (!s || $e(this, this[r], r, s)));
     }
     return !1;
   }
-  delete(t, s) {
+  delete(e, s) {
     const r = this;
-    let n = !1;
-    function o(l) {
-      if (l = xe(l), l) {
-        const u = i.findKey(r, l);
-        u && (!s || Le(r, r[u], u, s)) && (delete r[u], n = !0);
+    let o = !1;
+    function a(i) {
+      if (i = ye(i), i) {
+        const f = c.findKey(r, i);
+        f && (!s || $e(r, r[f], f, s)) && (delete r[f], o = !0);
       }
     }
-    return i.isArray(t) ? t.forEach(o) : o(t), n;
+    return c.isArray(e) ? e.forEach(a) : a(e), o;
   }
-  clear(t) {
+  clear(e) {
     const s = Object.keys(this);
-    let r = s.length, n = !1;
+    let r = s.length, o = !1;
     for (; r--; ) {
-      const o = s[r];
-      (!t || Le(this, this[o], o, t, !0)) && (delete this[o], n = !0);
+      const a = s[r];
+      (!e || $e(this, this[a], a, e, !0)) && (delete this[a], o = !0);
     }
-    return n;
+    return o;
   }
-  normalize(t) {
+  normalize(e) {
     const s = this, r = {};
-    return i.forEach(this, (n, o) => {
-      const l = i.findKey(r, o);
-      if (l) {
-        s[l] = Oe(n), delete s[o];
+    return c.forEach(this, (o, a) => {
+      const i = c.findKey(r, a);
+      if (i) {
+        s[i] = Ae(o), delete s[a];
         return;
       }
-      const u = t ? Xs(o) : String(o).trim();
-      u !== o && delete s[o], s[u] = Oe(n), r[u] = !0;
+      const f = e ? pr(a) : String(a).trim();
+      f !== a && delete s[a], s[f] = Ae(o), r[f] = !0;
     }), this;
   }
-  concat(...t) {
-    return this.constructor.concat(this, ...t);
+  concat(...e) {
+    return this.constructor.concat(this, ...e);
   }
-  toJSON(t) {
+  toJSON(e) {
     const s = /* @__PURE__ */ Object.create(null);
-    return i.forEach(this, (r, n) => {
-      r != null && r !== !1 && (s[n] = t && i.isArray(r) ? r.join(", ") : r);
+    return c.forEach(this, (r, o) => {
+      r != null && r !== !1 && (s[o] = e && c.isArray(r) ? r.join(", ") : r);
     }), s;
   }
   [Symbol.iterator]() {
     return Object.entries(this.toJSON())[Symbol.iterator]();
   }
   toString() {
-    return Object.entries(this.toJSON()).map(([t, s]) => t + ": " + s).join(`
+    return Object.entries(this.toJSON()).map(([e, s]) => e + ": " + s).join(`
 `);
   }
   getSetCookie() {
@@ -781,137 +821,157 @@ let $ = class {
   get [Symbol.toStringTag]() {
     return "AxiosHeaders";
   }
-  static from(t) {
-    return t instanceof this ? t : new this(t);
+  static from(e) {
+    return e instanceof this ? e : new this(e);
   }
-  static concat(t, ...s) {
-    const r = new this(t);
-    return s.forEach((n) => r.set(n)), r;
+  static concat(e, ...s) {
+    const r = new this(e);
+    return s.forEach((o) => r.set(o)), r;
   }
-  static accessor(t) {
-    const r = (this[Ze] = this[Ze] = {
+  static accessor(e) {
+    const r = (this[ct] = this[ct] = {
       accessors: {}
-    }).accessors, n = this.prototype;
-    function o(l) {
-      const u = xe(l);
-      r[u] || (Ks(n, l), r[u] = !0);
+    }).accessors, o = this.prototype;
+    function a(i) {
+      const f = ye(i);
+      r[f] || (hr(o, i), r[f] = !0);
     }
-    return i.isArray(t) ? t.forEach(o) : o(t), this;
+    return c.isArray(e) ? e.forEach(a) : a(e), this;
   }
 };
-$.accessor(["Content-Type", "Content-Length", "Accept", "Accept-Encoding", "User-Agent", "Authorization"]);
-i.reduceDescriptors($.prototype, ({ value: e }, t) => {
-  let s = t[0].toUpperCase() + t.slice(1);
+J.accessor([
+  "Content-Type",
+  "Content-Length",
+  "Accept",
+  "Accept-Encoding",
+  "User-Agent",
+  "Authorization"
+]);
+c.reduceDescriptors(J.prototype, ({ value: t }, e) => {
+  let s = e[0].toUpperCase() + e.slice(1);
   return {
-    get: () => e,
+    get: () => t,
     set(r) {
       this[s] = r;
     }
   };
 });
-i.freezeMethods($);
-function je(e, t) {
-  const s = this || ye, r = t || s, n = $.from(r.headers);
-  let o = r.data;
-  return i.forEach(e, function(u) {
-    o = u.call(s, o, n.normalize(), t ? t.status : void 0);
-  }), n.normalize(), o;
+c.freezeMethods(J);
+function qe(t, e) {
+  const s = this || Ee, r = e || s, o = J.from(r.headers);
+  let a = r.data;
+  return c.forEach(t, function(f) {
+    a = f.call(s, a, o.normalize(), e ? e.status : void 0);
+  }), o.normalize(), a;
 }
-function Rt(e) {
-  return !!(e && e.__CANCEL__);
+function jt(t) {
+  return !!(t && t.__CANCEL__);
 }
-function fe(e, t, s) {
-  E.call(this, e ?? "canceled", E.ERR_CANCELED, t, s), this.name = "CanceledError";
-}
-i.inherits(fe, E, {
-  __CANCEL__: !0
-});
-function Ot(e, t, s) {
+let Se = class extends S {
+  /**
+   * A `CanceledError` is an object that is thrown when an operation is canceled.
+   *
+   * @param {string=} message The message.
+   * @param {Object=} config The config.
+   * @param {Object=} request The request.
+   *
+   * @returns {CanceledError} The created error.
+   */
+  constructor(e, s, r) {
+    super(e ?? "canceled", S.ERR_CANCELED, s, r), this.name = "CanceledError", this.__CANCEL__ = !0;
+  }
+};
+function It(t, e, s) {
   const r = s.config.validateStatus;
-  !s.status || !r || r(s.status) ? e(s) : t(new E(
-    "Request failed with status code " + s.status,
-    [E.ERR_BAD_REQUEST, E.ERR_BAD_RESPONSE][Math.floor(s.status / 100) - 4],
-    s.config,
-    s.request,
-    s
-  ));
+  !s.status || !r || r(s.status) ? t(s) : e(
+    new S(
+      "Request failed with status code " + s.status,
+      [S.ERR_BAD_REQUEST, S.ERR_BAD_RESPONSE][Math.floor(s.status / 100) - 4],
+      s.config,
+      s.request,
+      s
+    )
+  );
 }
-function Gs(e) {
-  const t = /^([-+\w]{1,25})(:?\/\/|:)/.exec(e);
-  return t && t[1] || "";
+function mr(t) {
+  const e = /^([-+\w]{1,25})(:?\/\/|:)/.exec(t);
+  return e && e[1] || "";
 }
-function Ys(e, t) {
-  e = e || 10;
-  const s = new Array(e), r = new Array(e);
-  let n = 0, o = 0, l;
-  return t = t !== void 0 ? t : 1e3, function(x) {
-    const p = Date.now(), f = r[o];
-    l || (l = p), s[n] = x, r[n] = p;
-    let v = o, O = 0;
-    for (; v !== n; )
-      O += s[v++], v = v % e;
-    if (n = (n + 1) % e, n === o && (o = (o + 1) % e), p - l < t)
+function br(t, e) {
+  t = t || 10;
+  const s = new Array(t), r = new Array(t);
+  let o = 0, a = 0, i;
+  return e = e !== void 0 ? e : 1e3, function(x) {
+    const m = Date.now(), h = r[a];
+    i || (i = m), s[o] = x, r[o] = m;
+    let k = a, R = 0;
+    for (; k !== o; )
+      R += s[k++], k = k % t;
+    if (o = (o + 1) % t, o === a && (a = (a + 1) % t), m - i < e)
       return;
-    const T = f && p - f;
-    return T ? Math.round(O * 1e3 / T) : void 0;
+    const N = h && m - h;
+    return N ? Math.round(R * 1e3 / N) : void 0;
   };
 }
-function Zs(e, t) {
-  let s = 0, r = 1e3 / t, n, o;
-  const l = (p, f = Date.now()) => {
-    s = f, n = null, o && (clearTimeout(o), o = null), e(...p);
+function xr(t, e) {
+  let s = 0, r = 1e3 / e, o, a;
+  const i = (m, h = Date.now()) => {
+    s = h, o = null, a && (clearTimeout(a), a = null), t(...m);
   };
-  return [(...p) => {
-    const f = Date.now(), v = f - s;
-    v >= r ? l(p, f) : (n = p, o || (o = setTimeout(() => {
-      o = null, l(n);
-    }, r - v)));
-  }, () => n && l(n)];
+  return [(...m) => {
+    const h = Date.now(), k = h - s;
+    k >= r ? i(m, h) : (o = m, a || (a = setTimeout(() => {
+      a = null, i(o);
+    }, r - k)));
+  }, () => o && i(o)];
 }
-const Te = (e, t, s = 3) => {
+const Fe = (t, e, s = 3) => {
   let r = 0;
-  const n = Ys(50, 250);
-  return Zs((o) => {
-    const l = o.loaded, u = o.lengthComputable ? o.total : void 0, x = l - r, p = n(x), f = l <= u;
-    r = l;
-    const v = {
-      loaded: l,
-      total: u,
-      progress: u ? l / u : void 0,
+  const o = br(50, 250);
+  return xr((a) => {
+    const i = a.loaded, f = a.lengthComputable ? a.total : void 0, x = i - r, m = o(x), h = i <= f;
+    r = i;
+    const k = {
+      loaded: i,
+      total: f,
+      progress: f ? i / f : void 0,
       bytes: x,
-      rate: p || void 0,
-      estimated: p && u && f ? (u - l) / p : void 0,
-      event: o,
-      lengthComputable: u != null,
-      [t ? "download" : "upload"]: !0
+      rate: m || void 0,
+      estimated: m && f && h ? (f - i) / m : void 0,
+      event: a,
+      lengthComputable: f != null,
+      [e ? "download" : "upload"]: !0
     };
-    e(v);
+    t(k);
   }, s);
-}, Qe = (e, t) => {
-  const s = e != null;
-  return [(r) => t[0]({
-    lengthComputable: s,
-    total: e,
-    loaded: r
-  }), t[1]];
-}, et = (e) => (...t) => i.asap(() => e(...t)), Qs = L.hasStandardBrowserEnv ? /* @__PURE__ */ ((e, t) => (s) => (s = new URL(s, L.origin), e.protocol === s.protocol && e.host === s.host && (t || e.port === s.port)))(
-  new URL(L.origin),
-  L.navigator && /(msie|trident)/i.test(L.navigator.userAgent)
-) : () => !0, er = L.hasStandardBrowserEnv ? (
+}, ut = (t, e) => {
+  const s = t != null;
+  return [
+    (r) => e[0]({
+      lengthComputable: s,
+      total: t,
+      loaded: r
+    }),
+    e[1]
+  ];
+}, ft = (t) => (...e) => c.asap(() => t(...e)), vr = U.hasStandardBrowserEnv ? /* @__PURE__ */ ((t, e) => (s) => (s = new URL(s, U.origin), t.protocol === s.protocol && t.host === s.host && (e || t.port === s.port)))(
+  new URL(U.origin),
+  U.navigator && /(msie|trident)/i.test(U.navigator.userAgent)
+) : () => !0, gr = U.hasStandardBrowserEnv ? (
   // Standard browser envs support document.cookie
   {
-    write(e, t, s, r, n, o, l) {
+    write(t, e, s, r, o, a, i) {
       if (typeof document > "u") return;
-      const u = [`${e}=${encodeURIComponent(t)}`];
-      i.isNumber(s) && u.push(`expires=${new Date(s).toUTCString()}`), i.isString(r) && u.push(`path=${r}`), i.isString(n) && u.push(`domain=${n}`), o === !0 && u.push("secure"), i.isString(l) && u.push(`SameSite=${l}`), document.cookie = u.join("; ");
+      const f = [`${t}=${encodeURIComponent(e)}`];
+      c.isNumber(s) && f.push(`expires=${new Date(s).toUTCString()}`), c.isString(r) && f.push(`path=${r}`), c.isString(o) && f.push(`domain=${o}`), a === !0 && f.push("secure"), c.isString(i) && f.push(`SameSite=${i}`), document.cookie = f.join("; ");
     },
-    read(e) {
+    read(t) {
       if (typeof document > "u") return null;
-      const t = document.cookie.match(new RegExp("(?:^|; )" + e + "=([^;]*)"));
-      return t ? decodeURIComponent(t[1]) : null;
+      const e = document.cookie.match(new RegExp("(?:^|; )" + t + "=([^;]*)"));
+      return e ? decodeURIComponent(e[1]) : null;
     },
-    remove(e) {
-      this.write(e, "", Date.now() - 864e5, "/");
+    remove(t) {
+      this.write(t, "", Date.now() - 864e5, "/");
     }
   }
 ) : (
@@ -926,530 +986,566 @@ const Te = (e, t, s = 3) => {
     }
   }
 );
-function tr(e) {
-  return /^([a-z][a-z\d+\-.]*:)?\/\//i.test(e);
+function yr(t) {
+  return typeof t != "string" ? !1 : /^([a-z][a-z\d+\-.]*:)?\/\//i.test(t);
 }
-function sr(e, t) {
-  return t ? e.replace(/\/?\/$/, "") + "/" + t.replace(/^\/+/, "") : e;
+function wr(t, e) {
+  return e ? t.replace(/\/?\/$/, "") + "/" + e.replace(/^\/+/, "") : t;
 }
-function Ct(e, t, s) {
-  let r = !tr(t);
-  return e && (r || s == !1) ? sr(e, t) : t;
+function Ut(t, e, s) {
+  let r = !yr(e);
+  return t && (r || s == !1) ? wr(t, e) : e;
 }
-const tt = (e) => e instanceof $ ? { ...e } : e;
-function ae(e, t) {
-  t = t || {};
+const pt = (t) => t instanceof J ? { ...t } : t;
+function he(t, e) {
+  e = e || {};
   const s = {};
-  function r(p, f, v, O) {
-    return i.isPlainObject(p) && i.isPlainObject(f) ? i.merge.call({ caseless: O }, p, f) : i.isPlainObject(f) ? i.merge({}, f) : i.isArray(f) ? f.slice() : f;
+  function r(m, h, k, R) {
+    return c.isPlainObject(m) && c.isPlainObject(h) ? c.merge.call({ caseless: R }, m, h) : c.isPlainObject(h) ? c.merge({}, h) : c.isArray(h) ? h.slice() : h;
   }
-  function n(p, f, v, O) {
-    if (i.isUndefined(f)) {
-      if (!i.isUndefined(p))
-        return r(void 0, p, v, O);
-    } else return r(p, f, v, O);
+  function o(m, h, k, R) {
+    if (c.isUndefined(h)) {
+      if (!c.isUndefined(m))
+        return r(void 0, m, k, R);
+    } else return r(m, h, k, R);
   }
-  function o(p, f) {
-    if (!i.isUndefined(f))
-      return r(void 0, f);
+  function a(m, h) {
+    if (!c.isUndefined(h))
+      return r(void 0, h);
   }
-  function l(p, f) {
-    if (i.isUndefined(f)) {
-      if (!i.isUndefined(p))
-        return r(void 0, p);
-    } else return r(void 0, f);
+  function i(m, h) {
+    if (c.isUndefined(h)) {
+      if (!c.isUndefined(m))
+        return r(void 0, m);
+    } else return r(void 0, h);
   }
-  function u(p, f, v) {
-    if (v in t)
-      return r(p, f);
-    if (v in e)
-      return r(void 0, p);
+  function f(m, h, k) {
+    if (k in e)
+      return r(m, h);
+    if (k in t)
+      return r(void 0, m);
   }
   const x = {
-    url: o,
-    method: o,
-    data: o,
-    baseURL: l,
-    transformRequest: l,
-    transformResponse: l,
-    paramsSerializer: l,
-    timeout: l,
-    timeoutMessage: l,
-    withCredentials: l,
-    withXSRFToken: l,
-    adapter: l,
-    responseType: l,
-    xsrfCookieName: l,
-    xsrfHeaderName: l,
-    onUploadProgress: l,
-    onDownloadProgress: l,
-    decompress: l,
-    maxContentLength: l,
-    maxBodyLength: l,
-    beforeRedirect: l,
-    transport: l,
-    httpAgent: l,
-    httpsAgent: l,
-    cancelToken: l,
-    socketPath: l,
-    responseEncoding: l,
-    validateStatus: u,
-    headers: (p, f, v) => n(tt(p), tt(f), v, !0)
+    url: a,
+    method: a,
+    data: a,
+    baseURL: i,
+    transformRequest: i,
+    transformResponse: i,
+    paramsSerializer: i,
+    timeout: i,
+    timeoutMessage: i,
+    withCredentials: i,
+    withXSRFToken: i,
+    adapter: i,
+    responseType: i,
+    xsrfCookieName: i,
+    xsrfHeaderName: i,
+    onUploadProgress: i,
+    onDownloadProgress: i,
+    decompress: i,
+    maxContentLength: i,
+    maxBodyLength: i,
+    beforeRedirect: i,
+    transport: i,
+    httpAgent: i,
+    httpsAgent: i,
+    cancelToken: i,
+    socketPath: i,
+    responseEncoding: i,
+    validateStatus: f,
+    headers: (m, h, k) => o(pt(m), pt(h), k, !0)
   };
-  return i.forEach(Object.keys({ ...e, ...t }), function(f) {
-    const v = x[f] || n, O = v(e[f], t[f], f);
-    i.isUndefined(O) && v !== u || (s[f] = O);
+  return c.forEach(Object.keys({ ...t, ...e }), function(h) {
+    if (h === "__proto__" || h === "constructor" || h === "prototype") return;
+    const k = c.hasOwnProp(x, h) ? x[h] : o, R = k(t[h], e[h], h);
+    c.isUndefined(R) && k !== f || (s[h] = R);
   }), s;
 }
-const Tt = (e) => {
-  const t = ae({}, e);
-  let { data: s, withXSRFToken: r, xsrfHeaderName: n, xsrfCookieName: o, headers: l, auth: u } = t;
-  if (t.headers = l = $.from(l), t.url = kt(Ct(t.baseURL, t.url, t.allowAbsoluteUrls), e.params, e.paramsSerializer), u && l.set(
+const Mt = (t) => {
+  const e = he({}, t);
+  let { data: s, withXSRFToken: r, xsrfHeaderName: o, xsrfCookieName: a, headers: i, auth: f } = e;
+  if (e.headers = i = J.from(i), e.url = Lt(
+    Ut(e.baseURL, e.url, e.allowAbsoluteUrls),
+    t.params,
+    t.paramsSerializer
+  ), f && i.set(
     "Authorization",
-    "Basic " + btoa((u.username || "") + ":" + (u.password ? unescape(encodeURIComponent(u.password)) : ""))
-  ), i.isFormData(s)) {
-    if (L.hasStandardBrowserEnv || L.hasStandardBrowserWebWorkerEnv)
-      l.setContentType(void 0);
-    else if (i.isFunction(s.getHeaders)) {
-      const x = s.getHeaders(), p = ["content-type", "content-length"];
-      Object.entries(x).forEach(([f, v]) => {
-        p.includes(f.toLowerCase()) && l.set(f, v);
+    "Basic " + btoa(
+      (f.username || "") + ":" + (f.password ? unescape(encodeURIComponent(f.password)) : "")
+    )
+  ), c.isFormData(s)) {
+    if (U.hasStandardBrowserEnv || U.hasStandardBrowserWebWorkerEnv)
+      i.setContentType(void 0);
+    else if (c.isFunction(s.getHeaders)) {
+      const x = s.getHeaders(), m = ["content-type", "content-length"];
+      Object.entries(x).forEach(([h, k]) => {
+        m.includes(h.toLowerCase()) && i.set(h, k);
       });
     }
   }
-  if (L.hasStandardBrowserEnv && (r && i.isFunction(r) && (r = r(t)), r || r !== !1 && Qs(t.url))) {
-    const x = n && o && er.read(o);
-    x && l.set(n, x);
+  if (U.hasStandardBrowserEnv && (r && c.isFunction(r) && (r = r(e)), r || r !== !1 && vr(e.url))) {
+    const x = o && a && gr.read(a);
+    x && i.set(o, x);
   }
-  return t;
-}, rr = typeof XMLHttpRequest < "u", nr = rr && function(e) {
+  return e;
+}, _r = typeof XMLHttpRequest < "u", kr = _r && function(t) {
   return new Promise(function(s, r) {
-    const n = Tt(e);
-    let o = n.data;
-    const l = $.from(n.headers).normalize();
-    let { responseType: u, onUploadProgress: x, onDownloadProgress: p } = n, f, v, O, T, h;
-    function _() {
-      T && T(), h && h(), n.cancelToken && n.cancelToken.unsubscribe(f), n.signal && n.signal.removeEventListener("abort", f);
+    const o = Mt(t);
+    let a = o.data;
+    const i = J.from(o.headers).normalize();
+    let { responseType: f, onUploadProgress: x, onDownloadProgress: m } = o, h, k, R, N, b;
+    function E() {
+      N && N(), b && b(), o.cancelToken && o.cancelToken.unsubscribe(h), o.signal && o.signal.removeEventListener("abort", h);
     }
-    let g = new XMLHttpRequest();
-    g.open(n.method.toUpperCase(), n.url, !0), g.timeout = n.timeout;
-    function c() {
-      if (!g)
+    let y = new XMLHttpRequest();
+    y.open(o.method.toUpperCase(), o.url, !0), y.timeout = o.timeout;
+    function T() {
+      if (!y)
         return;
-      const C = $.from(
-        "getAllResponseHeaders" in g && g.getAllResponseHeaders()
-      ), B = {
-        data: !u || u === "text" || u === "json" ? g.responseText : g.response,
-        status: g.status,
-        statusText: g.statusText,
-        headers: C,
-        config: e,
-        request: g
+      const d = J.from(
+        "getAllResponseHeaders" in y && y.getAllResponseHeaders()
+      ), P = {
+        data: !f || f === "text" || f === "json" ? y.responseText : y.response,
+        status: y.status,
+        statusText: y.statusText,
+        headers: d,
+        config: t,
+        request: y
       };
-      Ot(function(F) {
-        s(F), _();
-      }, function(F) {
-        r(F), _();
-      }, B), g = null;
+      It(
+        function(F) {
+          s(F), E();
+        },
+        function(F) {
+          r(F), E();
+        },
+        P
+      ), y = null;
     }
-    "onloadend" in g ? g.onloadend = c : g.onreadystatechange = function() {
-      !g || g.readyState !== 4 || g.status === 0 && !(g.responseURL && g.responseURL.indexOf("file:") === 0) || setTimeout(c);
-    }, g.onabort = function() {
-      g && (r(new E("Request aborted", E.ECONNABORTED, e, g)), g = null);
-    }, g.onerror = function(N) {
-      const B = N && N.message ? N.message : "Network Error", W = new E(B, E.ERR_NETWORK, e, g);
-      W.event = N || null, r(W), g = null;
-    }, g.ontimeout = function() {
-      let N = n.timeout ? "timeout of " + n.timeout + "ms exceeded" : "timeout exceeded";
-      const B = n.transitional || St;
-      n.timeoutErrorMessage && (N = n.timeoutErrorMessage), r(new E(
-        N,
-        B.clarifyTimeoutError ? E.ETIMEDOUT : E.ECONNABORTED,
-        e,
-        g
-      )), g = null;
-    }, o === void 0 && l.setContentType(null), "setRequestHeader" in g && i.forEach(l.toJSON(), function(N, B) {
-      g.setRequestHeader(B, N);
-    }), i.isUndefined(n.withCredentials) || (g.withCredentials = !!n.withCredentials), u && u !== "json" && (g.responseType = n.responseType), p && ([O, h] = Te(p, !0), g.addEventListener("progress", O)), x && g.upload && ([v, T] = Te(x), g.upload.addEventListener("progress", v), g.upload.addEventListener("loadend", T)), (n.cancelToken || n.signal) && (f = (C) => {
-      g && (r(!C || C.type ? new fe(null, e, g) : C), g.abort(), g = null);
-    }, n.cancelToken && n.cancelToken.subscribe(f), n.signal && (n.signal.aborted ? f() : n.signal.addEventListener("abort", f)));
-    const P = Gs(n.url);
-    if (P && L.protocols.indexOf(P) === -1) {
-      r(new E("Unsupported protocol " + P + ":", E.ERR_BAD_REQUEST, e));
+    "onloadend" in y ? y.onloadend = T : y.onreadystatechange = function() {
+      !y || y.readyState !== 4 || y.status === 0 && !(y.responseURL && y.responseURL.indexOf("file:") === 0) || setTimeout(T);
+    }, y.onabort = function() {
+      y && (r(new S("Request aborted", S.ECONNABORTED, t, y)), y = null);
+    }, y.onerror = function(B) {
+      const P = B && B.message ? B.message : "Network Error", W = new S(P, S.ERR_NETWORK, t, y);
+      W.event = B || null, r(W), y = null;
+    }, y.ontimeout = function() {
+      let B = o.timeout ? "timeout of " + o.timeout + "ms exceeded" : "timeout exceeded";
+      const P = o.transitional || Ye;
+      o.timeoutErrorMessage && (B = o.timeoutErrorMessage), r(
+        new S(
+          B,
+          P.clarifyTimeoutError ? S.ETIMEDOUT : S.ECONNABORTED,
+          t,
+          y
+        )
+      ), y = null;
+    }, a === void 0 && i.setContentType(null), "setRequestHeader" in y && c.forEach(i.toJSON(), function(B, P) {
+      y.setRequestHeader(P, B);
+    }), c.isUndefined(o.withCredentials) || (y.withCredentials = !!o.withCredentials), f && f !== "json" && (y.responseType = o.responseType), m && ([R, b] = Fe(m, !0), y.addEventListener("progress", R)), x && y.upload && ([k, N] = Fe(x), y.upload.addEventListener("progress", k), y.upload.addEventListener("loadend", N)), (o.cancelToken || o.signal) && (h = (d) => {
+      y && (r(!d || d.type ? new Se(null, t, y) : d), y.abort(), y = null);
+    }, o.cancelToken && o.cancelToken.subscribe(h), o.signal && (o.signal.aborted ? h() : o.signal.addEventListener("abort", h)));
+    const I = mr(o.url);
+    if (I && U.protocols.indexOf(I) === -1) {
+      r(
+        new S(
+          "Unsupported protocol " + I + ":",
+          S.ERR_BAD_REQUEST,
+          t
+        )
+      );
       return;
     }
-    g.send(o || null);
+    y.send(a || null);
   });
-}, or = (e, t) => {
-  const { length: s } = e = e ? e.filter(Boolean) : [];
-  if (t || s) {
-    let r = new AbortController(), n;
-    const o = function(p) {
-      if (!n) {
-        n = !0, u();
-        const f = p instanceof Error ? p : this.reason;
-        r.abort(f instanceof E ? f : new fe(f instanceof Error ? f.message : f));
+}, Er = (t, e) => {
+  const { length: s } = t = t ? t.filter(Boolean) : [];
+  if (e || s) {
+    let r = new AbortController(), o;
+    const a = function(m) {
+      if (!o) {
+        o = !0, f();
+        const h = m instanceof Error ? m : this.reason;
+        r.abort(
+          h instanceof S ? h : new Se(h instanceof Error ? h.message : h)
+        );
       }
     };
-    let l = t && setTimeout(() => {
-      l = null, o(new E(`timeout ${t} of ms exceeded`, E.ETIMEDOUT));
-    }, t);
-    const u = () => {
-      e && (l && clearTimeout(l), l = null, e.forEach((p) => {
-        p.unsubscribe ? p.unsubscribe(o) : p.removeEventListener("abort", o);
-      }), e = null);
+    let i = e && setTimeout(() => {
+      i = null, a(new S(`timeout of ${e}ms exceeded`, S.ETIMEDOUT));
+    }, e);
+    const f = () => {
+      t && (i && clearTimeout(i), i = null, t.forEach((m) => {
+        m.unsubscribe ? m.unsubscribe(a) : m.removeEventListener("abort", a);
+      }), t = null);
     };
-    e.forEach((p) => p.addEventListener("abort", o));
+    t.forEach((m) => m.addEventListener("abort", a));
     const { signal: x } = r;
-    return x.unsubscribe = () => i.asap(u), x;
+    return x.unsubscribe = () => c.asap(f), x;
   }
-}, ar = function* (e, t) {
-  let s = e.byteLength;
-  if (s < t) {
-    yield e;
+}, Sr = function* (t, e) {
+  let s = t.byteLength;
+  if (s < e) {
+    yield t;
     return;
   }
-  let r = 0, n;
+  let r = 0, o;
   for (; r < s; )
-    n = r + t, yield e.slice(r, n), r = n;
-}, lr = async function* (e, t) {
-  for await (const s of ir(e))
-    yield* ar(s, t);
-}, ir = async function* (e) {
-  if (e[Symbol.asyncIterator]) {
-    yield* e;
+    o = r + e, yield t.slice(r, o), r = o;
+}, Cr = async function* (t, e) {
+  for await (const s of Rr(t))
+    yield* Sr(s, e);
+}, Rr = async function* (t) {
+  if (t[Symbol.asyncIterator]) {
+    yield* t;
     return;
   }
-  const t = e.getReader();
+  const e = t.getReader();
   try {
     for (; ; ) {
-      const { done: s, value: r } = await t.read();
+      const { done: s, value: r } = await e.read();
       if (s)
         break;
       yield r;
     }
   } finally {
-    await t.cancel();
+    await e.cancel();
   }
-}, st = (e, t, s, r) => {
-  const n = lr(e, t);
-  let o = 0, l, u = (x) => {
-    l || (l = !0, r && r(x));
+}, ht = (t, e, s, r) => {
+  const o = Cr(t, e);
+  let a = 0, i, f = (x) => {
+    i || (i = !0, r && r(x));
   };
-  return new ReadableStream({
-    async pull(x) {
-      try {
-        const { done: p, value: f } = await n.next();
-        if (p) {
-          u(), x.close();
-          return;
+  return new ReadableStream(
+    {
+      async pull(x) {
+        try {
+          const { done: m, value: h } = await o.next();
+          if (m) {
+            f(), x.close();
+            return;
+          }
+          let k = h.byteLength;
+          if (s) {
+            let R = a += k;
+            s(R);
+          }
+          x.enqueue(new Uint8Array(h));
+        } catch (m) {
+          throw f(m), m;
         }
-        let v = f.byteLength;
-        if (s) {
-          let O = o += v;
-          s(O);
-        }
-        x.enqueue(new Uint8Array(f));
-      } catch (p) {
-        throw u(p), p;
+      },
+      cancel(x) {
+        return f(x), o.return();
       }
     },
-    cancel(x) {
-      return u(x), n.return();
+    {
+      highWaterMark: 2
     }
-  }, {
-    highWaterMark: 2
-  });
-}, rt = 64 * 1024, { isFunction: Ee } = i, cr = (({ Request: e, Response: t }) => ({
-  Request: e,
-  Response: t
-}))(i.global), {
-  ReadableStream: nt,
-  TextEncoder: ot
-} = i.global, at = (e, ...t) => {
+  );
+}, mt = 64 * 1024, { isFunction: Re } = c, Or = (({ Request: t, Response: e }) => ({
+  Request: t,
+  Response: e
+}))(c.global), { ReadableStream: bt, TextEncoder: xt } = c.global, vt = (t, ...e) => {
   try {
-    return !!e(...t);
+    return !!t(...e);
   } catch {
     return !1;
   }
-}, ur = (e) => {
-  e = i.merge.call({
-    skipUndefined: !0
-  }, cr, e);
-  const { fetch: t, Request: s, Response: r } = e, n = t ? Ee(t) : typeof fetch == "function", o = Ee(s), l = Ee(r);
-  if (!n)
+}, Tr = (t) => {
+  t = c.merge.call(
+    {
+      skipUndefined: !0
+    },
+    Or,
+    t
+  );
+  const { fetch: e, Request: s, Response: r } = t, o = e ? Re(e) : typeof fetch == "function", a = Re(s), i = Re(r);
+  if (!o)
     return !1;
-  const u = n && Ee(nt), x = n && (typeof ot == "function" ? /* @__PURE__ */ ((h) => (_) => h.encode(_))(new ot()) : async (h) => new Uint8Array(await new s(h).arrayBuffer())), p = o && u && at(() => {
-    let h = !1;
-    const _ = new s(L.origin, {
-      body: new nt(),
+  const f = o && Re(bt), x = o && (typeof xt == "function" ? /* @__PURE__ */ ((b) => (E) => b.encode(E))(new xt()) : async (b) => new Uint8Array(await new s(b).arrayBuffer())), m = a && f && vt(() => {
+    let b = !1;
+    const E = new s(U.origin, {
+      body: new bt(),
       method: "POST",
       get duplex() {
-        return h = !0, "half";
+        return b = !0, "half";
       }
     }).headers.has("Content-Type");
-    return h && !_;
-  }), f = l && u && at(() => i.isReadableStream(new r("").body)), v = {
-    stream: f && ((h) => h.body)
+    return b && !E;
+  }), h = i && f && vt(() => c.isReadableStream(new r("").body)), k = {
+    stream: h && ((b) => b.body)
   };
-  n && ["text", "arrayBuffer", "blob", "formData", "stream"].forEach((h) => {
-    !v[h] && (v[h] = (_, g) => {
-      let c = _ && _[h];
-      if (c)
-        return c.call(_);
-      throw new E(`Response type '${h}' is not supported`, E.ERR_NOT_SUPPORT, g);
+  o && ["text", "arrayBuffer", "blob", "formData", "stream"].forEach((b) => {
+    !k[b] && (k[b] = (E, y) => {
+      let T = E && E[b];
+      if (T)
+        return T.call(E);
+      throw new S(
+        `Response type '${b}' is not supported`,
+        S.ERR_NOT_SUPPORT,
+        y
+      );
     });
   });
-  const O = async (h) => {
-    if (h == null)
+  const R = async (b) => {
+    if (b == null)
       return 0;
-    if (i.isBlob(h))
-      return h.size;
-    if (i.isSpecCompliantForm(h))
-      return (await new s(L.origin, {
+    if (c.isBlob(b))
+      return b.size;
+    if (c.isSpecCompliantForm(b))
+      return (await new s(U.origin, {
         method: "POST",
-        body: h
+        body: b
       }).arrayBuffer()).byteLength;
-    if (i.isArrayBufferView(h) || i.isArrayBuffer(h))
-      return h.byteLength;
-    if (i.isURLSearchParams(h) && (h = h + ""), i.isString(h))
-      return (await x(h)).byteLength;
-  }, T = async (h, _) => {
-    const g = i.toFiniteNumber(h.getContentLength());
-    return g ?? O(_);
+    if (c.isArrayBufferView(b) || c.isArrayBuffer(b))
+      return b.byteLength;
+    if (c.isURLSearchParams(b) && (b = b + ""), c.isString(b))
+      return (await x(b)).byteLength;
+  }, N = async (b, E) => {
+    const y = c.toFiniteNumber(b.getContentLength());
+    return y ?? R(E);
   };
-  return async (h) => {
+  return async (b) => {
     let {
-      url: _,
-      method: g,
-      data: c,
-      signal: P,
-      cancelToken: C,
-      timeout: N,
-      onDownloadProgress: B,
+      url: E,
+      method: y,
+      data: T,
+      signal: I,
+      cancelToken: d,
+      timeout: B,
+      onDownloadProgress: P,
       onUploadProgress: W,
       responseType: F,
-      headers: q,
-      withCredentials: D = "same-origin",
-      fetchOptions: pe
-    } = Tt(h), re = t || fetch;
+      headers: oe,
+      withCredentials: ae = "same-origin",
+      fetchOptions: $
+    } = Mt(b), X = e || fetch;
     F = F ? (F + "").toLowerCase() : "text";
-    let le = or([P, C && C.toAbortSignal()], N), K = null;
-    const Q = le && le.unsubscribe && (() => {
-      le.unsubscribe();
+    let de = Er(
+      [I, d && d.toAbortSignal()],
+      B
+    ), ee = null;
+    const se = de && de.unsubscribe && (() => {
+      de.unsubscribe();
     });
-    let H;
+    let te;
     try {
-      if (W && p && g !== "get" && g !== "head" && (H = await T(q, c)) !== 0) {
-        let Y = new s(_, {
+      if (W && m && y !== "get" && y !== "head" && (te = await N(oe, T)) !== 0) {
+        let V = new s(E, {
           method: "POST",
-          body: c,
+          body: T,
           duplex: "half"
-        }), ee;
-        if (i.isFormData(c) && (ee = Y.headers.get("content-type")) && q.setContentType(ee), Y.body) {
-          const [ie, ce] = Qe(
-            H,
-            Te(et(W))
+        }), le;
+        if (c.isFormData(T) && (le = V.headers.get("content-type")) && oe.setContentType(le), V.body) {
+          const [K, ce] = ut(
+            te,
+            Fe(ft(W))
           );
-          c = st(Y.body, rt, ie, ce);
+          T = ht(V.body, mt, K, ce);
         }
       }
-      i.isString(D) || (D = D ? "include" : "omit");
-      const J = o && "credentials" in s.prototype, he = {
-        ...pe,
-        signal: le,
-        method: g.toUpperCase(),
-        headers: q.normalize().toJSON(),
-        body: c,
+      c.isString(ae) || (ae = ae ? "include" : "omit");
+      const O = a && "credentials" in s.prototype, me = {
+        ...$,
+        signal: de,
+        method: y.toUpperCase(),
+        headers: oe.normalize().toJSON(),
+        body: T,
         duplex: "half",
-        credentials: J ? D : void 0
+        credentials: O ? ae : void 0
       };
-      K = o && new s(_, he);
-      let G = await (o ? re(K, pe) : re(_, he));
-      const _e = f && (F === "stream" || F === "response");
-      if (f && (B || _e && Q)) {
-        const Y = {};
-        ["status", "statusText", "headers"].forEach((me) => {
-          Y[me] = G[me];
+      ee = a && new s(E, me);
+      let Y = await (a ? X(ee, $) : X(E, me));
+      const re = h && (F === "stream" || F === "response");
+      if (h && (P || re && se)) {
+        const V = {};
+        ["status", "statusText", "headers"].forEach((ve) => {
+          V[ve] = Y[ve];
         });
-        const ee = i.toFiniteNumber(G.headers.get("content-length")), [ie, ce] = B && Qe(
-          ee,
-          Te(et(B), !0)
+        const le = c.toFiniteNumber(Y.headers.get("content-length")), [K, ce] = P && ut(
+          le,
+          Fe(ft(P), !0)
         ) || [];
-        G = new r(
-          st(G.body, rt, ie, () => {
-            ce && ce(), Q && Q();
+        Y = new r(
+          ht(Y.body, mt, K, () => {
+            ce && ce(), se && se();
           }),
-          Y
+          V
         );
       }
       F = F || "text";
-      let ke = await v[i.findKey(v, F) || "text"](G, h);
-      return !_e && Q && Q(), await new Promise((Y, ee) => {
-        Ot(Y, ee, {
-          data: ke,
-          headers: $.from(G.headers),
-          status: G.status,
-          statusText: G.statusText,
-          config: h,
-          request: K
+      let Ue = await k[c.findKey(k, F) || "text"](
+        Y,
+        b
+      );
+      return !re && se && se(), await new Promise((V, le) => {
+        It(V, le, {
+          data: Ue,
+          headers: J.from(Y.headers),
+          status: Y.status,
+          statusText: Y.statusText,
+          config: b,
+          request: ee
         });
       });
-    } catch (J) {
-      throw Q && Q(), J && J.name === "TypeError" && /Load failed|fetch/i.test(J.message) ? Object.assign(
-        new E("Network Error", E.ERR_NETWORK, h, K),
+    } catch (O) {
+      throw se && se(), O && O.name === "TypeError" && /Load failed|fetch/i.test(O.message) ? Object.assign(
+        new S(
+          "Network Error",
+          S.ERR_NETWORK,
+          b,
+          ee,
+          O && O.response
+        ),
         {
-          cause: J.cause || J
+          cause: O.cause || O
         }
-      ) : E.from(J, J && J.code, h, K);
+      ) : S.from(O, O && O.code, b, ee, O && O.response);
     }
   };
-}, dr = /* @__PURE__ */ new Map(), At = (e) => {
-  let t = e && e.env || {};
-  const { fetch: s, Request: r, Response: n } = t, o = [
-    r,
-    n,
-    s
-  ];
-  let l = o.length, u = l, x, p, f = dr;
-  for (; u--; )
-    x = o[u], p = f.get(x), p === void 0 && f.set(x, p = u ? /* @__PURE__ */ new Map() : ur(t)), f = p;
-  return p;
+}, Ar = /* @__PURE__ */ new Map(), Dt = (t) => {
+  let e = t && t.env || {};
+  const { fetch: s, Request: r, Response: o } = e, a = [r, o, s];
+  let i = a.length, f = i, x, m, h = Ar;
+  for (; f--; )
+    x = a[f], m = h.get(x), m === void 0 && h.set(x, m = f ? /* @__PURE__ */ new Map() : Tr(e)), h = m;
+  return m;
 };
-At();
-const Je = {
-  http: Cs,
-  xhr: nr,
+Dt();
+const Qe = {
+  http: Ws,
+  xhr: kr,
   fetch: {
-    get: At
+    get: Dt
   }
 };
-i.forEach(Je, (e, t) => {
-  if (e) {
+c.forEach(Qe, (t, e) => {
+  if (t) {
     try {
-      Object.defineProperty(e, "name", { value: t });
+      Object.defineProperty(t, "name", { value: e });
     } catch {
     }
-    Object.defineProperty(e, "adapterName", { value: t });
+    Object.defineProperty(t, "adapterName", { value: e });
   }
 });
-const lt = (e) => `- ${e}`, fr = (e) => i.isFunction(e) || e === null || e === !1;
-function pr(e, t) {
-  e = i.isArray(e) ? e : [e];
-  const { length: s } = e;
-  let r, n;
-  const o = {};
-  for (let l = 0; l < s; l++) {
-    r = e[l];
-    let u;
-    if (n = r, !fr(r) && (n = Je[(u = String(r)).toLowerCase()], n === void 0))
-      throw new E(`Unknown adapter '${u}'`);
-    if (n && (i.isFunction(n) || (n = n.get(t))))
+const gt = (t) => `- ${t}`, Nr = (t) => c.isFunction(t) || t === null || t === !1;
+function Fr(t, e) {
+  t = c.isArray(t) ? t : [t];
+  const { length: s } = t;
+  let r, o;
+  const a = {};
+  for (let i = 0; i < s; i++) {
+    r = t[i];
+    let f;
+    if (o = r, !Nr(r) && (o = Qe[(f = String(r)).toLowerCase()], o === void 0))
+      throw new S(`Unknown adapter '${f}'`);
+    if (o && (c.isFunction(o) || (o = o.get(e))))
       break;
-    o[u || "#" + l] = n;
+    a[f || "#" + i] = o;
   }
-  if (!n) {
-    const l = Object.entries(o).map(
-      ([x, p]) => `adapter ${x} ` + (p === !1 ? "is not supported by the environment" : "is not available in the build")
+  if (!o) {
+    const i = Object.entries(a).map(
+      ([x, m]) => `adapter ${x} ` + (m === !1 ? "is not supported by the environment" : "is not available in the build")
     );
-    let u = s ? l.length > 1 ? `since :
-` + l.map(lt).join(`
-`) : " " + lt(l[0]) : "as no adapter specified";
-    throw new E(
-      "There is no suitable adapter to dispatch the request " + u,
+    let f = s ? i.length > 1 ? `since :
+` + i.map(gt).join(`
+`) : " " + gt(i[0]) : "as no adapter specified";
+    throw new S(
+      "There is no suitable adapter to dispatch the request " + f,
       "ERR_NOT_SUPPORT"
     );
   }
-  return n;
+  return o;
 }
-const Nt = {
+const zt = {
   /**
    * Resolve an adapter from a list of adapter names or functions.
    * @type {Function}
    */
-  getAdapter: pr,
+  getAdapter: Fr,
   /**
    * Exposes all known adapters
    * @type {Object<string, Function|Object>}
    */
-  adapters: Je
+  adapters: Qe
 };
-function Ue(e) {
-  if (e.cancelToken && e.cancelToken.throwIfRequested(), e.signal && e.signal.aborted)
-    throw new fe(null, e);
+function He(t) {
+  if (t.cancelToken && t.cancelToken.throwIfRequested(), t.signal && t.signal.aborted)
+    throw new Se(null, t);
 }
-function it(e) {
-  return Ue(e), e.headers = $.from(e.headers), e.data = je.call(
-    e,
-    e.transformRequest
-  ), ["post", "put", "patch"].indexOf(e.method) !== -1 && e.headers.setContentType("application/x-www-form-urlencoded", !1), Nt.getAdapter(e.adapter || ye.adapter, e)(e).then(function(r) {
-    return Ue(e), r.data = je.call(
-      e,
-      e.transformResponse,
-      r
-    ), r.headers = $.from(r.headers), r;
-  }, function(r) {
-    return Rt(r) || (Ue(e), r && r.response && (r.response.data = je.call(
-      e,
-      e.transformResponse,
-      r.response
-    ), r.response.headers = $.from(r.response.headers))), Promise.reject(r);
-  });
+function yt(t) {
+  return He(t), t.headers = J.from(t.headers), t.data = qe.call(t, t.transformRequest), ["post", "put", "patch"].indexOf(t.method) !== -1 && t.headers.setContentType("application/x-www-form-urlencoded", !1), zt.getAdapter(t.adapter || Ee.adapter, t)(t).then(
+    function(r) {
+      return He(t), r.data = qe.call(t, t.transformResponse, r), r.headers = J.from(r.headers), r;
+    },
+    function(r) {
+      return jt(r) || (He(t), r && r.response && (r.response.data = qe.call(
+        t,
+        t.transformResponse,
+        r.response
+      ), r.response.headers = J.from(r.response.headers))), Promise.reject(r);
+    }
+  );
 }
-const Pt = "1.13.2", Fe = {};
-["object", "boolean", "number", "function", "string", "symbol"].forEach((e, t) => {
-  Fe[e] = function(r) {
-    return typeof r === e || "a" + (t < 1 ? "n " : " ") + e;
+const $t = "1.13.6", Ie = {};
+["object", "boolean", "number", "function", "string", "symbol"].forEach((t, e) => {
+  Ie[t] = function(r) {
+    return typeof r === t || "a" + (e < 1 ? "n " : " ") + t;
   };
 });
-const ct = {};
-Fe.transitional = function(t, s, r) {
-  function n(o, l) {
-    return "[Axios v" + Pt + "] Transitional option '" + o + "'" + l + (r ? ". " + r : "");
+const wt = {};
+Ie.transitional = function(e, s, r) {
+  function o(a, i) {
+    return "[Axios v" + $t + "] Transitional option '" + a + "'" + i + (r ? ". " + r : "");
   }
-  return (o, l, u) => {
-    if (t === !1)
-      throw new E(
-        n(l, " has been removed" + (s ? " in " + s : "")),
-        E.ERR_DEPRECATED
+  return (a, i, f) => {
+    if (e === !1)
+      throw new S(
+        o(i, " has been removed" + (s ? " in " + s : "")),
+        S.ERR_DEPRECATED
       );
-    return s && !ct[l] && (ct[l] = !0, console.warn(
-      n(
-        l,
+    return s && !wt[i] && (wt[i] = !0, console.warn(
+      o(
+        i,
         " has been deprecated since v" + s + " and will be removed in the near future"
       )
-    )), t ? t(o, l, u) : !0;
+    )), e ? e(a, i, f) : !0;
   };
 };
-Fe.spelling = function(t) {
-  return (s, r) => (console.warn(`${r} is likely a misspelling of ${t}`), !0);
+Ie.spelling = function(e) {
+  return (s, r) => (console.warn(`${r} is likely a misspelling of ${e}`), !0);
 };
-function hr(e, t, s) {
-  if (typeof e != "object")
-    throw new E("options must be an object", E.ERR_BAD_OPTION_VALUE);
-  const r = Object.keys(e);
-  let n = r.length;
-  for (; n-- > 0; ) {
-    const o = r[n], l = t[o];
-    if (l) {
-      const u = e[o], x = u === void 0 || l(u, o, e);
+function Br(t, e, s) {
+  if (typeof t != "object")
+    throw new S("options must be an object", S.ERR_BAD_OPTION_VALUE);
+  const r = Object.keys(t);
+  let o = r.length;
+  for (; o-- > 0; ) {
+    const a = r[o], i = e[a];
+    if (i) {
+      const f = t[a], x = f === void 0 || i(f, a, t);
       if (x !== !0)
-        throw new E("option " + o + " must be " + x, E.ERR_BAD_OPTION_VALUE);
+        throw new S(
+          "option " + a + " must be " + x,
+          S.ERR_BAD_OPTION_VALUE
+        );
       continue;
     }
     if (s !== !0)
-      throw new E("Unknown option " + o, E.ERR_BAD_OPTION);
+      throw new S("Unknown option " + a, S.ERR_BAD_OPTION);
   }
 }
-const Ce = {
-  assertOptions: hr,
-  validators: Fe
-}, Z = Ce.validators;
-let oe = class {
-  constructor(t) {
-    this.defaults = t || {}, this.interceptors = {
-      request: new Ye(),
-      response: new Ye()
+const Ne = {
+  assertOptions: Br,
+  validators: Ie
+}, G = Ne.validators;
+let pe = class {
+  constructor(e) {
+    this.defaults = e || {}, this.interceptors = {
+      request: new dt(),
+      response: new dt()
     };
   }
   /**
@@ -1460,140 +1556,155 @@ let oe = class {
    *
    * @returns {Promise} The Promise to be fulfilled
    */
-  async request(t, s) {
+  async request(e, s) {
     try {
-      return await this._request(t, s);
+      return await this._request(e, s);
     } catch (r) {
       if (r instanceof Error) {
-        let n = {};
-        Error.captureStackTrace ? Error.captureStackTrace(n) : n = new Error();
-        const o = n.stack ? n.stack.replace(/^.+\n/, "") : "";
+        let o = {};
+        Error.captureStackTrace ? Error.captureStackTrace(o) : o = new Error();
+        const a = o.stack ? o.stack.replace(/^.+\n/, "") : "";
         try {
-          r.stack ? o && !String(r.stack).endsWith(o.replace(/^.+\n.+\n/, "")) && (r.stack += `
-` + o) : r.stack = o;
+          r.stack ? a && !String(r.stack).endsWith(a.replace(/^.+\n.+\n/, "")) && (r.stack += `
+` + a) : r.stack = a;
         } catch {
         }
       }
       throw r;
     }
   }
-  _request(t, s) {
-    typeof t == "string" ? (s = s || {}, s.url = t) : s = t || {}, s = ae(this.defaults, s);
-    const { transitional: r, paramsSerializer: n, headers: o } = s;
-    r !== void 0 && Ce.assertOptions(r, {
-      silentJSONParsing: Z.transitional(Z.boolean),
-      forcedJSONParsing: Z.transitional(Z.boolean),
-      clarifyTimeoutError: Z.transitional(Z.boolean)
-    }, !1), n != null && (i.isFunction(n) ? s.paramsSerializer = {
-      serialize: n
-    } : Ce.assertOptions(n, {
-      encode: Z.function,
-      serialize: Z.function
-    }, !0)), s.allowAbsoluteUrls !== void 0 || (this.defaults.allowAbsoluteUrls !== void 0 ? s.allowAbsoluteUrls = this.defaults.allowAbsoluteUrls : s.allowAbsoluteUrls = !0), Ce.assertOptions(s, {
-      baseUrl: Z.spelling("baseURL"),
-      withXsrfToken: Z.spelling("withXSRFToken")
-    }, !0), s.method = (s.method || this.defaults.method || "get").toLowerCase();
-    let l = o && i.merge(
-      o.common,
-      o[s.method]
-    );
-    o && i.forEach(
-      ["delete", "get", "head", "post", "put", "patch", "common"],
-      (h) => {
-        delete o[h];
-      }
-    ), s.headers = $.concat(l, o);
-    const u = [];
+  _request(e, s) {
+    typeof e == "string" ? (s = s || {}, s.url = e) : s = e || {}, s = he(this.defaults, s);
+    const { transitional: r, paramsSerializer: o, headers: a } = s;
+    r !== void 0 && Ne.assertOptions(
+      r,
+      {
+        silentJSONParsing: G.transitional(G.boolean),
+        forcedJSONParsing: G.transitional(G.boolean),
+        clarifyTimeoutError: G.transitional(G.boolean),
+        legacyInterceptorReqResOrdering: G.transitional(G.boolean)
+      },
+      !1
+    ), o != null && (c.isFunction(o) ? s.paramsSerializer = {
+      serialize: o
+    } : Ne.assertOptions(
+      o,
+      {
+        encode: G.function,
+        serialize: G.function
+      },
+      !0
+    )), s.allowAbsoluteUrls !== void 0 || (this.defaults.allowAbsoluteUrls !== void 0 ? s.allowAbsoluteUrls = this.defaults.allowAbsoluteUrls : s.allowAbsoluteUrls = !0), Ne.assertOptions(
+      s,
+      {
+        baseUrl: G.spelling("baseURL"),
+        withXsrfToken: G.spelling("withXSRFToken")
+      },
+      !0
+    ), s.method = (s.method || this.defaults.method || "get").toLowerCase();
+    let i = a && c.merge(a.common, a[s.method]);
+    a && c.forEach(["delete", "get", "head", "post", "put", "patch", "common"], (b) => {
+      delete a[b];
+    }), s.headers = J.concat(i, a);
+    const f = [];
     let x = !0;
-    this.interceptors.request.forEach(function(_) {
-      typeof _.runWhen == "function" && _.runWhen(s) === !1 || (x = x && _.synchronous, u.unshift(_.fulfilled, _.rejected));
+    this.interceptors.request.forEach(function(E) {
+      if (typeof E.runWhen == "function" && E.runWhen(s) === !1)
+        return;
+      x = x && E.synchronous;
+      const y = s.transitional || Ye;
+      y && y.legacyInterceptorReqResOrdering ? f.unshift(E.fulfilled, E.rejected) : f.push(E.fulfilled, E.rejected);
     });
-    const p = [];
-    this.interceptors.response.forEach(function(_) {
-      p.push(_.fulfilled, _.rejected);
+    const m = [];
+    this.interceptors.response.forEach(function(E) {
+      m.push(E.fulfilled, E.rejected);
     });
-    let f, v = 0, O;
+    let h, k = 0, R;
     if (!x) {
-      const h = [it.bind(this), void 0];
-      for (h.unshift(...u), h.push(...p), O = h.length, f = Promise.resolve(s); v < O; )
-        f = f.then(h[v++], h[v++]);
-      return f;
+      const b = [yt.bind(this), void 0];
+      for (b.unshift(...f), b.push(...m), R = b.length, h = Promise.resolve(s); k < R; )
+        h = h.then(b[k++], b[k++]);
+      return h;
     }
-    O = u.length;
-    let T = s;
-    for (; v < O; ) {
-      const h = u[v++], _ = u[v++];
+    R = f.length;
+    let N = s;
+    for (; k < R; ) {
+      const b = f[k++], E = f[k++];
       try {
-        T = h(T);
-      } catch (g) {
-        _.call(this, g);
+        N = b(N);
+      } catch (y) {
+        E.call(this, y);
         break;
       }
     }
     try {
-      f = it.call(this, T);
-    } catch (h) {
-      return Promise.reject(h);
+      h = yt.call(this, N);
+    } catch (b) {
+      return Promise.reject(b);
     }
-    for (v = 0, O = p.length; v < O; )
-      f = f.then(p[v++], p[v++]);
-    return f;
+    for (k = 0, R = m.length; k < R; )
+      h = h.then(m[k++], m[k++]);
+    return h;
   }
-  getUri(t) {
-    t = ae(this.defaults, t);
-    const s = Ct(t.baseURL, t.url, t.allowAbsoluteUrls);
-    return kt(s, t.params, t.paramsSerializer);
+  getUri(e) {
+    e = he(this.defaults, e);
+    const s = Ut(e.baseURL, e.url, e.allowAbsoluteUrls);
+    return Lt(s, e.params, e.paramsSerializer);
   }
 };
-i.forEach(["delete", "get", "head", "options"], function(t) {
-  oe.prototype[t] = function(s, r) {
-    return this.request(ae(r || {}, {
-      method: t,
-      url: s,
-      data: (r || {}).data
-    }));
+c.forEach(["delete", "get", "head", "options"], function(e) {
+  pe.prototype[e] = function(s, r) {
+    return this.request(
+      he(r || {}, {
+        method: e,
+        url: s,
+        data: (r || {}).data
+      })
+    );
   };
 });
-i.forEach(["post", "put", "patch"], function(t) {
+c.forEach(["post", "put", "patch"], function(e) {
   function s(r) {
-    return function(o, l, u) {
-      return this.request(ae(u || {}, {
-        method: t,
-        headers: r ? {
-          "Content-Type": "multipart/form-data"
-        } : {},
-        url: o,
-        data: l
-      }));
+    return function(a, i, f) {
+      return this.request(
+        he(f || {}, {
+          method: e,
+          headers: r ? {
+            "Content-Type": "multipart/form-data"
+          } : {},
+          url: a,
+          data: i
+        })
+      );
     };
   }
-  oe.prototype[t] = s(), oe.prototype[t + "Form"] = s(!0);
+  pe.prototype[e] = s(), pe.prototype[e + "Form"] = s(!0);
 });
-let mr = class Bt {
-  constructor(t) {
-    if (typeof t != "function")
+let Lr = class qt {
+  constructor(e) {
+    if (typeof e != "function")
       throw new TypeError("executor must be a function.");
     let s;
-    this.promise = new Promise(function(o) {
-      s = o;
+    this.promise = new Promise(function(a) {
+      s = a;
     });
     const r = this;
-    this.promise.then((n) => {
+    this.promise.then((o) => {
       if (!r._listeners) return;
-      let o = r._listeners.length;
-      for (; o-- > 0; )
-        r._listeners[o](n);
+      let a = r._listeners.length;
+      for (; a-- > 0; )
+        r._listeners[a](o);
       r._listeners = null;
-    }), this.promise.then = (n) => {
-      let o;
-      const l = new Promise((u) => {
-        r.subscribe(u), o = u;
-      }).then(n);
-      return l.cancel = function() {
-        r.unsubscribe(o);
-      }, l;
-    }, t(function(o, l, u) {
-      r.reason || (r.reason = new fe(o, l, u), s(r.reason));
+    }), this.promise.then = (o) => {
+      let a;
+      const i = new Promise((f) => {
+        r.subscribe(f), a = f;
+      }).then(o);
+      return i.cancel = function() {
+        r.unsubscribe(a);
+      }, i;
+    }, e(function(a, i, f) {
+      r.reason || (r.reason = new Se(a, i, f), s(r.reason));
     });
   }
   /**
@@ -1606,51 +1717,51 @@ let mr = class Bt {
   /**
    * Subscribe to the cancel signal
    */
-  subscribe(t) {
+  subscribe(e) {
     if (this.reason) {
-      t(this.reason);
+      e(this.reason);
       return;
     }
-    this._listeners ? this._listeners.push(t) : this._listeners = [t];
+    this._listeners ? this._listeners.push(e) : this._listeners = [e];
   }
   /**
    * Unsubscribe from the cancel signal
    */
-  unsubscribe(t) {
+  unsubscribe(e) {
     if (!this._listeners)
       return;
-    const s = this._listeners.indexOf(t);
+    const s = this._listeners.indexOf(e);
     s !== -1 && this._listeners.splice(s, 1);
   }
   toAbortSignal() {
-    const t = new AbortController(), s = (r) => {
-      t.abort(r);
+    const e = new AbortController(), s = (r) => {
+      e.abort(r);
     };
-    return this.subscribe(s), t.signal.unsubscribe = () => this.unsubscribe(s), t.signal;
+    return this.subscribe(s), e.signal.unsubscribe = () => this.unsubscribe(s), e.signal;
   }
   /**
    * Returns an object that contains a new `CancelToken` and a function that, when called,
    * cancels the `CancelToken`.
    */
   static source() {
-    let t;
+    let e;
     return {
-      token: new Bt(function(n) {
-        t = n;
+      token: new qt(function(o) {
+        e = o;
       }),
-      cancel: t
+      cancel: e
     };
   }
 };
-function br(e) {
+function Pr(t) {
   return function(s) {
-    return e.apply(null, s);
+    return t.apply(null, s);
   };
 }
-function xr(e) {
-  return i.isObject(e) && e.isAxiosError === !0;
+function jr(t) {
+  return c.isObject(t) && t.isAxiosError === !0;
 }
-const Ie = {
+const Xe = {
   Continue: 100,
   SwitchingProtocols: 101,
   Processing: 102,
@@ -1721,53 +1832,53 @@ const Ie = {
   SslHandshakeFailed: 525,
   InvalidSslCertificate: 526
 };
-Object.entries(Ie).forEach(([e, t]) => {
-  Ie[t] = e;
+Object.entries(Xe).forEach(([t, e]) => {
+  Xe[e] = t;
 });
-function Ft(e) {
-  const t = new oe(e), s = dt(oe.prototype.request, t);
-  return i.extend(s, oe.prototype, t, { allOwnKeys: !0 }), i.extend(s, t, null, { allOwnKeys: !0 }), s.create = function(n) {
-    return Ft(ae(e, n));
+function Ht(t) {
+  const e = new pe(t), s = kt(pe.prototype.request, e);
+  return c.extend(s, pe.prototype, e, { allOwnKeys: !0 }), c.extend(s, e, null, { allOwnKeys: !0 }), s.create = function(o) {
+    return Ht(he(t, o));
   }, s;
 }
-const A = Ft(ye);
-A.Axios = oe;
-A.CanceledError = fe;
-A.CancelToken = mr;
-A.isCancel = Rt;
-A.VERSION = Pt;
-A.toFormData = Be;
-A.AxiosError = E;
+const A = Ht(Ee);
+A.Axios = pe;
+A.CanceledError = Se;
+A.CancelToken = Lr;
+A.isCancel = jt;
+A.VERSION = $t;
+A.toFormData = je;
+A.AxiosError = S;
 A.Cancel = A.CanceledError;
-A.all = function(t) {
-  return Promise.all(t);
+A.all = function(e) {
+  return Promise.all(e);
 };
-A.spread = br;
-A.isAxiosError = xr;
-A.mergeConfig = ae;
-A.AxiosHeaders = $;
-A.formToJSON = (e) => Et(i.isHTMLForm(e) ? new FormData(e) : e);
-A.getAdapter = Nt.getAdapter;
-A.HttpStatusCode = Ie;
+A.spread = Pr;
+A.isAxiosError = jr;
+A.mergeConfig = he;
+A.AxiosHeaders = J;
+A.formToJSON = (t) => Pt(c.isHTMLForm(t) ? new FormData(t) : t);
+A.getAdapter = zt.getAdapter;
+A.HttpStatusCode = Xe;
 A.default = A;
 const {
-  Axios: Qn,
-  AxiosError: eo,
-  CanceledError: to,
-  isCancel: so,
-  CancelToken: ro,
-  VERSION: no,
-  all: oo,
-  Cancel: ao,
-  isAxiosError: lo,
-  spread: io,
-  toFormData: co,
-  AxiosHeaders: uo,
-  HttpStatusCode: fo,
-  formToJSON: po,
-  getAdapter: ho,
-  mergeConfig: mo
-} = A, gr = ["id"], vr = { class: "flex gap-2 items-center" }, wr = {
+  Axios: ea,
+  AxiosError: ta,
+  CanceledError: sa,
+  isCancel: ra,
+  CancelToken: na,
+  VERSION: oa,
+  all: aa,
+  Cancel: la,
+  isAxiosError: ia,
+  spread: da,
+  toFormData: ca,
+  AxiosHeaders: ua,
+  HttpStatusCode: fa,
+  formToJSON: pa,
+  getAdapter: ha,
+  mergeConfig: ma
+} = A, Ir = ["id"], Ur = { class: "flex gap-2 items-center" }, Mr = {
   key: 0,
   width: "20",
   height: "20",
@@ -1776,7 +1887,7 @@ const {
   stroke: "currentColor",
   "stroke-width": "2",
   class: "text-amber-400 fill-amber-400/20"
-}, yr = {
+}, Dr = {
   key: 1,
   width: "20",
   height: "20",
@@ -1784,13 +1895,13 @@ const {
   fill: "none",
   stroke: "currentColor",
   "stroke-width": "2"
-}, _r = {
+}, zr = {
   key: 0,
   class: "max-w-[1440px] mx-auto px-4 py-6 md:px-8"
-}, kr = { class: "grid grid-cols-1 lg:grid-cols-[1fr_380px] gap-12" }, Sr = { class: "space-y-4" }, Er = {
+}, $r = { class: "grid grid-cols-1 lg:!grid-cols-[1fr_380px] gap-12" }, qr = { class: "space-y-4" }, Hr = {
   key: 1,
   class: "max-w-[1440px] mx-auto md:px-8 md:py-8"
-}, Rr = { class: "hidden md:flex text-sm mb-8 items-center gap-2 justify-between" }, Or = { class: "hover:text-blue-500 transition-colors cursor-pointer capitalize" }, Cr = { class: "relative w-4 h-4 overflow-hidden" }, Tr = {
+}, Jr = { class: "!hidden md:!flex text-sm mb-8 items-center gap-2 justify-between" }, Vr = { class: "hover:text-blue-500 transition-colors cursor-pointer capitalize" }, Wr = { class: "relative w-4 h-4 overflow-hidden" }, Xr = {
   key: 0,
   width: "16",
   height: "16",
@@ -1799,7 +1910,7 @@ const {
   stroke: "currentColor",
   "stroke-width": "2",
   class: "animate-[spin_3s_linear_infinite]"
-}, Ar = {
+}, Kr = {
   key: 1,
   width: "16",
   height: "16",
@@ -1807,48 +1918,102 @@ const {
   fill: "none",
   stroke: "currentColor",
   "stroke-width": "2"
-}, Nr = { class: "text-xs font-semibold tracking-wide" }, Pr = { class: "hidden md:block mb-10" }, Br = { class: "flex gap-2 mb-4" }, Fr = {
+}, Gr = { class: "text-xs font-semibold tracking-wide" }, Yr = { class: "!hidden md:!block mb-10" }, Zr = { class: "flex gap-2 mb-4" }, Qr = {
   key: 0,
   class: "px-2.5 py-1 rounded-md bg-rose-500 text-white text-[11px] font-bold uppercase tracking-wider shadow-sm shadow-rose-500/30"
-}, Lr = { class: "flex items-center text-amber-500 gap-1.5" }, jr = { class: "flex" }, Ur = {
+}, en = { class: "flex items-center text-amber-500 gap-1.5" }, tn = { class: "flex" }, sn = {
   key: 0,
   class: "tracking-wide"
-}, Dr = { class: "font-mono" }, Mr = {
+}, rn = { class: "font-mono" }, nn = {
   key: 0,
   class: "flex flex-wrap gap-2 mt-4"
-}, zr = { class: "grid grid-cols-1 lg:grid-cols-[1fr_400px] gap-0 lg:gap-16 items-start" }, Ir = { class: "w-full" }, $r = { class: "md:hidden px-4 pt-2 mb-6" }, qr = { class: "flex gap-2 mb-3" }, Hr = {
+}, on = { class: "grid grid-cols-1 lg:!grid-cols-[1fr_400px] gap-0 lg:!gap-16 items-start" }, an = { class: "w-full" }, ln = { class: "md:!hidden px-4 pt-2 mb-6" }, dn = { class: "flex gap-2 mb-3" }, cn = {
   key: 0,
   class: "px-2 py-0.5 rounded bg-rose-500 text-white text-[10px] font-bold shadow-md shadow-rose-500/20"
-}, Jr = { class: "flex items-center text-amber-500 text-sm" }, Vr = { class: "text-xs opacity-60 ml-1 text-current" }, Wr = {
+}, un = { class: "flex items-center text-amber-500 text-sm" }, fn = { class: "ml-2 font-semibold" }, pn = { class: "text-xs opacity-60 ml-1 text-current" }, hn = {
   key: 0,
   class: "flex flex-wrap gap-2 mt-3 no-scrollbar overflow-x-auto"
-}, Xr = { class: "grid grid-cols-1 lg:grid-cols-[550px_1fr] gap-10 mb-12" }, Kr = { class: "relative group" }, Gr = { class: "hidden md:flex gap-4 h-[600px]" }, Yr = { class: "flex flex-col gap-3 w-[80px] overflow-y-auto no-scrollbar py-1" }, Zr = ["onMouseover"], Qr = ["src"], en = ["src"], tn = { class: "absolute top-4 right-4 z-10 opacity-0 group-hover:opacity-100 transition-opacity" }, sn = ["fill"], rn = ["src"], nn = { class: "px-4 lg:px-0 flex flex-col gap-8" }, on = { class: "flex items-baseline gap-3 mb-2" }, an = { class: "text-3xl font-extrabold text-rose-500 tracking-tight" }, ln = {
+}, mn = { class: "grid grid-cols-1 lg:!grid-cols-[550px_1fr] gap-10 mb-12" }, bn = { class: "relative group" }, xn = { class: "!hidden md:!flex gap-4 h-[600px]" }, vn = { class: "flex flex-col gap-3 w-[80px] overflow-y-auto no-scrollbar py-1" }, gn = ["onMouseover"], yn = ["src"], wn = ["src"], _n = { class: "absolute top-4 right-4 z-10 opacity-0 group-hover:opacity-100 transition-opacity" }, kn = ["fill"], En = ["src"], Sn = { class: "px-4 lg:px-0 flex flex-col gap-8" }, Cn = { class: "flex items-baseline gap-3 mb-2" }, Rn = { class: "text-3xl font-extrabold text-rose-500 tracking-tight" }, On = {
   key: 0,
   class: "text-base text-slate-400 line-through decoration-slate-400/50"
-}, cn = { key: 0 }, un = { class: "flex flex-wrap gap-3" }, dn = ["onClick"], fn = ["src"], pn = {
+}, Tn = { key: 0 }, An = { class: "flex flex-wrap gap-3" }, Nn = ["onClick"], Fn = ["src"], Bn = {
   key: 2,
   class: "absolute inset-0 bg-black/20 flex items-center justify-center z-10 backdrop-blur-[1px]"
-}, hn = { key: 1 }, mn = { class: "flex justify-between items-center mb-3" }, bn = { class: "flex flex-wrap gap-2.5" }, xn = ["onClick"], gn = { class: "space-y-3 mb-5" }, vn = ["innerHTML"], wn = {
+}, Ln = { key: 1 }, Pn = { class: "flex justify-between items-center mb-3" }, jn = { class: "flex flex-wrap gap-2.5" }, In = ["onClick"], Un = { class: "space-y-3 mb-5" }, Mn = ["innerHTML"], Dn = {
   id: "characteristics",
   class: "scroll-mt-32"
-}, yn = ["onClick"], _n = { class: "flex justify-between items-center mb-8" }, kn = { class: "grid gap-6 md:grid-cols-2" }, Sn = { class: "flex justify-between items-start mb-4" }, En = { class: "flex items-center gap-3" }, Rn = { class: "hidden lg:block w-[380px]" }, On = { class: "flex items-start justify-between mb-6" }, Cn = { class: "flex items-baseline gap-2.5" }, Tn = { class: "text-[32px] font-extrabold leading-none text-rose-500 tracking-tight" }, An = {
+}, zn = ["onClick"], $n = { class: "flex justify-between items-center mb-8" }, qn = {
+  key: 0,
+  class: "grid gap-6 md:grid-cols-2"
+}, Hn = {
+  key: 1,
+  class: "grid gap-6 md:grid-cols-2"
+}, Jn = { class: "flex justify-between items-start mb-4" }, Vn = { class: "flex items-center gap-3" }, Wn = { class: "!hidden lg:!block w-[380px]" }, Xn = { class: "flex items-start justify-between mb-6" }, Kn = { class: "flex items-baseline gap-2.5" }, Gn = { class: "text-[32px] font-extrabold leading-none text-rose-500 tracking-tight" }, Yn = {
   key: 0,
   class: "text-base text-slate-400 line-through decoration-slate-400/50"
-}, Nn = { class: "flex gap-4 text-sm group" }, Pn = { class: "flex gap-4 text-sm group" }, Bn = { class: "space-y-3" }, Fn = { class: "flex gap-6 overflow-x-auto pb-8 no-scrollbar snap-x" }, Ln = ["src"], jn = { class: "absolute top-3 left-3 bg-rose-500 text-white text-[10px] font-bold px-2 py-1 rounded-md shadow-lg" }, Un = { class: "mb-1.5 flex items-baseline gap-2.5" }, Dn = { class: "text-xs text-slate-400" }, Mn = { class: "flex flex-col" }, zn = {
+}, Zn = { class: "flex gap-4 text-sm group" }, Qn = { class: "flex gap-4 text-sm group" }, eo = { class: "space-y-3" }, to = ["disabled"], so = { class: "flex flex-col items-center justify-center" }, ro = ["disabled"], no = {
+  key: 0,
+  class: "animate-spin h-5 w-5 text-white",
+  xmlns: "http://www.w3.org/2000/svg",
+  fill: "none",
+  viewBox: "0 0 24 24"
+}, oo = {
+  key: 1,
+  width: "20",
+  height: "20",
+  viewBox: "0 0 24 24",
+  fill: "none",
+  stroke: "currentColor",
+  "stroke-width": "2.5"
+}, ao = ["disabled"], lo = {
+  key: 0,
+  class: "animate-spin h-5 w-5 text-white",
+  xmlns: "http://www.w3.org/2000/svg",
+  fill: "none",
+  viewBox: "0 0 24 24"
+}, io = { key: 1 }, co = ["disabled"], uo = ["innerHTML"], fo = {
+  key: 1,
+  class: "flex gap-4 animate-pulse overflow-hidden px-4"
+}, po = { class: "flex flex-col min-w-[80px]" }, ho = {
   key: 0,
   class: "text-xs text-slate-400 line-through mt-0.5"
-}, In = { class: "flex justify-between items-center mb-6" }, $n = {
+}, mo = ["disabled"], bo = ["disabled"], xo = {
   key: 0,
-  class: "overflow-y-auto flex-1 flex justify-center p-2"
-}, qn = ["src"], Hn = "https://fastapi.dryutil.1mn.io/client/api/i/ona/product_dir?typ=view_product", Jn = "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImYwZTNlMDRiLTVkNDAtNDg1ZS05OGU4LWEzOTI3NWU3MzM0OCIsInNlY3VyaXR5Ijp7InBhcnR5IjpbInBhcnR5XzEiLCJwYXJ0eV8yIl19LCJzdWIiOiJmMGUzZTA0Yi01ZDQwLTQ4NWUtOThlOC1hMzkyNzVlNzMzNDgiLCJpYXQiOjE3NjU4MTI4Mjh9.OoClnPtlxI71L-e555nbNSmenmGufxewp78SlmdZCNxeuauXao5RRvqwOKQ77SJFqJXk0ng6GZ7VOgYECdEf-3k1UGX7w1NE_D5A6SP3UkVsSG8orYACFuvTyesbFwkpnEhdu0PBd6n8wuLkgU6nZ1bLDzKVg1zd8fFeJrwmUqk", Vn = /* @__PURE__ */ ut({
+  class: "animate-spin h-5 w-5 text-white",
+  xmlns: "http://www.w3.org/2000/svg",
+  fill: "none",
+  viewBox: "0 0 24 24"
+}, vo = {
+  key: 1,
+  width: "18",
+  height: "18",
+  viewBox: "0 0 24 24",
+  fill: "none",
+  stroke: "currentColor",
+  "stroke-width": "2.5"
+}, go = ["disabled"], yo = {
+  key: 0,
+  class: "animate-spin h-5 w-5 text-white",
+  xmlns: "http://www.w3.org/2000/svg",
+  fill: "none",
+  viewBox: "0 0 24 24"
+}, wo = { key: 1 }, _o = { class: "w-full max-w-3xl bg-white dark:bg-slate-900 rounded-t-[32px] sm:rounded-2xl shadow-2xl flex flex-col overflow-hidden max-h-[90vh] animate-[slideUp_0.3s_ease-out]" }, ko = { class: "px-6 pt-2 md:pt-6 pb-0 border-b border-gray-100 dark:border-slate-800" }, Eo = { class: "flex justify-between items-center mb-6" }, So = { class: "flex space-x-6" }, Co = { class: "overflow-y-auto p-4 md:p-8 flex-1 custom-widget-scroll" }, Ro = { class: "animate-[fadeIn_0.3s_ease-out]" }, Oo = {
+  key: 0,
+  class: "flex justify-center p-4"
+}, To = ["src"], Ao = { key: 1 }, No = { class: "flex justify-end mb-2" }, Fo = { class: "overflow-x-auto no-scrollbar pb-2" }, Bo = { class: "w-full text-sm text-center border-collapse min-w-[500px]" }, Lo = { class: "animate-[fadeIn_0.3s_ease-out] pb-4 md:pb-0" }, Po = { class: "grid md:grid-cols-[200px_1fr] gap-8 md:gap-14 items-center" }, jo = { class: "w-full flex justify-center py-4" }, Io = {
+  viewBox: "0 0 200 250",
+  class: "w-full max-w-[160px] h-auto",
+  fill: "none",
+  stroke: "currentColor"
+}, Uo = ["stroke"], Mo = ["stroke"], Do = { class: "space-y-6" }, zo = { class: "relative pl-10" }, $o = { class: "relative pl-10" }, qo = { class: "relative pl-10" }, Ho = "https://fastapi.dryutil.1mn.io/client/api/i/ona/product_dir?typ=view_product", Oe = "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImYwZTNlMDRiLTVkNDAtNDg1ZS05OGU4LWEzOTI3NWU3MzM0OCIsInNlY3VyaXR5Ijp7InBhcnR5IjpbInBhcnR5XzEiLCJwYXJ0eV8yIl19LCJzdWIiOiJmMGUzZTA0Yi01ZDQwLTQ4NWUtOThlOC1hMzkyNzVlNzMzNDgiLCJpYXQiOjE3NjU4MTI4Mjh9.OoClnPtlxI71L-e555nbNSmenmGufxewp78SlmdZCNxeuauXao5RRvqwOKQ77SJFqJXk0ng6GZ7VOgYECdEf-3k1UGX7w1NE_D5A6SP3UkVsSG8orYACFuvTyesbFwkpnEhdu0PBd6n8wuLkgU6nZ1bLDzKVg1zd8fFeJrwmUqk", Jo = /* @__PURE__ */ _t({
   __name: "ProductPage",
   props: {
-    _p: {},
     _$p: {},
+    _p: {},
     _$cb: {}
   },
-  setup(e) {
-    const t = e, s = {
+  setup(t) {
+    const e = t, s = {
       Default: [
         "https://images.unsplash.com/photo-1556905055-8f358a7a47b2?w=800",
         "https://images.unsplash.com/photo-1596755094514-f87e34085b2c?w=800",
@@ -1856,7 +2021,7 @@ const {
         "https://images.unsplash.com/photo-1503342217505-b0a15ec3261c?w=800",
         "https://images.unsplash.com/photo-1512436991641-6745cdb1723f?w=800"
       ]
-    }, r = ["XXS", "XS", "S", "M", "L", "XL", "XXL", "3XL", "4XL", "5XL"], n = V(t._$p?.data?.curr?.data?.theme || "light"), o = V({
+    }, r = ["XXS", "XS", "S", "M", "L", "XL", "XXL", "3XL", "4XL", "5XL"], o = j(e._$p?.data?.curr?.data?.theme || "light"), a = j({
       id: "",
       brand: "",
       title: "",
@@ -1869,123 +2034,268 @@ const {
       variant_mrp: [],
       size: [],
       hashtags: []
-      // ADDED INITIALIZATION
-    }), l = V(!0), u = V(""), x = V(""), p = V(""), f = V(0), v = V(!1), O = V(!1), T = V(!1), h = V([
-      { name: "Alexander", date: "Dec 12", text: "Excellent quality, fits size-to-size. The fabric is breathable and feels premium.", color: "#005bff" },
-      { name: "Maria K.", date: "Nov 05", text: "Fast delivery. Color matches the photo perfectly. Packaging was secure.", color: "#f91155" },
-      { name: "Igor S.", date: "Oct 22", text: "Good value for money. Stitching is solid and the design is trendy.", color: "#00c853" },
-      { name: "Elena P.", date: "Sep 15", text: "Comfortable to wear all day. Received many compliments on the style.", color: "#ff6d00" },
-      { name: "Dmitry V.", date: "Aug 30", text: "The size chart was accurate. The material is soft and durable.", color: "#d500f9" },
-      { name: "Svetlana R.", date: "Jul 18", text: "Loved the color options. The fit is flattering and true to size.", color: "#00bcd4" }
-    ]), _ = V([
-      { title: "Cotton T-Shirt Basic", price: 1200, mrp: 2400, discount: 50, image: "https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?w=300" },
-      { title: "Slim Fit Jeans Blue", price: 2500, mrp: 3500, discount: 28, image: "https://images.unsplash.com/photo-1542272454315-4c01d7abdf4a?w=300" },
-      { title: "Casual Hoodie Gray", price: 1800, mrp: 2200, discount: 15, image: "https://images.unsplash.com/photo-1556906781-9a412961d28c?w=300" },
-      { title: "Summer Shorts", price: 950, mrp: 1500, discount: 35, image: "https://images.unsplash.com/photo-1591195853828-11db59a44f6b?w=300" },
-      { title: "Leather Sneakers", price: 3200, mrp: 4e3, discount: 20, image: "https://images.unsplash.com/photo-1519741491921-9f4c5b3f3e2d?w=300" },
-      { title: "Denim Jacket", price: 2700, mrp: 4500, discount: 40, image: "https://images.unsplash.com/photo-1503341455253-b2e723bb3dbb?w=300" },
-      { title: "Wool Scarf", price: 800, mrp: 1200, discount: 33, image: "https://images.unsplash.com/photo-1512436991641-6745cdb1723f?w=300" }
-    ]), g = V([
+    }), i = j(!0), f = j(""), x = j(""), m = j(""), h = j(0), k = j(!1), R = j("chart"), N = j(!1), b = j(!1), E = j(""), y = j([]), T = j(!1), I = j([
       { question: "Payment Methods", answer: "We accept Visa, MasterCard, Mir cards, and SBP. You can also pay upon receipt.", isOpen: !1 },
       { question: "Delivery Options", answer: "Courier delivery to your door or pickup points. Free delivery for orders over 2000₽.", isOpen: !1 },
       { question: "Return Policy", answer: "You can return items within 14 days of receipt. Items must be unused and in original packaging.", isOpen: !1 },
       { question: "Warranty Information", answer: "All products come with a 6-month warranty covering manufacturing defects.", isOpen: !1 },
       { question: "Sizing Guide", answer: "Please refer to our size chart for accurate measurements to ensure the best fit.", isOpen: !1 }
-    ]), c = M(() => n.value === "dark"), P = M(() => t._p?.f?.name ? t._p.f.name("pd-root") : "pd-root"), C = M(() => {
-      if (!o.value.metadata) return {};
+    ]), d = z(() => o.value === "dark"), B = z(() => e._p?.f?.name ? e._p.f.name("pd-root") : "pd-root"), P = z(() => {
+      if (!a.value.metadata) return {};
       try {
-        return JSON.parse(o.value.metadata);
+        return JSON.parse(a.value.metadata);
       } catch {
         return {};
       }
-    }), N = M(() => C.value.color ? C.value.color.map((k) => {
-      let m = k.image?.[0]?.url ? k.image[0].url : null;
-      return m && m.includes("example.com") && (m = null), { id: k.id, name: k.name, url: m };
-    }) : []), B = M(() => {
-      const k = x.value, m = C.value.color?.find((b) => b.name === k);
-      if (m && m.image && m.image.length > 0) {
-        const b = m.image.filter((R) => R.url && !R.url.includes("example.com")).map((R) => R.url);
-        if (b.length) return b;
+    }), W = z(() => P.value.color ? P.value.color.map((w) => {
+      let l = w.image?.[0]?.url ? w.image[0].url : null;
+      return l && l.includes("example.com") && (l = null), { id: w.id, name: w.name, url: l };
+    }) : []), F = z(() => {
+      const w = x.value, l = P.value.color?.find((p) => p.name === w);
+      if (l && l.image && l.image.length > 0) {
+        const p = l.image.filter((_) => _.url && !_.url.includes("example.com")).map((_) => _.url);
+        if (p.length) return p;
       }
       return s.Default;
-    }), W = M(() => {
-      const k = o.value.size;
-      return !k || !Array.isArray(k) || k.length === 0 ? [] : [...new Set(k.map((b) => String(b).trim()))].filter(Boolean).sort((b, R) => {
-        const te = r.indexOf(b.toUpperCase()), Se = r.indexOf(R.toUpperCase());
-        if (te !== -1 && Se !== -1) return te - Se;
-        if (te !== -1) return -1;
-        if (Se !== -1) return 1;
-        const Ve = parseFloat(b), We = parseFloat(R);
-        return !isNaN(Ve) && !isNaN(We) ? Ve - We : b.localeCompare(R, void 0, { numeric: !0 });
+    }), oe = z(() => {
+      const w = a.value.size;
+      return !w || !Array.isArray(w) || w.length === 0 ? [] : [...new Set(w.map((p) => String(p).trim()))].filter(Boolean).sort((p, _) => {
+        const L = r.indexOf(p.toUpperCase()), Z = r.indexOf(_.toUpperCase());
+        if (L !== -1 && Z !== -1) return L - Z;
+        if (L !== -1) return -1;
+        if (Z !== -1) return 1;
+        const Ce = parseFloat(p), ue = parseFloat(_);
+        return !isNaN(Ce) && !isNaN(ue) ? Ce - ue : p.localeCompare(_, void 0, { numeric: !0 });
       });
-    }), F = M(() => {
-      const k = C.value.size_info?.representation?.url || C.value.size_info?.chart?.url || null;
-      return k && !k.includes("example.com") ? k : null;
-    }), q = M(() => o.value.variant_prices?.[0] || 0), D = M(() => o.value.variant_mrp?.[0] || 0), pe = M(() => Math.floor(q.value * 0.95)), re = M(() => D.value > q.value ? Math.round((D.value - q.value) / D.value * 100) : 0), le = M(() => {
-      const k = o.value.field_name?.indexOf("Product Details");
-      return k !== -1 && o.value.field_value?.[k] ? o.value.field_value[k] : "";
-    }), K = M(() => o.value.field_name ? o.value.field_name.map((k, m) => ({
-      name: k,
-      value: o.value.field_value[m]?.replace(/<[^>]*>/g, " ").trim()
-    })).filter((k) => k.name !== "Product Details" && k.value) : []), Q = M(() => O.value ? K.value : K.value.slice(0, 5)), H = (k) => new Intl.NumberFormat("ru-RU").format(k), J = () => {
-      const k = n.value === "dark" ? "light" : "dark";
-      n.value = k, t._p?.f?.set_theme && t._p.f.set_theme({ name: k, el_id: P.value }), t._$cb && t._$p?.data?.curr?.data && (t._$p.data.curr.data.theme = k, t._$cb.change && t._$cb.change({ _$p: t._$p }));
-    }, he = () => {
-      console.log("Back requested");
-    }, G = () => navigator.share?.({ title: o.value.title, url: window.location.href }).catch(console.error), _e = () => T.value = !T.value, ke = (k) => {
-      x.value = k.name, u.value = B.value[0];
-    }, Y = (k) => {
-      g.value[k].isOpen = !g.value[k].isOpen;
-    }, ee = () => document.getElementById("characteristics")?.scrollIntoView({ behavior: "smooth" }), ie = () => {
-      const k = document.getElementById(P.value);
-      k && t._$cb?.add && t._$cb.add({
-        $d: t._$p?.data?.curr?.data || {},
-        el: k
-      });
-    }, ce = (k) => {
-      const m = k.target;
-      f.value = Math.round(m.scrollLeft / m.clientWidth);
-    }, me = async () => {
-      l.value = !0;
-      const m = { slug: (() => {
-        let b = "";
-        try {
-          const te = new URL(location.href).pathname.split("/");
-          b = te[te.length - 1];
-        } catch {
-        }
-        return b;
-      })(), collection: "products" };
-      try {
-        const b = await A.post(Hn, m, {
-          headers: { "Content-Type": "application/json", Authorization: `Bearer ${Jn.trim()}` }
-        });
-        if (b.data.success && b.data.data.length)
-          o.value = b.data.data[0].document;
-        else
-          throw new Error("No data found");
-      } catch (b) {
-        console.warn("API Error, using fallback data:", b);
-      } finally {
-        N.value.length && ke(N.value[0]), W.value.length && (p.value = W.value[0]), u.value = B.value[0], l.value = !1;
+    }), ae = z(() => {
+      const w = P.value.size_info?.representation?.url || P.value.size_info?.chart?.url || null;
+      return w && !w.includes("example.com") ? w : null;
+    }), $ = z(() => a.value.variant_prices?.[0] || 0), X = z(() => a.value.variant_mrp?.[0] || 0), de = z(() => Math.floor($.value * 0.95)), ee = z(() => X.value > $.value ? Math.round((X.value - $.value) / X.value * 100) : 0), se = z(() => {
+      const w = a.value.field_name?.indexOf("Product Details");
+      return w !== -1 && a.value.field_value?.[w] ? a.value.field_value[w] : "";
+    }), te = j(0), O = j(!1), me = z(() => {
+      const w = P.value.variant || a.value.variant;
+      return w && w.length > 0 ? w.find((p) => {
+        const _ = m.value ? p.size_id === m.value : !0, L = x.value ? p.color_id === x.value : !0;
+        return _ && L;
+      })?.id || w[0].id : null;
+    }), Y = () => {
+      const w = me.value;
+      if (w) {
+        const p = JSON.parse(localStorage.getItem("guest_cart") || "[]").find((_) => _.product_id === a.value.id && _.variant_id === w);
+        te.value = p ? p.quantity : 0;
       }
     };
-    return Lt(() => {
-      me();
-      const k = document.getElementById(P.value);
-      k && n.value && t._p?.f?.set_theme && t._p.f.set_theme({ name: n.value, el_id: k.id });
-    }), jt(() => t._$p?.data?.curr?.id, me), (k, m) => (w(), y("div", {
-      id: P.value,
-      class: d(["font-sans min-h-screen pb-[100px] md:pb-0 antialiased transition-colors duration-300 ease-in-out selection:bg-rose-500 selection:text-white", c.value ? "bg-[#0f172a] text-slate-200" : "bg-[#F9FAFB] text-slate-900"])
+    rt([x, m], () => {
+      Y();
+    });
+    const re = async (w) => {
+      if (!a.value.id) return;
+      const l = me.value;
+      if (!l) return alert("Please select a valid variant.");
+      O.value = !0;
+      const p = Math.max(0, te.value + w);
+      console.log("Note: Force logged-in mode for testing API. Change to 'true' to test guest mode with local storage.");
+      {
+        let _ = JSON.parse(localStorage.getItem("guest_cart") || "[]"), L = _.findIndex((Z) => Z.product_id === a.value.id && Z.variant_id === l);
+        L > -1 ? p === 0 ? _.splice(L, 1) : _[L].quantity = p : p > 0 && _.push({
+          // Add New
+          product_id: a.value.id,
+          variant_id: l,
+          quantity: p,
+          title: a.value.title,
+          price: $.value,
+          image: F.value[0],
+          color: x.value,
+          size: m.value
+        }), console.log("Guest Cart Updated:", _), localStorage.setItem("guest_cart", JSON.stringify(_)), alert("Cart updated successfully! locally"), te.value = p, setTimeout(() => {
+          O.value = !1;
+        }, 300);
+      }
+      w > 0 && e._$cb?.add && e._$cb.add({ $d: e._$p?.data?.curr?.data || {}, el: document.getElementById(B.value) });
+    }, Ue = async () => {
+      if (!a.value.id) return;
+      const w = me.value;
+      if (!w) return alert("Please select a valid variant.");
+      O.value = !0;
+      const l = {
+        product_id: a.value.id,
+        variant_id: w,
+        quantity: 1,
+        // Strictly locked to 1 for Buy Now
+        title: a.value.title,
+        price: $.value,
+        image: F.value[0],
+        color: x.value,
+        size: m.value
+      };
+      if (localStorage.setItem("buy_now_item", JSON.stringify(l)), console.log("Buy Now Item Saved locally:", l), console.log("Current Buy Now Item in Storage:", JSON.parse(localStorage.getItem("buy_now_item") || "{}")), !(Oe.trim() === ""))
+        try {
+          const _ = await A.post("https://fastapi.dryutil.1mn.io/client/api/i/ona/order_management", {
+            operation: "add_to_cart",
+            user_id: "user_1",
+            // Update this dynamically later if needed
+            product_id: a.value.id,
+            variant_id: w,
+            quantity: 1,
+            buy_now: !0
+            // Flags it as a direct buy now action for the backend
+          }, {
+            headers: {
+              accept: "application/json",
+              "Content-Type": "application/json",
+              Authorization: `Bearer ${Oe.trim()}`
+            }
+          });
+          console.log("Buy Now API Response:", _.data), alert("Buy Now item added to cart. Redirecting to checkout...");
+        } catch (_) {
+          return console.error("Buy Now API Error:", _), O.value = !1, alert("Failed to process Buy Now. Please try again.");
+        }
+      O.value = !1, e._$cb?.checkout ? e._$cb.checkout({
+        $d: e._$p?.data?.curr?.data || {},
+        is_buy_now: !0
+      }) : console.log("Redirecting to checkout page...");
+    }, V = z(() => a.value.field_name ? a.value.field_name.map((w, l) => ({
+      name: w,
+      value: a.value.field_value[l]?.replace(/<[^>]*>/g, " ").trim()
+    })).filter((w) => w.name !== "Product Details" && w.value) : []), le = z(() => N.value ? V.value : V.value.slice(0, 5)), K = (w) => new Intl.NumberFormat("ru-RU").format(w), ce = () => {
+      const w = o.value === "dark" ? "light" : "dark";
+      o.value = w, e._p?.f?.set_theme && e._p.f.set_theme({ name: w, el_id: B.value }), e._$cb && e._$p?.data?.curr?.data && (e._$p.data.curr.data.theme = w, e._$cb.change && e._$cb.change({ _$p: e._$p }));
+    }, ve = () => {
+      console.log("Back requested");
+    }, Jt = () => navigator.share?.({ title: a.value.title, url: window.location.href }).catch(console.error), Vt = () => b.value = !b.value, et = (w) => {
+      x.value = w.name, f.value = F.value[0];
+    }, Wt = (w) => {
+      I.value[w].isOpen = !I.value[w].isOpen;
+    }, Xt = () => document.getElementById("characteristics")?.scrollIntoView({ behavior: "smooth" }), Kt = (w) => {
+      const l = w.target;
+      h.value = Math.round(l.scrollLeft / l.clientWidth);
+    }, ie = j({
+      average_rating: 0,
+      total_reviews: 0
+    }), Gt = async (w) => {
+      T.value = !0;
+      try {
+        const l = await A.post(
+          "https://fastapi.dryutil.1mn.io/client/api/i/ona/order_management",
+          {
+            operation: "get_product_reviews",
+            product_id: w,
+            page: 1,
+            per_page: 10
+          },
+          {
+            headers: {
+              accept: "application/json",
+              "Content-Type": "application/json",
+              Authorization: `Bearer ${Oe.trim()}`
+            }
+          }
+        );
+        if (l?.data?.success) {
+          const p = l.data.analytics || {};
+          ie.value = {
+            average_rating: Number(p.average_rating ?? 0),
+            total_reviews: Number(p.total_reviews ?? 0)
+          }, y.value = (l.data.reviews || []).map((_) => ({
+            name: _.reviewer_name || _.name || _.user || "Customer",
+            date: _.created_at ? new Date(_.created_at).toLocaleDateString() : "Recent",
+            text: _.review_text || _.text || _.comment || "",
+            rating: Number(_.rating ?? 5),
+            color: [
+              "#005bff",
+              "#f91155",
+              "#00c853",
+              "#ff6d00",
+              "#d500f9",
+              "#00bcd4"
+            ][Math.floor(Math.random() * 6)]
+          })), console.log("Fetched Reviews:", y.value.length);
+        }
+      } catch (l) {
+        console.error("Failed to fetch reviews:", l), y.value = [], ie.value = { average_rating: 3.6, total_reviews: 50 };
+      } finally {
+        T.value = !1;
+      }
+    }, tt = async () => {
+      i.value = !0;
+      const l = { slug: (() => {
+        let p = "";
+        try {
+          const L = new URL(location.href).pathname.split("/");
+          p = L[L.length - 1];
+        } catch {
+        }
+        return p;
+      })(), collection: "products" };
+      try {
+        const p = await A.post(Ho, l, {
+          headers: { "Content-Type": "application/json", Authorization: `Bearer ${Oe.trim()}` }
+        });
+        if (p.data.success && p.data.data.length)
+          a.value = { ...a.value, ...p.data.data[0].document };
+        else
+          throw new Error("No data found");
+      } catch (p) {
+        console.warn("API Error, using fallback data:", p);
+      } finally {
+        W.value.length && et(W.value[0]), oe.value.length && (m.value = oe.value[0]), f.value = F.value[0], i.value = !1, Y();
+      }
+    };
+    Zt(async () => {
+      await tt(), a.value.id && await Gt(a.value.id), await nt();
+      const w = document.getElementById(B.value);
+      w && o.value && e._p?.f?.set_theme && e._p.f.set_theme({ name: o.value, el_id: w.id });
+      const l = e._$p?.data?.curr?.data?.product_list_widget;
+      let p = l ? JSON.parse(JSON.stringify(l)) : null;
+      const _ = { l: p ? [p] : [] }, L = {
+        lazy_lib: {
+          renderer_src: "https://cdn.jsdelivr.net/gh/1mn-io/mn-app@latest/modules/{*}/dist/renderer.es.js",
+          hydrator_src: "https://cdn.jsdelivr.net/gh/1mn-io/mn-app@latest/modules/{*}/dist/hydrator.es.js",
+          editor_src: "https://cdn.jsdelivr.net/gh/1mn-io/mn-app@latest/modules/{*}/dist/editor.es.js"
+        }
+      };
+      try {
+        const Z = await rs(L), Ce = await ns(L), ue = await Z.set({
+          data: _,
+          _p: e._p,
+          _$p: e._$p
+        });
+        if (E.value = ue.r || ue.html || "", ue.style) {
+          const st = document.createElement("style");
+          st.innerHTML = ue.style, document.head.appendChild(st);
+        }
+        await nt(), setTimeout(async () => {
+          await Ce.set({
+            data: _,
+            _p: e._p,
+            _$p: e._$p
+          });
+        }, 200);
+      } catch (Z) {
+        console.error("Widget render failed:", Z);
+      }
+    }), rt(() => e._$p?.data?.curr?.id, tt);
+    const Yt = (w) => {
+      if (Math.abs(w.deltaX) > 0) return;
+      const p = w.currentTarget.querySelector('.overflow-x-auto, [class*="overflow-x"]');
+      if (p) {
+        const _ = p.scrollLeft === 0, L = p.scrollLeft + p.clientWidth >= p.scrollWidth - 1;
+        w.deltaY > 0 && !L ? (w.preventDefault(), p.scrollBy({ left: 300, behavior: "smooth" })) : w.deltaY < 0 && !_ && (w.preventDefault(), p.scrollBy({ left: -300, behavior: "smooth" }));
+      }
+    };
+    return (w, l) => (v(), g("div", {
+      id: B.value,
+      class: u(["font-sans min-h-screen pb-[100px] md:pb-0 antialiased transition-colors duration-300 ease-in-out selection:bg-rose-500 selection:text-white", d.value ? "bg-[#0f172a] text-slate-200" : "bg-[#F9FAFB] text-slate-900"])
     }, [
-      a("nav", {
-        class: d(["sticky top-0 z-50 backdrop-blur-xl flex justify-between items-center px-4 py-3 shadow-sm md:hidden border-b transition-colors duration-300", c.value ? "bg-[#0f172a]/80 border-slate-800" : "bg-white/80 border-slate-200/60"])
+      n("nav", {
+        class: u(["sticky top-0 z-50 backdrop-blur-xl flex justify-between items-center px-4 py-3 shadow-sm md:!hidden border-b transition-colors duration-300", d.value ? "bg-[#0f172a]/80 border-slate-800" : "bg-white/80 border-slate-200/60"])
       }, [
-        a("button", {
-          class: d(["p-2 -ml-2 transition-all duration-200 rounded-full active:scale-90", c.value ? "text-slate-300 hover:bg-white/10" : "text-slate-700 hover:bg-slate-100"]),
-          onClick: he
-        }, [...m[4] || (m[4] = [
-          a("svg", {
+        n("button", {
+          class: u(["p-2 -ml-2 transition-all duration-200 rounded-full active:scale-90", d.value ? "text-slate-300 hover:bg-white/10" : "text-slate-700 hover:bg-slate-100"]),
+          onClick: ve
+        }, [...l[12] || (l[12] = [
+          n("svg", {
             width: "24",
             height: "24",
             viewBox: "0 0 24 24",
@@ -1995,314 +2305,321 @@ const {
             "stroke-linecap": "round",
             "stroke-linejoin": "round"
           }, [
-            a("path", { d: "M15 18l-6-6 6-6" })
+            n("path", { d: "M15 18l-6-6 6-6" })
           ], -1)
         ])], 2),
-        a("div", vr, [
-          a("button", {
-            class: d(["p-2 transition-all duration-200 rounded-full active:scale-90", c.value ? "text-slate-300 hover:bg-white/10" : "text-slate-700 hover:bg-slate-100"]),
-            onClick: J
+        n("div", Ur, [
+          n("button", {
+            class: u(["p-2 transition-all duration-200 rounded-full active:scale-90", d.value ? "text-slate-300 hover:bg-white/10" : "text-slate-700 hover:bg-slate-100"]),
+            onClick: ce
           }, [
-            c.value ? (w(), y("svg", wr, [...m[5] || (m[5] = [
-              be('<circle cx="12" cy="12" r="5" data-v-bae44606></circle><line x1="12" y1="1" x2="12" y2="3" data-v-bae44606></line><line x1="12" y1="21" x2="12" y2="23" data-v-bae44606></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64" data-v-bae44606></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78" data-v-bae44606></line><line x1="1" y1="12" x2="3" y2="12" data-v-bae44606></line><line x1="21" y1="12" x2="23" y2="12" data-v-bae44606></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36" data-v-bae44606></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22" data-v-bae44606></line>', 9)
-            ])])) : (w(), y("svg", yr, [...m[6] || (m[6] = [
-              a("path", { d: "M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z" }, null, -1)
+            d.value ? (v(), g("svg", Mr, [...l[13] || (l[13] = [
+              ge('<circle cx="12" cy="12" r="5" data-v-d41e64c1></circle><line x1="12" y1="1" x2="12" y2="3" data-v-d41e64c1></line><line x1="12" y1="21" x2="12" y2="23" data-v-d41e64c1></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64" data-v-d41e64c1></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78" data-v-d41e64c1></line><line x1="1" y1="12" x2="3" y2="12" data-v-d41e64c1></line><line x1="21" y1="12" x2="23" y2="12" data-v-d41e64c1></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36" data-v-d41e64c1></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22" data-v-d41e64c1></line>', 9)
+            ])])) : (v(), g("svg", Dr, [...l[14] || (l[14] = [
+              n("path", { d: "M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z" }, null, -1)
             ])]))
           ], 2),
-          a("button", {
-            class: d(["p-2 transition-all duration-200 rounded-full active:scale-90", c.value ? "text-slate-300 hover:bg-white/10" : "text-slate-700 hover:bg-slate-100"]),
-            onClick: G
-          }, [...m[7] || (m[7] = [
-            be('<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-v-bae44606><circle cx="18" cy="5" r="3" data-v-bae44606></circle><circle cx="6" cy="12" r="3" data-v-bae44606></circle><circle cx="18" cy="19" r="3" data-v-bae44606></circle><line x1="8.59" y1="13.51" x2="15.42" y2="17.49" data-v-bae44606></line><line x1="15.41" y1="6.51" x2="8.59" y2="10.49" data-v-bae44606></line></svg>', 1)
+          n("button", {
+            class: u(["p-2 transition-all duration-200 rounded-full active:scale-90", d.value ? "text-slate-300 hover:bg-white/10" : "text-slate-700 hover:bg-slate-100"]),
+            onClick: Jt
+          }, [...l[15] || (l[15] = [
+            ge('<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-v-d41e64c1><circle cx="18" cy="5" r="3" data-v-d41e64c1></circle><circle cx="6" cy="12" r="3" data-v-d41e64c1></circle><circle cx="18" cy="19" r="3" data-v-d41e64c1></circle><line x1="8.59" y1="13.51" x2="15.42" y2="17.49" data-v-d41e64c1></line><line x1="15.41" y1="6.51" x2="8.59" y2="10.49" data-v-d41e64c1></line></svg>', 1)
           ])], 2)
         ])
       ], 2),
-      l.value ? (w(), y("div", _r, [
-        a("div", {
-          class: d(["hidden md:block h-5 w-64 rounded mb-8 animate-shimmer", c.value ? "bg-slate-800" : "bg-gray-200"])
+      i.value ? (v(), g("div", zr, [
+        n("div", {
+          class: u(["!hidden md:!block h-5 w-64 rounded mb-8 animate-shimmer", d.value ? "bg-slate-800" : "bg-gray-200"])
         }, null, 2),
-        a("div", kr, [
-          a("div", null, [
-            a("div", {
-              class: d(["block md:hidden h-[400px] w-full rounded-2xl mb-6 animate-shimmer", c.value ? "bg-slate-800" : "bg-gray-200"])
+        n("div", $r, [
+          n("div", null, [
+            n("div", {
+              class: u(["block md:!hidden h-[400px] w-full rounded-2xl mb-6 animate-shimmer", d.value ? "bg-slate-800" : "bg-gray-200"])
             }, null, 2),
-            a("div", {
-              class: d(["hidden md:block h-[600px] w-full rounded-3xl mb-8 animate-shimmer", c.value ? "bg-slate-800" : "bg-gray-200"])
+            n("div", {
+              class: u(["!hidden md:!block h-[600px] w-full rounded-3xl mb-8 animate-shimmer", d.value ? "bg-slate-800" : "bg-gray-200"])
             }, null, 2),
-            a("div", Sr, [
-              a("div", {
-                class: d(["h-8 w-3/4 rounded-lg animate-shimmer", c.value ? "bg-slate-800" : "bg-gray-200"])
+            n("div", qr, [
+              n("div", {
+                class: u(["h-8 w-3/4 rounded-lg animate-shimmer", d.value ? "bg-slate-800" : "bg-gray-200"])
               }, null, 2),
-              a("div", {
-                class: d(["h-6 w-1/2 rounded-lg animate-shimmer", c.value ? "bg-slate-800" : "bg-gray-200"])
+              n("div", {
+                class: u(["h-6 w-1/2 rounded-lg animate-shimmer", d.value ? "bg-slate-800" : "bg-gray-200"])
               }, null, 2)
             ])
           ]),
-          a("div", {
-            class: d(["hidden lg:block h-[500px] rounded-3xl animate-shimmer", c.value ? "bg-slate-800" : "bg-gray-200"])
+          n("div", {
+            class: u(["!hidden lg:!block h-[500px] rounded-3xl animate-shimmer", d.value ? "bg-slate-800" : "bg-gray-200"])
           }, null, 2)
         ])
-      ])) : o.value && o.value.id ? (w(), y("div", Er, [
-        a("nav", Rr, [
-          a("div", {
-            class: d(["flex items-center gap-2", c.value ? "text-slate-400" : "text-slate-500"])
+      ])) : a.value && a.value.id ? (v(), g("div", Hr, [
+        n("nav", Jr, [
+          n("div", {
+            class: u(["flex items-center gap-2", d.value ? "text-slate-400" : "text-slate-500"])
           }, [
-            a("span", {
+            n("span", {
               class: "hover:text-blue-500 transition-colors cursor-pointer",
-              onClick: he
+              onClick: ve
             }, "Home"),
-            m[9] || (m[9] = se()),
-            m[10] || (m[10] = a("span", { class: "opacity-30" }, "/", -1)),
-            (w(!0), y(j, null, U(o.value.category, (b, R) => (w(), y("span", {
-              key: R,
+            l[17] || (l[17] = ne()),
+            l[18] || (l[18] = n("span", { class: "opacity-30" }, "/", -1)),
+            (v(!0), g(M, null, D(a.value.category, (p, _) => (v(), g("span", {
+              key: _,
               class: "flex items-center gap-2"
             }, [
-              a("span", Or, S(b), 1),
-              m[8] || (m[8] = a("span", { class: "opacity-30" }, "/", -1))
+              n("span", Vr, C(p), 1),
+              l[16] || (l[16] = n("span", { class: "opacity-30" }, "/", -1))
             ]))), 128)),
-            a("span", {
-              class: d(["font-medium truncate max-w-[200px]", c.value ? "text-slate-200" : "text-slate-900"])
-            }, S(o.value.title), 3)
+            n("span", {
+              class: u(["font-medium truncate max-w-[200px]", d.value ? "text-slate-200" : "text-slate-900"])
+            }, C(a.value.title), 3)
           ], 2),
-          a("button", {
-            class: d(["group flex items-center gap-2 px-4 py-2 rounded-full transition-all border shadow-sm hover:shadow-md active:scale-95", c.value ? "bg-slate-800/50 border-slate-700 text-slate-300 hover:bg-slate-800" : "bg-white border-slate-200 text-slate-600 hover:bg-slate-50"]),
-            onClick: J
+          n("button", {
+            class: u(["group flex items-center gap-2 px-4 py-2 rounded-full transition-all border shadow-sm hover:shadow-md active:scale-95", d.value ? "bg-slate-800/50 border-slate-700 text-slate-300 hover:bg-slate-800" : "bg-white border-slate-200 text-slate-600 hover:bg-slate-50"]),
+            onClick: ce
           }, [
-            a("div", Cr, [
-              c.value ? (w(), y("svg", Tr, [...m[11] || (m[11] = [
-                be('<circle cx="12" cy="12" r="5" data-v-bae44606></circle><line x1="12" y1="1" x2="12" y2="3" data-v-bae44606></line><line x1="12" y1="21" x2="12" y2="23" data-v-bae44606></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64" data-v-bae44606></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78" data-v-bae44606></line><line x1="1" y1="12" x2="3" y2="12" data-v-bae44606></line><line x1="21" y1="12" x2="23" y2="12" data-v-bae44606></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36" data-v-bae44606></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22" data-v-bae44606></line>', 9)
-              ])])) : (w(), y("svg", Ar, [...m[12] || (m[12] = [
-                a("path", { d: "M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z" }, null, -1)
+            n("div", Wr, [
+              d.value ? (v(), g("svg", Xr, [...l[19] || (l[19] = [
+                ge('<circle cx="12" cy="12" r="5" data-v-d41e64c1></circle><line x1="12" y1="1" x2="12" y2="3" data-v-d41e64c1></line><line x1="12" y1="21" x2="12" y2="23" data-v-d41e64c1></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64" data-v-d41e64c1></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78" data-v-d41e64c1></line><line x1="1" y1="12" x2="3" y2="12" data-v-d41e64c1></line><line x1="21" y1="12" x2="23" y2="12" data-v-d41e64c1></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36" data-v-d41e64c1></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22" data-v-d41e64c1></line>', 9)
+              ])])) : (v(), g("svg", Kr, [...l[20] || (l[20] = [
+                n("path", { d: "M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z" }, null, -1)
               ])]))
             ]),
-            a("span", Nr, S(c.value ? "Dark Mode" : "Light Mode"), 1)
+            n("span", Gr, C(d.value ? "Dark Mode" : "Light Mode"), 1)
           ], 2)
         ]),
-        a("header", Pr, [
-          a("div", Br, [
-            a("span", {
-              class: d(["px-2.5 py-1 rounded-md text-[11px] font-bold uppercase tracking-wider border shadow-sm", c.value ? "bg-amber-900/30 text-amber-300 border-amber-800/50" : "bg-amber-50 text-amber-700 border-amber-100"])
+        n("header", Yr, [
+          n("div", Zr, [
+            n("span", {
+              class: u(["px-2.5 py-1 rounded-md text-[11px] font-bold uppercase tracking-wider border shadow-sm", d.value ? "bg-amber-900/30 text-amber-300 border-amber-800/50" : "bg-amber-50 text-amber-700 border-amber-100"])
             }, "Bestseller", 2),
-            re.value > 0 ? (w(), y("span", Fr, "-" + S(re.value) + "% Sale", 1)) : z("", !0)
+            ee.value > 0 ? (v(), g("span", Qr, "-" + C(ee.value) + "% Sale", 1)) : q("", !0)
           ]),
-          a("h1", {
-            class: d(["text-4xl lg:text-5xl font-extrabold leading-[1.1] mb-4 tracking-tight", c.value ? "text-white" : "text-slate-900"])
-          }, S(o.value.title), 3),
-          a("div", {
-            class: d(["flex items-center gap-4 text-sm font-medium", c.value ? "text-slate-400" : "text-slate-500"])
+          n("h1", {
+            class: u(["text-4xl lg:text-5xl font-extrabold leading-[1.1] mb-4 tracking-tight", d.value ? "text-white" : "text-slate-900"])
+          }, C(a.value.title), 3),
+          n("div", {
+            class: u(["flex items-center gap-4 text-sm font-medium", d.value ? "text-slate-400" : "text-slate-500"])
           }, [
-            a("div", Lr, [
-              a("span", jr, [
-                (w(), y(j, null, U(5, (b) => a("svg", {
-                  key: b,
-                  class: "w-4 h-4 fill-current",
+            n("div", en, [
+              n("span", tn, [
+                (v(), g(M, null, D(5, (p) => n("svg", {
+                  key: p,
+                  class: u(["w-4 h-4", p <= Math.round(ie.value.average_rating) ? "fill-current" : "fill-gray-300"]),
                   viewBox: "0 0 20 20"
-                }, [...m[13] || (m[13] = [
-                  a("path", { d: "M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" }, null, -1)
-                ])])), 64))
+                }, [...l[21] || (l[21] = [
+                  n("path", { d: `M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 \r
+          0 1.371 1.24.588 1.81l-2.8 \r
+          2.034a1 1 0 00-.364 1.118l1.07 \r
+          3.292c.3.921-.755 1.688-1.54 \r
+          1.118l-2.8-2.034a1 1 0 \r
+          00-1.175 0l-2.8 \r
+          2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 \r
+          1 0 00-.364-1.118L2.98 \r
+          8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 \r
+          1 0 00.951-.69l1.07-3.292z` }, null, -1)
+                ])], 2)), 64))
               ]),
-              a("span", {
-                class: d(["font-bold ml-1", c.value ? "text-white" : "text-slate-900"])
-              }, "4.9", 2),
-              a("a", {
+              n("span", {
+                class: u(["font-bold ml-1", d.value ? "text-white" : "text-slate-900"])
+              }, C(ie.value.average_rating.toFixed(1)), 3),
+              n("a", {
                 href: "#reviews",
-                class: d(["ml-2 border-b border-dotted hover:text-blue-500 hover:border-blue-500 transition-colors", c.value ? "border-slate-600" : "border-slate-400"])
-              }, S(h.value.length) + " reviews ", 3)
+                class: u(["ml-2 border-b border-dotted hover:text-blue-500 hover:border-blue-500 transition-colors", d.value ? "border-slate-600" : "border-slate-400"])
+              }, C(ie.value.total_reviews) + " reviews ", 3)
             ]),
-            m[15] || (m[15] = a("span", { class: "opacity-30 text-xl font-light" }, "|", -1)),
-            o.value.id ? (w(), y("span", Ur, [
-              m[14] || (m[14] = se("Art: ", -1)),
-              a("span", Dr, S(o.value.id.includes("__") ? o.value.id.split("__")[1] : o.value.id), 1)
-            ])) : z("", !0)
+            l[23] || (l[23] = n("span", { class: "opacity-30 text-xl font-light" }, "|", -1)),
+            a.value.id ? (v(), g("span", sn, [
+              l[22] || (l[22] = ne(" Product: ", -1)),
+              n("span", rn, C(a.value.id), 1)
+            ])) : q("", !0)
           ], 2),
-          o.value.hashtags && o.value.hashtags.length ? (w(), y("div", Mr, [
-            (w(!0), y(j, null, U(o.value.hashtags, (b, R) => (w(), y("span", {
-              key: R,
-              class: d(["px-3 py-1 text-xs font-semibold rounded-full border transition-all cursor-pointer hover:shadow-sm", c.value ? "bg-slate-800 text-blue-400 border-slate-700 hover:border-blue-500/50" : "bg-blue-50 text-blue-600 border-blue-100 hover:bg-blue-100"])
-            }, S(b), 3))), 128))
-          ])) : z("", !0)
+          a.value.hashtags && a.value.hashtags.length ? (v(), g("div", nn, [
+            (v(!0), g(M, null, D(a.value.hashtags, (p, _) => (v(), g("span", {
+              key: _,
+              class: u(["px-3 py-1 text-xs font-semibold rounded-full border transition-all cursor-pointer hover:shadow-sm", d.value ? "bg-slate-800 text-blue-400 border-slate-700 hover:border-blue-500/50" : "bg-blue-50 text-blue-600 border-blue-100 hover:bg-blue-100"])
+            }, C(p), 3))), 128))
+          ])) : q("", !0)
         ]),
-        a("div", zr, [
-          a("div", Ir, [
-            a("div", $r, [
-              a("div", qr, [
-                a("span", {
-                  class: d(["px-2 py-0.5 rounded text-[10px] font-bold uppercase tracking-wide border", c.value ? "bg-amber-900/30 text-amber-300 border-amber-800/50" : "bg-amber-50 text-amber-700 border-amber-100"])
+        n("div", on, [
+          n("div", an, [
+            n("div", ln, [
+              n("div", dn, [
+                n("span", {
+                  class: u(["px-2 py-0.5 rounded text-[10px] font-bold uppercase tracking-wide border", d.value ? "bg-amber-900/30 text-amber-300 border-amber-800/50" : "bg-amber-50 text-amber-700 border-amber-100"])
                 }, "Bestseller", 2),
-                re.value > 0 ? (w(), y("span", Hr, "-" + S(re.value) + "%", 1)) : z("", !0)
+                ee.value > 0 ? (v(), g("span", cn, "-" + C(ee.value) + "%", 1)) : q("", !0)
               ]),
-              a("h1", {
-                class: d(["text-[26px] font-bold leading-[1.2] mb-3 tracking-tight", c.value ? "text-white" : "text-slate-900"])
-              }, S(o.value.title), 3),
-              a("div", Jr, [
-                (w(), y(j, null, U(5, (b) => a("svg", {
-                  key: b,
-                  class: "w-3.5 h-3.5 fill-current",
+              n("h1", {
+                class: u(["text-[26px] font-bold leading-[1.2] mb-3 tracking-tight", d.value ? "text-white" : "text-slate-900"])
+              }, C(a.value.title), 3),
+              n("div", un, [
+                (v(), g(M, null, D(5, (p) => n("svg", {
+                  key: p,
+                  class: u(["w-3.5 h-3.5", p <= Math.round(ie.value.average_rating) ? "fill-current" : "fill-gray-300"]),
                   viewBox: "0 0 20 20"
-                }, [...m[16] || (m[16] = [
-                  a("path", { d: "M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" }, null, -1)
-                ])])), 64)),
-                a("span", {
-                  class: d(["font-bold mx-1.5", c.value ? "text-white" : "text-slate-900"])
-                }, "4.9", 2),
-                a("span", Vr, S(h.value.length) + " reviews", 1)
+                }, [...l[24] || (l[24] = [
+                  n("path", { d: "M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" }, null, -1)
+                ])], 2)), 64)),
+                n("span", fn, C(ie.value.average_rating.toFixed(1)), 1),
+                n("span", pn, " (" + C(ie.value.total_reviews) + " reviews) ", 1)
               ]),
-              o.value.hashtags && o.value.hashtags.length ? (w(), y("div", Wr, [
-                (w(!0), y(j, null, U(o.value.hashtags, (b, R) => (w(), y("span", {
-                  key: R,
-                  class: d(["px-2.5 py-1 text-[11px] font-semibold rounded-full border whitespace-nowrap", c.value ? "bg-slate-800 text-blue-400 border-slate-700" : "bg-blue-50 text-blue-600 border-blue-100"])
-                }, S(b), 3))), 128))
-              ])) : z("", !0)
+              a.value.hashtags && a.value.hashtags.length ? (v(), g("div", hn, [
+                (v(!0), g(M, null, D(a.value.hashtags, (p, _) => (v(), g("span", {
+                  key: _,
+                  class: u(["px-2.5 py-1 text-[11px] font-semibold rounded-full border whitespace-nowrap", d.value ? "bg-slate-800 text-blue-400 border-slate-700" : "bg-blue-50 text-blue-600 border-blue-100"])
+                }, C(p), 3))), 128))
+              ])) : q("", !0)
             ]),
-            a("div", Xr, [
-              a("div", Kr, [
-                a("div", Gr, [
-                  a("div", Yr, [
-                    (w(!0), y(j, null, U(B.value, (b, R) => (w(), y("div", {
-                      key: R,
-                      class: d(["w-[80px] h-[100px] rounded-2xl cursor-pointer overflow-hidden transition-all duration-300 relative border", [
-                        c.value ? "bg-slate-800 border-slate-700" : "bg-white border-slate-100",
-                        u.value === b ? "ring-2 ring-blue-500 ring-offset-2 " + (c.value ? "ring-offset-slate-900" : "ring-offset-white") : "hover:opacity-80 opacity-70 hover:opacity-100"
+            n("div", mn, [
+              n("div", bn, [
+                n("div", xn, [
+                  n("div", vn, [
+                    (v(!0), g(M, null, D(F.value, (p, _) => (v(), g("div", {
+                      key: _,
+                      class: u(["w-[80px] h-[100px] rounded-2xl cursor-pointer overflow-hidden transition-all duration-300 relative border", [
+                        d.value ? "bg-slate-800 border-slate-700" : "bg-white border-slate-100",
+                        f.value === p ? "ring-2 ring-blue-500 ring-offset-2 " + (d.value ? "ring-offset-slate-900" : "ring-offset-white") : "hover:opacity-80 opacity-70 hover:opacity-100"
                       ]]),
-                      onMouseover: (te) => u.value = b
+                      onMouseover: (L) => f.value = p
                     }, [
-                      a("img", {
-                        src: b,
+                      n("img", {
+                        src: p,
                         class: "w-full h-full object-cover"
-                      }, null, 8, Qr)
-                    ], 42, Zr))), 128))
+                      }, null, 8, yn)
+                    ], 42, gn))), 128))
                   ]),
-                  a("div", {
-                    class: d(["flex-1 rounded-[32px] flex items-center justify-center overflow-hidden cursor-zoom-in relative shadow-sm border", c.value ? "bg-slate-800/50 border-slate-700" : "bg-white border-slate-100"])
+                  n("div", {
+                    class: u(["flex-1 rounded-[32px] flex items-center justify-center overflow-hidden cursor-zoom-in relative shadow-sm border", d.value ? "bg-slate-800/50 border-slate-700" : "bg-white border-slate-100"])
                   }, [
-                    a("img", {
-                      src: u.value,
+                    n("img", {
+                      src: f.value,
                       class: "max-w-full max-h-full object-contain transition-transform duration-500 hover:scale-110"
-                    }, null, 8, en),
-                    a("div", tn, [
-                      a("button", {
+                    }, null, 8, wn),
+                    n("div", _n, [
+                      n("button", {
                         class: "p-2 rounded-full bg-white/90 shadow-md text-slate-700 hover:text-blue-600 dark:bg-slate-800/90 dark:text-slate-200",
-                        onClick: _e
+                        onClick: Vt
                       }, [
-                        (w(), y("svg", {
-                          fill: T.value ? "currentColor" : "none",
-                          class: d(T.value ? "text-rose-500" : ""),
+                        (v(), g("svg", {
+                          fill: b.value ? "currentColor" : "none",
+                          class: u(b.value ? "text-rose-500" : ""),
                           width: "20",
                           height: "20",
                           viewBox: "0 0 24 24",
                           stroke: "currentColor",
                           "stroke-width": "2"
-                        }, [...m[17] || (m[17] = [
-                          a("path", {
+                        }, [...l[25] || (l[25] = [
+                          n("path", {
                             "stroke-linecap": "round",
                             "stroke-linejoin": "round",
                             d: "M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"
                           }, null, -1)
-                        ])], 10, sn))
+                        ])], 10, kn))
                       ])
                     ])
                   ], 2)
                 ]),
-                a("div", {
-                  class: d(["md:hidden relative w-full pb-6 transition-colors duration-300", c.value ? "bg-[#0f172a]" : "bg-[#F9FAFB]"])
+                n("div", {
+                  class: u(["md:!hidden relative w-full pb-6 transition-colors duration-300", d.value ? "bg-[#0f172a]" : "bg-[#F9FAFB]"])
                 }, [
-                  a("div", {
+                  n("div", {
                     class: "flex overflow-x-auto snap-x snap-mandatory no-scrollbar w-full h-[100vw] max-h-[500px]",
-                    onScroll: ce
+                    onScroll: Kt
                   }, [
-                    (w(!0), y(j, null, U(B.value, (b, R) => (w(), y("div", {
+                    (v(!0), g(M, null, D(F.value, (p, _) => (v(), g("div", {
                       class: "min-w-full snap-center flex items-center justify-center p-6",
-                      key: R
+                      key: _
                     }, [
-                      a("img", {
-                        src: b,
+                      n("img", {
+                        src: p,
                         class: "max-w-full max-h-full object-contain drop-shadow-xl"
-                      }, null, 8, rn)
+                      }, null, 8, En)
                     ]))), 128))
                   ], 32),
-                  a("div", {
-                    class: d(["absolute bottom-4 left-1/2 -translate-x-1/2 flex justify-center gap-2 px-3 py-1.5 rounded-full backdrop-blur-md z-10 border", c.value ? "bg-white/5 border-white/10" : "bg-black/5 border-black/5"])
+                  n("div", {
+                    class: u(["absolute bottom-4 left-1/2 -translate-x-1/2 flex justify-center gap-2 px-3 py-1.5 rounded-full backdrop-blur-md z-10 border", d.value ? "bg-white/5 border-white/10" : "bg-black/5 border-black/5"])
                   }, [
-                    (w(!0), y(j, null, U(B.value, (b, R) => (w(), y("span", {
-                      key: R,
-                      class: d(["h-1.5 rounded-full transition-all duration-300 shadow-sm", f.value === R ? c.value ? "bg-white w-4" : "bg-slate-800 w-4" : c.value ? "bg-white/30 w-1.5" : "bg-slate-800/30 w-1.5"])
+                    (v(!0), g(M, null, D(F.value, (p, _) => (v(), g("span", {
+                      key: _,
+                      class: u(["h-1.5 rounded-full transition-all duration-300 shadow-sm", h.value === _ ? d.value ? "bg-white w-4" : "bg-slate-800 w-4" : d.value ? "bg-white/30 w-1.5" : "bg-slate-800/30 w-1.5"])
                     }, null, 2))), 128))
                   ], 2)
                 ], 2)
               ]),
-              a("div", nn, [
-                a("div", {
-                  class: d(["md:hidden pb-6 border-b", c.value ? "border-slate-800" : "border-slate-200"])
+              n("div", Sn, [
+                n("div", {
+                  class: u(["md:!hidden pb-6 border-b", d.value ? "border-slate-800" : "border-slate-200"])
                 }, [
-                  a("div", on, [
-                    a("span", an, S(H(q.value)) + " ₽", 1),
-                    D.value > q.value ? (w(), y("span", ln, S(H(D.value)) + " ₽", 1)) : z("", !0)
+                  n("div", Cn, [
+                    n("span", Rn, C(K($.value)) + " ₽", 1),
+                    X.value > $.value ? (v(), g("span", On, C(K(X.value)) + " ₽", 1)) : q("", !0)
                   ]),
-                  a("div", {
-                    class: d(["inline-flex items-center gap-2 text-xs font-bold px-3 py-1.5 rounded-lg border shadow-sm", c.value ? "bg-emerald-900/20 text-emerald-400 border-emerald-900/30" : "bg-emerald-50 text-emerald-700 border-emerald-100"])
+                  n("div", {
+                    class: u(["inline-flex items-center gap-2 text-xs font-bold px-3 py-1.5 rounded-lg border shadow-sm", d.value ? "bg-emerald-900/20 text-emerald-400 border-emerald-900/30" : "bg-emerald-50 text-emerald-700 border-emerald-100"])
                   }, [
-                    a("span", null, S(H(pe.value)) + " ₽", 1),
-                    m[18] || (m[18] = se(" with Ozon Card ", -1))
+                    n("span", null, C(K(de.value)) + " ₽", 1),
+                    l[26] || (l[26] = ne(" with Ozon Card ", -1))
                   ], 2)
                 ], 2),
-                N.value.length ? (w(), y("div", cn, [
-                  a("div", {
-                    class: d(["text-sm font-medium mb-3 flex items-center gap-2", c.value ? "text-slate-400" : "text-slate-500"])
+                W.value.length ? (v(), g("div", Tn, [
+                  n("div", {
+                    class: u(["text-sm font-medium mb-3 flex items-center gap-2", d.value ? "text-slate-400" : "text-slate-500"])
                   }, [
-                    m[19] || (m[19] = a("span", null, "Color:", -1)),
-                    a("span", {
-                      class: d(["font-bold text-base", c.value ? "text-white" : "text-slate-900"])
-                    }, S(x.value), 3)
+                    l[27] || (l[27] = n("span", null, "Color:", -1)),
+                    n("span", {
+                      class: u(["font-bold text-base", d.value ? "text-white" : "text-slate-900"])
+                    }, C(x.value), 3)
                   ], 2),
-                  a("div", un, [
-                    (w(!0), y(j, null, U(N.value, (b) => (w(), y("div", {
-                      key: b.id,
-                      class: d(["relative w-[72px] h-[90px] rounded-xl cursor-pointer overflow-hidden transition-all duration-200 group border", [
-                        c.value ? "border-slate-700" : "border-slate-200",
-                        x.value === b.name ? "ring-2 ring-blue-500 ring-offset-2 " + (c.value ? "ring-offset-slate-900" : "ring-offset-white") : "hover:opacity-80"
+                  n("div", An, [
+                    (v(!0), g(M, null, D(W.value, (p) => (v(), g("div", {
+                      key: p.id,
+                      class: u(["relative w-[72px] h-[90px] rounded-xl cursor-pointer overflow-hidden transition-all duration-200 group border", [
+                        d.value ? "border-slate-700" : "border-slate-200",
+                        x.value === p.name ? "ring-2 ring-blue-500 ring-offset-2 " + (d.value ? "ring-offset-slate-900" : "ring-offset-white") : "hover:opacity-80"
                       ]]),
-                      onClick: (R) => ke(b)
+                      onClick: (_) => et(p)
                     }, [
-                      b.url ? (w(), y("img", {
+                      p.url ? (v(), g("img", {
                         key: 0,
-                        src: b.url,
+                        src: p.url,
                         class: "w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
-                      }, null, 8, fn)) : (w(), y("span", {
+                      }, null, 8, Fn)) : (v(), g("span", {
                         key: 1,
-                        class: d(["flex w-full h-full items-center justify-center p-1 text-center text-xs leading-tight font-medium", c.value ? "bg-slate-800 text-slate-300" : "bg-slate-100 text-slate-600"])
-                      }, S(b.name), 3)),
-                      x.value === b.name ? (w(), y("div", pn, [...m[20] || (m[20] = [
-                        a("div", { class: "bg-blue-600 rounded-full p-1 shadow-lg animate-[slideUp_0.2s_ease-out]" }, [
-                          a("svg", {
+                        class: u(["flex w-full h-full items-center justify-center p-1 text-center text-xs leading-tight font-medium", d.value ? "bg-slate-800 text-slate-300" : "bg-slate-100 text-slate-600"])
+                      }, C(p.name), 3)),
+                      x.value === p.name ? (v(), g("div", Bn, [...l[28] || (l[28] = [
+                        n("div", { class: "bg-blue-600 rounded-full p-1 shadow-lg animate-[slideUp_0.2s_ease-out]" }, [
+                          n("svg", {
                             class: "w-3.5 h-3.5 text-white",
                             fill: "none",
                             viewBox: "0 0 24 24",
                             stroke: "currentColor",
                             "stroke-width": "3.5"
                           }, [
-                            a("path", { d: "M5 13l4 4L19 7" })
+                            n("path", { d: "M5 13l4 4L19 7" })
                           ])
                         ], -1)
-                      ])])) : z("", !0)
-                    ], 10, dn))), 128))
+                      ])])) : q("", !0)
+                    ], 10, Nn))), 128))
                   ])
-                ])) : z("", !0),
-                W.value.length ? (w(), y("div", hn, [
-                  a("div", mn, [
-                    a("span", {
-                      class: d(["text-sm font-medium flex items-center gap-2", c.value ? "text-slate-400" : "text-slate-500"])
+                ])) : q("", !0),
+                oe.value.length ? (v(), g("div", Ln, [
+                  n("div", Pn, [
+                    n("span", {
+                      class: u(["text-sm font-medium flex items-center gap-2", d.value ? "text-slate-400" : "text-slate-500"])
                     }, [
-                      m[21] || (m[21] = a("span", null, "Size:", -1)),
-                      a("span", {
-                        class: d(["font-bold text-base", c.value ? "text-white" : "text-slate-900"])
-                      }, S(p.value), 3)
+                      l[29] || (l[29] = n("span", null, "Size:", -1)),
+                      n("span", {
+                        class: u(["font-bold text-base", d.value ? "text-white" : "text-slate-900"])
+                      }, C(m.value), 3)
                     ], 2),
-                    F.value ? (w(), y("button", {
+                    ae.value ? (v(), g("button", {
                       key: 0,
-                      class: d(["text-xs font-bold flex items-center gap-1.5 transition hover:opacity-70 px-2 py-1 rounded-md", c.value ? "text-blue-400 bg-blue-400/10" : "text-blue-600 bg-blue-50"]),
-                      onClick: m[0] || (m[0] = (b) => v.value = !0)
-                    }, [...m[22] || (m[22] = [
-                      a("svg", {
+                      class: u(["text-xs font-bold flex items-center gap-1.5 transition hover:opacity-70 px-2 py-1 rounded-md", d.value ? "text-blue-400 bg-blue-400/10" : "text-blue-600 bg-blue-50"]),
+                      onClick: l[0] || (l[0] = (p) => k.value = !0)
+                    }, [...l[30] || (l[30] = [
+                      n("svg", {
                         width: "16",
                         height: "16",
                         viewBox: "0 0 24 24",
@@ -2310,46 +2627,46 @@ const {
                         stroke: "currentColor",
                         "stroke-width": "2"
                       }, [
-                        a("path", { d: "M19.5 12h-15M19.5 12l-4-4m4 4l-4 4" })
+                        n("path", { d: "M19.5 12h-15M19.5 12l-4-4m4 4l-4 4" })
                       ], -1),
-                      se(" Size Chart ", -1)
-                    ])], 2)) : z("", !0)
+                      ne(" Size Chart ", -1)
+                    ])], 2)) : q("", !0)
                   ]),
-                  a("div", bn, [
-                    (w(!0), y(j, null, U(W.value, (b) => (w(), y("button", {
-                      key: b,
-                      class: d(["h-12 min-w-[3.5rem] px-4 rounded-xl text-sm font-semibold transition-all duration-200 border relative overflow-hidden", [
-                        p.value === b ? c.value ? "bg-slate-800 border-blue-500 text-blue-400 ring-1 ring-blue-500 shadow-[0_0_15px_rgba(59,130,246,0.2)]" : "bg-blue-600 border-blue-600 text-white shadow-md shadow-blue-200" : c.value ? "bg-slate-800/50 border-slate-700 text-slate-300 hover:border-slate-500" : "bg-white border-slate-200 text-slate-700 hover:border-slate-300 hover:bg-slate-50"
+                  n("div", jn, [
+                    (v(!0), g(M, null, D(oe.value, (p) => (v(), g("button", {
+                      key: p,
+                      class: u(["h-12 min-w-[3.5rem] px-4 rounded-xl text-sm font-semibold transition-all duration-200 border relative overflow-hidden", [
+                        m.value === p ? d.value ? "bg-slate-800 border-blue-500 text-blue-400 ring-1 ring-blue-500 shadow-[0_0_15px_rgba(59,130,246,0.2)]" : "bg-blue-600 border-blue-600 text-white shadow-md shadow-blue-200" : d.value ? "bg-slate-800/50 border-slate-700 text-slate-300 hover:border-slate-500" : "bg-white border-slate-200 text-slate-700 hover:border-slate-300 hover:bg-slate-50"
                       ]]),
-                      onClick: (R) => p.value = b
-                    }, S(b), 11, xn))), 128))
+                      onClick: (_) => m.value = p
+                    }, C(p), 11, In))), 128))
                   ])
-                ])) : z("", !0),
-                a("div", {
-                  class: d(["hidden lg:block p-6 rounded-2xl border transition-colors duration-300", c.value ? "bg-slate-800/40 border-slate-700" : "bg-slate-50/50 border-slate-200/60"])
+                ])) : q("", !0),
+                n("div", {
+                  class: u(["!hidden lg:!block p-6 rounded-2xl border transition-colors duration-300", d.value ? "bg-slate-800/40 border-slate-700" : "bg-slate-50/50 border-slate-200/60"])
                 }, [
-                  a("h3", {
-                    class: d(["text-xs font-bold mb-4 uppercase tracking-wider opacity-60", c.value ? "text-white" : "text-slate-900"])
+                  n("h3", {
+                    class: u(["text-xs font-bold mb-4 uppercase tracking-wider opacity-60", d.value ? "text-white" : "text-slate-900"])
                   }, "Key Features", 2),
-                  a("ul", gn, [
-                    (w(!0), y(j, null, U(K.value.slice(0, 5), (b, R) => (w(), y("li", {
-                      key: R,
-                      class: d(["text-sm flex justify-between items-start border-b pb-2 last:border-0 border-dashed", c.value ? "border-slate-700/50" : "border-slate-200"])
+                  n("ul", Un, [
+                    (v(!0), g(M, null, D(V.value.slice(0, 5), (p, _) => (v(), g("li", {
+                      key: _,
+                      class: u(["text-sm flex justify-between items-start border-b pb-2 last:border-0 border-dashed", d.value ? "border-slate-700/50" : "border-slate-200"])
                     }, [
-                      a("span", {
-                        class: d(c.value ? "text-slate-400" : "text-slate-500")
-                      }, S(b.name), 3),
-                      a("span", {
-                        class: d(["font-medium text-right max-w-[60%]", c.value ? "text-slate-200" : "text-slate-900"])
-                      }, S(b.value), 3)
+                      n("span", {
+                        class: u(d.value ? "text-slate-400" : "text-slate-500")
+                      }, C(p.name), 3),
+                      n("span", {
+                        class: u(["font-medium text-right max-w-[60%]", d.value ? "text-slate-200" : "text-slate-900"])
+                      }, C(p.value), 3)
                     ], 2))), 128))
                   ]),
-                  a("button", {
-                    class: d(["text-sm font-bold flex items-center gap-1 transition hover:opacity-70 group", c.value ? "text-blue-400" : "text-blue-600"]),
-                    onClick: ee
-                  }, [...m[23] || (m[23] = [
-                    se(" View all characteristics ", -1),
-                    a("svg", {
+                  n("button", {
+                    class: u(["text-sm font-bold flex items-center gap-1 transition hover:opacity-70 group", d.value ? "text-blue-400" : "text-blue-600"]),
+                    onClick: Xt
+                  }, [...l[31] || (l[31] = [
+                    ne(" View all characteristics ", -1),
+                    n("svg", {
                       class: "group-hover:translate-x-1 transition-transform",
                       width: "16",
                       height: "16",
@@ -2358,86 +2675,86 @@ const {
                       stroke: "currentColor",
                       "stroke-width": "2"
                     }, [
-                      a("path", { d: "M6 9l6 6 6-6" })
+                      n("path", { d: "M6 9l6 6 6-6" })
                     ], -1)
                   ])], 2)
                 ], 2)
               ])
             ]),
-            a("div", {
-              class: d(["px-4 lg:px-0 mt-16 pt-10 border-t", c.value ? "border-slate-800" : "border-slate-200"])
+            n("div", {
+              class: u(["px-4 lg:px-0 mt-16 pt-10 border-t", d.value ? "border-slate-800" : "border-slate-200"])
             }, [
-              a("h2", {
-                class: d(["text-2xl font-bold mb-6 tracking-tight", c.value ? "text-white" : "text-slate-900"])
+              n("h2", {
+                class: u(["text-2xl font-bold mb-6 tracking-tight", d.value ? "text-white" : "text-slate-900"])
               }, "Description", 2),
-              a("div", {
-                class: d(["prose max-w-3xl leading-relaxed mb-12 text-[1.05rem]", c.value ? "prose-invert text-slate-300" : "prose-slate text-slate-600"]),
-                innerHTML: le.value
-              }, null, 10, vn),
-              a("div", wn, [
-                a("h3", {
-                  class: d(["text-2xl font-bold mb-6 tracking-tight", c.value ? "text-white" : "text-slate-900"])
+              n("div", {
+                class: u(["prose max-w-3xl leading-relaxed mb-12 text-[1.05rem]", d.value ? "prose-invert text-slate-300" : "prose-slate text-slate-600"]),
+                innerHTML: se.value
+              }, null, 10, Mn),
+              n("div", Dn, [
+                n("h3", {
+                  class: u(["text-2xl font-bold mb-6 tracking-tight", d.value ? "text-white" : "text-slate-900"])
                 }, "All Characteristics", 2),
-                a("div", {
-                  class: d(["rounded-2xl border overflow-hidden", c.value ? "border-slate-800" : "border-slate-200"])
+                n("div", {
+                  class: u(["rounded-2xl border overflow-hidden", d.value ? "border-slate-800" : "border-slate-200"])
                 }, [
-                  (w(!0), y(j, null, U(Q.value, (b, R) => (w(), y("div", {
-                    class: d(["flex flex-col sm:flex-row sm:justify-between sm:items-center p-4 sm:px-6 transition-colors", [
-                      R % 2 === 0 ? c.value ? "bg-slate-800/30" : "bg-slate-50" : c.value ? "bg-transparent" : "bg-white"
+                  (v(!0), g(M, null, D(le.value, (p, _) => (v(), g("div", {
+                    class: u(["flex flex-col sm:flex-row sm:justify-between sm:items-center p-4 sm:px-6 transition-colors", [
+                      _ % 2 === 0 ? d.value ? "bg-slate-800/30" : "bg-slate-50" : d.value ? "bg-transparent" : "bg-white"
                     ]]),
-                    key: R
+                    key: _
                   }, [
-                    a("span", {
-                      class: d(["text-sm mb-1 sm:mb-0 font-medium opacity-80", c.value ? "text-slate-400" : "text-slate-500"])
-                    }, S(b.name), 3),
-                    a("span", {
-                      class: d(["font-semibold text-sm sm:text-right", c.value ? "text-slate-200" : "text-slate-900"])
-                    }, S(b.value), 3)
+                    n("span", {
+                      class: u(["text-sm mb-1 sm:mb-0 font-medium opacity-80", d.value ? "text-slate-400" : "text-slate-500"])
+                    }, C(p.name), 3),
+                    n("span", {
+                      class: u(["font-semibold text-sm sm:text-right", d.value ? "text-slate-200" : "text-slate-900"])
+                    }, C(p.value), 3)
                   ], 2))), 128))
                 ], 2),
-                K.value.length > 5 ? (w(), y("button", {
+                V.value.length > 5 ? (v(), g("button", {
                   key: 0,
-                  class: d(["mt-6 flex items-center justify-center w-full sm:w-auto px-8 py-3 rounded-xl border font-bold text-sm transition-all hover:shadow-md active:scale-[0.98]", c.value ? "bg-slate-800 border-slate-700 text-slate-300 hover:bg-slate-700" : "bg-white border-slate-200 text-slate-700 hover:bg-slate-50"]),
-                  onClick: m[1] || (m[1] = (b) => O.value = !O.value)
+                  class: u(["mt-6 flex items-center justify-center w-full sm:w-auto px-8 py-3 rounded-xl border font-bold text-sm transition-all hover:shadow-md active:scale-[0.98]", d.value ? "bg-slate-800 border-slate-700 text-slate-300 hover:bg-slate-700" : "bg-white border-slate-200 text-slate-700 hover:bg-slate-50"]),
+                  onClick: l[1] || (l[1] = (p) => N.value = !N.value)
                 }, [
-                  se(S(O.value ? "Hide characteristics" : "Show all characteristics") + " ", 1),
-                  (w(), y("svg", {
-                    class: d([{ "rotate-180": O.value }, "transition-transform duration-300 ml-2"]),
+                  ne(C(N.value ? "Hide characteristics" : "Show all characteristics") + " ", 1),
+                  (v(), g("svg", {
+                    class: u([{ "rotate-180": N.value }, "transition-transform duration-300 ml-2"]),
                     width: "16",
                     height: "16",
                     viewBox: "0 0 24 24",
                     fill: "none",
                     stroke: "currentColor",
                     "stroke-width": "2"
-                  }, [...m[24] || (m[24] = [
-                    a("path", { d: "M6 9l6 6 6-6" }, null, -1)
+                  }, [...l[32] || (l[32] = [
+                    n("path", { d: "M6 9l6 6 6-6" }, null, -1)
                   ])], 2))
-                ], 2)) : z("", !0)
+                ], 2)) : q("", !0)
               ])
             ], 2),
-            a("div", {
-              class: d(["px-4 lg:px-0 mt-16 pt-10 border-t", c.value ? "border-slate-800" : "border-slate-200"])
+            n("div", {
+              class: u(["px-4 lg:px-0 mt-16 pt-10 border-t", d.value ? "border-slate-800" : "border-slate-200"])
             }, [
-              a("h2", {
-                class: d(["text-2xl font-bold mb-6 tracking-tight", c.value ? "text-white" : "text-slate-900"])
+              n("h2", {
+                class: u(["text-2xl font-bold mb-6 tracking-tight", d.value ? "text-white" : "text-slate-900"])
               }, "Questions and Answers", 2),
-              a("div", {
-                class: d(["rounded-2xl border overflow-hidden divide-y", c.value ? "border-slate-800 divide-slate-800" : "border-slate-200 divide-slate-100"])
+              n("div", {
+                class: u(["rounded-2xl border overflow-hidden divide-y", d.value ? "border-slate-800 divide-slate-800" : "border-slate-200 divide-slate-100"])
               }, [
-                (w(!0), y(j, null, U(g.value, (b, R) => (w(), y("div", { key: R }, [
-                  a("button", {
-                    class: d(["w-full py-5 px-6 flex justify-between items-center cursor-pointer group text-left transition-colors", c.value ? "bg-[#0f172a] hover:bg-slate-800" : "bg-white hover:bg-slate-50"]),
-                    onClick: (te) => Y(R)
+                (v(!0), g(M, null, D(I.value, (p, _) => (v(), g("div", { key: _ }, [
+                  n("button", {
+                    class: u(["w-full py-5 px-6 flex justify-between items-center cursor-pointer group text-left transition-colors", d.value ? "bg-[#0f172a] hover:bg-slate-800" : "bg-white hover:bg-slate-50"]),
+                    onClick: (L) => Wt(_)
                   }, [
-                    a("span", {
-                      class: d(["font-semibold text-base transition-colors group-hover:text-blue-500", c.value ? "text-slate-200" : "text-slate-900"])
-                    }, S(b.question), 3),
-                    a("div", {
-                      class: d(["p-1 rounded-full border transition-all", [
-                        b.isOpen ? "rotate-180 bg-blue-500 text-white border-blue-500" : c.value ? "border-slate-700 text-slate-500" : "border-slate-200 text-slate-400"
+                    n("span", {
+                      class: u(["font-semibold text-base transition-colors group-hover:text-blue-500", d.value ? "text-slate-200" : "text-slate-900"])
+                    }, C(p.question), 3),
+                    n("div", {
+                      class: u(["p-1 rounded-full border transition-all", [
+                        p.isOpen ? "rotate-180 bg-blue-500 text-white border-blue-500" : d.value ? "border-slate-700 text-slate-500" : "border-slate-200 text-slate-400"
                       ]])
-                    }, [...m[25] || (m[25] = [
-                      a("svg", {
+                    }, [...l[33] || (l[33] = [
+                      n("svg", {
                         width: "16",
                         height: "16",
                         viewBox: "0 0 24 24",
@@ -2445,299 +2762,633 @@ const {
                         stroke: "currentColor",
                         "stroke-width": "2"
                       }, [
-                        a("path", { d: "M6 9l6 6 6-6" })
+                        n("path", { d: "M6 9l6 6 6-6" })
                       ], -1)
                     ])], 2)
-                  ], 10, yn),
-                  Dt(a("div", {
-                    class: d(["px-6 pb-6 pt-2 text-[15px] leading-relaxed animate-[fadeIn_0.2s_ease-out]", c.value ? "bg-[#0f172a] text-slate-400" : "bg-white text-slate-600"])
+                  ], 10, zn),
+                  Me(n("div", {
+                    class: u(["px-6 pb-6 pt-2 text-[15px] leading-relaxed animate-[fadeIn_0.2s_ease-out]", d.value ? "bg-[#0f172a] text-slate-400" : "bg-white text-slate-600"])
                   }, [
-                    a("p", null, S(b.answer), 1)
+                    n("p", null, C(p.answer), 1)
                   ], 2), [
-                    [Mt, b.isOpen]
+                    [De, p.isOpen]
                   ])
                 ]))), 128))
               ], 2)
             ], 2),
-            a("div", {
-              class: d(["px-4 lg:px-0 mt-16 mb-24 pt-10 border-t", c.value ? "border-slate-800" : "border-slate-200"]),
+            n("div", {
+              class: u(["px-4 lg:px-0 mt-16 mb-24 pt-10 border-t", d.value ? "border-slate-800" : "border-slate-200"]),
               id: "reviews"
             }, [
-              a("div", _n, [
-                a("h2", {
-                  class: d(["text-2xl font-bold flex items-center gap-3", c.value ? "text-white" : "text-slate-900"])
+              n("div", $n, [
+                n("h2", {
+                  class: u(["text-2xl font-bold flex items-center gap-3", d.value ? "text-white" : "text-slate-900"])
                 }, [
-                  m[26] || (m[26] = se(" Reviews ", -1)),
-                  a("span", {
-                    class: d(["text-sm font-bold px-3 py-1 rounded-full", c.value ? "bg-slate-800 text-slate-300" : "bg-slate-100 text-slate-600"])
-                  }, S(h.value.length), 3)
+                  l[34] || (l[34] = ne(" Reviews ", -1)),
+                  n("span", {
+                    class: u(["text-sm font-bold px-3 py-1 rounded-full", d.value ? "bg-slate-800 text-slate-300" : "bg-slate-100 text-slate-600"])
+                  }, C(y.value.length), 3)
                 ], 2)
               ]),
-              a("div", kn, [
-                (w(!0), y(j, null, U(h.value, (b, R) => (w(), y("div", {
-                  class: d(["p-6 rounded-2xl border transition-all hover:shadow-lg duration-300", c.value ? "bg-slate-800/30 border-slate-700 hover:bg-slate-800" : "bg-white border-slate-100 shadow-sm hover:shadow-md"]),
-                  key: R
+              T.value ? (v(), g("div", qn, [
+                (v(), g(M, null, D(2, (p) => n("div", {
+                  key: p,
+                  class: u(["h-[150px] rounded-2xl animate-shimmer", d.value ? "bg-slate-800" : "bg-slate-100"])
+                }, null, 2)), 64))
+              ])) : y.value.length > 0 ? (v(), g("div", Hn, [
+                (v(!0), g(M, null, D(y.value, (p, _) => (v(), g("div", {
+                  class: u(["p-6 rounded-2xl border transition-all hover:shadow-lg duration-300", d.value ? "bg-slate-800/30 border-slate-700 hover:bg-slate-800" : "bg-white border-slate-100 shadow-sm hover:shadow-md"]),
+                  key: _
                 }, [
-                  a("div", Sn, [
-                    a("div", En, [
-                      a("div", {
+                  n("div", Jn, [
+                    n("div", Vn, [
+                      n("div", {
                         class: "w-10 h-10 rounded-full text-white flex items-center justify-center font-bold text-sm shadow-md",
-                        style: zt(`background:${b.color}`)
-                      }, S(b.name[0]), 5),
-                      a("div", null, [
-                        a("div", {
-                          class: d(["font-bold text-sm", c.value ? "text-white" : "text-slate-900"])
-                        }, S(b.name), 3),
-                        m[27] || (m[27] = a("div", { class: "text-amber-500 text-xs tracking-wide flex" }, "★★★★★", -1))
+                        style: es(`background:${p.color}`)
+                      }, C(p.name ? p.name[0] : "U"), 5),
+                      n("div", null, [
+                        n("div", {
+                          class: u(["font-bold text-sm", d.value ? "text-white" : "text-slate-900"])
+                        }, C(p.name), 3),
+                        l[35] || (l[35] = n("div", { class: "text-amber-500 text-xs tracking-wide flex" }, "★★★★★", -1))
                       ])
                     ]),
-                    a("span", {
-                      class: d(["text-xs font-medium opacity-60", c.value ? "text-slate-400" : "text-slate-500"])
-                    }, S(b.date), 3)
+                    n("span", {
+                      class: u(["text-xs font-medium opacity-60", d.value ? "text-slate-400" : "text-slate-500"])
+                    }, C(p.date), 3)
                   ]),
-                  a("div", {
-                    class: d(["text-[15px] leading-relaxed mb-4", c.value ? "text-slate-300" : "text-slate-600"])
-                  }, S(b.text), 3),
-                  a("div", {
-                    class: d(["inline-block text-[11px] font-semibold px-2.5 py-1.5 rounded-lg border", c.value ? "bg-slate-800 text-slate-400 border-slate-700" : "bg-slate-50 text-slate-500 border-slate-100"])
-                  }, " Var: " + S(x.value) + " • Size: " + S(p.value || "M"), 3)
+                  n("div", {
+                    class: u(["text-[15px] leading-relaxed mb-4", d.value ? "text-slate-300" : "text-slate-600"])
+                  }, C(p.text), 3),
+                  n("div", {
+                    class: u(["inline-block text-[11px] font-semibold px-2.5 py-1.5 rounded-lg border", d.value ? "bg-slate-800 text-slate-400 border-slate-700" : "bg-slate-50 text-slate-500 border-slate-100"])
+                  }, " Var: " + C(x.value) + " • Size: " + C(m.value || "M"), 3)
                 ], 2))), 128))
-              ])
+              ])) : (v(), g("div", {
+                key: 2,
+                class: u(["flex flex-col items-center justify-center py-12 px-4 rounded-3xl border-2 border-dashed", d.value ? "border-slate-800 bg-slate-800/20" : "border-slate-200 bg-slate-50"])
+              }, [
+                l[36] || (l[36] = n("span", { class: "text-4xl mb-4" }, "💬", -1)),
+                n("h4", {
+                  class: u(["font-bold text-lg mb-1", d.value ? "text-white" : "text-slate-900"])
+                }, "No reviews yet", 2),
+                n("p", {
+                  class: u(["text-sm text-center max-w-sm mb-6", d.value ? "text-slate-400" : "text-slate-500"])
+                }, "Be the first to share your thoughts and help others make a decision!", 2),
+                n("button", {
+                  class: u(["px-6 py-2.5 rounded-xl font-bold text-sm transition-all", d.value ? "bg-slate-800 text-white hover:bg-slate-700" : "bg-white border text-slate-900 shadow-sm hover:bg-slate-50"])
+                }, " Write a Review ", 2)
+              ], 2))
             ], 2)
           ]),
-          a("div", Rn, [
-            a("div", {
-              class: d(["sticky top-24 p-6 rounded-[32px] border transition-colors duration-300", c.value ? "bg-[#151e32] border-slate-700 ring-1 ring-white/5 shadow-2xl shadow-black/20" : "bg-white border-slate-100 shadow-[0_8px_30px_rgba(0,0,0,0.06)]"])
+          n("div", Wn, [
+            n("div", {
+              class: u(["sticky top-24 p-6 rounded-[32px] border transition-colors duration-300", d.value ? "bg-[#151e32] border-slate-700 ring-1 ring-white/5 shadow-2xl shadow-black/20" : "bg-white border-slate-100 shadow-[0_8px_30px_rgba(0,0,0,0.06)]"])
             }, [
-              a("div", On, [
-                a("div", null, [
-                  a("div", Cn, [
-                    a("div", Tn, S(H(q.value)) + " ₽", 1),
-                    D.value > q.value ? (w(), y("span", An, S(H(D.value)) + " ₽", 1)) : z("", !0)
+              n("div", Xn, [
+                n("div", null, [
+                  n("div", Kn, [
+                    n("div", Gn, C(K($.value)) + " ₽", 1),
+                    X.value > $.value ? (v(), g("span", Yn, C(K(X.value)) + " ₽", 1)) : q("", !0)
                   ]),
-                  a("div", {
-                    class: d(["mt-3 inline-flex items-center gap-2 text-xs font-bold px-3 py-1.5 rounded-lg border", c.value ? "bg-emerald-900/20 text-emerald-400 border-emerald-900/30" : "bg-emerald-50 text-emerald-700 border-emerald-100"])
+                  n("div", {
+                    class: u(["mt-3 inline-flex items-center gap-2 text-xs font-bold px-3 py-1.5 rounded-lg border", d.value ? "bg-emerald-900/20 text-emerald-400 border-emerald-900/30" : "bg-emerald-50 text-emerald-700 border-emerald-100"])
                   }, [
-                    m[28] || (m[28] = a("svg", {
+                    l[37] || (l[37] = n("svg", {
                       width: "14",
                       height: "14",
                       viewBox: "0 0 24 24",
                       fill: "currentColor"
                     }, [
-                      a("path", {
+                      n("path", {
                         d: "M2 7h20v10H2z",
                         opacity: "0.3"
                       }),
-                      a("path", { d: "M17 12h2" }),
-                      a("path", { d: "M2 7a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V7zm2 0v10h16V7H4z" })
+                      n("path", { d: "M17 12h2" }),
+                      n("path", { d: "M2 7a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V7zm2 0v10h16V7H4z" })
                     ], -1)),
-                    a("span", null, S(H(pe.value)) + " ₽ with Ozon Card", 1)
+                    n("span", null, C(K(de.value)) + " ₽ with Ozon Card", 1)
                   ], 2)
                 ])
               ]),
-              a("div", {
-                class: d(["space-y-5 mb-8 pt-6 border-t", c.value ? "border-slate-700" : "border-slate-100"])
+              n("div", {
+                class: u(["space-y-5 mb-8 pt-6 border-t", d.value ? "border-slate-700" : "border-slate-100"])
               }, [
-                a("div", Nn, [
-                  a("div", {
-                    class: d(["w-10 h-10 rounded-full flex items-center justify-center text-lg transition-transform", c.value ? "bg-slate-800" : "bg-blue-50"])
+                n("div", Zn, [
+                  n("div", {
+                    class: u(["w-10 h-10 rounded-full flex items-center justify-center text-lg transition-transform", d.value ? "bg-slate-800" : "bg-blue-50"])
                   }, "📍", 2),
-                  a("div", null, [
-                    a("div", {
-                      class: d(["font-bold mb-0.5", c.value ? "text-slate-200" : "text-slate-900"])
+                  n("div", null, [
+                    n("div", {
+                      class: u(["font-bold mb-0.5", d.value ? "text-slate-200" : "text-slate-900"])
                     }, "Global Delivery", 2),
-                    a("div", {
-                      class: d(["text-xs", c.value ? "text-slate-400" : "text-slate-500"])
+                    n("div", {
+                      class: u(["text-xs", d.value ? "text-slate-400" : "text-slate-500"])
                     }, "To anywhere in Russia", 2)
                   ])
                 ]),
-                a("div", Pn, [
-                  a("div", {
-                    class: d(["w-10 h-10 rounded-full flex items-center justify-center text-lg transition-transform", c.value ? "bg-slate-800" : "bg-green-50"])
+                n("div", Qn, [
+                  n("div", {
+                    class: u(["w-10 h-10 rounded-full flex items-center justify-center text-lg transition-transform", d.value ? "bg-slate-800" : "bg-green-50"])
                   }, "🚚", 2),
-                  a("div", null, [
-                    a("div", {
-                      class: d(["text-s mt-2", c.value ? "text-green-400" : "text-green-600"])
+                  n("div", null, [
+                    n("div", {
+                      class: u(["text-s mt-2", d.value ? "text-green-400" : "text-green-600"])
                     }, "Free courier delivery", 2)
                   ])
                 ])
               ], 2),
-              a("div", Bn, [
-                a("button", {
-                  class: "w-full h-[56px] bg-blue-600 hover:bg-blue-500 text-white font-bold rounded-2xl transition-all duration-300 shadow-lg shadow-blue-500/30 hover:shadow-blue-500/50 active:scale-[0.98] flex items-center justify-center gap-2 text-[15px] cursor-pointer",
-                  onClick: ie
-                }, " Add to Cart "),
-                a("button", {
-                  class: d(["w-full h-[56px] font-bold rounded-2xl transition-all duration-300 border active:scale-[0.98] cursor-pointer", c.value ? "bg-transparent hover:bg-slate-800 text-white border-slate-600 hover:border-slate-500" : "bg-white hover:bg-slate-50 text-slate-900 border-slate-200 hover:border-slate-300"])
-                }, " Buy Now ", 2)
+              n("div", eo, [
+                te.value > 0 ? (v(), g("div", {
+                  key: 0,
+                  class: u(["w-full h-[56px] flex items-center justify-between rounded-2xl px-2 border transition-all", d.value ? "bg-slate-800 border-slate-700" : "bg-slate-100 border-slate-200"])
+                }, [
+                  n("button", {
+                    onClick: l[2] || (l[2] = (p) => re(-1)),
+                    disabled: O.value,
+                    class: u(["w-12 h-12 flex items-center justify-center rounded-xl transition-all active:scale-95 disabled:opacity-50", d.value ? "bg-slate-700 text-white hover:bg-slate-600" : "bg-white text-slate-800 shadow-sm hover:bg-slate-50"])
+                  }, [...l[38] || (l[38] = [
+                    n("svg", {
+                      width: "20",
+                      height: "20",
+                      viewBox: "0 0 24 24",
+                      fill: "none",
+                      stroke: "currentColor",
+                      "stroke-width": "2.5"
+                    }, [
+                      n("line", {
+                        x1: "5",
+                        y1: "12",
+                        x2: "19",
+                        y2: "12"
+                      })
+                    ], -1)
+                  ])], 10, to),
+                  n("div", so, [
+                    n("span", {
+                      class: u(["font-bold text-lg leading-none", d.value ? "text-white" : "text-slate-900"])
+                    }, C(te.value), 3),
+                    n("span", {
+                      class: u(["text-[10px] font-semibold uppercase tracking-wider opacity-60", d.value ? "text-slate-300" : "text-slate-500"])
+                    }, "In Cart", 2)
+                  ]),
+                  n("button", {
+                    onClick: l[3] || (l[3] = (p) => re(1)),
+                    disabled: O.value,
+                    class: u(["w-12 h-12 flex items-center justify-center rounded-xl text-white shadow-sm transition-all active:scale-95 disabled:opacity-50", (d.value, "bg-blue-600 hover:bg-blue-500")])
+                  }, [
+                    O.value ? (v(), g("svg", no, [...l[39] || (l[39] = [
+                      n("circle", {
+                        class: "opacity-25",
+                        cx: "12",
+                        cy: "12",
+                        r: "10",
+                        stroke: "currentColor",
+                        "stroke-width": "4"
+                      }, null, -1),
+                      n("path", {
+                        class: "opacity-75",
+                        fill: "currentColor",
+                        d: "M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"
+                      }, null, -1)
+                    ])])) : (v(), g("svg", oo, [...l[40] || (l[40] = [
+                      n("line", {
+                        x1: "12",
+                        y1: "5",
+                        x2: "12",
+                        y2: "19"
+                      }, null, -1),
+                      n("line", {
+                        x1: "5",
+                        y1: "12",
+                        x2: "19",
+                        y2: "12"
+                      }, null, -1)
+                    ])]))
+                  ], 10, ro)
+                ], 2)) : (v(), g("button", {
+                  key: 1,
+                  class: "w-full h-[56px] bg-blue-600 hover:bg-blue-500 text-white font-bold rounded-2xl transition-all duration-300 shadow-lg shadow-blue-500/30 hover:shadow-blue-500/50 active:scale-[0.98] flex items-center justify-center gap-2 text-[15px]",
+                  onClick: l[4] || (l[4] = (p) => re(1)),
+                  disabled: O.value
+                }, [
+                  O.value ? (v(), g("svg", lo, [...l[41] || (l[41] = [
+                    n("circle", {
+                      class: "opacity-25",
+                      cx: "12",
+                      cy: "12",
+                      r: "10",
+                      stroke: "currentColor",
+                      "stroke-width": "4"
+                    }, null, -1),
+                    n("path", {
+                      class: "opacity-75",
+                      fill: "currentColor",
+                      d: "M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"
+                    }, null, -1)
+                  ])])) : (v(), g("span", io, "Add to Cart"))
+                ], 8, ao)),
+                n("button", {
+                  onClick: Ue,
+                  disabled: O.value,
+                  class: u(["w-full h-[56px] font-bold rounded-2xl transition-all duration-300 border active:scale-[0.98] cursor-pointer disabled:opacity-50", d.value ? "bg-transparent hover:bg-slate-800 text-white border-slate-600 hover:border-slate-500" : "bg-white hover:bg-slate-50 text-slate-900 border-slate-200 hover:border-slate-300"])
+                }, " Buy Now ", 10, co)
               ]),
-              a("div", {
-                class: d(["mt-8 pt-6 border-t flex items-center gap-3", c.value ? "border-slate-700" : "border-slate-100"])
+              n("div", {
+                class: u(["mt-8 pt-6 border-t flex items-center gap-3", d.value ? "border-slate-700" : "border-slate-100"])
               }, [
-                a("div", {
-                  class: d(["w-12 h-12 rounded-full flex items-center justify-center font-bold text-white shadow-md text-lg", c.value ? "bg-slate-700" : "bg-slate-900"])
-                }, S(o.value.brand ? o.value.brand[0] : "B"), 3),
-                a("div", null, [
-                  a("div", {
-                    class: d(["font-bold text-sm mb-0.5", c.value ? "text-white" : "text-slate-900"])
-                  }, S(o.value.brand), 3),
-                  a("div", {
-                    class: d(["text-xs flex items-center gap-1", c.value ? "text-slate-400" : "text-slate-500"])
-                  }, [...m[29] || (m[29] = [
-                    a("span", { class: "text-amber-500" }, "★★★★★", -1),
-                    se(" 4.9 • Official Seller ", -1)
+                n("div", {
+                  class: u(["w-12 h-12 rounded-full flex items-center justify-center font-bold text-white shadow-md text-lg", d.value ? "bg-slate-700" : "bg-slate-900"])
+                }, C(a.value.brand ? a.value.brand[0] : "B"), 3),
+                n("div", null, [
+                  n("div", {
+                    class: u(["font-bold text-sm mb-0.5", d.value ? "text-white" : "text-slate-900"])
+                  }, C(a.value.brand), 3),
+                  n("div", {
+                    class: u(["text-xs flex items-center gap-1", d.value ? "text-slate-400" : "text-slate-500"])
+                  }, [...l[42] || (l[42] = [
+                    n("span", { class: "text-amber-500" }, "★★★★★", -1),
+                    ne(" 4.9 • Official Seller ", -1)
                   ])], 2)
                 ])
               ], 2)
             ], 2)
           ])
         ]),
-        a("div", {
-          class: d(["mt-2 pt-1 border-t px-4 lg:px-0", c.value ? "border-slate-800" : "border-slate-200"])
+        n("div", {
+          class: u(["mt-2 pt-1 border-t px-4 lg:px-0", d.value ? "border-slate-800" : "border-slate-200"])
         }, [
-          a("h2", {
-            class: d(["text-2xl font-bold mb-8 tracking-tight", c.value ? "text-white" : "text-slate-900"])
-          }, "You might also like", 2),
-          a("div", Fn, [
-            (w(!0), y(j, null, U(_.value, (b, R) => (w(), y("div", {
-              key: R,
-              class: "min-w-[200px] w-[200px] md:min-w-[240px] md:w-[240px] cursor-pointer snap-start group"
-            }, [
-              a("div", {
-                class: d(["h-[280px] md:h-[320px] rounded-2xl relative mb-4 overflow-hidden border transition-colors", c.value ? "bg-slate-800 border-slate-700" : "bg-white border-slate-100 shadow-sm"])
-              }, [
-                a("img", {
-                  src: b.image,
-                  class: "w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
-                }, null, 8, Ln),
-                a("div", jn, "-" + S(b.discount) + "%", 1),
-                m[30] || (m[30] = a("div", { class: "absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center backdrop-blur-[1px]" }, [
-                  a("button", { class: "bg-white text-slate-900 px-6 py-2 rounded-full font-bold text-xs transform translate-y-4 group-hover:translate-y-0 transition-transform duration-300 shadow-xl" }, " Quick View "),
-                  a("button", { class: "absolute bottom-3 left-3 right-3 bg-blue-600 hover:bg-blue-700 text-white text-xs font-bold py-2 rounded-lg shadow-lg shadow-blue-500/20 active:scale-[0.98] transition-all cursor-pointer" }, "Add to Cart")
-                ], -1))
-              ], 2),
-              a("div", Un, [
-                a("span", {
-                  class: d(["font-bold text-lg", c.value ? "text-white" : "text-slate-900"])
-                }, S(H(b.price)) + " ₽", 3),
-                a("s", Dn, S(H(b.mrp)) + " ₽", 1)
-              ]),
-              a("div", {
-                class: d(["text-sm leading-snug h-10 overflow-hidden text-ellipsis line-clamp-2 mb-4 font-medium", c.value ? "text-slate-400" : "text-slate-600"])
-              }, S(b.title), 3)
-            ]))), 128))
-          ])
+          n("div", {
+            class: "mt-12 w-full min-h-[250px] custom-widget-scroll",
+            onWheel: Yt
+          }, [
+            E.value ? (v(), g("div", {
+              key: 0,
+              innerHTML: E.value
+            }, null, 8, uo)) : (v(), g("div", fo, [
+              n("div", {
+                class: u(["w-[200px] h-[300px] rounded-2xl shrink-0", d.value ? "bg-slate-800" : "bg-slate-100"])
+              }, null, 2),
+              n("div", {
+                class: u(["w-[200px] h-[300px] rounded-2xl shrink-0", d.value ? "bg-slate-800" : "bg-slate-100"])
+              }, null, 2),
+              n("div", {
+                class: u(["w-[200px] h-[300px] rounded-2xl shrink-0 hidden md:block", d.value ? "bg-slate-800" : "bg-slate-100"])
+              }, null, 2)
+            ]))
+          ], 32)
         ], 2),
-        a("div", {
-          class: d(["fixed bottom-0 left-0 right-0 backdrop-blur-xl border-t p-4 pb-[max(16px,env(safe-area-inset-bottom))] flex items-center justify-between gap-4 z-50 md:hidden shadow-[0_-4px_30px_rgba(0,0,0,0.1)] transition-transform duration-300", c.value ? "bg-[#0f172a]/90 border-slate-800" : "bg-white/90 border-slate-200"])
+        n("div", {
+          class: u(["fixed bottom-0 left-0 right-0 backdrop-blur-xl border-t p-4 pb-[max(16px,env(safe-area-inset-bottom))] flex items-center justify-between gap-4 z-50 md:!hidden shadow-[0_-4px_30px_rgba(0,0,0,0.1)] transition-transform duration-300", d.value ? "bg-[#0f172a]/90 border-slate-800" : "bg-white/90 border-slate-200"])
         }, [
-          a("div", Mn, [
-            a("span", {
-              class: d(["text-xl font-extrabold leading-none tracking-tight", c.value ? "text-white" : "text-slate-900"])
-            }, S(H(q.value)) + " ₽", 3),
-            D.value > q.value ? (w(), y("span", zn, S(H(D.value)), 1)) : z("", !0)
+          n("div", po, [
+            n("span", {
+              class: u(["text-xl font-extrabold leading-none tracking-tight", d.value ? "text-white" : "text-slate-900"])
+            }, C(K($.value)) + " ₽", 3),
+            X.value > $.value ? (v(), g("span", ho, C(K(X.value)), 1)) : q("", !0)
           ]),
-          a("button", {
-            class: "flex-1 h-12 bg-blue-600 hover:bg-blue-500 text-white font-bold rounded-xl text-base shadow-lg shadow-blue-500/40 active:scale-95 transition-all",
-            onClick: ie
-          }, "Add to Cart")
-        ], 2)
-      ])) : (w(), y("div", {
-        key: 2,
-        class: d(["min-h-[60vh] flex flex-col items-center justify-center font-medium opacity-60", c.value ? "text-slate-400" : "text-slate-500"])
-      }, [
-        a("div", {
-          class: d(["p-4 rounded-full mb-4", c.value ? "bg-slate-800" : "bg-slate-100"])
-        }, [...m[31] || (m[31] = [
-          be('<svg class="w-12 h-12 opacity-50" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" data-v-bae44606><circle cx="12" cy="12" r="10" data-v-bae44606></circle><path d="M16 16s-1.5-2-4-2-4 2-4 2" data-v-bae44606></path><line x1="9" y1="9" x2="9.01" y2="9" data-v-bae44606></line><line x1="15" y1="9" x2="15.01" y2="9" data-v-bae44606></line></svg>', 1)
-        ])], 2),
-        m[32] || (m[32] = a("span", { class: "text-lg" }, "Product Not Found", -1))
-      ], 2)),
-      v.value ? (w(), y("div", {
-        key: 3,
-        class: d(["fixed inset-0 z-[100] flex justify-center items-end md:items-center backdrop-blur-sm transition-colors duration-300", c.value ? "bg-black/70" : "bg-black/40"]),
-        onClick: m[3] || (m[3] = Ut((b) => v.value = !1, ["self"]))
-      }, [
-        a("div", {
-          class: d(["w-full md:w-[600px] md:rounded-[32px] rounded-t-[32px] p-8 flex flex-col max-h-[85vh] shadow-2xl animate-[slideUp_0.3s_ease-out] md:animate-none border", c.value ? "bg-[#151e32] border-slate-700" : "bg-white border-white"])
-        }, [
-          a("div", In, [
-            a("h3", {
-              class: d(["text-2xl font-bold tracking-tight", c.value ? "text-white" : "text-slate-900"])
-            }, "Size Chart", 2),
-            a("button", {
-              onClick: m[2] || (m[2] = (b) => v.value = !1),
-              class: d(["p-2 rounded-full transition hover:scale-110", c.value ? "text-slate-400 hover:bg-white/10" : "text-slate-400 hover:bg-slate-100"])
-            }, [...m[33] || (m[33] = [
-              a("svg", {
-                width: "24",
-                height: "24",
+          te.value > 0 ? (v(), g("div", {
+            key: 0,
+            class: u(["flex-1 h-12 flex items-center justify-between rounded-xl px-1 border", d.value ? "bg-slate-800 border-slate-700" : "bg-slate-100 border-slate-200"])
+          }, [
+            n("button", {
+              onClick: l[5] || (l[5] = (p) => re(-1)),
+              disabled: O.value,
+              class: u(["w-10 h-10 flex items-center justify-center rounded-lg disabled:opacity-50", d.value ? "bg-slate-700 text-white" : "bg-white text-slate-800 shadow-sm"])
+            }, [...l[43] || (l[43] = [
+              n("svg", {
+                width: "18",
+                height: "18",
                 viewBox: "0 0 24 24",
                 fill: "none",
                 stroke: "currentColor",
-                "stroke-width": "2"
+                "stroke-width": "2.5"
               }, [
-                a("path", { d: "M18 6L6 18M6 6l12 12" })
+                n("line", {
+                  x1: "5",
+                  y1: "12",
+                  x2: "19",
+                  y2: "12"
+                })
               ], -1)
-            ])], 2)
-          ]),
-          F.value ? (w(), y("div", $n, [
-            a("img", {
-              src: F.value,
-              class: d(["max-w-full h-auto object-contain rounded-xl shadow-sm", c.value ? "border border-slate-700" : "border border-slate-100"])
-            }, null, 10, qn)
-          ])) : (w(), y("div", {
+            ])], 10, mo),
+            n("span", {
+              class: u(["font-bold text-[15px]", d.value ? "text-white" : "text-slate-900"])
+            }, C(te.value) + " in Cart", 3),
+            n("button", {
+              onClick: l[6] || (l[6] = (p) => re(1)),
+              disabled: O.value,
+              class: "w-10 h-10 flex items-center justify-center rounded-lg bg-blue-600 text-white shadow-sm disabled:opacity-50"
+            }, [
+              O.value ? (v(), g("svg", xo, [...l[44] || (l[44] = [
+                n("circle", {
+                  class: "opacity-25",
+                  cx: "12",
+                  cy: "12",
+                  r: "10",
+                  stroke: "currentColor",
+                  "stroke-width": "4"
+                }, null, -1),
+                n("path", {
+                  class: "opacity-75",
+                  fill: "currentColor",
+                  d: "M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"
+                }, null, -1)
+              ])])) : (v(), g("svg", vo, [...l[45] || (l[45] = [
+                n("line", {
+                  x1: "12",
+                  y1: "5",
+                  x2: "12",
+                  y2: "19"
+                }, null, -1),
+                n("line", {
+                  x1: "5",
+                  y1: "12",
+                  x2: "19",
+                  y2: "12"
+                }, null, -1)
+              ])]))
+            ], 8, bo)
+          ], 2)) : (v(), g("button", {
             key: 1,
-            class: d(["flex flex-col items-center justify-center h-48 font-medium opacity-50", c.value ? "text-slate-400" : "text-slate-500"])
-          }, [...m[34] || (m[34] = [
-            be('<svg class="w-12 h-12 mb-3 opacity-50" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" data-v-bae44606><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z" data-v-bae44606></path><polyline points="14 2 14 8 20 8" data-v-bae44606></polyline><line x1="16" y1="13" x2="8" y2="13" data-v-bae44606></line><line x1="16" y1="17" x2="8" y2="17" data-v-bae44606></line><polyline points="10 9 9 9 8 9" data-v-bae44606></polyline></svg><span data-v-bae44606>Size chart not available</span>', 2)
-          ])], 2))
+            class: "flex-1 h-12 bg-blue-600 hover:bg-blue-500 text-white font-bold rounded-xl text-base shadow-lg shadow-blue-500/40 active:scale-95 transition-all flex justify-center items-center gap-2 disabled:opacity-50",
+            onClick: l[7] || (l[7] = (p) => re(1)),
+            disabled: O.value
+          }, [
+            O.value ? (v(), g("svg", yo, [...l[46] || (l[46] = [
+              n("circle", {
+                class: "opacity-25",
+                cx: "12",
+                cy: "12",
+                r: "10",
+                stroke: "currentColor",
+                "stroke-width": "4"
+              }, null, -1),
+              n("path", {
+                class: "opacity-75",
+                fill: "currentColor",
+                d: "M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"
+              }, null, -1)
+            ])])) : (v(), g("span", wo, "Add to Cart"))
+          ], 8, go))
         ], 2)
-      ], 2)) : z("", !0)
-    ], 10, gr));
+      ])) : (v(), g("div", {
+        key: 2,
+        class: u(["min-h-[60vh] flex flex-col items-center justify-center font-medium opacity-60", d.value ? "text-slate-400" : "text-slate-500"])
+      }, [
+        n("div", {
+          class: u(["p-4 rounded-full mb-4", d.value ? "bg-slate-800" : "bg-slate-100"])
+        }, [...l[47] || (l[47] = [
+          ge('<svg class="w-12 h-12 opacity-50" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" data-v-d41e64c1><circle cx="12" cy="12" r="10" data-v-d41e64c1></circle><path d="M16 16s-1.5-2-4-2-4 2-4 2" data-v-d41e64c1></path><line x1="9" y1="9" x2="9.01" y2="9" data-v-d41e64c1></line><line x1="15" y1="9" x2="15.01" y2="9" data-v-d41e64c1></line></svg>', 1)
+        ])], 2),
+        l[48] || (l[48] = n("span", { class: "text-lg" }, "Product Not Found", -1))
+      ], 2)),
+      k.value ? (v(), g("div", {
+        key: 3,
+        class: "fixed inset-0 z-50 flex items-end md:items-center justify-center bg-black/50 p-0 sm:p-4 md:p-6",
+        onClick: l[11] || (l[11] = Qt((p) => k.value = !1, ["self"]))
+      }, [
+        n("div", _o, [
+          l[68] || (l[68] = n("div", { class: "w-full flex justify-center pt-4 pb-1 md:hidden" }, [
+            n("div", { class: "w-12 h-1.5 bg-gray-300 dark:bg-slate-700 rounded-full" })
+          ], -1)),
+          n("div", ko, [
+            n("div", Eo, [
+              n("h2", {
+                class: u(["text-xl font-bold", d.value ? "text-white" : "text-gray-900"])
+              }, "Size Guide", 2),
+              n("button", {
+                onClick: l[8] || (l[8] = (p) => k.value = !1),
+                class: "p-2 -mr-2 text-gray-400 hover:text-gray-600 hover:bg-gray-100 dark:hover:bg-slate-800 dark:hover:text-gray-200 rounded-full transition-colors"
+              }, [...l[49] || (l[49] = [
+                n("svg", {
+                  class: "w-5 h-5",
+                  fill: "none",
+                  stroke: "currentColor",
+                  viewBox: "0 0 24 24"
+                }, [
+                  n("path", {
+                    "stroke-linecap": "round",
+                    "stroke-linejoin": "round",
+                    "stroke-width": "2",
+                    d: "M6 18L18 6M6 6l12 12"
+                  })
+                ], -1)
+              ])])
+            ]),
+            n("div", So, [
+              n("button", {
+                onClick: l[9] || (l[9] = (p) => R.value = "chart"),
+                class: u(["pb-3 text-sm font-bold tracking-wide uppercase border-b-2 transition-colors", R.value === "chart" ? "border-[#FF3E6C] text-[#FF3E6C]" : "border-transparent text-gray-500 hover:text-gray-800 dark:text-slate-400 dark:hover:text-white"])
+              }, " Size Chart ", 2),
+              n("button", {
+                onClick: l[10] || (l[10] = (p) => R.value = "measure"),
+                class: u(["pb-3 text-sm font-bold tracking-wide uppercase border-b-2 transition-colors", R.value === "measure" ? "border-[#FF3E6C] text-[#FF3E6C]" : "border-transparent text-gray-500 hover:text-gray-800 dark:text-slate-400 dark:hover:text-white"])
+              }, " How to Measure ", 2)
+            ])
+          ]),
+          n("div", Co, [
+            Me(n("div", Ro, [
+              ae.value ? (v(), g("div", Oo, [
+                n("img", {
+                  src: ae.value,
+                  class: "max-w-full h-auto object-contain mix-blend-multiply dark:mix-blend-normal"
+                }, null, 8, To)
+              ])) : (v(), g("div", Ao, [
+                n("div", No, [
+                  n("span", {
+                    class: u(["text-xs font-medium", d.value ? "text-slate-400" : "text-gray-500"])
+                  }, [...l[50] || (l[50] = [
+                    ne(" Measurements in ", -1),
+                    n("span", { class: "font-semibold text-[#FF3E6C]" }, "Inches", -1)
+                  ])], 2)
+                ]),
+                n("div", Fo, [
+                  n("table", Bo, [
+                    n("thead", null, [
+                      n("tr", {
+                        class: u(d.value ? "border-b border-slate-700" : "border-b-2 border-gray-100")
+                      }, [
+                        n("th", {
+                          class: u(["py-4 px-4 font-medium text-xs text-left", d.value ? "text-slate-400" : "text-gray-500"])
+                        }, "SIZE", 2),
+                        n("th", {
+                          class: u(["py-4 px-4 font-medium text-xs", d.value ? "text-slate-400" : "text-gray-500"])
+                        }, "CHEST", 2),
+                        n("th", {
+                          class: u(["py-4 px-4 font-medium text-xs", d.value ? "text-slate-400" : "text-gray-500"])
+                        }, "LENGTH", 2),
+                        n("th", {
+                          class: u(["py-4 px-4 font-medium text-xs", d.value ? "text-slate-400" : "text-gray-500"])
+                        }, "SHOULDER", 2)
+                      ], 2)
+                    ]),
+                    n("tbody", {
+                      class: u(d.value ? "text-slate-300" : "text-gray-700")
+                    }, [
+                      n("tr", {
+                        class: u(["border-b transition-colors hover:bg-gray-50 dark:hover:bg-slate-800/30", d.value ? "border-slate-800" : "border-gray-100"])
+                      }, [
+                        n("td", {
+                          class: u(["py-4 px-4 text-left font-semibold", d.value ? "text-white" : "text-black"])
+                        }, "S", 2),
+                        l[51] || (l[51] = n("td", { class: "py-4 px-4" }, "38.0", -1)),
+                        l[52] || (l[52] = n("td", { class: "py-4 px-4" }, "27.0", -1)),
+                        l[53] || (l[53] = n("td", { class: "py-4 px-4" }, "16.0", -1))
+                      ], 2),
+                      n("tr", {
+                        class: u(["border-b transition-colors hover:bg-gray-50 dark:hover:bg-slate-800/30", d.value ? "border-slate-800" : "border-gray-100"])
+                      }, [
+                        n("td", {
+                          class: u(["py-4 px-4 text-left font-semibold", d.value ? "text-white" : "text-black"])
+                        }, "M", 2),
+                        l[54] || (l[54] = n("td", { class: "py-4 px-4" }, "40.0", -1)),
+                        l[55] || (l[55] = n("td", { class: "py-4 px-4" }, "27.5", -1)),
+                        l[56] || (l[56] = n("td", { class: "py-4 px-4" }, "16.5", -1))
+                      ], 2),
+                      n("tr", {
+                        class: u(["border-b transition-colors hover:bg-gray-50 dark:hover:bg-slate-800/30", d.value ? "border-slate-800" : "border-gray-100"])
+                      }, [
+                        n("td", {
+                          class: u(["py-4 px-4 text-left font-semibold", d.value ? "text-white" : "text-black"])
+                        }, "L", 2),
+                        l[57] || (l[57] = n("td", { class: "py-4 px-4" }, "42.0", -1)),
+                        l[58] || (l[58] = n("td", { class: "py-4 px-4" }, "28.0", -1)),
+                        l[59] || (l[59] = n("td", { class: "py-4 px-4" }, "17.0", -1))
+                      ], 2),
+                      n("tr", {
+                        class: u(["border-b transition-colors hover:bg-gray-50 dark:hover:bg-slate-800/30", d.value ? "border-slate-800" : "border-gray-100"])
+                      }, [
+                        n("td", {
+                          class: u(["py-4 px-4 text-left font-semibold", d.value ? "text-white" : "text-black"])
+                        }, "XL", 2),
+                        l[60] || (l[60] = n("td", { class: "py-4 px-4" }, "44.0", -1)),
+                        l[61] || (l[61] = n("td", { class: "py-4 px-4" }, "28.5", -1)),
+                        l[62] || (l[62] = n("td", { class: "py-4 px-4" }, "17.5", -1))
+                      ], 2),
+                      n("tr", {
+                        class: u(["border-b transition-colors hover:bg-gray-50 dark:hover:bg-slate-800/30", d.value ? "border-slate-800" : "border-gray-100"])
+                      }, [
+                        n("td", {
+                          class: u(["py-4 px-4 text-left font-semibold", d.value ? "text-white" : "text-black"])
+                        }, "XXL", 2),
+                        l[63] || (l[63] = n("td", { class: "py-4 px-4" }, "46.0", -1)),
+                        l[64] || (l[64] = n("td", { class: "py-4 px-4" }, "29.0", -1)),
+                        l[65] || (l[65] = n("td", { class: "py-4 px-4" }, "18.0", -1))
+                      ], 2)
+                    ], 2)
+                  ])
+                ]),
+                n("div", {
+                  class: u(["mt-6 text-xs font-normal opacity-70 text-left md:text-center pb-4 md:pb-0", d.value ? "text-slate-400" : "text-gray-500"])
+                }, " * Garment measurements may vary by ±0.5 inches depending on style and fit. ", 2)
+              ]))
+            ], 512), [
+              [De, R.value === "chart"]
+            ]),
+            Me(n("div", Lo, [
+              n("div", Po, [
+                n("div", jo, [
+                  (v(), g("svg", Io, [
+                    n("path", {
+                      d: "M40,50 L80,20 L120,20 L160,50 L180,100 L140,120 L130,90 L130,230 L70,230 L70,90 L60,120 L20,100 Z",
+                      stroke: d.value ? "#475569" : "#e2e8f0",
+                      "stroke-width": "2",
+                      "stroke-linejoin": "round"
+                    }, null, 8, Uo),
+                    n("path", {
+                      d: "M80,20 C80,20 100,40 120,20",
+                      stroke: d.value ? "#475569" : "#e2e8f0",
+                      "stroke-width": "2",
+                      "stroke-linecap": "round"
+                    }, null, 8, Mo),
+                    l[66] || (l[66] = ge('<line x1="60" y1="95" x2="140" y2="95" stroke="#FF3E6C" stroke-width="1.5" stroke-dasharray="4 4" data-v-d41e64c1></line><circle cx="60" cy="95" r="2.5" fill="#FF3E6C" stroke="none" data-v-d41e64c1></circle><circle cx="140" cy="95" r="2.5" fill="#FF3E6C" stroke="none" data-v-d41e64c1></circle><rect x="92" y="87" width="16" height="16" rx="8" fill="#FF3E6C" stroke="none" data-v-d41e64c1></rect><text x="100" y="99" fill="#ffffff" font-size="10" font-weight="bold" text-anchor="middle" stroke="none" data-v-d41e64c1>1</text><line x1="90" y1="35" x2="90" y2="230" stroke="#FF3E6C" stroke-width="1.5" stroke-dasharray="4 4" data-v-d41e64c1></line><circle cx="90" cy="35" r="2.5" fill="#FF3E6C" stroke="none" data-v-d41e64c1></circle><circle cx="90" cy="230" r="2.5" fill="#FF3E6C" stroke="none" data-v-d41e64c1></circle><rect x="82" y="125" width="16" height="16" rx="8" fill="#FF3E6C" stroke="none" data-v-d41e64c1></rect><text x="90" y="137" fill="#ffffff" font-size="10" font-weight="bold" text-anchor="middle" stroke="none" data-v-d41e64c1>2</text><line x1="45" y1="45" x2="155" y2="45" stroke="#FF3E6C" stroke-width="1.5" stroke-dasharray="4 4" data-v-d41e64c1></line><circle cx="45" cy="45" r="2.5" fill="#FF3E6C" stroke="none" data-v-d41e64c1></circle><circle cx="155" cy="45" r="2.5" fill="#FF3E6C" stroke="none" data-v-d41e64c1></circle><rect x="92" y="37" width="16" height="16" rx="8" fill="#FF3E6C" stroke="none" data-v-d41e64c1></rect><text x="100" y="49" fill="#ffffff" font-size="10" font-weight="bold" text-anchor="middle" stroke="none" data-v-d41e64c1>3</text>', 15))
+                  ]))
+                ]),
+                n("div", Do, [
+                  n("div", zo, [
+                    l[67] || (l[67] = n("span", { class: "absolute left-0 top-0.5 flex items-center justify-center w-6 h-6 rounded-full text-[11px] font-semibold bg-[#FF3E6C] text-white" }, "1", -1)),
+                    n("h4", {
+                      class: u(["font-semibold text-sm mb-1", d.value ? "text-white" : "text-black"])
+                    }, "Chest", 2),
+                    n("p", {
+                      class: u(["text-sm leading-relaxed", d.value ? "text-slate-400" : "text-gray-600"])
+                    }, "Measure around the fullest part of your chest, keeping the measuring tape horizontal and comfortably loose.", 2)
+                  ]),
+                  n("div", $o, [
+                    n("span", {
+                      class: u(["absolute left-0 top-0.5 flex items-center justify-center w-6 h-6 rounded-full text-[11px] font-semibold", d.value ? "bg-slate-800 text-slate-300" : "bg-gray-100 text-gray-600"])
+                    }, "2", 2),
+                    n("h4", {
+                      class: u(["font-semibold text-sm mb-1", d.value ? "text-white" : "text-black"])
+                    }, "Front Length", 2),
+                    n("p", {
+                      class: u(["text-sm leading-relaxed", d.value ? "text-slate-400" : "text-gray-600"])
+                    }, "Measure from the highest point of the shoulder (where the collar meets the shoulder) straight down to the hemline.", 2)
+                  ]),
+                  n("div", qo, [
+                    n("span", {
+                      class: u(["absolute left-0 top-0.5 flex items-center justify-center w-6 h-6 rounded-full text-[11px] font-semibold", d.value ? "bg-slate-800 text-slate-300" : "bg-gray-100 text-gray-600"])
+                    }, "3", 2),
+                    n("h4", {
+                      class: u(["font-semibold text-sm mb-1", d.value ? "text-white" : "text-black"])
+                    }, "Shoulder", 2),
+                    n("p", {
+                      class: u(["text-sm leading-relaxed", d.value ? "text-slate-400" : "text-gray-600"])
+                    }, "Measure straight across the back from the edge of one shoulder seam to the edge of the other shoulder seam.", 2)
+                  ])
+                ])
+              ])
+            ], 512), [
+              [De, R.value === "measure"]
+            ])
+          ])
+        ])
+      ])) : q("", !0)
+    ], 10, Ir));
   }
-}), Wn = (e, t) => {
-  const s = e.__vccOpts || e;
-  for (const [r, n] of t)
-    s[r] = n;
+}), Vo = (t, e) => {
+  const s = t.__vccOpts || t;
+  for (const [r, o] of e)
+    s[r] = o;
   return s;
-}, Xn = /* @__PURE__ */ Wn(Vn, [["__scopeId", "data-v-bae44606"]]), Kn = /* @__PURE__ */ ut({
+}, Wo = /* @__PURE__ */ Vo(Jo, [["__scopeId", "data-v-d41e64c1"]]), Xo = /* @__PURE__ */ _t({
   __name: "index",
   props: {
     _p: {},
     _$p: {},
     _$cb: {}
   },
-  setup(e) {
-    return (t, s) => (w(), It(Xn, {
-      _p: e._p,
-      _$p: e._$p,
-      _$cb: e._$cb
+  setup(t) {
+    return (e, s) => (v(), ts(Wo, {
+      _p: t._p,
+      _$p: t._$p,
+      _$cb: t._$cb
     }, null, 8, ["_p", "_$p", "_$cb"]));
   }
-}), bo = async (e) => ({
-  set: async (t, s) => {
-    console.log(`--hydrator [${t.data.curr.type}]`);
-    const n = $t(Kn, {
-      _p: e,
-      _$p: t,
+}), ba = async (t) => ({
+  set: async (e, s) => {
+    console.log(`--hydrator [${e.data.curr.type}]`);
+    const o = ss(Xo, {
+      _p: t,
+      _$p: e,
       _$cb: s
-    }), o = e.f.name("vue-root"), l = {
-      r: `<div id="${o}" style="width:100%; height:100%;"></div>`,
+    }), a = t.f.name("vue-root"), i = {
+      r: `<div id="${a}" style="width:100%; height:100%;"></div>`,
       style: "",
       evt: {
         change: () => {
-          s?.change({ _$p: t });
+          s?.change({ _$p: e });
         }
       }
     };
     return setTimeout(() => {
-      const u = document.getElementById(o);
-      u ? n.mount(u) : console.warn(`[Hydrator] Target element #${o} not found.`);
-    }, 0), l;
+      const f = document.getElementById(a);
+      f ? o.mount(f) : console.warn(`[Hydrator] Target element #${a} not found.`);
+    }, 0), i;
   }
 });
 export {
-  bo as hydrator,
-  bo as index
+  ba as hydrator,
+  ba as index
 };
