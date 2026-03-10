@@ -1622,7 +1622,7 @@ const Qu = ir.emit, o0 = ir.on, r0 = async (o) => {
               type: "form_holder",
               slug: "form_holder",
               data: {
-                title: "Create Product with GenAI",
+                title: "Create Products with GenAI",
                 mode: "auto",
                 event: {
                   l: [
@@ -1688,7 +1688,8 @@ const Qu = ir.emit, o0 = ir.on, r0 = async (o) => {
                         data: {
                           form: {
                             section_id: "form_section-limit",
-                            body_key: "limit"
+                            body_key: "limit",
+                            parse_as: "int"
                           },
                           placeholder: "Enter result limit",
                           input_type: "number",
@@ -1712,7 +1713,8 @@ const Qu = ir.emit, o0 = ir.on, r0 = async (o) => {
                         data: {
                           form: {
                             section_id: "form_section-auto_upload",
-                            body_key: "auto_upload"
+                            body_key: "auto_upload",
+                            parse_as: "bool"
                           },
                           placeholder: "Enter true or false",
                           variant: "outlined"
