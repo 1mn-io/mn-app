@@ -1622,10 +1622,36 @@ const Qu = ir.emit, o0 = ir.on, r0 = async (o) => {
               type: "form_holder",
               slug: "form_holder",
               data: {
-                title: "Create Product with GenAI",
+                title: "Create Product links with GenAI",
                 mode: "auto",
                 event: {
                   l: [
+                    {
+                      name: "error_toast",
+                      typ: "toast",
+                      data: {
+                        msg: "An error occurred!",
+                        options: {
+                          type: "error",
+                          position: "top-right",
+                          autoClose: 5e3,
+                          theme: "light"
+                        }
+                      }
+                    },
+                    {
+                      name: "success_toast",
+                      typ: "toast",
+                      data: {
+                        msg: "Success",
+                        options: {
+                          type: "success",
+                          position: "top-right",
+                          autoClose: 5e3,
+                          theme: "light"
+                        }
+                      }
+                    },
                     {
                       name: "request_body",
                       typ: "body",
@@ -1641,6 +1667,23 @@ const Qu = ir.emit, o0 = ir.on, r0 = async (o) => {
                           Authorization: "Bearer eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImYwZTNlMDRiLTVkNDAtNDg1ZS05OGU4LWEzOTI3NWU3MzM0OCIsInNlY3VyaXR5Ijp7InBhcnR5IjpbInBhcnR5XzEiLCJwYXJ0eV8yIl19LCJzdWIiOiJmMGUzZTA0Yi01ZDQwLTQ4NWUtOThlOC1hMzkyNzVlNzMzNDgiLCJpYXQiOjE3NjU4MTI4Mjh9.OoClnPtlxI71L-e555nbNSmenmGufxewp78SlmdZCNxeuauXao5RRvqwOKQ77SJFqJXk0ng6GZ7VOgYECdEf-3k1UGX7w1NE_D5A6SP3UkVsSG8orYACFuvTyesbFwkpnEhdu0PBd6n8wuLkgU6nZ1bLDzKVg1zd8fFeJrwmUqk",
                           "Content-Type": "application/json"
                         }
+                      },
+                      event: {
+                        l: [
+                          {
+                            on: "success",
+                            call: [
+                              "success_toast"
+                              //"open_homepage"
+                            ]
+                          },
+                          {
+                            on: "error",
+                            call: [
+                              "error_toast"
+                            ]
+                          }
+                        ]
                       }
                     }
                   ]
@@ -1688,7 +1731,8 @@ const Qu = ir.emit, o0 = ir.on, r0 = async (o) => {
                         data: {
                           form: {
                             section_id: "form_section-limit",
-                            body_key: "limit"
+                            body_key: "limit",
+                            parse_as: "int"
                           },
                           placeholder: "Enter result limit",
                           input_type: "number",
