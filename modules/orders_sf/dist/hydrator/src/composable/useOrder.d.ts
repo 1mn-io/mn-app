@@ -7,4 +7,6 @@ export declare const useOrder: () => {
     returnRequest: (order_id: any, order_item_id: any, return_reason: string, return_desc: string) => Promise<void>;
     getDeliveredOrder: () => Promise<void>;
     deliveredOrder: import('vue').Ref<never[], never[]>;
+    createReviewAndRating: (order_item_id: number, rating: number, review_text: string) => Promise<void>;
+    updateReviewAndRating: (review_id: any, rating: number, review_text: string) => Promise<void>;
 };
