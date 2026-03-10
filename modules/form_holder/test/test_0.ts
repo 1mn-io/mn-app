@@ -163,6 +163,45 @@ let _data = {
                   }
                 }
               },
+              {
+                "id": "875648c-form_inputtext",
+                "type": "form_inputtext",
+                "slug": "form_inputtext",
+                "data": {
+                  "placeholder": "Int",
+                  "form": {
+                    "section_id": "568765gc-form_section",
+                    "body_key": "int",
+                    "parse_as": "int",
+                  }
+                }
+              },
+              {
+                "id": "875xfc-form_inputtext",
+                "type": "form_inputtext",
+                "slug": "form_inputtext",
+                "data": {
+                  "placeholder": "Bool",
+                  "form": {
+                    "section_id": "568765gc-form_section",
+                    "body_key": "bool",
+                    "parse_as": "bool",
+                  }
+                }
+              },
+              {
+                "id": "8xxfc-form_inputtext",
+                "type": "form_inputtext",
+                "slug": "form_inputtext",
+                "data": {
+                  "placeholder": "Json",
+                  "form": {
+                    "section_id": "568765gc-form_section",
+                    "body_key": "json",
+                    "parse_as": "json",
+                  }
+                }
+              },
 
 
               {
@@ -171,6 +210,18 @@ let _data = {
                 "slug": "form_section",
                 "data": {
                   "label": "Profile Details",
+                  "l": [],
+                  "theme": "light",
+                }
+              },
+
+
+              {
+                "id": "568765gc-form_section",
+                "type": "form_section",
+                "slug": "form_section",
+                "data": {
+                  "label": "Data Types",
                   "l": [],
                   "theme": "light",
                 }
