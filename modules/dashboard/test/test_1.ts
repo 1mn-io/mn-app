@@ -116,6 +116,23 @@ let _data = {
                 icon: 'pi pi-fw pi-list', 
                 to: '/product-management/db-collection-docs'
               },
+              { 
+                label: 'HSN', 
+                icon: 'pi pi-fw pi-list', 
+                to: '/product-management/hsn'
+              },
+              //set..
+              { 
+                label: 'Generate Product', 
+                icon: 'pi pi-fw pi-list', 
+                to: '/product-management/generate-product'
+              },
+              { 
+                label: 'Generate Product Link', 
+                icon: 'pi pi-fw pi-list', 
+                to: '/product-management/generate-product-link'
+              },
+
 
 
             ]
@@ -489,6 +506,33 @@ let _data = {
                 component: '../views/ContentEngine.vue',
                 meta:{
                   ce_file: "https://raw.githubusercontent.com/1mn-io/mn-app/main/modules/admin_collection_doc_fragment/dist/data.json", //eg=> https://raw.githubusercontent.com/1mn-io/mn-app/refs/heads/main/modules/admin_product_fragment/dist/data.json
+                  auth:true
+                }
+              },
+              {
+                path: '/product-management/hsn',
+                name: 'hsn',
+                component: '../views/ContentEngine.vue',
+                meta:{
+                  ce_file: "https://raw.githubusercontent.com/1mn-io/mn-app/main/modules/admin_hsn_view/dist/data.json", //eg=> https://raw.githubusercontent.com/1mn-io/mn-app/refs/heads/main/modules/admin_product_fragment/dist/data.json
+                  auth:true
+                }
+              },
+              {
+                path: '/product-management/generate-product',
+                name: 'generate_product',
+                component: '../views/ContentEngine.vue',
+                meta:{
+                  ce_file: "https://raw.githubusercontent.com/1mn-io/mn-app/main/modules/admin_product_generate/dist/data.json",
+                  auth:true
+                }
+              },
+              {
+                path: '/product-management/generate-product-link',
+                name: 'generate_product_link',
+                component: '../views/ContentEngine.vue',
+                meta:{
+                  ce_file: "https://raw.githubusercontent.com/1mn-io/mn-app/main/modules/admin_product_link_generate/dist/data.json",
                   auth:true
                 }
               },
