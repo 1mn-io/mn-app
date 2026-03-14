@@ -5,5 +5,7 @@ type __VLS_Props = {
 };
 declare const _default: import('vue').DefineComponent<__VLS_Props, {
     openProduct: (id?: string) => Promise<void>;
-}, {}, {}, {}, import('vue').ComponentOptionsMixin, import('vue').ComponentOptionsMixin, {}, string, import('vue').PublicProps, Readonly<__VLS_Props> & Readonly<{}>, {}, {}, {}, {}, string, import('vue').ComponentProvideOptions, false, {}, HTMLDivElement>;
+}, {}, {}, {}, import('vue').ComponentOptionsMixin, import('vue').ComponentOptionsMixin, {}, string, import('vue').PublicProps, Readonly<__VLS_Props> & Readonly<{}>, {}, {}, {}, {}, string, import('vue').ComponentProvideOptions, false, {
+    imageScrollContainer: HTMLDivElement;
+}, HTMLDivElement>;
 export default _default;

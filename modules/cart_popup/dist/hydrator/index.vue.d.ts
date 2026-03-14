@@ -9,7 +9,9 @@ declare const _default: import('vue').DefineComponent<__VLS_Props, {}, {}, {}, {
         _$p?: _$p_TYP;
     }> & Readonly<{}>, {
         openProduct: (id?: string) => Promise<void>;
-    }, {}, {}, {}, import('vue').ComponentOptionsMixin, import('vue').ComponentOptionsMixin, {}, import('vue').PublicProps, {}, false, {}, {}, import('vue').GlobalComponents, import('vue').GlobalDirectives, string, {}, HTMLDivElement, import('vue').ComponentProvideOptions, {
+    }, {}, {}, {}, import('vue').ComponentOptionsMixin, import('vue').ComponentOptionsMixin, {}, import('vue').PublicProps, {}, false, {}, {}, import('vue').GlobalComponents, import('vue').GlobalDirectives, string, {
+        imageScrollContainer: HTMLDivElement;
+    }, HTMLDivElement, import('vue').ComponentProvideOptions, {
         P: {};
         B: {};
         D: {};

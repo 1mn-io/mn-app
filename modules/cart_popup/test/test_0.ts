@@ -260,7 +260,7 @@ setTimeout(async () => {
 
 
  setTimeout(async () => {
-  const sampleProductId = "Nike__18525"; 
+  const sampleProductId = "Lacoste__9998"; 
   // Nike__18525
   console.log(`[Runner] Simulating Open Product: ${sampleProductId}`);
 
