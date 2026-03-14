@@ -21,7 +21,7 @@
                     },
                     "event": {
                         "onPaymentSuccess": "https://storefront.1mn.io/orders",
-                        "onPaymentFail": "https://storefront.1mn.io/orders"
+                        "onPaymentFail": "https://storefront.1mn.io/"
                     },
                     "address_list": {
                         "ce_file": {
@@ -43,7 +43,11 @@
                                 }
                             }
                         }
-                    }
+                    },
+                    "mode": "cart",
+                    "cart_itmes_key": "cart_items",
+                    "buy_now_key": "buy_now_item",
+                    "pg_provider": "razorpay"
                 }
             }
         ]

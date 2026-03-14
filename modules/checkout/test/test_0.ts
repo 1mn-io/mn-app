@@ -27,7 +27,7 @@ let _data = {
           },
           "event": {
             "onPaymentSuccess": "https://storefront.1mn.io/orders",//"https://fastapi.dryutil.1mn.io/client-public/api/i/ona/public:order_management?operation=tbank_callback",
-            "onPaymentFail": "https://storefront.1mn.io/orders",//"https://fastapi.dryutil.1mn.io/client-public/api/i/ona/public:order_management?operation=tbank_callback"
+            "onPaymentFail": "https://storefront.1mn.io/",//"https://fastapi.dryutil.1mn.io/client-public/api/i/ona/public:order_management?operation=tbank_callback"
           },
           "address_list": {
             "ce_file": {
@@ -49,9 +49,11 @@ let _data = {
                 }
               }
             }
-          }
-
-
+          },
+          "mode": "cart", //buy_now, cart
+          "cart_itmes_key": "cart_items",
+          "buy_now_key": "buy_now_item",
+          "pg_provider": "razorpay", //stripe, tbank, razorpay
         },
       }
 

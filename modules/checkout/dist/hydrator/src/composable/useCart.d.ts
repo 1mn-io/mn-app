@@ -12,12 +12,12 @@ export declare const useCart: (_v: {
     }[], CartItem[] | {
         pricing: any;
     }[]>;
-    submit: () => Promise<void>;
+    submit: (coupon_code?: any) => Promise<void>;
     loading: import('vue').Ref<boolean, boolean>;
     error: import('vue').Ref<null, null>;
     totalPrice: import('vue').ComputedRef<number>;
     totalPayable: import('vue').ComputedRef<number>;
-    discount: import('vue').ComputedRef<number>;
+    discount: import('vue').ComputedRef<string>;
     currency: import('vue').ComputedRef<any>;
     toggleSelect: (is_selected: boolean, cart_item_id: any) => Promise<void>;
     toggleSelectAll: (e: any) => Promise<void>;
@@ -29,5 +29,9 @@ export declare const useCart: (_v: {
     payNow: (gateway: any) => Promise<void>;
     quantityUpdate: (cart_item_id: any, quantity: any) => Promise<void | null>;
     removeFromCart: (cart_item_id: any) => Promise<void>;
+    validateCoupon: (code: any) => Promise<null | undefined>;
+    selectedCoupon: import('vue').Ref<string, string>;
+    addToFavorites: (product_id: any) => Promise<void>;
+    payStripe: import('vue').Ref<Function | null, Function | null>;
 };
 export {};
