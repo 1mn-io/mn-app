@@ -238,6 +238,14 @@ setTimeout(async() => {
     }
   });
  console.log("ce theme emitted",themeFromData)
+
+  await ce_call("msg", {
+    type: `refresh:cart`, 
+    _p: {},
+    _$p: {},
+    custom: {} 
+  });
+  console.log("ce cart refresh emitted!");
 }, 200);
 
 
