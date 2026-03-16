@@ -28,6 +28,9 @@ let _data = {
             "1": {
               "url": "https://fastapi.dryutil.1mn.io/client-public/api/i/ona/order_management",
             },
+          },
+          "event": {
+            "onClickBuyNow": "/buy-now"
           }
         },
       }

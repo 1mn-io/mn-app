@@ -46,6 +46,7 @@ type _$p_TYP = {
                 "data": string;
                 "env": string;
                 "api": any;
+                "event": any;
             };
         };
     };

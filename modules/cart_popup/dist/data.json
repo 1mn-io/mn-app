@@ -24,6 +24,9 @@
                             "url": "https://fastapi.dryutil.1mn.io/client-public/api/i/ona/order_management"
                         },
                         "token": "Bearer <localStorage.token>"
+                    },
+                    "event": {
+                        "onClickBuyNow": "/buy-now"
                     }
                 }
             }
