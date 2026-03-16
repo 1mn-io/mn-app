@@ -3241,7 +3241,7 @@ const {
             quantity: 1
           };
           _ < 0 && V && V.cart_item_id && (Tt.cart_item_id = V.cart_item_id);
-          const Y = await B.post("https://fastapi.dryutil.1mn.io/client/api/i/ona/order_management", Tt, {
+          const Y = await B.post(r?.data.curr.data.api[1].url, Tt, {
             headers: {
               accept: "application/json",
               "Content-Type": "application/json",
@@ -3294,7 +3294,7 @@ const {
           size: v.value
         };
         if (localStorage.setItem("buy_now_item", JSON.stringify([p])), !h) {
-          const g = await B.post("https://fastapi.dryutil.1mn.io/client/api/i/ona/order_management", {
+          const g = await B.post(r?.data.curr.data.api[1].url, {
             operation: "add_to_cart",
             user_id: "user_1",
             product_id: u.value.id,
@@ -3921,7 +3921,7 @@ const {
   for (const [r, s] of t)
     n[r] = s;
   return n;
-}, fa = /* @__PURE__ */ da(ua, [["__scopeId", "data-v-15cee7d7"]]), pa = { class: "w-full min-h-screen flex flex-col items-center justify-center bg-gray-100 dark:bg-[#0f172a] transition-colors duration-300" }, ma = {
+}, fa = /* @__PURE__ */ da(ua, [["__scopeId", "data-v-210e92d3"]]), pa = { class: "w-full min-h-screen flex flex-col items-center justify-center bg-gray-100 dark:bg-[#0f172a] transition-colors duration-300" }, ma = {
   key: 0,
   class: "p-8 bg-white dark:bg-[#1e293b] rounded-2xl shadow-xl border border-gray-100 dark:border-gray-700 flex flex-col gap-4"
 }, ha = /* @__PURE__ */ ve({
