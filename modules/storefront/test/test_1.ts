@@ -197,7 +197,11 @@ const _ENV = `dev`; // dev | prod //import.meta.env.VITE_ENV;
                                               "url": "https://fastapi.dryutil.1mn.io/client-public/api/i/ona/order_management"
                                             },
                                             "token": "Bearer <localStorage.token>"
+                                          },
+                                          "event": {
+                                            "onClickBuyNow": "/buy-now"
                                           }
+
                                         }
                                       }
                                     ]
