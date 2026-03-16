@@ -263,14 +263,16 @@ const _ENV = `dev`; // dev | prod //import.meta.env.VITE_ENV;
 
 
             //set..
-            {
+            /*{
               path: '/cart-popup',
               name: 'cart_popup',
               component: '../views/ContentEngine.vue',
               meta: {
                 ce_file: "https://raw.githubusercontent.com/1mn-io/mn-app/refs/heads/main/modules/cart_popup/dist/data.json",
               }
-            },
+            },*/
+
+
             {
               path: '/orders',
               name: 'orders',
@@ -310,6 +312,73 @@ const _ENV = `dev`; // dev | prod //import.meta.env.VITE_ENV;
                 }*/
               }
             },
+
+
+            {
+              path: '/buy-now',
+              name: 'buy_now',
+              component: '../views/ContentEngine.vue',
+              meta: {
+                //ce_file: "https://raw.githubusercontent.com/1mn-io/mn-app/refs/heads/main/modules/checkout/dist/data.json",
+                ce_file: {
+                  "config": {
+                    "lazy_lib": {
+                      "renderer_src": "https://cdn.jsdelivr.net/gh/1mn-io/mn-app@latest/modules/{*}/dist/renderer.es.js",
+                      "hydrator_src": "https://cdn.jsdelivr.net/gh/1mn-io/mn-app@latest/modules/{*}/dist/hydrator.es.js",
+                      "editor_src": "https://cdn.jsdelivr.net/gh/1mn-io/mn-app@latest/modules/{*}/dist/editor.es.js"
+                    }
+                  },
+                  "data": {
+                    "l": [
+                      {
+                        "id": "3e1bc78c-checkout",
+                        "type": "checkout",
+                        "slug": "checkout",
+                        "data": {
+                          "data": "Hello world! ",
+                          "theme": "light",
+                          "api": {
+                            "url": "https://fastapi.dryutil.1mn.io/client-public/api/i/ona/public:order_management",
+                            "token": "Bearer <localStorage.token>"
+                          },
+                          "event": {
+                            "onPaymentSuccess": "https://storefront.1mn.io/orders",
+                            "onPaymentFail": "https://storefront.1mn.io/"
+                          },
+                          "address_list": {
+                            "ce_file": {
+                              "id": "378c-address_list",
+                              "type": "address_list",
+                              "slug": "address_list",
+                              "data": {
+                                "data": "",
+                                "theme": "light",
+                                "foo": "",
+                                "mode": "picker",
+                                "event": {
+                                  "onClickAdd": "/address/add",
+                                  "onClickEdit": "/address/edit?id={id}"
+                                },
+                                "api": {
+                                  "url": "https://fastapi.dryutil.1mn.io/client-public/api/i/ona/order_management",
+                                  "token": "Bearer <localStorage.token>"
+                                }
+                              }
+                            }
+                          },
+                          "mode": "buy_now",
+                          "cart_itmes_key": "cart_items",
+                          "buy_now_key": "buy_now_item",
+                          "pg_provider": "razorpay"
+                        }
+                      }
+                    ]
+                  }
+                }
+              }
+            },
+
+
 
 
 
