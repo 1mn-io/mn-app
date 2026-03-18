@@ -27,7 +27,8 @@
                     },
                     "event": {
                         "onClickBuyNow": "/buy-now"
-                    }
+                    },
+                    "lang_code": "en"
                 }
             }
         ]

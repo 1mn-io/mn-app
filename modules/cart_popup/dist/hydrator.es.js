@@ -3173,7 +3173,7 @@ const {
               "Content-Type": "application/json",
               Authorization: `Bearer ${l}`
             },
-            body: JSON.stringify({ slug: String(_).trim(), collection: "products" })
+            body: JSON.stringify({ slug: String(_).trim(), collection: `products_${r?.data.curr.data.lang_code}` })
           });
           if (!p.ok) throw new Error(`Server Error (${p.status})`);
           const g = await p.json();
@@ -3921,7 +3921,7 @@ const {
   for (const [r, s] of t)
     n[r] = s;
   return n;
-}, fa = /* @__PURE__ */ da(ua, [["__scopeId", "data-v-210e92d3"]]), pa = { class: "w-full min-h-screen flex flex-col items-center justify-center bg-gray-100 dark:bg-[#0f172a] transition-colors duration-300" }, ma = {
+}, fa = /* @__PURE__ */ da(ua, [["__scopeId", "data-v-a4f6ea1c"]]), pa = { class: "w-full min-h-screen flex flex-col items-center justify-center bg-gray-100 dark:bg-[#0f172a] transition-colors duration-300" }, ma = {
   key: 0,
   class: "p-8 bg-white dark:bg-[#1e293b] rounded-2xl shadow-xl border border-gray-100 dark:border-gray-700 flex flex-col gap-4"
 }, ha = /* @__PURE__ */ ve({
@@ -3931,6 +3931,7 @@ const {
     _$p: {}
   },
   setup(e) {
+    e._$p.data.curr.data.lang_code || (e._$p.data.curr.data.lang_code = "en");
     const t = L(null), n = L("Peter England__9939"), r = () => {
       n.value && t.value?.openProduct(n.value);
     };

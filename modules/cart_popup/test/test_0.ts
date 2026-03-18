@@ -31,7 +31,12 @@ let _data = {
           },
           "event": {
             "onClickBuyNow": "/buy-now"
-          }
+          },
+
+          //set..
+          "lang_code": "en", //en, ru
+
+
         },
       }
 
@@ -263,7 +268,7 @@ setTimeout(async () => {
 
 
  setTimeout(async () => {
-  const sampleProductId = "Lacoste__9998"; 
+  const sampleProductId = `pepe-jeans-pepe-jeans-herringbone-tweed-scalloped-neck-sweatshirts-29e71ca9`;//"Lacoste__9998"; 
   // Nike__18525
   console.log(`[Runner] Simulating Open Product: ${sampleProductId}`);
 
