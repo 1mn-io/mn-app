@@ -63,7 +63,11 @@ let _data = {
           //set..
           "event": {
              "onProductClick": "/product/{slug}", // "/product/{slug}" // "/product/{id}"  // "{slug}"
-          }
+          },
+
+          //set..
+          "lang_code": "en", //en, ru
+
         },
       }
 

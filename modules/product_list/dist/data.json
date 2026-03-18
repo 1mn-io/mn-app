@@ -9,7 +9,7 @@
     "data": {
         "l": [
             {
-                "id": "3e1bc78c-104f-4f6f-aa87-75a",
+                "id": "y677-product_list",
                 "type": "product_list",
                 "slug": "product_list",
                 "data": {
@@ -46,7 +46,8 @@
                                                     "url": "https://fastapi.dryutil.1mn.io/client-public/api/i/ona/order_management"
                                                 },
                                                 "token": "Bearer <localStorage.token>"
-                                            }
+                                            },
+                                            "lang_code": "en"
                                         }
                                     }
                                 ]
@@ -55,7 +56,8 @@
                     },
                     "event": {
                         "onProductClick": "/product/{slug}"
-                    }
+                    },
+                    "lang_code": "en"
                 }
             }
         ]

@@ -40,6 +40,7 @@ type _$p_TYP = {
                 "api": any;
                 "cart_popup": any;
                 "event": any;
+                "lang_code": string;
             };
         };
     };
