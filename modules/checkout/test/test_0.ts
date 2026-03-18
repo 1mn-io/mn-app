@@ -28,6 +28,8 @@ let _data = {
           "event": {
             "onPaymentSuccess": "https://storefront.1mn.io/orders",//"https://fastapi.dryutil.1mn.io/client-public/api/i/ona/public:order_management?operation=tbank_callback",
             "onPaymentFail": "https://storefront.1mn.io/",//"https://fastapi.dryutil.1mn.io/client-public/api/i/ona/public:order_management?operation=tbank_callback"
+            //set..
+            "onLoginRequired": "/login"
           },
           "address_list": {
             "ce_file": {

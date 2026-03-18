@@ -52,6 +52,7 @@ type _$p_TYP = {
                 "event": {
                     "onPaymentSuccess": string;
                     "onPaymentFail": string;
+                    "onLoginRequired": string;
                 };
                 "address_list": any;
             };

@@ -21,7 +21,8 @@
                     },
                     "event": {
                         "onPaymentSuccess": "https://storefront.1mn.io/orders",
-                        "onPaymentFail": "https://storefront.1mn.io/"
+                        "onPaymentFail": "https://storefront.1mn.io/",
+                        "onLoginRequired": "/login"
                     },
                     "address_list": {
                         "ce_file": {
