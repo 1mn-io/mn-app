@@ -21,6 +21,8 @@ type _$p_TYP = {
                 theme: string;
                 document: null;
                 "data": string;
+                "lang_code": string;
+                event: any;
             };
         };
     };

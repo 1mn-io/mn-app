@@ -43,7 +43,8 @@ let dynamicProducts = [];
         "id": "3e1bc78c-104f-4f6f-aa87-ee295db8ad8c",
         "type": "sample",
         "data": {
-
+          "deliver_to_country_code":"IN",
+          "lang_code": "en", //en, ru
           "product_list_widget": {
             "id": "8c-product_list_widget",
             "type": "product_list_widget",
@@ -80,6 +81,9 @@ let dynamicProducts = [];
                             "0": { "url": "https://fastapi.dryutil.1mn.io/client-public/api/i/ona/product_dir?typ=view_product" },
                             "1": { "url": "https://fastapi.dryutil.1mn.io/client-public/api/i/ona/order_management" },
                             "token": `Bearer ${TOKEN}` // Fixed: Now correctly uses the token variable
+                          },
+                          "event": {
+                            "onClickBuyNow": "/buy-now"
                           }
                         }
                       }
@@ -120,6 +124,12 @@ let dynamicProducts = [];
             "field_value": ["<ul><li>T-shirt for men</li><li>Typography printed</li></ul>"],
             "size": ["XS", "L", "XL"],
             "metadata": "{\"color\":[{\"id\":\"Green\",\"image\":[{\"url\":\"https://via.placeholder.com/400x500\"}]}]}"
+          },
+
+
+          //set..
+          "event": {
+            "onClickBuyNow": "/buy-now"
           }
 
         }
