@@ -10,8 +10,8 @@
         "l": [
             {
                 "id": "c78c-toefl_skillee",
-                "type": "sample",
-                "slug": "sample",
+                "type": "toefl_skillee",
+                "slug": "toefl_skillee",
                 "data": {
                     "data": "",
                     "api": {
