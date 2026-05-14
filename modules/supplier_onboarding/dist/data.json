@@ -1,0 +1,26 @@
+{
+    "config": {
+        "lazy_lib": {
+            "renderer_src": "https://cdn.jsdelivr.net/gh/1mn-io/mn-app/modules/{*}/dist/renderer.es.js",
+            "hydrator_src": "https://cdn.jsdelivr.net/gh/1mn-io/mn-app/modules/{*}/dist/hydrator.es.js",
+            "editor_src": "https://cdn.jsdelivr.net/gh/1mn-io/mn-app/modules/{*}/dist/editor.es.js"
+        }
+    },
+    "data": {
+        "l": [
+            {
+                "id": "c78c-supplier_onboarding",
+                "type": "supplier_onboarding",
+                "slug": "supplier_onboarding",
+                "data": {
+                    "data": "Hello world! ",
+                    "base_url": "https://fastapi.dryutil.1mn.io/client",
+                    "project": "ona",
+                    "utility": "supplier_onboarding",
+                    "cloudinary": "https://fastapi.dryutil.1mn.io/client/api/i/ona/file_storage?typ=cloudinary&opr=upload_file",
+                    "token": "{localStorage.token}"
+                }
+            }
+        ]
+    }
+}
