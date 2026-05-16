@@ -1,0 +1,240 @@
+{
+    "config": {
+        "lazy_lib": {
+            "renderer_src": "https://cdn.jsdelivr.net/gh/1mn-io/mn-app@latest/modules/{*}/dist/renderer.es.js",
+            "hydrator_src": "https://cdn.jsdelivr.net/gh/1mn-io/mn-app@latest/modules/{*}/dist/hydrator.es.js",
+            "editor_src": "https://cdn.jsdelivr.net/gh/1mn-io/mn-app@latest/modules/{*}/dist/editor.es.js"
+        }
+    },
+    "data": {
+        "l": [
+            {
+                "id": "3e1bc78c-14f-4f6f-aa87-75a",
+                "type": "dashboard",
+                "slug": "dashboard",
+                "data": {
+                    "data": "MN App Dashboard",
+                    "theme": "light",
+                    "foo": "",
+                    "menu": [
+                        {
+                            "label": "File management",
+                            "items": [
+                                {
+                                    "label": "Create File",
+                                    "icon": "pi pi-fw pi-plus",
+                                    "to": "/file-management/file?mode=create"
+                                }
+                            ]
+                        },
+                        {
+                            "label": "Product management",
+                            "items": [
+                                {
+                                    "label": "Products",
+                                    "icon": "pi pi-fw pi-list",
+                                    "to": "/product-management/products"
+                                },
+                                {
+                                    "label": "Create Product",
+                                    "icon": "pi pi-fw pi-plus",
+                                    "to": "/product-management/product?mode=create"
+                                },
+                                {
+                                    "label": "Upload Products",
+                                    "icon": "pi pi-fw pi-list",
+                                    "to": "/product-management/upload-products"
+                                }
+                            ]
+                        },
+                        {
+                            "label": "Coupon management",
+                            "items": [
+                                {
+                                    "label": "Create Coupon",
+                                    "icon": "pi pi-fw pi-plus",
+                                    "to": "/coupon-management/coupon?mode=create"
+                                },
+                                {
+                                    "label": "Coupons",
+                                    "icon": "pi pi-fw pi-list",
+                                    "to": "/coupon-management/coupons"
+                                }
+                            ]
+                        },
+                        {
+                            "label": "Order management",
+                            "items": [
+                                {
+                                    "label": "Orders",
+                                    "icon": "pi pi-fw pi-list",
+                                    "to": "/order-management/orders"
+                                }
+                            ]
+                        },
+                        {
+                            "label": "UI management",
+                            "items": [
+                                {
+                                    "label": "Create Interface",
+                                    "icon": "pi pi-fw pi-plus",
+                                    "to": "/ui-management/interface?mode=create"
+                                },
+                                {
+                                    "label": "Interfaces",
+                                    "icon": "pi pi-fw pi-list",
+                                    "to": "/ui-management/interfaces"
+                                }
+                            ]
+                        },
+                        {
+                            "label": "Custom data",
+                            "items": [
+                                {
+                                    "label": "Data list",
+                                    "icon": "pi pi-fw pi-list",
+                                    "to": "/custom-data/data-list"
+                                }
+                            ]
+                        },
+                        {
+                            "label": "User management",
+                            "items": [
+                                {
+                                    "label": "Users",
+                                    "icon": "pi pi-fw pi-list",
+                                    "to": "/user-management/users"
+                                }
+                            ]
+                        }
+                    ],
+                    "routes": [
+                        {
+                            "path": "/login",
+                            "name": "login",
+                            "component": "../views/ContentEngine.vue",
+                            "meta": {
+                                "ce_file": "https://raw.githubusercontent.com/1mn-io/mn-app/main/modules/sign_in/dist/data.json"
+                            }
+                        },
+                        {
+                            "path": "/signup",
+                            "name": "signup",
+                            "component": "../views/ContentEngine.vue",
+                            "meta": {
+                                "ce_file": "https://raw.githubusercontent.com/1mn-io/mn-app/main/modules/sign_up/dist/data.json"
+                            }
+                        },
+
+
+                        {
+                            "path": "/",
+                            "component": "../layout/AppLayout.vue",
+                            "children": [
+                                {
+                                    "path": "/file-management/file",
+                                    "name": "create_file",
+                                    "component": "../views/ContentEngine.vue",
+                                    "meta": {
+                                        "ce_file": "https://raw.githubusercontent.com/1mn-io/mn-app/refs/heads/main/modules/admin_file_upload/dist/data.json",
+                                        "auth": true
+                                    }
+                                },
+                                {
+                                    "path": "/product-management/products",
+                                    "name": "product",
+                                    "component": "../views/ContentEngine.vue",
+                                    "meta": {
+                                        "ce_file": "https://raw.githubusercontent.com/1mn-io/mn-app/refs/heads/main/modules/admin_product_fragment/dist/data.json",
+                                        "auth": true
+                                    }
+                                },
+                                {
+                                    "path": "/product-management/product",
+                                    "name": "create_product",
+                                    "component": "../views/ContentEngine.vue",
+                                    "meta": {
+                                        "ce_file": "https://raw.githubusercontent.com/1mn-io/mn-app/refs/heads/main/modules/admin_product_upsert/dist/data.json",
+                                        "auth": true
+                                    }
+                                },
+                                {
+                                    "path": "/product-management/upload-products",
+                                    "name": "upload_products",
+                                    "component": "../views/ContentEngine.vue",
+                                    "meta": {
+                                        "ce_file": "https://raw.githubusercontent.com/1mn-io/mn-app/main/modules/admin_product_upload/dist/data.json",
+                                        "auth": true
+                                    }
+                                },
+                                {
+                                    "path": "/coupon-management/coupon",
+                                    "name": "create_coupon",
+                                    "component": "../views/ContentEngine.vue",
+                                    "meta": {
+                                        "auth": true,
+                                        "ce_file": "https://raw.githubusercontent.com/1mn-io/mn-app/refs/heads/main/modules/admin_coupon_upsert/dist/data.json"
+                                    }
+                                },
+                                {
+                                    "path": "/coupon-management/coupons",
+                                    "name": "coupon",
+                                    "component": "../views/ContentEngine.vue",
+                                    "meta": {
+                                        "auth": true,
+                                        "ce_file": "https://raw.githubusercontent.com/1mn-io/mn-app/refs/heads/main/modules/admin_coupon_fragment/dist/data.json"
+                                    }
+                                },
+                                {
+                                    "path": "/order-management/orders",
+                                    "name": "order",
+                                    "component": "../views/ContentEngine.vue",
+                                    "meta": {
+                                        "auth": true,
+                                        "ce_file": "https://raw.githubusercontent.com/1mn-io/mn-app/refs/heads/main/modules/admin_order_fragment/dist/data.json"
+                                    }
+                                },
+                                {
+                                    "path": "/ui-management/interfaces",
+                                    "name": "interfaces",
+                                    "component": "../views/ContentEngine.vue",
+                                    "meta": {
+                                        "auth": true,
+                                        "ce_file": "https://raw.githubusercontent.com/1mn-io/mn-app/refs/heads/main/modules/admin_ui_fragment/dist/data.json"
+                                    }
+                                },
+                                {
+                                    "path": "/ui-management/interface",
+                                    "name": "create_interface",
+                                    "component": "../views/ContentEngine.vue",
+                                    "meta": {
+                                        "auth": true,
+                                        "ce_file": "https://raw.githubusercontent.com/1mn-io/mn-app/main/modules/ui_editor/dist/data.json"
+                                    }
+                                },
+                                {
+                                    "path": "/custom-data/data-list",
+                                    "name": "custom_data_list",
+                                    "component": "../views/ContentEngine.vue",
+                                    "meta": {
+                                        "auth": true,
+                                        "ce_file": "https://raw.githubusercontent.com/1mn-io/mn-app/main/modules/admin_custom_data_fragment/dist/data.json"
+                                    }
+                                },
+                                {
+                                    "path": "/user-management/users",
+                                    "name": "users",
+                                    "component": "../views/ContentEngine.vue",
+                                    "meta": {
+                                        "auth": true,
+                                        "ce_file": "https://raw.githubusercontent.com/1mn-io/mn-app/main/modules/admin_users_fragment/dist/data.json"
+                                    }
+                                }
+                            ]
+                        }
+                    ]
+                }
+            }
+        ]
+    }
+}
