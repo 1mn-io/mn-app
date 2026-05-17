@@ -15,7 +15,7 @@ const _ = /* @__PURE__ */ c({
       _p: n,
       _$p: t
     }, o = p(_, e);
-    await (await import("./main-Bgd7IOid.js").then((r) => r.ay)).index(e);
+    await (await import("./main-B404rqP4.js").then((r) => r.ay)).index(e);
     const a = {
       r: "",
       style: "",

@@ -22,7 +22,26 @@ let _data = {
         "foo": "",
 
         //set..
+        "config": {
+          "off_h_right": false, //Hide Header Right Items.
+        },
+
+        //set..
         "menu": [
+
+
+
+          //test..[START]
+        
+
+          //test..[END]
+
+
+
+
+
+
+
           {
             label: 'Dryutil',
              items: [
@@ -74,7 +93,9 @@ let _data = {
               { 
                 label: 'Files', 
                 icon: 'pi pi-fw pi-list', 
-                to: '/file-management/files' 
+                to: '/file-management/files',
+                 
+
               },
             ]
           },

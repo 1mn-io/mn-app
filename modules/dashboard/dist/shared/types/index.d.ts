@@ -46,6 +46,9 @@ type _$p_TYP = {
                 "data": string;
                 "theme": string;
                 "menu": any[];
+                "config": {
+                    "off_h_right": boolean;
+                };
             };
         };
     };
