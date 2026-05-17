@@ -42,7 +42,24 @@ const _ENV = `dev`; //import.meta.env.VITE_ENV;
           },
           "theme": "light",
 
-
+          //set..
+          "provider": {
+            "email": {
+              "disable": false,
+            },
+            "google": {
+              "disable": false,
+            },
+            "facebook": {
+              "disable": false,
+            },
+            "yandex": {
+              "disable": false,
+            },
+            "vk": {
+              "disable": false,
+            },
+          }
 
 
         },
