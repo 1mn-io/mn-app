@@ -24,9 +24,9 @@ let _data = {
         "data": {
           "data": "Hello world! ",
           //set..
-          "base_url": "https://fastapi.dryutil.1mn.io/client", //http://localhost:8000/client
+          "base_url": "https://fastapi.dryutil.1mn.io/client-public", //http://localhost:8000/client
           "project": "ona", //test
-          "utility": "supplier_onboarding", //supplier_onboarding
+          "utility": "public:supplier_onboarding", //supplier_onboarding
           "cloudinary": "https://fastapi.dryutil.1mn.io/client/api/i/ona/file_storage?typ=cloudinary&opr=upload_file", //https://fastapi.dryutil.1mn.io/client/api/i/ona/file_storage?typ=cloudinary&opr=upload_file
           "token": "{localStorage.token}"
         
