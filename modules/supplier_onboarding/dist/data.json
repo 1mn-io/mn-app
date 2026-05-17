@@ -14,9 +14,9 @@
                 "slug": "supplier_onboarding",
                 "data": {
                     "data": "Hello world! ",
-                    "base_url": "https://fastapi.dryutil.1mn.io/client",
+                    "base_url": "https://fastapi.dryutil.1mn.io/client-public",
                     "project": "ona",
-                    "utility": "supplier_onboarding",
+                    "utility": "public:supplier_onboarding",
                     "cloudinary": "https://fastapi.dryutil.1mn.io/client/api/i/ona/file_storage?typ=cloudinary&opr=upload_file",
                     "token": "{localStorage.token}"
                 }
