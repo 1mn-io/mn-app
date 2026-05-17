@@ -22,10 +22,12 @@ const _ENV = `dev`; //import.meta.env.VITE_ENV;
             // Your API endpoint for authentication
             "login": "https://fastapi.dryutil.1mn.io/client-public/api/i/ona/public:auth?typ=login",
             // Optional: Redirects or other endpoints
-            "google_auth": "/auth/google",
             "forgot_password": "/reset-password",
             "send_otp": "https://fastapi.dryutil.1mn.io/client-public/api/i/ona/public:auth?typ=send_otp",
-            "verify_otp": "https://fastapi.dryutil.1mn.io/client-public/api/i/ona/public:auth?typ=verify_otp"
+            "verify_otp": "https://fastapi.dryutil.1mn.io/client-public/api/i/ona/public:auth?typ=verify_otp",
+
+            //set..
+            "sign_with_third_party": "https://fastapi.dryutil.1mn.io/client-public/api/i/ona/public:auth?typ=sign_with_third_party&provider={provider}&redirect={redirect}",
           },
           "labels": {
             "title": "Welcome Back",
@@ -38,7 +40,11 @@ const _ENV = `dev`; //import.meta.env.VITE_ENV;
           "event": {
             "onLoginSuccess": "/", //"http://localhost:5173/dashboard"
           },
-          "theme": "light"
+          "theme": "light",
+
+
+
+
         },
       }
     ]

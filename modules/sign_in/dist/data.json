@@ -15,10 +15,10 @@
                 "data": {
                     "api": {
                         "login": "https://fastapi.dryutil.1mn.io/client-public/api/i/ona/public:auth?typ=login",
-                        "google_auth": "/auth/google",
                         "forgot_password": "/reset-password",
                         "send_otp": "https://fastapi.dryutil.1mn.io/client-public/api/i/ona/public:auth?typ=send_otp",
-                        "verify_otp": "https://fastapi.dryutil.1mn.io/client-public/api/i/ona/public:auth?typ=verify_otp"
+                        "verify_otp": "https://fastapi.dryutil.1mn.io/client-public/api/i/ona/public:auth?typ=verify_otp",
+                        "sign_with_third_party": "https://fastapi.dryutil.1mn.io/client-public/api/i/ona/public:auth?typ=sign_with_third_party&provider={provider}&redirect={redirect}"
                     },
                     "labels": {
                         "title": "Welcome Back",
