@@ -144,6 +144,16 @@
 
                         {
                             "path": "/",
+                            "name": "site",
+                            "component": "../views/ContentEngine.vue",
+                            "meta": {
+                                "ce_file": "https://raw.githubusercontent.com/1mn-io/mn-app/main/modules/supplier_site/dist/data.json"
+                            }
+                        },
+
+
+                        {
+                            "path": "/",
                             "component": "../layout/AppLayout.vue",
                             "children": [
 
