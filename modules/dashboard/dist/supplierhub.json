@@ -16,10 +16,7 @@
                     "data": "MN App Dashboard",
                     "theme": "light",
                     "foo": "",
-
-                    
                     "menu": [
-
                         {
                             "label": "Profile management",
                             "items": [
@@ -30,8 +27,6 @@
                                 }
                             ]
                         },
-
-
                         {
                             "label": "File management",
                             "items": [
@@ -129,7 +124,62 @@
                             "name": "login",
                             "component": "../views/ContentEngine.vue",
                             "meta": {
-                                "ce_file": "https://raw.githubusercontent.com/1mn-io/mn-app/main/modules/sign_in/dist/data.json"
+                                "ce_file": {
+                                    "config": {
+                                        "lazy_lib": {
+                                            "renderer_src": "https://cdn.jsdelivr.net/gh/1mn-io/mn-app@latest/modules/{*}/dist/renderer.es.js",
+                                            "hydrator_src": "https://cdn.jsdelivr.net/gh/1mn-io/mn-app@latest/modules/{*}/dist/hydrator.es.js",
+                                            "editor_src": "https://cdn.jsdelivr.net/gh/1mn-io/mn-app@latest/modules/{*}/dist/editor.es.js"
+                                        }
+                                    },
+                                    "data": {
+                                        "l": [
+                                            {
+                                                "id": "3ec78c-sign_in",
+                                                "type": "sign_in",
+                                                "slug": "sign_in",
+                                                "data": {
+                                                    "api": {
+                                                        "login": "https://fastapi.dryutil.1mn.io/client-public/api/i/ona/public:auth?typ=login",
+                                                        "forgot_password": "/reset-password",
+                                                        "send_otp": "https://fastapi.dryutil.1mn.io/client-public/api/i/ona/public:auth?typ=send_otp",
+                                                        "verify_otp": "https://fastapi.dryutil.1mn.io/client-public/api/i/ona/public:auth?typ=verify_otp",
+                                                        "sign_with_third_party": "https://fastapi.dryutil.1mn.io/client-public/api/i/ona/public:auth?typ=sign_with_third_party&provider={provider}&redirect={redirect}"
+                                                    },
+                                                    "labels": {
+                                                        "title": "Welcome Back",
+                                                        "subtitle": "Enter your details to login."
+                                                    },
+                                                    "click": {
+                                                        "sign_up": "/signup",
+                                                        "forgot_pwd": "/forgot-password"
+                                                    },
+                                                    "event": {
+                                                        "onLoginSuccess": "/"
+                                                    },
+                                                    "theme": "light",
+                                                    "provider": {
+                                                        "email": {
+                                                            "disable": true
+                                                        },
+                                                        "google": {
+                                                            "disable": false
+                                                        },
+                                                        "facebook": {
+                                                            "disable": true
+                                                        },
+                                                        "yandex": {
+                                                            "disable": true
+                                                        },
+                                                        "vk": {
+                                                            "disable": true
+                                                        }
+                                                    }
+                                                }
+                                            }
+                                        ]
+                                    }
+                                }
                             }
                         },
                         {
@@ -140,8 +190,6 @@
                                 "ce_file": "https://raw.githubusercontent.com/1mn-io/mn-app/main/modules/sign_up/dist/data.json"
                             }
                         },
-
-
                         {
                             "path": "/",
                             "name": "site",
@@ -150,14 +198,10 @@
                                 "ce_file": "https://raw.githubusercontent.com/1mn-io/mn-app/main/modules/supplier_site/dist/data.json"
                             }
                         },
-
-
                         {
                             "path": "/",
                             "component": "../layout/AppLayout.vue",
                             "children": [
-
-
                                 {
                                     "path": "/profile-management/onboarding",
                                     "name": "onboarding",
@@ -167,9 +211,6 @@
                                         "auth": true
                                     }
                                 },
-
-
-
                                 {
                                     "path": "/file-management/file",
                                     "name": "create_file",
