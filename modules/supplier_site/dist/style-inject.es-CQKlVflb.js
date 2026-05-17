@@ -1,0 +1,11 @@
+function s(d, n) {
+  n === void 0 && (n = {});
+  var i = n.insertAt;
+  if (!(!d || typeof document > "u")) {
+    var t = document.head || document.getElementsByTagName("head")[0], e = document.createElement("style");
+    e.type = "text/css", i === "top" && t.firstChild ? t.insertBefore(e, t.firstChild) : t.appendChild(e), e.styleSheet ? e.styleSheet.cssText = d : e.appendChild(document.createTextNode(d));
+  }
+}
+export {
+  s
+};
