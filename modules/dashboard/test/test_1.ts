@@ -387,7 +387,7 @@ let _data = {
 
 
           //test..[START]
-          /*{
+          {
             path: '/',
             name: 'test',
             component: '../views/ContentEngineIframe.vue',
@@ -396,7 +396,7 @@ let _data = {
               ce_file: "https://raw.githubusercontent.com/1mn-io/mn-app/main/modules/supplier_site/dist/data.json", 
               //ce_file: "https://raw.githubusercontent.com/1mn-io/mn-app/main/modules/storefront/dist/data.json", 
             }
-          },*/
+          },
           //test..[END]
 
 
