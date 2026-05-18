@@ -1,4 +1,4 @@
-import { d as c, c as p } from "./runtime-dom.esm-bundler-C71lIG0B.js";
+import { d as c, c as p } from "./runtime-dom.esm-bundler-7m8Vyt41.js";
 const _ = /* @__PURE__ */ c({
   __name: "index",
   props: {
@@ -15,7 +15,7 @@ const _ = /* @__PURE__ */ c({
       _p: n,
       _$p: t
     }, o = p(_, e);
-    await (await import("./main-B404rqP4.js").then((r) => r.ay)).index(e);
+    await (await import("./main-BRfZD_gg.js").then((r) => r.ay)).index(e);
     const a = {
       r: "",
       style: "",

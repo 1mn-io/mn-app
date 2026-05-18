@@ -385,6 +385,24 @@ let _data = {
         ],
         "routes": [
 
+
+          //test..[START]
+          /*{
+            path: '/',
+            name: 'test',
+            component: '../views/ContentEngineIframe.vue',
+            meta: {
+              // ce_file: "https://raw.githubusercontent.com/1mn-io/mn-app/main/modules/supplier_onboarding/dist/data.json",  
+              ce_file: "https://raw.githubusercontent.com/1mn-io/mn-app/main/modules/supplier_site/dist/data.json", 
+              //ce_file: "https://raw.githubusercontent.com/1mn-io/mn-app/main/modules/storefront/dist/data.json", 
+            }
+          },*/
+          //test..[END]
+
+
+
+
+
           //set..
           {
             path: '/login',
@@ -878,7 +896,7 @@ const mE_e = document.getElementById(_b) || (() => { let e = document.createElem
 //set..
 mE_e!.innerHTML = `
   <div >
-    <div>==Editor==</div>
+    <!--div>==Editor==</div-->
     <div > ${_editor_html} </div>
   </div>
 `;
@@ -956,7 +974,7 @@ mE_log.innerHTML = `
 //set..
 mE_preview!.innerHTML = `
   <div>
-    <div>==Preview==</div>
+    <!--div>==Preview==</div-->
     <div > ${_html} </div>
   </div>
 `;
