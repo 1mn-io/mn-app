@@ -23,7 +23,7 @@ let _data = {
           "base_url": "https://fastapi.dryutil.1mn.io/client-public", //http://localhost:8000/client
           "project": "ona", //test
           "utility": "public:supplier_onboarding", //supplier_onboarding
-          "cloudinary": "https://fastapi.dryutil.1mn.io/client/api/i/ona/file_storage?typ=cloudinary&opr=upload_file", //https://fastapi.dryutil.1mn.io/client/api/i/ona/file_storage?typ=cloudinary&opr=upload_file
+          "file_upload_api": "https://fastapi.dryutil.1mn.io/client/api/i/ona/file_store?typ=upload", //https://fastapi.dryutil.1mn.io/client/api/i/ona/file_storage?typ=cloudinary&opr=upload_file
           "token": "{localStorage.token}"
         
         },
