@@ -1,7 +1,4 @@
 export declare const apiService: {
-    /**
-     * Uploads files to Cloudinary via the proxy endpoint
-     */
     uploadFiles(files: File[]): Promise<string[]>;
     /**
      * Submits the final onboarding form to FastAPI

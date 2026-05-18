@@ -2,10 +2,6 @@ console.log(`test_1`);
 import { ce_renderer, ce_hydrator, ce_listen, ce_call } from "content-engine-lib";
 const _ENV = `dev`; //import.meta.env.VITE_ENV;
 
-
-
- 
-
 //set..
 (async() => {
 //set vars..

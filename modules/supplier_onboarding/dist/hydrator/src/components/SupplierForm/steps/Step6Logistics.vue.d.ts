@@ -11,7 +11,9 @@ declare const _default: import('vue').DefineComponent<import('vue').ExtractPropT
         type: BooleanConstructor;
         default: boolean;
     };
-}>, {}, {}, {}, {}, import('vue').ComponentOptionsMixin, import('vue').ComponentOptionsMixin, {}, string, import('vue').PublicProps, Readonly<import('vue').ExtractPropTypes<{
+}>, {
+    validate: () => boolean;
+}, {}, {}, {}, import('vue').ComponentOptionsMixin, import('vue').ComponentOptionsMixin, {}, string, import('vue').PublicProps, Readonly<import('vue').ExtractPropTypes<{
     formData: {
         type: ObjectConstructor;
         required: true;
