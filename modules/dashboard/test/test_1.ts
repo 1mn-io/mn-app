@@ -401,7 +401,7 @@ let _data = {
 
           //test..[START]
           /*{
-            path: '/',
+            path: '/t',
             name: 'test',
             component: '../views/ContentEngineIframe.vue',
             meta: {
