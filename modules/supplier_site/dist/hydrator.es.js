@@ -1,4 +1,5 @@
-import { d as Ut, s as or, u as B, a as nr, r as ir, i as Bt, c as $, h as zt, p as Zt, b as mt, w as sr, n as lr, e as nt, f as Ge, o as k, g as dr, j as cr, k as E, l as r, m as et, q as j, t as qt, v as gt, F as O, x as H, T as ce, y as X, z as C, A as Rt, B as pe, C as pr, D as $e } from "./style-inject.es-BJ5hbd3j.js";
+const { defineComponent: Ut, shallowRef: or, unref: z, shallowReactive: nr, reactive: ir, inject: zt, computed: $, h: Bt, provide: Zt, ref: mt, watch: sr, nextTick: lr, resolveComponent: Ge, createBlock: nt, openBlock: k, onMounted: dr, onUnmounted: cr, createElementBlock: E, createElementVNode: r, normalizeClass: ft, createCommentVNode: et, createVNode: j, withCtx: qt, Fragment: O, renderList: H, Transition: ce, toDisplayString: C, createStaticVNode: X, resolveDynamicComponent: Rt, normalizeStyle: pe, createApp: $e } = window.Vue;
+import { s as pr } from "./style-inject.es-CQKlVflb.js";
 const ur = /* @__PURE__ */ Ut({
   __name: "index",
   props: {
@@ -60,16 +61,16 @@ function xt(t, e) {
 function rt(t, e) {
   return t instanceof Error && Fe in t && (e == null || !!(t.type & e));
 }
-const gr = [
+const fr = [
   "params",
   "query",
   "hash"
 ];
-function fr(t) {
+function gr(t) {
   if (typeof t == "string") return t;
   if (t.path != null) return t.path;
   const e = {};
-  for (const a of gr) a in t && (e[a] = t[a]);
+  for (const a of fr) a in t && (e[a] = t[a]);
   return JSON.stringify(e, null, 2);
 }
 const mr = /* @__PURE__ */ Symbol(""), he = /* @__PURE__ */ Symbol(""), le = /* @__PURE__ */ Symbol(""), Ze = /* @__PURE__ */ Symbol(""), oe = /* @__PURE__ */ Symbol("");
@@ -102,21 +103,21 @@ function $t(t) {
 }
 const Nr = /\/$/, Ir = (t) => t.replace(Nr, "");
 function Kt(t, e, a = "/") {
-  let o, n = {}, p = "", g = "";
+  let o, n = {}, p = "", f = "";
   const x = e.indexOf("#");
   let l = e.indexOf("?");
-  return l = x >= 0 && l > x ? -1 : l, l >= 0 && (o = e.slice(0, l), p = e.slice(l, x > 0 ? x : e.length), n = t(p.slice(1))), x >= 0 && (o = o || e.slice(0, x), g = e.slice(x, e.length)), o = zr(o ?? e, a), {
-    fullPath: o + p + g,
+  return l = x >= 0 && l > x ? -1 : l, l >= 0 && (o = e.slice(0, l), p = e.slice(l, x > 0 ? x : e.length), n = t(p.slice(1))), x >= 0 && (o = o || e.slice(0, x), f = e.slice(x, e.length)), o = Br(o ?? e, a), {
+    fullPath: o + p + f,
     path: o,
     query: n,
-    hash: $t(g)
+    hash: $t(f)
   };
 }
 function Sr(t, e) {
   const a = e.query ? t(e.query) : "";
   return e.path + (a && "?") + a + (e.hash || "");
 }
-function ge(t, e) {
+function fe(t, e) {
   return !e || !t.toLowerCase().startsWith(e.toLowerCase()) ? t : t.slice(e.length) || "/";
 }
 function Pr(t, e, a) {
@@ -128,27 +129,27 @@ function bt(t, e) {
 }
 function Xe(t, e) {
   if (Object.keys(t).length !== Object.keys(e).length) return !1;
-  for (var a in t) if (!Br(t[a], e[a])) return !1;
+  for (var a in t) if (!zr(t[a], e[a])) return !1;
   return !0;
 }
-function Br(t, e) {
-  return J(t) ? fe(t, e) : J(e) ? fe(e, t) : (t && t.valueOf()) === (e && e.valueOf());
+function zr(t, e) {
+  return J(t) ? ge(t, e) : J(e) ? ge(e, t) : (t && t.valueOf()) === (e && e.valueOf());
 }
-function fe(t, e) {
+function ge(t, e) {
   return J(e) ? t.length === e.length && t.every((a, o) => a === e[o]) : t.length === 1 && t[0] === e;
 }
-function zr(t, e) {
+function Br(t, e) {
   if (t.startsWith("/")) return t;
   if (!t) return e;
   const a = e.split("/"), o = t.split("/"), n = o[o.length - 1];
   (n === ".." || n === ".") && o.push("");
-  let p = a.length - 1, g, x;
-  for (g = 0; g < o.length; g++)
-    if (x = o[g], x !== ".")
+  let p = a.length - 1, f, x;
+  for (f = 0; f < o.length; f++)
+    if (x = o[f], x !== ".")
       if (x === "..")
         p > 1 && p--;
       else break;
-  return a.slice(0, p).join("/") + "/" + o.slice(g).join("/");
+  return a.slice(0, p).join("/") + "/" + o.slice(f).join("/");
 }
 const at = {
   path: "/",
@@ -221,11 +222,11 @@ function Ur(t) {
   if (t === "" || t === "?") return e;
   const a = (t[0] === "?" ? t.slice(1) : t).split("&");
   for (let o = 0; o < a.length; ++o) {
-    const n = a[o].replace(We, " "), p = n.indexOf("="), g = $t(p < 0 ? n : n.slice(0, p)), x = p < 0 ? null : $t(n.slice(p + 1));
-    if (g in e) {
-      let l = e[g];
-      J(l) || (l = e[g] = [l]), l.push(x);
-    } else e[g] = x;
+    const n = a[o].replace(We, " "), p = n.indexOf("="), f = $t(p < 0 ? n : n.slice(0, p)), x = p < 0 ? null : $t(n.slice(p + 1));
+    if (f in e) {
+      let l = e[f];
+      J(l) || (l = e[f] = [l]), l.push(x);
+    } else e[f] = x;
   }
   return e;
 }
@@ -268,8 +269,8 @@ function Lt() {
     reset: a
   };
 }
-function it(t, e, a, o, n, p = (g) => g()) {
-  const g = o && (o.enterCallbacks[n] = o.enterCallbacks[n] || []);
+function it(t, e, a, o, n, p = (f) => f()) {
+  const f = o && (o.enterCallbacks[n] = o.enterCallbacks[n] || []);
   return () => new Promise((x, l) => {
     const h = (u) => {
       u === !1 ? l(xt(V.NAVIGATION_ABORTED, {
@@ -278,7 +279,7 @@ function it(t, e, a, o, n, p = (g) => g()) {
       })) : u instanceof Error ? l(u) : $r(u) ? l(xt(V.NAVIGATION_GUARD_REDIRECT, {
         from: e,
         to: u
-      })) : (g && o.enterCallbacks[n] === g && typeof u == "function" && g.push(u), x());
+      })) : (f && o.enterCallbacks[n] === f && typeof u == "function" && f.push(u), x());
     }, m = p(() => t.call(o && o.instances[n], e, a, h));
     let c = Promise.resolve(m);
     t.length < 3 && (c = c.then(h)), c.catch((u) => l(u));
@@ -286,21 +287,21 @@ function it(t, e, a, o, n, p = (g) => g()) {
 }
 function Yt(t, e, a, o, n = (p) => p()) {
   const p = [];
-  for (const g of t)
-    for (const x in g.components) {
-      let l = g.components[x];
-      if (!(e !== "beforeRouteEnter" && !g.instances[x]))
+  for (const f of t)
+    for (const x in f.components) {
+      let l = f.components[x];
+      if (!(e !== "beforeRouteEnter" && !f.instances[x]))
         if (Ue(l)) {
           const h = (l.__vccOpts || l)[e];
-          h && p.push(it(h, a, o, g, x, n));
+          h && p.push(it(h, a, o, f, x, n));
         } else {
           let h = l();
           p.push(() => h.then((m) => {
-            if (!m) throw new Error(`Couldn't resolve component "${x}" at "${g.path}"`);
+            if (!m) throw new Error(`Couldn't resolve component "${x}" at "${f.path}"`);
             const c = hr(m) ? m.default : m;
-            g.mods[x] = m, g.components[x] = c;
+            f.mods[x] = m, f.components[x] = c;
             const u = (c.__vccOpts || c)[e];
-            return u && it(u, a, o, g, x, n)();
+            return u && it(u, a, o, f, x, n)();
           }));
         }
     }
@@ -308,10 +309,10 @@ function Yt(t, e, a, o, n = (p) => p()) {
 }
 function Zr(t, e) {
   const a = [], o = [], n = [], p = Math.max(e.matched.length, t.matched.length);
-  for (let g = 0; g < p; g++) {
-    const x = e.matched[g];
+  for (let f = 0; f < p; f++) {
+    const x = e.matched[f];
     x && (t.matched.find((h) => bt(h, x)) ? o.push(x) : a.push(x));
-    const l = t.matched[g];
+    const l = t.matched[f];
     l && (e.matched.find((h) => bt(h, l)) || n.push(l));
   }
   return [
@@ -324,41 +325,41 @@ let qr = () => location.protocol + "//" + location.host;
 function tr(t, e) {
   const { pathname: a, search: o, hash: n } = e, p = t.indexOf("#");
   if (p > -1) {
-    let g = n.includes(t.slice(p)) ? t.slice(p).length : 1, x = n.slice(g);
-    return x[0] !== "/" && (x = "/" + x), ge(x, "");
+    let f = n.includes(t.slice(p)) ? t.slice(p).length : 1, x = n.slice(f);
+    return x[0] !== "/" && (x = "/" + x), fe(x, "");
   }
-  return ge(a, t) + o + n;
+  return fe(a, t) + o + n;
 }
 function Wr(t, e, a, o) {
-  let n = [], p = [], g = null;
+  let n = [], p = [], f = null;
   const x = ({ state: u }) => {
-    const f = tr(t, location), R = a.value, I = e.value;
-    let z = 0;
+    const g = tr(t, location), R = a.value, I = e.value;
+    let B = 0;
     if (u) {
-      if (a.value = f, e.value = u, g && g === R) {
-        g = null;
+      if (a.value = g, e.value = u, f && f === R) {
+        f = null;
         return;
       }
-      z = I ? u.position - I.position : 0;
-    } else o(f);
+      B = I ? u.position - I.position : 0;
+    } else o(g);
     n.forEach((P) => {
       P(a.value, R, {
-        delta: z,
+        delta: B,
         type: ie.pop,
-        direction: z ? z > 0 ? Qt.forward : Qt.back : Qt.unknown
+        direction: B ? B > 0 ? Qt.forward : Qt.back : Qt.unknown
       });
     });
   };
   function l() {
-    g = a.value;
+    f = a.value;
   }
   function h(u) {
     n.push(u);
-    const f = () => {
+    const g = () => {
       const R = n.indexOf(u);
       R > -1 && n.splice(R, 1);
     };
-    return p.push(f), f;
+    return p.push(g), g;
   }
   function m() {
     if (document.visibilityState === "hidden") {
@@ -401,11 +402,11 @@ function Kr(t) {
     const c = t.indexOf("#"), u = c > -1 ? (a.host && document.querySelector("base") ? t : t.slice(c)) + l : qr() + t + l;
     try {
       e[m ? "replaceState" : "pushState"](h, "", u), n.value = h;
-    } catch (f) {
-      console.error(f), a[m ? "replace" : "assign"](u);
+    } catch (g) {
+      console.error(g), a[m ? "replace" : "assign"](u);
     }
   }
-  function g(l, h) {
+  function f(l, h) {
     p(l, S({}, e.state, xe(n.value.back, l, n.value.forward, !0), h, { position: n.value.position }), !0), o.value = l;
   }
   function x(l, h) {
@@ -419,14 +420,14 @@ function Kr(t) {
     location: o,
     state: n,
     push: x,
-    replace: g
+    replace: f
   };
 }
 function Qr(t) {
   t = Or(t);
   const e = Kr(t), a = Wr(t, e.state, e.location, e.replace);
-  function o(p, g = !0) {
-    g || a.pauseListeners(), history.go(p);
+  function o(p, f = !0) {
+    f || a.pauseListeners(), history.go(p);
   }
   const n = S({
     location: "",
@@ -456,13 +457,13 @@ function Jr(t) {
   if (!t) return [[]];
   if (t === "/") return [[Yr]];
   if (!t.startsWith("/")) throw new Error(`Invalid path "${t}"`);
-  function e(f) {
-    throw new Error(`ERR (${a})/"${h}": ${f}`);
+  function e(g) {
+    throw new Error(`ERR (${a})/"${h}": ${g}`);
   }
   let a = G.Static, o = a;
   const n = [];
   let p;
-  function g() {
+  function f() {
     p && n.push(p), p = [];
   }
   let x = 0, l, h = "", m = "";
@@ -484,7 +485,7 @@ function Jr(t) {
   for (; x < t.length; )
     switch (l = t[x++], a) {
       case G.Static:
-        l === "\\" ? (o = a, a = G.EscapeNext) : l === "/" ? (h && c(), g()) : l === ":" ? (c(), a = G.Param) : u();
+        l === "\\" ? (o = a, a = G.EscapeNext) : l === "/" ? (h && c(), f()) : l === ":" ? (c(), a = G.Param) : u();
         break;
       case G.EscapeNext:
         u(), a = o;
@@ -502,7 +503,7 @@ function Jr(t) {
         e("Unknown state");
         break;
     }
-  return a === G.ParamRegExp && e(`Unfinished custom RegExp for param "${h}"`), c(), g(), n;
+  return a === G.ParamRegExp && e(`Unfinished custom RegExp for param "${h}"`), c(), f(), n;
 }
 const be = "[^/]+?", ta = {
   sensitive: !1,
@@ -523,19 +524,19 @@ function ra(t, e) {
     a.strict && !h.length && (n += "/");
     for (let c = 0; c < h.length; c++) {
       const u = h[c];
-      let f = q.Segment + (a.sensitive ? q.BonusCaseSensitive : 0);
+      let g = q.Segment + (a.sensitive ? q.BonusCaseSensitive : 0);
       if (u.type === ct.Static)
-        c || (n += "/"), n += u.value.replace(ea, "\\$&"), f += q.Static;
+        c || (n += "/"), n += u.value.replace(ea, "\\$&"), g += q.Static;
       else if (u.type === ct.Param) {
-        const { value: R, repeatable: I, optional: z, regexp: P } = u;
+        const { value: R, repeatable: I, optional: B, regexp: P } = u;
         p.push({
           name: R,
           repeatable: I,
-          optional: z
+          optional: B
         });
         const L = P || be;
         if (L !== be) {
-          f += q.BonusCustomRegExp;
+          g += q.BonusCustomRegExp;
           try {
             new RegExp(`(${L})`);
           } catch (F) {
@@ -543,9 +544,9 @@ function ra(t, e) {
           }
         }
         let _ = I ? `((?:${L})(?:/(?:${L}))*)` : `(${L})`;
-        c || (_ = z && h.length < 2 ? `(?:/${_})` : "/" + _), z && (_ += "?"), n += _, f += q.Dynamic, z && (f += q.BonusOptional), I && (f += q.BonusRepeatable), L === ".*" && (f += q.BonusWildcard);
+        c || (_ = B && h.length < 2 ? `(?:/${_})` : "/" + _), B && (_ += "?"), n += _, g += q.Dynamic, B && (g += q.BonusOptional), I && (g += q.BonusRepeatable), L === ".*" && (g += q.BonusWildcard);
       }
-      m.push(f);
+      m.push(g);
     }
     o.push(m);
   }
@@ -554,13 +555,13 @@ function ra(t, e) {
     o[h][o[h].length - 1] += q.BonusStrict;
   }
   a.strict || (n += "/?"), a.end ? n += "$" : a.strict && !n.endsWith("/") && (n += "(?:/|$)");
-  const g = new RegExp(n, a.sensitive ? "" : "i");
+  const f = new RegExp(n, a.sensitive ? "" : "i");
   function x(h) {
-    const m = h.match(g), c = {};
+    const m = h.match(f), c = {};
     if (!m) return null;
     for (let u = 1; u < m.length; u++) {
-      const f = m[u] || "", R = p[u - 1];
-      c[R.name] = f && R.repeatable ? f.split("/") : f;
+      const g = m[u] || "", R = p[u - 1];
+      c[R.name] = g && R.repeatable ? g.split("/") : g;
     }
     return c;
   }
@@ -568,12 +569,12 @@ function ra(t, e) {
     let m = "", c = !1;
     for (const u of t) {
       (!c || !m.endsWith("/")) && (m += "/"), c = !1;
-      for (const f of u) if (f.type === ct.Static) m += f.value;
-      else if (f.type === ct.Param) {
-        const { value: R, repeatable: I, optional: z } = f, P = R in h ? h[R] : "";
+      for (const g of u) if (g.type === ct.Static) m += g.value;
+      else if (g.type === ct.Param) {
+        const { value: R, repeatable: I, optional: B } = g, P = R in h ? h[R] : "";
         if (J(P) && !I) throw new Error(`Provided param "${R}" is an array but it is not repeatable (* or + modifiers)`);
         const L = J(P) ? P.join("/") : P;
-        if (!L) if (z)
+        if (!L) if (B)
           u.length < 2 && (m.endsWith("/") ? m = m.slice(0, -1) : c = !0);
         else throw new Error(`Missing required param "${R}"`);
         m += L;
@@ -582,7 +583,7 @@ function ra(t, e) {
     return m || "/";
   }
   return {
-    re: g,
+    re: f,
     score: o,
     keys: p,
     parse: x,
@@ -636,16 +637,16 @@ function ia(t, e) {
   function n(c) {
     return o.get(c);
   }
-  function p(c, u, f) {
-    const R = !f, I = ke(c);
-    I.aliasOf = f && f.record;
-    const z = ue(e, c), P = [I];
+  function p(c, u, g) {
+    const R = !g, I = ke(c);
+    I.aliasOf = g && g.record;
+    const B = ue(e, c), P = [I];
     if ("alias" in c) {
       const F = typeof c.alias == "string" ? [c.alias] : c.alias;
       for (const Y of F) P.push(ke(S({}, I, {
-        components: f ? f.record.components : I.components,
+        components: g ? g.record.components : I.components,
         path: Y,
-        aliasOf: f ? f.record : I
+        aliasOf: g ? g.record : I
       })));
     }
     let L, _;
@@ -655,23 +656,23 @@ function ia(t, e) {
         const tt = u.record.path, W = tt[tt.length - 1] === "/" ? "" : "/";
         F.path = u.record.path + (Y && W + Y);
       }
-      if (L = na(F, u, z), f ? f.alias.push(L) : (_ = _ || L, _ !== L && _.alias.push(L), R && c.name && !Ce(L) && g(c.name)), rr(L) && l(L), I.children) {
+      if (L = na(F, u, B), g ? g.alias.push(L) : (_ = _ || L, _ !== L && _.alias.push(L), R && c.name && !Ce(L) && f(c.name)), rr(L) && l(L), I.children) {
         const tt = I.children;
-        for (let W = 0; W < tt.length; W++) p(tt[W], L, f && f.children[W]);
+        for (let W = 0; W < tt.length; W++) p(tt[W], L, g && g.children[W]);
       }
-      f = f || L;
+      g = g || L;
     }
     return _ ? () => {
-      g(_);
+      f(_);
     } : Pt;
   }
-  function g(c) {
+  function f(c) {
     if (Je(c)) {
       const u = o.get(c);
-      u && (o.delete(c), a.splice(a.indexOf(u), 1), u.children.forEach(g), u.alias.forEach(g));
+      u && (o.delete(c), a.splice(a.indexOf(u), 1), u.children.forEach(f), u.alias.forEach(f));
     } else {
       const u = a.indexOf(c);
-      u > -1 && (a.splice(u, 1), c.record.name && o.delete(c.record.name), c.children.forEach(g), c.alias.forEach(g));
+      u > -1 && (a.splice(u, 1), c.record.name && o.delete(c.record.name), c.children.forEach(f), c.alias.forEach(f));
     }
   }
   function x() {
@@ -682,27 +683,27 @@ function ia(t, e) {
     a.splice(u, 0, c), c.record.name && !Ce(c) && o.set(c.record.name, c);
   }
   function h(c, u) {
-    let f, R = {}, I, z;
+    let g, R = {}, I, B;
     if ("name" in c && c.name) {
-      if (f = o.get(c.name), !f) throw xt(V.MATCHER_NOT_FOUND, { location: c });
-      z = f.record.name, R = S(ye(u.params, f.keys.filter((_) => !_.optional).concat(f.parent ? f.parent.keys.filter((_) => _.optional) : []).map((_) => _.name)), c.params && ye(c.params, f.keys.map((_) => _.name))), I = f.stringify(R);
+      if (g = o.get(c.name), !g) throw xt(V.MATCHER_NOT_FOUND, { location: c });
+      B = g.record.name, R = S(ye(u.params, g.keys.filter((_) => !_.optional).concat(g.parent ? g.parent.keys.filter((_) => _.optional) : []).map((_) => _.name)), c.params && ye(c.params, g.keys.map((_) => _.name))), I = g.stringify(R);
     } else if (c.path != null)
-      I = c.path, f = a.find((_) => _.re.test(I)), f && (R = f.parse(I), z = f.record.name, f.keys.forEach((_) => {
+      I = c.path, g = a.find((_) => _.re.test(I)), g && (R = g.parse(I), B = g.record.name, g.keys.forEach((_) => {
         _.optional && !R[_.name] && delete R[_.name];
       }));
     else {
-      if (f = u.name ? o.get(u.name) : a.find((_) => _.re.test(u.path)), !f) throw xt(V.MATCHER_NOT_FOUND, {
+      if (g = u.name ? o.get(u.name) : a.find((_) => _.re.test(u.path)), !g) throw xt(V.MATCHER_NOT_FOUND, {
         location: c,
         currentLocation: u
       });
-      z = f.record.name, R = S({}, u.params, c.params), I = f.stringify(R);
+      B = g.record.name, R = S({}, u.params, c.params), I = g.stringify(R);
     }
     const P = [];
-    let L = f;
+    let L = g;
     for (; L; )
       P.unshift(L.record), L = L.parent;
     return {
-      name: z,
+      name: B,
       path: I,
       params: R,
       matched: P,
@@ -716,7 +717,7 @@ function ia(t, e) {
   return {
     addRoute: p,
     resolve: h,
-    removeRoute: g,
+    removeRoute: f,
     clearRoutes: m,
     getRoutes: x,
     getRecordMatcher: n
@@ -778,20 +779,20 @@ function rr({ record: t }) {
   return !!(t.name || t.components && Object.keys(t.components).length || t.redirect);
 }
 function _e(t) {
-  const e = Bt(le), a = Bt(Ze), o = $(() => {
-    const l = B(t.to);
+  const e = zt(le), a = zt(Ze), o = $(() => {
+    const l = z(t.to);
     return e.resolve(l);
   }), n = $(() => {
     const { matched: l } = o.value, { length: h } = l, m = l[h - 1], c = a.matched;
     if (!m || !c.length) return -1;
     const u = c.findIndex(bt.bind(null, m));
     if (u > -1) return u;
-    const f = Ae(l[h - 2]);
-    return h > 1 && Ae(m) === f && c[c.length - 1].path !== f ? c.findIndex(bt.bind(null, l[h - 2])) : u;
-  }), p = $(() => n.value > -1 && fa(a.params, o.value.params)), g = $(() => n.value > -1 && n.value === a.matched.length - 1 && Xe(a.params, o.value.params));
+    const g = Ae(l[h - 2]);
+    return h > 1 && Ae(m) === g && c[c.length - 1].path !== g ? c.findIndex(bt.bind(null, l[h - 2])) : u;
+  }), p = $(() => n.value > -1 && ga(a.params, o.value.params)), f = $(() => n.value > -1 && n.value === a.matched.length - 1 && Xe(a.params, o.value.params));
   function x(l = {}) {
-    if (ga(l)) {
-      const h = e[B(t.replace) ? "replace" : "push"](B(t.to)).catch(Pt);
+    if (fa(l)) {
+      const h = e[z(t.replace) ? "replace" : "push"](z(t.to)).catch(Pt);
       return t.viewTransition && typeof document < "u" && "startViewTransition" in document && document.startViewTransition(() => h), h;
     }
     return Promise.resolve();
@@ -800,7 +801,7 @@ function _e(t) {
     route: o,
     href: $(() => o.value.href),
     isActive: p,
-    isExactActive: g,
+    isExactActive: f,
     navigate: x
   };
 }
@@ -827,13 +828,13 @@ const ua = /* @__PURE__ */ Ut({
   },
   useLink: _e,
   setup(t, { slots: e }) {
-    const a = ir(_e(t)), { options: o } = Bt(le), n = $(() => ({
+    const a = ir(_e(t)), { options: o } = zt(le), n = $(() => ({
       [Ee(t.activeClass, o.linkActiveClass, "router-link-active")]: a.isActive,
       [Ee(t.exactActiveClass, o.linkExactActiveClass, "router-link-exact-active")]: a.isExactActive
     }));
     return () => {
       const p = e.default && pa(e.default(a));
-      return t.custom ? p : zt("a", {
+      return t.custom ? p : Bt("a", {
         "aria-current": a.isExactActive ? t.ariaCurrentValue : null,
         href: a.href,
         onClick: a.navigate,
@@ -842,7 +843,7 @@ const ua = /* @__PURE__ */ Ut({
     };
   }
 }), ha = ua;
-function ga(t) {
+function fa(t) {
   if (!(t.metaKey || t.altKey || t.ctrlKey || t.shiftKey) && !t.defaultPrevented && !(t.button !== void 0 && t.button !== 0)) {
     if (t.currentTarget && t.currentTarget.getAttribute) {
       const e = t.currentTarget.getAttribute("target");
@@ -851,12 +852,12 @@ function ga(t) {
     return t.preventDefault && t.preventDefault(), !0;
   }
 }
-function fa(t, e) {
+function ga(t, e) {
   for (const a in e) {
     const o = e[a], n = t[a];
     if (typeof o == "string") {
       if (o !== n) return !1;
-    } else if (!J(n) || n.length !== o.length || o.some((p, g) => p.valueOf() !== n[g].valueOf())) return !1;
+    } else if (!J(n) || n.length !== o.length || o.some((p, f) => p.valueOf() !== n[f].valueOf())) return !1;
   }
   return !0;
 }
@@ -875,37 +876,37 @@ const Ee = (t, e, a) => t ?? e ?? a, ma = /* @__PURE__ */ Ut({
   },
   compatConfig: { MODE: 3 },
   setup(t, { attrs: e, slots: a }) {
-    const o = Bt(oe), n = $(() => t.route || o.value), p = Bt(he, 0), g = $(() => {
-      let h = B(p);
+    const o = zt(oe), n = $(() => t.route || o.value), p = zt(he, 0), f = $(() => {
+      let h = z(p);
       const { matched: m } = n.value;
       let c;
       for (; (c = m[h]) && !c.components; ) h++;
       return h;
-    }), x = $(() => n.value.matched[g.value]);
-    Zt(he, $(() => g.value + 1)), Zt(mr, x), Zt(oe, n);
+    }), x = $(() => n.value.matched[f.value]);
+    Zt(he, $(() => f.value + 1)), Zt(mr, x), Zt(oe, n);
     const l = mt();
     return sr(() => [
       l.value,
       x.value,
       t.name
-    ], ([h, m, c], [u, f, R]) => {
-      m && (m.instances[c] = h, f && f !== m && h && h === u && (m.leaveGuards.size || (m.leaveGuards = f.leaveGuards), m.updateGuards.size || (m.updateGuards = f.updateGuards))), h && m && (!f || !bt(m, f) || !u) && (m.enterCallbacks[c] || []).forEach((I) => I(h));
+    ], ([h, m, c], [u, g, R]) => {
+      m && (m.instances[c] = h, g && g !== m && h && h === u && (m.leaveGuards.size || (m.leaveGuards = g.leaveGuards), m.updateGuards.size || (m.updateGuards = g.updateGuards))), h && m && (!g || !bt(m, g) || !u) && (m.enterCallbacks[c] || []).forEach((I) => I(h));
     }, { flush: "post" }), () => {
       const h = n.value, m = t.name, c = x.value, u = c && c.components[m];
       if (!u) return Re(a.default, {
         Component: u,
         route: h
       });
-      const f = c.props[m], R = f ? f === !0 ? h.params : typeof f == "function" ? f(h) : f : null, z = zt(u, S({}, R, e, {
+      const g = c.props[m], R = g ? g === !0 ? h.params : typeof g == "function" ? g(h) : g : null, B = Bt(u, S({}, R, e, {
         onVnodeUnmounted: (P) => {
           P.component.isUnmounted && (c.instances[m] = null);
         },
         ref: l
       }));
       return Re(a.default, {
-        Component: z,
+        Component: B,
         route: h
-      }) || z;
+      }) || B;
     };
   }
 });
@@ -916,11 +917,11 @@ function Re(t, e) {
 }
 const va = ma;
 function xa(t) {
-  const e = ia(t.routes, t), a = t.parseQuery || Ur, o = t.stringifyQuery || ve, n = t.history, p = Lt(), g = Lt(), x = Lt(), l = or(at);
+  const e = ia(t.routes, t), a = t.parseQuery || Ur, o = t.stringifyQuery || ve, n = t.history, p = Lt(), f = Lt(), x = Lt(), l = or(at);
   let h = at;
   vt && t.scrollBehavior && "scrollRestoration" in history && (history.scrollRestoration = "manual");
   const m = Wt.bind(null, (s) => "" + s), c = Wt.bind(null, Mr), u = Wt.bind(null, $t);
-  function f(s, b) {
+  function g(s, b) {
     let v, y;
     return Je(s) ? (v = e.getRecordMatcher(s), y = b) : y = s, e.addRoute(y, v);
   }
@@ -931,7 +932,7 @@ function xa(t) {
   function I() {
     return e.getRoutes().map((s) => s.record);
   }
-  function z(s) {
+  function B(s) {
     return !!e.getRecordMatcher(s);
   }
   function P(s, b) {
@@ -1050,7 +1051,7 @@ function xa(t) {
       return v.push(M), ht(v);
     }).then(() => (s.matched.forEach((A) => A.enterCallbacks = {}), v = Yt(T, "beforeRouteEnter", s, b, wt), v.push(M), ht(v))).then(() => {
       v = [];
-      for (const A of g.list()) v.push(it(A, s, b));
+      for (const A of f.list()) v.push(it(A, s, b));
       return v.push(M), ht(v);
     }).catch((A) => rt(A, V.NAVIGATION_CANCELLED) ? A : Promise.reject(A));
   }
@@ -1109,10 +1110,10 @@ function xa(t) {
   const _t = /* @__PURE__ */ new Set(), At = {
     currentRoute: l,
     listening: !0,
-    addRoute: f,
+    addRoute: g,
     removeRoute: R,
     clearRoutes: e.clearRoutes,
-    hasRoute: z,
+    hasRoute: B,
     getRoutes: I,
     resolve: P,
     options: t,
@@ -1122,14 +1123,14 @@ function xa(t) {
     back: () => d(-1),
     forward: () => d(1),
     beforeEach: p.add,
-    beforeResolve: g.add,
+    beforeResolve: f.add,
     afterEach: x.add,
     onError: Ht.add,
     isReady: Z,
     install(s) {
       s.component("RouterLink", ha), s.component("RouterView", va), s.config.globalProperties.$router = At, Object.defineProperty(s.config.globalProperties, "$route", {
         enumerable: !0,
-        get: () => B(l)
+        get: () => z(l)
       }), vt && !w && l.value === at && (w = !0, F(n.location).catch((y) => {
       }));
       const b = {};
@@ -1195,18 +1196,18 @@ const Ea = ({
   "absolute-stroke-width": o,
   strokeWidth: n,
   "stroke-width": p,
-  size: g = Mt.width,
+  size: f = Mt.width,
   color: x = Mt.stroke,
   ...l
-}, { slots: h }) => zt(
+}, { slots: h }) => Bt(
   "svg",
   {
     ...Mt,
     ...l,
-    width: g,
-    height: g,
+    width: f,
+    height: f,
     stroke: x,
-    "stroke-width": Le(a) || Le(o) || a === !0 || o === !0 ? Number(n || p || Mt["stroke-width"]) * 24 / Number(g) : n || p || Mt["stroke-width"],
+    "stroke-width": Le(a) || Le(o) || a === !0 || o === !0 ? Number(n || p || Mt["stroke-width"]) * 24 / Number(f) : n || p || Mt["stroke-width"],
     class: Ca(
       "lucide",
       l.class,
@@ -1214,9 +1215,9 @@ const Ea = ({
     ),
     ...!h.default && !ka(l) && { "aria-hidden": "true" }
   },
-  [...e.map((m) => zt(...m)), ...h.default ? [h.default()] : []]
+  [...e.map((m) => Bt(...m)), ...h.default ? [h.default()] : []]
 );
-const U = (t, e) => (a, { slots: o, attrs: n }) => zt(
+const U = (t, e) => (a, { slots: o, attrs: n }) => Bt(
   Ea,
   {
     ...n,
@@ -1299,7 +1300,7 @@ const La = U("factory", [
   ],
   ["path", { d: "M8 16h.01", key: "18s6g9" }]
 ]);
-const ft = U("globe", [
+const gt = U("globe", [
   ["circle", { cx: "12", cy: "12", r: "10", key: "1mglay" }],
   ["path", { d: "M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20", key: "13o1zl" }],
   ["path", { d: "M2 12h20", key: "9i4pu4" }]
@@ -1320,7 +1321,7 @@ const te = U("search", [
   ["path", { d: "m21 21-4.34-4.34", key: "14j7rj" }],
   ["circle", { cx: "11", cy: "11", r: "8", key: "4ej97u" }]
 ]);
-const Be = U("shield", [
+const ze = U("shield", [
   [
     "path",
     {
@@ -1329,7 +1330,7 @@ const Be = U("shield", [
     }
   ]
 ]);
-const ze = U("trending-up", [
+const Be = U("trending-up", [
   ["path", { d: "M16 7h6v6", key: "box55l" }],
   ["path", { d: "m22 7-8.5 8.5-5-5L2 17", key: "1t1m79" }]
 ]);
@@ -1345,7 +1346,7 @@ const ee = U("zap", [
       key: "1xq2db"
     }
   ]
-]), Ve = "data:image/svg+xml,%3csvg%20xmlns='http://www.w3.org/2000/svg'%20width='857'%20height='443'%20viewBox='0%200%20857%20443'%20fill='none'%3e%3cpath%20d='M0.666656%204.53336C0.666656%208.6667%202.53332%2010%208.79999%2010C22.8%2010%2048.6667%2018.4%2061.0667%2026.9334C75.2%2036.5334%2083.4667%2047.3334%20100%2078C106%2089.0667%20112.533%20101.067%20127.733%20128.667C129.867%20132.667%20134.8%20141.733%20138.533%20148.667C142.4%20155.6%20151.067%20171.733%20158%20184.267L170.4%20207.333H204.267C226.667%20207.333%20238%20206.933%20238%20206C238%20204.267%20233.2%20194.533%20230%20190C228.8%20188.133%20224.533%20180.667%20220.667%20173.333C210.133%20153.733%20196.4%20128.4%20183.733%20105.333C176.4%2092%20149.067%2042.1334%20135.467%2017.3334L126.667%201.33336L63.7333%200.933363L0.666656%200.666697V4.53336Z'%20fill='black'/%3e%3cpath%20d='M417.467%205.20003C416.4%207.73336%20406%2028%20394.267%2050.2667C359.2%20116.8%20318.533%20194.267%20315.467%20200.267L312.667%20206H326.4H340.133L345.733%20194.933C348.8%20188.933%20353.733%20179.733%20356.533%20174.667C359.333%20169.467%20364.8%20159.333%20368.667%20152C376%20138%20403.467%2086.8%20415.6%2064.1334C419.467%2056.8%20423.333%2050.6667%20424.267%2050.4C426.533%2049.6%20427.867%20100.667%20426.933%20156.933L426.133%20206H454.133H482V130C482%2084.1334%20482.533%2054%20483.2%2054C483.867%2054%20495.467%2065.2%20508.933%2078.9334C522.4%2092.6667%20546.933%20117.733%20563.467%20134.533C580.133%20151.467%20602.933%20174.8%20614.133%20186.4L634.667%20207.333H671.067C691.733%20207.333%20707.333%20206.8%20707.067%20206.133C706.8%20205.2%20666.4%20163.6%20610%20106C606.667%20102.533%20582.133%2077.4667%20555.467%2050.2667L506.933%200.666697H463.2H419.333L417.467%205.20003Z'%20fill='black'/%3e%3cpath%20d='M710%204.66663V8.66663H720.4C742.8%208.79997%20758.933%2015.0666%20764.267%2026C769.467%2036.5333%20770%2045.8666%20770%20128.267V207.333L780%20207.6C785.467%20207.733%20791.067%20207.867%20792.4%20207.867C794.533%20208%20794.667%20202.8%20795.333%20122C796%2045.4666%20796.267%2035.3333%20798.267%2030.2666C800.933%2023.7333%20805.467%2019.2%20814%2014.8C822.133%2010.5333%20825.733%209.86663%20842%208.79997L856%207.99997L856.4%204.26663L856.8%200.666631H783.467H710V4.66663Z'%20fill='black'/%3e%3cpath%20d='M182.4%20229.067C185.6%20235.067%20195.333%20252.933%20204%20268.667C212.667%20284.4%20226.933%20310.267%20235.467%20326C244.133%20341.733%20251.867%20354.8%20252.667%20355.067C257.467%20356.667%20260.667%20353.733%20267.467%20341.067C271.333%20333.867%20276%20324.933%20278%20321.333C280%20317.6%20288.933%20300.8%20298%20284C306.933%20267.067%20314.8%20252.667%20315.333%20252C315.867%20251.2%20320%20243.6%20324.533%20234.933L332.8%20219.333H319.067H305.333L294%20240.933C287.867%20252.933%20281.867%20264.4%20280.667%20266.533C279.6%20268.8%20278%20270.667%20277.2%20270.933C275.333%20271.6%20270.4%20263.867%20257.333%20240C251.733%20229.733%20246.8%20220.933%20246.267%20220.533C245.733%20220%20229.867%20219.333%20210.933%20218.933L176.533%20218.267L182.4%20229.067Z'%20fill='black'/%3e%3cpath%20d='M770%20242C770%20260.933%20769.6%20266%20768.267%20266C767.333%20266%20756.133%20255.467%20743.333%20242.667L720.267%20219.333L683.867%20219.6L647.467%20220L666.4%20239.333C781.2%20356.8%20783.867%20359.333%20788.933%20360.933C791.733%20361.733%20794.267%20362.133%20794.667%20361.733C795.2%20361.333%20795.6%20274.933%20795.333%20223.6V218H782.667H770V242Z'%20fill='black'/%3e%3cpath%20d='M427.2%20247.6C427.2%20263.2%20426.667%20286.267%20426.133%20298.8C425.2%20320.267%20424.933%20322%20421.467%20327.733C414.8%20339.2%20405.6%20343.867%20385.333%20346C378.8%20346.667%20372.8%20347.333%20372%20347.333C368.8%20347.467%20367.2%20349.733%20368.133%20353.067L368.933%20356.667H452.8H536.667L537.467%20353.2C538%20351.333%20537.867%20349.333%20537.2%20348.667C536.533%20348%20529.867%20346.8%20522.4%20346.133C501.6%20344.267%20491.333%20338.667%20485.467%20326.133C482.8%20320.267%20482.667%20317.733%20482.267%20269.6L481.867%20219.333H454.533H427.333L427.2%20247.6Z'%20fill='black'/%3e%3cpath%20d='M60.1333%20254L59.0667%20278.667L38.8%20299.067C27.7333%20310.267%2018.5333%20320%2018.2667%20320.667C17.6%20322.267%2060.1333%20364.667%2062.4%20364.667C64.4%20364.667%20106%20323.2%20106%20321.067C106%20320.267%2097.0667%20310.667%2086.2667%20299.733L66.4%20280L64.9333%20267.333C64.1333%20260.4%2063.4667%20251.333%2063.3333%20247.333C63.2%20243.333%2062.6667%20237.6%2062.1333%20234.667C61.4667%20230.8%2060.8%20236.4%2060.1333%20254Z'%20fill='black'/%3e%3cpath%20d='M787.867%20370.667C787.333%20372.133%20783.067%20382.267%20778.4%20393.2C769.733%20413.733%20769.2%20415.333%20771.2%20415.333C771.867%20415.333%20774.933%20409.333%20778.133%20401.867C781.2%20394.533%20784.267%20388.267%20784.667%20388C785.2%20387.733%20788.133%20393.733%20791.333%20401.333L797.2%20415.333H803.067C809.733%20415.333%20809.733%20415.467%20802.933%20400.8C800.8%20396.133%20796.8%20386.8%20794%20380.133C789.867%20370.533%20788.667%20368.533%20787.867%20370.667Z'%20fill='black'/%3e%3cpath%20d='M26.6667%20371.867L32%20373.6L32.4%20394.4C32.8%20419.733%2035.3333%20423.333%2035.3333%20398.667C35.3333%20389.467%2035.8667%20382%2036.4%20382C36.9333%20382%2040.6667%20389.467%2044.6667%20398.667L51.7333%20415.333H57.4667C64.2667%20415.333%2064.6667%20417.333%2052.1333%20389.333L43.8667%20370.667L32.5333%20370.4C21.7333%20370.267%2021.4667%20370.267%2026.6667%20371.867Z'%20fill='black'/%3e%3cpath%20d='M86.4%20372.267C85.8667%20373.6%2082%20383.6%2077.7333%20394.533C70.8%20412.667%2069.3333%20418.133%2072.5333%20414.533C73.2%20413.867%2076.5333%20405.867%2080.1333%20396.667L86.6667%20380L87.0667%20397.6L87.4667%20415.333H93.3333H99.3333V394.667C99.3333%20377.733%2099.7333%20373.733%20101.333%20373.2C102.4%20372.8%20107.333%20372.267%20112.267%20372.267L121.2%20372L131.067%20388C136.4%20396.8%20142%20406.533%20143.467%20409.6C146%20414.933%20146.533%20415.333%20151.333%20415.333C155.867%20415.333%20156.667%20414.933%20156.667%20412.533C156.667%20410.933%20158.667%20406.4%20161.2%20402.267C163.6%20398%20168.533%20389.733%20172.133%20383.6C179.2%20371.6%20180.8%20370.533%20190.933%20371.733C200.8%20372.8%20201.333%20374%20201.733%20396C202%20406.667%20202.8%20415.333%20203.467%20415.333C204%20415.333%20204.8%20407.467%20204.933%20397.733L205.333%20380.133L218.533%20396.933C232.133%20414.133%20234.533%20416%20241.6%20414.133C244.667%20413.333%20244.133%20412.267%20227.733%20391.733L210.667%20370.133L186.667%20370.267C173.467%20370.4%20164.8%20370.667%20167.333%20370.933C169.867%20371.333%20172.533%20372%20173.2%20372.667C174.4%20373.867%20166.133%20390%20159.067%20400.4L155.2%20406.133L148.8%20396.4C134.8%20374.8%20134.133%20371.867%20142.933%20370.933C145.733%20370.667%20134.267%20370.4%20117.6%20370.267C89.7333%20370%2087.2%20370.133%2086.4%20372.267Z'%20fill='black'/%3e%3cpath%20d='M246%20370.933C253.867%20372%20254%20372.4%20254%20394.133C254%20421.333%20256.533%20420.4%20256.933%20392.933L257.333%20372L262.667%20371.2C265.867%20370.667%20262.667%20370.4%20254.667%20370.4C247.333%20370.4%20243.467%20370.667%20246%20370.933Z'%20fill='black'/%3e%3cpath%20d='M298.267%20389.333C293.733%20400%20289.6%20410.4%20289.2%20412.4C287.467%20419.6%20292%20412.533%20297.333%20399.6C300.133%20392.8%20302.8%20387.6%20303.2%20388C303.6%20388.4%20306.4%20394.267%20309.333%20401.067L314.667%20413.333L320.933%20413.733L327.2%20414.133L317.867%20393.2C312.8%20381.6%20308.267%20371.733%20307.6%20371.067C307.067%20370.533%20302.8%20378.667%20298.267%20389.333Z'%20fill='black'/%3e%3cpath%20d='M351.333%20371.067L356%20372L356.4%20392.933L356.8%20414H362.667H368.667V395.467C368.667%20385.2%20369.067%20376%20369.467%20374.8C370.133%20373.067%20372.4%20372.667%20381.2%20372.667C394%20372.667%20400.667%20375.2%20406.933%20382.4C411.733%20387.867%20413.2%20393.333%20413.2%20405.6L413.333%20414H419.6C426.933%20414%20428.133%20412%20426.667%20402.267C425.333%20392.933%20421.733%20385.867%20415.6%20380.4C406.933%20372.667%20399.867%20371.067%20371.333%20370.533C357.733%20370.4%20348.8%20370.667%20351.333%20371.067Z'%20fill='black'/%3e%3cpath%20d='M440%20370.933C442.133%20371.333%20444.4%20372.267%20444.933%20373.067C445.467%20374%20446%20383.467%20446%20394.267V414H452C458%20414%20458%20414%20458%20409.333V404.667H466.667C475.733%20404.667%20480.667%20407.333%20480.667%20412C480.667%20413.067%20481.333%20414%20482%20414C482.8%20414%20483.333%20408.8%20483.2%20400.933V388L481.2%20394.267C479.067%20401.333%20475.333%20403.333%20464.533%20403.333H458V387.6V372L473.067%20372.667C490.133%20373.467%20491.733%20374.133%20495.6%20383.067C497.067%20386.267%20498.4%20388.667%20498.667%20388.4C498.933%20388.133%20498.8%20384%20498.4%20378.933L497.6%20370L466.8%20370.133C449.867%20370.267%20437.733%20370.667%20440%20370.933Z'%20fill='black'/%3e%3cpath%20d='M517.333%20371.6C514.267%20381.067%20512.8%20393.2%20515.067%20390.533C515.733%20389.867%20516.933%20386.8%20517.867%20383.733C518.667%20380.667%20520.933%20376.933%20522.667%20375.6C526.533%20372.533%20539.333%20370.667%20547.2%20372L552.4%20372.8L547.867%20380.4C545.333%20384.533%20539.6%20393.6%20535.333%20400.533C530.933%20407.333%20527.333%20413.2%20527.333%20413.6C527.333%20413.867%20530.133%20414%20533.6%20413.733L540%20413.333L549.6%20398C554.933%20389.6%20560.8%20379.867%20562.667%20376.267L566.133%20370H542C523.867%20370%20517.733%20370.4%20517.333%20371.6Z'%20fill='black'/%3e%3cpath%20d='M578.667%20370.667C579.467%20370.933%20581.6%20371.467%20583.733%20371.867L587.333%20372.667V393.333V414H593.333H599.333V408.667V403.333H618H636.667V408.667V414H642.667H648.667V393.333V372.667L652.4%20371.867C654.4%20371.467%20656.667%20370.933%20657.333%20370.667C658.133%20370.4%20651.467%20370.267%20642.667%20370.267C633.867%20370.267%20627.333%20370.4%20628%20370.667C628.8%20370.933%20630.933%20371.467%20633.067%20371.867L636.667%20372.667V387.333V402H618H599.333V387.333V372.667L603.067%20371.867C605.067%20371.467%20607.333%20370.933%20608%20370.667C608.8%20370.4%20602.133%20370.267%20593.333%20370.267C584.533%20370.267%20578%20370.4%20578.667%20370.667Z'%20fill='black'/%3e%3cpath%20d='M670%20371.067L674.667%20372L675.067%20393.6L675.333%20415.333H681.333H687.2L687.6%20394.267L688%20373.333L698%20372.933C721.2%20372%20731.2%20381.467%20731.333%20404.4V415.467L737.733%20415.067L744%20414.667L744.4%20406.4C744.933%20395.733%20741.067%20386.4%20733.6%20379.867C724.933%20372.533%20718.133%20371.067%20690%20370.533C676.4%20370.4%20667.467%20370.533%20670%20371.067Z'%20fill='black'/%3e%3cpath%20d='M32.4%20428.933L32%20440L26.6667%20440.8C23.2%20441.333%2025.8667%20441.6%2034%20441.733C42.8%20441.733%2045.3333%20441.467%2042.2667%20440.667C39.8667%20440.133%2037.4667%20439.333%2037.0667%20438.8C36.6667%20438.4%2036%20433.6%2035.6%20428C35.3333%20422.533%2034.5333%20418%2033.8667%20418C33.3333%20418%2032.6667%20422.933%2032.4%20428.933Z'%20fill='black'/%3e%3cpath%20d='M54%20418.933C54%20421.6%2062.6667%20440.533%2063.4667%20439.733C65.0667%20438.133%2071.4667%20420.267%2070.6667%20419.6C70.4%20419.2%2069.2%20419.6%2068.1333%20420.533C66.6667%20421.733%2066.1333%20421.6%2065.4667%20420C65.0667%20418.667%2062.9333%20418%2059.3333%20418C56.4%20418%2054%20418.4%2054%20418.933Z'%20fill='black'/%3e%3cpath%20d='M88.2667%20418.8C87.7333%20419.333%2087.3333%20424.133%2087.3333%20429.467C87.3333%20440.133%2088.1333%20439.2%2078.6667%20441.067C77.2%20441.467%2084.1333%20441.733%2094%20441.6C104%20441.6%20109.333%20441.2%20106%20440.8L100%20440L99.3333%20429.333L98.6667%20418.667L94%20418.267C91.3333%20418%2088.8%20418.267%2088.2667%20418.8Z'%20fill='black'/%3e%3cpath%20d='M800.133%20422.933C803.2%20430.267%20806.133%20438.4%20805.733%20438.8C805.467%20438.933%20802%20439.6%20798%20440.4C791.733%20441.467%20793.6%20441.733%20810.667%20441.6C821.733%20441.6%20828.8%20441.333%20826.533%20441.067C821.467%20440.4%20819.6%20438.267%20815.333%20428.667C810.8%20418.4%20810.4%20418%20803.867%20418H798L800.133%20422.933Z'%20fill='black'/%3e%3cpath%20d='M145.6%20420.267C145.067%20420.667%20144.667%20425.067%20144.667%20430V438.8L139.733%20440.267C135.467%20441.467%20137.467%20441.6%20151.333%20441.6C160.533%20441.6%20166.267%20441.333%20164%20441.067C157.6%20440.133%20156.667%20438.533%20156.667%20428.533V419.333H151.6C148.8%20419.333%20146%20419.733%20145.6%20420.267Z'%20fill='black'/%3e%3cpath%20d='M202%20427.6C202%20437.867%20201.067%20439.467%20194.533%20440.667C190.8%20441.467%20193.067%20441.733%20202.667%20441.733C214.533%20441.733%20215.333%20441.467%20210.4%20440.267L204.667%20438.933V429.2C204.667%20423.467%20204.133%20419.333%20203.333%20419.333C202.533%20419.333%20202%20423.067%20202%20427.6Z'%20fill='black'/%3e%3cpath%20d='M238.267%20421.733C243.733%20429.333%20254.667%20442%20255.6%20442C256.133%20442%20256.667%20436.933%20256.667%20430.667C256.667%20420.533%20255.333%20416.267%20253.6%20420.933C253.067%20422.267%20252.667%20422.267%20251.2%20420.933C250.267%20420.133%20246.533%20419.333%20242.933%20419.333C237.067%20419.333%20236.667%20419.467%20238.267%20421.733Z'%20fill='black'/%3e%3cpath%20d='M281.333%20429.333C277.6%20437.467%20276.133%20439.467%20273.067%20440.133C266%20441.6%20266.667%20441.733%20280%20441.733C289.333%20441.733%20291.867%20441.467%20288.267%20440.667C285.6%20440.133%20282.933%20439.333%20282.533%20438.933C282%20438.533%20283.2%20434.133%20285.2%20429.333C289.2%20419.467%20289.2%20419.333%20287.2%20419.333C286.533%20419.333%20283.867%20423.867%20281.333%20429.333Z'%20fill='black'/%3e%3cpath%20d='M320.133%20428C321.867%20432.8%20323.333%20437.333%20323.333%20438C323.333%20438.667%20320.133%20439.733%20316.4%20440.4C306.4%20442.267%20382.667%20442.4%20393.867%20440.667C406.933%20438.533%20417.333%20432.267%20422.4%20423.467L424.8%20419.333H418.267C412.4%20419.333%20411.467%20419.733%20410.8%20422.533C409.6%20427.333%20403.733%20433.733%20397.867%20436.667C394%20438.667%20390%20439.333%20381.467%20439.333C368.533%20439.333%20368.667%20439.467%20368.667%20427.2V419.333H362.667H356.8L356.4%20429.6L356%20440L349.067%20440.4C345.2%20440.667%20341.067%20440.267%20339.733%20439.467C338.4%20438.8%20335.6%20434%20333.467%20428.8L329.467%20419.333H323.2H316.933L320.133%20428Z'%20fill='black'/%3e%3cpath%20d='M446%20428.533C446%20438.267%20445.067%20440%20439.333%20441.067C437.467%20441.333%20450.533%20441.733%20468.133%20441.867L500.4%20442L501.067%20434.267C501.867%20425.2%20500.133%20420.533%20498.8%20428C498.267%20430.667%20496.4%20434.4%20494.667%20436.133C491.6%20439.2%20490.533%20439.333%20474.933%20439.333H458.4L457.467%20435.2C457.067%20432.933%20456.667%20428.4%20456.667%20425.2V419.333H451.333H446V428.533Z'%20fill='black'/%3e%3cpath%20d='M517.2%20428.933C513.867%20434.267%20510.8%20439.333%20510.4%20440.267C509.867%20441.6%20515.2%20442%20537.733%20442C569.333%20442%20566.4%20443.067%20568%20430.667C568.4%20426.933%20569.067%20422.933%20569.467%20421.6C569.867%20420.4%20569.6%20419.333%20568.933%20419.333C568.267%20419.333%20566.933%20422%20566%20425.333C563.867%20432.933%20559.733%20437.333%20553.2%20439.2C547.333%20440.8%20525.2%20441.2%20524.267%20439.6C523.867%20439.067%20526.267%20434.8%20529.467%20430C532.533%20425.2%20535.2%20420.933%20535.333%20420.267C535.333%20419.733%20532.667%20419.333%20529.333%20419.333C523.467%20419.333%20523.467%20419.333%20517.2%20428.933Z'%20fill='black'/%3e%3cpath%20d='M587.333%20429.333C587.333%20439.067%20587.333%20439.333%20583.733%20440.133C581.6%20440.533%20579.467%20441.067%20578.667%20441.333C578%20441.6%20584.533%20441.733%20593.333%20441.733C606.4%20441.733%20608.4%20441.467%20604.4%20440.4L599.333%20439.067V429.2V419.333H593.333H587.333V429.333Z'%20fill='black'/%3e%3cpath%20d='M636.667%20429.333V439.2L632.4%20440.533C629.067%20441.467%20631.6%20441.733%20643.333%20441.733C658.533%20441.733%20659.333%20441.6%20652.4%20440.133C648.667%20439.333%20648.667%20439.067%20648.667%20429.333V419.333H642.667H636.667V429.333Z'%20fill='black'/%3e%3cpath%20d='M675.333%20429.333C675.333%20439.067%20675.333%20439.333%20671.733%20440.133C669.6%20440.533%20667.467%20441.2%20666.667%20441.467C666%20441.733%20676.4%20441.733%20690%20441.467C716.533%20441.067%20721.733%20440%20731.733%20433.067C736%20430%20742%20422.667%20742%20420.133C742%20419.733%20739.333%20419.333%20736.133%20419.333C731.067%20419.333%20730%20419.867%20729.333%20422.267C727.6%20427.867%20721.6%20434.267%20715.867%20436.933C711.333%20438.933%20707.6%20439.333%20699.067%20439.067L688%20438.667L687.6%20428.933L687.2%20419.333H681.333H675.333V429.333Z'%20fill='black'/%3e%3cpath%20d='M763.333%20429.333C760.133%20436.533%20758.133%20439.6%20756.133%20440C754.533%20440.267%20752.133%20440.8%20750.667%20441.067C749.2%20441.467%20754.267%20441.733%20762%20441.6C770.4%20441.6%20773.867%20441.333%20770.667%20440.8C764%20439.733%20763.6%20437.867%20767.733%20427.467C772.667%20415.333%20768.667%20417.067%20763.333%20429.333Z'%20fill='black'/%3e%3c/svg%3e", Na = { class: "min-h-screen bg-background text-foreground font-sans" }, Ia = { class: "container mx-auto px-4 md:px-6 flex items-center justify-between" }, Sa = ["src"], Pa = { class: "hidden md:flex items-center gap-4" }, Ba = { class: "rounded-full font-semibold shadow-md px-6 py-2.5 bg-primary text-primary-foreground hover:bg-primary/90 transition-colors" }, za = ["href"], Oa = { class: "rounded-full font-semibold shadow-md px-6 py-2.5 bg-primary text-primary-foreground hover:bg-primary/90 transition-colors" }, Va = ["href"], Ha = {
+]), Ve = "data:image/svg+xml,%3csvg%20xmlns='http://www.w3.org/2000/svg'%20width='857'%20height='443'%20viewBox='0%200%20857%20443'%20fill='none'%3e%3cpath%20d='M0.666656%204.53336C0.666656%208.6667%202.53332%2010%208.79999%2010C22.8%2010%2048.6667%2018.4%2061.0667%2026.9334C75.2%2036.5334%2083.4667%2047.3334%20100%2078C106%2089.0667%20112.533%20101.067%20127.733%20128.667C129.867%20132.667%20134.8%20141.733%20138.533%20148.667C142.4%20155.6%20151.067%20171.733%20158%20184.267L170.4%20207.333H204.267C226.667%20207.333%20238%20206.933%20238%20206C238%20204.267%20233.2%20194.533%20230%20190C228.8%20188.133%20224.533%20180.667%20220.667%20173.333C210.133%20153.733%20196.4%20128.4%20183.733%20105.333C176.4%2092%20149.067%2042.1334%20135.467%2017.3334L126.667%201.33336L63.7333%200.933363L0.666656%200.666697V4.53336Z'%20fill='black'/%3e%3cpath%20d='M417.467%205.20003C416.4%207.73336%20406%2028%20394.267%2050.2667C359.2%20116.8%20318.533%20194.267%20315.467%20200.267L312.667%20206H326.4H340.133L345.733%20194.933C348.8%20188.933%20353.733%20179.733%20356.533%20174.667C359.333%20169.467%20364.8%20159.333%20368.667%20152C376%20138%20403.467%2086.8%20415.6%2064.1334C419.467%2056.8%20423.333%2050.6667%20424.267%2050.4C426.533%2049.6%20427.867%20100.667%20426.933%20156.933L426.133%20206H454.133H482V130C482%2084.1334%20482.533%2054%20483.2%2054C483.867%2054%20495.467%2065.2%20508.933%2078.9334C522.4%2092.6667%20546.933%20117.733%20563.467%20134.533C580.133%20151.467%20602.933%20174.8%20614.133%20186.4L634.667%20207.333H671.067C691.733%20207.333%20707.333%20206.8%20707.067%20206.133C706.8%20205.2%20666.4%20163.6%20610%20106C606.667%20102.533%20582.133%2077.4667%20555.467%2050.2667L506.933%200.666697H463.2H419.333L417.467%205.20003Z'%20fill='black'/%3e%3cpath%20d='M710%204.66663V8.66663H720.4C742.8%208.79997%20758.933%2015.0666%20764.267%2026C769.467%2036.5333%20770%2045.8666%20770%20128.267V207.333L780%20207.6C785.467%20207.733%20791.067%20207.867%20792.4%20207.867C794.533%20208%20794.667%20202.8%20795.333%20122C796%2045.4666%20796.267%2035.3333%20798.267%2030.2666C800.933%2023.7333%20805.467%2019.2%20814%2014.8C822.133%2010.5333%20825.733%209.86663%20842%208.79997L856%207.99997L856.4%204.26663L856.8%200.666631H783.467H710V4.66663Z'%20fill='black'/%3e%3cpath%20d='M182.4%20229.067C185.6%20235.067%20195.333%20252.933%20204%20268.667C212.667%20284.4%20226.933%20310.267%20235.467%20326C244.133%20341.733%20251.867%20354.8%20252.667%20355.067C257.467%20356.667%20260.667%20353.733%20267.467%20341.067C271.333%20333.867%20276%20324.933%20278%20321.333C280%20317.6%20288.933%20300.8%20298%20284C306.933%20267.067%20314.8%20252.667%20315.333%20252C315.867%20251.2%20320%20243.6%20324.533%20234.933L332.8%20219.333H319.067H305.333L294%20240.933C287.867%20252.933%20281.867%20264.4%20280.667%20266.533C279.6%20268.8%20278%20270.667%20277.2%20270.933C275.333%20271.6%20270.4%20263.867%20257.333%20240C251.733%20229.733%20246.8%20220.933%20246.267%20220.533C245.733%20220%20229.867%20219.333%20210.933%20218.933L176.533%20218.267L182.4%20229.067Z'%20fill='black'/%3e%3cpath%20d='M770%20242C770%20260.933%20769.6%20266%20768.267%20266C767.333%20266%20756.133%20255.467%20743.333%20242.667L720.267%20219.333L683.867%20219.6L647.467%20220L666.4%20239.333C781.2%20356.8%20783.867%20359.333%20788.933%20360.933C791.733%20361.733%20794.267%20362.133%20794.667%20361.733C795.2%20361.333%20795.6%20274.933%20795.333%20223.6V218H782.667H770V242Z'%20fill='black'/%3e%3cpath%20d='M427.2%20247.6C427.2%20263.2%20426.667%20286.267%20426.133%20298.8C425.2%20320.267%20424.933%20322%20421.467%20327.733C414.8%20339.2%20405.6%20343.867%20385.333%20346C378.8%20346.667%20372.8%20347.333%20372%20347.333C368.8%20347.467%20367.2%20349.733%20368.133%20353.067L368.933%20356.667H452.8H536.667L537.467%20353.2C538%20351.333%20537.867%20349.333%20537.2%20348.667C536.533%20348%20529.867%20346.8%20522.4%20346.133C501.6%20344.267%20491.333%20338.667%20485.467%20326.133C482.8%20320.267%20482.667%20317.733%20482.267%20269.6L481.867%20219.333H454.533H427.333L427.2%20247.6Z'%20fill='black'/%3e%3cpath%20d='M60.1333%20254L59.0667%20278.667L38.8%20299.067C27.7333%20310.267%2018.5333%20320%2018.2667%20320.667C17.6%20322.267%2060.1333%20364.667%2062.4%20364.667C64.4%20364.667%20106%20323.2%20106%20321.067C106%20320.267%2097.0667%20310.667%2086.2667%20299.733L66.4%20280L64.9333%20267.333C64.1333%20260.4%2063.4667%20251.333%2063.3333%20247.333C63.2%20243.333%2062.6667%20237.6%2062.1333%20234.667C61.4667%20230.8%2060.8%20236.4%2060.1333%20254Z'%20fill='black'/%3e%3cpath%20d='M787.867%20370.667C787.333%20372.133%20783.067%20382.267%20778.4%20393.2C769.733%20413.733%20769.2%20415.333%20771.2%20415.333C771.867%20415.333%20774.933%20409.333%20778.133%20401.867C781.2%20394.533%20784.267%20388.267%20784.667%20388C785.2%20387.733%20788.133%20393.733%20791.333%20401.333L797.2%20415.333H803.067C809.733%20415.333%20809.733%20415.467%20802.933%20400.8C800.8%20396.133%20796.8%20386.8%20794%20380.133C789.867%20370.533%20788.667%20368.533%20787.867%20370.667Z'%20fill='black'/%3e%3cpath%20d='M26.6667%20371.867L32%20373.6L32.4%20394.4C32.8%20419.733%2035.3333%20423.333%2035.3333%20398.667C35.3333%20389.467%2035.8667%20382%2036.4%20382C36.9333%20382%2040.6667%20389.467%2044.6667%20398.667L51.7333%20415.333H57.4667C64.2667%20415.333%2064.6667%20417.333%2052.1333%20389.333L43.8667%20370.667L32.5333%20370.4C21.7333%20370.267%2021.4667%20370.267%2026.6667%20371.867Z'%20fill='black'/%3e%3cpath%20d='M86.4%20372.267C85.8667%20373.6%2082%20383.6%2077.7333%20394.533C70.8%20412.667%2069.3333%20418.133%2072.5333%20414.533C73.2%20413.867%2076.5333%20405.867%2080.1333%20396.667L86.6667%20380L87.0667%20397.6L87.4667%20415.333H93.3333H99.3333V394.667C99.3333%20377.733%2099.7333%20373.733%20101.333%20373.2C102.4%20372.8%20107.333%20372.267%20112.267%20372.267L121.2%20372L131.067%20388C136.4%20396.8%20142%20406.533%20143.467%20409.6C146%20414.933%20146.533%20415.333%20151.333%20415.333C155.867%20415.333%20156.667%20414.933%20156.667%20412.533C156.667%20410.933%20158.667%20406.4%20161.2%20402.267C163.6%20398%20168.533%20389.733%20172.133%20383.6C179.2%20371.6%20180.8%20370.533%20190.933%20371.733C200.8%20372.8%20201.333%20374%20201.733%20396C202%20406.667%20202.8%20415.333%20203.467%20415.333C204%20415.333%20204.8%20407.467%20204.933%20397.733L205.333%20380.133L218.533%20396.933C232.133%20414.133%20234.533%20416%20241.6%20414.133C244.667%20413.333%20244.133%20412.267%20227.733%20391.733L210.667%20370.133L186.667%20370.267C173.467%20370.4%20164.8%20370.667%20167.333%20370.933C169.867%20371.333%20172.533%20372%20173.2%20372.667C174.4%20373.867%20166.133%20390%20159.067%20400.4L155.2%20406.133L148.8%20396.4C134.8%20374.8%20134.133%20371.867%20142.933%20370.933C145.733%20370.667%20134.267%20370.4%20117.6%20370.267C89.7333%20370%2087.2%20370.133%2086.4%20372.267Z'%20fill='black'/%3e%3cpath%20d='M246%20370.933C253.867%20372%20254%20372.4%20254%20394.133C254%20421.333%20256.533%20420.4%20256.933%20392.933L257.333%20372L262.667%20371.2C265.867%20370.667%20262.667%20370.4%20254.667%20370.4C247.333%20370.4%20243.467%20370.667%20246%20370.933Z'%20fill='black'/%3e%3cpath%20d='M298.267%20389.333C293.733%20400%20289.6%20410.4%20289.2%20412.4C287.467%20419.6%20292%20412.533%20297.333%20399.6C300.133%20392.8%20302.8%20387.6%20303.2%20388C303.6%20388.4%20306.4%20394.267%20309.333%20401.067L314.667%20413.333L320.933%20413.733L327.2%20414.133L317.867%20393.2C312.8%20381.6%20308.267%20371.733%20307.6%20371.067C307.067%20370.533%20302.8%20378.667%20298.267%20389.333Z'%20fill='black'/%3e%3cpath%20d='M351.333%20371.067L356%20372L356.4%20392.933L356.8%20414H362.667H368.667V395.467C368.667%20385.2%20369.067%20376%20369.467%20374.8C370.133%20373.067%20372.4%20372.667%20381.2%20372.667C394%20372.667%20400.667%20375.2%20406.933%20382.4C411.733%20387.867%20413.2%20393.333%20413.2%20405.6L413.333%20414H419.6C426.933%20414%20428.133%20412%20426.667%20402.267C425.333%20392.933%20421.733%20385.867%20415.6%20380.4C406.933%20372.667%20399.867%20371.067%20371.333%20370.533C357.733%20370.4%20348.8%20370.667%20351.333%20371.067Z'%20fill='black'/%3e%3cpath%20d='M440%20370.933C442.133%20371.333%20444.4%20372.267%20444.933%20373.067C445.467%20374%20446%20383.467%20446%20394.267V414H452C458%20414%20458%20414%20458%20409.333V404.667H466.667C475.733%20404.667%20480.667%20407.333%20480.667%20412C480.667%20413.067%20481.333%20414%20482%20414C482.8%20414%20483.333%20408.8%20483.2%20400.933V388L481.2%20394.267C479.067%20401.333%20475.333%20403.333%20464.533%20403.333H458V387.6V372L473.067%20372.667C490.133%20373.467%20491.733%20374.133%20495.6%20383.067C497.067%20386.267%20498.4%20388.667%20498.667%20388.4C498.933%20388.133%20498.8%20384%20498.4%20378.933L497.6%20370L466.8%20370.133C449.867%20370.267%20437.733%20370.667%20440%20370.933Z'%20fill='black'/%3e%3cpath%20d='M517.333%20371.6C514.267%20381.067%20512.8%20393.2%20515.067%20390.533C515.733%20389.867%20516.933%20386.8%20517.867%20383.733C518.667%20380.667%20520.933%20376.933%20522.667%20375.6C526.533%20372.533%20539.333%20370.667%20547.2%20372L552.4%20372.8L547.867%20380.4C545.333%20384.533%20539.6%20393.6%20535.333%20400.533C530.933%20407.333%20527.333%20413.2%20527.333%20413.6C527.333%20413.867%20530.133%20414%20533.6%20413.733L540%20413.333L549.6%20398C554.933%20389.6%20560.8%20379.867%20562.667%20376.267L566.133%20370H542C523.867%20370%20517.733%20370.4%20517.333%20371.6Z'%20fill='black'/%3e%3cpath%20d='M578.667%20370.667C579.467%20370.933%20581.6%20371.467%20583.733%20371.867L587.333%20372.667V393.333V414H593.333H599.333V408.667V403.333H618H636.667V408.667V414H642.667H648.667V393.333V372.667L652.4%20371.867C654.4%20371.467%20656.667%20370.933%20657.333%20370.667C658.133%20370.4%20651.467%20370.267%20642.667%20370.267C633.867%20370.267%20627.333%20370.4%20628%20370.667C628.8%20370.933%20630.933%20371.467%20633.067%20371.867L636.667%20372.667V387.333V402H618H599.333V387.333V372.667L603.067%20371.867C605.067%20371.467%20607.333%20370.933%20608%20370.667C608.8%20370.4%20602.133%20370.267%20593.333%20370.267C584.533%20370.267%20578%20370.4%20578.667%20370.667Z'%20fill='black'/%3e%3cpath%20d='M670%20371.067L674.667%20372L675.067%20393.6L675.333%20415.333H681.333H687.2L687.6%20394.267L688%20373.333L698%20372.933C721.2%20372%20731.2%20381.467%20731.333%20404.4V415.467L737.733%20415.067L744%20414.667L744.4%20406.4C744.933%20395.733%20741.067%20386.4%20733.6%20379.867C724.933%20372.533%20718.133%20371.067%20690%20370.533C676.4%20370.4%20667.467%20370.533%20670%20371.067Z'%20fill='black'/%3e%3cpath%20d='M32.4%20428.933L32%20440L26.6667%20440.8C23.2%20441.333%2025.8667%20441.6%2034%20441.733C42.8%20441.733%2045.3333%20441.467%2042.2667%20440.667C39.8667%20440.133%2037.4667%20439.333%2037.0667%20438.8C36.6667%20438.4%2036%20433.6%2035.6%20428C35.3333%20422.533%2034.5333%20418%2033.8667%20418C33.3333%20418%2032.6667%20422.933%2032.4%20428.933Z'%20fill='black'/%3e%3cpath%20d='M54%20418.933C54%20421.6%2062.6667%20440.533%2063.4667%20439.733C65.0667%20438.133%2071.4667%20420.267%2070.6667%20419.6C70.4%20419.2%2069.2%20419.6%2068.1333%20420.533C66.6667%20421.733%2066.1333%20421.6%2065.4667%20420C65.0667%20418.667%2062.9333%20418%2059.3333%20418C56.4%20418%2054%20418.4%2054%20418.933Z'%20fill='black'/%3e%3cpath%20d='M88.2667%20418.8C87.7333%20419.333%2087.3333%20424.133%2087.3333%20429.467C87.3333%20440.133%2088.1333%20439.2%2078.6667%20441.067C77.2%20441.467%2084.1333%20441.733%2094%20441.6C104%20441.6%20109.333%20441.2%20106%20440.8L100%20440L99.3333%20429.333L98.6667%20418.667L94%20418.267C91.3333%20418%2088.8%20418.267%2088.2667%20418.8Z'%20fill='black'/%3e%3cpath%20d='M800.133%20422.933C803.2%20430.267%20806.133%20438.4%20805.733%20438.8C805.467%20438.933%20802%20439.6%20798%20440.4C791.733%20441.467%20793.6%20441.733%20810.667%20441.6C821.733%20441.6%20828.8%20441.333%20826.533%20441.067C821.467%20440.4%20819.6%20438.267%20815.333%20428.667C810.8%20418.4%20810.4%20418%20803.867%20418H798L800.133%20422.933Z'%20fill='black'/%3e%3cpath%20d='M145.6%20420.267C145.067%20420.667%20144.667%20425.067%20144.667%20430V438.8L139.733%20440.267C135.467%20441.467%20137.467%20441.6%20151.333%20441.6C160.533%20441.6%20166.267%20441.333%20164%20441.067C157.6%20440.133%20156.667%20438.533%20156.667%20428.533V419.333H151.6C148.8%20419.333%20146%20419.733%20145.6%20420.267Z'%20fill='black'/%3e%3cpath%20d='M202%20427.6C202%20437.867%20201.067%20439.467%20194.533%20440.667C190.8%20441.467%20193.067%20441.733%20202.667%20441.733C214.533%20441.733%20215.333%20441.467%20210.4%20440.267L204.667%20438.933V429.2C204.667%20423.467%20204.133%20419.333%20203.333%20419.333C202.533%20419.333%20202%20423.067%20202%20427.6Z'%20fill='black'/%3e%3cpath%20d='M238.267%20421.733C243.733%20429.333%20254.667%20442%20255.6%20442C256.133%20442%20256.667%20436.933%20256.667%20430.667C256.667%20420.533%20255.333%20416.267%20253.6%20420.933C253.067%20422.267%20252.667%20422.267%20251.2%20420.933C250.267%20420.133%20246.533%20419.333%20242.933%20419.333C237.067%20419.333%20236.667%20419.467%20238.267%20421.733Z'%20fill='black'/%3e%3cpath%20d='M281.333%20429.333C277.6%20437.467%20276.133%20439.467%20273.067%20440.133C266%20441.6%20266.667%20441.733%20280%20441.733C289.333%20441.733%20291.867%20441.467%20288.267%20440.667C285.6%20440.133%20282.933%20439.333%20282.533%20438.933C282%20438.533%20283.2%20434.133%20285.2%20429.333C289.2%20419.467%20289.2%20419.333%20287.2%20419.333C286.533%20419.333%20283.867%20423.867%20281.333%20429.333Z'%20fill='black'/%3e%3cpath%20d='M320.133%20428C321.867%20432.8%20323.333%20437.333%20323.333%20438C323.333%20438.667%20320.133%20439.733%20316.4%20440.4C306.4%20442.267%20382.667%20442.4%20393.867%20440.667C406.933%20438.533%20417.333%20432.267%20422.4%20423.467L424.8%20419.333H418.267C412.4%20419.333%20411.467%20419.733%20410.8%20422.533C409.6%20427.333%20403.733%20433.733%20397.867%20436.667C394%20438.667%20390%20439.333%20381.467%20439.333C368.533%20439.333%20368.667%20439.467%20368.667%20427.2V419.333H362.667H356.8L356.4%20429.6L356%20440L349.067%20440.4C345.2%20440.667%20341.067%20440.267%20339.733%20439.467C338.4%20438.8%20335.6%20434%20333.467%20428.8L329.467%20419.333H323.2H316.933L320.133%20428Z'%20fill='black'/%3e%3cpath%20d='M446%20428.533C446%20438.267%20445.067%20440%20439.333%20441.067C437.467%20441.333%20450.533%20441.733%20468.133%20441.867L500.4%20442L501.067%20434.267C501.867%20425.2%20500.133%20420.533%20498.8%20428C498.267%20430.667%20496.4%20434.4%20494.667%20436.133C491.6%20439.2%20490.533%20439.333%20474.933%20439.333H458.4L457.467%20435.2C457.067%20432.933%20456.667%20428.4%20456.667%20425.2V419.333H451.333H446V428.533Z'%20fill='black'/%3e%3cpath%20d='M517.2%20428.933C513.867%20434.267%20510.8%20439.333%20510.4%20440.267C509.867%20441.6%20515.2%20442%20537.733%20442C569.333%20442%20566.4%20443.067%20568%20430.667C568.4%20426.933%20569.067%20422.933%20569.467%20421.6C569.867%20420.4%20569.6%20419.333%20568.933%20419.333C568.267%20419.333%20566.933%20422%20566%20425.333C563.867%20432.933%20559.733%20437.333%20553.2%20439.2C547.333%20440.8%20525.2%20441.2%20524.267%20439.6C523.867%20439.067%20526.267%20434.8%20529.467%20430C532.533%20425.2%20535.2%20420.933%20535.333%20420.267C535.333%20419.733%20532.667%20419.333%20529.333%20419.333C523.467%20419.333%20523.467%20419.333%20517.2%20428.933Z'%20fill='black'/%3e%3cpath%20d='M587.333%20429.333C587.333%20439.067%20587.333%20439.333%20583.733%20440.133C581.6%20440.533%20579.467%20441.067%20578.667%20441.333C578%20441.6%20584.533%20441.733%20593.333%20441.733C606.4%20441.733%20608.4%20441.467%20604.4%20440.4L599.333%20439.067V429.2V419.333H593.333H587.333V429.333Z'%20fill='black'/%3e%3cpath%20d='M636.667%20429.333V439.2L632.4%20440.533C629.067%20441.467%20631.6%20441.733%20643.333%20441.733C658.533%20441.733%20659.333%20441.6%20652.4%20440.133C648.667%20439.333%20648.667%20439.067%20648.667%20429.333V419.333H642.667H636.667V429.333Z'%20fill='black'/%3e%3cpath%20d='M675.333%20429.333C675.333%20439.067%20675.333%20439.333%20671.733%20440.133C669.6%20440.533%20667.467%20441.2%20666.667%20441.467C666%20441.733%20676.4%20441.733%20690%20441.467C716.533%20441.067%20721.733%20440%20731.733%20433.067C736%20430%20742%20422.667%20742%20420.133C742%20419.733%20739.333%20419.333%20736.133%20419.333C731.067%20419.333%20730%20419.867%20729.333%20422.267C727.6%20427.867%20721.6%20434.267%20715.867%20436.933C711.333%20438.933%20707.6%20439.333%20699.067%20439.067L688%20438.667L687.6%20428.933L687.2%20419.333H681.333H675.333V429.333Z'%20fill='black'/%3e%3cpath%20d='M763.333%20429.333C760.133%20436.533%20758.133%20439.6%20756.133%20440C754.533%20440.267%20752.133%20440.8%20750.667%20441.067C749.2%20441.467%20754.267%20441.733%20762%20441.6C770.4%20441.6%20773.867%20441.333%20770.667%20440.8C764%20439.733%20763.6%20437.867%20767.733%20427.467C772.667%20415.333%20768.667%20417.067%20763.333%20429.333Z'%20fill='black'/%3e%3c/svg%3e", Na = { class: "min-h-screen bg-background text-foreground font-sans" }, Ia = { class: "container mx-auto px-4 md:px-6 flex items-center justify-between" }, Sa = ["src"], Pa = { class: "hidden md:flex items-center gap-4" }, za = { class: "rounded-full font-semibold shadow-md px-6 py-2.5 bg-primary text-primary-foreground hover:bg-primary/90 transition-colors" }, Ba = ["href"], Oa = { class: "rounded-full font-semibold shadow-md px-6 py-2.5 bg-primary text-primary-foreground hover:bg-primary/90 transition-colors" }, Va = ["href"], Ha = {
   key: 0,
   class: "md:hidden absolute top-full left-0 w-full bg-white border-b border-border shadow-lg p-4 flex flex-col gap-4"
 }, Ta = { class: "rounded-full font-semibold shadow-md px-6 py-2.5 bg-primary text-primary-foreground hover:bg-primary/90 transition-colors" }, ja = ["href"], Da = { class: "w-full rounded-full mt-2 font-semibold py-3 bg-primary text-primary-foreground hover:bg-primary/90 transition-colors" }, Ga = ["href"], $a = { class: "relative h-screen w-full overflow-hidden bg-black" }, Ua = ["src", "alt"], Fa = { class: "relative z-20 h-full flex items-center pt-20" }, Za = { class: "container mx-auto px-4 md:px-6" }, qa = { class: "max-w-4xl" }, Wa = { class: "rounded-full h-14 px-8 text-base font-semibold shadow-xl bg-primary text-primary-foreground hover:bg-primary/90 transition-colors inline-flex items-center gap-2" }, Ka = ["href"], Qa = { class: "absolute bottom-10 left-0 w-full z-20" }, Ya = { class: "container mx-auto px-4 md:px-6 flex gap-3" }, Xa = ["onClick", "aria-label"], Ja = { class: "py-24 bg-white border-b border-border" }, to = { class: "container mx-auto px-4 md:px-6" }, eo = {
@@ -1354,13 +1355,13 @@ const ee = U("zap", [
 }, ro = { class: "grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6" }, ao = { class: "h-12 w-12 rounded-full bg-white flex items-center justify-center border border-border shadow-sm mb-6 group-hover:scale-110 transition-transform" }, oo = { class: "text-lg font-bold mb-2" }, no = { class: "text-muted-foreground" }, io = {
   id: "about",
   class: "py-24 bg-card/50 relative overflow-hidden"
-}, so = { class: "container mx-auto px-4 md:px-6 relative z-10" }, lo = { class: "flex flex-col lg:flex-row gap-16 items-center" }, co = { class: "lg:w-1/2" }, po = { class: "space-y-4" }, uo = { class: "mt-1 h-5 w-5 rounded-full bg-primary/10 flex items-center justify-center flex-shrink-0" }, ho = { class: "font-medium text-foreground/80" }, go = { class: "lg:w-1/2 w-full" }, fo = { class: "relative rounded-2xl overflow-hidden shadow-2xl bg-white border border-border p-8" }, mo = { class: "flex flex-col gap-6" }, vo = { class: "flex justify-center" }, xo = { class: "px-6 py-3 rounded-xl bg-card border border-border shadow-sm flex items-center gap-3" }, bo = { class: "flex justify-center text-muted-foreground" }, wo = { class: "p-6 rounded-2xl bg-primary text-primary-foreground shadow-lg flex items-center gap-4" }, yo = { class: "h-12 w-12 rounded-full bg-white/10 flex items-center justify-center flex-shrink-0" }, ko = { class: "flex justify-between px-10 text-muted-foreground" }, Co = { class: "flex gap-4" }, _o = { class: "flex-1 px-4 py-4 rounded-xl bg-card border border-border shadow-sm flex flex-col items-center text-center" }, Ao = { class: "flex-1 px-4 py-4 rounded-xl bg-card border border-border shadow-sm flex flex-col items-center text-center" }, Eo = {
+}, so = { class: "container mx-auto px-4 md:px-6 relative z-10" }, lo = { class: "flex flex-col lg:flex-row gap-16 items-center" }, co = { class: "lg:w-1/2" }, po = { class: "space-y-4" }, uo = { class: "mt-1 h-5 w-5 rounded-full bg-primary/10 flex items-center justify-center flex-shrink-0" }, ho = { class: "font-medium text-foreground/80" }, fo = { class: "lg:w-1/2 w-full" }, go = { class: "relative rounded-2xl overflow-hidden shadow-2xl bg-white border border-border p-8" }, mo = { class: "flex flex-col gap-6" }, vo = { class: "flex justify-center" }, xo = { class: "px-6 py-3 rounded-xl bg-card border border-border shadow-sm flex items-center gap-3" }, bo = { class: "flex justify-center text-muted-foreground" }, wo = { class: "p-6 rounded-2xl bg-primary text-primary-foreground shadow-lg flex items-center gap-4" }, yo = { class: "h-12 w-12 rounded-full bg-white/10 flex items-center justify-center flex-shrink-0" }, ko = { class: "flex justify-between px-10 text-muted-foreground" }, Co = { class: "flex gap-4" }, _o = { class: "flex-1 px-4 py-4 rounded-xl bg-card border border-border shadow-sm flex flex-col items-center text-center" }, Ao = { class: "flex-1 px-4 py-4 rounded-xl bg-card border border-border shadow-sm flex flex-col items-center text-center" }, Eo = {
   id: "model",
   class: "py-24 bg-white"
 }, Ro = { class: "container mx-auto px-4 md:px-6" }, Lo = { class: "grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6" }, Mo = { class: "font-bold text-lg mb-1" }, No = { class: "text-muted-foreground text-sm mb-3" }, Io = { class: "text-sm text-muted-foreground" }, So = {
   id: "features",
   class: "py-24 bg-primary text-primary-foreground relative overflow-hidden"
-}, Po = { class: "container mx-auto px-4 md:px-6 relative z-10" }, Bo = { class: "flex flex-col md:flex-row justify-between items-end mb-16 gap-6" }, zo = {
+}, Po = { class: "container mx-auto px-4 md:px-6 relative z-10" }, zo = { class: "flex flex-col md:flex-row justify-between items-end mb-16 gap-6" }, Bo = {
   key: 0,
   class: "rounded-full px-6 py-2.5 bg-transparent text-white border border-white/20 hover:bg-white/10 transition-colors font-medium"
 }, Oo = { class: "grid grid-cols-1 md:grid-cols-2 gap-8" }, Vo = { class: "h-12 w-12 rounded-full bg-white/10 flex items-center justify-center mb-6" }, Ho = { class: "text-2xl font-bold mb-3" }, To = { class: "text-primary-foreground/70 leading-relaxed" }, jo = { class: "py-24 bg-card/30" }, Do = { class: "container mx-auto px-4 md:px-6" }, Go = { class: "max-w-4xl mx-auto" }, $o = { class: "space-y-12 relative before:absolute before:inset-0 before:ml-5 before:-translate-x-px md:before:mx-auto md:before:translate-x-0 before:h-full before:w-0.5 before:bg-gradient-to-b before:from-transparent before:via-border before:to-transparent" }, Uo = { class: "flex items-center justify-center w-10 h-10 rounded-full border border-primary bg-background shadow shrink-0 md:order-1 md:group-odd:-translate-x-1/2 md:group-even:translate-x-1/2 relative z-10 text-primary font-bold" }, Fo = { class: "w-[calc(100%-4rem)] md:w-[calc(50%-2.5rem)] p-6 rounded-2xl bg-white border border-border shadow-sm transition-all hover:shadow-md" }, Zo = { class: "font-bold text-lg mb-2" }, qo = { class: "text-muted-foreground text-sm leading-relaxed" }, Wo = { class: "py-24 bg-white border-y border-border overflow-hidden" }, Ko = { class: "container mx-auto px-4 md:px-6" }, Qo = {
@@ -1369,10 +1370,10 @@ const ee = U("zap", [
 }, Yo = { class: "relative bg-card rounded-3xl border border-border shadow-inner p-8 md:p-12 overflow-hidden" }, Xo = { class: "relative flex flex-col items-center" }, Jo = { class: "w-20 h-20 rounded-full bg-primary text-primary-foreground flex items-center justify-center shadow-2xl mb-8 z-10" }, tn = { class: "grid grid-cols-2 md:grid-cols-3 gap-4 w-full" }, en = { class: "text-2xl" }, rn = { class: "font-bold text-sm" }, an = { class: "text-primary font-bold text-lg" }, on = {
   key: 1,
   class: "grid grid-cols-2 md:grid-cols-4 gap-6 text-center max-w-4xl mx-auto"
-}, nn = { class: "text-3xl md:text-4xl font-bold text-primary mb-1" }, sn = { class: "text-sm font-medium text-muted-foreground uppercase tracking-wider" }, ln = { class: "py-24 bg-card/30" }, dn = { class: "container mx-auto px-4 md:px-6" }, cn = { class: "grid grid-cols-1 md:grid-cols-2 gap-6 max-w-4xl mx-auto" }, pn = { class: "h-10 w-10 rounded-full bg-primary/5 border border-primary/10 flex items-center justify-center shrink-0" }, un = { class: "font-bold text-lg mb-1" }, hn = { class: "text-muted-foreground text-sm" }, gn = {
+}, nn = { class: "text-3xl md:text-4xl font-bold text-primary mb-1" }, sn = { class: "text-sm font-medium text-muted-foreground uppercase tracking-wider" }, ln = { class: "py-24 bg-card/30" }, dn = { class: "container mx-auto px-4 md:px-6" }, cn = { class: "grid grid-cols-1 md:grid-cols-2 gap-6 max-w-4xl mx-auto" }, pn = { class: "h-10 w-10 rounded-full bg-primary/5 border border-primary/10 flex items-center justify-center shrink-0" }, un = { class: "font-bold text-lg mb-1" }, hn = { class: "text-muted-foreground text-sm" }, fn = {
   id: "analytics",
   class: "py-24 bg-card border-y border-border"
-}, fn = { class: "container mx-auto px-4 md:px-6" }, mn = { class: "grid grid-cols-1 lg:grid-cols-2 gap-12 mb-12" }, vn = { class: "space-y-8" }, xn = { class: "flex flex-wrap gap-2 text-sm font-medium items-center" }, bn = { class: "p-6 bg-white border border-primary/20 rounded-2xl shadow-sm relative overflow-hidden" }, wn = { class: "flex flex-col gap-4" }, yn = { class: "flex items-center gap-4" }, kn = { class: "bg-white p-6 md:p-8 rounded-2xl border border-border shadow-sm flex flex-col justify-center" }, Cn = { class: "w-full overflow-hidden" }, _n = ["viewBox"], An = ["y1", "x2", "y2"], En = ["x", "y"], Rn = ["x", "y"], Ln = ["points"], Mn = ["points"], Nn = ["cx", "cy"], In = ["y"], Sn = ["y"], Pn = ["y"], Bn = ["y"], zn = { class: "py-24 bg-card/30" }, On = { class: "container mx-auto px-4 md:px-6" }, Vn = { class: "mb-20 bg-primary text-primary-foreground rounded-3xl p-10 md:p-14 relative overflow-hidden" }, Hn = { class: "relative z-10 max-w-3xl" }, Tn = { class: "grid grid-cols-1 md:grid-cols-3 gap-6" }, jn = { class: "text-4xl font-bold mb-1" }, Dn = { class: "font-semibold mb-1" }, Gn = { class: "text-primary-foreground/60 text-sm" }, $n = { class: "mb-20" }, Un = { class: "grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6" }, Fn = { class: "flex items-start gap-4 mb-5" }, Zn = { class: "h-12 w-12 rounded-xl bg-primary/5 border border-primary/10 flex items-center justify-center shrink-0 group-hover:bg-primary group-hover:border-primary transition-colors" }, qn = { class: "flex-1" }, Wn = { class: "text-2xl font-bold text-primary" }, Kn = { class: "text-xs text-muted-foreground uppercase tracking-wider" }, Qn = { class: "font-bold text-lg mb-2" }, Yn = { class: "text-sm text-muted-foreground leading-relaxed" }, Xn = { class: "bg-white rounded-3xl border border-border p-10 md:p-14 shadow-sm" }, Jn = { class: "grid grid-cols-1 lg:grid-cols-2 gap-12 items-center" }, ti = { class: "space-y-5" }, ei = { class: "flex justify-between items-center mb-3" }, ri = { class: "font-semibold text-sm" }, ai = { class: "text-xs text-muted-foreground font-medium bg-green-50 text-green-700 px-2 py-0.5 rounded-full border border-green-100" }, oi = { class: "flex gap-4 items-center" }, ni = { class: "flex-1" }, ii = { class: "flex justify-between text-xs text-muted-foreground mb-1" }, si = { class: "font-semibold text-foreground" }, li = { class: "h-2 bg-secondary rounded-full overflow-hidden" }, di = { class: "flex-1" }, ci = { class: "flex justify-between text-xs text-muted-foreground mb-1" }, pi = { class: "font-bold text-primary" }, ui = { class: "h-2 bg-secondary rounded-full overflow-hidden" }, hi = ["viewBox"], gi = ["y1", "x2", "y2"], fi = ["x", "y"], mi = ["x", "y", "height"], vi = ["x", "y", "height"], xi = ["x", "y"], bi = ["x", "y"], wi = { class: "mt-12 pt-10 border-t border-border grid grid-cols-1 md:grid-cols-3 gap-6" }, yi = { class: "text-3xl font-bold text-primary mb-2" }, ki = { class: "font-bold mb-2" }, Ci = { class: "text-sm text-muted-foreground leading-relaxed" }, _i = { class: "py-24 bg-card/30" }, Ai = { class: "container mx-auto px-4 md:px-6 text-center" }, Ei = { class: "grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl mx-auto" }, Ri = { class: "p-8 rounded-2xl bg-white border border-border shadow-sm flex flex-col h-full opacity-70" }, Li = { class: "h-12 w-12 bg-destructive/10 text-destructive rounded-full flex items-center justify-center mb-6 mx-auto" }, Mi = { class: "p-8 rounded-2xl bg-primary text-primary-foreground border border-primary shadow-xl flex flex-col h-full md:-translate-y-4" }, Ni = { class: "h-12 w-12 bg-white text-primary rounded-full flex items-center justify-center mb-6 mx-auto shadow-inner" }, Ii = { class: "py-32 bg-primary relative overflow-hidden" }, Si = { class: "container mx-auto px-4 md:px-6 relative z-10 text-center" }, Pi = { class: "flex flex-col sm:flex-row gap-4 justify-center" }, Bi = { class: "rounded-full h-14 px-10 text-lg font-bold bg-white text-primary hover:bg-card shadow-xl transition-transform hover:scale-105" }, zi = ["href"], Oi = {
+}, gn = { class: "container mx-auto px-4 md:px-6" }, mn = { class: "grid grid-cols-1 lg:grid-cols-2 gap-12 mb-12" }, vn = { class: "space-y-8" }, xn = { class: "flex flex-wrap gap-2 text-sm font-medium items-center" }, bn = { class: "p-6 bg-white border border-primary/20 rounded-2xl shadow-sm relative overflow-hidden" }, wn = { class: "flex flex-col gap-4" }, yn = { class: "flex items-center gap-4" }, kn = { class: "bg-white p-6 md:p-8 rounded-2xl border border-border shadow-sm flex flex-col justify-center" }, Cn = { class: "w-full overflow-hidden" }, _n = ["viewBox"], An = ["y1", "x2", "y2"], En = ["x", "y"], Rn = ["x", "y"], Ln = ["points"], Mn = ["points"], Nn = ["cx", "cy"], In = ["y"], Sn = ["y"], Pn = ["y"], zn = ["y"], Bn = { class: "py-24 bg-card/30" }, On = { class: "container mx-auto px-4 md:px-6" }, Vn = { class: "mb-20 bg-primary text-primary-foreground rounded-3xl p-10 md:p-14 relative overflow-hidden" }, Hn = { class: "relative z-10 max-w-3xl" }, Tn = { class: "grid grid-cols-1 md:grid-cols-3 gap-6" }, jn = { class: "text-4xl font-bold mb-1" }, Dn = { class: "font-semibold mb-1" }, Gn = { class: "text-primary-foreground/60 text-sm" }, $n = { class: "mb-20" }, Un = { class: "grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6" }, Fn = { class: "flex items-start gap-4 mb-5" }, Zn = { class: "h-12 w-12 rounded-xl bg-primary/5 border border-primary/10 flex items-center justify-center shrink-0 group-hover:bg-primary group-hover:border-primary transition-colors" }, qn = { class: "flex-1" }, Wn = { class: "text-2xl font-bold text-primary" }, Kn = { class: "text-xs text-muted-foreground uppercase tracking-wider" }, Qn = { class: "font-bold text-lg mb-2" }, Yn = { class: "text-sm text-muted-foreground leading-relaxed" }, Xn = { class: "bg-white rounded-3xl border border-border p-10 md:p-14 shadow-sm" }, Jn = { class: "grid grid-cols-1 lg:grid-cols-2 gap-12 items-center" }, ti = { class: "space-y-5" }, ei = { class: "flex justify-between items-center mb-3" }, ri = { class: "font-semibold text-sm" }, ai = { class: "text-xs text-muted-foreground font-medium bg-green-50 text-green-700 px-2 py-0.5 rounded-full border border-green-100" }, oi = { class: "flex gap-4 items-center" }, ni = { class: "flex-1" }, ii = { class: "flex justify-between text-xs text-muted-foreground mb-1" }, si = { class: "font-semibold text-foreground" }, li = { class: "h-2 bg-secondary rounded-full overflow-hidden" }, di = { class: "flex-1" }, ci = { class: "flex justify-between text-xs text-muted-foreground mb-1" }, pi = { class: "font-bold text-primary" }, ui = { class: "h-2 bg-secondary rounded-full overflow-hidden" }, hi = ["viewBox"], fi = ["y1", "x2", "y2"], gi = ["x", "y"], mi = ["x", "y", "height"], vi = ["x", "y", "height"], xi = ["x", "y"], bi = ["x", "y"], wi = { class: "mt-12 pt-10 border-t border-border grid grid-cols-1 md:grid-cols-3 gap-6" }, yi = { class: "text-3xl font-bold text-primary mb-2" }, ki = { class: "font-bold mb-2" }, Ci = { class: "text-sm text-muted-foreground leading-relaxed" }, _i = { class: "py-24 bg-card/30" }, Ai = { class: "container mx-auto px-4 md:px-6 text-center" }, Ei = { class: "grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl mx-auto" }, Ri = { class: "p-8 rounded-2xl bg-white border border-border shadow-sm flex flex-col h-full opacity-70" }, Li = { class: "h-12 w-12 bg-destructive/10 text-destructive rounded-full flex items-center justify-center mb-6 mx-auto" }, Mi = { class: "p-8 rounded-2xl bg-primary text-primary-foreground border border-primary shadow-xl flex flex-col h-full md:-translate-y-4" }, Ni = { class: "h-12 w-12 bg-white text-primary rounded-full flex items-center justify-center mb-6 mx-auto shadow-inner" }, Ii = { class: "py-32 bg-primary relative overflow-hidden" }, Si = { class: "container mx-auto px-4 md:px-6 relative z-10 text-center" }, Pi = { class: "flex flex-col sm:flex-row gap-4 justify-center" }, zi = { class: "rounded-full h-14 px-10 text-lg font-bold bg-white text-primary hover:bg-card shadow-xl transition-transform hover:scale-105" }, Bi = ["href"], Oi = {
   key: 0,
   class: "rounded-full h-14 px-10 text-lg font-bold bg-transparent text-white border border-white/30 hover:bg-white/10 backdrop-blur-sm"
 }, Vi = { class: "bg-white border-t border-border pt-20 pb-10" }, Hi = { class: "container mx-auto px-4 md:px-6" }, Ti = { class: "grid grid-cols-1 md:grid-cols-4 gap-12 mb-16" }, ji = { class: "md:col-span-1" }, Di = ["src"], Gi = {
@@ -1403,15 +1404,15 @@ const ee = U("zap", [
       view_pub: "/publications",
       about_mn: "https://1mn.io"
     });
-    let g, x;
+    let f, x;
     dr(() => {
-      g = () => {
+      f = () => {
         e.value = window.scrollY > 20;
-      }, window.addEventListener("scroll", g), x = setInterval(() => {
+      }, window.addEventListener("scroll", f), x = setInterval(() => {
         o.value = (o.value + 1) % l.length;
       }, 5e3);
     }), cr(() => {
-      window.removeEventListener("scroll", g), clearInterval(x);
+      window.removeEventListener("scroll", f), clearInterval(x);
     });
     const l = [
       { title: "Transform Manufacturing into Global Commerce", image: "/images/hero1.jpg" },
@@ -1419,10 +1420,10 @@ const ee = U("zap", [
       { title: "AI-Powered Global Supplier Infrastructure", image: "/images/hero3.jpg" },
       { title: "Scale Beyond Borders with Hybrid Aggregation", image: "/images/hero2.jpg" }
     ], h = [
-      { title: "Global Storefront Network", icon: ft, desc: "Instant access to global retail channels" },
+      { title: "Global Storefront Network", icon: gt, desc: "Instant access to global retail channels" },
       { title: "AI-Powered Architecture", icon: jt, desc: "Predictive demand and automated indexing" },
-      { title: "Customs Support", icon: Be, desc: "Frictionless cross-border trade compliance" },
-      { title: "B2B Lead Generation", icon: ze, desc: "Data-driven buyer matching system" }
+      { title: "Customs Support", icon: ze, desc: "Frictionless cross-border trade compliance" },
+      { title: "B2B Lead Generation", icon: Be, desc: "Data-driven buyer matching system" }
     ], m = [
       "B2B + B2C hybrid distribution enablement",
       "AI-driven product indexing and cataloging",
@@ -1430,16 +1431,16 @@ const ee = U("zap", [
     ], c = [
       { icon: Ie, title: "AI Forecasting", desc: "Predict demand before it happens", detail: "Algorithms analyze millions of B2C data points to guide B2B production volumes, minimizing dead stock." },
       { icon: te, title: "Consumer Intelligence", desc: "Direct line to market trends", detail: "Retail data flows directly back to manufacturers, aligning production with actual consumer preferences." },
-      { icon: ft, title: "Global Sourcing", desc: "Borderless procurement", detail: "Connect with vetted international manufacturers through a single, standardized compliance layer." },
-      { icon: ze, title: "Supplier Growth", desc: "Scale without the overhead", detail: "Access new markets and buyer networks instantly without building individual sales infrastructure." },
+      { icon: gt, title: "Global Sourcing", desc: "Borderless procurement", detail: "Connect with vetted international manufacturers through a single, standardized compliance layer." },
+      { icon: Be, title: "Supplier Growth", desc: "Scale without the overhead", detail: "Access new markets and buyer networks instantly without building individual sales infrastructure." },
       { icon: Ra, title: "Inventory Optimization", desc: "Lean operations", detail: "Dynamic inventory allocation across global warehouses based on real-time multi-channel demand." },
       { icon: ee, title: "Live Demand Visibility", desc: "End-to-end transparency", detail: "A unified dashboard showing SKU-level performance across all B2B and B2C channels globally." }
     ], u = [
-      { icon: ft, title: "Global Market Access", desc: "Instantly reach macro and micro markets worldwide. We handle the localization, translation, and localized pricing strategies automatically." },
+      { icon: gt, title: "Global Market Access", desc: "Instantly reach macro and micro markets worldwide. We handle the localization, translation, and localized pricing strategies automatically." },
       { icon: ee, title: "Fast Inventory Clearance", desc: "Algorithmic liquidations of stagnant inventory across secondary global markets without diluting core brand equity." },
       { icon: te, title: "Total Brand Visibility", desc: "Proprietary indexing ensures your products appear in front of the right buyers precisely when procurement intent is highest." },
       { icon: jt, title: "AI Architecture", desc: "Built on a proprietary machine learning foundation that automates matching, pricing optimization, and logistics routing." }
-    ], f = [
+    ], g = [
       { title: "Rapid SKU Creation", desc: "Digitize physical samples into commerce-ready listings in minutes, not days." },
       { title: "Unified Commerce", desc: "Manage B2B bulk orders and B2C single-item fulfillment from one dashboard." },
       { title: "Managed Logistics", desc: "MN handles all freight, warehousing, and last-mile delivery globally." },
@@ -1457,9 +1458,9 @@ const ee = U("zap", [
       { label: "Countries Covered", value: "50+" },
       { label: "Avg. Time to First Sale", value: "14 Days" },
       { label: "Logistics Coverage", value: "100%" }
-    ], z = [
+    ], B = [
       { icon: Jt, title: "Sell through unlimited storefronts", desc: "Tap into our pre-established network of global retail partners instantly." },
-      { icon: ft, title: "Global Expansion", desc: "Enter new territories without physical presence or local entities." },
+      { icon: gt, title: "Global Expansion", desc: "Enter new territories without physical presence or local entities." },
       { icon: Pe, title: "Trade Association Access", desc: "Premium introductions and networking within key global trade organizations." },
       { icon: Ie, title: "Market Intelligence & Advisory", desc: "Receive bespoke advisory and data on what to produce next based on real demand." }
     ], P = [
@@ -1506,7 +1507,7 @@ Revenue`, before: 30, after: 65 }
       { stat: "$44B", label: "Missed Export Potential", sub: "Captured by Turkey & Vietnam" }
     ], Ht = [
       { icon: ee, title: "Rapid SKU Digitization", detail: "Physical samples converted to commerce-ready global listings in under 48 hours. No photography studio, no catalogue team required.", metric: "48hr", metricLabel: "Avg. Listing Time" },
-      { icon: Be, title: "Zero Compliance Burden", detail: "MN manages all international certifications, customs documentation, duties calculation and regulatory filings across 50+ countries.", metric: "50+", metricLabel: "Countries Covered" },
+      { icon: ze, title: "Zero Compliance Burden", detail: "MN manages all international certifications, customs documentation, duties calculation and regulatory filings across 50+ countries.", metric: "50+", metricLabel: "Countries Covered" },
       { icon: Pe, title: "Managed Logistics End-to-End", detail: "From factory gate to last-mile delivery globally. No freight broker negotiations, no warehouse coordination — fully handled.", metric: "100%", metricLabel: "Logistics Managed" },
       { icon: jt, title: "AI-Driven Production Planning", detail: "Replace guesswork with real-time global demand signals. Produce exactly what the market needs, when it needs it.", metric: "30%", metricLabel: "Waste Reduction" },
       { icon: te, title: "Private Label Brand Building", detail: "Transition from anonymous OEM manufacturer to a branded, globally distributed fashion label with our private label infrastructure.", metric: "3x", metricLabel: "Higher Margins" },
@@ -1525,7 +1526,7 @@ Revenue`, before: 30, after: 65 }
       const ut = Ge("RouterLink");
       return k(), E("div", Na, [
         r("header", {
-          class: gt([
+          class: ft([
             "fixed top-0 w-full z-50 transition-all duration-300",
             e.value ? "bg-white/90 backdrop-blur-md border-b border-border shadow-sm py-4" : "bg-transparent py-6"
           ])
@@ -1537,19 +1538,19 @@ Revenue`, before: 30, after: 65 }
             }, {
               default: qt(() => [
                 r("img", {
-                  src: B(Ve),
+                  src: z(Ve),
                   alt: "MN Supplierhub Logo",
-                  class: gt(["h-8 w-auto transition-all duration-300", e.value ? "" : "brightness-0 invert"])
+                  class: ft(["h-8 w-auto transition-all duration-300", e.value ? "" : "brightness-0 invert"])
                 }, null, 10, Sa)
               ]),
               _: 1
             }),
             i[1] || (i[1] = r("nav", { class: "hidden md:flex items-center gap-8" }, null, -1)),
             r("div", Pa, [
-              r("button", Ba, [
+              r("button", za, [
                 r("a", {
                   href: p.value.view_pub
-                }, " View Publications ", 8, za)
+                }, " View Publications ", 8, Ba)
               ]),
               r("button", Oa, [
                 r("a", {
@@ -1561,12 +1562,12 @@ Revenue`, before: 30, after: 65 }
               class: "md:hidden p-2",
               onClick: i[0] || (i[0] = (d) => a.value = !a.value)
             }, [
-              a.value ? (k(), nt(B(Oe), {
+              a.value ? (k(), nt(z(Oe), {
                 key: 0,
-                class: gt(e.value ? "text-foreground" : "text-white")
-              }, null, 8, ["class"])) : (k(), nt(B(Ma), {
+                class: ft(e.value ? "text-foreground" : "text-white")
+              }, null, 8, ["class"])) : (k(), nt(z(Ma), {
                 key: 1,
-                class: gt(e.value ? "text-foreground" : "text-white")
+                class: ft(e.value ? "text-foreground" : "text-white")
               }, null, 8, ["class"]))
             ])
           ]),
@@ -1587,7 +1588,7 @@ Revenue`, before: 30, after: 65 }
           r("section", $a, [
             (k(), E(O, null, H(l, (d, w) => r("div", {
               key: w,
-              class: gt(["absolute inset-0 transition-opacity duration-1000", w === o.value ? "opacity-100" : "opacity-0"])
+              class: ft(["absolute inset-0 transition-opacity duration-1000", w === o.value ? "opacity-100" : "opacity-0"])
             }, [
               i[2] || (i[2] = r("div", { class: "absolute inset-0 bg-gradient-to-r from-black/80 via-black/50 to-transparent z-10" }, null, -1)),
               r("img", {
@@ -1627,7 +1628,7 @@ Revenue`, before: 30, after: 65 }
                     r("a", {
                       href: p.value.reg_supplier
                     }, " Register as a Supplier ", 8, Ka),
-                    j(B(Ne), { class: "h-5 w-5" })
+                    j(z(Ne), { class: "h-5 w-5" })
                   ])
                 ])
               ])
@@ -1637,7 +1638,7 @@ Revenue`, before: 30, after: 65 }
                 (k(), E(O, null, H(l, (d, w) => r("button", {
                   key: w,
                   onClick: (_t) => o.value = w,
-                  class: gt(["h-1 rounded-full transition-all duration-300", w === o.value ? "w-12 bg-white" : "w-4 bg-white/30"]),
+                  class: ft(["h-1 rounded-full transition-all duration-300", w === o.value ? "w-12 bg-white" : "w-4 bg-white/30"]),
                   "aria-label": `Go to slide ${w + 1}`
                 }, null, 10, Xa)), 64))
               ])
@@ -1674,27 +1675,27 @@ Revenue`, before: 30, after: 65 }
                       class: "flex items-start gap-3"
                     }, [
                       r("div", uo, [
-                        j(B(Se), { class: "h-3 w-3 text-primary" })
+                        j(z(Se), { class: "h-3 w-3 text-primary" })
                       ]),
                       r("span", ho, C(d), 1)
                     ])), 64))
                   ])
                 ]),
-                r("div", go, [
-                  r("div", fo, [
+                r("div", fo, [
+                  r("div", go, [
                     r("div", mo, [
                       r("div", vo, [
                         r("div", xo, [
-                          j(B(La), { class: "h-5 w-5 text-muted-foreground" }),
+                          j(z(La), { class: "h-5 w-5 text-muted-foreground" }),
                           i[5] || (i[5] = r("span", { class: "font-bold" }, "Fragmented Factories", -1))
                         ])
                       ]),
                       r("div", bo, [
-                        j(B(Xt), { class: "h-6 w-6 rotate-45" })
+                        j(z(Xt), { class: "h-6 w-6 rotate-45" })
                       ]),
                       r("div", wo, [
                         r("div", yo, [
-                          j(B(jt), { class: "h-6 w-6" })
+                          j(z(jt), { class: "h-6 w-6" })
                         ]),
                         i[6] || (i[6] = r("div", null, [
                           r("h3", { class: "font-bold text-xl" }, "MN Supplierhub AI"),
@@ -1702,16 +1703,16 @@ Revenue`, before: 30, after: 65 }
                         ], -1))
                       ]),
                       r("div", ko, [
-                        j(B(Xt), { class: "h-6 w-6 -rotate-45" }),
-                        j(B(Xt), { class: "h-6 w-6 rotate-45" })
+                        j(z(Xt), { class: "h-6 w-6 -rotate-45" }),
+                        j(z(Xt), { class: "h-6 w-6 rotate-45" })
                       ]),
                       r("div", Co, [
                         r("div", _o, [
-                          j(B(Jt), { class: "h-6 w-6 text-muted-foreground mb-2" }),
+                          j(z(Jt), { class: "h-6 w-6 text-muted-foreground mb-2" }),
                           i[7] || (i[7] = r("span", { class: "font-bold text-sm" }, "Global B2B Buyers", -1))
                         ]),
                         r("div", Ao, [
-                          j(B(ft), { class: "h-6 w-6 text-muted-foreground mb-2" }),
+                          j(z(gt), { class: "h-6 w-6 text-muted-foreground mb-2" }),
                           i[8] || (i[8] = r("span", { class: "font-bold text-sm" }, "B2C Consumers", -1))
                         ])
                       ])
@@ -1746,12 +1747,12 @@ Revenue`, before: 30, after: 65 }
               style: { "background-image": "radial-gradient(circle at 2px 2px, white 1px, transparent 0)", "background-size": "32px 32px" }
             }, null, -1)),
             r("div", Po, [
-              r("div", Bo, [
+              r("div", zo, [
                 i[11] || (i[11] = r("div", { class: "max-w-2xl" }, [
                   r("h2", { class: "text-3xl md:text-5xl font-bold mb-4 tracking-tight" }, "Enterprise Features"),
                   r("p", { class: "text-lg text-primary-foreground/70" }, "Rigorous tools designed to eliminate supply chain friction.")
                 ], -1)),
-                n.value.B ? (k(), E("button", zo, " View All Features ")) : et("", !0)
+                n.value.B ? (k(), E("button", Bo, " View All Features ")) : et("", !0)
               ]),
               r("div", Oo, [
                 (k(), E(O, null, H(u, (d, w) => r("div", {
@@ -1772,7 +1773,7 @@ Revenue`, before: 30, after: 65 }
               i[13] || (i[13] = r("h2", { class: "text-3xl md:text-5xl font-bold mb-16 text-center tracking-tight" }, "Operational Advantages", -1)),
               r("div", Go, [
                 r("div", $o, [
-                  (k(), E(O, null, H(f, (d, w) => r("div", {
+                  (k(), E(O, null, H(g, (d, w) => r("div", {
                     key: w,
                     class: "relative flex items-center justify-between md:justify-normal md:odd:flex-row-reverse group"
                   }, [
@@ -1797,7 +1798,7 @@ Revenue`, before: 30, after: 65 }
                   }, null, -1)),
                   r("div", Xo, [
                     r("div", Jo, [
-                      j(B(ft), { class: "h-10 w-10" })
+                      j(z(gt), { class: "h-10 w-10" })
                     ]),
                     i[15] || (i[15] = r("p", { class: "text-sm font-bold uppercase tracking-widest text-muted-foreground mb-10" }, "MN Supplierhub Global Network", -1)),
                     r("div", tn, [
@@ -1829,7 +1830,7 @@ Revenue`, before: 30, after: 65 }
               i[18] || (i[18] = r("h2", { class: "text-3xl md:text-5xl font-bold mb-4 text-center tracking-tight" }, "Expand Without Limits", -1)),
               i[19] || (i[19] = r("p", { class: "text-lg text-muted-foreground text-center max-w-2xl mx-auto mb-16" }, "Every benefit designed to let you focus on manufacturing — we handle everything else.", -1)),
               r("div", cn, [
-                (k(), E(O, null, H(z, (d, w) => r("div", {
+                (k(), E(O, null, H(B, (d, w) => r("div", {
                   key: w,
                   class: "p-6 rounded-2xl bg-white border border-border flex gap-4 shadow-sm"
                 }, [
@@ -1844,8 +1845,8 @@ Revenue`, before: 30, after: 65 }
               ])
             ])
           ]),
-          r("section", gn, [
-            r("div", fn, [
+          r("section", fn, [
+            r("div", gn, [
               i[33] || (i[33] = r("div", { class: "text-center max-w-3xl mx-auto mb-16" }, [
                 r("h2", { class: "text-3xl md:text-5xl font-bold mb-6 tracking-tight" }, "The Economics of Aggregation"),
                 r("p", { class: "text-lg text-muted-foreground" }, " Moving from a fragmented traditional model to a hybrid ecosystem delivers measurable enterprise value. ")
@@ -1856,13 +1857,13 @@ Revenue`, before: 30, after: 65 }
                     i[25] || (i[25] = r("h4", { class: "text-sm font-bold uppercase tracking-wider text-muted-foreground mb-4" }, "Traditional Linear Model", -1)),
                     r("div", xn, [
                       i[20] || (i[20] = r("span", { class: "px-3 py-1 bg-white border border-border rounded" }, "Factory", -1)),
-                      j(B(Tt), { class: "h-4 w-4 text-muted-foreground" }),
+                      j(z(Tt), { class: "h-4 w-4 text-muted-foreground" }),
                       i[21] || (i[21] = r("span", { class: "px-3 py-1 bg-white border border-border rounded text-muted-foreground" }, "Agent", -1)),
-                      j(B(Tt), { class: "h-4 w-4 text-muted-foreground" }),
+                      j(z(Tt), { class: "h-4 w-4 text-muted-foreground" }),
                       i[22] || (i[22] = r("span", { class: "px-3 py-1 bg-white border border-border rounded text-muted-foreground" }, "Exporter", -1)),
-                      j(B(Tt), { class: "h-4 w-4 text-muted-foreground" }),
+                      j(z(Tt), { class: "h-4 w-4 text-muted-foreground" }),
                       i[23] || (i[23] = r("span", { class: "px-3 py-1 bg-white border border-border rounded" }, "Brand", -1)),
-                      j(B(Tt), { class: "h-4 w-4 text-muted-foreground" }),
+                      j(z(Tt), { class: "h-4 w-4 text-muted-foreground" }),
                       i[24] || (i[24] = r("span", { class: "px-3 py-1 bg-white border border-border rounded" }, "Consumer", -1))
                     ]),
                     i[26] || (i[26] = r("p", { class: "text-xs text-muted-foreground mt-2" }, "Margin dilution and information loss at every step.", -1))
@@ -1873,7 +1874,7 @@ Revenue`, before: 30, after: 65 }
                     r("div", wn, [
                       r("div", yn, [
                         i[27] || (i[27] = r("span", { class: "px-4 py-2 bg-primary text-primary-foreground font-bold rounded-lg shadow-md" }, "Factory", -1)),
-                        j(B(Ne), { class: "h-5 w-5 text-primary" }),
+                        j(z(Ne), { class: "h-5 w-5 text-primary" }),
                         i[28] || (i[28] = r("span", { class: "px-6 py-3 bg-white border-2 border-primary font-bold rounded-xl shadow-sm" }, "MN Aggregator", -1))
                       ]),
                       i[29] || (i[29] = X('<div class="pl-32 flex gap-8 relative" data-v-a6a56ccd><div class="absolute left-[8.5rem] top-[-1rem] bottom-4 w-px bg-primary/30" data-v-a6a56ccd></div><div class="absolute left-[8.5rem] top-1/2 w-4 h-px bg-primary/30" data-v-a6a56ccd></div><div class="flex flex-col gap-4 w-full" data-v-a6a56ccd><span class="px-4 py-2 bg-card border border-border font-medium rounded-lg" data-v-a6a56ccd>B2B Buyers</span><span class="px-4 py-2 bg-card border border-border font-medium rounded-lg" data-v-a6a56ccd>B2C Consumers</span></div></div>', 1))
@@ -1957,7 +1958,7 @@ Revenue`, before: 30, after: 65 }
                         y: dt - 26,
                         fill: "#888",
                         "font-size": "11"
-                      }, "Hybrid Model", 8, Bn)
+                      }, "Hybrid Model", 8, zn)
                     ], 8, _n))
                   ])
                 ])
@@ -1965,7 +1966,7 @@ Revenue`, before: 30, after: 65 }
               i[34] || (i[34] = X('<div class="grid grid-cols-1 md:grid-cols-3 gap-6" data-v-a6a56ccd><div class="rounded-2xl border border-border bg-card p-6" data-v-a6a56ccd><p class="text-sm text-muted-foreground mb-1" data-v-a6a56ccd>Estimated Growth</p><p class="text-4xl font-bold text-primary mb-4" data-v-a6a56ccd>+77%</p><div class="flex items-center justify-between text-sm" data-v-a6a56ccd><span class="text-muted-foreground" data-v-a6a56ccd>Profit Simulation</span><span class="font-bold" data-v-a6a56ccd>₹4.8Cr → ₹8.5Cr</span></div><div class="w-full bg-secondary h-2 mt-3 rounded-full overflow-hidden" data-v-a6a56ccd><div class="bg-primary h-full rounded-full" style="width:77%;" data-v-a6a56ccd></div></div></div><div class="rounded-2xl border border-border bg-card p-6" data-v-a6a56ccd><p class="text-sm text-muted-foreground mb-1" data-v-a6a56ccd>Inventory Reduction</p><p class="text-4xl font-bold text-primary mb-4" data-v-a6a56ccd>20–30%</p><p class="text-sm text-muted-foreground" data-v-a6a56ccd>Through AI predictive demand forecasting rather than guesswork.</p></div><div class="rounded-2xl border border-border bg-card p-6" data-v-a6a56ccd><p class="text-sm text-muted-foreground mb-1" data-v-a6a56ccd>Waste Reduction</p><p class="text-4xl font-bold text-primary mb-4" data-v-a6a56ccd>15–25%</p><p class="text-sm text-muted-foreground" data-v-a6a56ccd>Optimized raw material procurement aligned with actual sales data.</p></div></div>', 1))
             ])
           ]),
-          r("section", zn, [
+          r("section", Bn, [
             r("div", On, [
               i[46] || (i[46] = X('<div class="text-center max-w-3xl mx-auto mb-20" data-v-a6a56ccd><div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary/5 border border-primary/10 text-primary text-sm font-semibold mb-6" data-v-a6a56ccd><span class="flex h-2 w-2 rounded-full bg-primary" data-v-a6a56ccd></span> Why India. Why Now. </div><h2 class="text-3xl md:text-5xl font-bold mb-6 tracking-tight leading-tight" data-v-a6a56ccd>Why Indian Suppliers Should Adapt Now</h2><p class="text-lg text-muted-foreground leading-relaxed" data-v-a6a56ccd> India possesses the world&#39;s most versatile textile base — 6,000+ year legacy in craft, the second-largest cotton producer globally, unmatched product diversity. Yet its export share is a fraction of its true potential. The single barrier: coordination infrastructure. MN Supplierhub is that infrastructure. </p></div>', 1)),
               r("div", Vn, [
@@ -2069,7 +2070,7 @@ Revenue`, before: 30, after: 65 }
                         y2: ot + (d - 1) / 4 * K.value,
                         stroke: "#e5e5e5",
                         "stroke-dasharray": "3 3"
-                      }, null, 8, gi)), 64)),
+                      }, null, 8, fi)), 64)),
                       (k(), E(O, null, H(5, (d) => r("text", {
                         key: `y-${d}`,
                         x: St - 8,
@@ -2077,7 +2078,7 @@ Revenue`, before: 30, after: 65 }
                         "text-anchor": "end",
                         fill: "#888",
                         "font-size": "11"
-                      }, C(Math.round((d - 1) / 4 * 100)) + "%", 9, fi)), 64)),
+                      }, C(Math.round((d - 1) / 4 * 100)) + "%", 9, gi)), 64)),
                       (k(), E(O, null, H(Ot, (d, w) => (k(), E(O, {
                         key: `bar-${w}`
                       }, [
@@ -2137,13 +2138,13 @@ Revenue`, before: 30, after: 65 }
               r("div", Ei, [
                 r("div", Ri, [
                   r("div", Li, [
-                    j(B(Oe), { class: "h-6 w-6" })
+                    j(z(Oe), { class: "h-6 w-6" })
                   ]),
                   i[47] || (i[47] = X('<h3 class="text-xl font-bold mb-4" data-v-a6a56ccd>Without Aggregation</h3><ul class="space-y-4 text-left mt-auto" data-v-a6a56ccd><li class="flex gap-3 text-muted-foreground" data-v-a6a56ccd><span class="text-destructive font-bold" data-v-a6a56ccd>•</span> Fragmented order volumes</li><li class="flex gap-3 text-muted-foreground" data-v-a6a56ccd><span class="text-destructive font-bold" data-v-a6a56ccd>•</span> High middleman dependency</li><li class="flex gap-3 text-muted-foreground" data-v-a6a56ccd><span class="text-destructive font-bold" data-v-a6a56ccd>•</span> Razor-thin production margins</li><li class="flex gap-3 text-muted-foreground" data-v-a6a56ccd><span class="text-destructive font-bold" data-v-a6a56ccd>•</span> Zero brand equity built</li></ul>', 2))
                 ]),
                 r("div", Mi, [
                   r("div", Ni, [
-                    j(B(Se), { class: "h-6 w-6" })
+                    j(z(Se), { class: "h-6 w-6" })
                   ]),
                   i[48] || (i[48] = X('<h3 class="text-xl font-bold mb-4 text-white" data-v-a6a56ccd>With MN Hybrid Aggregation</h3><ul class="space-y-4 text-left mt-auto" data-v-a6a56ccd><li class="flex gap-3" data-v-a6a56ccd><span class="text-white font-bold" data-v-a6a56ccd>✓</span> AI-driven ecosystem matching</li><li class="flex gap-3" data-v-a6a56ccd><span class="text-white font-bold" data-v-a6a56ccd>✓</span> Global direct-to-buyer infrastructure</li><li class="flex gap-3" data-v-a6a56ccd><span class="text-white font-bold" data-v-a6a56ccd>✓</span> Premium margin capture</li><li class="flex gap-3" data-v-a6a56ccd><span class="text-white font-bold" data-v-a6a56ccd>✓</span> Long-term brand building capacity</li></ul>', 2))
                 ])
@@ -2157,10 +2158,10 @@ Revenue`, before: 30, after: 65 }
               i[50] || (i[50] = r("h2", { class: "text-4xl md:text-6xl font-bold text-white mb-6 tracking-tight max-w-4xl mx-auto leading-tight" }, " Scale Your Fashion Business Beyond Borders ", -1)),
               i[51] || (i[51] = r("p", { class: "text-xl text-white/80 mb-12 max-w-2xl mx-auto font-light" }, " Join the next generation hybrid commerce infrastructure for fashion suppliers. Let data drive your production and our network drive your sales. ", -1)),
               r("div", Pi, [
-                r("button", Bi, [
+                r("button", zi, [
                   r("a", {
                     href: p.value.reg_supplier
-                  }, " Register as a Supplier ", 8, zi)
+                  }, " Register as a Supplier ", 8, Bi)
                 ]),
                 n.value.E ? (k(), E("button", Oi, " Contact Enterprise Team ")) : et("", !0)
               ])
@@ -2172,7 +2173,7 @@ Revenue`, before: 30, after: 65 }
             r("div", Ti, [
               r("div", ji, [
                 r("img", {
-                  src: B(Ve),
+                  src: z(Ve),
                   alt: "MN Supplierhub Logo",
                   class: "h-8 w-auto mb-6"
                 }, null, 8, Di),
@@ -2240,7 +2241,7 @@ const Ji = (t) => {
     ]
   }), a = $e(ya, t);
   a.use(e), a.mount("#app-hfgjebdfh657gc");
-}, es = async (t) => ({
+}, rs = async (t) => ({
   set: async (e) => {
     console.log(`--hydrator [${e.data.curr.type}]`);
     const a = {
@@ -2267,6 +2268,6 @@ const Ji = (t) => {
   }
 });
 export {
-  es as hydrator,
-  es as index
+  rs as hydrator,
+  rs as index
 };
