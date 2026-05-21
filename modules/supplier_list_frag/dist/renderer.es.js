@@ -1,4 +1,4 @@
-import { ssrUtils as k, initDirectivesForSSR as O, createApp as D, createVNode as P, ssrContextKey as E, warn as m, Fragment as G, Static as I, Comment as U, Text as H, mergeProps as W, defineComponent as q, openBlock as K, createElementBlock as Z, createElementVNode as J, toDisplayString as Q, createSSRApp as X } from "vue";
+const { ssrUtils: k, initDirectivesForSSR: O, createApp: D, createVNode: P, ssrContextKey: E, warn: m, Fragment: G, Static: I, Comment: U, Text: H, mergeProps: W, defineComponent: q, openBlock: K, createElementBlock: Z, createElementVNode: J, toDisplayString: Q, createSSRApp: X } = window.Vue;
 function Y(r, t) {
   t === void 0 && (t = {});
   var e = t.insertAt;
