@@ -82,6 +82,19 @@ let _data = {
           },
 
 
+
+          {
+            label: 'Supplier management',
+            items: [
+              { 
+                label: 'Suppliers', 
+                icon: 'pi pi-fw pi-list', 
+                to: '/supplier-management/suppliers',
+
+              },
+            ]
+          },
+
           {
             label: 'File management',
             items: [
@@ -448,6 +461,19 @@ let _data = {
                 }
               },
               //==dryutil==//
+
+
+
+              //set..
+              {
+                path: '/supplier-management/suppliers',
+                name: 'suppliers',
+                component: '../views/ContentEngine.vue',
+                meta:{
+                  ce_file: "https://raw.githubusercontent.com/1mn-io/mn-app/refs/heads/main/modules/supplier_list_frag/dist/data.json", //eg=> https://raw.githubusercontent.com/1mn-io/mn-app/refs/heads/main/modules/admin_product_fragment/dist/data.json
+                  auth:true
+                }
+              },
 
 
 

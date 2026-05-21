@@ -16,6 +16,9 @@
                     "data": "MN App Dashboard",
                     "theme": "light",
                     "foo": "",
+                    "config": {
+                        "off_h_right": false
+                    },
                     "menu": [
                         {
                             "label": "Dryutil",
@@ -41,6 +44,16 @@
                                             "to": "/dryutil/instance-management/instances"
                                         }
                                     ]
+                                }
+                            ]
+                        },
+                        {
+                            "label": "Supplier management",
+                            "items": [
+                                {
+                                    "label": "Suppliers",
+                                    "icon": "pi pi-fw pi-list",
+                                    "to": "/supplier-management/suppliers"
                                 }
                             ]
                         },
@@ -428,6 +441,15 @@
                                     "component": "../views/ContentEngine.vue",
                                     "meta": {
                                         "ce_file": "https://raw.githubusercontent.com/1mn-io/mn-app/refs/heads/main/modules/instance_fragment_app/dist/data.json",
+                                        "auth": true
+                                    }
+                                },
+                                {
+                                    "path": "/supplier-management/suppliers",
+                                    "name": "suppliers",
+                                    "component": "../views/ContentEngine.vue",
+                                    "meta": {
+                                        "ce_file": "https://raw.githubusercontent.com/1mn-io/mn-app/refs/heads/main/modules/supplier_list_frag/dist/data.json",
                                         "auth": true
                                     }
                                 },
