@@ -1,5 +1,5 @@
-const { defineComponent: s, createApp: p } = window.Vue;
-const _ = /* @__PURE__ */ s({
+import { d as c, c as p } from "./runtime-dom.esm-bundler-7m8Vyt41.js";
+const _ = /* @__PURE__ */ c({
   __name: "index",
   props: {
     _p: {},
@@ -15,7 +15,7 @@ const _ = /* @__PURE__ */ s({
       _p: n,
       _$p: t
     }, o = p(_, e);
-    await (await import("./main-HoJjMwWR.js").then((r) => r.ay)).index(e);
+    await (await import("./main-BbCsHIT2.js").then((r) => r.ay)).index(e);
     const a = {
       r: "",
       style: "",
@@ -24,8 +24,8 @@ const _ = /* @__PURE__ */ s({
         change: () => {
         }
       }
-    }, c = document.getElementById(n.f.name("vue-root"));
-    return o.mount(c), a;
+    }, s = document.getElementById(n.f.name("vue-root"));
+    return o.mount(s), a;
   }
 });
 export {
