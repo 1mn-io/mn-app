@@ -4893,6 +4893,7 @@ const Zs = { class: "min-h-screen bg-[#525355] flex justify-center p-0 md:p-4" }
   class: "space-y-4 ml-2"
 }, ku = ["onClick"], $u = { class: "w-full md:w-1/3 bg-slate-900 rounded-3xl shadow-xl overflow-hidden flex flex-col text-slate-300 max-h-[90vh]" }, Cu = {
   __name: "Creator",
+  props: ["_p", "_pp"],
   setup(t) {
     const n = _e(), o = Y({
       title: "TOEFL_Practice_Test_2",
@@ -4970,11 +4971,11 @@ const Zs = { class: "min-h-screen bg-[#525355] flex justify-center p-0 md:p-4" }
     }, ne = async () => {
       R.value = !0;
       try {
-        const d = _pp.data.curr.data.api.e.url, s = await fetch(d, {
+        const d = t._pp.data.curr.data.api.e.url, s = await fetch(d, {
           method: "POST",
           headers: {
             "Content-Type": "application/json",
-            Authorization: `Bearer ${_pp.data.curr.data.api.a.header.Authorization}`
+            Authorization: `Bearer ${t._pp.data.curr.data.api.a.header.Authorization}`
           },
           body: JSON.stringify({
             user_id: o.value.user_id || "user_123"
@@ -4995,11 +4996,11 @@ const Zs = { class: "min-h-screen bg-[#525355] flex justify-center p-0 md:p-4" }
     }, O = async () => {
       j.value = !0, L();
       try {
-        const d = _pp.data.curr.data.api.f.url, s = await fetch(d, {
+        const d = t._pp.data.curr.data.api.f.url, s = await fetch(d, {
           method: "POST",
           headers: {
             "Content-Type": "application/json",
-            Authorization: `Bearer ${_pp.data.curr.data.api.a.header.Authorization}`
+            Authorization: `Bearer ${t._pp.data.curr.data.api.a.header.Authorization}`
           },
           body: JSON.stringify({
             user_id: o.value.user_id || "user_123"
@@ -5022,11 +5023,11 @@ const Zs = { class: "min-h-screen bg-[#525355] flex justify-center p-0 md:p-4" }
         (!o.value.user_id || o.value.user_id.trim() === "") && (o.value.user_id = "user_123");
         const d = JSON.parse(JSON.stringify(o.value, r));
         (!d.user_id || d.user_id.trim() === "") && (d.user_id = "user_123"), console.log("Submitting payload...", d);
-        const s = _pp.data.curr.data.api.a.url, l = await fetch(s, {
+        const s = t._pp.data.curr.data.api.a.url, l = await fetch(s, {
           method: "POST",
           headers: {
             "Content-Type": "application/json",
-            Authorization: `Bearer ${_pp.data.curr.data.api.a.header.Authorization}`
+            Authorization: `Bearer ${t._pp.data.curr.data.api.a.header.Authorization}`
           },
           body: JSON.stringify(d)
         });
@@ -5347,18 +5348,18 @@ const Zs = { class: "min-h-screen bg-[#525355] flex justify-center p-0 md:p-4" }
   {
     path: "/outcome/review",
     name: "outcome-review",
-    component: () => import("./OutcomeReviewPage-CZWuAGNP.js")
+    component: () => import("./OutcomeReviewPage-Wdqx2NgS.js")
   },
   {
     path: "/list/:testId",
     name: "list",
-    component: () => import("./ListPage-CJZC37Tj.js")
+    component: () => import("./ListPage-DhUUU81d.js")
   },
   // Dynamic question route: /review/{testId}/{section}/{type}/{uuid}
   {
     path: "/review/:testId/:section/:questionType/:uuid",
     name: "question-detail",
-    component: () => import("./OutcomeReviewPage-CZWuAGNP.js")
+    component: () => import("./OutcomeReviewPage-Wdqx2NgS.js")
   },
   {
     path: "/result/:testId",
