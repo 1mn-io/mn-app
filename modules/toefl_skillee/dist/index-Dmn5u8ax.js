@@ -1,4 +1,4 @@
-import { s as ae, a3 as ge, Z as Vt, _ as Ut, l as me, I as Ke, V as Pt, p as _t, c as ie, a7 as we, W as Y, U as ye, g as v, d as e, j as q, i as Ce, Q as m, e as Ae, O as tt, M as Ue, J as be, F as oe, X as re, a9 as X, a6 as ee, f as se, L as Se, a2 as M, a4 as kt, aa as $t, k as De, a8 as Dt, a as zt, a5 as Ct, Y as Ft, b as Qt } from "./runtime-dom.esm-bundler-CXGWRLlp.js";
+const { inject: re, shallowRef: Vt, unref: ge, shallowReactive: Ut, defineComponent: me, reactive: Pt, computed: ie, h: _t, provide: ye, ref: K, watch: we, nextTick: Ke, openBlock: m, createElementBlock: v, createElementVNode: e, createTextVNode: q, createStaticVNode: Ce, createBlock: Ae, onMounted: tt, onBeforeUnmount: Ue, normalizeClass: be, Fragment: oe, renderList: ae, normalizeStyle: Se, withDirectives: X, vModelText: ee, createCommentVNode: se, toDisplayString: M, vModelRadio: kt, withModifiers: $t, createVNode: De, Transition: Dt, withCtx: zt, vModelSelect: Ct, resolveComponent: Ft, createApp: Qt } = window.Vue;
 const Be = typeof document < "u";
 function At(t) {
   return typeof t == "object" || "displayName" in t || "props" in t || "__vccOpts" in t;
@@ -9,9 +9,9 @@ function Gt(t) {
 const de = Object.assign;
 function Ge(t, n) {
   const o = {};
-  for (const r in n) {
-    const i = n[r];
-    o[r] = ke(i) ? i.map(t) : t(i);
+  for (const a in n) {
+    const i = n[a];
+    o[a] = ke(i) ? i.map(t) : t(i);
   }
   return o;
 }
@@ -19,7 +19,7 @@ const Ve = () => {
 }, ke = Array.isArray;
 function ot(t, n) {
   const o = {};
-  for (const r in t) o[r] = r in n ? n[r] : t[r];
+  for (const a in t) o[a] = a in n ? n[a] : t[a];
   return o;
 }
 let xe = /* @__PURE__ */ (function(t) {
@@ -50,10 +50,10 @@ function Wt(t) {
 }
 const Jt = /* @__PURE__ */ Symbol(""), lt = /* @__PURE__ */ Symbol(""), Fe = /* @__PURE__ */ Symbol(""), st = /* @__PURE__ */ Symbol(""), Ye = /* @__PURE__ */ Symbol("");
 function _e() {
-  return ae(Fe);
+  return re(Fe);
 }
 function Ee(t) {
-  return ae(st);
+  return re(st);
 }
 const St = /#/g, Kt = /&/g, Yt = /\//g, Zt = /=/g, Xt = /\?/g, Et = /\+/g, qt = /%5B/g, es = /%5D/g, Lt = /%5E/g, ts = /%60/g, It = /%7B/g, ss = /%7C/g, Rt = /%7D/g, ns = /%20/g;
 function nt(t) {
@@ -68,11 +68,11 @@ function Ze(t) {
 function ls(t) {
   return Ze(t).replace(Zt, "%3D");
 }
-function as(t) {
+function rs(t) {
   return nt(t).replace(St, "%23").replace(Xt, "%3F");
 }
-function rs(t) {
-  return as(t).replace(Yt, "%2F");
+function as(t) {
+  return rs(t).replace(Yt, "%2F");
 }
 function ze(t) {
   if (t == null) return null;
@@ -84,12 +84,12 @@ function ze(t) {
 }
 const is = /\/$/, ds = (t) => t.replace(is, "");
 function He(t, n, o = "/") {
-  let r, i = {}, y = "", E = "";
+  let a, i = {}, y = "", E = "";
   const N = n.indexOf("#");
   let g = n.indexOf("?");
-  return g = N >= 0 && g > N ? -1 : g, g >= 0 && (r = n.slice(0, g), y = n.slice(g, N > 0 ? N : n.length), i = t(y.slice(1))), N >= 0 && (r = r || n.slice(0, N), E = n.slice(N, n.length)), r = fs(r ?? n, o), {
-    fullPath: r + y + E,
-    path: r,
+  return g = N >= 0 && g > N ? -1 : g, g >= 0 && (a = n.slice(0, g), y = n.slice(g, N > 0 ? N : n.length), i = t(y.slice(1))), N >= 0 && (a = a || n.slice(0, N), E = n.slice(N, n.length)), a = fs(a ?? n, o), {
+    fullPath: a + y + E,
+    path: a,
     query: i,
     hash: ze(E)
   };
@@ -98,12 +98,12 @@ function us(t, n) {
   const o = n.query ? t(n.query) : "";
   return n.path + (o && "?") + o + (n.hash || "");
 }
-function at(t, n) {
+function rt(t, n) {
   return !n || !t.toLowerCase().startsWith(n.toLowerCase()) ? t : t.slice(n.length) || "/";
 }
 function cs(t, n, o) {
-  const r = n.matched.length - 1, i = o.matched.length - 1;
-  return r > -1 && r === i && Ne(n.matched[r], o.matched[i]) && Bt(n.params, o.params) && t(n.query) === t(o.query) && n.hash === o.hash;
+  const a = n.matched.length - 1, i = o.matched.length - 1;
+  return a > -1 && a === i && Ne(n.matched[a], o.matched[i]) && Bt(n.params, o.params) && t(n.query) === t(o.query) && n.hash === o.hash;
 }
 function Ne(t, n) {
   return (t.aliasOf || t) === (n.aliasOf || n);
@@ -114,23 +114,23 @@ function Bt(t, n) {
   return !0;
 }
 function ps(t, n) {
-  return ke(t) ? rt(t, n) : ke(n) ? rt(n, t) : (t && t.valueOf()) === (n && n.valueOf());
+  return ke(t) ? at(t, n) : ke(n) ? at(n, t) : (t && t.valueOf()) === (n && n.valueOf());
 }
-function rt(t, n) {
-  return ke(n) ? t.length === n.length && t.every((o, r) => o === n[r]) : t.length === 1 && t[0] === n;
+function at(t, n) {
+  return ke(n) ? t.length === n.length && t.every((o, a) => o === n[a]) : t.length === 1 && t[0] === n;
 }
 function fs(t, n) {
   if (t.startsWith("/")) return t;
   if (!t) return n;
-  const o = n.split("/"), r = t.split("/"), i = r[r.length - 1];
-  (i === ".." || i === ".") && r.push("");
+  const o = n.split("/"), a = t.split("/"), i = a[a.length - 1];
+  (i === ".." || i === ".") && a.push("");
   let y = o.length - 1, E, N;
-  for (E = 0; E < r.length; E++)
-    if (N = r[E], N !== ".")
+  for (E = 0; E < a.length; E++)
+    if (N = a[E], N !== ".")
       if (N === "..")
         y > 1 && y--;
       else break;
-  return o.slice(0, y).join("/") + "/" + r.slice(E).join("/");
+  return o.slice(0, y).join("/") + "/" + a.slice(E).join("/");
 }
 const Le = {
   path: "/",
@@ -160,11 +160,11 @@ function gs(t, n) {
   return t.replace(xs, "#") + n;
 }
 function vs(t, n) {
-  const o = document.documentElement.getBoundingClientRect(), r = t.getBoundingClientRect();
+  const o = document.documentElement.getBoundingClientRect(), a = t.getBoundingClientRect();
   return {
     behavior: n.behavior,
-    left: r.left - o.left - (n.left || 0),
-    top: r.top - o.top - (n.top || 0)
+    left: a.left - o.left - (n.left || 0),
+    top: a.top - o.top - (n.top || 0)
   };
 }
 const Qe = () => ({
@@ -174,7 +174,7 @@ const Qe = () => ({
 function hs(t) {
   let n;
   if ("el" in t) {
-    const o = t.el, r = typeof o == "string" && o.startsWith("#"), i = typeof o == "string" ? r ? document.getElementById(o.slice(1)) : document.querySelector(o) : o;
+    const o = t.el, a = typeof o == "string" && o.startsWith("#"), i = typeof o == "string" ? a ? document.getElementById(o.slice(1)) : document.querySelector(o) : o;
     if (!i)
       return;
     n = vs(i, t);
@@ -202,8 +202,8 @@ function _s(t) {
   const n = {};
   if (t === "" || t === "?") return n;
   const o = (t[0] === "?" ? t.slice(1) : t).split("&");
-  for (let r = 0; r < o.length; ++r) {
-    const i = o[r].replace(Et, " "), y = i.indexOf("="), E = ze(y < 0 ? i : i.slice(0, y)), N = y < 0 ? null : ze(i.slice(y + 1));
+  for (let a = 0; a < o.length; ++a) {
+    const i = o[a].replace(Et, " "), y = i.indexOf("="), E = ze(y < 0 ? i : i.slice(0, y)), N = y < 0 ? null : ze(i.slice(y + 1));
     if (E in n) {
       let g = n[E];
       ke(g) || (g = n[E] = [g]), g.push(N);
@@ -214,12 +214,12 @@ function _s(t) {
 function dt(t) {
   let n = "";
   for (let o in t) {
-    const r = t[o];
-    if (o = ls(o), r == null) {
-      r !== void 0 && (n += (n.length ? "&" : "") + o);
+    const a = t[o];
+    if (o = ls(o), a == null) {
+      a !== void 0 && (n += (n.length ? "&" : "") + o);
       continue;
     }
-    (ke(r) ? r.map((i) => i && Ze(i)) : [r && Ze(r)]).forEach((i) => {
+    (ke(a) ? a.map((i) => i && Ze(i)) : [a && Ze(a)]).forEach((i) => {
       i !== void 0 && (n += (n.length ? "&" : "") + o, i != null && (n += "=" + i));
     });
   }
@@ -228,16 +228,16 @@ function dt(t) {
 function ks(t) {
   const n = {};
   for (const o in t) {
-    const r = t[o];
-    r !== void 0 && (n[o] = ke(r) ? r.map((i) => i == null ? null : "" + i) : r == null ? r : "" + r);
+    const a = t[o];
+    a !== void 0 && (n[o] = ke(a) ? a.map((i) => i == null ? null : "" + i) : a == null ? a : "" + a);
   }
   return n;
 }
 function Me() {
   let t = [];
-  function n(r) {
-    return t.push(r), () => {
-      const i = t.indexOf(r);
+  function n(a) {
+    return t.push(a), () => {
+      const i = t.indexOf(a);
       i > -1 && t.splice(i, 1);
     };
   }
@@ -250,8 +250,8 @@ function Me() {
     reset: o
   };
 }
-function Ie(t, n, o, r, i, y = (E) => E()) {
-  const E = r && (r.enterCallbacks[i] = r.enterCallbacks[i] || []);
+function Ie(t, n, o, a, i, y = (E) => E()) {
+  const E = a && (a.enterCallbacks[i] = a.enterCallbacks[i] || []);
   return () => new Promise((N, g) => {
     const T = (f) => {
       f === !1 ? g(je(xe.NAVIGATION_ABORTED, {
@@ -260,13 +260,13 @@ function Ie(t, n, o, r, i, y = (E) => E()) {
       })) : f instanceof Error ? g(f) : ys(f) ? g(je(xe.NAVIGATION_GUARD_REDIRECT, {
         from: n,
         to: f
-      })) : (E && r.enterCallbacks[i] === E && typeof f == "function" && E.push(f), N());
-    }, A = y(() => t.call(r && r.instances[i], n, o, T));
+      })) : (E && a.enterCallbacks[i] === E && typeof f == "function" && E.push(f), N());
+    }, A = y(() => t.call(a && a.instances[i], n, o, T));
     let x = Promise.resolve(A);
     t.length < 3 && (x = x.then(T)), x.catch((f) => g(f));
   });
 }
-function Je(t, n, o, r, i = (y) => y()) {
+function Je(t, n, o, a, i = (y) => y()) {
   const y = [];
   for (const E of t)
     for (const N in E.components) {
@@ -274,7 +274,7 @@ function Je(t, n, o, r, i = (y) => y()) {
       if (!(n !== "beforeRouteEnter" && !E.instances[N]))
         if (At(g)) {
           const T = (g.__vccOpts || g)[n];
-          T && y.push(Ie(T, o, r, E, N, i));
+          T && y.push(Ie(T, o, a, E, N, i));
         } else {
           let T = g();
           y.push(() => T.then((A) => {
@@ -282,49 +282,49 @@ function Je(t, n, o, r, i = (y) => y()) {
             const x = Gt(A) ? A.default : A;
             E.mods[N] = A, E.components[N] = x;
             const f = (x.__vccOpts || x)[n];
-            return f && Ie(f, o, r, E, N, i)();
+            return f && Ie(f, o, a, E, N, i)();
           }));
         }
     }
   return y;
 }
 function $s(t, n) {
-  const o = [], r = [], i = [], y = Math.max(n.matched.length, t.matched.length);
+  const o = [], a = [], i = [], y = Math.max(n.matched.length, t.matched.length);
   for (let E = 0; E < y; E++) {
     const N = n.matched[E];
-    N && (t.matched.find((T) => Ne(T, N)) ? r.push(N) : o.push(N));
+    N && (t.matched.find((T) => Ne(T, N)) ? a.push(N) : o.push(N));
     const g = t.matched[E];
     g && (n.matched.find((T) => Ne(T, g)) || i.push(g));
   }
   return [
     o,
-    r,
+    a,
     i
   ];
 }
 let Cs = () => location.protocol + "//" + location.host;
 function Nt(t, n) {
-  const { pathname: o, search: r, hash: i } = n, y = t.indexOf("#");
+  const { pathname: o, search: a, hash: i } = n, y = t.indexOf("#");
   if (y > -1) {
     let E = i.includes(t.slice(y)) ? t.slice(y).length : 1, N = i.slice(E);
-    return N[0] !== "/" && (N = "/" + N), at(N, "");
+    return N[0] !== "/" && (N = "/" + N), rt(N, "");
   }
-  return at(o, t) + r + i;
+  return rt(o, t) + a + i;
 }
-function As(t, n, o, r) {
+function As(t, n, o, a) {
   let i = [], y = [], E = null;
   const N = ({ state: f }) => {
-    const k = Nt(t, location), K = o.value, j = n.value;
+    const k = Nt(t, location), Y = o.value, j = n.value;
     let R = 0;
     if (f) {
-      if (o.value = k, n.value = f, E && E === K) {
+      if (o.value = k, n.value = f, E && E === Y) {
         E = null;
         return;
       }
       R = j ? f.position - j.position : 0;
-    } else r(k);
+    } else a(k);
     i.forEach((U) => {
-      U(o.value, K, {
+      U(o.value, Y, {
         delta: R,
         type: Xe.pop,
         direction: R ? R > 0 ? We.forward : We.back : We.unknown
@@ -337,8 +337,8 @@ function As(t, n, o, r) {
   function T(f) {
     i.push(f);
     const k = () => {
-      const K = i.indexOf(f);
-      K > -1 && i.splice(K, 1);
+      const Y = i.indexOf(f);
+      Y > -1 && i.splice(Y, 1);
     };
     return y.push(k), k;
   }
@@ -359,21 +359,21 @@ function As(t, n, o, r) {
     destroy: x
   };
 }
-function ut(t, n, o, r = !1, i = !1) {
+function ut(t, n, o, a = !1, i = !1) {
   return {
     back: t,
     current: n,
     forward: o,
-    replaced: r,
+    replaced: a,
     position: window.history.length,
     scroll: i ? Qe() : null
   };
 }
 function Ts(t) {
-  const { history: n, location: o } = window, r = { value: Nt(t, o) }, i = { value: n.state };
-  i.value || y(r.value, {
+  const { history: n, location: o } = window, a = { value: Nt(t, o) }, i = { value: n.state };
+  i.value || y(a.value, {
     back: null,
-    current: r.value,
+    current: a.value,
     forward: null,
     position: n.length - 1,
     replaced: !0,
@@ -388,17 +388,17 @@ function Ts(t) {
     }
   }
   function E(g, T) {
-    y(g, de({}, n.state, ut(i.value.back, g, i.value.forward, !0), T, { position: i.value.position }), !0), r.value = g;
+    y(g, de({}, n.state, ut(i.value.back, g, i.value.forward, !0), T, { position: i.value.position }), !0), a.value = g;
   }
   function N(g, T) {
     const A = de({}, i.value, n.state, {
       forward: g,
       scroll: Qe()
     });
-    y(A.current, A, !0), y(g, de({}, ut(r.value, g, null), { position: A.position + 1 }, T), !1), r.value = g;
+    y(A.current, A, !0), y(g, de({}, ut(a.value, g, null), { position: A.position + 1 }, T), !1), a.value = g;
   }
   return {
-    location: r,
+    location: a,
     state: i,
     push: N,
     replace: E
@@ -407,13 +407,13 @@ function Ts(t) {
 function Ss(t) {
   t = ms(t);
   const n = Ts(t), o = As(t, n.state, n.location, n.replace);
-  function r(y, E = !0) {
+  function a(y, E = !0) {
     E || o.pauseListeners(), history.go(y);
   }
   const i = de({
     location: "",
     base: t,
-    go: r,
+    go: a,
     createHref: gs.bind(null, t)
   }, n, o);
   return Object.defineProperty(i, "location", {
@@ -441,7 +441,7 @@ function Is(t) {
   function n(k) {
     throw new Error(`ERR (${o})/"${T}": ${k}`);
   }
-  let o = ve.Static, r = o;
+  let o = ve.Static, a = o;
   const i = [];
   let y;
   function E() {
@@ -466,10 +466,10 @@ function Is(t) {
   for (; N < t.length; )
     switch (g = t[N++], o) {
       case ve.Static:
-        g === "\\" ? (r = o, o = ve.EscapeNext) : g === "/" ? (T && x(), E()) : g === ":" ? (x(), o = ve.Param) : f();
+        g === "\\" ? (a = o, o = ve.EscapeNext) : g === "/" ? (T && x(), E()) : g === ":" ? (x(), o = ve.Param) : f();
         break;
       case ve.EscapeNext:
-        f(), o = r;
+        f(), o = a;
         break;
       case ve.Param:
         g === "(" ? o = ve.ParamRegExp : Ls.test(g) ? f() : (x(), o = ve.Static, g !== "*" && g !== "?" && g !== "+" && N--);
@@ -497,7 +497,7 @@ var he = /* @__PURE__ */ (function(t) {
 })(he || {});
 const Bs = /[.+*?^${}()[\]/\\]/g;
 function js(t, n) {
-  const o = de({}, Rs, n), r = [];
+  const o = de({}, Rs, n), a = [];
   let i = o.start ? "^" : "";
   const y = [];
   for (const T of t) {
@@ -509,9 +509,9 @@ function js(t, n) {
       if (f.type === Re.Static)
         x || (i += "/"), i += f.value.replace(Bs, "\\$&"), k += he.Static;
       else if (f.type === Re.Param) {
-        const { value: K, repeatable: j, optional: R, regexp: U } = f;
+        const { value: Y, repeatable: j, optional: R, regexp: U } = f;
         y.push({
-          name: K,
+          name: Y,
           repeatable: j,
           optional: R
         });
@@ -521,7 +521,7 @@ function js(t, n) {
           try {
             new RegExp(`(${Q})`);
           } catch (L) {
-            throw new Error(`Invalid custom RegExp for param "${K}" (${Q}): ` + L.message);
+            throw new Error(`Invalid custom RegExp for param "${Y}" (${Q}): ` + L.message);
           }
         }
         let G = j ? `((?:${Q})(?:/(?:${Q}))*)` : `(${Q})`;
@@ -529,11 +529,11 @@ function js(t, n) {
       }
       A.push(k);
     }
-    r.push(A);
+    a.push(A);
   }
   if (o.strict && o.end) {
-    const T = r.length - 1;
-    r[T][r[T].length - 1] += he.BonusStrict;
+    const T = a.length - 1;
+    a[T][a[T].length - 1] += he.BonusStrict;
   }
   o.strict || (i += "/?"), o.end ? i += "$" : o.strict && !i.endsWith("/") && (i += "(?:/|$)");
   const E = new RegExp(i, o.sensitive ? "" : "i");
@@ -541,8 +541,8 @@ function js(t, n) {
     const A = T.match(E), x = {};
     if (!A) return null;
     for (let f = 1; f < A.length; f++) {
-      const k = A[f] || "", K = y[f - 1];
-      x[K.name] = k && K.repeatable ? k.split("/") : k;
+      const k = A[f] || "", Y = y[f - 1];
+      x[Y.name] = k && Y.repeatable ? k.split("/") : k;
     }
     return x;
   }
@@ -552,12 +552,12 @@ function js(t, n) {
       (!x || !A.endsWith("/")) && (A += "/"), x = !1;
       for (const k of f) if (k.type === Re.Static) A += k.value;
       else if (k.type === Re.Param) {
-        const { value: K, repeatable: j, optional: R } = k, U = K in T ? T[K] : "";
-        if (ke(U) && !j) throw new Error(`Provided param "${K}" is an array but it is not repeatable (* or + modifiers)`);
+        const { value: Y, repeatable: j, optional: R } = k, U = Y in T ? T[Y] : "";
+        if (ke(U) && !j) throw new Error(`Provided param "${Y}" is an array but it is not repeatable (* or + modifiers)`);
         const Q = ke(U) ? U.join("/") : U;
         if (!Q) if (R)
           f.length < 2 && (A.endsWith("/") ? A = A.slice(0, -1) : x = !0);
-        else throw new Error(`Missing required param "${K}"`);
+        else throw new Error(`Missing required param "${Y}"`);
         A += Q;
       }
     }
@@ -565,7 +565,7 @@ function js(t, n) {
   }
   return {
     re: E,
-    score: r,
+    score: a,
     keys: y,
     parse: N,
     stringify: g
@@ -574,25 +574,25 @@ function js(t, n) {
 function Ns(t, n) {
   let o = 0;
   for (; o < t.length && o < n.length; ) {
-    const r = n[o] - t[o];
-    if (r) return r;
+    const a = n[o] - t[o];
+    if (a) return a;
     o++;
   }
   return t.length < n.length ? t.length === 1 && t[0] === he.Static + he.Segment ? -1 : 1 : t.length > n.length ? n.length === 1 && n[0] === he.Static + he.Segment ? 1 : -1 : 0;
 }
 function Ot(t, n) {
   let o = 0;
-  const r = t.score, i = n.score;
-  for (; o < r.length && o < i.length; ) {
-    const y = Ns(r[o], i[o]);
+  const a = t.score, i = n.score;
+  for (; o < a.length && o < i.length; ) {
+    const y = Ns(a[o], i[o]);
     if (y) return y;
     o++;
   }
-  if (Math.abs(i.length - r.length) === 1) {
-    if (pt(r)) return 1;
+  if (Math.abs(i.length - a.length) === 1) {
+    if (pt(a)) return 1;
     if (pt(i)) return -1;
   }
-  return i.length - r.length;
+  return i.length - a.length;
 }
 function pt(t) {
   const n = t[t.length - 1];
@@ -604,7 +604,7 @@ const Os = {
   sensitive: !1
 };
 function Ms(t, n, o) {
-  const r = js(Is(t.path), o), i = de(r, {
+  const a = js(Is(t.path), o), i = de(a, {
     record: t,
     parent: n,
     children: [],
@@ -613,13 +613,13 @@ function Ms(t, n, o) {
   return n && !i.record.aliasOf == !n.record.aliasOf && n.children.push(i), i;
 }
 function Vs(t, n) {
-  const o = [], r = /* @__PURE__ */ new Map();
+  const o = [], a = /* @__PURE__ */ new Map();
   n = ot(Os, n);
   function i(x) {
-    return r.get(x);
+    return a.get(x);
   }
   function y(x, f, k) {
-    const K = !k, j = mt(x);
+    const Y = !k, j = mt(x);
     j.aliasOf = k && k.record;
     const R = ot(n, x), U = [j];
     if ("alias" in x) {
@@ -637,7 +637,7 @@ function Vs(t, n) {
         const ne = f.record.path, O = ne[ne.length - 1] === "/" ? "" : "/";
         L.path = f.record.path + (le && O + le);
       }
-      if (Q = Ms(L, f, R), k ? k.alias.push(Q) : (G = G || Q, G !== Q && G.alias.push(Q), K && x.name && !xt(Q) && E(x.name)), Mt(Q) && g(Q), j.children) {
+      if (Q = Ms(L, f, R), k ? k.alias.push(Q) : (G = G || Q, G !== Q && G.alias.push(Q), Y && x.name && !xt(Q) && E(x.name)), Mt(Q) && g(Q), j.children) {
         const ne = j.children;
         for (let O = 0; O < ne.length; O++) y(ne[O], Q, k && k.children[O]);
       }
@@ -649,11 +649,11 @@ function Vs(t, n) {
   }
   function E(x) {
     if (jt(x)) {
-      const f = r.get(x);
-      f && (r.delete(x), o.splice(o.indexOf(f), 1), f.children.forEach(E), f.alias.forEach(E));
+      const f = a.get(x);
+      f && (a.delete(x), o.splice(o.indexOf(f), 1), f.children.forEach(E), f.alias.forEach(E));
     } else {
       const f = o.indexOf(x);
-      f > -1 && (o.splice(f, 1), x.record.name && r.delete(x.record.name), x.children.forEach(E), x.alias.forEach(E));
+      f > -1 && (o.splice(f, 1), x.record.name && a.delete(x.record.name), x.children.forEach(E), x.alias.forEach(E));
     }
   }
   function N() {
@@ -661,23 +661,23 @@ function Vs(t, n) {
   }
   function g(x) {
     const f = Ds(x, o);
-    o.splice(f, 0, x), x.record.name && !xt(x) && r.set(x.record.name, x);
+    o.splice(f, 0, x), x.record.name && !xt(x) && a.set(x.record.name, x);
   }
   function T(x, f) {
-    let k, K = {}, j, R;
+    let k, Y = {}, j, R;
     if ("name" in x && x.name) {
-      if (k = r.get(x.name), !k) throw je(xe.MATCHER_NOT_FOUND, { location: x });
-      R = k.record.name, K = de(ft(f.params, k.keys.filter((G) => !G.optional).concat(k.parent ? k.parent.keys.filter((G) => G.optional) : []).map((G) => G.name)), x.params && ft(x.params, k.keys.map((G) => G.name))), j = k.stringify(K);
+      if (k = a.get(x.name), !k) throw je(xe.MATCHER_NOT_FOUND, { location: x });
+      R = k.record.name, Y = de(ft(f.params, k.keys.filter((G) => !G.optional).concat(k.parent ? k.parent.keys.filter((G) => G.optional) : []).map((G) => G.name)), x.params && ft(x.params, k.keys.map((G) => G.name))), j = k.stringify(Y);
     } else if (x.path != null)
-      j = x.path, k = o.find((G) => G.re.test(j)), k && (K = k.parse(j), R = k.record.name, k.keys.forEach((G) => {
-        G.optional && !K[G.name] && delete K[G.name];
+      j = x.path, k = o.find((G) => G.re.test(j)), k && (Y = k.parse(j), R = k.record.name, k.keys.forEach((G) => {
+        G.optional && !Y[G.name] && delete Y[G.name];
       }));
     else {
-      if (k = f.name ? r.get(f.name) : o.find((G) => G.re.test(f.path)), !k) throw je(xe.MATCHER_NOT_FOUND, {
+      if (k = f.name ? a.get(f.name) : o.find((G) => G.re.test(f.path)), !k) throw je(xe.MATCHER_NOT_FOUND, {
         location: x,
         currentLocation: f
       });
-      R = k.record.name, K = de({}, f.params, x.params), j = k.stringify(K);
+      R = k.record.name, Y = de({}, f.params, x.params), j = k.stringify(Y);
     }
     const U = [];
     let Q = k;
@@ -686,14 +686,14 @@ function Vs(t, n) {
     return {
       name: R,
       path: j,
-      params: K,
+      params: Y,
       matched: U,
       meta: Ps(U)
     };
   }
   t.forEach((x) => y(x));
   function A() {
-    o.length = 0, r.clear();
+    o.length = 0, a.clear();
   }
   return {
     addRoute: y,
@@ -706,7 +706,7 @@ function Vs(t, n) {
 }
 function ft(t, n) {
   const o = {};
-  for (const r of n) r in t && (o[r] = t[r]);
+  for (const a of n) a in t && (o[a] = t[a]);
   return o;
 }
 function mt(t) {
@@ -730,7 +730,7 @@ function mt(t) {
 function Us(t) {
   const n = {}, o = t.props || !1;
   if ("component" in t) n.default = o;
-  else for (const r in t.components) n[r] = typeof o == "object" ? o[r] : o;
+  else for (const a in t.components) n[a] = typeof o == "object" ? o[a] : o;
   return n;
 }
 function xt(t) {
@@ -744,13 +744,13 @@ function Ps(t) {
   return t.reduce((n, o) => de(n, o.meta), {});
 }
 function Ds(t, n) {
-  let o = 0, r = n.length;
-  for (; o !== r; ) {
-    const y = o + r >> 1;
-    Ot(t, n[y]) < 0 ? r = y : o = y + 1;
+  let o = 0, a = n.length;
+  for (; o !== a; ) {
+    const y = o + a >> 1;
+    Ot(t, n[y]) < 0 ? a = y : o = y + 1;
   }
   const i = zs(t);
-  return i && (r = n.lastIndexOf(i, r - 1)), r;
+  return i && (a = n.lastIndexOf(i, a - 1)), a;
 }
 function zs(t) {
   let n = t;
@@ -760,17 +760,17 @@ function Mt({ record: t }) {
   return !!(t.name || t.components && Object.keys(t.components).length || t.redirect);
 }
 function gt(t) {
-  const n = ae(Fe), o = ae(st), r = ie(() => {
+  const n = re(Fe), o = re(st), a = ie(() => {
     const g = ge(t.to);
     return n.resolve(g);
   }), i = ie(() => {
-    const { matched: g } = r.value, { length: T } = g, A = g[T - 1], x = o.matched;
+    const { matched: g } = a.value, { length: T } = g, A = g[T - 1], x = o.matched;
     if (!A || !x.length) return -1;
     const f = x.findIndex(Ne.bind(null, A));
     if (f > -1) return f;
     const k = vt(g[T - 2]);
     return T > 1 && vt(A) === k && x[x.length - 1].path !== k ? x.findIndex(Ne.bind(null, g[T - 2])) : f;
-  }), y = ie(() => i.value > -1 && Ws(o.params, r.value.params)), E = ie(() => i.value > -1 && i.value === o.matched.length - 1 && Bt(o.params, r.value.params));
+  }), y = ie(() => i.value > -1 && Ws(o.params, a.value.params)), E = ie(() => i.value > -1 && i.value === o.matched.length - 1 && Bt(o.params, a.value.params));
   function N(g = {}) {
     if (Hs(g)) {
       const T = n[ge(t.replace) ? "replace" : "push"](ge(t.to)).catch(Ve);
@@ -779,8 +779,8 @@ function gt(t) {
     return Promise.resolve();
   }
   return {
-    route: r,
-    href: ie(() => r.value.href),
+    route: a,
+    href: ie(() => a.value.href),
     isActive: y,
     isExactActive: E,
     navigate: N
@@ -809,9 +809,9 @@ const Qs = /* @__PURE__ */ me({
   },
   useLink: gt,
   setup(t, { slots: n }) {
-    const o = Pt(gt(t)), { options: r } = ae(Fe), i = ie(() => ({
-      [ht(t.activeClass, r.linkActiveClass, "router-link-active")]: o.isActive,
-      [ht(t.exactActiveClass, r.linkExactActiveClass, "router-link-exact-active")]: o.isExactActive
+    const o = Pt(gt(t)), { options: a } = re(Fe), i = ie(() => ({
+      [ht(t.activeClass, a.linkActiveClass, "router-link-active")]: o.isActive,
+      [ht(t.exactActiveClass, a.linkExactActiveClass, "router-link-exact-active")]: o.isExactActive
     }));
     return () => {
       const y = n.default && Fs(n.default(o));
@@ -835,10 +835,10 @@ function Hs(t) {
 }
 function Ws(t, n) {
   for (const o in n) {
-    const r = n[o], i = t[o];
-    if (typeof r == "string") {
-      if (r !== i) return !1;
-    } else if (!ke(i) || i.length !== r.length || r.some((y, E) => y.valueOf() !== i[E].valueOf())) return !1;
+    const a = n[o], i = t[o];
+    if (typeof a == "string") {
+      if (a !== i) return !1;
+    } else if (!ke(i) || i.length !== a.length || a.some((y, E) => y.valueOf() !== i[E].valueOf())) return !1;
   }
   return !0;
 }
@@ -857,7 +857,7 @@ const ht = (t, n, o) => t ?? n ?? o, Js = /* @__PURE__ */ me({
   },
   compatConfig: { MODE: 3 },
   setup(t, { attrs: n, slots: o }) {
-    const r = ae(Ye), i = ie(() => t.route || r.value), y = ae(lt, 0), E = ie(() => {
+    const a = re(Ye), i = ie(() => t.route || a.value), y = re(lt, 0), E = ie(() => {
       let T = ge(y);
       const { matched: A } = i.value;
       let x;
@@ -865,12 +865,12 @@ const ht = (t, n, o) => t ?? n ?? o, Js = /* @__PURE__ */ me({
       return T;
     }), N = ie(() => i.value.matched[E.value]);
     ye(lt, ie(() => E.value + 1)), ye(Jt, N), ye(Ye, i);
-    const g = Y();
+    const g = K();
     return we(() => [
       g.value,
       N.value,
       t.name
-    ], ([T, A, x], [f, k, K]) => {
+    ], ([T, A, x], [f, k, Y]) => {
       A && (A.instances[x] = T, k && k !== A && T && T === f && (A.leaveGuards.size || (A.leaveGuards = k.leaveGuards), A.updateGuards.size || (A.updateGuards = k.updateGuards))), T && A && (!k || !Ne(A, k) || !f) && (A.enterCallbacks[x] || []).forEach((j) => j(T));
     }, { flush: "post" }), () => {
       const T = i.value, A = t.name, x = N.value, f = x && x.components[A];
@@ -878,7 +878,7 @@ const ht = (t, n, o) => t ?? n ?? o, Js = /* @__PURE__ */ me({
         Component: f,
         route: T
       });
-      const k = x.props[A], K = k ? k === !0 ? T.params : typeof k == "function" ? k(T) : k : null, R = _t(f, de({}, K, n, {
+      const k = x.props[A], Y = k ? k === !0 ? T.params : typeof k == "function" ? k(T) : k : null, R = _t(f, de({}, Y, n, {
         onVnodeUnmounted: (U) => {
           U.component.isUnmounted && (x.instances[A] = null);
         },
@@ -898,27 +898,27 @@ function bt(t, n) {
 }
 const Ks = Js;
 function Ys(t) {
-  const n = Vs(t.routes, t), o = t.parseQuery || _s, r = t.stringifyQuery || dt, i = t.history, y = Me(), E = Me(), N = Me(), g = Ut(Le);
+  const n = Vs(t.routes, t), o = t.parseQuery || _s, a = t.stringifyQuery || dt, i = t.history, y = Me(), E = Me(), N = Me(), g = Vt(Le);
   let T = Le;
   Be && t.scrollBehavior && "scrollRestoration" in history && (history.scrollRestoration = "manual");
-  const A = Ge.bind(null, (a) => "" + a), x = Ge.bind(null, rs), f = Ge.bind(null, ze);
-  function k(a, $) {
+  const A = Ge.bind(null, (r) => "" + r), x = Ge.bind(null, as), f = Ge.bind(null, ze);
+  function k(r, $) {
     let h, B;
-    return jt(a) ? (h = n.getRecordMatcher(a), B = $) : B = a, n.addRoute(B, h);
+    return jt(r) ? (h = n.getRecordMatcher(r), B = $) : B = r, n.addRoute(B, h);
   }
-  function K(a) {
-    const $ = n.getRecordMatcher(a);
+  function Y(r) {
+    const $ = n.getRecordMatcher(r);
     $ && n.removeRoute($);
   }
   function j() {
-    return n.getRoutes().map((a) => a.record);
+    return n.getRoutes().map((r) => r.record);
   }
-  function R(a) {
-    return !!n.getRecordMatcher(a);
+  function R(r) {
+    return !!n.getRecordMatcher(r);
   }
-  function U(a, $) {
-    if ($ = de({}, $ || g.value), typeof a == "string") {
-      const D = He(o, a, $.path), V = n.resolve({ path: D.path }, $), ce = i.createHref(D.fullPath);
+  function U(r, $) {
+    if ($ = de({}, $ || g.value), typeof r == "string") {
+      const D = He(o, r, $.path), V = n.resolve({ path: D.path }, $), ce = i.createHref(D.fullPath);
       return de(D, V, {
         params: f(V.params),
         redirectedFrom: void 0,
@@ -926,57 +926,57 @@ function Ys(t) {
       });
     }
     let h;
-    if (a.path != null)
-      h = de({}, a, { path: He(o, a.path, $.path).path });
+    if (r.path != null)
+      h = de({}, r, { path: He(o, r.path, $.path).path });
     else {
-      const D = de({}, a.params);
+      const D = de({}, r.params);
       for (const V in D) D[V] == null && delete D[V];
-      h = de({}, a, { params: x(D) }), $.params = x($.params);
+      h = de({}, r, { params: x(D) }), $.params = x($.params);
     }
-    const B = n.resolve(h, $), I = a.hash || "";
+    const B = n.resolve(h, $), I = r.hash || "";
     B.params = A(f(B.params));
-    const W = us(r, de({}, a, {
+    const W = us(a, de({}, r, {
       hash: os(I),
       path: B.path
     })), z = i.createHref(W);
     return de({
       fullPath: W,
       hash: I,
-      query: r === dt ? ks(a.query) : a.query || {}
+      query: a === dt ? ks(r.query) : r.query || {}
     }, B, {
       redirectedFrom: void 0,
       href: z
     });
   }
-  function Q(a) {
-    return typeof a == "string" ? He(o, a, g.value.path) : de({}, a);
+  function Q(r) {
+    return typeof r == "string" ? He(o, r, g.value.path) : de({}, r);
   }
-  function G(a, $) {
-    if (T !== a) return je(xe.NAVIGATION_CANCELLED, {
+  function G(r, $) {
+    if (T !== r) return je(xe.NAVIGATION_CANCELLED, {
       from: $,
-      to: a
+      to: r
     });
   }
-  function L(a) {
-    return O(a);
+  function L(r) {
+    return O(r);
   }
-  function le(a) {
-    return L(de(Q(a), { replace: !0 }));
+  function le(r) {
+    return L(de(Q(r), { replace: !0 }));
   }
-  function ne(a, $) {
-    const h = a.matched[a.matched.length - 1];
+  function ne(r, $) {
+    const h = r.matched[r.matched.length - 1];
     if (h && h.redirect) {
       const { redirect: B } = h;
-      let I = typeof B == "function" ? B(a, $) : B;
+      let I = typeof B == "function" ? B(r, $) : B;
       return typeof I == "string" && (I = I.includes("?") || I.includes("#") ? I = Q(I) : { path: I }, I.params = {}), de({
-        query: a.query,
-        hash: a.hash,
-        params: I.path != null ? {} : a.params
+        query: r.query,
+        hash: r.hash,
+        params: I.path != null ? {} : r.params
       }, I);
     }
   }
-  function O(a, $) {
-    const h = T = U(a), B = g.value, I = a.state, W = a.force, z = a.replace === !0, D = ne(h, B);
+  function O(r, $) {
+    const h = T = U(r), B = g.value, I = r.state, W = r.force, z = r.replace === !0, D = ne(h, B);
     if (D) return O(de(Q(D), {
       state: typeof D == "object" ? de({}, I, D.state) : I,
       force: W,
@@ -985,7 +985,7 @@ function Ys(t) {
     const V = h;
     V.redirectedFrom = $;
     let ce;
-    return !W && cs(r, B, h) && (ce = je(xe.NAVIGATION_DUPLICATED, {
+    return !W && cs(a, B, h) && (ce = je(xe.NAVIGATION_DUPLICATED, {
       to: V,
       from: B
     }), b(B, B, !0, !1)), (ce ? Promise.resolve(ce) : s(V, B)).catch((fe) => Te(fe) ? Te(fe, xe.NAVIGATION_GUARD_REDIRECT) ? fe : pe(fe) : te(fe, V, B)).then((fe) => {
@@ -999,57 +999,57 @@ function Ys(t) {
       return l(V, B, fe), fe;
     });
   }
-  function Z(a, $) {
-    const h = G(a, $);
+  function Z(r, $) {
+    const h = G(r, $);
     return h ? Promise.reject(h) : Promise.resolve();
   }
-  function d(a) {
+  function d(r) {
     const $ = w.values().next().value;
-    return $ && typeof $.runWithContext == "function" ? $.runWithContext(a) : a();
+    return $ && typeof $.runWithContext == "function" ? $.runWithContext(r) : r();
   }
-  function s(a, $) {
+  function s(r, $) {
     let h;
-    const [B, I, W] = $s(a, $);
-    h = Je(B.reverse(), "beforeRouteLeave", a, $);
+    const [B, I, W] = $s(r, $);
+    h = Je(B.reverse(), "beforeRouteLeave", r, $);
     for (const D of B) D.leaveGuards.forEach((V) => {
-      h.push(Ie(V, a, $));
+      h.push(Ie(V, r, $));
     });
-    const z = Z.bind(null, a, $);
+    const z = Z.bind(null, r, $);
     return h.push(z), S(h).then(() => {
       h = [];
-      for (const D of y.list()) h.push(Ie(D, a, $));
+      for (const D of y.list()) h.push(Ie(D, r, $));
       return h.push(z), S(h);
     }).then(() => {
-      h = Je(I, "beforeRouteUpdate", a, $);
+      h = Je(I, "beforeRouteUpdate", r, $);
       for (const D of I) D.updateGuards.forEach((V) => {
-        h.push(Ie(V, a, $));
+        h.push(Ie(V, r, $));
       });
       return h.push(z), S(h);
     }).then(() => {
       h = [];
-      for (const D of W) if (D.beforeEnter) if (ke(D.beforeEnter)) for (const V of D.beforeEnter) h.push(Ie(V, a, $));
-      else h.push(Ie(D.beforeEnter, a, $));
+      for (const D of W) if (D.beforeEnter) if (ke(D.beforeEnter)) for (const V of D.beforeEnter) h.push(Ie(V, r, $));
+      else h.push(Ie(D.beforeEnter, r, $));
       return h.push(z), S(h);
-    }).then(() => (a.matched.forEach((D) => D.enterCallbacks = {}), h = Je(W, "beforeRouteEnter", a, $, d), h.push(z), S(h))).then(() => {
+    }).then(() => (r.matched.forEach((D) => D.enterCallbacks = {}), h = Je(W, "beforeRouteEnter", r, $, d), h.push(z), S(h))).then(() => {
       h = [];
-      for (const D of E.list()) h.push(Ie(D, a, $));
+      for (const D of E.list()) h.push(Ie(D, r, $));
       return h.push(z), S(h);
     }).catch((D) => Te(D, xe.NAVIGATION_CANCELLED) ? D : Promise.reject(D));
   }
-  function l(a, $, h) {
-    N.list().forEach((B) => d(() => B(a, $, h)));
+  function l(r, $, h) {
+    N.list().forEach((B) => d(() => B(r, $, h)));
   }
-  function C(a, $, h, B, I) {
-    const W = G(a, $);
+  function C(r, $, h, B, I) {
+    const W = G(r, $);
     if (W) return W;
     const z = $ === Le, D = Be ? history.state : {};
-    h && (B || z ? i.replace(a.fullPath, de({ scroll: z && D && D.scroll }, I)) : i.push(a.fullPath, I)), g.value = a, b(a, $, h, z), pe();
+    h && (B || z ? i.replace(r.fullPath, de({ scroll: z && D && D.scroll }, I)) : i.push(r.fullPath, I)), g.value = r, b(r, $, h, z), pe();
   }
   let _;
   function P() {
-    _ || (_ = i.listen((a, $, h) => {
+    _ || (_ = i.listen((r, $, h) => {
       if (!u.listening) return;
-      const B = U(a), I = ne(B, u.currentRoute.value);
+      const B = U(r), I = ne(B, u.currentRoute.value);
       if (I) {
         O(de(I, {
           replace: !0,
@@ -1067,32 +1067,32 @@ function Ys(t) {
     }));
   }
   let H = Me(), J = Me(), F;
-  function te(a, $, h) {
-    pe(a);
+  function te(r, $, h) {
+    pe(r);
     const B = J.list();
-    return B.length ? B.forEach((I) => I(a, $, h)) : console.error(a), Promise.reject(a);
+    return B.length ? B.forEach((I) => I(r, $, h)) : console.error(r), Promise.reject(r);
   }
   function ue() {
-    return F && g.value !== Le ? Promise.resolve() : new Promise((a, $) => {
-      H.add([a, $]);
+    return F && g.value !== Le ? Promise.resolve() : new Promise((r, $) => {
+      H.add([r, $]);
     });
   }
-  function pe(a) {
-    return F || (F = !a, P(), H.list().forEach(([$, h]) => a ? h(a) : $()), H.reset()), a;
+  function pe(r) {
+    return F || (F = !r, P(), H.list().forEach(([$, h]) => r ? h(r) : $()), H.reset()), r;
   }
-  function b(a, $, h, B) {
+  function b(r, $, h, B) {
     const { scrollBehavior: I } = t;
     if (!Be || !I) return Promise.resolve();
-    const W = !h && ws(it(a.fullPath, 0)) || (B || !h) && history.state && history.state.scroll || null;
-    return Ke().then(() => I(a, $, W)).then((z) => z && hs(z)).catch((z) => te(z, a, $));
+    const W = !h && ws(it(r.fullPath, 0)) || (B || !h) && history.state && history.state.scroll || null;
+    return Ke().then(() => I(r, $, W)).then((z) => z && hs(z)).catch((z) => te(z, r, $));
   }
-  const c = (a) => i.go(a);
+  const c = (r) => i.go(r);
   let p;
   const w = /* @__PURE__ */ new Set(), u = {
     currentRoute: g,
     listening: !0,
     addRoute: k,
-    removeRoute: K,
+    removeRoute: Y,
     clearRoutes: n.clearRoutes,
     hasRoute: R,
     getRoutes: j,
@@ -1108,8 +1108,8 @@ function Ys(t) {
     afterEach: N.add,
     onError: J.add,
     isReady: ue,
-    install(a) {
-      a.component("RouterLink", Gs), a.component("RouterView", Ks), a.config.globalProperties.$router = u, Object.defineProperty(a.config.globalProperties, "$route", {
+    install(r) {
+      r.component("RouterLink", Gs), r.component("RouterView", Ks), r.config.globalProperties.$router = u, Object.defineProperty(r.config.globalProperties, "$route", {
         enumerable: !0,
         get: () => ge(g)
       }), Be && !p && g.value === Le && (p = !0, L(i.location).catch((B) => {
@@ -1119,15 +1119,15 @@ function Ys(t) {
         get: () => g.value[B],
         enumerable: !0
       });
-      a.provide(Fe, u), a.provide(st, Vt($)), a.provide(Ye, g);
-      const h = a.unmount;
-      w.add(a), a.unmount = function() {
-        w.delete(a), w.size < 1 && (T = Le, _ && _(), _ = null, g.value = Le, p = !1, F = !1), h();
+      r.provide(Fe, u), r.provide(st, Ut($)), r.provide(Ye, g);
+      const h = r.unmount;
+      w.add(r), r.unmount = function() {
+        w.delete(r), w.size < 1 && (T = Le, _ && _(), _ = null, g.value = Le, p = !1, F = !1), h();
       };
     }
   };
-  function S(a) {
-    return a.reduce(($, h) => $.then(() => d(h)), Promise.resolve());
+  function S(r) {
+    return r.reduce(($, h) => $.then(() => d(h)), Promise.resolve());
   }
   return u;
 }
@@ -1138,7 +1138,7 @@ const Zs = { class: "min-h-screen bg-[#525355] flex justify-center p-0 md:p-4" }
     _pp: {}
   },
   setup(t) {
-    const n = _e(), o = Ee(), r = () => {
+    const n = _e(), o = Ee(), a = () => {
       n.push(`/test/hardware/${o.params.testId}`);
     };
     return (async () => (t._p.my.emitter = t._p.f.new_emitter(), t._p.my.emitter.on("msg", async (i) => {
@@ -1160,7 +1160,7 @@ const Zs = { class: "min-h-screen bg-[#525355] flex justify-center p-0 md:p-4" }
         e("header", { class: "bg-[#00796B] h-[60px] flex justify-end items-center px-4 md:px-6 shrink-0" }, [
           e("button", {
             class: "bg-white text-[#00796B] border-none rounded-full px-5 md:px-6 py-2 text-[15px] md:text-[16px] font-medium cursor-pointer flex items-center gap-1 hover:bg-gray-100 transition-all active:scale-95 shadow-sm",
-            onClick: r
+            onClick: a
           }, [...y[0] || (y[0] = [
             q(" Continue ", -1),
             e("svg", {
@@ -1188,10 +1188,10 @@ const Zs = { class: "min-h-screen bg-[#525355] flex justify-center p-0 md:p-4" }
     _pp: {}
   },
   setup(t) {
-    const n = t, o = n._p, r = n._pp;
+    const n = t, o = n._p, a = n._pp;
     return (i, y) => (m(), Ae(Xs, {
       _p: ge(o),
-      _pp: ge(r)
+      _pp: ge(a)
     }, null, 8, ["_p", "_pp"]));
   }
 }), en = { class: "min-h-screen bg-[#525355] flex justify-center p-0 md:p-4" }, tn = /* @__PURE__ */ me({
@@ -1201,7 +1201,7 @@ const Zs = { class: "min-h-screen bg-[#525355] flex justify-center p-0 md:p-4" }
     _pp: {}
   },
   setup(t) {
-    const n = _e(), o = Ee(), r = () => {
+    const n = _e(), o = Ee(), a = () => {
       n.push(`/test/microphone/${o.params.testId}`);
     };
     return (async () => (t._p.my.emitter = t._p.f.new_emitter(), t._p.my.emitter.on("msg", async (i) => {
@@ -1223,7 +1223,7 @@ const Zs = { class: "min-h-screen bg-[#525355] flex justify-center p-0 md:p-4" }
         e("header", { class: "bg-[#00796B] h-[60px] flex justify-end items-center px-4 md:px-6 shrink-0" }, [
           e("button", {
             class: "bg-white text-[#00796B] border-none rounded-full px-5 md:px-6 py-2 text-[15px] md:text-[16px] font-medium cursor-pointer flex items-center gap-1 hover:bg-gray-100 transition-all active:scale-95 shadow-sm",
-            onClick: r
+            onClick: a
           }, [...y[0] || (y[0] = [
             q(" Continue ", -1),
             e("svg", {
@@ -1251,13 +1251,13 @@ const Zs = { class: "min-h-screen bg-[#525355] flex justify-center p-0 md:p-4" }
     _pp: {}
   },
   setup(t) {
-    const n = t, o = n._p, r = n._pp;
+    const n = t, o = n._p, a = n._pp;
     return (i, y) => (m(), Ae(tn, {
       _p: ge(o),
-      _pp: ge(r)
+      _pp: ge(a)
     }, null, 8, ["_p", "_pp"]));
   }
-}), nn = { class: "min-h-screen bg-[#525355] flex justify-center p-0 md:p-4" }, on = { class: "w-full max-w-[1200px] flex flex-col shadow-lg overflow-hidden md:rounded-lg" }, ln = { class: "bg-[#00796B] h-[60px] flex justify-end items-center px-4 md:px-6 gap-2 md:gap-4 shrink-0" }, an = { class: "relative flex items-center" }, rn = {
+}), nn = { class: "min-h-screen bg-[#525355] flex justify-center p-0 md:p-4" }, on = { class: "w-full max-w-[1200px] flex flex-col shadow-lg overflow-hidden md:rounded-lg" }, ln = { class: "bg-[#00796B] h-[60px] flex justify-end items-center px-4 md:px-6 gap-2 md:gap-4 shrink-0" }, rn = { class: "relative flex items-center" }, an = {
   key: 0,
   class: "absolute top-[120%] right-0 bg-white rounded-xl shadow-xl border border-gray-300 p-5 w-64 md:w-72 z-50 flex flex-col"
 }, dn = { class: "flex items-end justify-between h-10 gap-[2px] mb-3 mt-2 px-1" }, un = `
@@ -1273,14 +1273,14 @@ const Zs = { class: "min-h-screen bg-[#525355] flex justify-center p-0 md:p-4" }
     _pp: {}
   },
   setup(t) {
-    const n = _e(), o = Y(!1), r = Y(50);
+    const n = _e(), o = K(!1), a = K(50);
     let i = null;
     const y = () => {
-      "speechSynthesis" in window && (window.speechSynthesis.cancel(), i = new SpeechSynthesisUtterance(un), i.volume = r.value / 100, i.rate = 0.9, i.onend = () => {
+      "speechSynthesis" in window && (window.speechSynthesis.cancel(), i = new SpeechSynthesisUtterance(un), i.volume = a.value / 100, i.rate = 0.9, i.onend = () => {
         window.speechSynthesis.speak(i);
       }, window.speechSynthesis.speak(i));
     }, E = () => {
-      i && "speechSynthesis" in window && (i.volume = r.value / 100, window.speechSynthesis.speaking && (window.speechSynthesis.pause(), window.speechSynthesis.resume()));
+      i && "speechSynthesis" in window && (i.volume = a.value / 100, window.speechSynthesis.speaking && (window.speechSynthesis.pause(), window.speechSynthesis.resume()));
     };
     tt(() => {
       y();
@@ -1293,7 +1293,7 @@ const Zs = { class: "min-h-screen bg-[#525355] flex justify-center p-0 md:p-4" }
     return (g, T) => (m(), v("div", nn, [
       e("div", on, [
         e("header", ln, [
-          e("div", an, [
+          e("div", rn, [
             e("button", {
               onClick: T[0] || (T[0] = (A) => o.value = !o.value),
               class: be(["rounded-full px-4 md:px-5 py-1.5 md:py-2 text-[15px] md:text-[16px] font-medium cursor-pointer flex items-center gap-2 transition-colors border", o.value ? "bg-white text-[#00796B] border-white" : "bg-transparent text-white border-white hover:bg-white hover:text-[#00796B]"])
@@ -1312,27 +1312,27 @@ const Zs = { class: "min-h-screen bg-[#525355] flex justify-center p-0 md:p-4" }
                 })
               ], -1)
             ])], 2),
-            o.value ? (m(), v("div", rn, [
+            o.value ? (m(), v("div", an, [
               e("button", {
                 onClick: T[1] || (T[1] = (A) => o.value = !1),
                 class: "absolute top-2 right-3 text-gray-400 hover:text-gray-600 text-sm font-bold"
               }, " ✕ "),
               e("div", dn, [
-                (m(), v(oe, null, re(20, (A) => e("div", {
+                (m(), v(oe, null, ae(20, (A) => e("div", {
                   key: A,
-                  class: be(["w-[6px] rounded-full transition-colors duration-150", A * 5 <= r.value ? "bg-[#00796B]" : "bg-[#00796B]/20"]),
+                  class: be(["w-[6px] rounded-full transition-colors duration-150", A * 5 <= a.value ? "bg-[#00796B]" : "bg-[#00796B]/20"]),
                   style: Se({ height: `${20 + A * 4}%` })
                 }, null, 6)), 64))
               ]),
               X(e("input", {
                 type: "range",
-                "onUpdate:modelValue": T[2] || (T[2] = (A) => r.value = A),
+                "onUpdate:modelValue": T[2] || (T[2] = (A) => a.value = A),
                 onInput: E,
                 min: "0",
                 max: "100",
                 class: "w-full h-1 bg-gray-300 rounded-lg appearance-none cursor-pointer custom-slider"
               }, null, 544), [
-                [ee, r.value]
+                [ee, a.value]
               ])
             ])) : se("", !0)
           ]),
@@ -1361,8 +1361,8 @@ const Zs = { class: "min-h-screen bg-[#525355] flex justify-center p-0 md:p-4" }
   }
 }), Pe = (t, n) => {
   const o = t.__vccOpts || t;
-  for (const [r, i] of n)
-    o[r] = i;
+  for (const [a, i] of n)
+    o[a] = i;
   return o;
 }, pn = /* @__PURE__ */ Pe(cn, [["__scopeId", "data-v-f59b18f0"]]), fn = /* @__PURE__ */ me({
   __name: "volume",
@@ -1371,10 +1371,10 @@ const Zs = { class: "min-h-screen bg-[#525355] flex justify-center p-0 md:p-4" }
     _pp: {}
   },
   setup(t) {
-    const n = t, o = n._p, r = n._pp;
+    const n = t, o = n._p, a = n._pp;
     return (i, y) => (m(), Ae(pn, {
       _p: ge(o),
-      _pp: ge(r)
+      _pp: ge(a)
     }, null, 8, ["_p", "_pp"]));
   }
 }), mn = { class: "min-h-screen bg-[#525355] flex justify-center p-0 md:p-4" }, xn = { class: "w-full max-w-[1200px] flex flex-col shadow-lg overflow-hidden md:rounded-lg relative" }, gn = { class: "bg-[#00796B] h-[60px] flex justify-end items-center px-4 md:px-6 gap-2 md:gap-4 shrink-0" }, vn = { class: "relative flex items-center" }, hn = {
@@ -1415,10 +1415,10 @@ const Zs = { class: "min-h-screen bg-[#525355] flex justify-center p-0 md:p-4" }
     _pp: {}
   },
   setup(t) {
-    const n = _e(), o = Ee(), r = Y(!1), i = Y(50);
+    const n = _e(), o = Ee(), a = K(!1), i = K(50);
     let y = null;
-    const E = Y(!1), N = Y(!1), g = Y("ready"), T = Y(3), A = Y(0);
-    let x = null, f = null, k = null, K, j;
+    const E = K(!1), N = K(!1), g = K("ready"), T = K(3), A = K(0);
+    let x = null, f = null, k = null, Y, j;
     const R = () => {
       "speechSynthesis" in window && (window.speechSynthesis.cancel(), y = new SpeechSynthesisUtterance(Vn), y.volume = i.value / 100, y.rate = 0.9, y.onend = () => {
         E.value = !0;
@@ -1446,7 +1446,7 @@ const Zs = { class: "min-h-screen bg-[#525355] flex justify-center p-0 md:p-4" }
           for (let te = 0; te < _.length; te++) H += _[te];
           const J = H / _.length;
           let F = Math.floor(J / 40 * 14);
-          F > 14 && (F = 14), A.value = F, K = requestAnimationFrame(P);
+          F > 14 && (F = 14), A.value = F, Y = requestAnimationFrame(P);
         };
         P(), j = setTimeout(() => {
           Z();
@@ -1455,7 +1455,7 @@ const Zs = { class: "min-h-screen bg-[#525355] flex justify-center p-0 md:p-4" }
         console.error("Mic error:", l), alert("Microphone access is required."), g.value = "ready";
       }
     }, Z = () => {
-      g.value = "ready", A.value = 0, j && clearTimeout(j), K && cancelAnimationFrame(K), k && (k.getTracks().forEach((l) => l.stop()), k = null), x && x.state !== "closed" && (x.close(), x = null), E.value = !1, N.value = !0;
+      g.value = "ready", A.value = 0, j && clearTimeout(j), Y && cancelAnimationFrame(Y), k && (k.getTracks().forEach((l) => l.stop()), k = null), x && x.state !== "closed" && (x.close(), x = null), E.value = !1, N.value = !0;
     }, d = (l) => l > A.value ? "border-gray-400 bg-transparent" : l <= 10 ? "border-[#00796B] bg-[#00796B]" : "border-[#C8102E] bg-[#C8102E]";
     tt(() => {
       R();
@@ -1470,8 +1470,8 @@ const Zs = { class: "min-h-screen bg-[#525355] flex justify-center p-0 md:p-4" }
         e("header", gn, [
           e("div", vn, [
             e("button", {
-              onClick: C[0] || (C[0] = (_) => r.value = !r.value),
-              class: be(["rounded-full px-4 md:px-5 py-1.5 md:py-2 text-[15px] md:text-[16px] font-medium cursor-pointer flex items-center gap-2 transition-colors border", r.value ? "bg-white text-[#00796B] border-white" : "bg-transparent text-white border-white hover:bg-white hover:text-[#00796B]"])
+              onClick: C[0] || (C[0] = (_) => a.value = !a.value),
+              class: be(["rounded-full px-4 md:px-5 py-1.5 md:py-2 text-[15px] md:text-[16px] font-medium cursor-pointer flex items-center gap-2 transition-colors border", a.value ? "bg-white text-[#00796B] border-white" : "bg-transparent text-white border-white hover:bg-white hover:text-[#00796B]"])
             }, [...C[4] || (C[4] = [
               e("span", { class: "hidden xs:inline" }, "Volume", -1),
               e("svg", {
@@ -1487,13 +1487,13 @@ const Zs = { class: "min-h-screen bg-[#525355] flex justify-center p-0 md:p-4" }
                 })
               ], -1)
             ])], 2),
-            r.value ? (m(), v("div", hn, [
+            a.value ? (m(), v("div", hn, [
               e("button", {
-                onClick: C[1] || (C[1] = (_) => r.value = !1),
+                onClick: C[1] || (C[1] = (_) => a.value = !1),
                 class: "absolute top-2 right-3 text-gray-400 hover:text-gray-600 text-sm font-bold"
               }, "✕"),
               e("div", bn, [
-                (m(), v(oe, null, re(20, (_) => e("div", {
+                (m(), v(oe, null, ae(20, (_) => e("div", {
                   key: _,
                   class: be(["w-[6px] rounded-full transition-colors duration-150", _ * 5 <= i.value ? "bg-[#00796B]" : "bg-[#00796B]/20"]),
                   style: Se({ height: `${20 + _ * 4}%` })
@@ -1537,15 +1537,15 @@ const Zs = { class: "min-h-screen bg-[#525355] flex justify-center p-0 md:p-4" }
               e("div", kn, [
                 C[6] || (C[6] = e("div", { class: "absolute inset-y-0 left-[35%] border-l border-dashed border-gray-400" }, null, -1)),
                 C[7] || (C[7] = e("div", { class: "absolute inset-y-0 right-[35%] border-l border-dashed border-gray-400" }, null, -1)),
-                (m(), v(oe, null, re(6, (_) => e("div", {
+                (m(), v(oe, null, ae(6, (_) => e("div", {
                   key: "g1-" + _,
                   class: "w-2.5 md:w-3 h-8 bg-[#00796B] rounded-sm"
                 })), 64)),
-                (m(), v(oe, null, re(3, (_) => e("div", {
+                (m(), v(oe, null, ae(3, (_) => e("div", {
                   key: "g2-" + _,
                   class: "w-2.5 md:w-3 h-8 bg-[#00796B] rounded-sm"
                 })), 64)),
-                (m(), v(oe, null, re(9, (_) => e("div", {
+                (m(), v(oe, null, ae(9, (_) => e("div", {
                   key: "g3-" + _,
                   class: "w-2.5 md:w-3 h-8 border border-gray-400 rounded-sm"
                 })), 64))
@@ -1577,7 +1577,7 @@ const Zs = { class: "min-h-screen bg-[#525355] flex justify-center p-0 md:p-4" }
               e("div", Cn, [
                 C[10] || (C[10] = e("div", { class: "absolute inset-y-0 left-[35%] border-l border-dashed border-gray-400" }, null, -1)),
                 C[11] || (C[11] = e("div", { class: "absolute inset-y-0 right-[35%] border-l border-dashed border-gray-400" }, null, -1)),
-                (m(), v(oe, null, re(17, (_) => e("div", {
+                (m(), v(oe, null, ae(17, (_) => e("div", {
                   key: "r1-" + _,
                   class: "w-2.5 md:w-3 h-8 bg-[#C8102E] rounded-sm"
                 })), 64)),
@@ -1649,7 +1649,7 @@ const Zs = { class: "min-h-screen bg-[#525355] flex justify-center p-0 md:p-4" }
               e("div", jn, [
                 C[18] || (C[18] = e("div", { class: "absolute inset-y-0 left-[35px] right-[70px] bg-gray-100 border-x border-gray-400 -z-10" }, null, -1)),
                 e("div", Nn, [
-                  (m(), v(oe, null, re(14, (_) => e("div", {
+                  (m(), v(oe, null, ae(14, (_) => e("div", {
                     key: _,
                     class: be(["w-[14px] md:w-[18px] h-8 md:h-10 border rounded-[2px] transition-colors duration-75", d(_)])
                   }, null, 2)), 64))
@@ -1687,7 +1687,7 @@ const Zs = { class: "min-h-screen bg-[#525355] flex justify-center p-0 md:p-4" }
   __name: "AdjustMicrophone",
   setup(t) {
     const n = {}, o = {};
-    return (r, i) => (m(), Ae(Pn, {
+    return (a, i) => (m(), Ae(Pn, {
       _p: n,
       _pp: o
     }));
@@ -1702,13 +1702,13 @@ const Zs = { class: "min-h-screen bg-[#525355] flex justify-center p-0 md:p-4" }
     const n = _e(), o = () => {
       n.push("/reading-section");
     };
-    return (async () => (t._p.my.emitter = t._p.f.new_emitter(), t._p.my.emitter.on("msg", async (r) => {
-      console.log("_p.my.emitter.on", r);
-    }), await t._p.my.emitter.emit("msg", { type: "on:change", _p: t._p, _pp: t._pp }), t._p.f.listen("msg", async (r) => {
-      console.log("_p.f.listen", r);
+    return (async () => (t._p.my.emitter = t._p.f.new_emitter(), t._p.my.emitter.on("msg", async (a) => {
+      console.log("_p.my.emitter.on", a);
+    }), await t._p.my.emitter.emit("msg", { type: "on:change", _p: t._p, _pp: t._pp }), t._p.f.listen("msg", async (a) => {
+      console.log("_p.f.listen", a);
     }), setTimeout(async () => {
       await t._p.f.call("msg", { type: "on:change", _p: t._p, _pp: t._pp });
-    }, 500)))(), (r, i) => (m(), v("div", zn, [
+    }, 500)))(), (a, i) => (m(), v("div", zn, [
       e("div", { class: "w-full max-w-[1200px] flex flex-col shadow-lg overflow-hidden md:rounded-lg" }, [
         e("header", { class: "bg-[#00796B] h-[60px] flex justify-end items-center px-4 md:px-6 gap-2 md:gap-4 shrink-0" }, [
           i[1] || (i[1] = e("button", { class: "bg-transparent text-white border border-white hover:bg-white hover:text-[#00796B] rounded-full px-4 md:px-5 py-1.5 md:py-2 text-[15px] md:text-[16px] font-medium cursor-pointer flex items-center gap-2 transition-colors" }, [
@@ -1756,10 +1756,10 @@ const Zs = { class: "min-h-screen bg-[#525355] flex justify-center p-0 md:p-4" }
     _pp: {}
   },
   setup(t) {
-    const n = t, o = n._p, r = n._pp;
+    const n = t, o = n._p, a = n._pp;
     return (i, y) => (m(), Ae(Fn, {
       _p: ge(o),
-      _pp: ge(r)
+      _pp: ge(a)
     }, null, 8, ["_p", "_pp"]));
   }
 }), Gn = { class: "min-h-screen bg-[#525355] flex justify-center p-0 md:p-4" }, Hn = /* @__PURE__ */ me({
@@ -1772,13 +1772,13 @@ const Zs = { class: "min-h-screen bg-[#525355] flex justify-center p-0 md:p-4" }
     const n = _e(), o = () => {
       n.push("/listening-section");
     };
-    return (async () => t._p && t._p.f && (t._p.my.emitter = t._p.f.new_emitter(), t._p.my.emitter.on("msg", async (r) => {
-      console.log("_p.my.emitter.on", r);
-    }), await t._p.my.emitter.emit("msg", { type: "on:change", _p: t._p, _pp: t._pp }), t._p.f.listen("msg", async (r) => {
-      console.log("_p.f.listen", r);
+    return (async () => t._p && t._p.f && (t._p.my.emitter = t._p.f.new_emitter(), t._p.my.emitter.on("msg", async (a) => {
+      console.log("_p.my.emitter.on", a);
+    }), await t._p.my.emitter.emit("msg", { type: "on:change", _p: t._p, _pp: t._pp }), t._p.f.listen("msg", async (a) => {
+      console.log("_p.f.listen", a);
     }), setTimeout(async () => {
       await t._p.f.call("msg", { type: "on:change", _p: t._p, _pp: t._pp });
-    }, 500)))(), (r, i) => (m(), v("div", Gn, [
+    }, 500)))(), (a, i) => (m(), v("div", Gn, [
       e("div", { class: "w-full max-w-[1200px] flex flex-col shadow-lg overflow-hidden md:rounded-lg bg-white" }, [
         e("header", { class: "bg-[#00796B] h-[60px] flex justify-end items-center px-4 md:px-6 gap-2 md:gap-4 shrink-0" }, [
           i[1] || (i[1] = e("button", { class: "bg-transparent text-white border border-white hover:bg-white hover:text-[#00796B] rounded-full px-4 md:px-5 py-1.5 md:py-2 text-[15px] md:text-[16px] font-medium cursor-pointer flex items-center gap-2 transition-colors" }, [
@@ -1823,7 +1823,7 @@ const Zs = { class: "min-h-screen bg-[#525355] flex justify-center p-0 md:p-4" }
   __name: "listening-intro",
   setup(t) {
     const n = {}, o = {};
-    return (r, i) => (m(), Ae(Hn, {
+    return (a, i) => (m(), Ae(Hn, {
       _p: n,
       _pp: o
     }));
@@ -1837,7 +1837,7 @@ const Zs = { class: "min-h-screen bg-[#525355] flex justify-center p-0 md:p-4" }
 }, oo = {
   key: 1,
   class: "flex-grow flex flex-col pt-16 md:pt-24 px-6 md:px-16 text-[#333333]"
-}, lo = { class: "text-2xl md:text-[28px] font-light mb-4 md:mb-6" }, ao = { class: "text-base md:text-[18px] leading-relaxed" }, ro = { class: "border-b border-gray-300 px-6 md:px-12 py-2.5 text-[14px] md:text-[15px] text-[#333333] flex items-center gap-3 shrink-0 bg-white overflow-x-auto whitespace-nowrap" }, io = { class: "flex-grow px-6 md:px-10 py-6 md:py-10 flex flex-col md:flex-row gap-8 md:gap-12 overflow-y-auto relative" }, uo = {
+}, lo = { class: "text-2xl md:text-[28px] font-light mb-4 md:mb-6" }, ro = { class: "text-base md:text-[18px] leading-relaxed" }, ao = { class: "border-b border-gray-300 px-6 md:px-12 py-2.5 text-[14px] md:text-[15px] text-[#333333] flex items-center gap-3 shrink-0 bg-white overflow-x-auto whitespace-nowrap" }, io = { class: "flex-grow px-6 md:px-10 py-6 md:py-10 flex flex-col md:flex-row gap-8 md:gap-12 overflow-y-auto relative" }, uo = {
   key: 0,
   class: "flex flex-col w-full max-w-[850px] mx-auto mt-4 md:mt-8"
 }, co = { class: "text-xl md:text-[26px] font-normal text-black mb-6 md:mb-10 text-center" }, po = { class: "text-[#333333] text-[15px] md:text-[16px] leading-[2.4] w-full text-left select-none" }, fo = { key: 0 }, mo = {
@@ -1856,20 +1856,20 @@ const Zs = { class: "min-h-screen bg-[#525355] flex justify-center p-0 md:p-4" }
     _pp: {}
   },
   setup(t) {
-    const n = _e(), o = Ee(), r = o.params.testId, i = ae("testData"), y = ae("isGlobalLoading"), E = ae("updateUserInput"), N = ae("syncAllData"), g = ae("state"), T = ae("saveToLocalStorage"), A = Y(null), x = Y(0), f = Y(0), k = Y(!1), K = Y([]), j = Y(0), R = Y(!1), U = Y(60), Q = ie(() => y?.value), G = Y({}), L = (b, c, p) => {
+    const n = _e(), o = Ee(), a = o.params.testId, i = re("testData"), y = re("isGlobalLoading"), E = re("updateUserInput"), N = re("syncAllData"), g = re("state"), T = re("saveToLocalStorage"), A = K(null), x = K(0), f = K(0), k = K(!1), Y = K([]), j = K(0), R = K(!1), U = K(60), Q = ie(() => y?.value), G = K({}), L = (b, c, p) => {
       b && (G.value[`${c}-${p}`] = b);
     }, le = (b, c) => b && b[c] || "", ne = (b, c, p, w, u, S) => {
-      const a = b.target.value;
+      const r = b.target.value;
       let $ = c.answers[p] || "";
       $ = $.padEnd(u, " ");
       const h = $.split("");
-      h[w] = a ? a.charAt(0) : " ", c.answers[p] = h.join("").replace(/\s+$/, ""), C(c), a && w < u - 1 && Ke(() => {
+      h[w] = r ? r.charAt(0) : " ", c.answers[p] = h.join("").replace(/\s+$/, ""), C(c), r && w < u - 1 && Ke(() => {
         const B = G.value[`${S}-${w + 1}`];
         B && B.focus();
       });
     }, O = (b, c, p, w, u, S) => {
-      const a = b.target;
-      if (b.key === "Backspace" && !a.value && w > 0) {
+      const r = b.target;
+      if (b.key === "Backspace" && !r.value && w > 0) {
         const $ = G.value[`${S}-${w - 1}`];
         $ && $.focus();
       } else if (b.key === "ArrowLeft" && w > 0) {
@@ -1881,15 +1881,15 @@ const Zs = { class: "min-h-screen bg-[#525355] flex justify-center p-0 md:p-4" }
       }
     }, Z = (b, c, p, w, u, S) => {
       b.preventDefault();
-      const a = b.clipboardData?.getData("text") || "";
-      if (!a) return;
+      const r = b.clipboardData?.getData("text") || "";
+      if (!r) return;
       let $ = c.answers[p] || "";
       $ = $.padEnd(u, " ");
       const h = $.split("");
-      for (let I = 0; I < a.length; I++)
-        w + I < u && (h[w + I] = a[I]);
+      for (let I = 0; I < r.length; I++)
+        w + I < u && (h[w + I] = r[I]);
       c.answers[p] = h.join("").replace(/\s+$/, ""), C(c);
-      const B = Math.min(w + a.length, u - 1);
+      const B = Math.min(w + r.length, u - 1);
       Ke(() => {
         const I = G.value[`${S}-${B}`];
         I && I.focus();
@@ -1902,17 +1902,17 @@ const Zs = { class: "min-h-screen bg-[#525355] flex justify-center p-0 md:p-4" }
       const u = p.split(/([_-]+)/);
       return u.map((S) => {
         if (S.includes("_") || S.includes("-")) {
-          const a = w++;
+          const r = w++;
           let $ = S.length;
-          if (c && c[a - 1]) {
-            const h = c[a - 1], I = u.slice(0, u.indexOf(S)).join("").match(/[a-zA-Z]+$/);
+          if (c && c[r - 1]) {
+            const h = c[r - 1], I = u.slice(0, u.indexOf(S)).join("").match(/[a-zA-Z]+$/);
             if (I) {
               const W = I[0].toLowerCase();
               h.toLowerCase().startsWith(W) && ($ = h.length - W.length);
             }
           }
           return {
-            inputId: a,
+            inputId: r,
             maxLength: $,
             text: ""
           };
@@ -1929,11 +1929,11 @@ const Zs = { class: "min-h-screen bg-[#525355] flex justify-center p-0 md:p-4" }
       const w = [];
       c.forEach((u, S) => {
         if (u.type === "reading_fib" || u.type === "fill_in_the_blanks") {
-          let a = {};
+          let r = {};
           const $ = u.questions?.[0]?.user_input?.data;
           if ($)
             try {
-              a = JSON.parse($);
+              r = JSON.parse($);
             } catch (V) {
               console.error("Failed to parse saved FIB data", V);
             }
@@ -1956,8 +1956,8 @@ const Zs = { class: "min-h-screen bg-[#525355] flex justify-center p-0 md:p-4" }
           }
           let z = [];
           const D = W[0];
-          D && B[D]?.answer ? z = B[D].answer : h?.answer && (z = h.answer), Object.keys(a).length === 0 && Array.isArray(z) && z.forEach((V, ce) => {
-            a[ce + 1] = "";
+          D && B[D]?.answer ? z = B[D].answer : h?.answer && (z = h.answer), Object.keys(r).length === 0 && Array.isArray(z) && z.forEach((V, ce) => {
+            r[ce + 1] = "";
           }), p++, w.push({
             id: `fib_${S}`,
             isFillBlanks: !0,
@@ -1966,37 +1966,37 @@ const Zs = { class: "min-h-screen bg-[#525355] flex justify-center p-0 md:p-4" }
             levelVariants: B,
             availableLevels: W,
             rawQuestionObj: h,
-            answers: a,
+            answers: r,
             originalTaskIdx: S,
             originalQIdx: 0,
             questionLabel: `Question ${p}`
           });
-        } else u.type === "reading_mcq" && u.questions.forEach((a, $) => {
+        } else u.type === "reading_mcq" && u.questions.forEach((r, $) => {
           p++;
           let h = {};
           const B = ["a1", "a2", "b1", "b2", "c1", "c2"];
           let I = [];
           if (B.forEach((W) => {
-            if (a[W])
-              if (I.push(W), Array.isArray(a[W]) && a[W].length > 0) {
-                if (a.selected_indices || (a.selected_indices = {}), a.selected_indices[W] === void 0) {
-                  let z = a[W].findIndex((D) => D.user_input && D.user_input.data);
-                  z !== -1 ? a.selected_indices[W] = z : a.selected_indices[W] = Math.floor(Math.random() * a[W].length);
+            if (r[W])
+              if (I.push(W), Array.isArray(r[W]) && r[W].length > 0) {
+                if (r.selected_indices || (r.selected_indices = {}), r.selected_indices[W] === void 0) {
+                  let z = r[W].findIndex((D) => D.user_input && D.user_input.data);
+                  z !== -1 ? r.selected_indices[W] = z : r.selected_indices[W] = Math.floor(Math.random() * r[W].length);
                 }
-                h[W] = a[W][a.selected_indices[W]];
-              } else typeof a[W] == "object" && !Array.isArray(a[W]) && (h[W] = a[W]);
+                h[W] = r[W][r.selected_indices[W]];
+              } else typeof r[W] == "object" && !Array.isArray(r[W]) && (h[W] = r[W]);
           }), I.length === 0) {
-            let W = a;
+            let W = r;
             if (!W.question)
-              if (Array.isArray(a) && a.length > 0) W = a[0];
-              else if (a[0] && a[0].question) W = a[0];
+              if (Array.isArray(r) && r.length > 0) W = r[0];
+              else if (r[0] && r[0].question) W = r[0];
               else {
-                const z = Object.keys(a).find((D) => Array.isArray(a[D]) && a[D].length > 0 && a[D][0].question);
+                const z = Object.keys(r).find((D) => Array.isArray(r[D]) && r[D].length > 0 && r[D][0].question);
                 if (z)
-                  W = a[z][0];
+                  W = r[z][0];
                 else {
-                  const D = Object.keys(a).find((V) => a[V] && typeof a[V] == "object" && a[V].question);
-                  D && (W = a[D]);
+                  const D = Object.keys(r).find((V) => r[V] && typeof r[V] == "object" && r[V].question);
+                  D && (W = r[D]);
                 }
               }
             h.default = W, I.push("default");
@@ -2008,21 +2008,21 @@ const Zs = { class: "min-h-screen bg-[#525355] flex justify-center p-0 md:p-4" }
             passageHTML: u.passageHTML,
             levelVariants: h,
             availableLevels: I,
-            rawQuestionObj: a,
+            rawQuestionObj: r,
             originalTaskIdx: S,
             originalQIdx: $,
             questionLabel: `Question ${p}`
           });
         });
-      }), K.value = w, j.value = p || w.length, f.value = 0;
+      }), Y.value = w, j.value = p || w.length, f.value = 0;
     }, l = (b) => {
       if (!A.value || !A.value.modules) return;
       const c = A.value.modules;
       let p = -1, w = -1, u = -1;
       for (let S = 0; S < c.length; S++) {
-        const a = c[S].tasks || [];
-        for (let $ = 0; $ < a.length; $++) {
-          const h = a[$];
+        const r = c[S].tasks || [];
+        for (let $ = 0; $ < r.length; $++) {
+          const h = r[$];
           if (h.questions) {
             const B = h.questions.findIndex((I) => I.uuid === b);
             if (B !== -1) {
@@ -2038,7 +2038,7 @@ const Zs = { class: "min-h-screen bg-[#525355] flex justify-center p-0 md:p-4" }
       }
       if (p !== -1) {
         x.value = p, s();
-        const S = K.value.findIndex((a) => a.originalTaskIdx === w && a.originalQIdx === u);
+        const S = Y.value.findIndex((r) => r.originalTaskIdx === w && r.originalQIdx === u);
         S !== -1 && (f.value = S);
       }
     };
@@ -2066,15 +2066,15 @@ const Zs = { class: "min-h-screen bg-[#525355] flex justify-center p-0 md:p-4" }
       const p = ["a1", "a2", "b1", "b2", "c1", "c2"], w = p.indexOf(c.toLowerCase());
       if (w === -1) return b[0] || "default";
       let u = b[0] || "default", S = 999;
-      return b.forEach((a) => {
-        const $ = p.indexOf(a.toLowerCase());
+      return b.forEach((r) => {
+        const $ = p.indexOf(r.toLowerCase());
         if ($ !== -1) {
           const h = Math.abs($ - w);
-          h < S && (S = h, u = a);
+          h < S && (S = h, u = r);
         }
       }), u;
     }, H = ie(() => {
-      const b = K.value[f.value];
+      const b = Y.value[f.value];
       if (!b) return null;
       if (b.isMCQ && b.levelVariants) {
         let c = g.value.readingAbilityLevel;
@@ -2121,11 +2121,11 @@ const Zs = { class: "min-h-screen bg-[#525355] flex justify-center p-0 md:p-4" }
         if (u === -1) return;
         let S = !1;
         !c && b.selectedAnswer && (S = b.selectedAnswer === b.answer);
-        let a = u;
-        c ? a = u : S ? a = Math.min(u + 1, p.length - 1) : a = Math.max(u - 1, 0), g.value.readingAbilityLevel = p[a], console.log(`[Reading Adaptive MCQ] Level adjusted from ${w} to ${g.value.readingAbilityLevel}`);
+        let r = u;
+        c ? r = u : S ? r = Math.min(u + 1, p.length - 1) : r = Math.max(u - 1, 0), g.value.readingAbilityLevel = p[r], console.log(`[Reading Adaptive MCQ] Level adjusted from ${w} to ${g.value.readingAbilityLevel}`);
       } else if (b.isFillBlanks) {
         if (c) return;
-        const u = b.activeLevel || "b1", S = b.answer || [], a = (h, B, I) => {
+        const u = b.activeLevel || "b1", S = b.answer || [], r = (h, B, I) => {
           if (!h || !B) return !1;
           let W = "";
           if (Array.isArray(b.segments)) {
@@ -2144,7 +2144,7 @@ const Zs = { class: "min-h-screen bg-[#525355] flex justify-center p-0 md:p-4" }
             const $e = (B[fe] || "b1").toLowerCase();
             I[$e] || (I[$e] = { total: 0, correct: 0 }), I[$e].total++;
             const Oe = b.answers[String(fe + 1)] || "";
-            a(Oe, ce, fe + 1) && I[$e].correct++;
+            r(Oe, ce, fe + 1) && I[$e].correct++;
           });
           const W = I.b1 ? I.b1.correct === I.b1.total : !1, z = I.b2 ? I.b2.correct === I.b2.total : !1, D = I.c1 ? I.c1.correct === I.c1.total : !1;
           let V = w;
@@ -2153,7 +2153,7 @@ const Zs = { class: "min-h-screen bg-[#525355] flex justify-center p-0 md:p-4" }
           let h = S.length > 0;
           S.forEach((V, ce) => {
             const fe = b.answers[String(ce + 1)] || "";
-            a(fe, V, ce + 1) || (h = !1);
+            r(fe, V, ce + 1) || (h = !1);
           });
           let B = !1, I = !1;
           const W = b.levelVariants?.b1 || b.rawQuestionObj?.b1 && b.rawQuestionObj.b1[0];
@@ -2162,7 +2162,7 @@ const Zs = { class: "min-h-screen bg-[#525355] flex justify-center p-0 md:p-4" }
             let ce = V.length > 0;
             V.forEach((fe, $e) => {
               const Oe = b.answers[String($e + 1)] || "";
-              a(Oe, fe, $e + 1) || (ce = !1);
+              r(Oe, fe, $e + 1) || (ce = !1);
             }), B = ce;
           } else
             u === "b1" && (B = h);
@@ -2172,7 +2172,7 @@ const Zs = { class: "min-h-screen bg-[#525355] flex justify-center p-0 md:p-4" }
             let ce = V.length > 0;
             V.forEach((fe, $e) => {
               const Oe = b.answers[String($e + 1)] || "";
-              a(Oe, fe, $e + 1) || (ce = !1);
+              r(Oe, fe, $e + 1) || (ce = !1);
             }), I = ce;
           } else
             u === "c1" && (I = h);
@@ -2190,14 +2190,14 @@ const Zs = { class: "min-h-screen bg-[#525355] flex justify-center p-0 md:p-4" }
       }
     }, F = async (b) => {
       if (!A.value) {
-        n.push(`/listening-section/${r}`);
+        n.push(`/listening-section/${a}`);
         return;
       }
       if (k.value) {
         k.value = !1, x.value++, s();
         return;
       }
-      if (J(H.value, b), f.value < K.value.length - 1) {
+      if (J(H.value, b), f.value < Y.value.length - 1) {
         f.value++;
         return;
       }
@@ -2210,7 +2210,7 @@ const Zs = { class: "min-h-screen bg-[#525355] flex justify-center p-0 md:p-4" }
         } catch (c) {
           console.error("Error during final save:", c);
         } finally {
-          y && (y.value = !1), n.push(`/listening-section/${r}`);
+          y && (y.value = !1), n.push(`/listening-section/${a}`);
         }
     }, te = () => {
       F(!0);
@@ -2247,7 +2247,7 @@ const Zs = { class: "min-h-screen bg-[#525355] flex justify-center p-0 md:p-4" }
                 class: "absolute top-2 right-3 text-gray-400 hover:text-gray-600 text-sm font-bold"
               }, "✕"),
               e("div", qn, [
-                (m(), v(oe, null, re(20, (p) => e("div", {
+                (m(), v(oe, null, ae(20, (p) => e("div", {
                   key: p,
                   class: be(["w-[6px] rounded-full transition-colors duration-150", p * 5 <= U.value ? "bg-[#00796B]" : "bg-[#00796B]/20"]),
                   style: Se({ height: `${20 + p * 4}%` })
@@ -2328,15 +2328,15 @@ const Zs = { class: "min-h-screen bg-[#525355] flex justify-center p-0 md:p-4" }
         ])])) : k.value ? (m(), v("div", oo, [
           e("h2", lo, "End of Module " + M(x.value + 1), 1),
           c[13] || (c[13] = e("hr", { class: "w-full border-gray-300 mb-6 md:mb-8" }, null, -1)),
-          e("p", ao, [
+          e("p", ro, [
             q(" You have completed Module " + M(x.value + 1) + ". ", 1),
             c[10] || (c[10] = e("br", null, null, -1)),
             c[11] || (c[11] = q(" Select ", -1)),
             c[12] || (c[12] = e("strong", { class: "font-bold" }, "Next", -1)),
             q(" to continue to Module " + M(x.value + 2) + ". ", 1)
           ])
-        ])) : K.value.length > 0 && H.value ? (m(), v(oe, { key: 2 }, [
-          e("div", ro, [
+        ])) : Y.value.length > 0 && H.value ? (m(), v(oe, { key: 2 }, [
+          e("div", ao, [
             c[14] || (c[14] = e("span", null, "Reading", -1)),
             c[15] || (c[15] = e("span", { class: "text-gray-300 font-light" }, "|", -1)),
             e("span", null, "Questions " + M(f.value + 1) + " of " + M(j.value), 1)
@@ -2345,9 +2345,9 @@ const Zs = { class: "min-h-screen bg-[#525355] flex justify-center p-0 md:p-4" }
             H.value.isFillBlanks ? (m(), v("div", uo, [
               e("h2", co, M(H.value.title), 1),
               e("div", po, [
-                (m(!0), v(oe, null, re(H.value.segments, (p, w) => (m(), v(oe, { key: w }, [
+                (m(!0), v(oe, null, ae(H.value.segments, (p, w) => (m(), v(oe, { key: w }, [
                   p.inputId ? (m(), v("span", mo, [
-                    (m(!0), v(oe, null, re(p.maxLength, (u) => (m(), v("input", {
+                    (m(!0), v(oe, null, ae(p.maxLength, (u) => (m(), v("input", {
                       key: u,
                       type: "text",
                       maxlength: "1",
@@ -2373,7 +2373,7 @@ const Zs = { class: "min-h-screen bg-[#525355] flex justify-center p-0 md:p-4" }
               e("section", bo, [
                 e("h3", wo, M(H.value.questionText), 1),
                 e("div", yo, [
-                  (m(!0), v(oe, null, re(H.value.options, (p) => (m(), v("label", {
+                  (m(!0), v(oe, null, ae(H.value.options, (p) => (m(), v("label", {
                     key: p.id,
                     class: "flex items-start gap-3 md:gap-4 cursor-pointer group"
                   }, [
@@ -2411,10 +2411,10 @@ const Zs = { class: "min-h-screen bg-[#525355] flex justify-center p-0 md:p-4" }
     _pp: {}
   },
   setup(t) {
-    const n = t, o = n._p, r = n._pp;
+    const n = t, o = n._p, a = n._pp;
     return (i, y) => (m(), Ae(So, {
       _p: ge(o),
-      _pp: ge(r)
+      _pp: ge(a)
     }, null, 8, ["_p", "_pp"]));
   }
 }), Lo = { class: "min-h-screen bg-[#525355] flex justify-center font-sans antialiased p-0 md:p-4" }, Io = { class: "w-full max-w-[1200px] min-h-screen md:min-h-[700px] md:h-[90vh] flex flex-col shadow-lg overflow-hidden md:rounded-lg relative bg-white" }, Ro = { class: "bg-[#00796B] h-[60px] flex justify-between items-center px-4 md:px-6 gap-2 md:gap-3 shrink-0" }, Bo = { class: "text-white font-medium flex items-center gap-2 text-[14px] md:text-[15px] w-20 md:w-32" }, jo = {
@@ -2445,7 +2445,7 @@ const Zs = { class: "min-h-screen bg-[#525355] flex justify-center p-0 md:p-4" }
 }, sl = { class: "text-[16px] md:text-[20px] font-medium mb-3 md:mb-4 text-gray-500" }, nl = ["onClick"], ol = {
   key: 0,
   class: "text-gray-400 italic text-[14px]"
-}, ll = { class: "flex flex-wrap gap-2 md:gap-4 p-2 md:p-4 bg-gray-50/50 rounded-xl" }, al = ["onDragstart"], rl = {
+}, ll = { class: "flex flex-wrap gap-2 md:gap-4 p-2 md:p-4 bg-gray-50/50 rounded-xl" }, rl = ["onDragstart"], al = {
   key: 3,
   class: "flex flex-col md:flex-row h-full gap-6 md:gap-0"
 }, il = { class: "w-full md:w-1/2 md:p-8 md:overflow-y-auto md:border-r border-gray-300 bg-white" }, dl = { class: "text-[15px] md:text-[16px] text-[#444] leading-relaxed mb-6 md:mb-8" }, ul = { class: "list-disc pl-5 space-y-2 text-[15px] md:text-[16px] text-[#444]" }, cl = { class: "w-full md:w-1/2 flex flex-col md:p-8 md:bg-gray-50 min-h-[400px]" }, pl = { class: "bg-white border border-gray-300 rounded-t-lg p-3 md:p-4 shadow-sm text-[13px] md:text-[14px]" }, fl = { class: "mb-1 md:mb-2" }, ml = { class: "bg-[#EAEAEA] px-4 py-1.5 border-x border-gray-300 flex justify-between text-[12px] md:text-[13px]" }, xl = {
@@ -2454,17 +2454,17 @@ const Zs = { class: "min-h-screen bg-[#525355] flex justify-center p-0 md:p-4" }
 }, gl = { class: "w-full md:w-1/2 md:p-6 md:overflow-y-auto md:border-r border-gray-300 flex flex-col gap-4 md:gap-6" }, vl = { class: "bg-white p-4 md:p-5 border border-gray-200 rounded-lg shadow-sm" }, hl = { class: "text-[14px] md:text-[16px] text-[#333] leading-relaxed" }, bl = { class: "font-bold text-gray-700 mb-1 text-[14px] md:text-[15px]" }, wl = { class: "text-[13px] md:text-[15px] text-gray-600 italic" }, yl = { class: "w-full md:w-1/2 flex flex-col md:p-6 min-h-[400px]" }, _l = { class: "bg-[#EAEAEA] border border-gray-300 rounded-t-lg px-4 py-2 flex justify-between items-center text-[12px] md:text-[13px]" }, kl = /* @__PURE__ */ me({
   __name: "writingcontent",
   setup(t) {
-    const n = _e(), r = Ee().params.testId, i = ae("testData"), y = ae("isGlobalLoading"), E = ae("updateUserInput"), N = ae("syncAllData"), g = ae("state"), T = ae("saveToLocalStorage"), A = Y(null), x = Y([]), f = Y(0), k = Y("section_intro"), K = Y(0);
+    const n = _e(), a = Ee().params.testId, i = re("testData"), y = re("isGlobalLoading"), E = re("updateUserInput"), N = re("syncAllData"), g = re("state"), T = re("saveToLocalStorage"), A = K(null), x = K([]), f = K(0), k = K("section_intro"), Y = K(0);
     let j = null;
-    const R = Y(!1), U = Y(60), Q = Y(""), G = ie(() => y?.value), L = ie(() => x.value[f.value]), le = ie(() => x.value.filter((c) => c.type !== "section_intro").length), ne = ie(() => {
+    const R = K(!1), U = K(60), Q = K(""), G = ie(() => y?.value), L = ie(() => x.value[f.value]), le = ie(() => x.value.filter((c) => c.type !== "section_intro").length), ne = ie(() => {
       const c = L.value?.userAnswerText || "";
       return c.trim() ? c.trim().split(/\s+/).length : 0;
     }), O = ie(() => {
-      const c = Math.floor(K.value / 60), p = K.value % 60;
+      const c = Math.floor(Y.value / 60), p = Y.value % 60;
       return `${c}:${p.toString().padStart(2, "0")}`;
     });
     let Z = null;
-    const d = Y(null), s = (c) => {
+    const d = K(null), s = (c) => {
       if (E && c.type !== "section_intro") {
         let p = "";
         c.type === "build_sentences" ? p = c.userAnswer.map((w) => w.text).join(" ") : p = c.userAnswerText || "", E("writing", 0, c.originalTaskIdx, c.originalQIdx, p);
@@ -2477,7 +2477,7 @@ const Zs = { class: "min-h-screen bg-[#525355] flex justify-center p-0 md:p-4" }
           try {
             const S = JSON.parse(u);
             if (Array.isArray(S))
-              return S.flatMap((a) => p(String(a)));
+              return S.flatMap((r) => p(String(r)));
           } catch {
           }
         return [w];
@@ -2505,8 +2505,8 @@ const Zs = { class: "min-h-screen bg-[#525355] flex justify-center p-0 md:p-4" }
       const p = [];
       let w = 1;
       c.forEach((u, S) => {
-        const a = (u.type || "").toLowerCase().replace(/_/g, " ").replace(/-/g, " ").trim();
-        if (a.includes("sentence") || a.includes("build"))
+        const r = (u.type || "").toLowerCase().replace(/_/g, " ").replace(/-/g, " ").trim();
+        if (r.includes("sentence") || r.includes("build"))
           (!u.questions || !Array.isArray(u.questions) || u.questions.length === 0) && (u.scrambledWords || u.prompt || u.answer) && (u.questions = [{
             scrambledWords: u.scrambledWords || [],
             prompt: u.prompt || "",
@@ -2533,7 +2533,7 @@ const Zs = { class: "min-h-screen bg-[#525355] flex justify-center p-0 md:p-4" }
               originalQIdx: B
             });
           });
-        else if (a.includes("email") || a.includes("scenario")) {
+        else if (r.includes("email") || r.includes("scenario")) {
           (!u.questions || !Array.isArray(u.questions) || u.questions.length === 0) && (u.questions = [{
             user_input: u.user_input || { data: "" },
             user_result: u.user_result || { data: "" }
@@ -2554,7 +2554,7 @@ const Zs = { class: "min-h-screen bg-[#525355] flex justify-center p-0 md:p-4" }
             originalTaskIdx: S,
             originalQIdx: 0
           });
-        } else if (a.includes("discussion") || a.includes("academic")) {
+        } else if (r.includes("discussion") || r.includes("academic")) {
           (!u.questions || !Array.isArray(u.questions) || u.questions.length === 0) && (u.questions = [{
             user_input: u.user_input || { data: "" },
             user_result: u.user_result || { data: "" }
@@ -2583,8 +2583,8 @@ const Zs = { class: "min-h-screen bg-[#525355] flex justify-center p-0 md:p-4" }
       if (c && c.length > 0) {
         const p = c.find((w) => w.type?.toLowerCase() === "writing");
         p && (!A.value || x.value.length === 0 ? (A.value = p, _(p.tasks || [])) : p.tasks?.forEach((w, u) => {
-          w.questions && w.questions.forEach((S, a) => {
-            const $ = x.value.find((h) => h.originalTaskIdx === u && h.originalQIdx === a);
+          w.questions && w.questions.forEach((S, r) => {
+            const $ = x.value.find((h) => h.originalTaskIdx === u && h.originalQIdx === r);
             $ && S.user_result && ($.user_result = S.user_result);
           });
         }));
@@ -2599,8 +2599,8 @@ const Zs = { class: "min-h-screen bg-[#525355] flex justify-center p-0 md:p-4" }
       const p = L.value.userAnswer[c];
       L.value.userAnswer.splice(c, 1), L.value.wordBank.push(p), s(L.value);
     }, F = (c) => {
-      clearInterval(j), K.value = c, j = setInterval(() => {
-        K.value > 0 ? K.value-- : (clearInterval(j), b());
+      clearInterval(j), Y.value = c, j = setInterval(() => {
+        Y.value > 0 ? Y.value-- : (clearInterval(j), b());
       }, 1e3);
     }, te = () => clearInterval(j), ue = () => {
       clearInterval(j), pe();
@@ -2612,7 +2612,7 @@ const Zs = { class: "min-h-screen bg-[#525355] flex justify-center p-0 md:p-4" }
         c.type === p.type && c.originalTaskIdx === p.originalTaskIdx ? (k.value = "writing", p.writingTime && F(p.writingTime)) : k.value = "directions", g.value.task = f.value + 1, T();
       } else
         try {
-          y && (y.value = !0), await N("writing", !0), n.push(`/speaking-section/${r}`);
+          y && (y.value = !0), await N("writing", !0), n.push(`/speaking-section/${a}`);
         } catch (c) {
           console.error("Save failed during final sync", c);
         } finally {
@@ -2620,7 +2620,7 @@ const Zs = { class: "min-h-screen bg-[#525355] flex justify-center p-0 md:p-4" }
         }
     }, b = async () => {
       if (!A.value) {
-        n.push(`/speaking-section/${r}`);
+        n.push(`/speaking-section/${a}`);
         return;
       }
       k.value === "section_intro" ? (f.value++, k.value = "directions") : k.value === "directions" ? (k.value = "writing", L.value.writingTime && F(L.value.writingTime)) : pe();
@@ -2629,7 +2629,7 @@ const Zs = { class: "min-h-screen bg-[#525355] flex justify-center p-0 md:p-4" }
       e("div", Io, [
         e("header", Ro, [
           e("div", Bo, [
-            k.value === "writing" && K.value > 0 ? (m(), v("svg", jo, [...p[10] || (p[10] = [
+            k.value === "writing" && Y.value > 0 ? (m(), v("svg", jo, [...p[10] || (p[10] = [
               e("path", {
                 "stroke-linecap": "round",
                 "stroke-linejoin": "round",
@@ -2637,7 +2637,7 @@ const Zs = { class: "min-h-screen bg-[#525355] flex justify-center p-0 md:p-4" }
                 d: "M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"
               }, null, -1)
             ])])) : se("", !0),
-            k.value === "writing" && K.value > 0 ? (m(), v("span", No, M(O.value), 1)) : se("", !0)
+            k.value === "writing" && Y.value > 0 ? (m(), v("span", No, M(O.value), 1)) : se("", !0)
           ]),
           e("div", Oo, [
             e("div", Mo, [
@@ -2665,7 +2665,7 @@ const Zs = { class: "min-h-screen bg-[#525355] flex justify-center p-0 md:p-4" }
                   class: "absolute top-2 right-3 text-gray-400 hover:text-gray-600 text-sm font-bold"
                 }, "✕"),
                 e("div", Uo, [
-                  (m(), v(oe, null, re(20, (w) => e("div", {
+                  (m(), v(oe, null, ae(20, (w) => e("div", {
                     key: w,
                     class: be(["w-[6px] rounded-full transition-colors duration-150", w * 5 <= U.value ? "bg-[#00796B]" : "bg-[#00796B]/20"]),
                     style: Se({ height: `${20 + w * 4}%` })
@@ -2758,7 +2758,7 @@ const Zs = { class: "min-h-screen bg-[#525355] flex justify-center p-0 md:p-4" }
                 onDragleave: p[4] || (p[4] = (w) => d.value = null),
                 onDrop: p[5] || (p[5] = (w) => H("target"))
               }, [
-                (m(!0), v(oe, null, re(L.value.userAnswer, (w, u) => (m(), v("div", {
+                (m(!0), v(oe, null, ae(L.value.userAnswer, (w, u) => (m(), v("div", {
                   key: w.id,
                   class: "bg-white border border-[#00796B] text-[#00796B] px-3 md:px-5 py-1.5 md:py-2 rounded-lg shadow-sm cursor-pointer font-medium text-[14px] md:text-[16px]",
                   onClick: (S) => J(u)
@@ -2766,20 +2766,20 @@ const Zs = { class: "min-h-screen bg-[#525355] flex justify-center p-0 md:p-4" }
                 L.value.userAnswer.length === 0 ? (m(), v("span", ol, "Drag words here...")) : se("", !0)
               ], 32),
               e("div", ll, [
-                (m(!0), v(oe, null, re(L.value.wordBank, (w) => (m(), v("div", {
+                (m(!0), v(oe, null, ae(L.value.wordBank, (w) => (m(), v("div", {
                   key: w.id,
                   class: "bg-white border border-gray-300 px-4 md:px-6 py-1.5 md:py-2 rounded-lg cursor-grab hover:bg-gray-50 text-[14px] md:text-[16px] shadow-sm active:scale-95 transition-transform",
                   draggable: "true",
                   onDragstart: (u) => P(w, "bank")
-                }, M(w.text), 41, al))), 128))
+                }, M(w.text), 41, rl))), 128))
               ])
-            ])) : k.value === "writing" && L.value.type === "write_an_email" ? (m(), v("div", rl, [
+            ])) : k.value === "writing" && L.value.type === "write_an_email" ? (m(), v("div", al, [
               e("div", il, [
                 p[20] || (p[20] = e("h3", { class: "font-bold text-[18px] md:text-[20px] mb-3 md:mb-4 text-[#00796B]" }, "Scenario", -1)),
                 e("p", dl, M(L.value.scenario), 1),
                 p[21] || (p[21] = e("h3", { class: "font-bold text-[18px] md:text-[20px] mb-3 md:mb-4 text-[#00796B]" }, "Task Requirements", -1)),
                 e("ul", ul, [
-                  (m(!0), v(oe, null, re(L.value.instructions, (w, u) => (m(), v("li", { key: u }, M(w), 1))), 128))
+                  (m(!0), v(oe, null, ae(L.value.instructions, (w, u) => (m(), v("li", { key: u }, M(w), 1))), 128))
                 ])
               ]),
               e("div", cl, [
@@ -2812,7 +2812,7 @@ const Zs = { class: "min-h-screen bg-[#525355] flex justify-center p-0 md:p-4" }
                   p[25] || (p[25] = e("div", { class: "font-bold text-[#00796B] mb-2 uppercase text-[11px] md:text-xs tracking-wider" }, "Professor's Question", -1)),
                   e("p", hl, M(L.value.professorPrompt), 1)
                 ]),
-                (m(!0), v(oe, null, re(L.value.studentResponses, (w, u) => (m(), v("div", {
+                (m(!0), v(oe, null, ae(L.value.studentResponses, (w, u) => (m(), v("div", {
                   key: u,
                   class: "bg-white p-4 md:p-5 border border-gray-200 rounded-lg shadow-sm"
                 }, [
@@ -2858,48 +2858,50 @@ const Zs = { class: "min-h-screen bg-[#525355] flex justify-center p-0 md:p-4" }
 }, Gl = { class: "max-w-4xl w-full" }, Hl = { class: "text-[15px] md:text-[17px] text-[#333] leading-relaxed w-full" }, Wl = { class: "mb-4 md:mb-6" }, Jl = {
   key: 2,
   class: "h-full flex flex-col items-center justify-center p-6 md:p-12 bg-white text-center"
-}, Kl = { class: "max-w-3xl" }, Yl = { class: "text-xl md:text-[28px] font-medium text-black mb-6" }, Zl = { class: "text-left bg-gray-50 border border-gray-200 p-6 md:p-8 rounded-lg shadow-sm" }, Xl = { class: "text-[16px] md:text-[18px] text-[#333] mb-4 md:mb-6 italic" }, ql = { class: "text-[14px] md:text-[16px] text-[#555] whitespace-pre-line leading-relaxed" }, ea = {
+}, Kl = { class: "max-w-3xl" }, Yl = { class: "text-xl md:text-[28px] font-medium text-black mb-6" }, Zl = { class: "text-left bg-gray-50 border border-gray-200 p-6 md:p-8 rounded-lg shadow-sm" }, Xl = { class: "text-[16px] md:text-[18px] text-[#333] mb-4 md:mb-6 italic" }, ql = { class: "text-[14px] md:text-[16px] text-[#555] whitespace-pre-line leading-relaxed" }, er = {
   key: 3,
   class: "h-full flex flex-col items-center justify-center p-6 md:p-12"
-}, ta = { class: "text-xl md:text-[24px] font-medium text-[#00796B] mb-8 animate-pulse text-center" }, sa = ["src"], na = {
+}, tr = { class: "text-xl md:text-[24px] font-medium text-[#00796B] mb-8 animate-pulse text-center" }, sr = ["src"], nr = {
   key: 4,
   class: "h-full flex flex-col p-6 md:p-10 bg-white"
-}, oa = {
+}, or = {
   key: 0,
   class: "bg-blue-50 border border-blue-200 rounded-lg p-6 md:p-8 mb-6 md:mb-8 shadow-sm"
-}, la = { class: "text-[18px] md:text-[22px] text-[#333] font-medium leading-relaxed" }, aa = {
+}, lr = { class: "text-[18px] md:text-[22px] text-[#333] font-medium leading-relaxed" }, rr = {
   key: 1,
   class: "bg-gray-50 border border-gray-200 rounded-lg p-5 md:p-6 mb-6 md:mb-8 text-center shadow-sm"
-}, ra = { class: "flex-grow flex flex-col items-center justify-center gap-6" }, ia = { class: "flex flex-col items-center" }, da = { class: "text-[64px] md:text-[84px] font-bold text-black leading-none" }, ua = { class: "flex items-end justify-center gap-1 md:gap-1.5 h-10 md:h-12 mt-4 md:mt-6" }, ca = {
+}, ar = { class: "flex-grow flex flex-col items-center justify-center gap-6" }, ir = { class: "flex flex-col items-center" }, dr = { class: "text-[64px] md:text-[84px] font-bold text-black leading-none" }, ur = { class: "flex items-end justify-center gap-1 md:gap-1.5 h-10 md:h-12 mt-4 md:mt-6" }, cr = {
   key: 2,
   class: "flex-grow flex items-center justify-center text-gray-500"
-}, pa = /* @__PURE__ */ me({
+}, pr = /* @__PURE__ */ me({
   __name: "SpeakingSection",
   setup(t) {
-    const n = Ee(), o = _e(), r = n.params.testId, i = ae("testData"), y = ae("isGlobalLoading");
-    ae("updateUserInput");
-    const E = ae("syncAllData"), N = ae("state"), g = ae("saveToLocalStorage"), T = Y(null), A = Y([]), x = Y(0), f = Y("section_intro"), k = Y(0), K = Y(0), j = Y(!1), R = Y(!1), U = Y(60), Q = Y(!1), G = Y(""), L = Y(!1), le = Y(null), ne = Y(!1);
+    const n = Ee(), o = _e(), a = n.params.testId, i = re("testData"), y = re("isGlobalLoading");
+    re("updateUserInput");
+    const E = re("syncAllData"), N = re("state"), g = re("saveToLocalStorage"), T = K(null), A = K([]), x = K(0), f = K("section_intro"), k = K(0), Y = K(0), j = K(!1), R = K(!1), U = K(60), Q = K(!1), G = K(""), L = K(!1);
+    K(!1);
+    const le = K(null), ne = K(!1);
     let O = null;
-    const Z = typeof window < "u" ? window.speechSynthesis : null, d = ie(() => y?.value), s = ie(() => A.value[x.value] || null), l = Y(null), C = Y([]), _ = async () => {
+    const Z = typeof window < "u" ? window.speechSynthesis : null, d = ie(() => y?.value), s = ie(() => A.value[x.value] || null), l = K(null), C = K([]), _ = async () => {
       try {
         const w = await navigator.mediaDevices.getUserMedia({ audio: !0 });
         l.value = new MediaRecorder(w), C.value = [], l.value.ondataavailable = (B) => {
           B.data.size > 0 && C.value.push(B.data);
         };
-        const u = s.value.originalTaskIdx, S = s.value.originalQIdx, a = s.value.audioText, $ = s.value.type, h = s.value.responseTime;
+        const u = s.value.originalTaskIdx, S = s.value.originalQIdx, r = s.value.audioText, $ = s.value.type, h = s.value.responseTime;
         l.value.onstop = async () => {
           ne.value = !0;
           const B = new Blob(C.value, { type: "audio/webm" });
-          await H(B, u, S, a, $), ne.value = !1;
-        }, l.value.start(), K.value = h, O && clearInterval(O), O = setInterval(() => {
-          K.value--, K.value <= 0 && (clearInterval(O), P());
+          await H(B, u, S, r, $), ne.value = !1;
+        }, l.value.start(), Y.value = h, O && clearInterval(O), O = setInterval(() => {
+          Y.value--, Y.value <= 0 && (clearInterval(O), P());
         }, 1e3);
       } catch (w) {
         console.error("Microphone access denied:", w), G.value = "Microphone access denied. Please allow it to record your response.";
       }
     }, P = () => {
       l.value && l.value.state === "recording" && (l.value.stop(), l.value.stream.getTracks().forEach((w) => w.stop())), O && clearInterval(O);
-    }, H = async (w, u, S, a, $) => {
+    }, H = async (w, u, S, r, $) => {
       L.value = !0;
       try {
         const h = new FileReader();
@@ -2910,7 +2912,7 @@ const Zs = { class: "min-h-screen bg-[#525355] flex justify-center p-0 md:p-4" }
               "Content-Type": "application/json",
               Authorization: `Bearer ${localStorage.get("token")}`
             },
-            body: JSON.stringify({ audio: B, task_type: $, question_text: a })
+            body: JSON.stringify({ audio: B, task_type: $, question_text: r })
           })).json();
           if (z.success && z.eval) {
             le.value = z.eval;
@@ -2933,55 +2935,55 @@ const Zs = { class: "min-h-screen bg-[#525355] flex justify-center p-0 md:p-4" }
     }, J = (w) => {
       const u = [];
       let S = 1;
-      w.forEach((a, $) => {
-        const h = (a.type || "").toLowerCase().replace(/_/g, " ").replace(/-/g, " ").trim();
-        if (!a.questions || !Array.isArray(a.questions) || a.questions.length === 0) {
-          const I = a.question || a.text || a.prompt || a.audioText;
-          I ? a.questions = [{
+      w.forEach((r, $) => {
+        const h = (r.type || "").toLowerCase().replace(/_/g, " ").replace(/-/g, " ").trim();
+        if (!r.questions || !Array.isArray(r.questions) || r.questions.length === 0) {
+          const I = r.question || r.text || r.prompt || r.audioText;
+          I ? r.questions = [{
             question: I,
-            user_input: a.user_input || { data: "" },
-            user_result: a.user_result || { data: "" },
-            imageUrl: a.imageUrl || null
-          }] : a.questions = [];
+            user_input: r.user_input || { data: "" },
+            user_result: r.user_result || { data: "" },
+            imageUrl: r.imageUrl || null
+          }] : r.questions = [];
         }
-        const B = a.prompts ? a.prompts.length : a.questions ? a.questions.length : 0;
-        for (; a.questions.length < B; )
-          a.questions.push({ user_input: { data: "" }, user_result: { data: "" } });
-        a.prompts && a.prompts.length > 0 ? a.prompts.forEach((I, W) => {
-          const z = a.questions[W] || {};
+        const B = r.prompts ? r.prompts.length : r.questions ? r.questions.length : 0;
+        for (; r.questions.length < B; )
+          r.questions.push({ user_input: { data: "" }, user_result: { data: "" } });
+        r.prompts && r.prompts.length > 0 ? r.prompts.forEach((I, W) => {
+          const z = r.questions[W] || {};
           u.push({
             type: "listen_and_repeat",
-            taskNumber: a.taskNumber || $ + 1,
-            title: a.title || "Listen and Repeat",
-            context: a.context || "",
-            instructions: a.instructions || a.instruction || "Listen carefully and repeat.",
+            taskNumber: r.taskNumber || $ + 1,
+            title: r.title || "Listen and Repeat",
+            context: r.context || "",
+            instructions: r.instructions || r.instruction || "Listen carefully and repeat.",
             audioText: z.question || z.text || I,
-            responseTime: a.responseTime || 15,
+            responseTime: r.responseTime || 15,
             globalIndex: S++,
             isFirstInGroup: W === 0,
             originalTaskIdx: $,
             originalQIdx: W,
             user_input: z.user_input?.data || "",
             user_result: z.user_result || { data: "" },
-            imageUrl: z.imageUrl || a.imageUrl || null
+            imageUrl: z.imageUrl || r.imageUrl || null
           });
-        }) : a.questions && a.questions.length > 0 && a.questions.forEach((I, W) => {
+        }) : r.questions && r.questions.length > 0 && r.questions.forEach((I, W) => {
           const z = typeof I == "object" ? I.question || I.text : I, D = h.includes("repeat") || h.includes("listen") ? "listen_and_repeat" : "interview";
           u.push({
             type: D,
-            taskNumber: a.taskNumber || $ + 1,
-            title: a.title || (D === "interview" ? "Interview" : "Listen and Repeat"),
-            context: a.context || "",
-            instructions: a.instructions || a.instruction || (D === "interview" ? "Respond to the interviewer." : "Listen and repeat."),
+            taskNumber: r.taskNumber || $ + 1,
+            title: r.title || (D === "interview" ? "Interview" : "Listen and Repeat"),
+            context: r.context || "",
+            instructions: r.instructions || r.instruction || (D === "interview" ? "Respond to the interviewer." : "Listen and repeat."),
             audioText: z,
-            responseTime: a.responseTime || (D === "listen_and_repeat" ? 15 : 60),
+            responseTime: r.responseTime || (D === "listen_and_repeat" ? 15 : 60),
             globalIndex: S++,
             isFirstInGroup: W === 0,
             originalTaskIdx: $,
             originalQIdx: W,
             user_input: I.user_input?.data || "",
             user_result: I.user_result || { data: "" },
-            imageUrl: I.imageUrl || a.imageUrl || null
+            imageUrl: I.imageUrl || r.imageUrl || null
           });
         });
       }), k.value = u.length, A.value = [{ type: "section_intro" }, ...u], N.value.section === "speaking" ? x.value = (N.value.task || 1) - 1 : (N.value.section = "speaking", N.value.module = 1, N.value.task = 1);
@@ -2991,9 +2993,9 @@ const Zs = { class: "min-h-screen bg-[#525355] flex justify-center p-0 md:p-4" }
     }), we(() => i?.value, (w) => {
       if (w && w.length > 0) {
         const u = w.find((S) => S.type?.toLowerCase() === "speaking");
-        u && (!T.value || A.value.length === 0 ? (T.value = u, J(u.tasks || [])) : u.tasks?.forEach((S, a) => {
+        u && (!T.value || A.value.length === 0 ? (T.value = u, J(u.tasks || [])) : u.tasks?.forEach((S, r) => {
           S.questions?.forEach(($, h) => {
-            const B = A.value.find((I) => I.originalTaskIdx === a && I.originalQIdx === h);
+            const B = A.value.find((I) => I.originalTaskIdx === r && I.originalQIdx === h);
             B && $.user_result && (B.user_result = $.user_result);
           });
         }));
@@ -3008,7 +3010,7 @@ const Zs = { class: "min-h-screen bg-[#525355] flex justify-center p-0 md:p-4" }
       }, Z.speak(S);
     }, te = () => {
       if (!T.value) {
-        o.push(`/writing-section/${r}`);
+        o.push(`/writing-section/${a}`);
         return;
       }
       f.value === "section_intro" ? (x.value = 1, ue()) : p();
@@ -3033,7 +3035,7 @@ const Zs = { class: "min-h-screen bg-[#525355] flex justify-center p-0 md:p-4" }
             await new Promise((w) => setTimeout(w, 500));
           L.value = !1;
         }
-        await E("speaking", !0), o.push({ name: "outcome", params: { testId: r }, query: { finished: "speaking" } });
+        await E("speaking", !0), o.push({ name: "outcome", params: { testId: a }, query: { finished: "speaking" } });
       }
     };
     return Ue(() => {
@@ -3042,7 +3044,7 @@ const Zs = { class: "min-h-screen bg-[#525355] flex justify-center p-0 md:p-4" }
       e("div", Al, [
         e("header", Tl, [
           e("div", Sl, [
-            f.value === "recording" ? (m(), v("span", El, M(K.value) + "s left", 1)) : se("", !0)
+            f.value === "recording" ? (m(), v("span", El, M(Y.value) + "s left", 1)) : se("", !0)
           ]),
           e("div", Ll, [
             e("div", Il, [
@@ -3070,7 +3072,7 @@ const Zs = { class: "min-h-screen bg-[#525355] flex justify-center p-0 md:p-4" }
                   class: "absolute top-2 right-3 text-gray-400 hover:text-gray-600 text-sm font-bold"
                 }, "✕"),
                 e("div", Bl, [
-                  (m(), v(oe, null, re(20, (S) => e("div", {
+                  (m(), v(oe, null, ae(20, (S) => e("div", {
                     key: S,
                     class: be(["w-[6px] rounded-full transition-colors duration-150", S * 5 <= U.value ? "bg-[#00796B]" : "bg-[#00796B]/20"]),
                     style: Se({ height: `${20 + S * 4}%` })
@@ -3192,8 +3194,8 @@ const Zs = { class: "min-h-screen bg-[#525355] flex justify-center p-0 md:p-4" }
                 ]),
                 u[18] || (u[18] = e("div", { class: "mt-8 text-[#00796B] font-medium animate-pulse" }, " Preparing task... ", -1))
               ])
-            ])) : f.value === "listening" || f.value === "interview_asking" ? (m(), v("div", ea, [
-              e("div", ta, M(f.value === "listening" ? "Listen carefully..." : "The interviewer is asking..."), 1),
+            ])) : f.value === "listening" || f.value === "interview_asking" ? (m(), v("div", er, [
+              e("div", tr, M(f.value === "listening" ? "Listen carefully..." : "The interviewer is asking..."), 1),
               e("div", {
                 class: be(["relative w-48 h-48 md:w-64 md:h-64 overflow-hidden border-4", [Q.value ? "border-green-500 shadow-xl avatar-pulse" : "border-gray-300", s.value.type === "listen_and_repeat" ? "rounded-2xl shadow-lg" : "rounded-full"]])
               }, [
@@ -3201,30 +3203,30 @@ const Zs = { class: "min-h-screen bg-[#525355] flex justify-center p-0 md:p-4" }
                   src: s.value.imageUrl || "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=400&q=80",
                   alt: "Interviewer",
                   class: "w-full h-full object-cover"
-                }, null, 8, sa)
+                }, null, 8, sr)
               ], 2)
-            ])) : f.value === "recording" ? (m(), v("div", na, [
-              s.value.type === "interview" ? (m(), v("div", oa, [
+            ])) : f.value === "recording" ? (m(), v("div", nr, [
+              s.value.type === "interview" ? (m(), v("div", or, [
                 u[19] || (u[19] = e("h3", { class: "text-[16px] md:text-[18px] font-bold text-[#00796B] mb-2 md:mb-3" }, "Interview Question:", -1)),
-                e("p", la, M(s.value.audioText), 1)
-              ])) : (m(), v("div", aa, [...u[20] || (u[20] = [
+                e("p", lr, M(s.value.audioText), 1)
+              ])) : (m(), v("div", rr, [...u[20] || (u[20] = [
                 e("p", { class: "text-[18px] md:text-[20px] text-[#333] font-medium" }, "Repeat the sentence you just heard.", -1)
               ])])),
-              e("div", ra, [
-                e("div", ia, [
+              e("div", ar, [
+                e("div", ir, [
                   u[21] || (u[21] = e("div", { class: "flex items-center gap-2 text-red-600 font-semibold uppercase tracking-widest text-lg md:text-[22px] animate-pulse mb-2" }, [
                     e("div", { class: "w-3 h-3 md:w-4 md:h-4 bg-red-600 rounded-full" }),
                     q(" Recording ")
                   ], -1)),
-                  e("div", da, M(K.value), 1),
+                  e("div", dr, M(Y.value), 1),
                   u[22] || (u[22] = e("div", { class: "text-[14px] md:text-[16px] text-gray-500 uppercase" }, "Seconds Remaining", -1)),
                   e("button", {
                     onClick: b,
                     class: "mt-6 px-5 py-2 bg-gray-200 hover:bg-gray-300 text-gray-700 rounded-lg text-sm font-medium transition-colors border border-gray-300 shadow-sm"
                   }, " End Recording ")
                 ]),
-                e("div", ua, [
-                  (m(), v(oe, null, re(12, (S) => e("div", {
+                e("div", ur, [
+                  (m(), v(oe, null, ae(12, (S) => e("div", {
                     key: S,
                     class: "w-1.5 md:w-2 bg-[#00796B] rounded-t-sm audio-bar",
                     style: Se({ animationDelay: `${S * 0.1}s` })
@@ -3233,29 +3235,31 @@ const Zs = { class: "min-h-screen bg-[#525355] flex justify-center p-0 md:p-4" }
               ])
             ])) : se("", !0)
           ])
-        ], 64)) : (m(), v("div", ca, " No speaking tasks found. "))
+        ], 64)) : (m(), v("div", cr, " No speaking tasks found. "))
       ])
     ]));
   }
-}), fa = /* @__PURE__ */ Pe(pa, [["__scopeId", "data-v-144966a3"]]), ma = { class: "min-h-screen bg-[#525355] flex justify-center font-sans p-0 md:p-4" }, xa = { class: "w-full max-w-[1200px] min-h-screen md:min-h-[700px] md:h-[90vh] flex flex-col shadow-lg overflow-hidden md:rounded-lg relative bg-white" }, ga = { class: "bg-[#00796B] h-[60px] flex justify-end items-center px-4 md:px-6 gap-3 shrink-0" }, va = ["disabled"], ha = ["disabled"], ba = {
+}), fr = /* @__PURE__ */ Pe(pr, [["__scopeId", "data-v-144966a3"]]), mr = { class: "min-h-screen bg-[#525355] flex justify-center font-sans p-0 md:p-4" }, xr = { class: "w-full max-w-[1200px] min-h-screen md:min-h-[700px] md:h-[90vh] flex flex-col shadow-lg overflow-hidden md:rounded-lg relative bg-white" }, gr = { class: "bg-[#00796B] h-[60px] flex justify-end items-center px-4 md:px-6 gap-3 shrink-0" }, vr = ["disabled"], hr = ["disabled"], br = {
   key: 0,
   class: "flex-grow flex flex-col items-center justify-center text-gray-500"
-}, wa = { class: "animate-pulse flex flex-col items-center" }, ya = {
+}, wr = { class: "animate-pulse flex flex-col items-center" }, yr = {
   key: 0,
   class: "text-sm mt-2 text-red-500"
-}, _a = {
+}, _r = {
   key: 1,
   class: "flex-grow flex flex-col pt-16 md:pt-24 px-6 md:px-16 text-[#333333]"
-}, ka = { class: "text-2xl md:text-[28px] font-light mb-4 md:mb-6" }, $a = { class: "text-base md:text-[18px] leading-relaxed" }, Ca = { class: "border-b border-gray-300 px-4 md:px-6 py-2 md:py-2.5 text-[12px] md:text-[14px] text-[#333333] flex items-center gap-2 shrink-0 bg-gray-50 overflow-x-auto whitespace-nowrap" }, Aa = { class: "flex-grow px-6 py-8 md:px-10 md:py-10 flex flex-col items-center relative overflow-y-auto" }, Ta = {
+}, kr = { class: "text-2xl md:text-[28px] font-light mb-4 md:mb-6" }, $r = { class: "text-base md:text-[18px] leading-relaxed" }, Cr = { class: "border-b border-gray-300 px-4 md:px-6 py-2 md:py-2.5 text-[12px] md:text-[14px] text-[#333333] flex items-center gap-2 shrink-0 bg-gray-50 overflow-x-auto whitespace-nowrap" }, Ar = { class: "flex-grow px-6 py-8 md:px-10 md:py-10 flex flex-col items-center relative overflow-y-auto" }, Tr = {
   key: 0,
   class: "flex flex-col w-full max-w-4xl items-center mt-4"
-}, Sa = { class: "text-xl md:text-[32px] font-normal text-black mb-8 md:mb-16 text-center leading-tight" }, Ea = { class: "flex justify-center items-end w-full h-[250px] md:h-[350px]" }, La = ["src"], Ia = {
+}, Sr = { class: "text-xl md:text-[32px] font-normal text-black mb-8 md:mb-16 text-center leading-tight" }, Er = { class: "flex justify-center items-end w-full h-[250px] md:h-[350px]" }, Lr = ["src"], Ir = {
   key: 1,
   class: "flex flex-col md:flex-row w-full max-w-5xl gap-10 md:gap-16 items-center md:items-start justify-center mt-6 md:mt-12"
-}, Ra = { class: "flex justify-center items-end gap-4 w-full md:w-[350px] shrink-0 h-[200px] md:h-[280px]" }, Ba = ["src"], ja = { class: "flex flex-col gap-5 md:gap-6 pt-0 md:pt-4 w-full md:w-auto max-w-lg" }, Na = { class: "text-lg md:text-[19px] font-bold text-black mb-2 leading-snug" }, Oa = { class: "flex flex-col gap-4 md:gap-5" }, Ma = { class: "relative flex items-center justify-center mt-1 shrink-0" }, Va = ["value"], Ua = { class: "text-[16px] md:text-[17px] text-[#333] group-hover:text-black leading-snug" }, Pa = { class: "font-bold" }, Da = /* @__PURE__ */ me({
+}, Rr = { class: "flex justify-center items-end gap-4 w-full md:w-[350px] shrink-0 h-[200px] md:h-[280px]" }, Br = ["src"], jr = { class: "flex flex-col gap-5 md:gap-6 pt-0 md:pt-4 w-full md:w-auto max-w-lg" }, Nr = { class: "text-lg md:text-[19px] font-bold text-black mb-2 leading-snug" }, Or = { class: "flex flex-col gap-4 md:gap-5" }, Mr = { class: "relative flex items-center justify-center mt-1 shrink-0" }, Vr = ["value"], Ur = { class: "text-[16px] md:text-[17px] text-[#333] group-hover:text-black leading-snug" }, Pr = { class: "font-bold" }, Dr = /* @__PURE__ */ me({
   __name: "listeningSection",
   setup(t) {
-    const n = _e(), r = Ee().params.testId, i = ae("testData"), y = ae("isGlobalLoading"), E = ae("updateUserInput"), N = ae("syncAllData"), g = ae("state"), T = ae("saveToLocalStorage"), A = Y(null), x = Y(0), f = Y(0), k = Y([]), K = Y(0), j = Y(!1), R = Y("question"), U = Y(!1), Q = Y(!1), G = Y(60), L = Y(""), le = typeof window < "u" ? window.speechSynthesis : null, ne = ie(() => y?.value), O = ie(() => {
+    const n = _e(), a = Ee().params.testId, i = re("testData"), y = re("isGlobalLoading"), E = re("updateUserInput"), N = re("syncAllData"), g = re("state"), T = re("saveToLocalStorage"), A = K(null), x = K(0), f = K(0), k = K([]), Y = K(0), j = K(!1), R = K("question"), U = K(!1), Q = K(!1);
+    K(!1);
+    const G = K(60), L = K(""), le = typeof window < "u" ? window.speechSynthesis : null, ne = ie(() => y?.value), O = ie(() => {
       const J = k.value[f.value];
       if (!J) return null;
       if (J.isMCQ && J.levelVariants) {
@@ -3316,30 +3320,30 @@ const Zs = { class: "min-h-screen bg-[#525355] flex justify-center p-0 md:p-4" }
           let w = {};
           const u = ["a1", "a2", "b1", "b2", "c1", "c2"];
           let S = [];
-          if (u.forEach((a) => {
-            if (c[a])
-              if (S.push(a), Array.isArray(c[a]) && c[a].length > 0) {
-                if (c.selected_indices || (c.selected_indices = {}), c.selected_indices[a] === void 0) {
-                  let $ = c[a].findIndex((h) => h.user_input && h.user_input.data);
-                  $ !== -1 ? c.selected_indices[a] = $ : c.selected_indices[a] = Math.floor(Math.random() * c[a].length);
+          if (u.forEach((r) => {
+            if (c[r])
+              if (S.push(r), Array.isArray(c[r]) && c[r].length > 0) {
+                if (c.selected_indices || (c.selected_indices = {}), c.selected_indices[r] === void 0) {
+                  let $ = c[r].findIndex((h) => h.user_input && h.user_input.data);
+                  $ !== -1 ? c.selected_indices[r] = $ : c.selected_indices[r] = Math.floor(Math.random() * c[r].length);
                 }
-                w[a] = c[a][c.selected_indices[a]];
-              } else typeof c[a] == "object" && !Array.isArray(c[a]) && (w[a] = c[a]);
+                w[r] = c[r][c.selected_indices[r]];
+              } else typeof c[r] == "object" && !Array.isArray(c[r]) && (w[r] = c[r]);
           }), S.length === 0) {
-            let a = c;
-            if (!a.question)
-              if (Array.isArray(c) && c.length > 0) a = c[0];
-              else if (c[0] && c[0].question) a = c[0];
+            let r = c;
+            if (!r.question)
+              if (Array.isArray(c) && c.length > 0) r = c[0];
+              else if (c[0] && c[0].question) r = c[0];
               else {
                 const $ = Object.keys(c).find((h) => Array.isArray(c[h]) && c[h].length > 0 && c[h][0].question);
                 if ($)
-                  a = c[$][0];
+                  r = c[$][0];
                 else {
                   const h = Object.keys(c).find((B) => c[B] && typeof c[B] == "object" && c[B].question);
-                  h && (a = c[h]);
+                  h && (r = c[h]);
                 }
               }
-            w.default = a, S.push("default");
+            w.default = r, S.push("default");
           }
           F.push({
             id: `mcq_${pe}_${p}`,
@@ -3356,12 +3360,12 @@ const Zs = { class: "min-h-screen bg-[#525355] flex justify-center p-0 md:p-4" }
             questionLabel: `Question ${te}`
           });
         });
-      }), k.value = F, K.value = te, g.value.section === "listening" && (g.value.module || 1) - 1 === x.value ? f.value = (g.value.task || 1) - 1 : f.value = 0, s();
+      }), k.value = F, Y.value = te, g.value.section === "listening" && (g.value.module || 1) - 1 === x.value ? f.value = (g.value.task || 1) - 1 : f.value = 0, s();
     }, C = (J) => {
       E && E("listening", x.value, J.originalTaskIdx, J.originalQIdx, J.selectedAnswer, J.activeLevel, J.activeVariantIndex);
     }, _ = async (J) => {
       if (!A.value) {
-        n.push(`/writing-section/${r}`);
+        n.push(`/writing-section/${a}`);
         return;
       }
       if (j.value) {
@@ -3386,7 +3390,7 @@ const Zs = { class: "min-h-screen bg-[#525355] flex justify-center p-0 md:p-4" }
             } catch (F) {
               console.error("Save failed", F);
             } finally {
-              y && (y.value = !1), n.push(`/writing-section/${r}`);
+              y && (y.value = !1), n.push(`/writing-section/${a}`);
             }
         }
     }, P = () => {
@@ -3410,15 +3414,15 @@ const Zs = { class: "min-h-screen bg-[#525355] flex justify-center p-0 md:p-4" }
       }
     }, { immediate: !0 }), we([x, f], ([J, F]) => {
       g.value.module = J + 1, g.value.task = F + 1, T();
-    }), Ue(() => le?.cancel()), (J, F) => (m(), v("div", ma, [
-      e("div", xa, [
-        e("header", ga, [
+    }), Ue(() => le?.cancel()), (J, F) => (m(), v("div", mr, [
+      e("div", xr, [
+        e("header", gr, [
           j.value ? se("", !0) : (m(), v("button", {
             key: 0,
             onClick: P,
             disabled: ne.value,
             class: "bg-transparent text-white border border-white/50 hover:border-white hover:bg-white/10 rounded-full px-5 md:px-6 py-1.5 text-[14px] md:text-[15px] font-medium cursor-pointer transition-colors disabled:opacity-50"
-          }, M(R.value === "intro" ? "Skip Audio" : "Skip Question"), 9, va)),
+          }, M(R.value === "intro" ? "Skip Audio" : "Skip Question"), 9, vr)),
           e("button", {
             onClick: H,
             disabled: ne.value,
@@ -3437,18 +3441,18 @@ const Zs = { class: "min-h-screen bg-[#525355] flex justify-center p-0 md:p-4" }
                 "clip-rule": "evenodd"
               })
             ], -1)
-          ])], 8, ha)
+          ])], 8, hr)
         ]),
-        ne.value ? (m(), v("div", ba, [
-          e("div", wa, [
+        ne.value ? (m(), v("div", br, [
+          e("div", wr, [
             F[3] || (F[3] = e("div", { class: "w-10 h-10 border-4 border-[#00796B] border-t-transparent rounded-full animate-spin mb-4" }, null, -1)),
             F[4] || (F[4] = e("div", null, "Loading Listening Section...", -1)),
-            L.value ? (m(), v("div", ya, M(L.value), 1)) : se("", !0)
+            L.value ? (m(), v("div", yr, M(L.value), 1)) : se("", !0)
           ])
-        ])) : j.value ? (m(), v("div", _a, [
-          e("h2", ka, "End of Module " + M(x.value + 1), 1),
+        ])) : j.value ? (m(), v("div", _r, [
+          e("h2", kr, "End of Module " + M(x.value + 1), 1),
           F[9] || (F[9] = e("hr", { class: "w-full border-gray-300 mb-6 md:mb-8" }, null, -1)),
-          e("p", $a, [
+          e("p", $r, [
             q(" You have completed Module " + M(x.value + 1) + ". ", 1),
             F[5] || (F[5] = e("br", null, null, -1)),
             F[6] || (F[6] = q(" Select ", -1)),
@@ -3456,52 +3460,52 @@ const Zs = { class: "min-h-screen bg-[#525355] flex justify-center p-0 md:p-4" }
             F[8] || (F[8] = q(" to continue. ", -1))
           ])
         ])) : k.value.length > 0 && O.value ? (m(), v(oe, { key: 2 }, [
-          e("div", Ca, [
+          e("div", Cr, [
             F[11] || (F[11] = e("span", null, "Listening", -1)),
             F[12] || (F[12] = e("span", { class: "text-gray-400" }, "|", -1)),
             e("span", null, "Module " + M(x.value + 1), 1),
             R.value === "question" ? (m(), v(oe, { key: 0 }, [
               F[10] || (F[10] = e("span", { class: "text-gray-400" }, "|", -1)),
-              e("span", null, "Question " + M(O.value.globalQuestionNum) + " of " + M(K.value), 1)
+              e("span", null, "Question " + M(O.value.globalQuestionNum) + " of " + M(Y.value), 1)
             ], 64)) : se("", !0)
           ]),
-          e("main", Aa, [
-            R.value === "intro" ? (m(), v("div", Ta, [
-              e("h2", Sa, M(O.value.introTitle), 1),
-              e("div", Ea, [
+          e("main", Ar, [
+            R.value === "intro" ? (m(), v("div", Tr, [
+              e("h2", Sr, M(O.value.introTitle), 1),
+              e("div", Er, [
                 e("img", {
                   src: O.value.imageUrl || "https://api.dicebear.com/9.x/open-peeps/svg?seed=Professor&backgroundColor=transparent",
                   class: "h-full w-auto drop-shadow-sm"
-                }, null, 8, La)
+                }, null, 8, Lr)
               ])
-            ])) : (m(), v("div", Ia, [
-              e("div", Ra, [
+            ])) : (m(), v("div", Ir, [
+              e("div", Rr, [
                 e("img", {
                   src: O.value.imageUrl || "https://api.dicebear.com/9.x/open-peeps/svg?seed=Jessica&backgroundColor=transparent",
                   class: "h-full w-auto drop-shadow-sm"
-                }, null, 8, Ba)
+                }, null, 8, Br)
               ]),
-              e("div", ja, [
-                e("h3", Na, M(O.value.questionText), 1),
-                e("div", Oa, [
-                  (m(!0), v(oe, null, re(O.value.options, (te) => (m(), v("label", {
+              e("div", jr, [
+                e("h3", Nr, M(O.value.questionText), 1),
+                e("div", Or, [
+                  (m(!0), v(oe, null, ae(O.value.options, (te) => (m(), v("label", {
                     key: te.id,
                     class: "flex items-start gap-3 md:gap-4 cursor-pointer group"
                   }, [
-                    e("div", Ma, [
+                    e("div", Mr, [
                       X(e("input", {
                         type: "radio",
                         value: te.id,
                         "onUpdate:modelValue": F[0] || (F[0] = (ue) => O.value.selectedAnswer = ue),
                         onChange: F[1] || (F[1] = (ue) => C(O.value)),
                         class: "peer appearance-none w-[20px] h-[20px] md:w-[22px] md:h-[22px] border border-black rounded-full checked:border-black cursor-pointer"
-                      }, null, 40, Va), [
+                      }, null, 40, Vr), [
                         [kt, O.value.selectedAnswer]
                       ]),
                       F[13] || (F[13] = e("div", { class: "absolute w-[10px] h-[10px] bg-black rounded-full opacity-0 peer-checked:opacity-100 transition-opacity" }, null, -1))
                     ]),
-                    e("span", Ua, [
-                      e("span", Pa, "(" + M(te.id) + ")", 1),
+                    e("span", Ur, [
+                      e("span", Pr, "(" + M(te.id) + ")", 1),
                       q(" " + M(te.text), 1)
                     ])
                   ]))), 128))
@@ -3513,34 +3517,34 @@ const Zs = { class: "min-h-screen bg-[#525355] flex justify-center p-0 md:p-4" }
       ])
     ]));
   }
-}), za = /* @__PURE__ */ me({
+}), zr = /* @__PURE__ */ me({
   __name: "listeningpage",
   props: {
     _p: {},
     _pp: {}
   },
   setup(t) {
-    const n = t, o = n._p, r = n._pp;
-    return (i, y) => (m(), Ae(Da, {
+    const n = t, o = n._p, a = n._pp;
+    return (i, y) => (m(), Ae(Dr, {
       _p: ge(o),
-      _pp: ge(r)
+      _pp: ge(a)
     }, null, 8, ["_p", "_pp"]));
   }
-}), Fa = { class: "min-h-screen bg-gradient-to-br from-[#004D40] via-[#00796B] to-[#004D40] flex items-center justify-center p-4 md:p-6 overflow-hidden relative" }, Qa = { class: "bg-white/10 backdrop-blur-xl p-8 md:p-12 rounded-[2rem] border border-white/20 shadow-2xl max-w-lg w-full text-center relative z-10 transition-all duration-500 hover:shadow-teal-900/40" }, Ga = { class: "space-y-4" }, Ha = {
+}), Fr = { class: "min-h-screen bg-gradient-to-br from-[#004D40] via-[#00796B] to-[#004D40] flex items-center justify-center p-4 md:p-6 overflow-hidden relative" }, Qr = { class: "bg-white/10 backdrop-blur-xl p-8 md:p-12 rounded-[2rem] border border-white/20 shadow-2xl max-w-lg w-full text-center relative z-10 transition-all duration-500 hover:shadow-teal-900/40" }, Gr = { class: "space-y-4" }, Hr = {
   __name: "mainPage",
   setup(t) {
-    const n = _e(), o = (r) => {
-      n.push(`/test/copywrite/${r}`);
+    const n = _e(), o = (a) => {
+      n.push(`/test/copywrite/${a}`);
     };
-    return (r, i) => (m(), v("div", Fa, [
+    return (a, i) => (m(), v("div", Fr, [
       i[4] || (i[4] = e("div", { class: "absolute top-[-10%] left-[-10%] w-[40%] h-[40%] bg-white/5 rounded-full blur-3xl animate-pulse" }, null, -1)),
       i[5] || (i[5] = e("div", {
         class: "absolute bottom-[-10%] right-[-10%] w-[40%] h-[40%] bg-white/5 rounded-full blur-3xl animate-pulse",
         style: { "animation-delay": "2s" }
       }, null, -1)),
-      e("div", Qa, [
+      e("div", Qr, [
         i[3] || (i[3] = Ce('<div class="w-20 h-20 md:w-24 md:h-24 bg-white rounded-3xl flex items-center justify-center mx-auto mb-8 shadow-2xl transform transition-transform hover:rotate-6"><svg xmlns="http://www.w3.org/2000/svg" class="h-12 w-12 md:h-14 md:w-14 text-[#00796B]" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"></path></svg></div><h1 class="text-3xl md:text-5xl font-black text-white mb-4 tracking-tight">TOEFL <span class="text-teal-300">Mastery</span></h1><p class="text-teal-50/80 mb-10 text-base md:text-xl leading-relaxed font-light">Elevate your English proficiency with high-fidelity practice simulations.</p>', 3)),
-        e("div", Ga, [
+        e("div", Gr, [
           e("button", {
             onClick: i[0] || (i[0] = (y) => o("7d4e9be6-66c0-46cb-9911-76148974d9d0")),
             class: "w-full bg-white text-[#00796B] font-bold py-4 md:py-5 rounded-2xl shadow-xl hover:bg-teal-50 transition-all transform hover:scale-[1.03] active:scale-[0.97] text-lg flex items-center justify-center gap-2 group"
@@ -3566,49 +3570,49 @@ const Zs = { class: "min-h-screen bg-[#525355] flex justify-center p-0 md:p-4" }
       ])
     ]));
   }
-}, Wa = /* @__PURE__ */ me({
+}, Wr = /* @__PURE__ */ me({
   __name: "MainPage",
   props: {
     _p: {},
     _pp: {}
   },
   setup(t) {
-    const n = t, o = n._p, r = n._pp;
-    return (i, y) => (m(), Ae(Ha, {
+    const n = t, o = n._p, a = n._pp;
+    return (i, y) => (m(), Ae(Hr, {
       _p: ge(o),
-      _pp: ge(r)
+      _pp: ge(a)
     }, null, 8, ["_p", "_pp"]));
   }
-}), Ja = { class: "min-h-screen bg-[#f5f5f5] flex justify-center" }, Ka = { class: "w-full max-w-[1400px] flex flex-col bg-white" }, Ya = { class: "bg-white flex-grow px-6 md:px-8 py-8" }, Za = {
+}), Jr = { class: "min-h-screen bg-[#f5f5f5] flex justify-center" }, Kr = { class: "w-full max-w-[1400px] flex flex-col bg-white" }, Yr = { class: "bg-white flex-grow px-6 md:px-8 py-8" }, Zr = {
   key: 0,
   class: "flex items-center justify-center h-96"
-}, Xa = {
+}, Xr = {
   key: 1,
   class: "flex flex-col items-center justify-center h-96 text-center"
-}, qa = {
+}, qr = {
   key: 2,
   class: "grid grid-cols-1 lg:grid-cols-5 gap-6 items-start"
-}, er = { class: "lg:col-span-2 space-y-6" }, tr = { class: "bg-[#00695C] rounded-2xl p-6 sm:p-10 text-white shadow-lg flex flex-col items-center relative overflow-hidden h-fit" }, sr = { class: "relative w-40 h-40 flex items-center justify-center mb-8 relative z-10" }, nr = {
+}, ea = { class: "lg:col-span-2 space-y-6" }, ta = { class: "bg-[#00695C] rounded-2xl p-6 sm:p-10 text-white shadow-lg flex flex-col items-center relative overflow-hidden h-fit" }, sa = { class: "relative w-40 h-40 flex items-center justify-center mb-8 relative z-10" }, na = {
   class: "w-full h-full absolute",
   viewBox: "0 0 200 200"
-}, or = ["stroke-dashoffset"], lr = { class: "text-center relative z-10" }, ar = { class: "text-[48px] font-bold leading-none mb-1" }, rr = { class: "w-full flex flex-col items-center gap-6 relative z-10" }, ir = { class: "text-[14px] font-bold uppercase tracking-widest text-white/90 border-b border-white/20 pb-2" }, dr = { class: "w-full flex flex-col gap-3" }, ur = { class: "w-full grid grid-cols-2 gap-4 mt-10 relative z-10 pt-6 border-t border-white/10" }, cr = { class: "text-center" }, pr = { class: "text-[20px] font-bold" }, fr = { class: "text-center border-l border-white/10" }, mr = { class: "text-[20px] font-bold" }, xr = { class: "lg:col-span-3 space-y-4" }, gr = ["onClick"], vr = { class: "relative w-20 h-20 sm:w-24 sm:h-24 flex-shrink-0" }, hr = {
+}, oa = ["stroke-dashoffset"], la = { class: "text-center relative z-10" }, ra = { class: "text-[48px] font-bold leading-none mb-1" }, aa = { class: "w-full flex flex-col items-center gap-6 relative z-10" }, ia = { class: "text-[14px] font-bold uppercase tracking-widest text-white/90 border-b border-white/20 pb-2" }, da = { class: "w-full flex flex-col gap-3" }, ua = { class: "w-full grid grid-cols-2 gap-4 mt-10 relative z-10 pt-6 border-t border-white/10" }, ca = { class: "text-center" }, pa = { class: "text-[20px] font-bold" }, fa = { class: "text-center border-l border-white/10" }, ma = { class: "text-[20px] font-bold" }, xa = { class: "lg:col-span-3 space-y-4" }, ga = ["onClick"], va = { class: "relative w-20 h-20 sm:w-24 sm:h-24 flex-shrink-0" }, ha = {
   class: "w-full h-full",
   viewBox: "0 0 120 120",
   xmlns: "http://www.w3.org/2000/svg"
-}, br = ["stroke", "stroke-dashoffset"], wr = { class: "absolute inset-0 flex flex-col items-center justify-center text-center" }, yr = { class: "text-[18px] font-normal text-[#333]" }, _r = { class: "w-full flex-1 grid grid-cols-2 sm:grid-cols-4 gap-2 sm:gap-3" }, kr = { class: "col-span-2 sm:col-span-1 mb-2 sm:mb-0" }, $r = { class: "flex items-center gap-2" }, Cr = { class: "text-[14px] sm:text-[16px] font-semibold text-[#333] capitalize" }, Ar = {
+}, ba = ["stroke", "stroke-dashoffset"], wa = { class: "absolute inset-0 flex flex-col items-center justify-center text-center" }, ya = { class: "text-[18px] font-normal text-[#333]" }, _a = { class: "w-full flex-1 grid grid-cols-2 sm:grid-cols-4 gap-2 sm:gap-3" }, ka = { class: "col-span-2 sm:col-span-1 mb-2 sm:mb-0" }, $a = { class: "flex items-center gap-2" }, Ca = { class: "text-[14px] sm:text-[16px] font-semibold text-[#333] capitalize" }, Aa = {
   key: 0,
   class: "bg-teal-100 text-teal-700 text-[8px] font-bold px-1.5 py-0.5 rounded uppercase"
-}, Tr = { class: "bg-[#f9f9f9] border border-[#e0e0e0] rounded-lg p-2 text-center" }, Sr = { class: "text-[16px] font-bold text-[#333]" }, Er = { class: "bg-[#f9f9f9] border border-[#e0e0e0] rounded-lg p-2 text-center" }, Lr = { class: "text-[16px] font-bold text-[#00796B]" }, Ir = { class: "bg-[#f9f9f9] border border-[#e0e0e0] rounded-lg p-2 text-center" }, Rr = {
+}, Ta = { class: "bg-[#f9f9f9] border border-[#e0e0e0] rounded-lg p-2 text-center" }, Sa = { class: "text-[16px] font-bold text-[#333]" }, Ea = { class: "bg-[#f9f9f9] border border-[#e0e0e0] rounded-lg p-2 text-center" }, La = { class: "text-[16px] font-bold text-[#00796B]" }, Ia = { class: "bg-[#f9f9f9] border border-[#e0e0e0] rounded-lg p-2 text-center" }, Ra = {
   key: 0,
   class: "fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/40"
-}, Br = { class: "flex justify-between items-center p-8 border-b border-[#e0e0e0]" }, jr = { class: "text-[24px] font-normal text-[#333] capitalize" }, Nr = { class: "p-8 space-y-8" }, Or = { class: "px-8 pt-4 pb-2" }, Mr = { class: "grid grid-cols-1 sm:grid-cols-3 gap-4" }, Vr = { class: "bg-[#f9f9f9] border border-[#e0e0e0] rounded-xl p-6 text-center shadow-sm" }, Ur = { class: "text-[32px] sm:text-[36px] font-bold text-[#333]" }, Pr = { class: "bg-[#f9f9f9] border border-[#e0e0e0] rounded-xl p-6 text-center shadow-sm" }, Dr = { class: "text-[32px] sm:text-[36px] font-bold text-[#00796B]" }, zr = { class: "bg-[#f9f9f9] border border-[#e0e0e0] rounded-xl p-6 text-center shadow-sm" }, Fr = { class: "flex flex-col sm:flex-row gap-3 pt-8 border-t border-[#e0e0e0]" }, Qr = /* @__PURE__ */ me({
+}, Ba = { class: "flex justify-between items-center p-8 border-b border-[#e0e0e0]" }, ja = { class: "text-[24px] font-normal text-[#333] capitalize" }, Na = { class: "p-8 space-y-8" }, Oa = { class: "px-8 pt-4 pb-2" }, Ma = { class: "grid grid-cols-1 sm:grid-cols-3 gap-4" }, Va = { class: "bg-[#f9f9f9] border border-[#e0e0e0] rounded-xl p-6 text-center shadow-sm" }, Ua = { class: "text-[32px] sm:text-[36px] font-bold text-[#333]" }, Pa = { class: "bg-[#f9f9f9] border border-[#e0e0e0] rounded-xl p-6 text-center shadow-sm" }, Da = { class: "text-[32px] sm:text-[36px] font-bold text-[#00796B]" }, za = { class: "bg-[#f9f9f9] border border-[#e0e0e0] rounded-xl p-6 text-center shadow-sm" }, Fa = { class: "flex flex-col sm:flex-row gap-3 pt-8 border-t border-[#e0e0e0]" }, Qa = /* @__PURE__ */ me({
   __name: "OutcomeSection",
   props: {
     _p: {},
     _pp: {}
   },
   setup(t) {
-    const n = ae("overallScore"), o = ae("isGlobalLoading"), r = ae("testData"), i = ae("testMetadata"), y = ae("submitFinalTest"), E = _e(), N = Ee(), g = ie(() => i?.value?.title?.startsWith("Result:")), T = async () => {
+    const n = re("overallScore"), o = re("isGlobalLoading"), a = re("testData"), i = re("testMetadata"), y = re("submitFinalTest"), E = _e(), N = Ee(), g = ie(() => i?.value?.title?.startsWith("Result:")), T = async () => {
       confirm("This will create a permanent result record and clear your current practice progress. Continue?") && await y();
     }, A = ie(() => o?.value || !1), x = ie(() => {
       const d = ["reading", "listening", "writing", "speaking"], s = {};
@@ -3619,7 +3623,7 @@ const Zs = { class: "min-h-screen bg-[#525355] flex justify-center p-0 md:p-4" }
             status: n.value[l].attempted || n.value[l].old_toefl > 0 ? "Completed" : "Not Started"
           };
         else {
-          const _ = r.value?.find((P) => P.type.toLowerCase() === l);
+          const _ = a.value?.find((P) => P.type.toLowerCase() === l);
           if (_) {
             let P = 0, H = !1;
             (_.modules ? _.modules.flatMap((ue) => ue.tasks) : _.tasks || []).forEach((ue) => {
@@ -3633,8 +3637,8 @@ const Zs = { class: "min-h-screen bg-[#525355] flex justify-center p-0 md:p-4" }
                     const p = Object.values(c.analysis);
                     let w = 0, u = 0;
                     p.forEach((S) => {
-                      const a = typeof S == "object" ? S.score || 0 : Number(S) || 0;
-                      w += Number(a), u++;
+                      const r = typeof S == "object" ? S.score || 0 : Number(S) || 0;
+                      w += Number(r), u++;
                     }), u > 0 ? P += w / u : (c.status === "Correct" || c.data === 1) && (P += 1);
                   } else (c?.status === "Correct" || c?.data === 1) && (P += 1);
                   (b.user_input?.data || c && Object.keys(c).length > 0) && (H = !0);
@@ -3665,7 +3669,7 @@ const Zs = { class: "min-h-screen bg-[#525355] flex justify-center p-0 md:p-4" }
             s[l] = { old_toefl: 0, new_toefl: 0, cefr: "A1", status: "Not Started" };
         }
       }), s;
-    }), f = ie(() => n.value && Object.keys(n.value).length > 0 && n.value.total?.old_toefl > 0 ? !0 : Object.values(x.value).some((d) => d.status !== "Not Started")), k = Y(null), K = (d) => d >= 95 ? "C1" : d >= 72 ? "B2" : d >= 42 ? "B1" : "A1", j = (d) => ({
+    }), f = ie(() => n.value && Object.keys(n.value).length > 0 && n.value.total?.old_toefl > 0 ? !0 : Object.values(x.value).some((d) => d.status !== "Not Started")), k = K(null), Y = (d) => d >= 95 ? "C1" : d >= 72 ? "B2" : d >= 42 ? "B1" : "A1", j = (d) => ({
       reading: "#2196F3",
       listening: "#9C27B0",
       speaking: "#f44336",
@@ -3675,7 +3679,7 @@ const Zs = { class: "min-h-screen bg-[#525355] flex justify-center p-0 md:p-4" }
       return Object.values(x.value).forEach((s) => {
         d += s.old_toefl || 0;
       }), d;
-    }), Q = ie(() => K(U.value)), G = () => {
+    }), Q = ie(() => Y(U.value)), G = () => {
       const d = U.value;
       return d >= 110 ? "Expert" : d >= 95 ? "Advanced" : d >= 80 ? "High Intermediate" : d >= 60 ? "Intermediate" : d >= 40 ? "Lower Intermediate" : "Beginner";
     }, L = (d) => {
@@ -3697,8 +3701,8 @@ const Zs = { class: "min-h-screen bg-[#525355] flex justify-center p-0 md:p-4" }
     }), Z = () => {
       E.push("/start");
     };
-    return (d, s) => (m(), v("div", Ja, [
-      e("div", Ka, [
+    return (d, s) => (m(), v("div", Jr, [
+      e("div", Kr, [
         e("header", { class: "bg-[#00796B] min-h-[70px] flex flex-col sm:flex-row justify-between items-center px-4 sm:px-8 py-4 sm:py-0 shrink-0 gap-4" }, [
           s[4] || (s[4] = e("div", { class: "text-white font-medium text-[18px] sm:text-[20px] text-center sm:text-left" }, "TOEFL Performance Analysis", -1)),
           e("button", {
@@ -3716,29 +3720,29 @@ const Zs = { class: "min-h-screen bg-[#525355] flex justify-center p-0 md:p-4" }
             q(" Home ", -1)
           ])])
         ]),
-        e("main", Ya, [
-          A.value && !f.value ? (m(), v("div", Za, [...s[5] || (s[5] = [
+        e("main", Yr, [
+          A.value && !f.value ? (m(), v("div", Zr, [...s[5] || (s[5] = [
             e("div", { class: "text-center" }, [
               e("div", { class: "w-16 h-16 border-4 border-[#e0e0e0] border-t-[#00796B] rounded-full animate-spin mx-auto mb-6" }),
               e("p", { class: "text-[16px] text-[#666]" }, "Analyzing your results...")
             ], -1)
-          ])])) : !f.value && !A.value ? (m(), v("div", Xa, [
+          ])])) : !f.value && !A.value ? (m(), v("div", Xr, [
             s[6] || (s[6] = e("p", { class: "text-[18px] text-[#666] mb-6" }, "No results available yet", -1)),
             s[7] || (s[7] = e("p", { class: "text-[14px] text-[#888] mb-8 max-w-md" }, "Complete your practice test sections to see your comprehensive performance analysis.", -1)),
             e("button", {
               onClick: Z,
               class: "bg-[#00796B] text-white px-8 py-3 rounded text-[14px] font-medium hover:bg-[#005a52] transition-colors"
             }, " Start Practice Test ")
-          ])) : (m(), v("div", qa, [
-            e("div", er, [
-              e("div", tr, [
+          ])) : (m(), v("div", qr, [
+            e("div", ea, [
+              e("div", ta, [
                 s[15] || (s[15] = e("div", {
                   class: "absolute inset-0 opacity-10 pointer-events-none",
                   style: { "background-image": "radial-gradient(circle at 2px 2px, white 1px, transparent 0)", "background-size": "24px 24px" }
                 }, null, -1)),
                 s[16] || (s[16] = e("div", { class: "text-[10px] font-bold uppercase tracking-[0.3em] mb-8 opacity-70 relative z-10" }, "Performance Summary", -1)),
-                e("div", sr, [
-                  (m(), v("svg", nr, [
+                e("div", sa, [
+                  (m(), v("svg", na, [
                     s[8] || (s[8] = e("circle", {
                       cx: "100",
                       cy: "100",
@@ -3759,16 +3763,16 @@ const Zs = { class: "min-h-screen bg-[#525355] flex justify-center p-0 md:p-4" }
                       "stroke-linecap": "round",
                       class: "score-circle",
                       style: { "transform-origin": "100px 100px", transform: "rotate(-90deg)" }
-                    }, null, 8, or)
+                    }, null, 8, oa)
                   ])),
-                  e("div", lr, [
-                    e("div", ar, M(U.value), 1),
+                  e("div", la, [
+                    e("div", ra, M(U.value), 1),
                     s[9] || (s[9] = e("div", { class: "text-[10px] font-medium opacity-50 tracking-[0.1em]" }, "TOTAL SCORE", -1))
                   ])
                 ]),
-                e("div", rr, [
-                  e("div", ir, M(G()), 1),
-                  e("div", dr, [
+                e("div", aa, [
+                  e("div", ia, M(G()), 1),
+                  e("div", da, [
                     e("button", {
                       onClick: s[0] || (s[0] = (l) => ne(O.value || "reading")),
                       class: "w-full bg-white text-[#00695C] py-4 rounded-xl text-[14px] font-bold uppercase tracking-widest transition-colors hover:bg-teal-50 border-none cursor-pointer flex items-center justify-center gap-3"
@@ -3811,29 +3815,29 @@ const Zs = { class: "min-h-screen bg-[#525355] flex justify-center p-0 md:p-4" }
                     ])]))
                   ])
                 ]),
-                e("div", ur, [
-                  e("div", cr, [
+                e("div", ua, [
+                  e("div", ca, [
                     s[13] || (s[13] = e("div", { class: "text-[9px] font-bold opacity-40 uppercase tracking-widest mb-1" }, "Scale Score", -1)),
-                    e("div", pr, [
+                    e("div", pa, [
                       q(M(Math.round(U.value / 120 * 6)), 1),
                       s[12] || (s[12] = e("span", { class: "text-[12px] opacity-30" }, "/6", -1))
                     ])
                   ]),
-                  e("div", fr, [
+                  e("div", fa, [
                     s[14] || (s[14] = e("div", { class: "text-[9px] font-bold opacity-40 uppercase tracking-widest mb-1" }, "CEFR Level", -1)),
-                    e("div", mr, M(Q.value), 1)
+                    e("div", ma, M(Q.value), 1)
                   ])
                 ])
               ])
             ]),
-            e("div", xr, [
-              (m(!0), v(oe, null, re(x.value, (l, C) => (m(), v("div", {
+            e("div", xa, [
+              (m(!0), v(oe, null, ae(x.value, (l, C) => (m(), v("div", {
                 key: C,
                 class: be(["bg-white border rounded-xl p-4 sm:p-5 cursor-pointer hover:shadow-md transition-all flex flex-col sm:flex-row items-center gap-4", O.value === C ? "border-[#00796B] border-2 ring-4 ring-[#00796B]/10" : "border-[#e0e0e0]"]),
                 onClick: (_) => L(C)
               }, [
-                e("div", vr, [
-                  (m(), v("svg", hr, [
+                e("div", va, [
+                  (m(), v("svg", ha, [
                     s[17] || (s[17] = e("circle", {
                       cx: "60",
                       cy: "60",
@@ -3854,32 +3858,32 @@ const Zs = { class: "min-h-screen bg-[#525355] flex justify-center p-0 md:p-4" }
                       "stroke-linecap": "round",
                       class: "score-circle transition-all duration-[1500ms]",
                       style: { "transform-origin": "60px 60px", transform: "rotate(-90deg)" }
-                    }, null, 8, br)
+                    }, null, 8, ba)
                   ])),
-                  e("div", wr, [
-                    e("div", yr, M(l.old_toefl), 1),
+                  e("div", wa, [
+                    e("div", ya, M(l.old_toefl), 1),
                     s[18] || (s[18] = e("div", { class: "text-[8px] text-[#999]" }, "/30", -1))
                   ])
                 ]),
-                e("div", _r, [
-                  e("div", kr, [
-                    e("div", $r, [
-                      e("h3", Cr, M(C), 1),
-                      O.value === C ? (m(), v("span", Ar, "New")) : se("", !0)
+                e("div", _a, [
+                  e("div", ka, [
+                    e("div", $a, [
+                      e("h3", Ca, M(C), 1),
+                      O.value === C ? (m(), v("span", Aa, "New")) : se("", !0)
                     ]),
                     s[19] || (s[19] = e("p", { class: "text-[10px] text-[#999]" }, "Section Assessment", -1))
                   ]),
-                  e("div", Tr, [
+                  e("div", Ta, [
                     s[20] || (s[20] = e("div", { class: "text-[8px] text-[#999] font-medium uppercase mb-1" }, "Raw Score", -1)),
-                    e("div", Sr, M(l.old_toefl), 1),
+                    e("div", Sa, M(l.old_toefl), 1),
                     s[21] || (s[21] = e("div", { class: "text-[8px] text-[#ccc]" }, "/30", -1))
                   ]),
-                  e("div", Er, [
+                  e("div", Ea, [
                     s[22] || (s[22] = e("div", { class: "text-[8px] text-[#999] font-medium uppercase mb-1" }, "Scale Score", -1)),
-                    e("div", Lr, M(Math.round(l.new_toefl || 0)), 1),
+                    e("div", La, M(Math.round(l.new_toefl || 0)), 1),
                     s[23] || (s[23] = e("div", { class: "text-[8px] text-[#ccc]" }, "/6", -1))
                   ]),
-                  e("div", Ir, [
+                  e("div", Ia, [
                     s[24] || (s[24] = e("div", { class: "text-[8px] text-[#999] font-medium uppercase mb-1" }, "CEFR Level", -1)),
                     e("div", {
                       class: "text-[16px] font-bold",
@@ -3888,22 +3892,22 @@ const Zs = { class: "min-h-screen bg-[#525355] flex justify-center p-0 md:p-4" }
                     s[25] || (s[25] = e("div", { class: "text-[8px] text-[#ccc]" }, " ", -1))
                   ])
                 ])
-              ], 10, gr))), 128))
+              ], 10, ga))), 128))
             ])
           ]))
         ])
       ]),
-      De(zt, { name: "modal-fade" }, {
-        default: Dt(() => [
-          k.value ? (m(), v("div", Rr, [
+      De(Dt, { name: "modal-fade" }, {
+        default: zt(() => [
+          k.value ? (m(), v("div", Ra, [
             e("div", {
               class: "bg-white rounded-lg shadow-xl max-w-2xl w-full max-h-[90vh] overflow-y-auto",
               onClick: s[2] || (s[2] = $t(() => {
               }, ["stop"]))
             }, [
-              e("div", Br, [
+              e("div", Ba, [
                 e("div", null, [
-                  e("h2", jr, M(k.value) + " Review", 1),
+                  e("h2", ja, M(k.value) + " Review", 1),
                   s[26] || (s[26] = e("p", { class: "text-[14px] text-[#666] mt-1" }, "Detailed performance analysis", -1))
                 ]),
                 e("button", {
@@ -3925,25 +3929,25 @@ const Zs = { class: "min-h-screen bg-[#525355] flex justify-center p-0 md:p-4" }
                   ], -1)
                 ])])
               ]),
-              e("div", Nr, [
-                e("div", Or, [
+              e("div", Na, [
+                e("div", Oa, [
                   s[33] || (s[33] = e("p", { class: "text-[12px] text-[#999] font-medium mb-6 uppercase tracking-wide text-center sm:text-left" }, "Section Performance", -1)),
-                  e("div", Mr, [
-                    e("div", Vr, [
+                  e("div", Ma, [
+                    e("div", Va, [
                       s[29] || (s[29] = e("p", { class: "text-[12px] text-[#999] font-medium mb-3 uppercase" }, "Raw Score", -1)),
-                      e("p", Ur, [
+                      e("p", Ua, [
                         q(M(x.value[k.value].old_toefl), 1),
                         s[28] || (s[28] = e("span", { class: "text-[18px] text-[#999]" }, "/30", -1))
                       ])
                     ]),
-                    e("div", Pr, [
+                    e("div", Pa, [
                       s[31] || (s[31] = e("p", { class: "text-[12px] text-[#999] font-medium mb-3 uppercase" }, "Scale Score", -1)),
-                      e("p", Dr, [
+                      e("p", Da, [
                         q(M(Math.round(x.value[k.value].new_toefl || 0)), 1),
                         s[30] || (s[30] = e("span", { class: "text-[18px] text-[#999]" }, "/6", -1))
                       ])
                     ]),
-                    e("div", zr, [
+                    e("div", za, [
                       s[32] || (s[32] = e("p", { class: "text-[12px] text-[#999] font-medium mb-3 uppercase" }, "CEFR", -1)),
                       e("p", {
                         class: "text-[32px] sm:text-[36px] font-bold",
@@ -3952,7 +3956,7 @@ const Zs = { class: "min-h-screen bg-[#525355] flex justify-center p-0 md:p-4" }
                     ])
                   ])
                 ]),
-                e("div", Fr, [
+                e("div", Fa, [
                   e("button", {
                     onClick: le,
                     class: "order-2 sm:order-1 flex-1 px-6 py-3 rounded-lg border border-[#e0e0e0] text-[#333] font-medium text-[14px] hover:bg-[#f9f9f9] transition-colors"
@@ -3970,23 +3974,23 @@ const Zs = { class: "min-h-screen bg-[#525355] flex justify-center p-0 md:p-4" }
       })
     ]));
   }
-}), Gr = /* @__PURE__ */ Pe(Qr, [["__scopeId", "data-v-847ccd7a"]]), wt = /* @__PURE__ */ me({
+}), Ga = /* @__PURE__ */ Pe(Qa, [["__scopeId", "data-v-847ccd7a"]]), wt = /* @__PURE__ */ me({
   __name: "outcome1",
   props: {
     _p: {},
     _pp: {}
   },
   setup(t) {
-    const n = t, o = n._p, r = n._pp;
-    return (i, y) => (m(), Ae(Gr, {
+    const n = t, o = n._p, a = n._pp;
+    return (i, y) => (m(), Ae(Ga, {
       _p: ge(o),
-      _pp: ge(r)
+      _pp: ge(a)
     }, null, 8, ["_p", "_pp"]));
   }
-}), Hr = { class: "flex justify-between items-center mb-4" }, Wr = { class: "mb-4" }, Jr = ["value"], Kr = { class: "grid grid-cols-1 gap-4 mb-4" }, Yr = { class: "block text-xs font-bold text-slate-500 uppercase mb-1 flex justify-between items-center" }, Zr = { class: "flex items-center gap-2" }, Xr = ["id"], qr = ["for"], ei = { class: "flex flex-col gap-2" }, ti = { key: 0 }, si = { key: 1 }, ni = { class: "block text-xs font-bold text-slate-500 uppercase mb-1 flex justify-between items-center" }, oi = { class: "flex items-center gap-2" }, li = {
+}), Ha = { class: "flex justify-between items-center mb-4" }, Wa = { class: "mb-4" }, Ja = ["value"], Ka = { class: "grid grid-cols-1 gap-4 mb-4" }, Ya = { class: "block text-xs font-bold text-slate-500 uppercase mb-1 flex justify-between items-center" }, Za = { class: "flex items-center gap-2" }, Xa = ["id"], qa = ["for"], ei = { class: "flex flex-col gap-2" }, ti = { key: 0 }, si = { key: 1 }, ni = { class: "block text-xs font-bold text-slate-500 uppercase mb-1 flex justify-between items-center" }, oi = { class: "flex items-center gap-2" }, li = {
   for: "file-task-lar",
   class: "cursor-pointer text-teal-600 hover:text-teal-800 text-[10px] font-bold border border-teal-600 px-2 py-0.5 rounded"
-}, ai = { class: "flex flex-col gap-2" }, ri = { class: "grid grid-cols-2 gap-4" }, ii = { class: "block text-xs font-bold text-slate-500 uppercase mb-1 flex justify-between" }, di = ["onUpdate:modelValue"], ui = ["onClick"], ci = { class: "block text-xs font-bold text-slate-500 uppercase mb-1 flex justify-between items-center" }, pi = { class: "flex items-center gap-2" }, fi = {
+}, ri = { class: "flex flex-col gap-2" }, ai = { class: "grid grid-cols-2 gap-4" }, ii = { class: "block text-xs font-bold text-slate-500 uppercase mb-1 flex justify-between" }, di = ["onUpdate:modelValue"], ui = ["onClick"], ci = { class: "block text-xs font-bold text-slate-500 uppercase mb-1 flex justify-between items-center" }, pi = { class: "flex items-center gap-2" }, fi = {
   for: "file-task-int",
   class: "cursor-pointer text-teal-600 hover:text-teal-800 text-[10px] font-bold border border-teal-600 px-2 py-0.5 rounded"
 }, mi = { class: "flex flex-col gap-2" }, xi = { class: "grid grid-cols-2 gap-4" }, gi = { key: 3 }, vi = { class: "grid grid-cols-3 gap-4" }, hi = { class: "block text-xs font-bold text-slate-500 uppercase mb-1 flex justify-between" }, bi = ["onUpdate:modelValue"], wi = ["onClick"], yi = { class: "grid grid-cols-2 gap-4" }, _i = { class: "block text-xs font-bold text-slate-500 uppercase mb-1 flex justify-between" }, ki = { class: "flex justify-between items-center mb-2" }, $i = ["onUpdate:modelValue"], Ci = ["onClick"], Ai = ["onUpdate:modelValue"], Ti = { class: "mt-6 border-t border-slate-200 pt-4" }, Si = { class: "space-y-4" }, Ei = ["onClick"], Li = { class: "text-xs font-bold text-slate-400 block mb-2" }, Ii = { class: "flex flex-wrap gap-2 items-center mb-3 pb-2 border-b border-slate-100" }, Ri = ["onClick"], Bi = ["onClick"], ji = {
@@ -3995,7 +3999,7 @@ const Zs = { class: "min-h-screen bg-[#525355] flex justify-center p-0 md:p-4" }
 }, Ni = ["onClick"], Oi = ["onClick"], Mi = ["onClick"], Vi = {
   key: 1,
   class: "mb-3"
-}, Ui = ["onClick"], Pi = { class: "grid grid-cols-4 gap-4 mb-3" }, Di = { class: "col-span-4" }, zi = { class: "block text-[10px] font-bold text-slate-500 uppercase mb-1 flex justify-between items-center" }, Fi = { class: "flex items-center gap-2" }, Qi = ["onChange", "id"], Gi = ["for"], Hi = ["onUpdate:modelValue"], Wi = { class: "col-span-1" }, Ji = ["onUpdate:modelValue"], Ki = { class: "col-span-3" }, Yi = ["onUpdate:modelValue"], Zi = { class: "mb-3" }, Xi = { class: "block text-[10px] font-bold text-slate-500 uppercase mb-1 flex justify-between" }, qi = ["onClick"], ed = ["onUpdate:modelValue"], td = ["onClick"], sd = ["onUpdate:modelValue"], nd = { class: "mb-3" }, od = ["onUpdate:modelValue"], ld = { class: "block text-[10px] font-bold text-slate-500 uppercase mb-1 flex justify-between" }, ad = ["onClick"], rd = { class: "flex flex-wrap gap-2" }, id = { class: "text-[10px] text-teal-600 font-bold" }, dd = ["onUpdate:modelValue"], ud = ["onClick"], cd = {
+}, Ui = ["onClick"], Pi = { class: "grid grid-cols-4 gap-4 mb-3" }, Di = { class: "col-span-4" }, zi = { class: "block text-[10px] font-bold text-slate-500 uppercase mb-1 flex justify-between items-center" }, Fi = { class: "flex items-center gap-2" }, Qi = ["onChange", "id"], Gi = ["for"], Hi = ["onUpdate:modelValue"], Wi = { class: "col-span-1" }, Ji = ["onUpdate:modelValue"], Ki = { class: "col-span-3" }, Yi = ["onUpdate:modelValue"], Zi = { class: "mb-3" }, Xi = { class: "block text-[10px] font-bold text-slate-500 uppercase mb-1 flex justify-between" }, qi = ["onClick"], ed = ["onUpdate:modelValue"], td = ["onClick"], sd = ["onUpdate:modelValue"], nd = { class: "mb-3" }, od = ["onUpdate:modelValue"], ld = { class: "block text-[10px] font-bold text-slate-500 uppercase mb-1 flex justify-between" }, rd = ["onClick"], ad = { class: "flex flex-wrap gap-2" }, id = { class: "text-[10px] text-teal-600 font-bold" }, dd = ["onUpdate:modelValue"], ud = ["onClick"], cd = {
   key: 2,
   class: "grid grid-cols-4 gap-4"
 }, pd = { class: "col-span-4" }, fd = { class: "block text-[10px] font-bold text-slate-500 uppercase mb-1 flex justify-between items-center" }, md = { class: "flex items-center gap-2" }, xd = ["onChange", "id"], gd = ["for"], vd = ["onUpdate:modelValue"], hd = { class: "col-span-1" }, bd = ["onUpdate:modelValue"], wd = { class: "col-span-3" }, yd = ["onUpdate:modelValue"], _d = { class: "mb-3" }, kd = ["onUpdate:modelValue"], $d = { class: "mb-3" }, Cd = { class: "block text-[10px] font-bold text-slate-500 uppercase mb-1 flex justify-between" }, Ad = ["onClick"], Td = { class: "flex flex-wrap gap-2" }, Sd = ["onUpdate:modelValue"], Ed = ["onClick"], Ld = ["onUpdate:modelValue"], Id = {
@@ -4018,7 +4022,7 @@ const Zs = { class: "min-h-screen bg-[#525355] flex justify-center p-0 md:p-4" }
   },
   emits: ["remove"],
   setup(t, { emit: n }) {
-    const o = Y(!1), r = async (d, s) => {
+    const o = K(!1), a = async (d, s) => {
       const l = d.target.files[0];
       if (!l) return;
       o.value = !0;
@@ -4062,7 +4066,7 @@ const Zs = { class: "min-h-screen bg-[#525355] flex justify-center p-0 md:p-4" }
       if (s === "default") return d;
       const l = d[s];
       return l ? Array.isArray(l) ? ((d._uiActiveVariantIndex || 0) >= l.length && (d._uiActiveVariantIndex = 0), l[d._uiActiveVariantIndex || 0] || l[0] || null) : l : null;
-    }, k = (d, s) => s === "default" ? !0 : d[s] !== void 0 && d[s] !== null, K = (d, s) => s === "default" ? !1 : Array.isArray(d[s]), j = (d, s) => {
+    }, k = (d, s) => s === "default" ? !0 : d[s] !== void 0 && d[s] !== null, Y = (d, s) => s === "default" ? !1 : Array.isArray(d[s]), j = (d, s) => {
       d._uiActiveLevel = s, d._uiActiveVariantIndex = 0;
     }, R = (d, s) => {
       const l = g(i.task.type);
@@ -4092,45 +4096,45 @@ const Zs = { class: "min-h-screen bg-[#525355] flex justify-center p-0 md:p-4" }
       };
       i.task && d(i.task), i.task?.questions?.forEach(d);
     }, { deep: !0, immediate: !0 }), (d, s) => (m(), v("div", null, [
-      e("div", Hr, [
+      e("div", Ha, [
         s[33] || (s[33] = e("h5", { class: "font-bold text-slate-700 uppercase tracking-wider text-xs" }, "Task Editor", -1)),
         e("button", {
           onClick: s[0] || (s[0] = (l) => d.$emit("remove")),
           class: "text-red-500 hover:text-red-700 text-xs font-bold uppercase"
         }, "Remove Task")
       ]),
-      e("div", Wr, [
+      e("div", Wa, [
         s[34] || (s[34] = e("label", { class: "block text-xs font-bold text-slate-500 uppercase mb-1" }, "Task Type", -1)),
         X(e("select", {
           "onUpdate:modelValue": s[1] || (s[1] = (l) => t.task.type = l),
           onChange: N,
           class: "w-full md:w-1/2 border border-slate-300 rounded-lg px-3 py-2 text-sm focus:ring-2 focus:ring-teal-500 outline-none bg-white font-semibold text-slate-700"
         }, [
-          (m(!0), v(oe, null, re(E.value, (l) => (m(), v("option", {
+          (m(!0), v(oe, null, ae(E.value, (l) => (m(), v("option", {
             key: l,
             value: l
-          }, M(l), 9, Jr))), 128))
+          }, M(l), 9, Ja))), 128))
         ], 544), [
           [Ct, t.task.type]
         ])
       ]),
-      e("div", Kr, [
+      e("div", Ka, [
         ["reading_mcq", "fill_in_the_blanks", "reading_fib", "listening_responses", "listening_conversation", "listening_announcement", "listening_talk", "listening_lecture"].includes(t.task.type) ? (m(), v(oe, { key: 0 }, [
           e("div", null, [
-            e("label", Yr, [
+            e("label", Ya, [
               s[35] || (s[35] = q(" Passage Title / Audio Name ", -1)),
-              e("div", Zr, [
+              e("div", Za, [
                 e("input", {
                   type: "file",
-                  onChange: s[2] || (s[2] = (l) => r(l, t.task)),
+                  onChange: s[2] || (s[2] = (l) => a(l, t.task)),
                   class: "hidden",
                   id: "file-task-" + t.task.type,
                   accept: "image/*"
-                }, null, 40, Xr),
+                }, null, 40, Xa),
                 e("label", {
                   for: "file-task-" + t.task.type,
                   class: "cursor-pointer text-teal-600 hover:text-teal-800 text-[10px] font-bold border border-teal-600 px-2 py-0.5 rounded"
-                }, M(o.value ? "Uploading..." : "Upload Task Image"), 9, qr)
+                }, M(o.value ? "Uploading..." : "Upload Task Image"), 9, qa)
               ])
             ]),
             e("div", ei, [
@@ -4180,7 +4184,7 @@ const Zs = { class: "min-h-screen bg-[#525355] flex justify-center p-0 md:p-4" }
               e("div", oi, [
                 e("input", {
                   type: "file",
-                  onChange: s[7] || (s[7] = (l) => r(l, t.task)),
+                  onChange: s[7] || (s[7] = (l) => a(l, t.task)),
                   class: "hidden",
                   id: "file-task-lar",
                   accept: "image/*"
@@ -4188,7 +4192,7 @@ const Zs = { class: "min-h-screen bg-[#525355] flex justify-center p-0 md:p-4" }
                 e("label", li, M(o.value ? "Uploading..." : "Upload Task Image"), 1)
               ])
             ]),
-            e("div", ai, [
+            e("div", ri, [
               X(e("input", {
                 "onUpdate:modelValue": s[8] || (s[8] = (l) => t.task.title = l),
                 type: "text",
@@ -4217,7 +4221,7 @@ const Zs = { class: "min-h-screen bg-[#525355] flex justify-center p-0 md:p-4" }
               [ee, t.task.context]
             ])
           ]),
-          e("div", ri, [
+          e("div", ai, [
             e("div", null, [
               s[40] || (s[40] = e("label", { class: "block text-xs font-bold text-slate-500 uppercase mb-1" }, "Prep Time (sec)", -1)),
               X(e("input", {
@@ -4267,7 +4271,7 @@ const Zs = { class: "min-h-screen bg-[#525355] flex justify-center p-0 md:p-4" }
                 class: "text-teal-600 hover:text-teal-800 text-xs font-bold"
               }, "+ Add")
             ]),
-            (m(!0), v(oe, null, re(t.task.prompts, (l, C) => (m(), v("div", {
+            (m(!0), v(oe, null, ae(t.task.prompts, (l, C) => (m(), v("div", {
               key: C,
               class: "flex gap-2 mb-2"
             }, [
@@ -4292,7 +4296,7 @@ const Zs = { class: "min-h-screen bg-[#525355] flex justify-center p-0 md:p-4" }
               e("div", pi, [
                 e("input", {
                   type: "file",
-                  onChange: s[15] || (s[15] = (l) => r(l, t.task)),
+                  onChange: s[15] || (s[15] = (l) => a(l, t.task)),
                   class: "hidden",
                   id: "file-task-int",
                   accept: "image/*"
@@ -4436,7 +4440,7 @@ const Zs = { class: "min-h-screen bg-[#525355] flex justify-center p-0 md:p-4" }
                 class: "text-teal-600 hover:text-teal-800 text-xs font-bold"
               }, "+ Add")
             ]),
-            (m(!0), v(oe, null, re(t.task.instructions, (l, C) => (m(), v("div", {
+            (m(!0), v(oe, null, ae(t.task.instructions, (l, C) => (m(), v("div", {
               key: C,
               class: "flex gap-2 mb-2"
             }, [
@@ -4506,7 +4510,7 @@ const Zs = { class: "min-h-screen bg-[#525355] flex justify-center p-0 md:p-4" }
                 class: "text-teal-600 hover:text-teal-800 text-xs font-bold"
               }, "+ Add Student")
             ]),
-            (m(!0), v(oe, null, re(t.task.studentResponses, (l, C) => (m(), v("div", {
+            (m(!0), v(oe, null, ae(t.task.studentResponses, (l, C) => (m(), v("div", {
               key: C,
               class: "bg-white p-3 rounded border border-slate-200 mb-2"
             }, [
@@ -4544,7 +4548,7 @@ const Zs = { class: "min-h-screen bg-[#525355] flex justify-center p-0 md:p-4" }
           }, " + Add Question ")
         ]),
         e("div", Si, [
-          (m(!0), v(oe, null, re(t.task.questions, (l, C) => (m(), v("div", {
+          (m(!0), v(oe, null, ae(t.task.questions, (l, C) => (m(), v("div", {
             key: C,
             class: "bg-white p-4 rounded-lg border border-slate-300 shadow-sm relative"
           }, [
@@ -4555,7 +4559,7 @@ const Zs = { class: "min-h-screen bg-[#525355] flex justify-center p-0 md:p-4" }
             e("span", Li, "Q " + M(C + 1), 1),
             e("div", Ii, [
               s[61] || (s[61] = e("span", { class: "text-xs font-bold text-slate-500" }, "Edit Level:", -1)),
-              (m(), v(oe, null, re(["default", "a1", "a2", "b1", "b2", "c1", "c2"], (_) => e("button", {
+              (m(), v(oe, null, ae(["default", "a1", "a2", "b1", "b2", "c1", "c2"], (_) => e("button", {
                 key: _,
                 onClick: (P) => j(l, _),
                 class: be(["px-2 py-1 rounded text-xs font-semibold transition", x(l) === _ ? "bg-teal-600 text-white" : k(l, _) ? "bg-slate-200 text-slate-700 hover:bg-slate-300" : "bg-slate-100 text-slate-400 hover:bg-slate-200"])
@@ -4566,9 +4570,9 @@ const Zs = { class: "min-h-screen bg-[#525355] flex justify-center p-0 md:p-4" }
                 class: "text-red-500 hover:text-red-700 text-xs ml-auto font-semibold"
               }, " Delete Level ", 8, Bi)) : se("", !0)
             ]),
-            K(l, x(l)) ? (m(), v("div", ji, [
+            Y(l, x(l)) ? (m(), v("div", ji, [
               s[62] || (s[62] = e("span", { class: "text-xs font-bold text-slate-500" }, "Variant:", -1)),
-              (m(!0), v(oe, null, re(l[x(l)], (_, P) => (m(), v("button", {
+              (m(!0), v(oe, null, ae(l[x(l)], (_, P) => (m(), v("button", {
                 key: P,
                 onClick: (H) => l._uiActiveVariantIndex = P,
                 class: be(["px-2 py-0.5 rounded text-[11px] font-semibold transition", (l._uiActiveVariantIndex || 0) === P ? "bg-indigo-600 text-white" : "bg-slate-200 text-slate-700 hover:bg-slate-300"])
@@ -4597,7 +4601,7 @@ const Zs = { class: "min-h-screen bg-[#525355] flex justify-center p-0 md:p-4" }
                       e("div", Fi, [
                         e("input", {
                           type: "file",
-                          onChange: (_) => r(_, f(l)),
+                          onChange: (_) => a(_, f(l)),
                           class: "hidden",
                           id: "file-" + C,
                           accept: "image/*"
@@ -4651,7 +4655,7 @@ const Zs = { class: "min-h-screen bg-[#525355] flex justify-center p-0 md:p-4" }
                       class: "text-teal-600 hover:text-teal-800 text-[10px]"
                     }, "+ Add", 8, qi)
                   ]),
-                  (m(!0), v(oe, null, re(le(f(l)), (_, P) => (m(), v("div", {
+                  (m(!0), v(oe, null, ae(le(f(l)), (_, P) => (m(), v("div", {
                     key: P,
                     class: "flex gap-2 mb-1"
                   }, [
@@ -4698,10 +4702,10 @@ const Zs = { class: "min-h-screen bg-[#525355] flex justify-center p-0 md:p-4" }
                     e("button", {
                       onClick: (_) => ne(f(l)).push(""),
                       class: "text-teal-600 hover:text-teal-800 text-[10px]"
-                    }, "+ Add Word", 8, ad)
+                    }, "+ Add Word", 8, rd)
                   ]),
-                  e("div", rd, [
-                    (m(!0), v(oe, null, re(ne(f(l)), (_, P) => (m(), v("div", {
+                  e("div", ad, [
+                    (m(!0), v(oe, null, ae(ne(f(l)), (_, P) => (m(), v("div", {
                       key: P,
                       class: "flex items-center gap-1 bg-teal-50 border border-teal-200 rounded px-2 py-1"
                     }, [
@@ -4728,7 +4732,7 @@ const Zs = { class: "min-h-screen bg-[#525355] flex justify-center p-0 md:p-4" }
                     e("div", md, [
                       e("input", {
                         type: "file",
-                        onChange: (_) => r(_, f(l)),
+                        onChange: (_) => a(_, f(l)),
                         class: "hidden",
                         id: "file-int-" + C,
                         accept: "image/*"
@@ -4794,7 +4798,7 @@ const Zs = { class: "min-h-screen bg-[#525355] flex justify-center p-0 md:p-4" }
                     }, "+ Add Word", 8, Ad)
                   ]),
                   e("div", Td, [
-                    (m(!0), v(oe, null, re(O(f(l)), (_, P) => (m(), v("div", {
+                    (m(!0), v(oe, null, ae(O(f(l)), (_, P) => (m(), v("div", {
                       key: P,
                       class: "flex items-center bg-slate-100 border border-slate-300 rounded px-2 py-1"
                     }, [
@@ -4830,7 +4834,7 @@ const Zs = { class: "min-h-screen bg-[#525355] flex justify-center p-0 md:p-4" }
                     e("div", jd, [
                       e("input", {
                         type: "file",
-                        onChange: (_) => r(_, f(l)),
+                        onChange: (_) => a(_, f(l)),
                         class: "hidden",
                         id: "file-lar-" + C,
                         accept: "image/*"
@@ -4885,7 +4889,7 @@ const Zs = { class: "min-h-screen bg-[#525355] flex justify-center p-0 md:p-4" }
 }, nu = { key: 1 }, ou = {
   key: 0,
   class: "mt-4 p-3 bg-white/80 rounded-xl border border-teal-100 flex flex-col gap-2 animate-fade-in shadow-inner"
-}, lu = { class: "flex items-center justify-between text-xs text-teal-800 font-semibold" }, au = { class: "text-teal-600" }, ru = { class: "w-full bg-slate-100 h-2 rounded-full overflow-hidden" }, iu = { class: "absolute top-4 right-4" }, du = ["onClick"], uu = { class: "text-xl font-black text-teal-800 mb-4" }, cu = { class: "mb-6" }, pu = ["onUpdate:modelValue", "onChange"], fu = {
+}, lu = { class: "flex items-center justify-between text-xs text-teal-800 font-semibold" }, ru = { class: "text-teal-600" }, au = { class: "w-full bg-slate-100 h-2 rounded-full overflow-hidden" }, iu = { class: "absolute top-4 right-4" }, du = ["onClick"], uu = { class: "text-xl font-black text-teal-800 mb-4" }, cu = { class: "mb-6" }, pu = ["onUpdate:modelValue", "onChange"], fu = {
   key: 0,
   class: "space-y-4"
 }, mu = { class: "flex justify-between items-center mb-3" }, xu = { class: "font-bold text-slate-700" }, gu = ["onClick"], vu = { class: "mb-3" }, hu = ["onUpdate:modelValue"], bu = { class: "space-y-4 mt-4" }, wu = ["onClick"], yu = ["onClick"], _u = {
@@ -4895,7 +4899,7 @@ const Zs = { class: "min-h-screen bg-[#525355] flex justify-center p-0 md:p-4" }
   __name: "Creator",
   props: ["_p", "_pp"],
   setup(t) {
-    const n = _e(), o = Y({
+    const n = _e(), o = K({
       title: "TOEFL_Practice_Test_2",
       user_id: "user_123",
       data: {
@@ -4911,12 +4915,12 @@ const Zs = { class: "min-h-screen bg-[#525355] flex justify-center p-0 md:p-4" }
           }
         ]
       }
-    }), r = (d, s) => {
+    }), a = (d, s) => {
       if (!(d && typeof d == "string" && d.startsWith("_")))
         return s;
-    }, i = Y(JSON.stringify(o.value, r, 2));
+    }, i = K(JSON.stringify(o.value, a, 2));
     we(o, (d) => {
-      i.value = JSON.stringify(d, r, 2);
+      i.value = JSON.stringify(d, a, 2);
     }, { deep: !0 });
     const y = () => {
       try {
@@ -4949,10 +4953,10 @@ const Zs = { class: "min-h-screen bg-[#525355] flex justify-center p-0 md:p-4" }
       d.push(x(s));
     }, k = (d, s) => {
       d.splice(s, 1);
-    }, K = () => {
-      const d = JSON.stringify(o.value, r, 2);
+    }, Y = () => {
+      const d = JSON.stringify(o.value, a, 2);
       navigator.clipboard.writeText(d), alert("JSON copied to clipboard!");
-    }, j = Y(!1), R = Y(!1), U = Y(0), Q = [
+    }, j = K(!1), R = K(!1), U = K(0), Q = [
       "Initializing Gemini session...",
       "Designing TOEFL Reading passages and MCQs...",
       "Drafting TOEFL Listening audio transcripts & tasks...",
@@ -5010,7 +5014,7 @@ const Zs = { class: "min-h-screen bg-[#525355] flex justify-center p-0 md:p-4" }
           throw new Error(`Server returned error: ${s.statusText}`);
         const l = await s.json();
         if (l.success && l.data)
-          o.value = l.data, i.value = JSON.stringify(l.data, r, 2), alert("Test generated successfully! You can review the details or make edits.");
+          o.value = l.data, i.value = JSON.stringify(l.data, a, 2), alert("Test generated successfully! You can review the details or make edits.");
         else
           throw new Error(l.message || "Unknown error");
       } catch (d) {
@@ -5021,7 +5025,7 @@ const Zs = { class: "min-h-screen bg-[#525355] flex justify-center p-0 md:p-4" }
     }, Z = async () => {
       try {
         (!o.value.user_id || o.value.user_id.trim() === "") && (o.value.user_id = "user_123");
-        const d = JSON.parse(JSON.stringify(o.value, r));
+        const d = JSON.parse(JSON.stringify(o.value, a));
         (!d.user_id || d.user_id.trim() === "") && (d.user_id = "user_123"), console.log("Submitting payload...", d);
         const s = t._pp.data.curr.data.api.a.url, l = await fetch(s, {
           method: "POST",
@@ -5142,9 +5146,9 @@ const Zs = { class: "min-h-screen bg-[#525355] flex justify-center p-0 md:p-4" }
             j.value ? (m(), v("div", ou, [
               e("div", lu, [
                 e("span", null, M(Q[U.value]), 1),
-                e("span", au, M(Math.round((U.value + 1) / Q.length * 100)) + "%", 1)
+                e("span", ru, M(Math.round((U.value + 1) / Q.length * 100)) + "%", 1)
               ]),
-              e("div", ru, [
+              e("div", au, [
                 e("div", {
                   class: "bg-gradient-to-r from-teal-500 to-indigo-500 h-full rounded-full transition-all duration-500",
                   style: Se({ width: `${(U.value + 1) / Q.length * 100}%` })
@@ -5152,7 +5156,7 @@ const Zs = { class: "min-h-screen bg-[#525355] flex justify-center p-0 md:p-4" }
               ])
             ])) : se("", !0)
           ]),
-          (m(!0), v(oe, null, re(o.value.data.sections, (l, C) => (m(), v("div", {
+          (m(!0), v(oe, null, ae(o.value.data.sections, (l, C) => (m(), v("div", {
             key: C,
             class: "bg-white p-5 rounded-2xl border border-slate-300 shadow-sm relative"
           }, [
@@ -5179,7 +5183,7 @@ const Zs = { class: "min-h-screen bg-[#525355] flex justify-center p-0 md:p-4" }
               ])
             ]),
             ["reading", "listening"].includes(l.type) ? (m(), v("div", fu, [
-              (m(!0), v(oe, null, re(l.modules, (_, P) => (m(), v("div", {
+              (m(!0), v(oe, null, ae(l.modules, (_, P) => (m(), v("div", {
                 key: P,
                 class: "border-l-4 border-indigo-400 pl-4 py-2 ml-2"
               }, [
@@ -5206,7 +5210,7 @@ const Zs = { class: "min-h-screen bg-[#525355] flex justify-center p-0 md:p-4" }
                   ])
                 ]),
                 e("div", bu, [
-                  (m(!0), v(oe, null, re(_.tasks, (H, J) => (m(), v("div", {
+                  (m(!0), v(oe, null, ae(_.tasks, (H, J) => (m(), v("div", {
                     key: J,
                     class: "bg-slate-50 p-4 rounded-xl border border-slate-200"
                   }, [
@@ -5227,7 +5231,7 @@ const Zs = { class: "min-h-screen bg-[#525355] flex justify-center p-0 md:p-4" }
                 class: "text-sm border-2 border-dashed border-indigo-300 text-indigo-600 px-4 py-2 rounded-lg font-semibold hover:bg-indigo-50 transition"
               }, " + Add Module ", 8, yu)
             ])) : (m(), v("div", _u, [
-              (m(!0), v(oe, null, re(l.tasks, (_, P) => (m(), v("div", {
+              (m(!0), v(oe, null, ae(l.tasks, (_, P) => (m(), v("div", {
                 key: P,
                 class: "bg-slate-50 p-4 rounded-xl border border-slate-200"
               }, [
@@ -5257,7 +5261,7 @@ const Zs = { class: "min-h-screen bg-[#525355] flex justify-center p-0 md:p-4" }
           s[14] || (s[14] = e("h2", { class: "font-semibold text-white" }, "JSON Payload", -1)),
           e("div", { class: "flex gap-2" }, [
             e("button", {
-              onClick: K,
+              onClick: Y,
               class: "text-[10px] bg-slate-700 hover:bg-slate-600 px-2 py-1.5 rounded-md text-white font-semibold transition shadow-sm border border-slate-600"
             }, "Copy"),
             e("button", {
@@ -5328,12 +5332,12 @@ const Zs = { class: "min-h-screen bg-[#525355] flex justify-center p-0 md:p-4" }
   {
     path: "/listening-section/:testId",
     name: "listening-section",
-    component: za
+    component: zr
   },
   {
     path: "/speaking-section/:testId",
     name: "speaking-section",
-    component: fa
+    component: fr
   },
   {
     path: "/writing-section/:testId",
@@ -5348,18 +5352,18 @@ const Zs = { class: "min-h-screen bg-[#525355] flex justify-center p-0 md:p-4" }
   {
     path: "/outcome/review",
     name: "outcome-review",
-    component: () => import("./OutcomeReviewPage-Wdqx2NgS.js")
+    component: () => import("./OutcomeReviewPage-QSH-hrxv.js")
   },
   {
     path: "/list/:testId",
     name: "list",
-    component: () => import("./ListPage-DhUUU81d.js")
+    component: () => import("./ListPage-CmMUmK-J.js")
   },
   // Dynamic question route: /review/{testId}/{section}/{type}/{uuid}
   {
     path: "/review/:testId/:section/:questionType/:uuid",
     name: "question-detail",
-    component: () => import("./OutcomeReviewPage-Wdqx2NgS.js")
+    component: () => import("./OutcomeReviewPage-QSH-hrxv.js")
   },
   {
     path: "/result/:testId",
@@ -5370,7 +5374,7 @@ const Zs = { class: "min-h-screen bg-[#525355] flex justify-center p-0 md:p-4" }
   {
     path: "/start",
     name: "main",
-    component: Wa
+    component: Wr
   }
 ], et = Ys({
   history: Ss(),
@@ -5382,7 +5386,7 @@ const Zs = { class: "min-h-screen bg-[#525355] flex justify-center p-0 md:p-4" }
     _pp: {}
   },
   setup(t) {
-    const n = Ee(), o = Y([]), r = Y({ id: "", title: "", user_id: "" }), i = Y(null), y = Y(!1), E = Y({
+    const n = Ee(), o = K([]), a = K({ id: "", title: "", user_id: "" }), i = K(null), y = K(!1), E = K({
       section: "",
       module: 1,
       task: 1,
@@ -5391,7 +5395,7 @@ const Zs = { class: "min-h-screen bg-[#525355] flex justify-center p-0 md:p-4" }
       localStorage.setItem("test_progress", JSON.stringify({
         data: o.value,
         state: E.value,
-        metadata: r.value
+        metadata: a.value
       }));
     }, g = () => {
       const j = localStorage.getItem("test_progress");
@@ -5405,7 +5409,7 @@ const Zs = { class: "min-h-screen bg-[#525355] flex justify-center p-0 md:p-4" }
       return console.log("[Persistence] No saved progress found in localStorage."), null;
     }, T = (j) => j >= 95 ? "C1" : j >= 72 ? "B2" : j >= 42 ? "B1" : "A1", A = async (j) => {
       const R = g();
-      R && R.metadata?.id === j && (console.log("[Persistence] Resuming from local storage"), o.value = R.data || [], E.value = R.state || E.value, r.value = R.metadata || r.value), y.value = !0;
+      R && R.metadata?.id === j && (console.log("[Persistence] Resuming from local storage"), o.value = R.data || [], E.value = R.state || E.value, a.value = R.metadata || a.value), y.value = !0;
       try {
         const U = n.path.includes("/review") || n.path.includes("/outcome") || n.path.includes("/result"), Q = R && Array.isArray(R.data) && R.data.length > 0, G = !U && !Q, L = `${t._pp.data.curr.data.api.b.url}&id=${j}${G ? "&clean=true" : ""}`, ne = await (await fetch(L, {
           method: "GET",
@@ -5416,7 +5420,7 @@ const Zs = { class: "min-h-screen bg-[#525355] flex justify-center p-0 md:p-4" }
         })).json();
         if (ne.success && ne.data?.l?.[0]) {
           const O = ne.data.l[0];
-          r.value = { id: O.id, title: O.title, user_id: O.user_id };
+          a.value = { id: O.id, title: O.title, user_id: O.user_id };
           let Z = [], d = O.data;
           if (typeof d == "string")
             try {
@@ -5444,7 +5448,7 @@ const Zs = { class: "min-h-screen bg-[#525355] flex justify-center p-0 md:p-4" }
       }
     };
     we(() => n.params.testId, (j) => {
-      j && j !== r.value.id && A(j);
+      j && j !== a.value.id && A(j);
     }, { immediate: !0 }), we(() => n.query.result, (j) => {
       j && et.push(`/result/${j}`);
     }, { immediate: !0 });
@@ -5452,15 +5456,15 @@ const Zs = { class: "min-h-screen bg-[#525355] flex justify-center p-0 md:p-4" }
       y.value = !0;
       try {
         const U = t._pp.data.curr.data.api.d.url, Q = {
-          id: String(r.value.id || n.params.testId || ""),
-          title: String(r.value.title || "TOEFL Practice Test"),
-          user_id: String(r.value.user_id || "user_123"),
+          id: String(a.value.id || n.params.testId || ""),
+          title: String(a.value.title || "TOEFL Practice Test"),
+          user_id: String(a.value.user_id || "user_123"),
           data: {
             sections: o.value || [],
             overall: i.value || {}
           },
           state: E.value || {}
-        }, G = r.value?.is_master || o.value?.is_master, L = n.path.includes("/review") || n.path.includes("/outcome") || n.path.includes("/result");
+        }, G = a.value?.is_master || o.value?.is_master, L = n.path.includes("/review") || n.path.includes("/outcome") || n.path.includes("/result");
         if (!(G && !L && !R)) {
           console.log("[Sync] Sending payload to updatedata:", Q);
           const le = await fetch(U, {
@@ -5477,9 +5481,9 @@ const Zs = { class: "min-h-screen bg-[#525355] flex justify-center p-0 md:p-4" }
         if (R) {
           console.log("[Sync] Requesting evaluation for section:", j);
           const le = `${t._pp.data.curr.data.api.c.url}${j ? "&section=" + j : ""}`, ne = {
-            id: r.value.id || n.params.testId,
-            user_id: r.value.user_id || "user_123",
-            title: r.value.title || "Practice Session",
+            id: a.value.id || n.params.testId,
+            user_id: a.value.user_id || "user_123",
+            title: a.value.title || "Practice Session",
             data: {
               sections: o.value,
               overall: i.value || {}
@@ -5543,8 +5547,8 @@ const Zs = { class: "min-h-screen bg-[#525355] flex justify-center p-0 md:p-4" }
       try {
         y.value = !0;
         const j = `${t._pp.data.curr.data.api.a.url}`, R = {
-          title: `Result: ${r.value.title || "TOEFL Test"} (${(/* @__PURE__ */ new Date()).toLocaleDateString()})`,
-          user_id: r.value.user_id || "user_123",
+          title: `Result: ${a.value.title || "TOEFL Test"} (${(/* @__PURE__ */ new Date()).toLocaleDateString()})`,
+          user_id: a.value.user_id || "user_123",
           data: {
             sections: o.value || [],
             overall: i.value || {}
@@ -5567,7 +5571,7 @@ const Zs = { class: "min-h-screen bg-[#525355] flex justify-center p-0 md:p-4" }
           console.log("[Submit] New result record created with ID:", G);
           const L = "toefl_test_history", le = JSON.parse(localStorage.getItem(L) || "[]");
           le.push({
-            masterId: r.value.id,
+            masterId: a.value.id,
             resultId: G,
             title: R.title,
             date: (/* @__PURE__ */ new Date()).toISOString()
@@ -5579,7 +5583,7 @@ const Zs = { class: "min-h-screen bg-[#525355] flex justify-center p-0 md:p-4" }
       } finally {
         y.value = !1;
       }
-    }, K = (j, R) => {
+    }, Y = (j, R) => {
       try {
         const U = o.value.find((L) => L.type.toLowerCase() === j.toLowerCase());
         if (!U) return;
@@ -5593,7 +5597,7 @@ const Zs = { class: "min-h-screen bg-[#525355] flex justify-center p-0 md:p-4" }
         console.error("[Clear] Failed to clear section:", U);
       }
     };
-    return ye("state", E), ye("saveToLocalStorage", N), ye("testData", o), ye("testMetadata", r), ye("overallScore", i), ye("isGlobalLoading", y), ye("updateUserInput", f), ye("syncAllData", x), ye("submitFinalTest", k), ye("clearSectionAnswers", K), (j, R) => {
+    return ye("state", E), ye("saveToLocalStorage", N), ye("testData", o), ye("testMetadata", a), ye("overallScore", i), ye("isGlobalLoading", y), ye("updateUserInput", f), ye("syncAllData", x), ye("submitFinalTest", k), ye("clearSectionAnswers", Y), (j, R) => {
       const U = Ft("router-view");
       return m(), v("div", Tu, [
         De(U, {
@@ -5611,8 +5615,8 @@ const Zs = { class: "min-h-screen bg-[#525355] flex justify-center p-0 md:p-4" }
       _pp: n
     };
     console.log(o._pp.data.curr.data.api.a);
-    const r = Qt(Su, o);
-    r.use(et);
+    const a = Qt(Su, o);
+    a.use(et);
     const i = {
       r: "",
       style: "",
@@ -5628,7 +5632,7 @@ const Zs = { class: "min-h-screen bg-[#525355] flex justify-center p-0 md:p-4" }
         }
       }
     }, y = document.getElementById(t.f.name("vue-root"));
-    return r.mount(y), i;
+    return a.mount(y), i;
   }
 });
 export {

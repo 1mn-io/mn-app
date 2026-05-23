@@ -1,9 +1,9 @@
-import { l as be, s as oe, W as A, a7 as D, O as Pe, P as Ue, Q as o, g as l, a3 as Ee, i as ge, f as p, d as s, j as w, a2 as c, F as x, X as C, J as N, k as Fe, a8 as Oe, a as $e, L as Y, a9 as He, a6 as Re, c as M, e as Ge } from "./runtime-dom.esm-bundler-CXGWRLlp.js";
-import { a as Qe, u as Ve, _ as We } from "./index-AMN2cuu4.js";
-const Je = { class: "min-h-screen bg-[#f0f2f5] flex flex-col font-sans" }, Ke = {
+const { defineComponent: be, inject: oe, ref: A, computed: C, watch: D, onMounted: Ue, onUnmounted: Pe, openBlock: o, createElementBlock: l, unref: Ee, createStaticVNode: ge, createCommentVNode: p, createElementVNode: s, createTextVNode: w, toDisplayString: c, Fragment: x, renderList: M, normalizeClass: N, createVNode: Fe, Transition: $e, withCtx: He, normalizeStyle: J, withDirectives: Oe, vModelText: Re, createBlock: Ge } = window.Vue;
+import { a as Qe, u as Ve, _ as We } from "./index-Dmn5u8ax.js";
+const Ke = { class: "min-h-screen bg-[#f0f2f5] flex flex-col font-sans" }, Ye = {
   key: 0,
   class: "fixed inset-0 z-[100] bg-white/80 backdrop-blur-md flex flex-col items-center justify-center"
-}, Ye = { class: "bg-[#00796B] min-h-[60px] flex flex-col md:flex-row justify-between items-center px-4 md:px-6 py-3 md:py-0 shrink-0 shadow-md z-30 gap-3" }, Xe = { class: "flex items-center gap-3 text-white w-full md:w-auto justify-between md:justify-start" }, Ze = {
+}, Je = { class: "bg-[#00796B] min-h-[60px] flex flex-col md:flex-row justify-between items-center px-4 md:px-6 py-3 md:py-0 shrink-0 shadow-md z-30 gap-3" }, Xe = { class: "flex items-center gap-3 text-white w-full md:w-auto justify-between md:justify-start" }, Ze = {
   key: 0,
   class: "flex items-center gap-2"
 }, et = {
@@ -39,7 +39,7 @@ const Je = { class: "min-h-screen bg-[#f0f2f5] flex flex-col font-sans" }, Ke = 
 }, jt = ["src"], Bt = { class: "space-y-6 md:space-y-8" }, Tt = { class: "text-[18px] sm:text-[22px] font-bold text-gray-800 leading-tight" }, Nt = {
   key: 0,
   class: "grid grid-cols-1 gap-3 sm:gap-4"
-}, zt = ["onClick"], Dt = { class: "flex items-center gap-3 sm:gap-4" }, Pt = { class: "text-[15px] sm:text-[17px] font-medium" }, Ut = {
+}, zt = ["onClick"], Dt = { class: "flex items-center gap-3 sm:gap-4" }, Ut = { class: "text-[15px] sm:text-[17px] font-medium" }, Pt = {
   key: 0,
   class: "flex items-center gap-2 self-end sm:self-auto"
 }, Et = {
@@ -48,13 +48,13 @@ const Je = { class: "min-h-screen bg-[#f0f2f5] flex flex-col font-sans" }, Ke = 
 }, Ft = {
   key: 1,
   class: "bg-blue-100 text-blue-700 text-[9px] sm:text-[10px] font-black px-2 py-1 rounded-full uppercase tracking-widest"
-}, Ot = {
+}, $t = {
   key: 1,
   class: "flex items-center gap-2 self-end sm:self-auto"
-}, $t = {
+}, Ht = {
   key: 0,
   class: "w-5 h-5 rounded-full bg-blue-500 flex items-center justify-center"
-}, Ht = {
+}, Ot = {
   key: 1,
   class: "space-y-6 md:space-y-8"
 }, Rt = { class: "bg-blue-50 px-4 sm:px-6 py-2 sm:py-3 border-b border-blue-100 text-blue-800 text-[11px] sm:text-[12px] font-black uppercase flex justify-between items-center" }, Gt = { class: "p-6 sm:p-8 text-[15px] sm:text-[17px] leading-relaxed italic text-gray-700 whitespace-pre-wrap font-medium" }, Qt = {
@@ -63,7 +63,7 @@ const Je = { class: "min-h-screen bg-[#f0f2f5] flex flex-col font-sans" }, Ke = 
 }, Vt = ["src"], Wt = {
   key: 1,
   class: "w-full mb-6 p-5 bg-gradient-to-br from-gray-50 to-white rounded-xl border border-blue-100 shadow-sm relative overflow-hidden"
-}, Jt = { class: "text-[15px] text-gray-800 not-italic leading-relaxed" }, Kt = { key: 2 }, Yt = {
+}, Kt = { class: "text-[15px] text-gray-800 not-italic leading-relaxed" }, Yt = { key: 2 }, Jt = {
   key: 3,
   class: "text-gray-400"
 }, Xt = { class: "flex-grow bg-white overflow-y-auto flex flex-col p-4 sm:p-8" }, Zt = {
@@ -108,16 +108,16 @@ const Je = { class: "min-h-screen bg-[#f0f2f5] flex flex-col font-sans" }, Ke = 
 }, js = { class: "font-black text-[15px] text-gray-800 flex items-center gap-2" }, Bs = { class: "text-teal-700 bg-teal-50 px-2 py-0.5 rounded border border-teal-100" }, Ts = { class: "text-gray-400 text-[11px] font-bold" }, Ns = { class: "text-[9px]" }, zs = { class: "space-y-4" }, Ds = {
   key: 0,
   class: "space-y-3"
-}, Ps = { class: "bg-green-50/50 p-3 rounded-lg border border-green-100" }, Us = { class: "text-[13px] text-gray-700 leading-relaxed font-medium" }, Es = { class: "bg-red-50/50 p-3 rounded-lg border border-red-100" }, Fs = { class: "text-[13px] text-gray-700 leading-relaxed font-medium" }, Os = {
+}, Us = { class: "bg-green-50/50 p-3 rounded-lg border border-green-100" }, Ps = { class: "text-[13px] text-gray-700 leading-relaxed font-medium" }, Es = { class: "bg-red-50/50 p-3 rounded-lg border border-red-100" }, Fs = { class: "text-[13px] text-gray-700 leading-relaxed font-medium" }, $s = {
   key: 1,
   class: "text-[14px] text-gray-700 leading-relaxed font-medium bg-white p-4 rounded-lg border border-gray-100 shadow-sm"
-}, $s = {
+}, Hs = {
   key: 2,
   class: "mt-4"
-}, Hs = { class: "space-y-3" }, Rs = ["innerHTML"], Gs = { class: "shrink-0 pt-1" }, Qs = { class: "px-2 h-5 rounded-full bg-blue-600 text-white flex items-center justify-center font-black text-[8px]" }, Vs = ["innerHTML"], Ws = {
+}, Os = { class: "space-y-3" }, Rs = ["innerHTML"], Gs = { class: "shrink-0 pt-1" }, Qs = { class: "px-2 h-5 rounded-full bg-blue-600 text-white flex items-center justify-center font-black text-[8px]" }, Vs = ["innerHTML"], Ws = {
   key: 1,
   class: "h-full min-h-[100px] flex flex-col items-center justify-center text-gray-400 italic text-[13px] text-center gap-2"
-}, Js = { class: "flex flex-wrap justify-center gap-4 mt-6" }, Ks = ["onMouseenter", "onClick"], Ys = { class: "text-[10px] font-bold text-gray-600 uppercase" }, Xs = { class: "grid grid-cols-1 sm:grid-cols-2 gap-8 pt-4 border-t border-gray-100" }, Zs = { class: "space-y-4" }, er = { class: "space-y-2" }, tr = { class: "space-y-4" }, sr = { class: "space-y-2" }, rr = { class: "bg-gray-50 px-6 py-4 border-b border-gray-200 flex justify-between items-center" }, or = { class: "flex items-center gap-2" }, lr = {
+}, Ks = { class: "flex flex-wrap justify-center gap-4 mt-6" }, Ys = ["onMouseenter", "onClick"], Js = { class: "text-[10px] font-bold text-gray-600 uppercase" }, Xs = { class: "grid grid-cols-1 sm:grid-cols-2 gap-8 pt-4 border-t border-gray-100" }, Zs = { class: "space-y-4" }, er = { class: "space-y-2" }, tr = { class: "space-y-4" }, sr = { class: "space-y-2" }, rr = { class: "bg-gray-50 px-6 py-4 border-b border-gray-200 flex justify-between items-center" }, or = { class: "flex items-center gap-2" }, lr = {
   key: 0,
   class: "bg-green-100 text-green-700 px-3 py-1 rounded-full text-[10px] font-black uppercase"
 }, ar = {
@@ -138,15 +138,15 @@ const Je = { class: "min-h-screen bg-[#f0f2f5] flex flex-col font-sans" }, Ke = 
 }, xr = /* @__PURE__ */ be({
   __name: "OutcomeReviewSection",
   setup(me) {
-    const O = Qe(), _ = Ve(), T = oe("testData"), le = oe("syncAllData"), _e = oe("isGlobalLoading"), j = A(!0), $ = A(!1), ae = A(600), X = A(!1), f = A(_.query.section || "reading"), g = A({ mIdx: -1, tIdx: 0, qIdx: 0 }), q = M(() => !!_.params.uuid), y = A({}), H = A(!1), ye = ["reading", "listening", "speaking", "writing"], B = M(() => T?.value?.find((t) => t.type.toLowerCase() === f.value.toLowerCase()) || null), i = M(() => {
+    const $ = Qe(), _ = Ve(), T = oe("testData"), le = oe("syncAllData"), _e = oe("isGlobalLoading"), j = A(!0), H = A(!1), ae = A(600), X = A(!1), f = A(_.query.section || "reading"), g = A({ mIdx: -1, tIdx: 0, qIdx: 0 }), q = C(() => !!_.params.uuid), y = A({}), O = A(!1), ye = ["reading", "listening", "speaking", "writing"], B = C(() => T?.value?.find((t) => t.type.toLowerCase() === f.value.toLowerCase()) || null), i = C(() => {
       const t = B.value;
       if (!t) return null;
       const { mIdx: e, tIdx: r } = g.value;
       return t.modules ? t.modules[e]?.tasks[r] || null : t.tasks && t.tasks[r] || null;
-    }), u = M(() => {
+    }), u = C(() => {
       const t = i.value;
       return !t || !t.questions ? null : t.questions[g.value.qIdx] || null;
-    }), ne = M(() => {
+    }), ne = C(() => {
       const t = i.value;
       return !t || !t.questions ? !0 : g.value.qIdx === t.questions.length - 1;
     });
@@ -211,8 +211,8 @@ const Je = { class: "min-h-screen bg-[#f0f2f5] flex flex-col font-sans" }, Ke = 
     const he = () => {
       ne.value || g.value.qIdx++;
     }, ke = async () => {
-      if (!H.value) {
-        H.value = !0;
+      if (!O.value) {
+        O.value = !0;
         try {
           const t = i.value;
           if (console.log("[Practice] Submitting Task:", t?.type, t?.uuid), t) {
@@ -225,14 +225,14 @@ const Je = { class: "min-h-screen bg-[#f0f2f5] flex flex-col font-sans" }, Ke = 
               y.value[e] !== void 0 && (t.user_input = { data: y.value[e] }, t.user_result = null);
             }
           }
-          le ? (console.log("[Practice] Triggering syncAllData for section:", f.value), await le(f.value, !0)) : console.error("[Practice] syncAllData not found in injection context!"), console.log("[Practice] Redirecting to outcome page for test:", _.params.testId), O.push({ name: "outcome", params: { testId: _.params.testId } });
+          le ? (console.log("[Practice] Triggering syncAllData for section:", f.value), await le(f.value, !0)) : console.error("[Practice] syncAllData not found in injection context!"), console.log("[Practice] Redirecting to outcome page for test:", _.params.testId), $.push({ name: "outcome", params: { testId: _.params.testId } });
         } catch (t) {
           console.error("[Practice] Submission failed:", t), alert("Submission failed. Please check your connection.");
         } finally {
-          H.value = !1;
+          O.value = !1;
         }
       }
-    }, P = A(null), Z = M(() => {
+    }, U = A(null), Z = C(() => {
       const e = (u.value?.user_result || i.value?.user_result)?.analysis;
       if (!e || !("task_fulfillment" in e || "organization" in e || "content" in e || "coherence" in e)) return null;
       const a = [
@@ -250,8 +250,8 @@ const Je = { class: "min-h-screen bg-[#f0f2f5] flex flex-col font-sans" }, Ke = 
         const h = e[S.key], k = typeof h == "object" && h !== null ? h : { score: Number(h) || 0 };
         let L = Number(k.score) || 0, z = L > S.max ? L / 6 * S.max : L;
         v += z;
-        const V = S.max / m * d, J = z / S.max * V, K = -n;
-        return n += J, {
+        const V = S.max / m * d, K = z / S.max * V, Y = -n;
+        return n += K, {
           ...S,
           score: Number(z.toFixed(2)).toString(),
           max: Number(S.max.toFixed(2)).toString(),
@@ -259,11 +259,11 @@ const Je = { class: "min-h-screen bg-[#f0f2f5] flex flex-col font-sans" }, Ke = 
           what_you_did_well: k.what_you_did_well,
           what_was_the_issues: k.what_was_the_issues,
           how_to_improve: k.how_to_improve,
-          dasharray: `${J} ${d}`,
-          dashoffset: K
+          dasharray: `${K} ${d}`,
+          dashoffset: Y
         };
       }), totalScore: v.toFixed(1), totalMax: m.toFixed(1) };
-    }), ee = M(() => {
+    }), ee = C(() => {
       const t = u.value?.user_result || i.value?.user_result, e = t?.analysis || t?.parameters || t?.metrics;
       if (!e || !("fluency_and_coherence" in e || "delivery" in e || "pronunciation" in e || "topic_development" in e)) return null;
       const n = "fluency_and_coherence" in e ? [
@@ -286,8 +286,8 @@ const Je = { class: "min-h-screen bg-[#f0f2f5] flex flex-col font-sans" }, Ke = 
         const k = e[h.key], L = typeof k == "object" && k !== null ? k : { score: Number(k) || 0 };
         let z = Number(L.score) || 0, V = z > h.max ? z / 6 * h.max : z;
         m += V;
-        const J = h.max / I * v, K = V / h.max * J, De = -d;
-        return d += K, {
+        const K = h.max / I * v, Y = V / h.max * K, De = -d;
+        return d += Y, {
           ...h,
           score: Number(V.toFixed(2)).toString(),
           max: Number(h.max.toFixed(2)).toString(),
@@ -295,17 +295,17 @@ const Je = { class: "min-h-screen bg-[#f0f2f5] flex flex-col font-sans" }, Ke = 
           what_you_did_well: L.what_you_did_well,
           what_was_the_issues: L.what_was_the_issues,
           how_to_improve: L.how_to_improve,
-          dasharray: `${K} ${v}`,
+          dasharray: `${Y} ${v}`,
           dashoffset: De
         };
       }), totalScore: m.toFixed(1), totalMax: I.toFixed(1) };
-    }), U = M(() => {
+    }), P = C(() => {
       if (!B.value) return null;
       const e = f.value?.toLowerCase(), r = i.value?.type?.toLowerCase() || "";
       return e === "reading" || e === "listening" || r === "build_sentences" ? null : e === "speaking" ? ee.value : e === "writing" ? Z.value : Z.value || ee.value;
-    }), we = M(() => Z.value ? "Overall Writing Performance" : ee.value ? "Overall Speaking Performance" : "Performance Metrics"), E = A(null), ue = (t) => {
-      E.value?.key === t.key ? E.value = null : (E.value = t, P.value = null);
-    }, b = M(() => E.value || P.value), de = () => {
+    }), we = C(() => Z.value ? "Overall Writing Performance" : ee.value ? "Overall Speaking Performance" : "Performance Metrics"), E = A(null), ue = (t) => {
+      E.value?.key === t.key ? E.value = null : (E.value = t, U.value = null);
+    }, b = C(() => E.value || U.value), de = () => {
       let t = _.query.testId || _.params.testId;
       if (!t && T?.value) {
         const e = T.value, r = Array.isArray(e) ? e[0] : e;
@@ -320,13 +320,13 @@ const Je = { class: "min-h-screen bg-[#f0f2f5] flex flex-col font-sans" }, Ke = 
           } catch {
           }
       }
-      t && t !== "undefined" ? O.push({
+      t && t !== "undefined" ? $.push({
         name: "outcome",
         params: { testId: String(t).replace(/['"]/g, "").trim() },
         query: { finished: f.value.toLowerCase() }
-      }) : O.push("/start");
+      }) : $.push("/start");
     }, Ce = (t) => {
-      f.value = t, g.value = { mIdx: 0, tIdx: 0, qIdx: 0 }, O.replace({
+      f.value = t, g.value = { mIdx: 0, tIdx: 0, qIdx: 0 }, $.replace({
         query: {
           ..._.query,
           section: t
@@ -334,7 +334,7 @@ const Je = { class: "min-h-screen bg-[#f0f2f5] flex flex-col font-sans" }, Ke = 
       });
     }, R = (t, e, r) => {
       g.value = { mIdx: t, tIdx: e, qIdx: r }, j.value = !1;
-    }, G = M(() => {
+    }, G = C(() => {
       const t = B.value;
       if (!t) return [];
       const e = [];
@@ -349,10 +349,10 @@ const Je = { class: "min-h-screen bg-[#f0f2f5] flex flex-col font-sans" }, Ke = 
           e.push({ mIdx: -1, tIdx: a, qIdx: d });
         }) : e.push({ mIdx: -1, tIdx: a, qIdx: 0 });
       }), e;
-    }), Q = M(() => {
+    }), Q = C(() => {
       const { mIdx: t, tIdx: e, qIdx: r } = g.value;
       return G.value.findIndex((a) => a.mIdx === t && a.tIdx === e && a.qIdx === r);
-    }), ce = M(() => Q.value <= 0), pe = M(() => Q.value >= G.value.length - 1), Me = () => {
+    }), ce = C(() => Q.value <= 0), pe = C(() => Q.value >= G.value.length - 1), Me = () => {
       if (!pe.value) {
         const t = G.value[Q.value + 1];
         R(t.mIdx, t.tIdx, t.qIdx);
@@ -432,13 +432,13 @@ const Je = { class: "min-h-screen bg-[#f0f2f5] flex flex-col font-sans" }, Ke = 
     }, xe = () => {
       X.value = !1, document.removeEventListener("mousemove", fe), document.removeEventListener("mouseup", xe);
     }, re = () => {
-      $.value = window.innerWidth < 1024, $.value && (j.value = !1);
+      H.value = window.innerWidth < 1024, H.value && (j.value = !1);
     };
     D(u, (t) => {
       t && t.user_result && t.user_result.explanation && (console.log("=== GEMINI AI EXPLANATION ==="), console.log("Question:", t.question), console.log("Correct Answer:", t.user_result.correct_answer), console.log("Explanation:", t.user_result.explanation), console.log("============================="));
-    }, { immediate: !0 }), Pe(() => {
+    }, { immediate: !0 }), Ue(() => {
       re(), window.addEventListener("resize", re);
-    }), Ue(() => {
+    }), Pe(() => {
       window.removeEventListener("resize", re);
     }), D(() => _.query.section, (t) => {
       t && (f.value = t);
@@ -452,11 +452,11 @@ const Je = { class: "min-h-screen bg-[#f0f2f5] flex flex-col font-sans" }, Ke = 
       const e = t.weaknesses || t.improvements;
       return e ? Array.isArray(e) ? e : typeof e == "string" ? e.toLowerCase().includes("none noted") || e.toLowerCase().includes("no issues") ? ["Keep it up!"] : e.includes(";") ? e.split(";").map((r) => r.trim()).filter(Boolean) : e.includes(",") ? e.split(",").map((r) => r.trim()).filter(Boolean) : [e] : ["More detail needed"] : ["More detail needed"];
     };
-    return (t, e) => (o(), l("div", Je, [
-      Ee(_e) ? (o(), l("div", Ke, [...e[6] || (e[6] = [
+    return (t, e) => (o(), l("div", Ke, [
+      Ee(_e) ? (o(), l("div", Ye, [...e[6] || (e[6] = [
         ge('<div class="relative w-24 h-24 mb-6" data-v-c38cf30f><div class="absolute inset-0 border-4 border-[#00796B]/20 rounded-full" data-v-c38cf30f></div><div class="absolute inset-0 border-4 border-[#00796B] border-t-transparent rounded-full animate-spin" data-v-c38cf30f></div><div class="absolute inset-4 bg-[#00796B]/10 rounded-full flex items-center justify-center" data-v-c38cf30f><svg class="w-8 h-8 text-[#00796B] animate-pulse" fill="none" stroke="currentColor" viewBox="0 0 24 24" data-v-c38cf30f><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z" data-v-c38cf30f></path></svg></div></div><h3 class="text-xl font-bold text-[#00796B] mb-2 tracking-tight" data-v-c38cf30f>Evaluating Task...</h3><p class="text-gray-500 text-sm font-medium animate-pulse" data-v-c38cf30f>Our AI is scoring your response</p>', 3)
       ])])) : p("", !0),
-      s("header", Ye, [
+      s("header", Je, [
         s("div", Xe, [
           q.value ? (o(), l("div", et, [
             s("button", {
@@ -526,7 +526,7 @@ const Je = { class: "min-h-screen bg-[#f0f2f5] flex flex-col font-sans" }, Ke = 
           s("h1", tt, c(q.value ? "Task Practice" : "Review: " + f.value), 1)
         ]),
         q.value ? p("", !0) : (o(), l("div", st, [
-          (o(), l(x, null, C(ye, (r) => s("button", {
+          (o(), l(x, null, M(ye, (r) => s("button", {
             key: r,
             onClick: (a) => Ce(r),
             class: N(["px-3 md:px-4 py-1.5 rounded text-[11px] md:text-[13px] font-bold transition-all uppercase tracking-tighter shrink-0", f.value === r ? "bg-white text-[#00796B]" : "text-white/80 hover:text-white"])
@@ -535,7 +535,7 @@ const Je = { class: "min-h-screen bg-[#f0f2f5] flex flex-col font-sans" }, Ke = 
       ]),
       s("div", ot, [
         Fe($e, { name: "sidebar" }, {
-          default: Oe(() => [
+          default: He(() => [
             j.value && !q.value ? (o(), l("aside", lt, [
               s("div", at, [
                 e[12] || (e[12] = s("h2", { class: "text-[14px] font-bold text-gray-700 uppercase tracking-wide" }, "Questions", -1)),
@@ -559,14 +559,14 @@ const Je = { class: "min-h-screen bg-[#f0f2f5] flex flex-col font-sans" }, Ke = 
                 ])])
               ]),
               s("div", nt, [
-                B.value?.modules ? (o(!0), l(x, { key: 0 }, C(B.value.modules, (r, a) => (o(), l("div", {
+                B.value?.modules ? (o(!0), l(x, { key: 0 }, M(B.value.modules, (r, a) => (o(), l("div", {
                   key: a,
                   class: "space-y-2"
                 }, [
                   s("h3", it, "Module " + c(a + 1), 1),
                   s("div", ut, [
-                    (o(!0), l(x, null, C(r.tasks, (n, d) => (o(), l(x, { key: d }, [
-                      (o(!0), l(x, null, C(n.questions, (v, m) => (o(), l("button", {
+                    (o(!0), l(x, null, M(r.tasks, (n, d) => (o(), l(x, { key: d }, [
+                      (o(!0), l(x, null, M(n.questions, (v, m) => (o(), l("button", {
                         key: m,
                         onClick: (I) => R(a, d, m),
                         class: N(["w-full aspect-square flex items-center justify-center rounded border text-[13px] font-bold transition-all", se(a, d, m)])
@@ -574,13 +574,13 @@ const Je = { class: "min-h-screen bg-[#f0f2f5] flex flex-col font-sans" }, Ke = 
                     ], 64))), 128))
                   ])
                 ]))), 128)) : B.value?.tasks ? (o(), l("div", ct, [
-                  (o(!0), l(x, null, C(B.value.tasks, (r, a) => (o(), l("div", {
+                  (o(!0), l(x, null, M(B.value.tasks, (r, a) => (o(), l("div", {
                     key: a,
                     class: "space-y-2"
                   }, [
                     s("h3", pt, c(r.title?.replace(/_/g, " ") || r.type?.replace(/_/g, " ") || "Task"), 1),
                     s("div", vt, [
-                      r.questions && r.questions.length > 0 ? (o(!0), l(x, { key: 0 }, C(r.questions, (n, d) => (o(), l("button", {
+                      r.questions && r.questions.length > 0 ? (o(!0), l(x, { key: 0 }, M(r.questions, (n, d) => (o(), l("button", {
                         key: d,
                         onClick: (v) => R(-1, a, d),
                         class: N(["w-full aspect-square flex items-center justify-center rounded border text-[13px] font-bold transition-all", se(-1, a, d)])
@@ -613,14 +613,14 @@ const Je = { class: "min-h-screen bg-[#f0f2f5] flex flex-col font-sans" }, Ke = 
           ]),
           _: 1
         }),
-        j.value && $.value ? (o(), l("div", {
+        j.value && H.value ? (o(), l("div", {
           key: 0,
           onClick: e[2] || (e[2] = (r) => j.value = !1),
           class: "fixed inset-0 bg-black/50 z-30 md:hidden"
         })) : p("", !0),
         i.value ? (o(), l("div", gt, [
           s("div", {
-            style: Y({ width: $.value ? "100%" : ae.value + "px" }),
+            style: J({ width: H.value ? "100%" : ae.value + "px" }),
             class: "bg-gray-50 overflow-y-auto border-b md:border-b-0 md:border-r border-gray-200 flex flex-col p-4 sm:p-8 shrink-0"
           }, [
             s("div", bt, [
@@ -679,7 +679,7 @@ const Je = { class: "min-h-screen bg-[#f0f2f5] flex flex-col font-sans" }, Ke = 
                     i.value.instructions ? (o(), l("div", qt, [
                       e[16] || (e[16] = s("p", { class: "font-bold text-[#00796B] mt-4" }, "Instructions:", -1)),
                       s("ul", St, [
-                        (o(!0), l(x, null, C(i.value.instructions, (r) => (o(), l("li", { key: r }, c(r), 1))), 128))
+                        (o(!0), l(x, null, M(i.value.instructions, (r) => (o(), l("li", { key: r }, c(r), 1))), 128))
                       ])
                     ])) : p("", !0)
                   ])) : i.value.professorPrompt ? (o(), l("div", It, [
@@ -698,7 +698,7 @@ const Je = { class: "min-h-screen bg-[#f0f2f5] flex flex-col font-sans" }, Ke = 
               s("div", Bt, [
                 s("h3", Tt, c(Se() || u.value?.question || i.value?.title || i.value?.question || i.value?.passageTitle || "Review the prompt for this task."), 1),
                 u.value?.options && u.value.options.length > 0 ? (o(), l("div", Nt, [
-                  (o(!0), l(x, null, C(u.value.options, (r, a) => (o(), l("div", {
+                  (o(!0), l(x, null, M(u.value.options, (r, a) => (o(), l("div", {
                     key: a,
                     class: N(["p-4 sm:p-5 rounded-xl border-2 transition-all flex flex-col sm:flex-row sm:justify-between sm:items-center gap-3 group cursor-pointer", [
                       q.value ? y.value[u.value.uuid] === r ? "border-blue-500 bg-blue-50" : "border-gray-100 bg-white hover:border-gray-200" : Ie(r, a)
@@ -711,10 +711,10 @@ const Je = { class: "min-h-screen bg-[#f0f2f5] flex flex-col font-sans" }, Ke = 
                           q.value ? y.value[u.value.uuid] === r ? "bg-blue-500 text-white" : "bg-gray-100 text-gray-500" : Le(r, a)
                         ]])
                       }, c(String.fromCharCode(65 + a)), 3),
-                      s("span", Pt, c(r), 1)
+                      s("span", Ut, c(r), 1)
                     ]),
-                    q.value ? (o(), l("div", Ot, [
-                      y.value[u.value.uuid] === r ? (o(), l("div", $t, [...e[20] || (e[20] = [
+                    q.value ? (o(), l("div", $t, [
+                      y.value[u.value.uuid] === r ? (o(), l("div", Ht, [...e[20] || (e[20] = [
                         s("svg", {
                           class: "w-3 h-3 text-white",
                           fill: "none",
@@ -729,12 +729,12 @@ const Je = { class: "min-h-screen bg-[#f0f2f5] flex flex-col font-sans" }, Ke = 
                           })
                         ], -1)
                       ])])) : p("", !0)
-                    ])) : (o(), l("div", Ut, [
+                    ])) : (o(), l("div", Pt, [
                       Ae(r, a) ? (o(), l("div", Et, "Correct")) : p("", !0),
                       je(r, a) ? (o(), l("div", Ft, "Your Choice")) : p("", !0)
                     ]))
                   ], 10, zt))), 128))
-                ])) : (o(), l("div", Ht, [
+                ])) : (o(), l("div", Ot, [
                   s("div", {
                     class: N(["bg-white border-2 rounded-2xl overflow-hidden shadow-lg", q.value ? "border-blue-500/50" : "border-blue-500/30"])
                   }, [
@@ -742,7 +742,7 @@ const Je = { class: "min-h-screen bg-[#f0f2f5] flex flex-col font-sans" }, Ke = 
                       s("span", null, c(q.value ? "Your Answer" : "Your Response"), 1)
                     ]),
                     s("div", Gt, [
-                      q.value ? He((o(), l("textarea", {
+                      q.value ? Oe((o(), l("textarea", {
                         key: 0,
                         "onUpdate:modelValue": e[3] || (e[3] = (r) => y.value[u.value?.uuid || i.value?.uuid || "temp"] = r),
                         class: "w-full h-[200px] p-4 border border-gray-200 rounded-xl focus:ring-2 focus:ring-blue-500 outline-none text-[16px] not-italic font-sans",
@@ -769,10 +769,10 @@ const Je = { class: "min-h-screen bg-[#f0f2f5] flex flex-col font-sans" }, Ke = 
                             ]),
                             w(" AI Audio Transcript ")
                           ], -1)),
-                          s("p", Jt, '"' + c(u.value?.user_result?.transcript || i.value?.user_result?.transcript) + '"', 1)
+                          s("p", Kt, '"' + c(u.value?.user_result?.transcript || i.value?.user_result?.transcript) + '"', 1)
                         ])) : p("", !0),
-                        !ve(F()) && F() ? (o(), l("div", Kt, c(F()), 1)) : p("", !0),
-                        !F() && !u.value?.user_result?.transcript && !i.value?.user_result?.transcript ? (o(), l("div", Yt, " No response recorded. ")) : p("", !0)
+                        !ve(F()) && F() ? (o(), l("div", Yt, c(F()), 1)) : p("", !0),
+                        !F() && !u.value?.user_result?.transcript && !i.value?.user_result?.transcript ? (o(), l("div", Jt, " No response recorded. ")) : p("", !0)
                       ], 64))
                     ])
                   ], 2)
@@ -780,7 +780,7 @@ const Je = { class: "min-h-screen bg-[#f0f2f5] flex flex-col font-sans" }, Ke = 
               ])
             ])
           ], 4),
-          $.value ? p("", !0) : (o(), l("div", {
+          H.value ? p("", !0) : (o(), l("div", {
             key: 0,
             onMousedown: Te,
             class: "w-1 cursor-col-resize bg-gray-200 hover:bg-[#00796B] transition-colors relative z-10"
@@ -793,9 +793,9 @@ const Je = { class: "min-h-screen bg-[#f0f2f5] flex flex-col font-sans" }, Ke = 
                   ne.value ? (o(), l("button", {
                     key: 1,
                     onClick: ke,
-                    disabled: H.value,
+                    disabled: O.value,
                     class: "w-full py-4 bg-[#00796B] hover:bg-[#00695C] text-white rounded-xl font-bold text-[18px] transition-all shadow-md active:scale-95 disabled:opacity-50"
-                  }, c(H.value ? "Submitting..." : "Submit Task"), 9, ss)) : (o(), l("button", {
+                  }, c(O.value ? "Submitting..." : "Submit Task"), 9, ss)) : (o(), l("button", {
                     key: 0,
                     onClick: he,
                     class: "w-full py-4 bg-blue-600 hover:bg-blue-700 text-white rounded-xl font-bold text-[18px] transition-all shadow-md active:scale-95"
@@ -808,7 +808,7 @@ const Je = { class: "min-h-screen bg-[#f0f2f5] flex flex-col font-sans" }, Ke = 
               s("div", ls, [
                 s("div", null, [
                   e[25] || (e[25] = s("span", { class: "text-[11px] text-[#999] font-bold uppercase block mb-1" }, "Status", -1)),
-                  u.value?.user_result?.status === "Scored" || i.value?.user_result?.status === "Scored" ? (o(), l("div", as, "Scored")) : (u.value?.user_result?.data || i.value?.user_result?.data) == 1 ? (o(), l("div", ns, "Correct")) : U.value ? (o(), l("div", is, "Scored")) : (u.value?.user_result?.data || i.value?.user_result?.data) == -1 ? (o(), l("div", us, "Incorrect")) : (o(), l("div", ds, "Unanswered"))
+                  u.value?.user_result?.status === "Scored" || i.value?.user_result?.status === "Scored" ? (o(), l("div", as, "Scored")) : (u.value?.user_result?.data || i.value?.user_result?.data) == 1 ? (o(), l("div", ns, "Correct")) : P.value ? (o(), l("div", is, "Scored")) : (u.value?.user_result?.data || i.value?.user_result?.data) == -1 ? (o(), l("div", us, "Incorrect")) : (o(), l("div", ds, "Unanswered"))
                 ]),
                 e[26] || (e[26] = s("div", { class: "text-right" }, null, -1))
               ]),
@@ -827,7 +827,7 @@ const Je = { class: "min-h-screen bg-[#f0f2f5] flex flex-col font-sans" }, Ke = 
                     e[28] || (e[28] = s("span", { class: "text-[12px] font-black text-teal-700 uppercase tracking-widest" }, "AI Performance Analysis", -1)),
                     s("div", gs, [
                       u.value?.user_result?.level || i.value?.user_result?.level ? (o(), l("div", bs, c(u.value?.user_result?.level || i.value?.user_result?.level), 1)) : p("", !0),
-                      s("div", ms, " Score: " + c(U.value?.totalScore || u.value?.user_result?.score || u.value?.user_result?.overall_score || i.value?.user_result?.score || i.value?.user_result?.overall_score || 0) + "/6.0 ", 1)
+                      s("div", ms, " Score: " + c(P.value?.totalScore || u.value?.user_result?.score || u.value?.user_result?.overall_score || i.value?.user_result?.score || i.value?.user_result?.overall_score || 0) + "/6.0 ", 1)
                     ])
                   ]),
                   s("div", _s, [
@@ -838,7 +838,7 @@ const Je = { class: "min-h-screen bg-[#f0f2f5] flex flex-col font-sans" }, Ke = 
                         innerHTML: W(u.value?.user_result?.ai_feedback || u.value?.user_result?.overall_feedback || i.value?.user_result?.ai_feedback || i.value?.user_result?.overall_feedback || "No feedback provided.")
                       }, null, 8, hs)
                     ]),
-                    U.value ? (o(), l("div", ks, [
+                    P.value ? (o(), l("div", ks, [
                       s("div", ws, c(we.value), 1),
                       s("div", Cs, [
                         (o(), l("svg", Ms, [
@@ -849,7 +849,7 @@ const Je = { class: "min-h-screen bg-[#f0f2f5] flex flex-col font-sans" }, Ke = 
                             "stroke-width": "12",
                             "stroke-linecap": "round"
                           }, null, -1)),
-                          (o(!0), l(x, null, C(U.value.segments, (r, a) => (o(), l("path", {
+                          (o(!0), l(x, null, M(P.value.segments, (r, a) => (o(), l("path", {
                             key: a,
                             d: "M 10 50 A 40 40 0 0 1 90 50",
                             fill: "none",
@@ -859,13 +859,13 @@ const Je = { class: "min-h-screen bg-[#f0f2f5] flex flex-col font-sans" }, Ke = 
                             "stroke-dasharray": r.dasharray,
                             "stroke-dashoffset": r.dashoffset,
                             class: "transition-all duration-1000 ease-out cursor-pointer hover:stroke-[14px]",
-                            onMouseenter: (n) => P.value = r,
-                            onMouseleave: e[4] || (e[4] = (n) => P.value = null),
+                            onMouseenter: (n) => U.value = r,
+                            onMouseleave: e[4] || (e[4] = (n) => U.value = null),
                             onClick: (n) => ue(r)
                           }, null, 40, qs))), 128))
                         ])),
                         s("div", Ss, [
-                          w(c(U.value.totalScore), 1),
+                          w(c(P.value.totalScore), 1),
                           e[31] || (e[31] = s("span", { class: "text-[14px] text-gray-400" }, "/6.0", -1))
                         ])
                       ]),
@@ -874,11 +874,11 @@ const Je = { class: "min-h-screen bg-[#f0f2f5] flex flex-col font-sans" }, Ke = 
                           s("div", Ls, [
                             s("div", {
                               class: "font-black text-[13px] uppercase tracking-wider flex items-center gap-2",
-                              style: Y({ color: b.value.color })
+                              style: J({ color: b.value.color })
                             }, [
                               s("span", {
                                 class: "w-3 h-3 rounded-full",
-                                style: Y({ backgroundColor: b.value.color })
+                                style: J({ backgroundColor: b.value.color })
                               }, null, 4),
                               w(" " + c(b.value.label) + " ", 1),
                               E.value?.key === b.value.key ? (o(), l("span", As, "Locked")) : p("", !0)
@@ -897,16 +897,16 @@ const Je = { class: "min-h-screen bg-[#f0f2f5] flex flex-col font-sans" }, Ke = 
                           ]),
                           s("div", zs, [
                             b.value.what_you_did_well ? (o(), l("div", Ds, [
-                              s("div", Ps, [
+                              s("div", Us, [
                                 e[34] || (e[34] = s("div", { class: "text-[10px] font-black text-green-700 uppercase tracking-widest mb-1" }, "What did you do well", -1)),
-                                s("div", Us, c(b.value.what_you_did_well), 1)
+                                s("div", Ps, c(b.value.what_you_did_well), 1)
                               ]),
                               s("div", Es, [
                                 e[35] || (e[35] = s("div", { class: "text-[10px] font-black text-red-700 uppercase tracking-widest mb-1" }, "What was the issue", -1)),
                                 s("div", Fs, c(b.value.what_was_the_issues), 1)
                               ])
-                            ])) : (o(), l("div", Os, c(b.value.feedback), 1)),
-                            b.value.how_to_improve ? (o(), l("div", $s, [
+                            ])) : (o(), l("div", $s, c(b.value.feedback), 1)),
+                            b.value.how_to_improve ? (o(), l("div", Hs, [
                               e[37] || (e[37] = s("div", { class: "text-[11px] font-black text-blue-700 uppercase tracking-widest mb-3 flex items-center gap-2 bg-blue-50 px-3 py-1.5 rounded-md inline-flex" }, [
                                 s("svg", {
                                   class: "w-4 h-4",
@@ -923,8 +923,8 @@ const Je = { class: "min-h-screen bg-[#f0f2f5] flex flex-col font-sans" }, Ke = 
                                 ]),
                                 w(" Improvement Roadmap ")
                               ], -1)),
-                              s("div", Hs, [
-                                typeof b.value.how_to_improve == "string" ? (o(!0), l(x, { key: 0 }, C(b.value.how_to_improve.split(`
+                              s("div", Os, [
+                                typeof b.value.how_to_improve == "string" ? (o(!0), l(x, { key: 0 }, M(b.value.how_to_improve.split(`
 `).filter((r) => r.trim()), (r, a) => (o(), l("div", {
                                   key: a,
                                   class: "flex gap-3 text-[13px] bg-white p-3 rounded-lg border border-gray-100 hover:border-blue-200 transition-all shadow-sm"
@@ -936,7 +936,7 @@ const Je = { class: "min-h-screen bg-[#f0f2f5] flex flex-col font-sans" }, Ke = 
                                     class: "text-gray-600 font-medium leading-relaxed",
                                     innerHTML: W(r)
                                   }, null, 8, Rs)
-                                ]))), 128)) : typeof b.value.how_to_improve == "object" ? (o(!0), l(x, { key: 1 }, C(b.value.how_to_improve, (r, a, n) => (o(), l("div", {
+                                ]))), 128)) : typeof b.value.how_to_improve == "object" ? (o(!0), l(x, { key: 1 }, M(b.value.how_to_improve, (r, a, n) => (o(), l("div", {
                                   key: a,
                                   class: "flex gap-3 text-[13px] bg-white p-3 rounded-lg border border-gray-100"
                                 }, [
@@ -968,27 +968,27 @@ const Je = { class: "min-h-screen bg-[#f0f2f5] flex flex-col font-sans" }, Ke = 
                           w(" Click or hover over a color segment on the gauge to see detailed step-by-step feedback. ", -1)
                         ])]))
                       ]),
-                      s("div", Js, [
-                        (o(!0), l(x, null, C(U.value.segments, (r) => (o(), l("div", {
+                      s("div", Ks, [
+                        (o(!0), l(x, null, M(P.value.segments, (r) => (o(), l("div", {
                           key: r.key,
                           class: N(["flex items-center gap-1.5 cursor-pointer hover:bg-gray-50 px-2 py-1 rounded transition-colors", { "bg-gray-100 ring-1 ring-gray-200": E.value?.key === r.key }]),
-                          onMouseenter: (a) => P.value = r,
-                          onMouseleave: e[5] || (e[5] = (a) => P.value = null),
+                          onMouseenter: (a) => U.value = r,
+                          onMouseleave: e[5] || (e[5] = (a) => U.value = null),
                           onClick: (a) => ue(r)
                         }, [
                           s("div", {
                             class: "w-3 h-3 rounded-full",
-                            style: Y({ backgroundColor: r.color })
+                            style: J({ backgroundColor: r.color })
                           }, null, 4),
-                          s("span", Ys, c(r.label), 1)
-                        ], 42, Ks))), 128))
+                          s("span", Js, c(r.label), 1)
+                        ], 42, Ys))), 128))
                       ])
                     ])) : p("", !0),
                     s("div", Xs, [
                       s("div", Zs, [
                         e[39] || (e[39] = s("div", { class: "text-[10px] font-black text-green-600 uppercase tracking-widest flex items-center gap-2" }, " Strengths ", -1)),
                         s("ul", er, [
-                          (o(!0), l(x, null, C(Ne(u.value?.user_result || i.value?.user_result), (r) => (o(), l("li", {
+                          (o(!0), l(x, null, M(Ne(u.value?.user_result || i.value?.user_result), (r) => (o(), l("li", {
                             key: r,
                             class: "text-[13px] text-gray-600 flex items-start gap-2 bg-green-50/30 p-2 rounded-lg border border-green-100/50"
                           }, " • " + c(r), 1))), 128))
@@ -997,7 +997,7 @@ const Je = { class: "min-h-screen bg-[#f0f2f5] flex flex-col font-sans" }, Ke = 
                       s("div", tr, [
                         e[40] || (e[40] = s("div", { class: "text-[10px] font-black text-red-600 uppercase tracking-widest flex items-center gap-2" }, " Improvements ", -1)),
                         s("ul", sr, [
-                          (o(!0), l(x, null, C(ze(u.value?.user_result || i.value?.user_result), (r) => (o(), l("li", {
+                          (o(!0), l(x, null, M(ze(u.value?.user_result || i.value?.user_result), (r) => (o(), l("li", {
                             key: r,
                             class: "text-[13px] text-gray-600 flex items-start gap-2 bg-red-50/30 p-2 rounded-lg border border-red-100/50"
                           }, " • " + c(r), 1))), 128))
@@ -1055,7 +1055,7 @@ const Je = { class: "min-h-screen bg-[#f0f2f5] flex flex-col font-sans" }, Ke = 
 }), gr = /* @__PURE__ */ We(xr, [["__scopeId", "data-v-c38cf30f"]]), yr = /* @__PURE__ */ be({
   __name: "OutcomeReviewPage",
   setup(me) {
-    return (O, _) => (o(), Ge(gr));
+    return ($, _) => (o(), Ge(gr));
   }
 });
 export {

@@ -1,5 +1,4 @@
-import "./runtime-dom.esm-bundler-CXGWRLlp.js";
-import { i as a, i as t } from "./index-AMN2cuu4.js";
+import { i as a, i as t } from "./index-Dmn5u8ax.js";
 export {
   a as hydrator,
   t as index
