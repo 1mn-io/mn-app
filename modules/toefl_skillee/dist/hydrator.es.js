@@ -1,5 +1,5 @@
-import "./runtime-dom.esm-bundler-CKHPcrvd.js";
-import { i as a, i as t } from "./index-Ca_9YalD.js";
+import "vue";
+import { i as a, i as t } from "./index-C4xQXCFH.js";
 export {
   a as hydrator,
   t as index

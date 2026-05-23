@@ -1,9 +1,9 @@
-import { u as S, a as N, _ as $ } from "./index-Ca_9YalD.js";
-import { d as j, i as v, w as A, o as r, e as n, u as f, f as t, y as m, g as b, A as u, F as _, t as B, z as Q, q, j as E, b as H, c as L, k as I } from "./runtime-dom.esm-bundler-CKHPcrvd.js";
-const V = { class: "min-h-screen bg-white text-slate-900 font-sans antialiased selection:bg-purple-200" }, D = {
+import { defineComponent as j, inject as v, ref as z, computed as _, watch as N, openBlock as r, createElementBlock as n, unref as f, createElementVNode as t, createCommentVNode as m, createTextVNode as b, toDisplayString as u, Fragment as B, renderList as L, normalizeStyle as $, normalizeClass as E, createStaticVNode as Q, createBlock as A } from "vue";
+import { a as H, u as I, _ as V } from "./index-C4xQXCFH.js";
+const q = { class: "min-h-screen bg-white text-slate-900 font-sans antialiased selection:bg-purple-200" }, D = {
   key: 0,
   class: "fixed inset-0 z-50 bg-black/40 backdrop-blur-sm flex flex-col items-center justify-center"
-}, F = { class: "max-w-7xl mx-auto px-6 py-1 md:py-5" }, G = { class: "flex flex-col md:flex-row md:items-end justify-between gap-10 mb-14" }, P = { class: "space-y-4" }, R = { class: "text-slate-600 font-normal text-xs uppercase tracking-wider" }, X = { class: "flex items-center gap-1 bg-slate-100 p-1 rounded-lg border border-slate-200 mb-10 sticky top-4 z-40 backdrop-blur-md overflow-x-auto no-scrollbar" }, Y = ["onClick"], O = {
+}, G = { class: "max-w-7xl mx-auto px-6 py-1 md:py-5" }, F = { class: "flex flex-col md:flex-row md:items-end justify-between gap-10 mb-14" }, P = { class: "space-y-4" }, R = { class: "text-slate-600 font-normal text-xs uppercase tracking-wider" }, X = { class: "flex items-center gap-1 bg-slate-100 p-1 rounded-lg border border-slate-200 mb-10 sticky top-4 z-40 backdrop-blur-md overflow-x-auto no-scrollbar" }, Y = ["onClick"], O = {
   key: 0,
   class: "w-3.5 h-3.5",
   fill: "none",
@@ -43,14 +43,14 @@ const V = { class: "min-h-screen bg-white text-slate-900 font-sans antialiased s
 }, pe = /* @__PURE__ */ j({
   __name: "QuestionList",
   setup(T) {
-    const c = v("testData"), x = v("isGlobalLoading"), k = v("clearSectionAnswers"), h = S(), y = N(), p = H("reading"), g = L(() => c?.value ? (Array.isArray(c.value) ? c.value : c.value.sections || []).map((e) => {
+    const c = v("testData"), x = v("isGlobalLoading"), k = v("clearSectionAnswers"), h = H(), y = I(), p = z("reading"), g = _(() => c?.value ? (Array.isArray(c.value) ? c.value : c.value.sections || []).map((e) => {
       const s = [];
       let d = 1;
       const l = (o) => {
-        const C = o.questions?.[0] || o, z = o.passageTitle || o.title || w(o.type);
+        const C = o.questions?.[0] || o, S = o.passageTitle || o.title || w(o.type);
         s.push({
           id: o.uuid || o.id || C.uuid || `task-${d}`,
-          displayTitle: z,
+          displayTitle: S,
           typeLabel: w(o.type),
           type: o.type,
           uuid: C.uuid || o.uuid || o.id,
@@ -64,15 +64,15 @@ const V = { class: "min-h-screen bg-white text-slate-900 font-sans antialiased s
         type: e.type.toLowerCase(),
         tasks: s
       };
-    }) : []), i = L(() => g.value.find((a) => a.type === p.value)), w = (a) => a ? a.replace(/_/g, " ").replace(/reading|listening|speaking|writing/gi, "").trim().replace(/^\w/, (e) => e.toUpperCase()) : "General", M = (a, e) => {
+    }) : []), i = _(() => g.value.find((a) => a.type === p.value)), w = (a) => a ? a.replace(/_/g, " ").replace(/reading|listening|speaking|writing/gi, "").trim().replace(/^\w/, (e) => e.toUpperCase()) : "General", M = (a, e) => {
       const s = y.params.testId;
       k && k(a, e.uuid);
       const d = `/review/${s}/${a}/${e.type}/${e.uuid}`;
       console.log("[List] Navigating to task:", d), h.push(d);
     };
-    return A(g, (a) => {
+    return N(g, (a) => {
       a.length > 0 && !p.value && (p.value = a[0].type);
-    }, { immediate: !0 }), (a, e) => (r(), n("div", V, [
+    }, { immediate: !0 }), (a, e) => (r(), n("div", q, [
       f(x) ? (r(), n("div", D, [...e[5] || (e[5] = [
         t("div", { class: "relative w-16 h-16" }, [
           t("div", { class: "absolute inset-0 border-2 border-teal-200 rounded-full" }),
@@ -81,8 +81,8 @@ const V = { class: "min-h-screen bg-white text-slate-900 font-sans antialiased s
         t("p", { class: "mt-6 text-teal-700 font-medium uppercase tracking-wider text-xs animate-pulse" }, "Loading assessment...", -1)
       ])])) : m("", !0),
       e[17] || (e[17] = t("div", { class: "h-1 bg-gradient-to-r from-teal-600 via-blue-600 to-purple-600" }, null, -1)),
-      t("div", F, [
-        t("header", G, [
+      t("div", G, [
+        t("header", F, [
           t("div", P, [
             e[6] || (e[6] = t("div", { class: "flex items-center gap-2" }, [
               t("span", { class: "px-2.5 py-1 bg-teal-50 text-teal-700 border border-teal-200 rounded-md text-xs font-semibold uppercase tracking-wide" }, "Question Navigator")
@@ -117,11 +117,11 @@ const V = { class: "min-h-screen bg-white text-slate-900 font-sans antialiased s
           ])])
         ]),
         t("nav", X, [
-          (r(!0), n(_, null, B(g.value, (s) => (r(), n("button", {
+          (r(!0), n(B, null, L(g.value, (s) => (r(), n("button", {
             key: s.type,
             onClick: (d) => p.value = s.type,
-            class: q(["px-5 py-2.5 rounded-md text-xs font-semibold uppercase tracking-wide transition-all duration-200 shrink-0 flex items-center gap-2", p.value === s.type ? "bg-white text-white border border-blue-200" : "text-slate-600 hover:bg-white/60 hover:text-slate-700"]),
-            style: Q(p.value === s.type ? { backgroundColor: "#00796B", color: "white" } : {})
+            class: E(["px-5 py-2.5 rounded-md text-xs font-semibold uppercase tracking-wide transition-all duration-200 shrink-0 flex items-center gap-2", p.value === s.type ? "bg-white text-white border border-blue-200" : "text-slate-600 hover:bg-white/60 hover:text-slate-700"]),
+            style: $(p.value === s.type ? { backgroundColor: "#00796B", color: "white" } : {})
           }, [
             s.type === "reading" ? (r(), n("svg", O, [...e[9] || (e[9] = [
               t("path", {
@@ -161,7 +161,7 @@ const V = { class: "min-h-screen bg-white text-slate-900 font-sans antialiased s
             t("span", te, u(i.value.tasks.length) + " Questions ", 1)
           ])) : m("", !0),
           i.value ? (r(), n("div", se, [
-            (r(!0), n(_, null, B(i.value.tasks, (s, d) => (r(), n("div", {
+            (r(!0), n(B, null, L(i.value.tasks, (s, d) => (r(), n("div", {
               key: s.id,
               class: "group relative bg-white border-2 border-slate-200 hover:border-blue-400 rounded-xl p-5 transition-all duration-300 flex flex-col sm:flex-row sm:items-center justify-between gap-6 overflow-hidden hover:shadow-lg hover:shadow-blue-100"
             }, [
@@ -216,7 +216,7 @@ const V = { class: "min-h-screen bg-white text-slate-900 font-sans antialiased s
             ]))), 128))
           ])) : m("", !0),
           !i.value || i.value.tasks.length === 0 ? (r(), n("div", ue, [...e[16] || (e[16] = [
-            E('<div class="w-16 h-16 bg-slate-200/50 rounded-full flex items-center justify-center mx-auto mb-6 text-slate-400" data-v-95f9bc94><svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24" data-v-95f9bc94><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z" data-v-95f9bc94></path></svg></div><h3 class="text-lg font-semibold text-slate-900 mb-1 uppercase tracking-wide" data-v-95f9bc94>No questions found</h3><p class="text-slate-600 font-normal text-sm" data-v-95f9bc94>This section is not yet available in the current test.</p>', 3)
+            Q('<div class="w-16 h-16 bg-slate-200/50 rounded-full flex items-center justify-center mx-auto mb-6 text-slate-400" data-v-95f9bc94><svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24" data-v-95f9bc94><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z" data-v-95f9bc94></path></svg></div><h3 class="text-lg font-semibold text-slate-900 mb-1 uppercase tracking-wide" data-v-95f9bc94>No questions found</h3><p class="text-slate-600 font-normal text-sm" data-v-95f9bc94>This section is not yet available in the current test.</p>', 3)
           ])])) : m("", !0)
         ])
       ]),
@@ -230,10 +230,10 @@ const V = { class: "min-h-screen bg-white text-slate-900 font-sans antialiased s
       }, null, -1))
     ]));
   }
-}), ce = /* @__PURE__ */ $(pe, [["__scopeId", "data-v-95f9bc94"]]), ge = /* @__PURE__ */ j({
+}), ce = /* @__PURE__ */ V(pe, [["__scopeId", "data-v-95f9bc94"]]), ge = /* @__PURE__ */ j({
   __name: "ListPage",
   setup(T) {
-    return (c, x) => (r(), I(ce));
+    return (c, x) => (r(), A(ce));
   }
 });
 export {
