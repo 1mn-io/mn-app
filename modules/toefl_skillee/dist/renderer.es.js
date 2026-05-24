@@ -486,6 +486,8 @@ const Yr = async (r) => ({
       style: (() => {
         let n = "";
         return n = `
+                @import url("${r.f.path("/style.css")}");
+
                 .${r.f.name("text")} {
                    background: transparent;
                 }
