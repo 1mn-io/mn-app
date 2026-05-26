@@ -17315,7 +17315,7 @@ const Tx = {
             modelValue: e.formData.businessInformation.stateOrProvince,
             "onUpdate:modelValue": g[6] || (g[6] = (w) => e.formData.businessInformation.stateOrProvince = w),
             disabled: a.value,
-            placeholder: "Postal Code",
+            placeholder: "State",
             class: P(y("businessInformation.stateOrProvince"))
           }, null, 8, ["modelValue", "disabled", "class"]),
           v(N, { name: "slide-fade" }, {
@@ -17343,7 +17343,7 @@ const Tx = {
             modelValue: e.formData.businessInformation.city,
             "onUpdate:modelValue": g[7] || (g[7] = (w) => e.formData.businessInformation.city = w),
             disabled: r.value,
-            placeholder: "Postal Code",
+            placeholder: "City",
             class: P(y("businessInformation.city"))
           }, null, 8, ["modelValue", "disabled", "class"]),
           v(N, { name: "slide-fade" }, {
@@ -17544,7 +17544,7 @@ const Tx = {
       ])
     ]));
   }
-}), R5 = /* @__PURE__ */ tt(M5, [["__scopeId", "data-v-3feaed51"]]), z5 = { class: "flex flex-col gap-6" }, N5 = { class: "grid grid-cols-1 md:grid-cols-2 gap-4" }, V5 = { class: "flex flex-col gap-2" }, j5 = { class: "flex items-center" }, U5 = {
+}), R5 = /* @__PURE__ */ tt(M5, [["__scopeId", "data-v-fbffe1e8"]]), z5 = { class: "flex flex-col gap-6" }, N5 = { class: "grid grid-cols-1 md:grid-cols-2 gap-4" }, V5 = { class: "flex flex-col gap-2" }, j5 = { class: "flex items-center" }, U5 = {
   key: 0,
   class: "text-red-500 mt-1 block"
 }, H5 = { class: "flex flex-col gap-2" }, K5 = { class: "flex items-center" }, W5 = {
