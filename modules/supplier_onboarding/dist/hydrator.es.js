@@ -16943,7 +16943,7 @@ const Tx = {
   },
   emits: ["preview"],
   setup(e, { expose: t, emit: n }) {
-    const o = n, i = e, r = Y(!0), a = Y(!0), s = Sa(), l = [
+    const o = n, i = e, r = Y(!1), a = Y(!1), s = Sa(), l = [
       { name: "India", code: "IN" }
     ], u = Y({
       legalBusinessName: "",
@@ -16963,7 +16963,7 @@ const Tx = {
       const g = i.formData.businessInformation.postalCode;
       if (!(!g || g.trim().length !== 6)) {
         try {
-          const b = await ve.get(`http://api.postalpincode.in/pincode/${g.trim()}`);
+          const b = await ve.get(`https://api.postalpincode.in/pincode/${g.trim()}`);
           if (b.data && b.data[0] && b.data[0].Status === "Success" && b.data[0].PostOffice) {
             const C = b.data[0].PostOffice[0];
             i.formData.businessInformation.stateOrProvince = C.State, i.formData.businessInformation.city = C.District || C.Block || C.Name, r.value = !0, a.value = !0, u.value.stateOrProvince = "", u.value.city = "";
@@ -16972,7 +16972,7 @@ const Tx = {
         } catch {
         }
         try {
-          const C = `http://api.geonames.org/postalCodeSearchJSON?formatted=true&postalcode=${g}&maxRows=1&username=aditya&style=full`, $ = await ve.get(C);
+          const C = `https://api.geonames.org/postalCodeSearchJSON?formatted=true&postalcode=${g}&maxRows=1&username=aditya&style=full`, $ = await ve.get(C);
           if ($.data && $.data.postalCodes && $.data.postalCodes.length > 0) {
             const M = $.data.postalCodes[0];
             i.formData.businessInformation.stateOrProvince = M.adminName1, i.formData.businessInformation.city = M.adminName2 || M.placeName, r.value = !0, a.value = !0, u.value.stateOrProvince = "", u.value.city = "";
@@ -17544,7 +17544,7 @@ const Tx = {
       ])
     ]));
   }
-}), R5 = /* @__PURE__ */ tt(M5, [["__scopeId", "data-v-8b619848"]]), z5 = { class: "flex flex-col gap-6" }, N5 = { class: "grid grid-cols-1 md:grid-cols-2 gap-4" }, V5 = { class: "flex flex-col gap-2" }, j5 = { class: "flex items-center" }, U5 = {
+}), R5 = /* @__PURE__ */ tt(M5, [["__scopeId", "data-v-c03e8153"]]), z5 = { class: "flex flex-col gap-6" }, N5 = { class: "grid grid-cols-1 md:grid-cols-2 gap-4" }, V5 = { class: "flex flex-col gap-2" }, j5 = { class: "flex items-center" }, U5 = {
   key: 0,
   class: "text-red-500 mt-1 block"
 }, H5 = { class: "flex flex-col gap-2" }, K5 = { class: "flex items-center" }, W5 = {
