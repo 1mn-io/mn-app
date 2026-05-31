@@ -1,0 +1,46 @@
+{
+    "config": {
+        "lazy_lib": {
+            "renderer_src": "https://1mn-io.github.io/mn-app/modules/{*}/dist/renderer.es.js",
+            "hydrator_src": "https://1mn-io.github.io/mn-app/modules/{*}/dist/hydrator.es.js",
+            "editor_src": "https://1mn-io.github.io/mn-app/modules/{*}/dist/editor.es.js",
+            "custom_src": "https://1mn-io.github.io/mn-app/modules/{*}/dist/custom.es.js"
+        }
+    },
+    "data": {
+        "l": [
+            {
+                "id": "hc7c-supplier_brand_upsert",
+                "type": "supplier_brand_upsert",
+                "slug": "supplier_brand_upsert",
+                "data": {
+                    "data": "",
+                    "mode": "dev",
+                    "api": {
+                        "a": {
+                            "url": "https://fastapi.dryutil.1mn.io/client/api/i/ona/pdt_supplier_data",
+                            "headers": {
+                                "Authorization": "{localStorage.token}"
+                            }
+                        },
+                        "upload": {
+                            "url": "https://fastapi.dryutil.1mn.io/client/api/i/ona/file_store?typ=upload",
+                            "headers": {
+                                "Authorization": "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImYwZTNlMDRiLTVkNDAtNDg1ZS05OGU4LWEzOTI3NWU3MzM0OCIsInNlY3VyaXR5Ijp7InBhcnR5IjpbInBhcnR5XzEiLCJwYXJ0eV8yIl19LCJzdWIiOiJmMGUzZTA0Yi01ZDQwLTQ4NWUtOThlOC1hMzkyNzVlNzMzNDgiLCJpYXQiOjE3NjU4MTI4Mjh9.OoClnPtlxI71L-e555nbNSmenmGufxewp78SlmdZCNxeuauXao5RRvqwOKQ77SJFqJXk0ng6GZ7VOgYECdEf-3k1UGX7w1NE_D5A6SP3UkVsSG8orYACFuvTyesbFwkpnEhdu0PBd6n8wuLkgU6nZ1bLDzKVg1zd8fFeJrwmUqk"
+                            }
+                        },
+                        "sysData": {
+                            "url": "https://fastapi.dryutil.1mn.io/client/api/i/ona/pdt_sys_data",
+                            "headers": {
+                                "Authorization": "{localStorage.token}"
+                            }
+                        }
+                    },
+                    "var": {
+                        "user_id": "usr123"
+                    }
+                }
+            }
+        ]
+    }
+}
