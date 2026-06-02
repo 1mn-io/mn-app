@@ -1,0 +1,43 @@
+{
+    "config": {
+        "lazy_lib": {
+            "renderer_src": "https://1mn-io.github.io/mn-app/modules/{*}/dist/renderer.es.js",
+            "hydrator_src": "https://1mn-io.github.io/mn-app/modules/{*}/dist/hydrator.es.js",
+            "editor_src": "https://1mn-io.github.io/mn-app/modules/{*}/dist/editor.es.js",
+            "custom_src": "https://1mn-io.github.io/mn-app/modules/{*}/dist/custom.es.js"
+        }
+    },
+    "data": {
+        "l": [
+            {
+                "id": "hgd78c-supplier_pdt_frag",
+                "type": "supplier_pdt_frag",
+                "slug": "supplier_pdt_frag",
+                "data": {
+                    "data": "Hello world! ",
+                    "api": {
+                        "list": {
+                            "url": "https://fastapi.dryutil.1mn.io/client/api/i/ona/supplier_pdt?action=list_product",
+                            "headers": {
+                                "accept": "application/json",
+                                "Content-Type": "application/json",
+                                "Authorization": "{localStorage.token}"
+                            }
+                        },
+                        "delete": {
+                            "url": "https://fastapi.dryutil.1mn.io/client/api/i/ona/supplier_pdt?action=delete_product",
+                            "headers": {
+                                "accept": "application/json",
+                                "Content-Type": "application/json",
+                                "Authorization": "{localStorage.token}"
+                            }
+                        }
+                    },
+                    "var": {
+                        "user_id": "usr123"
+                    }
+                }
+            }
+        ]
+    }
+}
