@@ -40,7 +40,11 @@ let _data = {
           }
         },
         var: {
-          user_id: 'usr123'
+          user_id: 'usr123',
+        },
+        show: {
+          pdt_img:false,
+          variant_btn:false,
         }
       },
     }

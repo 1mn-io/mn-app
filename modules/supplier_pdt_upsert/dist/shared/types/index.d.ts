@@ -48,6 +48,7 @@ type _pp_TYP = {
                 "mode": string;
                 "api": any;
                 "var": any;
+                "show": any;
             };
         };
     };
