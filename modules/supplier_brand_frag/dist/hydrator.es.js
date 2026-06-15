@@ -1,4 +1,5 @@
 const { renderSlot: P, openBlock: h, createBlock: C, Teleport: Sl, createCommentVNode: $, ref: de, readonly: xl, getCurrentInstance: fr, onMounted: Mi, nextTick: In, watch: gt, useId: $l, mergeProps: m, createElementBlock: g, createElementVNode: y, resolveDirective: Le, resolveDynamicComponent: L, Fragment: z, toDisplayString: re, normalizeProps: un, withDirectives: ye, resolveComponent: O, withCtx: B, createVNode: V, TransitionGroup: Pl, renderList: pe, inject: Il, createTextVNode: Ve, normalizeClass: _, Transition: Dn, createSlots: kt, withModifiers: zn, normalizeStyle: Rl, toHandlers: gn, withKeys: Rn, computed: Ol, defineComponent: Di, onUnmounted: Tl, unref: ce, reactive: Bl, createApp: El } = window.Vue;
+import "primeicons/primeicons.css";
 function he(...t) {
   if (t) {
     let e = [];
@@ -20773,15 +20774,14 @@ const l0 = { class: "min-h-screen bg-surface-0 dark:bg-surface-900 transition-co
                         ye(V(ce(Te), {
                           loading: t.ceModules.supplier_brand_upsert.is_loading,
                           icon: "pi pi-pencil",
-                          severity: "warn",
-                          text: "",
-                          rounded: "",
+                          severity: "warning",
                           size: "small",
+                          rounded: "",
                           onClick: ($e) => A(Y)
                         }, null, 8, ["loading", "onClick"]), [
                           [
                             J,
-                            "Edit Brand",
+                            "Edit",
                             void 0,
                             { top: !0 }
                           ]
@@ -20789,14 +20789,13 @@ const l0 = { class: "min-h-screen bg-surface-0 dark:bg-surface-900 transition-co
                         ye(V(ce(Te), {
                           icon: "pi pi-trash",
                           severity: "danger",
-                          text: "",
-                          rounded: "",
                           size: "small",
+                          rounded: "",
                           onClick: ($e) => ue(Y)
                         }, null, 8, ["onClick"]), [
                           [
                             J,
-                            "Delete Brand",
+                            "Delete",
                             void 0,
                             { top: !0 }
                           ]
@@ -20867,7 +20866,7 @@ const l0 = { class: "min-h-screen bg-surface-0 dark:bg-surface-900 transition-co
   for (const [o, i] of e)
     n[o] = i;
   return n;
-}, A0 = /* @__PURE__ */ L0(E0, [["__scopeId", "data-v-978a209e"]]), M0 = { class: "min-h-screen bg-surface-0 dark:bg-surface-900 transition-colors duration-300" }, D0 = ["id"], z0 = /* @__PURE__ */ Di({
+}, A0 = /* @__PURE__ */ L0(E0, [["__scopeId", "data-v-7548f121"]]), M0 = { class: "min-h-screen bg-surface-0 dark:bg-surface-900 transition-colors duration-300" }, D0 = ["id"], z0 = /* @__PURE__ */ Di({
   __name: "index",
   props: {
     _p: {},
@@ -21401,7 +21400,7 @@ var c4 = Ai(Ai({}, S1), {}, {
     e.config.globalProperties.$toast = n, e.provide(ca, n);
   }
 };
-const h4 = async (t) => ({
+const m4 = async (t) => ({
   set: async (e) => {
     console.log(`--hydrator [${e.data.curr.type}]`);
     const o = El(z0, {
@@ -21435,6 +21434,6 @@ const h4 = async (t) => ({
   }
 });
 export {
-  h4 as hydrator,
-  h4 as index
+  m4 as hydrator,
+  m4 as index
 };
