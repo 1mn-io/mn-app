@@ -21032,6 +21032,10 @@ const y0 = { class: "space-y-6" }, v0 = { class: "!flex !flex-col sm:!flex-row !
                   },
                   var: {
                     user_id: "usr123"
+                  },
+                  show: {
+                    pdt_img: !1,
+                    variant_btn: !1
                   }
                 }
               }
