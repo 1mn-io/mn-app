@@ -17,13 +17,13 @@
                     "data": "",
                     "api": {
                         "listBrand": {
-                            "url": "https://fastapi.dryutil.1mn.io/client/api/i/ona/public:pdt_supplier_data?typ=list_brand",
+                            "url": "https://fastapi.dryutil.1mn.io/client-public/api/i/ona/public:pdt_supplier_data?typ=list_brand",
                             "headers": {
                                 "Authorization": "{localStorage.token}"
                             }
                         },
                         "deleteBrand": {
-                            "url": "https://fastapi.dryutil.1mn.io/client/api/i/ona/public:pdt_supplier_data?typ=delete_brand",
+                            "url": "https://fastapi.dryutil.1mn.io/client-public/api/i/ona/public:pdt_supplier_data?typ=delete_brand",
                             "headers": {
                                 "Authorization": "{localStorage.token}"
                             }
