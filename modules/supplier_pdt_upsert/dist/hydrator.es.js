@@ -27651,7 +27651,7 @@ const lw = {
         l.value = !0;
         try {
           if (await Zo(), n.productId) {
-            const w = await (await fetch(`${O.api.a.url}/supplier_pdt?action=get_product`, {
+            const w = await (await fetch(`${O.api.a.url}/public:supplier_pdt?action=get_product`, {
               method: "POST",
               headers: {
                 "Content-Type": "application/json",
@@ -27674,7 +27674,7 @@ const lw = {
               ed();
             }
           } else {
-            const w = await (await fetch(`${O.api.a.url}/supplier_pdt?action=init_product`, {
+            const w = await (await fetch(`${O.api.a.url}/public:supplier_pdt?action=init_product`, {
               method: "POST",
               headers: {
                 "Content-Type": "application/json",
@@ -27686,7 +27686,7 @@ const lw = {
             })).json();
             if (w.success) {
               T.value = { ...w.data.product }, o("saved", w.data.product_id), n.productId = w.data.product_id;
-              const _ = await (await fetch(`${O.api.a.url}/supplier_pdt?action=get_product`, {
+              const _ = await (await fetch(`${O.api.a.url}/public:supplier_pdt?action=get_product`, {
                 method: "POST",
                 headers: {
                   "Content-Type": "application/json",
@@ -27709,7 +27709,7 @@ const lw = {
       }
     }, Zo = async () => {
       try {
-        const w = await (await fetch(`${O.api.a.url}/pdt_supplier_data?typ=list_brand`, {
+        const w = await (await fetch(`${O.api.a.url}/public:pdt_supplier_data?typ=list_brand`, {
           method: "POST",
           headers: {
             "Content-Type": "application/json",
@@ -27904,7 +27904,7 @@ const lw = {
             return: "dataset"
           };
           Array.isArray(j.data.category) || (j.data.category = []);
-          const ge = await (await fetch(`${O.api.a.url}/supplier_pdt?action=update_product`, {
+          const ge = await (await fetch(`${O.api.a.url}/public:supplier_pdt?action=update_product`, {
             method: "POST",
             headers: {
               "Content-Type": "application/json",
@@ -28950,7 +28950,7 @@ const lw = {
   for (const [o, i] of e)
     n[o] = i;
   return n;
-}, B2 = /* @__PURE__ */ R2(T2, [["__scopeId", "data-v-1337aac9"]]), L2 = { class: "min-h-screen bg-surface-50 dark:bg-surface-950 transition-colors duration-300" }, D2 = { class: "container mx-auto p-4" }, A2 = {
+}, B2 = /* @__PURE__ */ R2(T2, [["__scopeId", "data-v-4238307f"]]), L2 = { class: "min-h-screen bg-surface-50 dark:bg-surface-950 transition-colors duration-300" }, D2 = { class: "container mx-auto p-4" }, A2 = {
   key: 0,
   class: "flex justify-between items-center mb-6"
 }, E2 = { class: "flex gap-2" }, M2 = /* @__PURE__ */ wl({

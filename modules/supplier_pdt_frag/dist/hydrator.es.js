@@ -21018,7 +21018,7 @@ const y0 = { class: "space-y-6" }, v0 = { class: "!flex !flex-col sm:!flex-row !
                   mode: "prod",
                   api: {
                     a: {
-                      url: "https://fastapi.dryutil.1mn.io/client/api/i/ona",
+                      url: "https://fastapi.dryutil.1mn.io/client-public/api/i/ona",
                       headers: {
                         Authorization: "{localStorage.token}"
                       }
