@@ -24432,8 +24432,8 @@ const Hv = { class: "flex flex-col gap-8 h-full p-4" }, Vv = { class: "grid grid
           method: "POST",
           headers: {
             "Content-Type": "application/json",
-            Accept: "application/json",
-            Authorization: i.api.sysData.headers.Authorization
+            Accept: "application/json"
+            //Authorization: _data.api.sysData.headers.Authorization,
           },
           body: JSON.stringify({ selected_keys: T })
         });
@@ -24942,7 +24942,7 @@ const Hv = { class: "flex flex-col gap-8 h-full p-4" }, Vv = { class: "grid grid
   for (const [o, i] of e)
     n[o] = i;
   return n;
-}, f1 = /* @__PURE__ */ p1(c1, [["__scopeId", "data-v-a5b2f331"]]), h1 = { class: "p-4" }, g1 = {
+}, f1 = /* @__PURE__ */ p1(c1, [["__scopeId", "data-v-a61b538c"]]), h1 = { class: "p-4" }, g1 = {
   key: 0,
   class: "flex gap-2"
 }, m1 = /* @__PURE__ */ Wa({
