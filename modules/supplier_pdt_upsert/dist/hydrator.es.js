@@ -27386,7 +27386,7 @@ const lw = {
   class: "flex justify-center items-center h-full"
 }, sw = {
   key: 1,
-  class: "flex flex-col gap-6 h-full overflow-y-auto p-6"
+  class: "flex flex-col gap-6 h-full p-6"
 }, dw = {
   key: 0,
   class: "field"
@@ -27945,10 +27945,27 @@ const lw = {
         draggable: !1,
         maximizable: !1,
         pt: {
-          root: { class: "!m-0 !rounded-none" },
-          header: { class: "!rounded-none" },
-          content: { class: "!rounded-none" }
+          root: {
+            class: "!m-0 !rounded-none !overflow-hidden",
+            style: "overflow: hidden !important; max-height: 100vh !important;"
+          },
+          header: {
+            class: "!rounded-none !flex-shrink-0",
+            style: "flex-shrink: 0;"
+          },
+          content: {
+            class: "!rounded-none !overflow-hidden",
+            style: "overflow: hidden !important; height: calc(100vh - 120px) !important; max-height: calc(100vh - 120px) !important;"
+          },
+          mask: {
+            style: "overflow: hidden !important;"
+          }
         }
+        /*{
+          root: { class: '!m-0 !rounded-none' },
+          header: { class: '!rounded-none' },
+          content: { class: '!rounded-none' }
+        }*/
       }, {
         footer: $(() => [
           b("div", O2, [
@@ -28950,7 +28967,7 @@ const lw = {
   for (const [o, i] of e)
     n[o] = i;
   return n;
-}, B2 = /* @__PURE__ */ R2(T2, [["__scopeId", "data-v-4238307f"]]), L2 = { class: "min-h-screen bg-surface-50 dark:bg-surface-950 transition-colors duration-300" }, D2 = { class: "container mx-auto p-4" }, A2 = {
+}, B2 = /* @__PURE__ */ R2(T2, [["__scopeId", "data-v-dd7adb31"]]), L2 = { class: "min-h-screen bg-surface-50 dark:bg-surface-950 transition-colors duration-300" }, D2 = { class: "container mx-auto p-4" }, A2 = {
   key: 0,
   class: "flex justify-between items-center mb-6"
 }, E2 = { class: "flex gap-2" }, M2 = /* @__PURE__ */ wl({
