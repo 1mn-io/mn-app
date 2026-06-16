@@ -20888,7 +20888,7 @@ const l0 = { class: "min-h-screen bg-surface-0 dark:bg-surface-900 transition-co
                   mode: "prod",
                   api: {
                     a: {
-                      url: "https://fastapi.dryutil.1mn.io/client/api/i/ona/pdt_supplier_data",
+                      url: "https://fastapi.dryutil.1mn.io/client-public/api/i/ona/public:pdt_supplier_data",
                       headers: {
                         Authorization: "{localStorage.token}"
                       }
