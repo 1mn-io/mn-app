@@ -27947,7 +27947,13 @@ const lw = {
         pt: {
           root: { class: "!m-0 !rounded-none" },
           header: { class: "!rounded-none" },
-          content: { class: "!rounded-none" }
+          content: { class: "!rounded-none" },
+          mask: {
+            style: {
+              height: "90vh !important",
+              maxHeight: "90vh !important"
+            }
+          }
         }
       }, {
         footer: $(() => [
@@ -28950,7 +28956,7 @@ const lw = {
   for (const [o, i] of e)
     n[o] = i;
   return n;
-}, B2 = /* @__PURE__ */ R2(T2, [["__scopeId", "data-v-79510d73"]]), L2 = { class: "min-h-screen bg-surface-50 dark:bg-surface-950 transition-colors duration-300" }, D2 = { class: "container mx-auto p-4" }, A2 = {
+}, B2 = /* @__PURE__ */ R2(T2, [["__scopeId", "data-v-52d01f15"]]), L2 = { class: "min-h-screen bg-surface-50 dark:bg-surface-950 transition-colors duration-300" }, D2 = { class: "container mx-auto p-4" }, A2 = {
   key: 0,
   class: "flex justify-between items-center mb-6"
 }, E2 = { class: "flex gap-2" }, M2 = /* @__PURE__ */ wl({
