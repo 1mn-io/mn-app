@@ -27950,6 +27950,31 @@ const lw = {
           content: { class: "!rounded-none" }
         }
       }, {
+        footer: $(() => [
+          b("div", O2, [
+            b("div", $2, [
+              b("i", {
+                class: z([s.value === "saving" ? "pi pi-spin pi-spinner text-yellow-500" : s.value === "saved" ? "pi pi-check-circle text-green-500" : "pi pi-circle text-surface-300", "text-lg"])
+              }, null, 2),
+              b("span", {
+                class: z(["text-sm", od()])
+              }, F(s.value === "saving" ? "Saving..." : s.value === "saved" ? "All changes saved" : "Draft"), 3)
+            ]),
+            b("div", I2, [
+              A(Ee, {
+                label: "Save & Close",
+                icon: "pi pi-save",
+                onClick: nd,
+                loading: s.value === "saving"
+              }, null, 8, ["loading"]),
+              A(Ee, {
+                label: "Close",
+                severity: "secondary",
+                onClick: ar
+              })
+            ])
+          ])
+        ]),
         default: $(() => [
           l.value ? (u(), g("div", lw, [
             A(j)
@@ -28897,30 +28922,7 @@ const lw = {
                 ])
               ]),
               _: 1
-            }),
-            b("div", O2, [
-              b("div", $2, [
-                b("i", {
-                  class: z([s.value === "saving" ? "pi pi-spin pi-spinner text-yellow-500" : s.value === "saved" ? "pi pi-check-circle text-green-500" : "pi pi-circle text-surface-300", "text-lg"])
-                }, null, 2),
-                b("span", {
-                  class: z(["text-sm", od()])
-                }, F(s.value === "saving" ? "Saving..." : s.value === "saved" ? "All changes saved" : "Draft"), 3)
-              ]),
-              b("div", I2, [
-                A(Ee, {
-                  label: "Save & Close",
-                  icon: "pi pi-save",
-                  onClick: nd,
-                  loading: s.value === "saving"
-                }, null, 8, ["loading"]),
-                A(Ee, {
-                  label: "Close",
-                  severity: "secondary",
-                  onClick: ar
-                })
-              ])
-            ])
+            })
           ])),
           A(Ri, {
             visible: h.value,
@@ -28948,7 +28950,7 @@ const lw = {
   for (const [o, i] of e)
     n[o] = i;
   return n;
-}, B2 = /* @__PURE__ */ R2(T2, [["__scopeId", "data-v-6c89d9ce"]]), L2 = { class: "min-h-screen bg-surface-50 dark:bg-surface-950 transition-colors duration-300" }, D2 = { class: "container mx-auto p-4" }, A2 = {
+}, B2 = /* @__PURE__ */ R2(T2, [["__scopeId", "data-v-79510d73"]]), L2 = { class: "min-h-screen bg-surface-50 dark:bg-surface-950 transition-colors duration-300" }, D2 = { class: "container mx-auto p-4" }, A2 = {
   key: 0,
   class: "flex justify-between items-center mb-6"
 }, E2 = { class: "flex gap-2" }, M2 = /* @__PURE__ */ wl({
