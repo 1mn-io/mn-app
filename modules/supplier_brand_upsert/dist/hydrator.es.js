@@ -24966,8 +24966,8 @@ const Hv = { class: "flex flex-col gap-8 h-full p-4" }, _v = { class: "grid grid
       const s = t._p.custom.fn.ce_call;
       (async () => await s("msg", {
         type: "close",
-        _p: {},
-        _pp: {},
+        _p: t._p,
+        _pp: t._pp,
         custom: {
           data: {
             //id:brand.id,
