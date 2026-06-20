@@ -21065,7 +21065,7 @@ const y0 = { class: "space-y-6" }, v0 = { class: "!flex !flex-col sm:!flex-row !
         type: "reload",
         _p: t._p,
         _pp: t._pp
-      }), e.value.pdtUpsert = !1, e.value.pdtFrag = !0);
+      }), e.value.pdtUpsert = !1, e.value.pdtFrag = !0, location.href = `${location.href}`);
     }))();
     const i = () => {
       o.value = !o.value, localStorage.setItem("darkMode", String(o.value));
