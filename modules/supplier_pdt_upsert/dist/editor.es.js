@@ -1,5 +1,5 @@
-import { hydrator as y } from "./hydrator.es.js";
-import { index as u } from "./renderer.es.js";
+import { hydrator as u } from "./hydrator.es.js";
+import { index as y } from "./renderer.es.js";
 const f = async () => ({
   f: {
     name: (t) => `${t.name}${t.id}`
@@ -7,30 +7,32 @@ const f = async () => ({
 }), h = async (t) => {
   const r = await f();
   return {
-    set: async (o) => {
+    set: async (c) => {
       const d = {
         r: ""
         //style: ``,
-      }, n = o.data.curr || {
+      }, n = c.data.curr || {
         id: t.f.uuid(),
         type: "text",
         data: {
           data: ""
           //Text
         }
-      }, c = await u({
+      }, i = await y({
         my: {},
+        custom: {},
         f: {
           ...t.f,
           name: (e) => r.f.name({ id: n.id, name: e })
         }
-      }), m = await y({
+      }), m = await u({
         my: {},
+        custom: {},
         f: {
           ...t.f,
           name: (e) => r.f.name({ id: n.id, name: e })
         }
-      }), s = await c.set({
+      }), s = await i.set({
         data: {
           curr: n
         }
@@ -42,8 +44,8 @@ const f = async () => ({
           }
         });
         ((a) => {
-          const i = document.createElement("style");
-          i.innerHTML = `${e.style}`, a.appendChild(i);
+          const o = document.createElement("style");
+          o.innerHTML = `${e.style}`, a.appendChild(o);
         })(document.head);
       }, 200), d.r = s.r, ((e) => {
         const a = document.createElement("style");
