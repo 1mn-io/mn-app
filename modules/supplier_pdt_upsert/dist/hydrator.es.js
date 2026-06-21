@@ -28342,8 +28342,7 @@ const uw = {
                 _: 1
               }, 8, ["modelValue", "options"])
             ]),
-            O.show.pdt_img ? (u(), k(Co, {
-              key: 2,
+            D(Co, {
               legend: "Product Images",
               toggleable: !0
             }, {
@@ -28448,7 +28447,7 @@ const uw = {
                 }, null, 544)
               ]),
               _: 1
-            })) : C("", !0),
+            }),
             D(Co, {
               legend: "Variants",
               toggleable: !0
@@ -28995,7 +28994,7 @@ const uw = {
   for (const [o, i] of e)
     n[o] = i;
   return n;
-}, A2 = /* @__PURE__ */ D2(L2, [["__scopeId", "data-v-6a80fc27"]]), E2 = { class: "min-h-screen bg-surface-50 dark:bg-surface-950 transition-colors duration-300" }, M2 = { class: "container mx-auto p-4" }, z2 = {
+}, A2 = /* @__PURE__ */ D2(L2, [["__scopeId", "data-v-4ecfa129"]]), E2 = { class: "min-h-screen bg-surface-50 dark:bg-surface-950 transition-colors duration-300" }, M2 = { class: "container mx-auto p-4" }, z2 = {
   key: 0,
   class: "flex justify-between items-center mb-6"
 }, F2 = { class: "flex gap-2" }, j2 = /* @__PURE__ */ kl({
