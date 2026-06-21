@@ -28105,7 +28105,7 @@ const uw = {
                 onChange: or,
                 filter: !0,
                 filterPlaceholder: "Search categories...",
-                disabled: s.value != "saved",
+                disabled: s.value == "saving",
                 placeholder: "Select category"
               }, null, 8, ["modelValue", "options", "disabled"]),
               Ye.value ? (u(), g("div", $w, [
@@ -28994,7 +28994,7 @@ const uw = {
   for (const [o, i] of e)
     n[o] = i;
   return n;
-}, A2 = /* @__PURE__ */ D2(L2, [["__scopeId", "data-v-4ecfa129"]]), E2 = { class: "min-h-screen bg-surface-50 dark:bg-surface-950 transition-colors duration-300" }, M2 = { class: "container mx-auto p-4" }, z2 = {
+}, A2 = /* @__PURE__ */ D2(L2, [["__scopeId", "data-v-499117db"]]), E2 = { class: "min-h-screen bg-surface-50 dark:bg-surface-950 transition-colors duration-300" }, M2 = { class: "container mx-auto p-4" }, z2 = {
   key: 0,
   class: "flex justify-between items-center mb-6"
 }, F2 = { class: "flex gap-2" }, j2 = /* @__PURE__ */ kl({
