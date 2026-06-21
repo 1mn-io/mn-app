@@ -20874,7 +20874,7 @@ const l0 = { class: "min-h-screen bg-surface-0 dark:bg-surface-900 transition-co
   return n;
 }, A0 = /* @__PURE__ */ L0(E0, [["__scopeId", "data-v-c1b9ed72"]]), M0 = {
   key: 0,
-  class: "min-h-screen bg-surface-0 dark:bg-surface-900 transition-colors duration-300 overflow-y-auto",
+  class: "min-h-screen bg-surface-0 dark:bg-surface-900 transition-colors duration-300 overflow-y-auto pb-15",
   style: { "max-height": "100vh" }
 }, D0 = ["id"], z0 = /* @__PURE__ */ zi({
   __name: "index",
