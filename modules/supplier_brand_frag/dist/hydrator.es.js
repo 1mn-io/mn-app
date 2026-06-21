@@ -20573,7 +20573,7 @@ const l0 = { class: "min-h-screen bg-surface-0 dark:bg-surface-900 transition-co
               summary: "Success",
               detail: `Brand "${x.value.name}" has been deleted successfully.`,
               life: 3e3
-            }), s.value = s.value.filter((ue) => ue.id !== x.value?.id), b.value--, k.value = !1, x.value = null;
+            }), s.value = s.value.filter((ue) => ue.id !== x.value?.id), b.value--, k.value = !1, x.value = null, (async () => await i())();
           else
             throw new Error("Failed to delete brand");
         } catch (D) {
@@ -20872,7 +20872,7 @@ const l0 = { class: "min-h-screen bg-surface-0 dark:bg-surface-900 transition-co
   for (const [o, i] of e)
     n[o] = i;
   return n;
-}, A0 = /* @__PURE__ */ L0(E0, [["__scopeId", "data-v-c1b9ed72"]]), M0 = {
+}, A0 = /* @__PURE__ */ L0(E0, [["__scopeId", "data-v-3bb7e615"]]), M0 = {
   key: 0,
   class: "min-h-screen bg-surface-0 dark:bg-surface-900 transition-colors duration-300 overflow-y-auto pb-15",
   style: { "max-height": "100vh" }
