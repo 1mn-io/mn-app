@@ -1,0 +1,849 @@
+{
+    "config": {
+        "lazy_lib": {
+            "renderer_src": "https://1mn-io.github.io/mn-app/modules/{*}/dist/renderer.es.js",
+            "hydrator_src": "https://1mn-io.github.io/mn-app/modules/{*}/dist/hydrator.es.js",
+            "editor_src": "https://1mn-io.github.io/mn-app/modules/{*}/dist/editor.es.js",
+            "custom_src": "https://1mn-io.github.io/mn-app/modules/{*}/dist/custom.es.js"
+        }
+    },
+    "data": {
+        "l": [
+            {
+                "id": "68chg-supplier_pdt_details",
+                "type": "supplier_pdt_details",
+                "slug": "supplier_pdt_details",
+                "data": {
+                    "deliver_to_country_code": "IN",
+                    "lang_code": "en",
+                    "product_list_widget": {
+                        "id": "8c-product_list_widget",
+                        "type": "product_list_widget",
+                        "slug": "product_list_widget",
+                        "data": {
+                            "data": "",
+                            "mode": "prod",
+                            "title": {
+                                "value": "You might also like",
+                                "class": "font-bold text-2xl tracking-tight text-slate-900"
+                            },
+                            "oriantation": "h",
+                            "cart_popup": {
+                                "ce_file": {
+                                    "config": {
+                                        "lazy_lib": {
+                                            "renderer_src": "https://cdn.jsdelivr.net/gh/1mn-io/mn-app@latest/modules/{*}/dist/renderer.es.js",
+                                            "hydrator_src": "https://cdn.jsdelivr.net/gh/1mn-io/mn-app@latest/modules/{*}/dist/hydrator.es.js",
+                                            "editor_src": "https://cdn.jsdelivr.net/gh/1mn-io/mn-app@latest/modules/{*}/dist/editor.es.js"
+                                        }
+                                    },
+                                    "data": {
+                                        "l": [
+                                            {
+                                                "id": "3e1bc78c-cart_popup",
+                                                "type": "cart_popup",
+                                                "slug": "cart_popup",
+                                                "data": {
+                                                    "data": "",
+                                                    "theme": "light",
+                                                    "env": "prod",
+                                                    "api": {
+                                                        "0": {
+                                                            "url": "https://fastapi.dryutil.1mn.io/client-public/api/i/ona/product_dir?typ=view_product"
+                                                        },
+                                                        "1": {
+                                                            "url": "https://fastapi.dryutil.1mn.io/client-public/api/i/ona/order_management"
+                                                        },
+                                                        "token": "Bearer eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoiNmM5MzQxYWItYTE0YS00YTQ0LWE1MGYtYzk2MzBkZGEzYjVkIiwibmFtZSI6IkpvaG4iLCJleHAiOjE3NzQ0MzA2Nzd9.Kafa8ajvZB9n3pyYY5LN15qcpqf1kXeds7fqYriFgz-KiyNP9DlJBscnk6L0pDrDqvc7p4gcAdzNYPmZw8qrbykotNhQtO2ZeZy2u934ovmi-rKjhMPIN3ApxQ2AbaghBPdq0aeRBmI54_kofovLz53E0C35YG1B2J_2UuZVvo0"
+                                                    },
+                                                    "event": {
+                                                        "onClickBuyNow": "/buy-now"
+                                                    }
+                                                }
+                                            }
+                                        ]
+                                    }
+                                }
+                            },
+                            "event": {
+                                "onProductClick": "/product/{slug}"
+                            },
+                            "value": {
+                                "l": [
+                                    {
+                                        "brand": "Lee",
+                                        "category": [
+                                            "Men",
+                                            "Apparel",
+                                            "Ethnic Wear",
+                                            "Kurta Pyjama"
+                                        ],
+                                        "color": [
+                                            "Ash",
+                                            "Amber",
+                                            "Beige"
+                                        ],
+                                        "country": "IN",
+                                        "created_at": 1773506467,
+                                        "custom": "",
+                                        "field_name": [
+                                            "Product Details",
+                                            "MATERIAL & CARE",
+                                            "SIZE & FIT",
+                                            "Available Colors",
+                                            "Available Sizes",
+                                            "Fabrics",
+                                            "Fit",
+                                            "Length",
+                                            "Neck",
+                                            "Occasions",
+                                            "Patterns",
+                                            "Wash Care"
+                                        ],
+                                        "field_value": [
+                                            "<ul><li>Kurta Pyjama for men</li><li>Solid pattern</li><li>Mid Thigh length</li><li>Scoop Neck</li><li>Flannel fabric</li><li>Regular Fit</li></ul>",
+                                            "Flannel<br>Gentle Cycle",
+                                            "Regular Fit<br>The model (height 6') is wearing a size 5XS",
+                                            "Ash, Amber, Beige",
+                                            "XXXL, XL, 5XS, 46",
+                                            "Flannel",
+                                            "Regular Fit",
+                                            "Mid Thigh",
+                                            "Scoop Neck",
+                                            "Haldi",
+                                            "Solid",
+                                            "Gentle Cycle"
+                                        ],
+                                        "hashtags": [
+                                            "#ootd",
+                                            "#fashion",
+                                            "#menswear",
+                                            "#mensfashion",
+                                            "#kurtis",
+                                            "#ethnicwear",
+                                            "#traditionalwear",
+                                            "#solidcolors",
+                                            "#onlineshopping",
+                                            "#newcollection"
+                                        ],
+                                        "id": "Lee__1",
+                                        "is_coupon_allowed": true,
+                                        "is_processed": false,
+                                        "lang": "en",
+                                        "metadata": {
+                                            "url": "https://www.example.com/1fa6206c/",
+                                            "size": [
+                                                {
+                                                    "id": "XXXL",
+                                                    "name": "XXXL",
+                                                    "measurements": [
+                                                        {
+                                                            "name": "Chest",
+                                                            "unit": "Inches",
+                                                            "value": "36"
+                                                        },
+                                                        {
+                                                            "name": "Front Length",
+                                                            "unit": "Inches",
+                                                            "value": "24"
+                                                        },
+                                                        {
+                                                            "name": "Across Shoulder",
+                                                            "unit": "Inches",
+                                                            "value": "16.0"
+                                                        }
+                                                    ]
+                                                },
+                                                {
+                                                    "id": "XL",
+                                                    "name": "XL",
+                                                    "measurements": [
+                                                        {
+                                                            "name": "Chest",
+                                                            "unit": "Inches",
+                                                            "value": "38"
+                                                        },
+                                                        {
+                                                            "name": "Front Length",
+                                                            "unit": "Inches",
+                                                            "value": "25"
+                                                        },
+                                                        {
+                                                            "name": "Across Shoulder",
+                                                            "unit": "Inches",
+                                                            "value": "16.5"
+                                                        }
+                                                    ]
+                                                },
+                                                {
+                                                    "id": "5XS",
+                                                    "name": "5XS",
+                                                    "measurements": [
+                                                        {
+                                                            "name": "Chest",
+                                                            "unit": "Inches",
+                                                            "value": "40"
+                                                        },
+                                                        {
+                                                            "name": "Front Length",
+                                                            "unit": "Inches",
+                                                            "value": "26"
+                                                        },
+                                                        {
+                                                            "name": "Across Shoulder",
+                                                            "unit": "Inches",
+                                                            "value": "17.0"
+                                                        }
+                                                    ]
+                                                },
+                                                {
+                                                    "id": "46",
+                                                    "name": "46",
+                                                    "measurements": [
+                                                        {
+                                                            "name": "Chest",
+                                                            "unit": "Inches",
+                                                            "value": "42"
+                                                        },
+                                                        {
+                                                            "name": "Front Length",
+                                                            "unit": "Inches",
+                                                            "value": "27"
+                                                        },
+                                                        {
+                                                            "name": "Across Shoulder",
+                                                            "unit": "Inches",
+                                                            "value": "17.5"
+                                                        }
+                                                    ]
+                                                }
+                                            ],
+                                            "brand": "Lee",
+                                            "color": [
+                                                {
+                                                    "id": "Ash",
+                                                    "name": "Ash",
+                                                    "image": [
+                                                        {
+                                                            "url": "https://i0.wp.com/www.copycatz.in/wp-content/uploads/2022/03/front-6030900660552-Coffee_Brown_L_Men_Round-766472.jpg?resize=1024%2C1024&ssl=1"
+                                                        }
+                                                    ],
+                                                    "video": []
+                                                },
+                                                {
+                                                    "id": "Amber",
+                                                    "name": "Amber",
+                                                    "image": [
+                                                        {
+                                                            "url": "https://egoss.in/cdn/shop/files/DSC_0000_2.jpg?v=1753877117&width=500"
+                                                        },
+                                                        {
+                                                            "url": "https://assets.adidas.com/images/h_2000,f_auto,q_auto,fl_lossy,c_fill,g_auto/aa0bd45abac541d29ff40b492e15cfa4_9366/Runfalcon_5_Running_Shoes_Black_IH7758_HM1.jpg"
+                                                        }
+                                                    ],
+                                                    "video": []
+                                                },
+                                                {
+                                                    "id": "Beige",
+                                                    "name": "Beige",
+                                                    "image": [
+                                                        {
+                                                            "url": "https://frenchcrown.in/cdn/shop/products/8693-BLK_1.jpg?v=1753095688&width=1200"
+                                                        },
+                                                        {
+                                                            "url": "https://egoss.in/cdn/shop/files/DSC_0000_2.jpg?v=1753877117&width=500"
+                                                        }
+                                                    ],
+                                                    "video": []
+                                                }
+                                            ],
+                                            "field": [
+                                                {
+                                                    "l": [
+                                                        {
+                                                            "name": "Product Details",
+                                                            "value": "<ul><li>Kurta Pyjama for men</li><li>Solid pattern</li><li>Mid Thigh length</li><li>Scoop Neck</li><li>Flannel fabric</li><li>Regular Fit</li></ul>"
+                                                        },
+                                                        {
+                                                            "name": "MATERIAL & CARE",
+                                                            "value": "Flannel<br>Gentle Cycle"
+                                                        },
+                                                        {
+                                                            "name": "SIZE & FIT",
+                                                            "value": "Regular Fit<br>The model (height 6') is wearing a size 5XS"
+                                                        },
+                                                        {
+                                                            "name": "Available Colors",
+                                                            "value": "Ash, Amber, Beige"
+                                                        },
+                                                        {
+                                                            "name": "Available Sizes",
+                                                            "value": "XXXL, XL, 5XS, 46"
+                                                        }
+                                                    ],
+                                                    "typ": "detail"
+                                                },
+                                                {
+                                                    "l": [
+                                                        {
+                                                            "name": "Fabrics",
+                                                            "value": "Flannel"
+                                                        },
+                                                        {
+                                                            "name": "Fit",
+                                                            "value": "Regular Fit"
+                                                        },
+                                                        {
+                                                            "name": "Length",
+                                                            "value": "Mid Thigh"
+                                                        },
+                                                        {
+                                                            "name": "Neck",
+                                                            "value": "Scoop Neck"
+                                                        },
+                                                        {
+                                                            "name": "Occasions",
+                                                            "value": "Haldi"
+                                                        },
+                                                        {
+                                                            "name": "Patterns",
+                                                            "value": "Solid"
+                                                        },
+                                                        {
+                                                            "name": "Wash Care",
+                                                            "value": "Gentle Cycle"
+                                                        }
+                                                    ],
+                                                    "typ": "info"
+                                                }
+                                            ],
+                                            "title": "Lee Woodland Camo Khadi Halter Neck Kurta Pyjama",
+                                            "seller": {
+                                                "name": "LEE LIMITED",
+                                                "packer_info": "Packer",
+                                                "importer_info": "Importer:",
+                                                "country_of_origin": [
+                                                    "India"
+                                                ],
+                                                "manufacturer_info": "Manufacturer:"
+                                            },
+                                            "variant": [
+                                                {
+                                                    "id": "0753b8af-2511-424d-9d15-7a53475b9793",
+                                                    "price": "618",
+                                                    "size_id": "XXXL",
+                                                    "color_id": "Ash",
+                                                    "currency": "INR",
+                                                    "price_mrp": "1536"
+                                                },
+                                                {
+                                                    "id": "db2cd92a-a4e2-4ccb-81f8-e84cec85dcab",
+                                                    "price": "618",
+                                                    "size_id": "XXXL",
+                                                    "color_id": "Amber",
+                                                    "currency": "INR",
+                                                    "price_mrp": "1536"
+                                                },
+                                                {
+                                                    "id": "ff7472b2-86ec-44a2-ad3b-907ce5a9d420",
+                                                    "price": "618",
+                                                    "size_id": "XXXL",
+                                                    "color_id": "Beige",
+                                                    "currency": "INR",
+                                                    "price_mrp": "1536"
+                                                },
+                                                {
+                                                    "id": "8c2d9b1d-11e4-4ea7-b950-a9b65fe0920e",
+                                                    "price": "618",
+                                                    "size_id": "XL",
+                                                    "color_id": "Ash",
+                                                    "currency": "INR",
+                                                    "price_mrp": "1536"
+                                                },
+                                                {
+                                                    "id": "553df4e6-4cea-434b-ab13-b973ff5b60aa",
+                                                    "price": "618",
+                                                    "size_id": "XL",
+                                                    "color_id": "Amber",
+                                                    "currency": "INR",
+                                                    "price_mrp": "1536"
+                                                },
+                                                {
+                                                    "id": "4077df58-2b47-43de-be6c-2023f51b6bb6",
+                                                    "price": "618",
+                                                    "size_id": "XL",
+                                                    "color_id": "Beige",
+                                                    "currency": "INR",
+                                                    "price_mrp": "1536"
+                                                },
+                                                {
+                                                    "id": "10566ae1-c73e-4ab3-ac0d-bc9fec648d14",
+                                                    "price": "618",
+                                                    "size_id": "5XS",
+                                                    "color_id": "Ash",
+                                                    "currency": "INR",
+                                                    "price_mrp": "1536"
+                                                },
+                                                {
+                                                    "id": "7d1e5704-2df1-4a27-814e-3c2cb67da69b",
+                                                    "price": "618",
+                                                    "size_id": "5XS",
+                                                    "color_id": "Amber",
+                                                    "currency": "INR",
+                                                    "price_mrp": "1536"
+                                                },
+                                                {
+                                                    "id": "aa9af2d0-c998-4c9f-84ad-6f92a73698d7",
+                                                    "price": "618",
+                                                    "size_id": "5XS",
+                                                    "color_id": "Beige",
+                                                    "currency": "INR",
+                                                    "price_mrp": "1536"
+                                                },
+                                                {
+                                                    "id": "b37be5bb-31d7-413d-b5e1-8039515f759b",
+                                                    "price": "618",
+                                                    "size_id": "46",
+                                                    "color_id": "Ash",
+                                                    "currency": "INR",
+                                                    "price_mrp": "1536"
+                                                },
+                                                {
+                                                    "id": "b37d971c-247d-49b8-8e8d-13c526654fff",
+                                                    "price": "618",
+                                                    "size_id": "46",
+                                                    "color_id": "Amber",
+                                                    "currency": "INR",
+                                                    "price_mrp": "1536"
+                                                },
+                                                {
+                                                    "id": "eedf29db-df4f-44ee-8373-b09e0b69d4f1",
+                                                    "price": "618",
+                                                    "size_id": "46",
+                                                    "color_id": "Beige",
+                                                    "currency": "INR",
+                                                    "price_mrp": "1536"
+                                                }
+                                            ],
+                                            "category": [
+                                                {
+                                                    "name": "Men"
+                                                },
+                                                {
+                                                    "name": "Apparel"
+                                                },
+                                                {
+                                                    "name": "Ethnic Wear"
+                                                },
+                                                {
+                                                    "name": "Kurta Pyjama"
+                                                }
+                                            ],
+                                            "size_info": {
+                                                "chart": {
+                                                    "url": "https://qikink.com/blog/wp-content/uploads/2023/08/Womens-crop-top-size-chart-qikink-1024x538.webp"
+                                                },
+                                                "representation": {
+                                                    "url": "https://findmeashoe.com/wp-content/uploads/2021/07/footwearsize_casestudy.png"
+                                                }
+                                            },
+                                            "hashtags": [
+                                                "#ootd",
+                                                "#fashion",
+                                                "#menswear",
+                                                "#mensfashion",
+                                                "#kurtis",
+                                                "#ethnicwear",
+                                                "#traditionalwear",
+                                                "#solidcolors",
+                                                "#onlineshopping",
+                                                "#newcollection"
+                                            ],
+                                            "lang": "en",
+                                            "country": "IN"
+                                        },
+                                        "postprocess": false,
+                                        "size": [
+                                            "XXXL",
+                                            "XL",
+                                            "5XS",
+                                            "46"
+                                        ],
+                                        "slug": "lee-lee-woodland-camo-khadi-halter-neck-kurta-pyjama-1fa6206c",
+                                        "title": "Lee Woodland Camo Khadi Halter Neck Kurta Pyjama",
+                                        "url": "https://www.example.com/1fa6206c/",
+                                        "variant_mrp": [
+                                            1536
+                                        ],
+                                        "variant_prices": [
+                                            618
+                                        ],
+                                        "variant_stock_idx": [
+                                            10,
+                                            15,
+                                            5,
+                                            10,
+                                            15,
+                                            5,
+                                            10,
+                                            15,
+                                            5,
+                                            10,
+                                            15,
+                                            5
+                                        ],
+                                        "_relevance_score": 100,
+                                        "_text_match_info": {
+                                            "best_field_score": "0",
+                                            "best_field_weight": 12,
+                                            "fields_matched": 4,
+                                            "num_tokens_dropped": 1,
+                                            "score": "100",
+                                            "tokens_matched": 0,
+                                            "typo_prefix_score": 255
+                                        }
+                                    },
+                                    {
+                                        "brand": "Pepe Jeans",
+                                        "category": [
+                                            "Men",
+                                            "Apparel",
+                                            "Topwear",
+                                            "Sweatshirts"
+                                        ],
+                                        "color": [
+                                            "Maroon",
+                                            "Indigo"
+                                        ],
+                                        "country": "IN",
+                                        "created_at": 1773506467,
+                                        "custom": "",
+                                        "field_name": [
+                                            "Product Details",
+                                            "MATERIAL & CARE",
+                                            "SIZE & FIT",
+                                            "Available Colors",
+                                            "Available Sizes",
+                                            "Fabrics",
+                                            "Fit",
+                                            "Length",
+                                            "Neck",
+                                            "Occasions",
+                                            "Patterns",
+                                            "Wash Care"
+                                        ],
+                                        "field_value": [
+                                            "<ul><li>Sweatshirts for men</li><li>Botanical pattern</li><li>Three Quarter Length length</li><li>Roll Neck</li><li>Nylon fabric</li><li>Tailored Fit</li></ul>",
+                                            "Nylon<br>Cold Wash",
+                                            "Tailored Fit<br>The model (height 5'10\") is wearing a size UK 8",
+                                            "Maroon, Indigo",
+                                            "UK 8, L",
+                                            "Nylon",
+                                            "Tailored Fit",
+                                            "Three Quarter Length",
+                                            "Roll Neck",
+                                            "Corporate Event",
+                                            "Botanical",
+                                            "Cold Wash"
+                                        ],
+                                        "hashtags": [
+                                            "#fashion",
+                                            "#style",
+                                            "#menstyle",
+                                            "#menswear",
+                                            "#tshirt",
+                                            "#stylegoals",
+                                            "#newcollection"
+                                        ],
+                                        "id": "Pepe Jeans__0",
+                                        "is_coupon_allowed": true,
+                                        "is_processed": false,
+                                        "lang": "en",
+                                        "metadata": {
+                                            "url": "https://www.example.com/29e71ca9/",
+                                            "size": [
+                                                {
+                                                    "id": "UK 8",
+                                                    "name": "UK 8",
+                                                    "measurements": [
+                                                        {
+                                                            "name": "Chest",
+                                                            "unit": "Inches",
+                                                            "value": "36"
+                                                        },
+                                                        {
+                                                            "name": "Front Length",
+                                                            "unit": "Inches",
+                                                            "value": "24"
+                                                        },
+                                                        {
+                                                            "name": "Across Shoulder",
+                                                            "unit": "Inches",
+                                                            "value": "16.0"
+                                                        }
+                                                    ]
+                                                },
+                                                {
+                                                    "id": "L",
+                                                    "name": "L",
+                                                    "measurements": [
+                                                        {
+                                                            "name": "Chest",
+                                                            "unit": "Inches",
+                                                            "value": "38"
+                                                        },
+                                                        {
+                                                            "name": "Front Length",
+                                                            "unit": "Inches",
+                                                            "value": "25"
+                                                        },
+                                                        {
+                                                            "name": "Across Shoulder",
+                                                            "unit": "Inches",
+                                                            "value": "16.5"
+                                                        }
+                                                    ]
+                                                }
+                                            ],
+                                            "brand": "Pepe Jeans",
+                                            "color": [
+                                                {
+                                                    "id": "Maroon",
+                                                    "name": "Maroon",
+                                                    "image": [
+                                                        {
+                                                            "url": "https://egoss.in/cdn/shop/files/DSC_0000_2.jpg?v=1753877117&width=500"
+                                                        }
+                                                    ],
+                                                    "video": []
+                                                },
+                                                {
+                                                    "id": "Indigo",
+                                                    "name": "Indigo",
+                                                    "image": [
+                                                        {
+                                                            "url": "https://frenchcrown.in/cdn/shop/files/2871CP-BLK_2_1e6b748f-0d8d-4d00-b590-c03480650f95.jpg?v=1740133910&width=500"
+                                                        },
+                                                        {
+                                                            "url": "https://assets.adidas.com/images/h_2000,f_auto,q_auto,fl_lossy,c_fill,g_auto/aa0bd45abac541d29ff40b492e15cfa4_9366/Runfalcon_5_Running_Shoes_Black_IH7758_HM1.jpg"
+                                                        }
+                                                    ],
+                                                    "video": []
+                                                }
+                                            ],
+                                            "field": [
+                                                {
+                                                    "l": [
+                                                        {
+                                                            "name": "Product Details",
+                                                            "value": "<ul><li>Sweatshirts for men</li><li>Botanical pattern</li><li>Three Quarter Length length</li><li>Roll Neck</li><li>Nylon fabric</li><li>Tailored Fit</li></ul>"
+                                                        },
+                                                        {
+                                                            "name": "MATERIAL & CARE",
+                                                            "value": "Nylon<br>Cold Wash"
+                                                        },
+                                                        {
+                                                            "name": "SIZE & FIT",
+                                                            "value": "Tailored Fit<br>The model (height 5'10\") is wearing a size UK 8"
+                                                        },
+                                                        {
+                                                            "name": "Available Colors",
+                                                            "value": "Maroon, Indigo"
+                                                        },
+                                                        {
+                                                            "name": "Available Sizes",
+                                                            "value": "UK 8, L"
+                                                        }
+                                                    ],
+                                                    "typ": "detail"
+                                                },
+                                                {
+                                                    "l": [
+                                                        {
+                                                            "name": "Fabrics",
+                                                            "value": "Nylon"
+                                                        },
+                                                        {
+                                                            "name": "Fit",
+                                                            "value": "Tailored Fit"
+                                                        },
+                                                        {
+                                                            "name": "Length",
+                                                            "value": "Three Quarter Length"
+                                                        },
+                                                        {
+                                                            "name": "Neck",
+                                                            "value": "Roll Neck"
+                                                        },
+                                                        {
+                                                            "name": "Occasions",
+                                                            "value": "Corporate Event"
+                                                        },
+                                                        {
+                                                            "name": "Patterns",
+                                                            "value": "Botanical"
+                                                        },
+                                                        {
+                                                            "name": "Wash Care",
+                                                            "value": "Cold Wash"
+                                                        }
+                                                    ],
+                                                    "typ": "info"
+                                                }
+                                            ],
+                                            "title": "Pepe Jeans Herringbone Tweed Scalloped Neck Sweatshirts",
+                                            "seller": {
+                                                "name": "PEPE JEANS LIMITED",
+                                                "packer_info": "Packer",
+                                                "importer_info": "Importer:",
+                                                "country_of_origin": [
+                                                    "Vietnam"
+                                                ],
+                                                "manufacturer_info": "Manufacturer:"
+                                            },
+                                            "variant": [
+                                                {
+                                                    "id": "83dcffe7-d05a-4d20-8b58-d5a494157a52",
+                                                    "price": "868",
+                                                    "size_id": "UK 8",
+                                                    "color_id": "Maroon",
+                                                    "currency": "INR",
+                                                    "price_mrp": "2495"
+                                                },
+                                                {
+                                                    "id": "a4383634-7548-463a-ba11-8c0a08a6f5e6",
+                                                    "price": "868",
+                                                    "size_id": "UK 8",
+                                                    "color_id": "Indigo",
+                                                    "currency": "INR",
+                                                    "price_mrp": "2495"
+                                                },
+                                                {
+                                                    "id": "21daf094-5259-4861-8598-fb4c370875e0",
+                                                    "price": "868",
+                                                    "size_id": "L",
+                                                    "color_id": "Maroon",
+                                                    "currency": "INR",
+                                                    "price_mrp": "2495"
+                                                },
+                                                {
+                                                    "id": "a5658563-da52-4184-99bc-a131a6acfa43",
+                                                    "price": "868",
+                                                    "size_id": "L",
+                                                    "color_id": "Indigo",
+                                                    "currency": "INR",
+                                                    "price_mrp": "2495"
+                                                }
+                                            ],
+                                            "category": [
+                                                {
+                                                    "name": "Men"
+                                                },
+                                                {
+                                                    "name": "Apparel"
+                                                },
+                                                {
+                                                    "name": "Topwear"
+                                                },
+                                                {
+                                                    "name": "Sweatshirts"
+                                                }
+                                            ],
+                                            "size_info": {
+                                                "chart": {
+                                                    "url": "https://qikink.com/blog/wp-content/uploads/2023/08/Womens-crop-top-size-chart-qikink-1024x538.webp"
+                                                },
+                                                "representation": {
+                                                    "url": "https://findmeashoe.com/wp-content/uploads/2021/07/footwearsize_casestudy.png"
+                                                }
+                                            },
+                                            "hashtags": [
+                                                "#fashion",
+                                                "#style",
+                                                "#menstyle",
+                                                "#menswear",
+                                                "#tshirt",
+                                                "#stylegoals",
+                                                "#newcollection"
+                                            ],
+                                            "lang": "en",
+                                            "country": "IN"
+                                        },
+                                        "postprocess": false,
+                                        "size": [
+                                            "UK 8",
+                                            "L"
+                                        ],
+                                        "slug": "pepe-jeans-pepe-jeans-herringbone-tweed-scalloped-neck-sweatshirts-29e71ca9",
+                                        "title": "Pepe Jeans Herringbone Tweed Scalloped Neck Sweatshirts",
+                                        "url": "https://www.example.com/29e71ca9/",
+                                        "variant_mrp": [
+                                            2495
+                                        ],
+                                        "variant_prices": [
+                                            868
+                                        ],
+                                        "variant_stock_idx": [
+                                            10,
+                                            15,
+                                            5,
+                                            10
+                                        ],
+                                        "_relevance_score": 100,
+                                        "_text_match_info": {
+                                            "best_field_score": "0",
+                                            "best_field_weight": 12,
+                                            "fields_matched": 4,
+                                            "num_tokens_dropped": 1,
+                                            "score": "100",
+                                            "tokens_matched": 0,
+                                            "typo_prefix_score": 255
+                                        }
+                                    }
+                                ]
+                            },
+                            "map": {},
+                            "api": {
+                                "url": "https://fastapi.dryutil.1mn.io/client-public/api/i/ona/product_dir?typ=get_product_list",
+                                "method": "POST",
+                                "body": {
+                                    "q": "<q>",
+                                    "page": "<page>",
+                                    "per_page": 20
+                                },
+                                "rsp_path": "json.data",
+                                "headers": {
+                                    "Content-Type": "application/json",
+                                    "Authorization": "Bearer eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoiNmM5MzQxYWItYTE0YS00YTQ0LWE1MGYtYzk2MzBkZGEzYjVkIiwibmFtZSI6IkpvaG4iLCJleHAiOjE3NzQ0MzA2Nzd9.Kafa8ajvZB9n3pyYY5LN15qcpqf1kXeds7fqYriFgz-KiyNP9DlJBscnk6L0pDrDqvc7p4gcAdzNYPmZw8qrbykotNhQtO2ZeZy2u934ovmi-rKjhMPIN3ApxQ2AbaghBPdq0aeRBmI54_kofovLz53E0C35YG1B2J_2UuZVvo0"
+                                }
+                            }
+                        }
+                    },
+                    "document": {
+                        "id": "Puma__727",
+                        "title": "Puma Striped Linen Collar Casual",
+                        "brand": "Puma",
+                        "variant_prices": [
+                            921
+                        ],
+                        "variant_mrp": [
+                            1830
+                        ],
+                        "field_value": [
+                            "<ul><li>T-shirt for men</li><li>Typography printed</li></ul>"
+                        ],
+                        "size": [
+                            "XS",
+                            "L",
+                            "XL"
+                        ],
+                        "metadata": "{\"color\":[{\"id\":\"Green\",\"image\":[{\"url\":\"https://via.placeholder.com/400x500\"}]}]}"
+                    },
+                    "event": {
+                        "onClickBuyNow": "/buy-now"
+                    }
+                }
+            }
+        ]
+    }
+}
