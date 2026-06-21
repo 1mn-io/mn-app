@@ -24334,7 +24334,7 @@ const Gv = { class: "flex flex-col gap-8 h-full p-4" }, Wv = { class: "grid grid
 }, s1 = { class: "text-sm" }, d1 = {
   key: 1,
   class: "text-center py-4 text-gray-500"
-}, u1 = { key: 0 }, c1 = { class: "pb-5" }, p1 = { class: "flex justify-between items-center w-full" }, f1 = { class: "flex items-center gap-2" }, h1 = { class: "text-sm text-gray-500" }, g1 = { class: "flex gap-2" }, m1 = /* @__PURE__ */ Wa({
+}, u1 = { key: 0 }, c1 = { class: "pb-0 pt-2" }, p1 = { class: "flex justify-between items-center w-full" }, f1 = { class: "flex items-center gap-2" }, h1 = { class: "text-sm text-gray-500" }, g1 = { class: "flex gap-2" }, m1 = /* @__PURE__ */ Wa({
   __name: "BrandAttributeDialog",
   props: {
     brandId: {},
@@ -24706,8 +24706,68 @@ const Gv = { class: "flex flex-col gap-8 h-full p-4" }, Wv = { class: "grid grid
         closable: !1,
         maximizable: !1,
         header: "Brand & Attribute Management",
-        style: { width: "100vw", height: "100vh", "max-height": "100vh", margin: "0", "border-radius": "0" }
+        style: {
+          width: "100vw",
+          height: "100vh",
+          margin: 0,
+          borderRadius: 0
+        },
+        draggable: !1,
+        pt: {
+          root: {
+            class: "!m-0 !rounded-none",
+            style: {
+              margin: "0 !important",
+              maxHeight: "90vh !important",
+              height: "90vh !important"
+            }
+          },
+          header: {
+            class: "!rounded-none"
+          },
+          content: {
+            class: "!rounded-none"
+          },
+          mask: {
+            style: {
+              height: "90vh !important",
+              maxHeight: "90vh !important"
+            }
+          }
+        }
       }, {
+        footer: B(() => [
+          w("div", c1, [
+            w("div", p1, [
+              w("div", f1, [
+                f.value.themeToggle ? ve((u(), y(me(ze), {
+                  key: 0,
+                  icon: d.value ? "pi pi-sun" : "pi pi-moon",
+                  onClick: Cs,
+                  severity: "secondary",
+                  text: "",
+                  rounded: ""
+                }, null, 8, ["icon"])), [
+                  [z, d.value ? "Switch to light mode" : "Switch to dark mode"]
+                ]) : k("", !0),
+                w("span", h1, q(s.value), 1)
+              ]),
+              w("div", g1, [
+                N(me(ze), {
+                  label: "Cancel",
+                  severity: "secondary",
+                  onClick: Ss,
+                  disabled: l.value
+                }, null, 8, ["disabled"]),
+                N(me(ze), {
+                  label: "Save & Close",
+                  onClick: ks,
+                  loading: l.value
+                }, null, 8, ["loading"])
+              ])
+            ])
+          ])
+        ]),
         default: B(() => [
           w("div", Gv, [
             N(me(co), {
@@ -24919,37 +24979,7 @@ const Gv = { class: "flex flex-col gap-8 h-full p-4" }, Wv = { class: "grid grid
               ]),
               _: 1
             }),
-            f.value.testScroll ? (u(), m("div", u1, " dfsj doifn oind oindoi ndoin oidn oinfi ndoifn oidfn oidnoi ndoin odifn oidnfoi ndfoi ndo opjkbopdfj opdfj opdjopf jdfopj dopfj opdjf opdjfop djpo jdop jdfopj odj podj opdf bspdj opsjop djop jdfopj opdj opdjfpo dp jd dfsj doifn oind oindoi ndoin oidn oinfi ndoifn oidfn oidnoi ndoin odifn oidnfoi ndfoi ndo opjkbopdfj opdfj opdjopf jdfopj dopfj opdjf opdjfop djpo jdop jdfopj odj podj opdf bspdj opsjop djop jdfopj opdj opdjfpo dp jd dfsj doifn oind oindoi ndoin oidn oinfi ndoifn oidfn oidnoi ndoin odifn oidnfoi ndfoi ndo opjkbopdfj opdfj opdjopf jdfopj dopfj opdjf opdjfop djpo jdop jdfopj odj podj opdf bspdj opsjop djop jdfopj opdj opdjfpo dp jd dfsj doifn oind oindoi ndoin oidn oinfi ndoifn oidfn oidnoi ndoin odifn oidnfoi ndfoi ndo opjkbopdfj opdfj opdjopf jdfopj dopfj opdjf opdjfop djpo jdop jdfopj odj podj opdf bspdj opsjop djop jdfopj opdj opdjfpo dp jd dfsj doifn oind oindoi ndoin oidn oinfi ndoifn oidfn oidnoi ndoin odifn oidnfoi ndfoi ndo opjkbopdfj opdfj opdjopf jdfopj dopfj opdjf opdjfop djpo jdop jdfopj odj podj opdf bspdj opsjop djop jdfopj opdj opdjfpo dp jd dfsj doifn oind oindoi ndoin oidn oinfi ndoifn oidfn oidnoi ndoin odifn oidnfoi ndfoi ndo opjkbopdfj opdfj opdjopf jdfopj dopfj opdjf opdjfop djpo jdop jdfopj odj podj opdf bspdj opsjop djop jdfopj opdj opdjfpo dp jd dfsj doifn oind oindoi ndoin oidn oinfi ndoifn oidfn oidnoi ndoin odifn oidnfoi ndfoi ndo opjkbopdfj opdfj opdjopf jdfopj dopfj opdjf opdjfop djpo jdop jdfopj odj podj opdf bspdj opsjop djop jdfopj opdj opdjfpo dp jd dfsj doifn oind oindoi ndoin oidn oinfi ndoifn oidfn oidnoi ndoin odifn oidnfoi ndfoi ndo opjkbopdfj opdfj opdjopf jdfopj dopfj opdjf opdjfop djpo jdop jdfopj odj podj opdf bspdj opsjop djop jdfopj opdj opdjfpo dp jd dfsj doifn oind oindoi ndoin oidn oinfi ndoifn oidfn oidnoi ndoin odifn oidnfoi ndfoi ndo opjkbopdfj opdfj opdjopf jdfopj dopfj opdjf opdjfop djpo jdop jdfopj odj podj opdf bspdj opsjop djop jdfopj opdj opdjfpo dp jd dfsj doifn oind oindoi ndoin oidn oinfi ndoifn oidfn oidnoi ndoin odifn oidnfoi ndfoi ndo opjkbopdfj opdfj opdjopf jdfopj dopfj opdjf opdjfop djpo jdop jdfopj odj podj opdf bspdj opsjop djop jdfopj opdj opdjfpo dp jd dfsj doifn oind oindoi ndoin oidn oinfi ndoifn oidfn oidnoi ndoin odifn oidnfoi ndfoi ndo opjkbopdfj opdfj opdjopf jdfopj dopfj opdjf opdjfop djpo jdop jdfopj odj podj opdf bspdj opsjop djop jdfopj opdj opdjfpo dp jd dfsj doifn oind oindoi ndoin oidn oinfi ndoifn oidfn oidnoi ndoin odifn oidnfoi ndfoi ndo opjkbopdfj opdfj opdjopf jdfopj dopfj opdjf opdjfop djpo jdop jdfopj odj podj opdf bspdj opsjop djop jdfopj opdj opdjfpo dp jd ")) : k("", !0),
-            w("div", c1, [
-              w("div", p1, [
-                w("div", f1, [
-                  f.value.themeToggle ? ve((u(), y(me(ze), {
-                    key: 0,
-                    icon: d.value ? "pi pi-sun" : "pi pi-moon",
-                    onClick: Cs,
-                    severity: "secondary",
-                    text: "",
-                    rounded: ""
-                  }, null, 8, ["icon"])), [
-                    [z, d.value ? "Switch to light mode" : "Switch to dark mode"]
-                  ]) : k("", !0),
-                  w("span", h1, q(s.value), 1)
-                ]),
-                w("div", g1, [
-                  N(me(ze), {
-                    label: "Cancel",
-                    severity: "secondary",
-                    onClick: Ss,
-                    disabled: l.value
-                  }, null, 8, ["disabled"]),
-                  N(me(ze), {
-                    label: "Save & Close",
-                    onClick: ks,
-                    loading: l.value
-                  }, null, 8, ["loading"])
-                ])
-              ])
-            ])
+            f.value.testScroll ? (u(), m("div", u1, " dfsj doifn oind oindoi ndoin oidn oinfi ndoifn oidfn oidnoi ndoin odifn oidnfoi ndfoi ndo opjkbopdfj opdfj opdjopf jdfopj dopfj opdjf opdjfop djpo jdop jdfopj odj podj opdf bspdj opsjop djop jdfopj opdj opdjfpo dp jd dfsj doifn oind oindoi ndoin oidn oinfi ndoifn oidfn oidnoi ndoin odifn oidnfoi ndfoi ndo opjkbopdfj opdfj opdjopf jdfopj dopfj opdjf opdjfop djpo jdop jdfopj odj podj opdf bspdj opsjop djop jdfopj opdj opdjfpo dp jd dfsj doifn oind oindoi ndoin oidn oinfi ndoifn oidfn oidnoi ndoin odifn oidnfoi ndfoi ndo opjkbopdfj opdfj opdjopf jdfopj dopfj opdjf opdjfop djpo jdop jdfopj odj podj opdf bspdj opsjop djop jdfopj opdj opdjfpo dp jd dfsj doifn oind oindoi ndoin oidn oinfi ndoifn oidfn oidnoi ndoin odifn oidnfoi ndfoi ndo opjkbopdfj opdfj opdjopf jdfopj dopfj opdjf opdjfop djpo jdop jdfopj odj podj opdf bspdj opsjop djop jdfopj opdj opdjfpo dp jd dfsj doifn oind oindoi ndoin oidn oinfi ndoifn oidfn oidnoi ndoin odifn oidnfoi ndfoi ndo opjkbopdfj opdfj opdjopf jdfopj dopfj opdjf opdjfop djpo jdop jdfopj odj podj opdf bspdj opsjop djop jdfopj opdj opdjfpo dp jd dfsj doifn oind oindoi ndoin oidn oinfi ndoifn oidfn oidnoi ndoin odifn oidnfoi ndfoi ndo opjkbopdfj opdfj opdjopf jdfopj dopfj opdjf opdjfop djpo jdop jdfopj odj podj opdf bspdj opsjop djop jdfopj opdj opdjfpo dp jd dfsj doifn oind oindoi ndoin oidn oinfi ndoifn oidfn oidnoi ndoin odifn oidnfoi ndfoi ndo opjkbopdfj opdfj opdjopf jdfopj dopfj opdjf opdjfop djpo jdop jdfopj odj podj opdf bspdj opsjop djop jdfopj opdj opdjfpo dp jd dfsj doifn oind oindoi ndoin oidn oinfi ndoifn oidfn oidnoi ndoin odifn oidnfoi ndfoi ndo opjkbopdfj opdfj opdjopf jdfopj dopfj opdjf opdjfop djpo jdop jdfopj odj podj opdf bspdj opsjop djop jdfopj opdj opdjfpo dp jd dfsj doifn oind oindoi ndoin oidn oinfi ndoifn oidfn oidnoi ndoin odifn oidnfoi ndfoi ndo opjkbopdfj opdfj opdjopf jdfopj dopfj opdjf opdjfop djpo jdop jdfopj odj podj opdf bspdj opsjop djop jdfopj opdj opdjfpo dp jd dfsj doifn oind oindoi ndoin oidn oinfi ndoifn oidfn oidnoi ndoin odifn oidnfoi ndfoi ndo opjkbopdfj opdfj opdjopf jdfopj dopfj opdjf opdjfop djpo jdop jdfopj odj podj opdf bspdj opsjop djop jdfopj opdj opdjfpo dp jd dfsj doifn oind oindoi ndoin oidn oinfi ndoifn oidfn oidnoi ndoin odifn oidnfoi ndfoi ndo opjkbopdfj opdfj opdjopf jdfopj dopfj opdjf opdjfop djpo jdop jdfopj odj podj opdf bspdj opsjop djop jdfopj opdj opdjfpo dp jd dfsj doifn oind oindoi ndoin oidn oinfi ndoifn oidfn oidnoi ndoin odifn oidnfoi ndfoi ndo opjkbopdfj opdfj opdjopf jdfopj dopfj opdjf opdjfop djpo jdop jdfopj odj podj opdf bspdj opsjop djop jdfopj opdj opdjfpo dp jd ")) : k("", !0)
           ])
         ]),
         _: 1
@@ -24961,7 +24991,10 @@ const Gv = { class: "flex flex-col gap-8 h-full p-4" }, Wv = { class: "grid grid
   for (const [o, i] of e)
     n[o] = i;
   return n;
-}, y1 = /* @__PURE__ */ b1(m1, [["__scopeId", "data-v-170f7fbb"]]), v1 = { class: "p-4" }, w1 = {
+}, y1 = /* @__PURE__ */ b1(m1, [["__scopeId", "data-v-f2d6a4cb"]]), v1 = {
+  "class-old": "p-4",
+  class: "container mx-auto p-4"
+}, w1 = {
   key: 0,
   class: "flex gap-2"
 }, C1 = /* @__PURE__ */ Wa({
