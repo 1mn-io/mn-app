@@ -8,10 +8,12 @@ declare const _default: import('vue').DefineComponent<__VLS_Props, {}, {}, {}, {
     create: () => any;
     edit: () => any;
     preview: (data: any) => any;
+    upload_ref_img: () => any;
 }, string, import('vue').PublicProps, Readonly<__VLS_Props> & Readonly<{
     onCreate?: (() => any) | undefined;
     onEdit?: (() => any) | undefined;
     onPreview?: ((data: any) => any) | undefined;
+    onUpload_ref_img?: (() => any) | undefined;
 }>, {}, {}, {}, {}, string, import('vue').ComponentProvideOptions, false, {
     sentinelRef: HTMLDivElement;
 }, HTMLDivElement>;
