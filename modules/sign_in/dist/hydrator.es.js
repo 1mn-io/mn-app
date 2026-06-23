@@ -1,17 +1,17 @@
-import { l as O, J as l, g as n, d as t, R as c, j as N, Y as w, X as C, V as _, U, i as M, f as m, k as j, W as E, a as J, G as P, c as B, M as b, L as R, e as A, b as D } from "./runtime-dom.esm-bundler-BPoQGdGP.js";
-const G = { class: "h-full bg-white dark:bg-gray-900" }, Z = { class: "flex min-h-full flex-col justify-center px-6 py-12 lg:px-8 bg-white dark:bg-gray-900" }, F = { class: "sm:mx-auto sm:w-full sm:max-w-sm text-gray-900 dark:text-gray-100" }, X = { class: "mt-10 text-center text-2xl font-bold tracking-tight text-gray-900 dark:text-gray-100" }, Y = {
+const { defineComponent: U, defineAsyncComponent: B, ref: f, computed: P, reactive: A, openBlock: l, createElementBlock: i, normalizeClass: H, createElementVNode: t, toDisplayString: u, createTextVNode: E, withModifiers: w, withDirectives: C, vModelText: I, vModelCheckbox: Q, createStaticVNode: L, createCommentVNode: v, createVNode: T, TransitionGroup: D, withCtx: F, unref: Z, createBlock: G, createApp: q } = window.Vue;
+const X = { class: "h-full bg-white dark:bg-gray-900" }, Y = { class: "flex min-h-full flex-col justify-center px-6 py-12 lg:px-8 bg-white dark:bg-gray-900" }, W = { class: "sm:mx-auto sm:w-full sm:max-w-sm text-gray-900 dark:text-gray-100" }, K = { class: "mt-10 text-center text-2xl font-bold tracking-tight text-gray-900 dark:text-gray-100" }, ee = {
   key: 0,
   class: "mt-2 text-center text-sm text-purple-600 dark:text-purple-400"
-}, W = { class: "font-medium text-purple-700 dark:text-purple-300" }, q = {
+}, te = { class: "font-medium text-purple-700 dark:text-purple-300" }, re = {
   key: 1,
   class: "mt-2 text-center text-sm text-gray-600 dark:text-gray-400"
-}, Q = { class: "mt-10 sm:mx-auto sm:w-full sm:max-w-sm bg-white dark:bg-gray-900" }, H = { class: "text-gray-900 dark:text-gray-100" }, K = ["disabled"], ee = { class: "text-center text-gray-600 dark:text-gray-300" }, te = ["disabled"], re = { key: 0 }, ae = {
+}, ae = { class: "mt-10 sm:mx-auto sm:w-full sm:max-w-sm bg-white dark:bg-gray-900" }, oe = { class: "text-gray-900 dark:text-gray-100" }, se = ["disabled"], le = { class: "text-center text-gray-600 dark:text-gray-300" }, ie = ["disabled"], ne = { key: 0 }, de = {
   key: 1,
   class: "font-semibold underline"
-}, oe = {
+}, ue = {
   key: 0,
   class: "space-y-6"
-}, se = { class: "text-gray-900 dark:text-gray-100" }, le = { class: "mt-2" }, ie = ["disabled"], ne = { class: "text-gray-900 dark:text-gray-100" }, de = { class: "flex items-center justify-between" }, ue = { class: "text-sm" }, ce = { class: "mt-2" }, pe = ["disabled"], ge = { class: "flex items-center text-gray-900 dark:text-gray-100" }, ve = ["disabled"], fe = ["disabled"], me = { key: 0 }, ye = { key: 1 }, be = { key: 1 }, he = ["disabled"], xe = { class: "text-center w-full mr-5" }, ke = { key: 2 }, we = ["disabled"], Ce = { class: "text-center w-full mr-5" }, _e = { key: 3 }, ze = ["disabled"], Ie = { class: "text-center w-full mr-5" }, Le = { key: 4 }, Ve = ["disabled"], $e = { class: "text-center w-full mr-5" }, Ne = { key: 2 }, Me = { class: "mt-10 text-center text-sm text-gray-500 dark:text-gray-400" }, Oe = { class: "fixed left-1/2 -translate-x-1/2 bottom-10 z-50 w-full max-w-sm flex flex-col gap-3 px-4" }, Se = { class: "bg-white dark:bg-gray-900 rounded-lg" }, Te = { class: "flex-1 text-sm font-medium" }, Ue = { class: "flex-1 text-sm font-medium" }, je = /* @__PURE__ */ O({
+}, ce = { class: "text-gray-900 dark:text-gray-100" }, pe = { class: "mt-2" }, ve = ["disabled"], ge = { class: "text-gray-900 dark:text-gray-100" }, me = { class: "flex items-center justify-between" }, fe = { class: "text-sm" }, he = { class: "mt-2" }, ye = ["disabled"], be = { class: "flex items-center text-gray-900 dark:text-gray-100" }, xe = ["disabled"], ke = ["disabled"], we = { key: 0 }, Ce = { key: 1 }, _e = { key: 1 }, ze = ["disabled"], Ve = { class: "text-center w-full mr-5" }, Me = { key: 2 }, Ie = ["disabled"], Le = { class: "text-center w-full mr-5" }, $e = { key: 3 }, Se = ["disabled"], Ne = { class: "text-center w-full mr-5" }, je = { key: 4 }, Oe = ["disabled"], Ee = { class: "text-center w-full mr-5" }, Te = { key: 5 }, Ue = ["disabled"], Re = { class: "text-center w-full mr-5" }, Je = { key: 2 }, Be = { class: "mt-10 text-center text-sm text-gray-500 dark:text-gray-400" }, Pe = { class: "fixed left-1/2 -translate-x-1/2 bottom-10 z-50 w-full max-w-sm flex flex-col gap-3 px-4" }, Ae = { class: "bg-white dark:bg-gray-900 rounded-lg" }, He = { class: "flex-1 text-sm font-medium" }, Qe = { class: "flex-1 text-sm font-medium" }, De = /* @__PURE__ */ U({
   __name: "Signin",
   props: {
     _p: {},
@@ -19,29 +19,74 @@ const G = { class: "h-full bg-white dark:bg-gray-900" }, Z = { class: "flex min-
     _$cb: {}
   },
   setup(r) {
-    const g = r, d = B(() => g._$p.data.curr.data || {}), a = b(!1), i = b(null), v = b(!1), h = b(""), x = b(""), y = b(0);
-    let z = null;
-    const I = (s) => {
-      const e = d.value.click?.[s];
+    const g = r, y = B({
+      // The loader function
+      loader: () => import("./QRCodeScanner-BcVUsFPD.js"),
+      // Loading component (optional)
+      loadingComponent: {
+        template: `
+      <div class="fixed inset-0 z-50 flex items-center justify-center bg-black/50 backdrop-blur-sm">
+        <div class="bg-white dark:bg-gray-800 rounded-2xl shadow-2xl max-w-md w-full mx-4 p-6">
+          <div class="flex flex-col items-center justify-center py-8">
+            <div class="animate-spin rounded-full h-12 w-12 border-b-2 border-purple-600 dark:border-purple-400"></div>
+            <p class="mt-4 text-gray-600 dark:text-gray-400">Loading QR Scanner...</p>
+          </div>
+        </div>
+      </div>
+    `
+      },
+      // Error component (optional)
+      errorComponent: {
+        template: `
+      <div class="fixed inset-0 z-50 flex items-center justify-center bg-black/50 backdrop-blur-sm">
+        <div class="bg-white dark:bg-gray-800 rounded-2xl shadow-2xl max-w-md w-full mx-4 p-6">
+          <div class="flex flex-col items-center justify-center py-8">
+            <svg class="h-12 w-12 text-red-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z" />
+            </svg>
+            <p class="mt-4 text-red-600 dark:text-red-400">Failed to load QR Scanner</p>
+            <button @click="reloadScanner" class="mt-2 text-purple-600 hover:text-purple-700">Try Again</button>
+          </div>
+        </div>
+      </div>
+    `,
+        methods: {
+          reloadScanner() {
+            window.location.reload();
+          }
+        }
+      },
+      // Delay before showing loading component (default: 200ms)
+      delay: 300,
+      // Timeout for loading (default: Infinity)
+      timeout: 3e4
+    }), b = f(!1), _ = (o) => {
+      localStorage.setItem("token", o), c("success", "QR login successful!"), b.value = !1, M();
+    }, z = (o) => {
+      c("error", o.message || "QR login failed");
+    }, d = P(() => g._$p.data.curr.data || {}), a = f(!1), n = f(null), x = f(!1), V = f(""), $ = f(""), h = f(0);
+    let S = null;
+    const N = (o) => {
+      const e = d.value.click?.[o];
       if (!e) {
-        console.warn(`No URL defined in JSON for: ${s}`);
+        console.warn(`No URL defined in JSON for: ${o}`);
         return;
       }
       e.startsWith("http"), window.location.href = e;
-    }, p = (s, e) => {
-      i.value = { type: s, message: e }, setTimeout(() => {
-        i.value?.message === e && (i.value = null);
+    }, c = (o, e) => {
+      n.value = { type: o, message: e }, setTimeout(() => {
+        n.value?.message === e && (n.value = null);
       }, 5e3);
-    }, u = R({
+    }, p = A({
       email: "",
       password: "",
       remember_me: !1
-    }), L = () => {
-      p("success", "Login successful! Redirecting..."), setTimeout(() => {
+    }), M = () => {
+      c("success", "Login successful! Redirecting..."), setTimeout(() => {
         try {
-          const s = new URL(location.href), e = "redirect";
-          if (s.searchParams.get(e)) {
-            window.location.href = s.searchParams.get(e) || "";
+          const o = new URL(location.href), e = "redirect";
+          if (o.searchParams.get(e)) {
+            window.location.href = o.searchParams.get(e) || "";
             return;
           }
           if (d.value.event?.onLoginSuccess) {
@@ -52,32 +97,36 @@ const G = { class: "h-full bg-white dark:bg-gray-900" }, Z = { class: "flex min-
           window.location.href = "/";
         }
       }, 600);
-    }, k = async (s) => {
-      a.value = !0;
-      try {
-        let e = `${g._$p.data.curr.data.api.sign_with_third_party}`;
-        e = e.replace("{provider}", s), e = e.replace("{redirect}", location.href);
-        const f = await (await fetch(e, {
-          method: "GET",
-          headers: { Accept: "application/json" }
-        })).json();
-        if (f.success && f.data?.oauth_url)
-          window.location.assign(f.data.oauth_url);
-        else
-          throw new Error("Failed to initialize secure login.");
-      } catch (e) {
-        p("error", e.message), a.value = !1;
-      }
-    }, V = async () => {
-      i.value = null;
-      const s = d.value.api?.login;
-      if (!s) {
-        p("error", "Configuration Error: Login API missing.");
+    }, k = async (o) => {
+      if (o == "mn_qr") {
+        b.value = !0;
         return;
       }
       a.value = !0;
       try {
-        const e = await fetch(s, {
+        let e = `${g._$p.data.curr.data.api.sign_with_third_party}`;
+        e = e.replace("{provider}", o), e = e.replace("{redirect}", location.href);
+        const m = await (await fetch(e, {
+          method: "GET",
+          headers: { Accept: "application/json" }
+        })).json();
+        if (m.success && m.data?.oauth_url)
+          window.location.assign(m.data.oauth_url);
+        else
+          throw new Error("Failed to initialize secure login.");
+      } catch (e) {
+        c("error", e.message), a.value = !1;
+      }
+    }, j = async () => {
+      n.value = null;
+      const o = d.value.api?.login;
+      if (!o) {
+        c("error", "Configuration Error: Login API missing.");
+        return;
+      }
+      a.value = !0;
+      try {
+        const e = await fetch(o, {
           method: "POST",
           headers: {
             "Content-Type": "application/json",
@@ -85,37 +134,37 @@ const G = { class: "h-full bg-white dark:bg-gray-900" }, Z = { class: "flex min-
             // 'Authorization': 'Bearer ' + 'eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImYwZTNlMDRiLTVkNDAtNDg1ZS05OGU4LWEzOTI3NWU3MzM0OCIsInNlY3VyaXR5Ijp7InBhcnR5IjpbInBhcnR5XzEiLCJwYXJ0eV8yIl19LCJzdWIiOiJmMGUzZTA0Yi01ZDQwLTQ4NWUtOThlOC1hMzkyNzVlNzMzNDgiLCJpYXQiOjE3NjU4MTI4Mjh9.OoClnPtlxI71L-e555nbNSmenmGufxewp78SlmdZCNxeuauXao5RRvqwOKQ77SJFqJXk0ng6GZ7VOgYECdEf-3k1UGX7w1NE_D5A6SP3UkVsSG8orYACFuvTyesbFwkpnEhdu0PBd6n8wuLkgU6nZ1bLDzKVg1zd8fFeJrwmUqk'
           },
           body: JSON.stringify({
-            email: u.email.toLowerCase().trim(),
-            password: u.password
+            email: p.email.toLowerCase().trim(),
+            password: p.password
           })
-        }), o = await e.json().catch(() => ({}));
+        }), s = await e.json().catch(() => ({}));
         if (!e.ok) {
-          if (o.error === "User not verified" || o.message?.includes("not verified")) {
-            x.value = u.email, v.value = !0, await $(!0), p("error", "Account not verified. Please enter the OTP sent to your email.");
+          if (s.error === "User not verified" || s.message?.includes("not verified")) {
+            $.value = p.email, x.value = !0, await O(!0), c("error", "Account not verified. Please enter the OTP sent to your email.");
             return;
           }
-          const f = o.detail || o.message || "Invalid email or password.";
-          throw new Error(f);
+          const m = s.detail || s.message || "Invalid email or password.";
+          throw new Error(m);
         }
         (async () => {
-          const f = o.data.token;
-          localStorage.setItem("token", f);
-        })(), L();
+          const m = s.data.token;
+          localStorage.setItem("token", m);
+        })(), M();
       } catch (e) {
-        p("error", e.message || "A network error occurred.");
+        c("error", e.message || "A network error occurred.");
       } finally {
         a.value = !1;
       }
     };
     (async () => {
       const e = new URL(location.href).searchParams.get("token");
-      e && (localStorage.setItem("token", e), L());
+      e && (localStorage.setItem("token", e), M());
     })();
-    const S = () => {
-      y.value = 60, z = setInterval(() => {
-        y.value > 0 ? y.value-- : clearInterval(z);
+    const R = () => {
+      h.value = 60, S = setInterval(() => {
+        h.value > 0 ? h.value-- : clearInterval(S);
       }, 1e3);
-    }, $ = async (s = !1) => {
+    }, O = async (o = !1) => {
       try {
         if (!(await fetch(d.value.api.send_otp, {
           method: "POST",
@@ -124,14 +173,14 @@ const G = { class: "h-full bg-white dark:bg-gray-900" }, Z = { class: "flex min-
             Accept: "application/json",
             Authorization: "Bearer eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImYwZTNlMDRiLTVkNDAtNDg1ZS05OGU4LWEzOTI3NWU3MzM0OCIsInNlY3VyaXR5Ijp7InBhcnR5IjpbInBhcnR5XzEiLCJwYXJ0eV8yIl19LCJzdWIiOiJmMGUzZTA0Yi01ZDQwLTQ4NWUtOThlOC1hMzkyNzVlNzMzNDgiLCJpYXQiOjE3NjU4MTI4Mjh9.OoClnPtlxI71L-e555nbNSmenmGufxewp78SlmdZCNxeuauXao5RRvqwOKQ77SJFqJXk0ng6GZ7VOgYECdEf-3k1UGX7w1NE_D5A6SP3UkVsSG8orYACFuvTyesbFwkpnEhdu0PBd6n8wuLkgU6nZ1bLDzKVg1zd8fFeJrwmUqk"
           },
-          body: JSON.stringify({ email: u.email.toLowerCase().trim() })
+          body: JSON.stringify({ email: p.email.toLowerCase().trim() })
         })).ok) throw new Error("Could not send verification code");
-        S(), s || p("success", "Verification code sent!");
+        R(), o || c("success", "Verification code sent!");
       } catch (e) {
-        p("error", e.message);
+        c("error", e.message);
       }
-    }, T = async () => {
-      a.value = !0, i.value = null;
+    }, J = async () => {
+      a.value = !0, n.value = null;
       try {
         if (!(await fetch(d.value.api?.verify_otp, {
           method: "POST",
@@ -141,44 +190,44 @@ const G = { class: "h-full bg-white dark:bg-gray-900" }, Z = { class: "flex min-
             Authorization: "Bearer eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImYwZTNlMDRiLTVkNDAtNDg1ZS05OGU4LWEzOTI3NWU3MzM0OCIsInNlY3VyaXR5Ijp7InBhcnR5IjpbInBhcnR5XzEiLCJwYXJ0eV8yIl19LCJzdWIiOiJmMGUzZTA0Yi01ZDQwLTQ4NWUtOThlOC1hMzkyNzVlNzMzNDgiLCJpYXQiOjE3NjU4MTI4Mjh9.OoClnPtlxI71L-e555nbNSmenmGufxewp78SlmdZCNxeuauXao5RRvqwOKQ77SJFqJXk0ng6GZ7VOgYECdEf-3k1UGX7w1NE_D5A6SP3UkVsSG8orYACFuvTyesbFwkpnEhdu0PBd6n8wuLkgU6nZ1bLDzKVg1zd8fFeJrwmUqk"
           },
           body: JSON.stringify({
-            email: x.value,
-            otp: h.value
+            email: $.value,
+            otp: V.value
           })
         })).ok) throw new Error("Invalid OTP code.");
-        p("success", "Email verified! Logging you in..."), setTimeout(() => {
-          v.value = !1, V();
+        c("success", "Email verified! Logging you in..."), setTimeout(() => {
+          x.value = !1, j();
         }, 1500);
-      } catch (s) {
-        p("error", s.message);
+      } catch (o) {
+        c("error", o.message);
       } finally {
         a.value = !1;
       }
     };
-    return (s, e) => (l(), n("div", {
-      class: P({ dark: d.value.theme === "dark" })
+    return (o, e) => (l(), i("div", {
+      class: H({ dark: d.value.theme === "dark" })
     }, [
-      t("div", G, [
-        t("div", Z, [
-          t("div", F, [
-            t("h2", X, c(v.value ? "Verify your email" : d.value.labels?.title || "Welcome Back"), 1),
-            v.value ? (l(), n("p", Y, [
-              e[13] || (e[13] = N(" We sent a code to ", -1)),
-              t("span", W, c(u.email), 1)
-            ])) : (l(), n("p", q, c(d.value.labels?.subtitle || "Please enter your details to sign in."), 1))
+      t("div", X, [
+        t("div", Y, [
+          t("div", W, [
+            t("h2", K, u(x.value ? "Verify your email" : d.value.labels?.title || "Welcome Back"), 1),
+            x.value ? (l(), i("p", ee, [
+              e[15] || (e[15] = E(" We sent a code to ", -1)),
+              t("span", te, u(p.email), 1)
+            ])) : (l(), i("p", re, u(d.value.labels?.subtitle || "Please enter your details to sign in."), 1))
           ]),
-          t("div", Q, [
-            v.value ? (l(), n("form", {
+          t("div", ae, [
+            x.value ? (l(), i("form", {
               key: 0,
               class: "space-y-6 bg-white dark:bg-gray-900",
-              onSubmit: w(T, ["prevent"])
+              onSubmit: w(J, ["prevent"])
             }, [
-              t("div", H, [
-                e[14] || (e[14] = t("label", {
+              t("div", oe, [
+                e[16] || (e[16] = t("label", {
                   for: "otp",
                   class: "block text-center text-sm font-medium text-gray-900 dark:text-gray-100"
                 }, "Verification Code", -1)),
                 C(t("input", {
-                  "onUpdate:modelValue": e[0] || (e[0] = (o) => h.value = o),
+                  "onUpdate:modelValue": e[0] || (e[0] = (s) => V.value = s),
                   id: "otp",
                   type: "text",
                   maxlength: "6",
@@ -186,38 +235,38 @@ const G = { class: "h-full bg-white dark:bg-gray-900" }, Z = { class: "flex min-
                   placeholder: "000000",
                   class: "mt-2 block w-full text-center tracking-[1em] text-2xl font-mono rounded-md border-0 py-2 px-3 text-gray-900 dark:text-gray-100 shadow-sm outline outline-1 -outline-offset-1 outline-gray-300 dark:outline-gray-700 placeholder:text-gray-400 focus:outline-2 focus:-outline-offset-2 focus:outline-purple-600 dark:focus:outline-purple-500 bg-gray-50 dark:bg-gray-800"
                 }, null, 512), [
-                  [_, h.value]
+                  [I, V.value]
                 ])
               ]),
               t("button", {
                 type: "submit",
                 disabled: a.value,
                 class: "flex w-full justify-center rounded-md bg-purple-600 dark:bg-purple-700 px-3 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-purple-700 dark:hover:bg-purple-600 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-purple-600 dark:focus-visible:outline-purple-500 disabled:opacity-50 transition-all duration-200"
-              }, c(a.value ? "Verifying..." : "Verify Email"), 9, K),
-              t("div", ee, [
+              }, u(a.value ? "Verifying..." : "Verify Email"), 9, se),
+              t("div", le, [
                 t("button", {
                   type: "button",
-                  onClick: e[1] || (e[1] = (o) => $(!1)),
-                  disabled: a.value || y.value > 0,
+                  onClick: e[1] || (e[1] = (s) => O(!1)),
+                  disabled: a.value || h.value > 0,
                   class: "text-sm text-purple-600 dark:text-purple-400 hover:text-purple-800 dark:hover:text-purple-300 disabled:text-gray-400 dark:disabled:text-gray-500"
                 }, [
-                  y.value > 0 ? (l(), n("span", re, "Resend code in " + c(y.value) + "s", 1)) : (l(), n("span", ae, "Resend code"))
-                ], 8, te)
+                  h.value > 0 ? (l(), i("span", ne, "Resend code in " + u(h.value) + "s", 1)) : (l(), i("span", de, "Resend code"))
+                ], 8, ie)
               ])
-            ], 32)) : (l(), n("form", {
+            ], 32)) : (l(), i("form", {
               key: 1,
               class: "space-y-6 bg-white dark:bg-gray-900",
-              onSubmit: w(V, ["prevent"])
+              onSubmit: w(j, ["prevent"])
             }, [
-              r._$p.data.curr.data.provider.email.disable ? m("", !0) : (l(), n("div", oe, [
-                t("div", se, [
-                  e[15] || (e[15] = t("label", {
+              r._$p.data.curr.data.provider.email.disable ? v("", !0) : (l(), i("div", ue, [
+                t("div", ce, [
+                  e[17] || (e[17] = t("label", {
                     for: "email",
                     class: "block text-sm font-medium text-gray-900 dark:text-gray-100"
                   }, "Email address", -1)),
-                  t("div", le, [
+                  t("div", pe, [
                     C(t("input", {
-                      "onUpdate:modelValue": e[2] || (e[2] = (o) => u.email = o),
+                      "onUpdate:modelValue": e[2] || (e[2] = (s) => p.email = s),
                       id: "email",
                       type: "email",
                       required: "",
@@ -225,28 +274,28 @@ const G = { class: "h-full bg-white dark:bg-gray-900" }, Z = { class: "flex min-
                       disabled: a.value,
                       class: "block w-full rounded-md bg-white dark:bg-gray-800 px-3 py-2.5 text-base text-gray-900 dark:text-gray-100 outline outline-1 -outline-offset-1 outline-gray-300 dark:outline-gray-700 placeholder:text-gray-400 focus:outline-2 focus:-outline-offset-2 focus:outline-purple-600 dark:focus:outline-purple-500 sm:text-sm",
                       placeholder: "you@example.com"
-                    }, null, 8, ie), [
-                      [_, u.email]
+                    }, null, 8, ve), [
+                      [I, p.email]
                     ])
                   ])
                 ]),
-                t("div", ne, [
-                  t("div", de, [
-                    e[16] || (e[16] = t("label", {
+                t("div", ge, [
+                  t("div", me, [
+                    e[18] || (e[18] = t("label", {
                       for: "password",
                       class: "block text-sm font-medium text-gray-900 dark:text-gray-100"
                     }, "Password", -1)),
-                    t("div", ue, [
+                    t("div", fe, [
                       t("a", {
                         href: "#",
-                        onClick: e[3] || (e[3] = w((o) => I("forgot_pwd"), ["prevent"])),
+                        onClick: e[3] || (e[3] = w((s) => N("forgot_pwd"), ["prevent"])),
                         class: "font-semibold text-purple-600 dark:text-purple-400 hover:text-purple-800 dark:hover:text-purple-300 underline-offset-4 hover:underline"
                       }, " Forgot password? ")
                     ])
                   ]),
-                  t("div", ce, [
+                  t("div", he, [
                     C(t("input", {
-                      "onUpdate:modelValue": e[4] || (e[4] = (o) => u.password = o),
+                      "onUpdate:modelValue": e[4] || (e[4] = (s) => p.password = s),
                       id: "password",
                       type: "password",
                       required: "",
@@ -254,22 +303,22 @@ const G = { class: "h-full bg-white dark:bg-gray-900" }, Z = { class: "flex min-
                       disabled: a.value,
                       class: "block w-full rounded-md bg-white dark:bg-gray-800 px-3 py-2.5 text-base text-gray-900 dark:text-gray-100 outline outline-1 -outline-offset-1 outline-gray-300 dark:outline-gray-700 placeholder:text-gray-400 focus:outline-2 focus:-outline-offset-2 focus:outline-purple-600 dark:focus:outline-purple-500 sm:text-sm",
                       placeholder: "••••••••"
-                    }, null, 8, pe), [
-                      [_, u.password]
+                    }, null, 8, ye), [
+                      [I, p.password]
                     ])
                   ])
                 ]),
-                t("div", ge, [
+                t("div", be, [
                   C(t("input", {
-                    "onUpdate:modelValue": e[5] || (e[5] = (o) => u.remember_me = o),
+                    "onUpdate:modelValue": e[5] || (e[5] = (s) => p.remember_me = s),
                     id: "remember_me",
                     type: "checkbox",
                     disabled: a.value,
                     class: "h-4 w-4 rounded accent-purple-600 border-gray-300 dark:border-gray-700 dark:bg-purple-700 text-purple-600 dark:text-purple-500 focus:ring-purple-600 dark:focus:ring-purple-500"
-                  }, null, 8, ve), [
-                    [U, u.remember_me]
+                  }, null, 8, xe), [
+                    [Q, p.remember_me]
                   ]),
-                  e[17] || (e[17] = t("label", {
+                  e[19] || (e[19] = t("label", {
                     for: "remember_me",
                     class: "ml-2 block text-sm text-gray-900 dark:text-gray-100"
                   }, "Remember me", -1))
@@ -279,29 +328,29 @@ const G = { class: "h-full bg-white dark:bg-gray-900" }, Z = { class: "flex min-
                   disabled: a.value,
                   class: "flex w-full justify-center rounded-md bg-purple-600 dark:bg-purple-700 px-3 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-purple-700 dark:hover:bg-purple-600 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-purple-600 dark:focus-visible:outline-purple-500 disabled:opacity-50 transition-all duration-200"
                 }, [
-                  a.value ? (l(), n("span", me, "Signing in...")) : (l(), n("span", ye, "Sign In"))
-                ], 8, fe),
-                e[18] || (e[18] = M('<div class="relative mt-8 border-gray-200 dark:border-gray-700 text-gray-400 dark:text-gray-500 bg-white dark:bg-gray-900"><div class="absolute inset-0 flex items-center" aria-hidden="true"><div class="w-full border-t border-gray-200 dark:border-gray-700"></div></div><div class="relative flex justify-center text-sm font-medium"><span class="bg-white dark:bg-gray-900 px-4 text-gray-400 dark:text-gray-500">OR</span></div></div>', 1))
+                  a.value ? (l(), i("span", we, "Signing in...")) : (l(), i("span", Ce, "Sign In"))
+                ], 8, ke),
+                e[20] || (e[20] = L('<div class="relative mt-8 border-gray-200 dark:border-gray-700 text-gray-400 dark:text-gray-500 bg-white dark:bg-gray-900"><div class="absolute inset-0 flex items-center" aria-hidden="true"><div class="w-full border-t border-gray-200 dark:border-gray-700"></div></div><div class="relative flex justify-center text-sm font-medium"><span class="bg-white dark:bg-gray-900 px-4 text-gray-400 dark:text-gray-500">OR</span></div></div>', 1))
               ])),
-              r._$p.data.curr.data.provider.google.disable ? m("", !0) : (l(), n("div", be, [
+              r._$p.data.curr.data.provider.google.disable ? v("", !0) : (l(), i("div", _e, [
                 t("button", {
                   type: "button",
-                  onClick: e[6] || (e[6] = (o) => k("google")),
+                  onClick: e[6] || (e[6] = (s) => k("google")),
                   disabled: a.value,
                   class: "flex w-full items-center justify-center gap-3 rounded-md border border-gray-300 dark:border-gray-700 bg-white dark:bg-gray-800 px-3 py-2.5 text-sm font-semibold text-gray-900 dark:text-gray-100 shadow-sm hover:bg-gray-50 dark:hover:bg-gray-700 focus-visible:ring-transparent disabled:opacity-50 transition-colors"
                 }, [
-                  e[19] || (e[19] = M('<svg class="h-5 w-5" viewBox="0 0 24 24"><path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" fill="#4285F4"></path><path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"></path><path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l3.66-2.84z" fill="#FBBC05"></path><path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" fill="#EA4335"></path></svg>', 1)),
-                  t("div", xe, c(a.value ? "Connecting..." : "Continue with Google"), 1)
-                ], 8, he)
+                  e[21] || (e[21] = L('<svg class="h-5 w-5" viewBox="0 0 24 24"><path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" fill="#4285F4"></path><path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"></path><path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l3.66-2.84z" fill="#FBBC05"></path><path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" fill="#EA4335"></path></svg>', 1)),
+                  t("div", Ve, u(a.value ? "Connecting..." : "Continue with Google"), 1)
+                ], 8, ze)
               ])),
-              r._$p.data.curr.data.provider.facebook.disable ? m("", !0) : (l(), n("div", ke, [
+              r._$p.data.curr.data.provider.facebook.disable ? v("", !0) : (l(), i("div", Me, [
                 t("button", {
                   type: "button",
-                  onClick: e[7] || (e[7] = (o) => k("facebook")),
+                  onClick: e[7] || (e[7] = (s) => k("facebook")),
                   disabled: a.value,
                   class: "flex w-full items-center justify-center gap-3 rounded-md border border-gray-300 dark:border-gray-700 bg-white dark:bg-gray-800 px-3 py-2.5 text-sm font-semibold text-gray-900 dark:text-gray-100 shadow-sm hover:bg-gray-50 dark:hover:bg-gray-700 focus-visible:ring-transparent disabled:opacity-50 transition-colors"
                 }, [
-                  e[20] || (e[20] = t("svg", {
+                  e[22] || (e[22] = t("svg", {
                     class: "h-5 w-5",
                     xmlns: "http://www.w3.org/2000/svg",
                     "xmlns:svg": "http://www.w3.org/2000/svg",
@@ -355,17 +404,17 @@ const G = { class: "h-full bg-white dark:bg-gray-900" }, Z = { class: "flex min-
                       ])
                     ])
                   ], -1)),
-                  t("div", Ce, c(a.value ? "Connecting..." : "Continue with Facebook"), 1)
-                ], 8, we)
+                  t("div", Le, u(a.value ? "Connecting..." : "Continue with Facebook"), 1)
+                ], 8, Ie)
               ])),
-              r._$p.data.curr.data.provider.yandex.disable ? m("", !0) : (l(), n("div", _e, [
+              r._$p.data.curr.data.provider.yandex.disable ? v("", !0) : (l(), i("div", $e, [
                 t("button", {
                   type: "button",
-                  onClick: e[8] || (e[8] = (o) => k("yandex")),
+                  onClick: e[8] || (e[8] = (s) => k("yandex")),
                   disabled: a.value,
                   class: "flex w-full items-center justify-center gap-3 rounded-md border border-gray-300 dark:border-gray-700 bg-white dark:bg-gray-800 px-3 py-2.5 text-sm font-semibold text-gray-900 dark:text-gray-100 shadow-sm hover:bg-gray-50 dark:hover:bg-gray-700 focus-visible:ring-transparent disabled:opacity-50 transition-colors"
                 }, [
-                  e[21] || (e[21] = t("svg", {
+                  e[23] || (e[23] = t("svg", {
                     class: "h-5 w-5",
                     xmlns: "http://www.w3.org/2000/svg",
                     viewBox: "0 0 512 512",
@@ -385,17 +434,17 @@ const G = { class: "h-full bg-white dark:bg-gray-900" }, Z = { class: "flex min-
                       "fill-rule": "nonzero"
                     })
                   ], -1)),
-                  t("div", Ie, c(a.value ? "Connecting..." : "Continue with Yandex"), 1)
-                ], 8, ze)
+                  t("div", Ne, u(a.value ? "Connecting..." : "Continue with Yandex"), 1)
+                ], 8, Se)
               ])),
-              r._$p.data.curr.data.provider.vk.disable ? m("", !0) : (l(), n("div", Le, [
+              r._$p.data.curr.data.provider.vk.disable ? v("", !0) : (l(), i("div", je, [
                 t("button", {
                   type: "button",
-                  onClick: e[9] || (e[9] = (o) => k("vk")),
+                  onClick: e[9] || (e[9] = (s) => k("vk")),
                   disabled: a.value,
                   class: "flex w-full gap-3 rounded-md border border-gray-300 dark:border-gray-700 bg-white dark:bg-gray-800 px-3 py-2.5 text-sm font-semibold text-gray-900 dark:text-gray-100 shadow-sm hover:bg-gray-50 dark:hover:bg-gray-700 focus-visible:ring-transparent disabled:opacity-50 transition-colors"
                 }, [
-                  e[22] || (e[22] = t("svg", {
+                  e[24] || (e[24] = t("svg", {
                     class: "h-5 w-5",
                     xmlns: "http://www.w3.org/2000/svg",
                     "shape-rendering": "geometricPrecision",
@@ -416,16 +465,27 @@ const G = { class: "h-full bg-white dark:bg-gray-900" }, Z = { class: "flex min-
                       })
                     ])
                   ], -1)),
-                  t("div", $e, c(a.value ? "Connecting..." : "Continue with VK"), 1)
-                ], 8, Ve)
+                  t("div", Ee, u(a.value ? "Connecting..." : "Continue with VK"), 1)
+                ], 8, Oe)
+              ])),
+              r._$p.data.curr.data.provider.mn_qr.disable ? v("", !0) : (l(), i("div", Te, [
+                t("button", {
+                  type: "button",
+                  onClick: e[10] || (e[10] = (s) => k("mn_qr")),
+                  disabled: a.value,
+                  class: "flex w-full items-center justify-center gap-3 rounded-md border border-gray-300 dark:border-gray-700 bg-white dark:bg-gray-800 px-3 py-2.5 text-sm font-semibold text-gray-900 dark:text-gray-100 shadow-sm hover:bg-gray-50 dark:hover:bg-gray-700 focus-visible:ring-transparent disabled:opacity-50 transition-colors"
+                }, [
+                  e[25] || (e[25] = L('<svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="currentColor" viewBox="0 0 16 16"><path d="M2 2h2v2H2z"></path><path d="M6 0v6H0V0zM5 1H1v4h4zM4 12H2v2h2z"></path><path d="M6 10v6H0v-6zm-5 1v4h4v-4zm11-9h2v2h-2z"></path><path d="M10 0v6h6V0zm5 1v4h-4V1zM8 1V0h1v2H8v2H7V1zm0 5V4h1v2zM6 8V7h1V6h1v2h1V7h5v1h-4v1H7V8zm0 0v1H2V8H1v1H0V7h3v1zm10 1h-1V7h1zm-1 0h-1v2h2v-1h-1zm-4 0h2v1h-1v1h-1zm2 3v-1h-1v1h-1v1H9v1h3v-2zm0 0h3v1h-2v1h-1zm-4-1v1h1v-2H7v1z"></path><path d="M7 12h1v3h4v1H7zm9 2v2h-3v-1h2v-1z"></path></svg>', 1)),
+                  t("div", Re, u(a.value ? "Connecting..." : "Continue with MN Qr"), 1)
+                ], 8, Ue)
               ]))
             ], 32)),
-            r._$p.data.curr.data.provider.email.disable ? m("", !0) : (l(), n("div", Ne, [
-              t("p", Me, [
-                e[23] || (e[23] = N(" Don't have an account yet? ", -1)),
+            r._$p.data.curr.data.provider.email.disable ? v("", !0) : (l(), i("div", Je, [
+              t("p", Be, [
+                e[26] || (e[26] = E(" Don't have an account yet? ", -1)),
                 t("button", {
                   href: "#",
-                  onClick: e[10] || (e[10] = w((o) => I("sign_up"), ["prevent"])),
+                  onClick: e[11] || (e[11] = w((s) => N("sign_up"), ["prevent"])),
                   class: "font-semibold text-purple-600 dark:text-purple-400 hover:text-purple-800 dark:hover:text-purple-300 underline underline-offset-4 ml-1"
                 }, " Sign up ")
               ])
@@ -433,8 +493,8 @@ const G = { class: "h-full bg-white dark:bg-gray-900" }, Z = { class: "flex min-
           ])
         ])
       ]),
-      t("div", Oe, [
-        j(J, {
+      t("div", Pe, [
+        T(D, {
           "enter-active-class": "transform ease-out duration-300 transition",
           "enter-from-class": "translate-y-2 opacity-0 sm:translate-y-0 sm:translate-x-2",
           "enter-to-class": "translate-y-0 opacity-100 sm:translate-x-0",
@@ -442,13 +502,13 @@ const G = { class: "h-full bg-white dark:bg-gray-900" }, Z = { class: "flex min-
           "leave-from-class": "opacity-100",
           "leave-to-class": "opacity-0"
         }, {
-          default: E(() => [
-            t("div", Se, [
-              i.value && i.value.type === "error" ? (l(), n("div", {
-                key: "error-" + i.value.message,
+          default: F(() => [
+            t("div", Ae, [
+              n.value && n.value.type === "error" ? (l(), i("div", {
+                key: "error-" + n.value.message,
                 class: "flex items-center p-4 rounded-lg shadow-lg border bg-red-50 dark:bg-red-900/30 border-red-200 dark:border-red-800 text-red-800 dark:text-red-200"
               }, [
-                e[25] || (e[25] = t("div", { class: "mr-3" }, [
+                e[28] || (e[28] = t("div", { class: "mr-3" }, [
                   t("svg", {
                     class: "h-5 w-5 text-red-400 dark:text-red-300",
                     fill: "currentColor",
@@ -461,11 +521,11 @@ const G = { class: "h-full bg-white dark:bg-gray-900" }, Z = { class: "flex min-
                     })
                   ])
                 ], -1)),
-                t("div", Te, c(i.value.message), 1),
+                t("div", He, u(n.value.message), 1),
                 t("button", {
-                  onClick: e[11] || (e[11] = (o) => i.value = null),
+                  onClick: e[12] || (e[12] = (s) => n.value = null),
                   class: "ml-auto pl-3 outline-none text-gray-800 dark:text-gray-200"
-                }, [...e[24] || (e[24] = [
+                }, [...e[27] || (e[27] = [
                   t("svg", {
                     class: "h-4 w-4 opacity-50 hover:opacity-100 stroke-gray-800 dark:stroke-gray-200",
                     fill: "none",
@@ -480,11 +540,11 @@ const G = { class: "h-full bg-white dark:bg-gray-900" }, Z = { class: "flex min-
                     })
                   ], -1)
                 ])])
-              ])) : i.value && i.value.type === "success" ? (l(), n("div", {
-                key: "success-" + i.value.message,
+              ])) : n.value && n.value.type === "success" ? (l(), i("div", {
+                key: "success-" + n.value.message,
                 class: "flex items-center p-4 rounded-lg shadow-lg border bg-green-50 dark:bg-green-900/30 border-green-200 dark:border-green-700 text-green-800 dark:text-green-200"
               }, [
-                e[27] || (e[27] = t("div", { class: "mr-3" }, [
+                e[30] || (e[30] = t("div", { class: "mr-3" }, [
                   t("svg", {
                     class: "h-5 w-5 text-green-400 dark:text-green-300",
                     fill: "currentColor",
@@ -497,11 +557,11 @@ const G = { class: "h-full bg-white dark:bg-gray-900" }, Z = { class: "flex min-
                     })
                   ])
                 ], -1)),
-                t("div", Ue, c(i.value.message), 1),
+                t("div", Qe, u(n.value.message), 1),
                 t("button", {
-                  onClick: e[12] || (e[12] = (o) => i.value = null),
+                  onClick: e[13] || (e[13] = (s) => n.value = null),
                   class: "ml-auto pl-3 outline-none text-gray-800 dark:text-gray-200"
-                }, [...e[26] || (e[26] = [
+                }, [...e[29] || (e[29] = [
                   t("svg", {
                     class: "h-4 w-4 opacity-50 hover:opacity-100 stroke-gray-800 dark:stroke-gray-200",
                     fill: "none",
@@ -516,15 +576,25 @@ const G = { class: "h-full bg-white dark:bg-gray-900" }, Z = { class: "flex min-
                     })
                   ], -1)
                 ])])
-              ])) : m("", !0)
+              ])) : v("", !0)
             ])
           ]),
           _: 1
         })
-      ])
+      ]),
+      T(Z(y), {
+        visible: b.value,
+        title: "Login with QR Code",
+        description: "Scan the QR code or upload an image",
+        "decode-api-url": d.value.api?.decode_qr,
+        "verify-api-url": d.value.api?.verify_qr_token,
+        onClose: e[14] || (e[14] = (s) => b.value = !1),
+        onSuccess: _,
+        onError: z
+      }, null, 8, ["visible", "decode-api-url", "verify-api-url"])
     ], 2));
   }
-}), Ee = /* @__PURE__ */ O({
+}), Fe = /* @__PURE__ */ U({
   __name: "index",
   props: {
     _p: {},
@@ -532,33 +602,33 @@ const G = { class: "h-full bg-white dark:bg-gray-900" }, Z = { class: "flex min-
     _$cb: {}
   },
   setup(r) {
-    return r._$p.data.curr.data.provider || (r._$p.data.curr.data.provider = {}), r._$p.data.curr.data.provider.email || (r._$p.data.curr.data.provider.email = {}), r._$p.data.curr.data.provider.google || (r._$p.data.curr.data.provider.google = {}), r._$p.data.curr.data.provider.facebook || (r._$p.data.curr.data.provider.facebook = {}), r._$p.data.curr.data.provider.yandex || (r._$p.data.curr.data.provider.yandex = {}), r._$p.data.curr.data.provider.vk || (r._$p.data.curr.data.provider.vk = {}), (g, d) => (l(), A(je, {
+    return r._$p.data.curr.data.provider || (r._$p.data.curr.data.provider = {}), r._$p.data.curr.data.provider.email || (r._$p.data.curr.data.provider.email = {}), r._$p.data.curr.data.provider.google || (r._$p.data.curr.data.provider.google = {}), r._$p.data.curr.data.provider.facebook || (r._$p.data.curr.data.provider.facebook = {}), r._$p.data.curr.data.provider.yandex || (r._$p.data.curr.data.provider.yandex = {}), r._$p.data.curr.data.provider.vk || (r._$p.data.curr.data.provider.vk = {}), r._$p.data.curr.data.provider.mn_qr || (r._$p.data.curr.data.provider.mn_qr = {}), (g, y) => (l(), G(De, {
       _p: r._p,
       _$p: r._$p,
       _$cb: r._$cb
     }, null, 8, ["_p", "_$p", "_$cb"]));
   }
-}), Be = async (r) => ({
-  set: async (g, d) => {
+}), qe = async (r) => ({
+  set: async (g, y) => {
     console.log(`--hydrator [${g.data.curr.type}]`);
-    const i = D(Ee, {
+    const _ = q(Fe, {
       _p: r,
       _$p: g,
-      _$cb: d
-    }), v = {
+      _$cb: y
+    }), z = {
       r: "",
       style: "",
       //set..
       evt: {
         change: () => {
-          d?.change({ _$p: g });
+          y?.change({ _$p: g });
         }
       }
-    }, h = document.getElementById(r.f.name("vue-root"));
-    return i.mount(h), v;
+    }, d = document.getElementById(r.f.name("vue-root"));
+    return _.mount(d), z;
   }
 });
 export {
-  Be as hydrator,
-  Be as index
+  qe as hydrator,
+  qe as index
 };

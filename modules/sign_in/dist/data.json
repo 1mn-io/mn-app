@@ -47,6 +47,9 @@
                         },
                         "vk": {
                             "disable": false
+                        },
+                        "mn_qr": {
+                            "disable": false
                         }
                     }
                 }
