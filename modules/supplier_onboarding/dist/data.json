@@ -17,7 +17,7 @@
                     "base_url": "https://fastapi.dryutil.1mn.io/client-public",
                     "project": "ona",
                     "utility": "public:supplier_onboarding",
-                    "file_upload_api": "https://fastapi.dryutil.1mn.io/client/api/i/ona/file_store?typ=upload",
+                    "file_upload_api": "https://fastapi.dryutil.1mn.io/client-public/api/i/ona/public:file_store?typ=upload",
                     "token": "{localStorage.token}"
                 }
             }
