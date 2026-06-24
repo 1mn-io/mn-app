@@ -1,0 +1,53 @@
+type _$ = {
+    /**eg=> `change`, `add`  etc. */
+    type: string;
+    /**pass existing `_p` variable. */
+    _p: any;
+    /**pass existing `_pp` variable. */
+    _pp: any;
+    /**can be used to pass custom data. */
+    custom?: any;
+    /**can be used to pass eg=> `_pp[`data`].curr[`data`],`, `_pp[`data`].curr` */
+    $d?: any;
+    /**can be used to pass eg=> `HTMLElement` */
+    el?: any;
+};
+type Events = "msg";
+type _p_TYP = {
+    /**@my module can use it to set custom variables. */
+    my: any;
+    custom: any;
+    f: {
+        name: (v: string) => string;
+        get_lib: (v: {
+            name: string;
+            run_from: any;
+        }) => any;
+        set_theme: (v: {
+            name: string;
+            el_id: string;
+        }) => any;
+        path: (v: string) => string;
+        uuid: () => string;
+        wait_until(conditionFn: () => boolean, interval?: number): Promise<void>;
+        call: (event: Events, _$: _$) => any;
+        listen: (event: Events, handler: (_$: _$) => any | Promise<any>) => any;
+        new_emitter: () => ({
+            emit: (event: Events, _$: _$) => any;
+            on: (event: Events, handler: (_$: _$) => any | Promise<any>) => any;
+        });
+    };
+};
+type _pp_TYP = {
+    data: {
+        curr: {
+            "id": "";
+            "type": "sample";
+            "custom": any;
+            "data": {
+                "data": string;
+            };
+        };
+    };
+};
+export type { _p_TYP, _pp_TYP };
