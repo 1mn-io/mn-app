@@ -1,4 +1,4 @@
-import { d as R, o as A, a as b, c as x, b as v, e as k, F as M, r as w, f as S } from "./runtime-dom.esm-bundler-BEcgbega.js";
+import { d as L, o as R, a as b, c as x, b as v, e as k, F as M, r as w, f as S } from "./runtime-dom.esm-bundler-BEcgbega.js";
 const $ = () => ({
   set: () => "xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx".replace(/[xy]/g, function(e) {
     const t = Math.random() * 16 | 0;
@@ -19,8 +19,8 @@ const $ = () => ({
         throw new Error("[el_id] is invalid");
       ((i) => {
         const s = (r) => {
-          ((m) => {
-            const o = m.getAttribute("data-ce");
+          ((d) => {
+            const o = d.getAttribute("data-ce");
             if (!o)
               return;
             const c = JSON.parse(o).filter((n) => n?.k.startsWith("t-"));
@@ -29,10 +29,10 @@ const $ = () => ({
                 const l = n.k, f = n.v.split(" ");
                 if (l == `t-${t}-class`)
                   for (const h of f)
-                    m.classList.add(h);
+                    d.classList.add(h);
                 else
                   for (const h of f)
-                    m.classList.remove(h);
+                    d.classList.remove(h);
               }
           })(r);
         };
@@ -124,7 +124,7 @@ class O {
   }
 }
 console.log("content-engine-lib");
-let d = {
+let u = {
   lib: {
     inbuilt_lib: [],
     // <any>[], // [`text`,`table`,`editor`]
@@ -132,12 +132,12 @@ let d = {
     set: async (e) => {
       const t = e?.lib || [];
       for (const [a, i] of t.entries()) {
-        const s = i, r = `${s.name}:${e.run_from}`, m = `${e.run_from}_src`;
-        let o = s[m];
+        const s = i, r = `${s.name}:${e.run_from}`, d = `${e.run_from}_src`;
+        let o = s[d];
         const c = `${e.run_from}_src`;
         let n = e?.lazy_lib?.[c] || null;
-        if (n && (n = n.replace("{*}", `${s.name}`)), console.log(`_lazy_src: ${n}`), console.log(`_src: ${o}`), d.lib.l.hasOwnProperty(`${r}`) == !1) {
-          if (/^[a-zA-Z0-9]/.test(o) && o.includes("/") == !1 && d.lib.inbuilt_lib.indexOf(`${s.name}`) === -1)
+        if (n && (n = n.replace("{*}", `${s.name}`)), console.log(`_lazy_src: ${n}`), console.log(`_src: ${o}`), u.lib.l.hasOwnProperty(`${r}`) == !1) {
+          if (/^[a-zA-Z0-9]/.test(o) && o.includes("/") == !1 && u.lib.inbuilt_lib.indexOf(`${s.name}`) === -1)
             if (n)
               o = n;
             else
@@ -148,7 +148,7 @@ let d = {
               /* webpackIgnore: true */
               `${o}`
             );
-            d.lib.l[`${r}`] = {
+            u.lib.l[`${r}`] = {
               lib: l,
               src: o
             };
@@ -159,19 +159,19 @@ let d = {
               /* webpackIgnore: true */
               `${o}`
             );
-            d.lib.l[`${r}`] = {
+            u.lib.l[`${r}`] = {
               lib: l,
               src: o
             };
           }
         }
       }
-      console.log(await d.lib.get_all({}));
+      console.log(await u.lib.get_all({}));
     },
     get: async (e) => {
       let t = null;
       const a = `${e.name}:${e.run_from}`;
-      return d.lib.l.hasOwnProperty(`${a}`) == !1 && await d.lib.set({
+      return u.lib.l.hasOwnProperty(`${a}`) == !1 && await u.lib.set({
         lib: [
           {
             renderer_src: e.name,
@@ -182,9 +182,9 @@ let d = {
         ],
         run_from: e.run_from,
         lazy_lib: e.lazy_lib
-      }), t = d.lib.l[`${a}`], t;
+      }), t = u.lib.l[`${a}`], t;
     },
-    get_all: async (e) => d.lib.l
+    get_all: async (e) => u.lib.l
   },
   path: {
     set: (e) => {
@@ -192,23 +192,23 @@ let d = {
       const i = e.src.split("/");
       if (e.src.indexOf("://localhost") !== -1 || e.src.indexOf("://127.0.0.1") !== -1 || (a = "/dist"), i.indexOf(e.type) !== -1)
         for (const [s, r] of i.entries()) {
-          let m = s == 0 ? "" : "/";
-          if (t += `${m}${r}`, r == e.type)
+          let d = s == 0 ? "" : "/";
+          if (t += `${d}${r}`, r == e.type)
             return `${t}${a}${e.name}`;
         }
       else
         for (const [s, r] of i.entries()) {
-          let m = s == 0 ? "" : "/";
-          if (t += `${m}${r}`, r == "src")
+          let d = s == 0 ? "" : "/";
+          if (t += `${d}${r}`, r == "src")
             return `${t}${a}${e.name}`;
         }
       return `${t}${a}${e.name}`;
     }
   }
 };
-const N = g(), C = g(), j = N.on, T = N.emit, B = C.emit, P = C.on, W = async (e) => {
+const N = g(), A = g(), j = N.on, T = N.emit, B = A.emit, P = A.on, W = async (e) => {
   const t = await I();
-  return await d.lib.set({ lib: e.lib, run_from: "renderer", lazy_lib: e.lazy_lib }), {
+  return await u.lib.set({ lib: e.lib, run_from: "renderer", lazy_lib: e.lazy_lib }), {
     set: async (a) => {
       console.log("--renderer [set]"), a.return = a?.return || {}, a.return.r = a?.return?.r || "full";
       const i = new O();
@@ -224,13 +224,13 @@ const N = g(), C = g(), j = N.on, T = N.emit, B = C.emit, P = C.on, W = async (e
         benchmark: null
       };
       return a.return.r == "full" ? r.r = "" : r.r = [], await (async () => {
-        for (const m of s) {
-          const o = await await d.lib.get({ name: m.type, run_from: "renderer", lazy_lib: e.lazy_lib }), c = await (await o.lib.index({
+        for (const d of s) {
+          const o = await await u.lib.get({ name: d.type, run_from: "renderer", lazy_lib: e.lazy_lib }), c = await (await o.lib.index({
             f: {
-              name: (n) => t.f.name({ id: m.id, name: n }),
-              get_lib: async (n) => await await d.lib.get({ name: n.name, run_from: n.run_from, lazy_lib: e.lazy_lib }),
+              name: (n) => t.f.name({ id: d.id, name: n }),
+              get_lib: async (n) => await await u.lib.get({ name: n.name, run_from: n.run_from, lazy_lib: e.lazy_lib }),
               set_theme: async (n) => await (await E()).set(n),
-              path: (n) => d.path.set({ src: o.src, type: m.type, name: n }),
+              path: (n) => u.path.set({ src: o.src, type: d.type, name: n }),
               //set..
               uuid: () => $().set(),
               wait_until: z
@@ -238,7 +238,7 @@ const N = g(), C = g(), j = N.on, T = N.emit, B = C.emit, P = C.on, W = async (e
           })).set(
             {
               data: {
-                curr: m
+                curr: d
               }
             }
             /*_$cb*/
@@ -250,7 +250,7 @@ const N = g(), C = g(), j = N.on, T = N.emit, B = C.emit, P = C.on, W = async (e
   };
 }, F = async (e) => {
   const t = await I();
-  return await d.lib.set({ lib: e.lib, run_from: "hydrator", lazy_lib: e.lazy_lib }), {
+  return await u.lib.set({ lib: e.lib, run_from: "hydrator", lazy_lib: e.lazy_lib }), {
     set: async (a) => {
       console.log("--hydrator [set]");
       const i = new O();
@@ -260,18 +260,18 @@ const N = g(), C = g(), j = N.on, T = N.emit, B = C.emit, P = C.on, W = async (e
         style: ""
       }, r = {
         style_id: `${$().set()}_stl`
-      }, m = a.data?.value?.l || a.data.l;
+      }, d = a.data?.value?.l || a.data.l;
       const o = async () => {
-        for (const c of m) {
-          const n = await await d.lib.get({ name: c.type, run_from: "hydrator", lazy_lib: e.lazy_lib }), l = n.lib, f = g(), h = f.on, p = await (await l.index({
+        for (const c of d) {
+          const n = await await u.lib.get({ name: c.type, run_from: "hydrator", lazy_lib: e.lazy_lib }), l = n.lib, f = g(), h = f.on, p = await (await l.index({
             /**@my module can use it to set custom variables. */
             my: {},
             //NOTE: We cannot add or use any variable of this object, It's reserved for module.
             f: {
-              name: (u) => t.f.name({ id: c.id, name: u }),
-              get_lib: async (u) => await await d.lib.get({ name: u.name, run_from: u.run_from, lazy_lib: e.lazy_lib }),
-              set_theme: async (u) => await (await E()).set(u),
-              path: (u) => d.path.set({ src: n.src, type: c.type, name: u }),
+              name: (m) => t.f.name({ id: c.id, name: m }),
+              get_lib: async (m) => await await u.lib.get({ name: m.name, run_from: m.run_from, lazy_lib: e.lazy_lib }),
+              set_theme: async (m) => await (await E()).set(m),
+              path: (m) => u.path.set({ src: n.src, type: c.type, name: m }),
               //set..
               uuid: () => $().set(),
               wait_until: z,
@@ -289,17 +289,17 @@ const N = g(), C = g(), j = N.on, T = N.emit, B = C.emit, P = C.on, W = async (e
             }
             /*_$cb*/
           );
-          j("msg", async (u) => {
+          j("msg", async (m) => {
             try {
-              if (Object.keys(u.where || {}).length == 0) {
-                await f.emit("msg", u);
+              if (Object.keys(m.where || {}).length == 0) {
+                await f.emit("msg", m);
                 return;
               }
             } catch {
             }
             try {
-              if (c?.[u.where?.key || ""] == u.where?.value) {
-                await f.emit("msg", u);
+              if (c?.[m.where?.key || ""] == m.where?.value) {
+                await f.emit("msg", m);
                 return;
               }
             } catch {
@@ -331,7 +331,7 @@ const N = g(), C = g(), j = N.on, T = N.emit, B = C.emit, P = C.on, W = async (e
 }, U = {
   key: 0,
   class: "pb-3 pt-3 pl-3 pr-3 sticky top-0 bg-white z-10"
-}, V = ["innerHTML"], D = { key: 1 }, G = ["innerHTML"], Z = /* @__PURE__ */ R({
+}, V = ["innerHTML"], D = { key: 1 }, G = ["innerHTML"], Z = /* @__PURE__ */ L({
   __name: "index",
   props: {
     _p: {},
@@ -347,7 +347,7 @@ const N = g(), C = g(), j = N.on, T = N.emit, B = C.emit, P = C.on, W = async (e
       url: "https://fastapi.dryutil.1mn.io/client/api/i/ona/auth?typ=get_users",
       token: "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImYwZTNlMDRiLTVkNDAtNDg1ZS05OGU4LWEzOTI3NWU3MzM0OCIsInNlY3VyaXR5Ijp7InBhcnR5IjpbInBhcnR5XzEiLCJwYXJ0eV8yIl19LCJzdWIiOiJmMGUzZTA0Yi01ZDQwLTQ4NWUtOThlOC1hMzkyNzVlNzMzNDgiLCJpYXQiOjE3NjU4MTI4Mjh9.OoClnPtlxI71L-e555nbNSmenmGufxewp78SlmdZCNxeuauXao5RRvqwOKQ77SJFqJXk0ng6GZ7VOgYECdEf-3k1UGX7w1NE_D5A6SP3UkVsSG8orYACFuvTyesbFwkpnEhdu0PBd6n8wuLkgU6nZ1bLDzKVg1zd8fFeJrwmUqk"
     };
-    async function m(n = 1, l = 20, f = "") {
+    async function d(n = 1, l = 20, f = "") {
       try {
         const h = r.url + `&page=${n}&page_size=${l}&email=${f}`, p = await fetch(h, {
           method: "GET",
@@ -379,7 +379,7 @@ const N = g(), C = g(), j = N.on, T = N.emit, B = C.emit, P = C.on, W = async (e
       })) : [];
     }
     async function c(n, l, f = 1) {
-      const h = await m(f, i.value, l);
+      const h = await d(f, i.value, l);
       if (h && h.success) {
         const p = o(h);
         try {
@@ -405,7 +405,7 @@ const N = g(), C = g(), j = N.on, T = N.emit, B = C.emit, P = C.on, W = async (e
         });
       }
     }
-    return A(() => {
+    return R(() => {
       (async () => {
         let n = "", l = {
           l: [
@@ -442,16 +442,22 @@ const N = g(), C = g(), j = N.on, T = N.emit, B = C.emit, P = C.on, W = async (e
                 table: {
                   columns: [
                     {
+                      title: "id",
+                      field: "id",
+                      hozAlign: "center",
+                      width: 320
+                    },
+                    {
                       title: "name",
                       field: "name",
                       hozAlign: "center",
-                      width: 120
+                      width: 250
                     },
                     {
                       title: "email",
                       field: "email",
                       hozAlign: "center",
-                      minWidth: 250
+                      minWidth: 150
                     },
                     {
                       title: "verified",
@@ -524,10 +530,10 @@ const N = g(), C = g(), j = N.on, T = N.emit, B = C.emit, P = C.on, W = async (e
           n = y.style, s.value.html.table = y.r[0] || "", s.value.html.search_panel = y.r[1] || "";
           const _ = document.createElement("style");
           document.head.appendChild(_), _.innerHTML = n, setTimeout(async () => {
-            const L = await p.set({
+            const C = await p.set({
               data: l
             });
-            console.log(L);
+            console.log(C);
           }, 20);
         })();
       })();
