@@ -24558,7 +24558,13 @@ const Gv = { class: "flex flex-col gap-8 h-full p-4" }, Wv = { class: "grid grid
             action: "init_attribute",
             data: { brand_id: b.value, sys_category_id: O, user_id: i.var.user_id }
           })
-        }), r.add({ severity: "info", summary: "Info", detail: "Attribute initialised" });
+        }), r.add({
+          severity: "info",
+          summary: "Info",
+          detail: "Attribute initialised",
+          life: 1e3
+          // Auto-close after 1 seconds
+        });
       } catch {
         r.add({ severity: "error", summary: "Error", detail: "Failed to init attribute" });
       }
@@ -24866,7 +24872,8 @@ const Gv = { class: "flex flex-col gap-8 h-full p-4" }, Wv = { class: "grid grid
                     optionLabel: "label",
                     selectionMode: "multiple",
                     placeholder: S.value ? "Wait a moment, Categories loading.." : "Select categories...",
-                    class: "w-full",
+                    "class-old": "w-full",
+                    class: "w-full max-w-[90vw]",
                     onFilter: Po,
                     loading: S.value,
                     disabled: S.value,
@@ -24991,7 +24998,7 @@ const Gv = { class: "flex flex-col gap-8 h-full p-4" }, Wv = { class: "grid grid
   for (const [o, i] of e)
     n[o] = i;
   return n;
-}, y1 = /* @__PURE__ */ b1(m1, [["__scopeId", "data-v-f2d6a4cb"]]), v1 = {
+}, y1 = /* @__PURE__ */ b1(m1, [["__scopeId", "data-v-e419b626"]]), v1 = {
   "class-old": "p-4",
   class: "container mx-auto p-4"
 }, w1 = {
