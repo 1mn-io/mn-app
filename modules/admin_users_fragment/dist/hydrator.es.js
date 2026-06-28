@@ -1,14 +1,14 @@
-import { d as L, o as R, a as b, c as x, b as v, e as k, F as M, r as w, f as S } from "./runtime-dom.esm-bundler-BEcgbega.js";
-const $ = () => ({
+import { d as S, o as J, a as v, c as $, b as z, e as C, F as j, r as b, f as B } from "./runtime-dom.esm-bundler-BEcgbega.js";
+const T = () => ({
   set: () => "xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx".replace(/[xy]/g, function(e) {
     const t = Math.random() * 16 | 0;
     return (e == "x" ? t : t & 3 | 8).toString(16);
   })
-}), I = async () => ({
+}), N = async () => ({
   f: {
     name: (e) => `${e.name}${e.id}`
   }
-}), E = async () => ({
+}), A = async () => ({
   set: async (e) => {
     console.log("--theme");
     try {
@@ -46,7 +46,7 @@ const $ = () => ({
     }
   }
 });
-function z(e, t = 1e3) {
+function k(e, t = 1e3) {
   let a = {
     cnt: 0
   };
@@ -65,7 +65,7 @@ function z(e, t = 1e3) {
     s();
   });
 }
-let J = class {
+let P = class {
   listeners = {};
   on = (e, t) => ((this.listeners[e] ||= []).push(t), () => this.off(e, t));
   off = (e, t) => {
@@ -94,8 +94,8 @@ let J = class {
       }
   };
 };
-const g = () => new J();
-class O {
+const x = () => new P();
+class L {
   startTime;
   endTime;
   isRunning;
@@ -206,12 +206,12 @@ let u = {
     }
   }
 };
-const N = g(), A = g(), j = N.on, T = N.emit, B = A.emit, P = A.on, W = async (e) => {
-  const t = await I();
+const R = x(), M = x(), D = R.on, O = R.emit, W = M.emit, F = M.on, U = async (e) => {
+  const t = await N();
   return await u.lib.set({ lib: e.lib, run_from: "renderer", lazy_lib: e.lazy_lib }), {
     set: async (a) => {
       console.log("--renderer [set]"), a.return = a?.return || {}, a.return.r = a?.return?.r || "full";
-      const i = new O();
+      const i = new L();
       i.start();
       let s = a.data?.value?.l || a.data.l, r = {
         r: null,
@@ -229,11 +229,11 @@ const N = g(), A = g(), j = N.on, T = N.emit, B = A.emit, P = A.on, W = async (e
             f: {
               name: (n) => t.f.name({ id: d.id, name: n }),
               get_lib: async (n) => await await u.lib.get({ name: n.name, run_from: n.run_from, lazy_lib: e.lazy_lib }),
-              set_theme: async (n) => await (await E()).set(n),
+              set_theme: async (n) => await (await A()).set(n),
               path: (n) => u.path.set({ src: o.src, type: d.type, name: n }),
               //set..
-              uuid: () => $().set(),
-              wait_until: z
+              uuid: () => T().set(),
+              wait_until: k
             }
           })).set(
             {
@@ -248,38 +248,38 @@ const N = g(), A = g(), j = N.on, T = N.emit, B = A.emit, P = A.on, W = async (e
       })(), i.stop(), r.benchmark = i.result(), r;
     }
   };
-}, F = async (e) => {
-  const t = await I();
+}, V = async (e) => {
+  const t = await N();
   return await u.lib.set({ lib: e.lib, run_from: "hydrator", lazy_lib: e.lazy_lib }), {
     set: async (a) => {
       console.log("--hydrator [set]");
-      const i = new O();
+      const i = new L();
       i.start();
       let s = {
         r: "",
         style: ""
       }, r = {
-        style_id: `${$().set()}_stl`
+        style_id: `${T().set()}_stl`
       }, d = a.data?.value?.l || a.data.l;
       const o = async () => {
         for (const c of d) {
-          const n = await await u.lib.get({ name: c.type, run_from: "hydrator", lazy_lib: e.lazy_lib }), l = n.lib, f = g(), h = f.on, p = await (await l.index({
+          const n = await await u.lib.get({ name: c.type, run_from: "hydrator", lazy_lib: e.lazy_lib }), l = n.lib, f = x(), h = f.on, y = await (await l.index({
             /**@my module can use it to set custom variables. */
             my: {},
             //NOTE: We cannot add or use any variable of this object, It's reserved for module.
             f: {
               name: (m) => t.f.name({ id: c.id, name: m }),
               get_lib: async (m) => await await u.lib.get({ name: m.name, run_from: m.run_from, lazy_lib: e.lazy_lib }),
-              set_theme: async (m) => await (await E()).set(m),
+              set_theme: async (m) => await (await A()).set(m),
               path: (m) => u.path.set({ src: n.src, type: c.type, name: m }),
               //set..
-              uuid: () => $().set(),
-              wait_until: z,
+              uuid: () => T().set(),
+              wait_until: k,
               //set..
-              call: B,
+              call: W,
               listen: h,
               //set..
-              new_emitter: () => g()
+              new_emitter: () => x()
             }
           })).set(
             {
@@ -289,7 +289,7 @@ const N = g(), A = g(), j = N.on, T = N.emit, B = A.emit, P = A.on, W = async (e
             }
             /*_$cb*/
           );
-          j("msg", async (m) => {
+          D("msg", async (m) => {
             try {
               if (Object.keys(m.where || {}).length == 0) {
                 await f.emit("msg", m);
@@ -304,10 +304,10 @@ const N = g(), A = g(), j = N.on, T = N.emit, B = A.emit, P = A.on, W = async (e
               }
             } catch {
             }
-          }), s.style += p.style;
+          }), s.style += y.style;
         }
       };
-      await z(
+      await k(
         () => document.readyState === "complete" || typeof window < "u",
         50
       ), await o();
@@ -328,17 +328,17 @@ const N = g(), A = g(), j = N.on, T = N.emit, B = A.emit, P = A.on, W = async (e
       };
     }
   };
-}, U = {
+}, G = {
   key: 0,
   class: "pb-3 pt-3 pl-3 pr-3 sticky top-0 bg-white z-10"
-}, V = ["innerHTML"], D = { key: 1 }, G = ["innerHTML"], Z = /* @__PURE__ */ L({
+}, Z = ["innerHTML"], X = { key: 1 }, Y = ["innerHTML"], H = /* @__PURE__ */ S({
   __name: "index",
   props: {
     _p: {},
     _$p: {}
   },
   setup(e) {
-    const t = w(""), a = w(0), i = w(20), s = w({
+    const t = b(""), a = b(0), i = b(20), s = b({
       html: {
         table: null,
         search_panel: null
@@ -349,7 +349,7 @@ const N = g(), A = g(), j = N.on, T = N.emit, B = A.emit, P = A.on, W = async (e
     };
     async function d(n = 1, l = 20, f = "") {
       try {
-        const h = r.url + `&page=${n}&page_size=${l}&email=${f}`, p = await fetch(h, {
+        const h = r.url + `&page=${n}&page_size=${l}&email=${f}`, y = await fetch(h, {
           method: "GET",
           //'POST',
           headers: {
@@ -363,9 +363,9 @@ const N = g(), A = g(), j = N.on, T = N.emit, B = A.emit, P = A.on, W = async (e
               email: searchQuery
           })*/
         });
-        if (!p.ok)
-          throw new Error(`API error: ${p.status}`);
-        return await p.json();
+        if (!y.ok)
+          throw new Error(`API error: ${y.status}`);
+        return await y.json();
       } catch (h) {
         return console.error("Error fetching product list:", h), null;
       }
@@ -375,20 +375,26 @@ const N = g(), A = g(), j = N.on, T = N.emit, B = A.emit, P = A.on, W = async (e
         id: l.id,
         name: l.name,
         email: l.email,
-        verified: l.verified ? "Yes" : "No"
+        verified: l.verified ? "Yes" : "No",
+        //set..
+        actions: `<button class="copy-id-btn px-3 py-1.5 bg-emerald-500 hover:bg-emerald-600 text-white text-xs font-medium rounded-lg shadow-sm transition-all duration-200 hover:shadow-md">
+                    <span class="flex items-center gap-1.5"> 
+                        Copy ID
+                    </span>
+                </button>`
       })) : [];
     }
     async function c(n, l, f = 1) {
       const h = await d(f, i.value, l);
       if (h && h.success) {
-        const p = o(h);
+        const y = o(h);
         try {
-          if (!(p.length > 0))
+          if (!(y.length > 0))
             throw new Error("no more data..");
         } catch {
           return;
         }
-        n._$p.data.curr.data.table.rows = p, T("msg", {
+        n._$p.data.curr.data.table.rows = y, O("msg", {
           type: "load_more",
           _p: n._p,
           _$p: n._$p,
@@ -405,7 +411,7 @@ const N = g(), A = g(), j = N.on, T = N.emit, B = A.emit, P = A.on, W = async (e
         });
       }
     }
-    return R(() => {
+    return J(() => {
       (async () => {
         let n = "", l = {
           l: [
@@ -441,12 +447,12 @@ const N = g(), A = g(), j = N.on, T = N.emit, B = A.emit, P = A.on, W = async (e
                 },
                 table: {
                   columns: [
-                    {
-                      title: "id",
-                      field: "id",
-                      hozAlign: "center",
-                      width: 320
-                    },
+                    /*{
+                        title: "id",
+                        field: "id",
+                        hozAlign: "center",
+                        width: 320,
+                    },*/
                     {
                       title: "name",
                       field: "name",
@@ -464,6 +470,29 @@ const N = g(), A = g(), j = N.on, T = N.emit, B = A.emit, P = A.on, W = async (e
                       field: "verified",
                       hozAlign: "center",
                       width: 110
+                    },
+                    {
+                      title: "Actions",
+                      field: "actions",
+                      hozAlign: "center",
+                      width: 270,
+                      formatter: "html",
+                      formatterParams: {
+                        allowHTML: !0
+                      },
+                      cellClick: function(p, _) {
+                        const E = _.getRow().getData().id;
+                        navigator.clipboard.writeText(E).then(() => {
+                          const g = p.target, w = g.innerText;
+                          g.innerText = "Copied!", setTimeout(() => {
+                            g.innerText = w;
+                          }, 2e3);
+                        }).catch((g) => {
+                          console.error("Failed to copy:", g);
+                          const w = document.createElement("textarea");
+                          w.value = E, document.body.appendChild(w), w.select(), document.execCommand("copy"), document.body.removeChild(w);
+                        });
+                      }
                     }
                   ],
                   rows: []
@@ -498,17 +527,17 @@ const N = g(), A = g(), j = N.on, T = N.emit, B = A.emit, P = A.on, W = async (e
             hydrator_src: "https://cdn.jsdelivr.net/gh/1mn-io/mn-app@latest/modules/{*}/dist/hydrator.es.js",
             editor_src: "https://cdn.jsdelivr.net/gh/1mn-io/mn-app@latest/modules/{*}/dist/editor.es.js"
           }
-        }, h = await W(f), p = await F(f);
-        (async () => P("msg", async (y) => {
-          if (console.log("[ce_listen]", y), y.type == "load_more" && y._$p.data.curr.id == "3e1bc78c-104f-4f6f-aa87-75" && (a.value += 1, c(y, t.value, a.value)), y.type == "search:query" && y._$p.data.curr.id == "3e1bc78c-aa87-search-panel") {
-            T("msg", {
+        }, h = await U(f), y = await V(f);
+        (async () => F("msg", async (p) => {
+          if (console.log("[ce_listen]", p), p.type == "load_more" && p._$p.data.curr.id == "3e1bc78c-104f-4f6f-aa87-75" && (a.value += 1, c(p, t.value, a.value)), p.type == "search:query" && p._$p.data.curr.id == "3e1bc78c-aa87-search-panel") {
+            O("msg", {
               type: "remove_all_rows",
               custom: {},
               where: {
                 key: "id",
                 value: "3e1bc78c-104f-4f6f-aa87-75"
               }
-            }), a.value = 1, t.value = y._p.query, console.log(y._p);
+            }), a.value = 1, t.value = p._p.query, console.log(p._p);
             let _ = JSON.parse(JSON.stringify({
               data: {
                 curr: l.l[0]
@@ -520,42 +549,42 @@ const N = g(), A = g(), j = N.on, T = N.emit, B = A.emit, P = A.on, W = async (e
             }, t.value, a.value), console.log();
           }
         }))(), await (async () => {
-          const y = await h.set({
+          const p = await h.set({
             data: l,
             return: {
               r: "chunk"
               //full, chunk
             }
           });
-          n = y.style, s.value.html.table = y.r[0] || "", s.value.html.search_panel = y.r[1] || "";
+          n = p.style, s.value.html.table = p.r[0] || "", s.value.html.search_panel = p.r[1] || "";
           const _ = document.createElement("style");
           document.head.appendChild(_), _.innerHTML = n, setTimeout(async () => {
-            const C = await p.set({
+            const I = await y.set({
               data: l
             });
-            console.log(C);
+            console.log(I);
           }, 20);
         })();
       })();
-    }), (n, l) => (b(), x(M, null, [
-      s.value.html.search_panel ? (b(), x("div", U, [
-        v("div", null, [
-          v("div", {
+    }), (n, l) => (v(), $(j, null, [
+      s.value.html.search_panel ? (v(), $("div", G, [
+        z("div", null, [
+          z("div", {
             innerHTML: s.value.html.search_panel
-          }, null, 8, V)
+          }, null, 8, Z)
         ])
-      ])) : k("", !0),
-      s.value.html.table ? (b(), x("div", D, [
-        v("div", {
+      ])) : C("", !0),
+      s.value.html.table ? (v(), $("div", X, [
+        z("div", {
           innerHTML: s.value.html.table
-        }, null, 8, G)
-      ])) : k("", !0)
+        }, null, 8, Y)
+      ])) : C("", !0)
     ], 64));
   }
-}), Y = async (e) => ({
+}), Q = async (e) => ({
   set: async (t) => {
     console.log(`--hydrator [${t.data.curr.type}]`);
-    const i = S(Z, {
+    const i = B(H, {
       _p: e,
       _$p: t
     }), s = {
@@ -577,6 +606,6 @@ const N = g(), A = g(), j = N.on, T = N.emit, B = A.emit, P = A.on, W = async (e
   }
 });
 export {
-  Y as hydrator,
-  Y as index
+  Q as hydrator,
+  Q as index
 };
