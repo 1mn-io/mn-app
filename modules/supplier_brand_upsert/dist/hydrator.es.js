@@ -692,7 +692,7 @@ var Fe = { regex: { rules: { class: { pattern: /^\.([a-zA-Z][\w-]*)$/, resolve(t
   var r, a, l, s, d, c, f;
   let { preset: p, options: h } = e, b, x, v, S, P, A, C;
   if (H(p) && h.transform !== "strict") {
-    let { primitive: L, semantic: K, extend: R } = p, M = K || {}, { colorScheme: ee } = M, he = Ye(M, ["colorScheme"]), W = R || {}, { colorScheme: U } = W, se = Ye(W, ["colorScheme"]), oe = ee || {}, { dark: Y } = oe, ae = Ye(oe, ["dark"]), ie = U || {}, { dark: xe } = ie, Ce = Ye(ie, ["dark"]), de = H(L) ? this._toVariables({ primitive: L }, h) : {}, Le = H(he) ? this._toVariables({ semantic: he }, h) : {}, He = H(ae) ? this._toVariables({ light: ae }, h) : {}, tt = H(Y) ? this._toVariables({ dark: Y }, h) : {}, _e = H(se) ? this._toVariables({ semantic: se }, h) : {}, st = H(Ce) ? this._toVariables({ light: Ce }, h) : {}, Zn = H(xe) ? this._toVariables({ dark: xe }, h) : {}, [Po, Pt] = [(r = de.declarations) != null ? r : "", de.tokens], [Oo, zt] = [(a = Le.declarations) != null ? a : "", Le.tokens || []], [dt, Io] = [(l = He.declarations) != null ? l : "", He.tokens || []], [Ro, To] = [(s = tt.declarations) != null ? s : "", tt.tokens || []], [Bo, Do] = [(d = _e.declarations) != null ? d : "", _e.tokens || []], [Ao, Eo] = [(c = st.declarations) != null ? c : "", st.tokens || []], [Lo, Ft] = [(f = Zn.declarations) != null ? f : "", Zn.tokens || []];
+    let { primitive: j, semantic: K, extend: R } = p, M = K || {}, { colorScheme: ee } = M, he = Ye(M, ["colorScheme"]), W = R || {}, { colorScheme: U } = W, se = Ye(W, ["colorScheme"]), oe = ee || {}, { dark: Y } = oe, ae = Ye(oe, ["dark"]), ie = U || {}, { dark: xe } = ie, Ce = Ye(ie, ["dark"]), de = H(j) ? this._toVariables({ primitive: j }, h) : {}, Le = H(he) ? this._toVariables({ semantic: he }, h) : {}, He = H(ae) ? this._toVariables({ light: ae }, h) : {}, tt = H(Y) ? this._toVariables({ dark: Y }, h) : {}, _e = H(se) ? this._toVariables({ semantic: se }, h) : {}, st = H(Ce) ? this._toVariables({ light: Ce }, h) : {}, Zn = H(xe) ? this._toVariables({ dark: xe }, h) : {}, [Po, Pt] = [(r = de.declarations) != null ? r : "", de.tokens], [Oo, zt] = [(a = Le.declarations) != null ? a : "", Le.tokens || []], [dt, Io] = [(l = He.declarations) != null ? l : "", He.tokens || []], [Ro, To] = [(s = tt.declarations) != null ? s : "", tt.tokens || []], [Bo, Do] = [(d = _e.declarations) != null ? d : "", _e.tokens || []], [Ao, Eo] = [(c = st.declarations) != null ? c : "", st.tokens || []], [Lo, Ft] = [(f = Zn.declarations) != null ? f : "", Zn.tokens || []];
     b = this.transformCSS(t, Po, "light", "variable", h, o, i), x = Pt;
     let jo = this.transformCSS(t, `${Oo}${dt}`, "light", "variable", h, o, i), qn = this.transformCSS(t, `${Ro}`, "dark", "variable", h, o, i);
     v = `${jo}${qn}`, S = [.../* @__PURE__ */ new Set([...zt, ...Io, ...To])];
@@ -704,7 +704,7 @@ var Fe = { regex: { rules: { class: { pattern: /^\.([a-zA-Z][\w-]*)$/, resolve(t
   var l, s, d;
   let c, f, p;
   if (H(e) && n.transform !== "strict") {
-    let h = t.replace("-directive", ""), b = e, { colorScheme: x, extend: v, css: S } = b, P = Ye(b, ["colorScheme", "extend", "css"]), A = v || {}, { colorScheme: C } = A, L = Ye(A, ["colorScheme"]), K = x || {}, { dark: R } = K, M = Ye(K, ["dark"]), ee = C || {}, { dark: he } = ee, W = Ye(ee, ["dark"]), U = H(P) ? this._toVariables({ [h]: Ne(Ne({}, P), L) }, n) : {}, se = H(M) ? this._toVariables({ [h]: Ne(Ne({}, M), W) }, n) : {}, oe = H(R) ? this._toVariables({ [h]: Ne(Ne({}, R), he) }, n) : {}, [Y, ae] = [(l = U.declarations) != null ? l : "", U.tokens || []], [ie, xe] = [(s = se.declarations) != null ? s : "", se.tokens || []], [Ce, de] = [(d = oe.declarations) != null ? d : "", oe.tokens || []], Le = this.transformCSS(h, `${Y}${ie}`, "light", "variable", n, i, r, a), He = this.transformCSS(h, Ce, "dark", "variable", n, i, r, a);
+    let h = t.replace("-directive", ""), b = e, { colorScheme: x, extend: v, css: S } = b, P = Ye(b, ["colorScheme", "extend", "css"]), A = v || {}, { colorScheme: C } = A, j = Ye(A, ["colorScheme"]), K = x || {}, { dark: R } = K, M = Ye(K, ["dark"]), ee = C || {}, { dark: he } = ee, W = Ye(ee, ["dark"]), U = H(P) ? this._toVariables({ [h]: Ne(Ne({}, P), j) }, n) : {}, se = H(M) ? this._toVariables({ [h]: Ne(Ne({}, M), W) }, n) : {}, oe = H(R) ? this._toVariables({ [h]: Ne(Ne({}, R), he) }, n) : {}, [Y, ae] = [(l = U.declarations) != null ? l : "", U.tokens || []], [ie, xe] = [(s = se.declarations) != null ? s : "", se.tokens || []], [Ce, de] = [(d = oe.declarations) != null ? d : "", oe.tokens || []], Le = this.transformCSS(h, `${Y}${ie}`, "light", "variable", n, i, r, a), He = this.transformCSS(h, Ce, "dark", "variable", n, i, r, a);
     c = `${Le}${He}`, f = [.../* @__PURE__ */ new Set([...ae, ...xe, ...de])], p = Ae(S, { dt: yt });
   }
   return { css: c, tokens: f, style: p };
@@ -1038,7 +1038,7 @@ function md(t) {
 }
 var bd = 0;
 function yd(t) {
-  var e = arguments.length > 1 && arguments[1] !== void 0 ? arguments[1] : {}, n = te(!1), o = te(t), i = te(null), r = tl() ? window.document : void 0, a = e.document, l = a === void 0 ? r : a, s = e.immediate, d = s === void 0 ? !0 : s, c = e.manual, f = c === void 0 ? !1 : c, p = e.name, h = p === void 0 ? "style_".concat(++bd) : p, b = e.id, x = b === void 0 ? void 0 : b, v = e.media, S = v === void 0 ? void 0 : v, P = e.nonce, A = P === void 0 ? void 0 : P, C = e.first, L = C === void 0 ? !1 : C, K = e.onMounted, R = K === void 0 ? void 0 : K, M = e.onUpdated, ee = M === void 0 ? void 0 : M, he = e.onLoad, W = he === void 0 ? void 0 : he, U = e.props, se = U === void 0 ? {} : U, oe = function() {
+  var e = arguments.length > 1 && arguments[1] !== void 0 ? arguments[1] : {}, n = te(!1), o = te(t), i = te(null), r = tl() ? window.document : void 0, a = e.document, l = a === void 0 ? r : a, s = e.immediate, d = s === void 0 ? !0 : s, c = e.manual, f = c === void 0 ? !1 : c, p = e.name, h = p === void 0 ? "style_".concat(++bd) : p, b = e.id, x = b === void 0 ? void 0 : b, v = e.media, S = v === void 0 ? void 0 : v, P = e.nonce, A = P === void 0 ? void 0 : P, C = e.first, j = C === void 0 ? !1 : C, K = e.onMounted, R = K === void 0 ? void 0 : K, M = e.onUpdated, ee = M === void 0 ? void 0 : M, he = e.onLoad, W = he === void 0 ? void 0 : he, U = e.props, se = U === void 0 ? {} : U, oe = function() {
   }, Y = function(xe) {
     var Ce = arguments.length > 1 && arguments[1] !== void 0 ? arguments[1] : {};
     if (l) {
@@ -1048,7 +1048,7 @@ function yd(t) {
         id: He,
         media: S,
         nonce: tt
-      }), L ? l.head.prepend(i.value) : l.head.appendChild(i.value), Gn(i.value, "data-primevue-style-id", Le), fo(i.value, de), i.value.onload = function(_e) {
+      }), j ? l.head.prepend(i.value) : l.head.appendChild(i.value), Gn(i.value, "data-primevue-style-id", Le), fo(i.value, de), i.value.onload = function(_e) {
         return W?.(_e, {
           name: Le
         });
@@ -2933,7 +2933,7 @@ var V = {
         }, r), A), re.setLoadedStyleName(i.$style.name);
       }
       if (!re.isStyleNameLoaded("layer-order")) {
-        var C, L, K = (C = i.$style) === null || C === void 0 || (L = C.getLayerOrderThemeCSS) === null || L === void 0 ? void 0 : L.call(C);
+        var C, j, K = (C = i.$style) === null || C === void 0 || (j = C.getLayerOrderThemeCSS) === null || j === void 0 ? void 0 : j.call(C);
         _.load(K, Q({
           name: "layer-order",
           first: !0
@@ -3002,13 +3002,13 @@ var V = {
         /* computed instance variables */
         defaultPT: function() {
           return V._getPT(v?.pt, void 0, function(C) {
-            var L;
-            return C == null || (L = C.directives) === null || L === void 0 ? void 0 : L[e];
+            var j;
+            return C == null || (j = C.directives) === null || j === void 0 ? void 0 : j[e];
           });
         },
         isUnstyled: function() {
-          var C, L;
-          return ((C = s._$instances[e]) === null || C === void 0 || (C = C.$binding) === null || C === void 0 || (C = C.value) === null || C === void 0 ? void 0 : C.unstyled) !== void 0 ? (L = s._$instances[e]) === null || L === void 0 || (L = L.$binding) === null || L === void 0 || (L = L.value) === null || L === void 0 ? void 0 : L.unstyled : v?.unstyled;
+          var C, j;
+          return ((C = s._$instances[e]) === null || C === void 0 || (C = C.$binding) === null || C === void 0 || (C = C.value) === null || C === void 0 ? void 0 : C.unstyled) !== void 0 ? (j = s._$instances[e]) === null || j === void 0 || (j = j.$binding) === null || j === void 0 || (j = j.value) === null || j === void 0 ? void 0 : j.unstyled : v?.unstyled;
         },
         theme: function() {
           var C;
@@ -3020,20 +3020,20 @@ var V = {
         },
         /* instance's methods */
         ptm: function() {
-          var C, L = arguments.length > 0 && arguments[0] !== void 0 ? arguments[0] : "", K = arguments.length > 1 && arguments[1] !== void 0 ? arguments[1] : {};
-          return V._getPTValue(s._$instances[e], (C = s._$instances[e]) === null || C === void 0 || (C = C.$binding) === null || C === void 0 || (C = C.value) === null || C === void 0 ? void 0 : C.pt, L, Q({}, K));
+          var C, j = arguments.length > 0 && arguments[0] !== void 0 ? arguments[0] : "", K = arguments.length > 1 && arguments[1] !== void 0 ? arguments[1] : {};
+          return V._getPTValue(s._$instances[e], (C = s._$instances[e]) === null || C === void 0 || (C = C.$binding) === null || C === void 0 || (C = C.value) === null || C === void 0 ? void 0 : C.pt, j, Q({}, K));
         },
         ptmo: function() {
-          var C = arguments.length > 0 && arguments[0] !== void 0 ? arguments[0] : {}, L = arguments.length > 1 && arguments[1] !== void 0 ? arguments[1] : "", K = arguments.length > 2 && arguments[2] !== void 0 ? arguments[2] : {};
-          return V._getPTValue(s._$instances[e], C, L, K, !1);
+          var C = arguments.length > 0 && arguments[0] !== void 0 ? arguments[0] : {}, j = arguments.length > 1 && arguments[1] !== void 0 ? arguments[1] : "", K = arguments.length > 2 && arguments[2] !== void 0 ? arguments[2] : {};
+          return V._getPTValue(s._$instances[e], C, j, K, !1);
         },
         cx: function() {
-          var C, L, K = arguments.length > 0 && arguments[0] !== void 0 ? arguments[0] : "", R = arguments.length > 1 && arguments[1] !== void 0 ? arguments[1] : {};
-          return (C = s._$instances[e]) !== null && C !== void 0 && C.isUnstyled() ? void 0 : V._getOptionValue((L = s._$instances[e]) === null || L === void 0 || (L = L.$style) === null || L === void 0 ? void 0 : L.classes, K, Q({}, R));
+          var C, j, K = arguments.length > 0 && arguments[0] !== void 0 ? arguments[0] : "", R = arguments.length > 1 && arguments[1] !== void 0 ? arguments[1] : {};
+          return (C = s._$instances[e]) !== null && C !== void 0 && C.isUnstyled() ? void 0 : V._getOptionValue((j = s._$instances[e]) === null || j === void 0 || (j = j.$style) === null || j === void 0 ? void 0 : j.classes, K, Q({}, R));
         },
         sx: function() {
-          var C, L = arguments.length > 0 && arguments[0] !== void 0 ? arguments[0] : "", K = arguments.length > 1 && arguments[1] !== void 0 ? arguments[1] : !0, R = arguments.length > 2 && arguments[2] !== void 0 ? arguments[2] : {};
-          return K ? V._getOptionValue((C = s._$instances[e]) === null || C === void 0 || (C = C.$style) === null || C === void 0 ? void 0 : C.inlineStyles, L, Q({}, R)) : void 0;
+          var C, j = arguments.length > 0 && arguments[0] !== void 0 ? arguments[0] : "", K = arguments.length > 1 && arguments[1] !== void 0 ? arguments[1] : !0, R = arguments.length > 2 && arguments[2] !== void 0 ? arguments[2] : {};
+          return K ? V._getOptionValue((C = s._$instances[e]) === null || C === void 0 || (C = C.$style) === null || C === void 0 ? void 0 : C.inlineStyles, j, Q({}, R)) : void 0;
         }
       }, P), s.$instance = s._$instances[e], (h = (b = s.$instance)[l]) === null || h === void 0 || h.call(b, s, d, c, f), s["$".concat(e)] = s.$instance, V._hook(e, l, s, d, c, f), s.$pd || (s.$pd = {}), s.$pd[e] = Q(Q({}, (x = s.$pd) === null || x === void 0 ? void 0 : x[e]), {}, {
         name: e,
@@ -10770,11 +10770,11 @@ var ai = {
         }, C = i ? {
           rows: 0,
           cols: 0
-        } : 0, L = !1, K = !1;
+        } : 0, j = !1, K = !1;
         i ? (C = {
           rows: S(e[0], b[0]),
           cols: S(e[1], b[1])
-        }, A(P(C.cols, v[1], x.left), P(C.rows, v[0], x.top)), K = this.lastScrollPos.top !== c || this.lastScrollPos.left !== p, L = C.rows !== l.rows || C.cols !== l.cols) : (C = S(e, b), r ? A(P(C, v, x.left), c) : A(p, P(C, v, x.top)), K = this.lastScrollPos !== (r ? p : c), L = C !== l), this.isRangeChanged = L, K && (this.first = C);
+        }, A(P(C.cols, v[1], x.left), P(C.rows, v[0], x.top)), K = this.lastScrollPos.top !== c || this.lastScrollPos.left !== p, j = C.rows !== l.rows || C.cols !== l.cols) : (C = S(e, b), r ? A(P(C, v, x.left), c) : A(p, P(C, v, x.top)), K = this.lastScrollPos !== (r ? p : c), j = C !== l), this.isRangeChanged = j, K && (this.first = C);
       }
     },
     scrollInView: function(e, n) {
@@ -10978,13 +10978,13 @@ var ai = {
           var C = {
             rows: s(p, this.itemSize[0]),
             cols: s(h, this.itemSize[1])
-          }, L = {
+          }, j = {
             rows: d(C.rows, this.first.rows, this.last.rows, this.numItemsInViewport.rows, this.d_numToleratedItems[0], P),
             cols: d(C.cols, this.first.cols, this.last.cols, this.numItemsInViewport.cols, this.d_numToleratedItems[1], A)
           };
           b = {
-            rows: c(C.rows, L.rows, this.first.rows, this.last.rows, this.numItemsInViewport.rows, this.d_numToleratedItems[0], P),
-            cols: c(C.cols, L.cols, this.first.cols, this.last.cols, this.numItemsInViewport.cols, this.d_numToleratedItems[1], A, !0)
+            rows: c(C.rows, j.rows, this.first.rows, this.last.rows, this.numItemsInViewport.rows, this.d_numToleratedItems[0], P),
+            cols: c(C.cols, j.cols, this.first.cols, this.last.cols, this.numItemsInViewport.cols, this.d_numToleratedItems[1], A, !0)
           }, x = {
             rows: f(C.rows, b.rows, this.last.rows, this.numItemsInViewport.rows, this.d_numToleratedItems[0]),
             cols: f(C.cols, b.cols, this.last.cols, this.numItemsInViewport.cols, this.d_numToleratedItems[1], !0)
@@ -12599,14 +12599,14 @@ function Ag(t, e, n, o, i, r) {
             pt: t.ptm("virtualScroller")
           }), vt({
             content: B(function(v) {
-              var S = v.styleClass, P = v.contentRef, A = v.items, C = v.getItemOptions, L = v.contentStyle, K = v.itemSize;
+              var S = v.styleClass, P = v.contentRef, A = v.items, C = v.getItemOptions, j = v.contentStyle, K = v.itemSize;
               return [w("ul", g({
                 ref: function(M) {
                   return r.listRef(M, P);
                 },
                 id: t.$id + "_list",
                 class: [t.cx("list"), S],
-                style: L,
+                style: j,
                 role: "listbox"
               }, t.ptm("list")), [(u(!0), m(F, null, ge(A, function(R, M) {
                 return u(), m(F, {
@@ -13900,8 +13900,8 @@ var Nl = {
                 else if (this._decimal.test(v))
                   this._decimal.lastIndex = 0, C ? this.$refs.input.$el.setSelectionRange(n + 1, n + 1) : a = r.slice(0, n) + r.slice(n + 1);
                 else if (P > 0 && n > P) {
-                  var L = this.isDecimalMode() && (this.minFractionDigits || 0) < C ? "" : "0";
-                  a = r.slice(0, n) + L + r.slice(n + 1);
+                  var j = this.isDecimalMode() && (this.minFractionDigits || 0) < C ? "" : "0";
+                  a = r.slice(0, n) + j + r.slice(n + 1);
                 } else A === 1 ? (a = r.slice(0, n) + "0" + r.slice(n + 1), a = this.parseValue(a) > 0 ? a : "") : a = r.slice(0, n) + r.slice(n + 1);
               }
               this.updateValue(e, a, null, "delete-back-single");
@@ -14095,7 +14095,7 @@ var Nl = {
         } else if (h === s)
           o === "insert" || o === "delete-back-single" ? this.$refs.input.$el.setSelectionRange(p + 1, p + 1) : o === "delete-single" ? this.$refs.input.$el.setSelectionRange(p - 1, p - 1) : (o === "delete-range" || o === "spin") && this.$refs.input.$el.setSelectionRange(p, p);
         else if (o === "delete-back-single") {
-          var C = a.charAt(p - 1), L = a.charAt(p), K = s - h, R = this._group.test(L);
+          var C = a.charAt(p - 1), j = a.charAt(p), K = s - h, R = this._group.test(j);
           R && K === 1 ? p += 1 : !R && this.isNumeralChar(C) && (p += -1 * K + 1), this._group.lastIndex = 0, this.$refs.input.$el.setSelectionRange(p, p);
         } else if (a === "-" && o === "insert") {
           this.$refs.input.$el.setSelectionRange(0, 0);
@@ -17297,8 +17297,8 @@ function Wt() {
   var t, e, n = typeof Symbol == "function" ? Symbol : {}, o = n.iterator || "@@iterator", i = n.toStringTag || "@@toStringTag";
   function r(h, b, x, v) {
     var S = b && b.prototype instanceof l ? b : l, P = Object.create(S.prototype);
-    return Te(P, "_invoke", (function(A, C, L) {
-      var K, R, M, ee = 0, he = L || [], W = !1, U = { p: 0, n: 0, v: t, a: se, f: se.bind(t, 4), d: function(Y, ae) {
+    return Te(P, "_invoke", (function(A, C, j) {
+      var K, R, M, ee = 0, he = j || [], W = !1, U = { p: 0, n: 0, v: t, a: se, f: se.bind(t, 4), d: function(Y, ae) {
         return K = Y, R = 0, M = t, U.n = ae, a;
       } };
       function se(oe, Y) {
@@ -24359,7 +24359,7 @@ const Gv = { class: "flex flex-col gap-8 h-full p-4" }, Wv = { class: "grid grid
       description: "",
       data: { logo: "" },
       user_id: i.var.user_id
-    }), h = po({ name: !1 }), b = te(""), x = te([]), v = te({}), S = te(!1), P = te([]), A = te(""), C = te([]), L = te(!1), K = te(!1), R = te(null), M = te(null), ee = te("in"), he = [
+    }), h = po({ name: !1 }), b = te(""), x = te([]), v = te({}), S = te(!1), P = te([]), A = te(""), C = te([]), j = te(!1), K = te(!1), R = te(null), M = te(null), ee = te("in"), he = [
       { label: "Inches (in)", value: "in" },
       { label: "Centimeters (cm)", value: "cm" }
     ], W = te([]), U = te([]), se = te(null), oe = te(), Y = te(!1), ae = Uo(() => i.api.upload.url), ie = Uo(() => i.api.upload.headers), xe = () => Object.keys(v.value).filter((O) => v.value[O]);
@@ -24385,10 +24385,10 @@ const Gv = { class: "flex flex-col gap-8 h-full p-4" }, Wv = { class: "grid grid
         if (T.success) {
           const z = T.data;
           p.name = z.name, p.description = z.description, p.data = z.data || { logo: "" }, b.value = z.id;
-          const j = z.attributes ? z.attributes.map((J) => J.sys_category_id) : [], ue = {};
-          j.forEach((J) => {
+          const L = z.attributes ? z.attributes.map((J) => J.sys_category_id) : [], ue = {};
+          L.forEach((J) => {
             ue[J] = !0;
-          }), v.value = ue, P.value = [...j];
+          }), v.value = ue, P.value = [...L];
         }
       } catch {
         r.add({ severity: "error", summary: "Error", detail: "Failed to load brand" });
@@ -24405,9 +24405,9 @@ const Gv = { class: "flex flex-col gap-8 h-full p-4" }, Wv = { class: "grid grid
             })
           });
           if (O.success && O.data.attributes) {
-            const T = O.data.attributes.map((j) => j.sys_category_id), z = {};
-            T.forEach((j) => {
-              z[j] = !0;
+            const T = O.data.attributes.map((L) => L.sys_category_id), z = {};
+            T.forEach((L) => {
+              z[L] = !0;
             }), v.value = z, P.value = [...T];
           }
         } catch (O) {
@@ -24417,8 +24417,8 @@ const Gv = { class: "flex flex-col gap-8 h-full p-4" }, Wv = { class: "grid grid
     let tt = null, _e = [];
     const st = te({}), Zn = (O) => {
       if (O && O.trim().length > 0) {
-        const T = {}, z = (j) => {
-          for (const ue of j)
+        const T = {}, z = (L) => {
+          for (const ue of L)
             ue.children && ue.children.length > 0 && (T[ue.key] = !0, z(ue.children));
         };
         z(x.value), st.value = T;
@@ -24440,7 +24440,7 @@ const Gv = { class: "flex flex-col gap-8 h-full p-4" }, Wv = { class: "grid grid
           //50
         });
         O && z.set("search", O);
-        const j = `${i.api.sysData.url}?${z.toString()}`, ue = await de(j, {
+        const L = `${i.api.sysData.url}?${z.toString()}`, ue = await de(L, {
           method: "POST",
           headers: {
             "Content-Type": "application/json",
@@ -24461,14 +24461,14 @@ const Gv = { class: "flex flex-col gap-8 h-full p-4" }, Wv = { class: "grid grid
         }, 500);
       }
     }, Oo = () => {
-      const O = [], T = xe(), z = (j, ue = "") => {
-        if (Array.isArray(j))
-          for (const J of j) {
+      const O = [], T = xe(), z = (L, ue = "") => {
+        if (Array.isArray(L))
+          for (const J of L) {
             const Ot = ue ? `${ue} > ${J.label}` : J.label;
             J.leaf && J.selectable && T.includes(J.key) && O.push({ sys_category_id: J.key, displayPath: Ot }), J.children && z(J.children, Ot);
           }
       };
-      z(x.value), C.value = O, A.value && !O.find((j) => j.sys_category_id === A.value) && (A.value = "", R.value = null, M.value = null, U.value = [], W.value = []);
+      z(x.value), C.value = O, A.value && !O.find((L) => L.sys_category_id === A.value) && (A.value = "", R.value = null, M.value = null, U.value = [], W.value = []);
     };
     let zt = null;
     const dt = async () => {
@@ -24511,14 +24511,14 @@ const Gv = { class: "flex flex-col gap-8 h-full p-4" }, Wv = { class: "grid grid
       if (z) {
         Y.value = !0;
         try {
-          const j = new FormData();
-          j.append("prompt", "upload"), j.append("file", z), j.append("filename", z.name.split(".")[0]), j.append("content_type", "image"), j.append("sizes", "");
+          const L = new FormData();
+          L.append("prompt", "upload"), L.append("file", z), L.append("filename", z.name.split(".")[0]), L.append("content_type", "image"), L.append("sizes", "");
           const J = await (await fetch(ae.value, {
             method: "POST",
             headers: {
               Authorization: ie.value.Authorization
             },
-            body: j
+            body: L
           })).json();
           if (J.success)
             p.data.logo = J.data.uploads[0].url, dt(), r.add({ severity: "success", summary: "Success", detail: "Logo uploaded" });
@@ -24541,12 +24541,12 @@ const Gv = { class: "flex flex-col gap-8 h-full p-4" }, Wv = { class: "grid grid
           J[Ot] = !0;
         }), v.value = J;
       }
-      const T = xe(), z = [...P.value], j = T.filter((J) => !z.includes(J)), ue = z.filter((J) => !T.includes(J));
+      const T = xe(), z = [...P.value], L = T.filter((J) => !z.includes(J)), ue = z.filter((J) => !T.includes(J));
       if (!b.value && (await dt(), !b.value)) {
         r.add({ severity: "error", summary: "Error", detail: "Enter a brand name first" });
         return;
       }
-      for (const J of j) await Do(J);
+      for (const J of L) await Do(J);
       for (const J of ue) await Ao(J);
       await He(), await Pt();
     }, Do = async (O) => {
@@ -24579,7 +24579,7 @@ const Gv = { class: "flex flex-col gap-8 h-full p-4" }, Wv = { class: "grid grid
           })
         });
         if (T.success && T.data.attributes) {
-          const z = T.data.attributes.find((j) => j.sys_category_id === O);
+          const z = T.data.attributes.find((L) => L.sys_category_id === O);
           z && (await de(`${i.api.a.url}?typ=delete_attribute`, {
             method: "POST",
             headers: { "Content-Type": "application/json", Authorization: i.api.a.headers.Authorization },
@@ -24594,7 +24594,7 @@ const Gv = { class: "flex flex-col gap-8 h-full p-4" }, Wv = { class: "grid grid
         Ft();
         return;
       }
-      L.value = !0;
+      j.value = !0;
       try {
         const O = await de(`${i.api.a.url}?typ=get_brand`, {
           method: "POST",
@@ -24618,7 +24618,7 @@ const Gv = { class: "flex flex-col gap-8 h-full p-4" }, Wv = { class: "grid grid
       } catch {
         r.add({ severity: "error", summary: "Error", detail: "Failed to load attribute" });
       } finally {
-        L.value = !1;
+        j.value = !1;
       }
     }, Lo = (O) => {
       if (!O?.size_measurement || !Array.isArray(O.size_measurement)) {
@@ -24626,14 +24626,19 @@ const Gv = { class: "flex flex-col gap-8 h-full p-4" }, Wv = { class: "grid grid
         return;
       }
       const T = /* @__PURE__ */ new Set(), z = [];
-      for (const j of O.size_measurement) {
-        const ue = { size: j.key };
-        if (j.value && Array.isArray(j.value))
-          for (const J of j.value)
+      for (const L of O.size_measurement) {
+        const ue = { size: L.key };
+        if (L.value && Array.isArray(L.value))
+          for (const J of L.value)
             T.add(J.key), ue[J.key] = J.value || "";
         z.push(ue);
       }
       W.value = Array.from(T), U.value = z;
+      try {
+        const L = O.size_measurement[0].value[0].unit;
+        L && (ee.value = L);
+      } catch {
+      }
     }, Ft = () => {
       R.value = null, M.value = null, U.value = [], W.value = [];
     }, jo = async (O) => {
@@ -24642,7 +24647,7 @@ const Gv = { class: "flex flex-col gap-8 h-full p-4" }, Wv = { class: "grid grid
       if (R.value)
         try {
           const O = U.value.map((T) => {
-            const z = W.value.filter((j) => j !== "size").map((j) => ({ key: j, unit: ee.value, value: T[j] || "" }));
+            const z = W.value.filter((L) => L !== "size").map((L) => ({ key: L, unit: ee.value, value: T[L] || "" }));
             return { key: T.size, value: z };
           });
           await de(`${i.api.a.url}?typ=update_attribute`, {
@@ -24707,7 +24712,7 @@ const Gv = { class: "flex flex-col gap-8 h-full p-4" }, Wv = { class: "grid grid
       const z = vl;
       return u(), y(me(xl), {
         visible: a.value,
-        "onUpdate:visible": T[6] || (T[6] = (j) => a.value = j),
+        "onUpdate:visible": T[6] || (T[6] = (L) => a.value = L),
         modal: !1,
         closable: !1,
         maximizable: !1,
@@ -24790,7 +24795,7 @@ const Gv = { class: "flex flex-col gap-8 h-full p-4" }, Wv = { class: "grid grid
                     N(me(wt), {
                       id: "brandName",
                       modelValue: p.name,
-                      "onUpdate:modelValue": T[0] || (T[0] = (j) => p.name = j),
+                      "onUpdate:modelValue": T[0] || (T[0] = (L) => p.name = L),
                       placeholder: "Enter brand name",
                       class: "w-full",
                       invalid: h.name,
@@ -24842,7 +24847,7 @@ const Gv = { class: "flex flex-col gap-8 h-full p-4" }, Wv = { class: "grid grid
                     N(me($l), {
                       id: "brandDescription",
                       modelValue: p.description,
-                      "onUpdate:modelValue": T[1] || (T[1] = (j) => p.description = j),
+                      "onUpdate:modelValue": T[1] || (T[1] = (L) => p.description = L),
                       placeholder: "Enter brand description",
                       rows: "3",
                       class: "w-full",
@@ -24864,7 +24869,7 @@ const Gv = { class: "flex flex-col gap-8 h-full p-4" }, Wv = { class: "grid grid
                   N(me(Dl), {
                     modelValue: v.value,
                     "onUpdate:modelValue": [
-                      T[2] || (T[2] = (j) => v.value = j),
+                      T[2] || (T[2] = (L) => v.value = L),
                       Bo
                     ],
                     options: x.value,
@@ -24881,7 +24886,7 @@ const Gv = { class: "flex flex-col gap-8 h-full p-4" }, Wv = { class: "grid grid
                     filter: "",
                     filterMode: "lenient",
                     expandedKeys: st.value,
-                    "onUpdate:expandedKeys": T[3] || (T[3] = (j) => st.value = j),
+                    "onUpdate:expandedKeys": T[3] || (T[3] = (L) => st.value = L),
                     "filter-placeholder": "Search categories (e.g., Shirts, Jeans)"
                   }, null, 8, ["modelValue", "options", "placeholder", "loading", "disabled", "expandedKeys"]),
                   c.value ? (u(), m("small", e1, q(c.value), 1)) : k("", !0)
@@ -24901,7 +24906,7 @@ const Gv = { class: "flex flex-col gap-8 h-full p-4" }, Wv = { class: "grid grid
                         T[11] || (T[11] = w("label", { class: "text-sm font-semibold" }, "Select Category for Attribute", -1)),
                         N(me(Eg), {
                           modelValue: A.value,
-                          "onUpdate:modelValue": T[4] || (T[4] = (j) => A.value = j),
+                          "onUpdate:modelValue": T[4] || (T[4] = (L) => A.value = L),
                           options: C.value,
                           optionLabel: "displayPath",
                           optionValue: "sys_category_id",
@@ -24909,7 +24914,7 @@ const Gv = { class: "flex flex-col gap-8 h-full p-4" }, Wv = { class: "grid grid
                           class: "w-full",
                           filter: "",
                           onChange: Eo,
-                          loading: L.value
+                          loading: j.value
                         }, null, 8, ["modelValue", "options", "loading"])
                       ]),
                       R.value ? ve((u(), y(me(ze), {
@@ -24927,7 +24932,7 @@ const Gv = { class: "flex flex-col gap-8 h-full p-4" }, Wv = { class: "grid grid
                         T[12] || (T[12] = w("label", { class: "text-sm font-semibold" }, "Measurement Unit:", -1)),
                         N(me(ws), {
                           modelValue: ee.value,
-                          "onUpdate:modelValue": T[5] || (T[5] = (j) => ee.value = j),
+                          "onUpdate:modelValue": T[5] || (T[5] = (L) => ee.value = L),
                           options: he,
                           optionLabel: "label",
                           optionValue: "value",
@@ -24950,10 +24955,10 @@ const Gv = { class: "flex flex-col gap-8 h-full p-4" }, Wv = { class: "grid grid
                             header: "Size",
                             style: { "min-width": "100px" }
                           }),
-                          (u(!0), m(F, null, ge(W.value, (j) => (u(), y(me(Na), {
-                            key: j,
-                            field: j,
-                            header: j + ` (${ee.value})`,
+                          (u(!0), m(F, null, ge(W.value, (L) => (u(), y(me(Na), {
+                            key: L,
+                            field: L,
+                            header: L + ` (${ee.value})`,
                             style: { "min-width": "120px" }
                           }, {
                             editor: B(({ data: ue, field: J }) => [
@@ -24999,7 +25004,7 @@ const Gv = { class: "flex flex-col gap-8 h-full p-4" }, Wv = { class: "grid grid
   for (const [o, i] of e)
     n[o] = i;
   return n;
-}, y1 = /* @__PURE__ */ b1(m1, [["__scopeId", "data-v-18c64d6d"]]), v1 = {
+}, y1 = /* @__PURE__ */ b1(m1, [["__scopeId", "data-v-edea5f3d"]]), v1 = {
   "class-old": "p-4",
   class: "container mx-auto p-4"
 }, w1 = {
