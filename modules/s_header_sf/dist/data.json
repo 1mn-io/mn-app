@@ -1,0 +1,38 @@
+{
+    "config": {
+        "lazy_lib": {
+            "renderer_src": "https://1mn-io.github.io/mn-app/modules/{*}/dist/renderer.es.js",
+            "hydrator_src": "https://1mn-io.github.io/mn-app/modules/{*}/dist/hydrator.es.js",
+            "editor_src": "https://1mn-io.github.io/mn-app/modules/{*}/dist/editor.es.js",
+            "custom_src": "https://1mn-io.github.io/mn-app/modules/{*}/dist/custom.es.js"
+        }
+    },
+    "data": {
+        "l": [
+            {
+                "id": "3ds78c-s_header_sf",
+                "type": "s_header_sf",
+                "slug": "s_header_sf",
+                "data": {
+                    "data": "",
+                    "theme": "light",
+                    "logo": {
+                        "src": "https://app.1mn.io/logo.svg",
+                        "class": "",
+                        "style": "width:8vh; height:8vh"
+                    },
+                    "itemA": {
+                        "label": "Work at MN"
+                    },
+                    "event": {
+                        "onClickAddresses": "/addresses",
+                        "onClickCart": "/checkout",
+                        "onClickLogin": "/login",
+                        "onClickAccount": "/dashboard",
+                        "onClickItemA": "/"
+                    }
+                }
+            }
+        ]
+    }
+}
