@@ -30,7 +30,81 @@
                         "onClickLogin": "/login",
                         "onClickAccount": "/dashboard",
                         "onClickItemA": "/"
-                    }
+                    },
+                    "top_menu": {
+                        "mode": "api",
+                        "l": [
+                            {
+                                "name": "wibes",
+                                "href": "/wibes"
+                            },
+                            {
+                                "name": "hotels",
+                                "href": "/hotels"
+                            },
+                            {
+                                "name": "flights",
+                                "href": "/flights"
+                            },
+                            {
+                                "name": "brands",
+                                "href": "/brands"
+                            }
+                        ],
+                        "api": {
+                            "url": "https://dummyjson.com/recipes",
+                            "method": "GET",
+                            "headers": {
+                                "Content-Type": "application/json"
+                            },
+                            "body": null,
+                            "response_path": "json.recipes",
+                            "response_mapping": {
+                                "name": "name",
+                                "href": "image"
+                            },
+                            "limit": 4
+                        }
+                    },
+                    "side_menu": {
+                        "mode": "api",
+                        "l": [
+                            {
+                                "name": "wibes",
+                                "href": "/wibes"
+                            },
+                            {
+                                "name": "hotels",
+                                "href": "/hotels"
+                            },
+                            {
+                                "name": "flights",
+                                "href": "/flights"
+                            },
+                            {
+                                "name": "brands",
+                                "href": "/brands"
+                            }
+                        ],
+                        "api": {
+                            "url": "https://dummyjson.com/recipes",
+                            "method": "GET",
+                            "headers": {
+                                "Content-Type": "application/json"
+                            },
+                            "body": null,
+                            "response_path": "json.recipes",
+                            "response_mapping": {
+                                "name": "name",
+                                "href": "image",
+                                "icon": "image"
+                            },
+                            "limit": 10
+                        }
+                    },
+                    "headerNature": "sticky",
+                    "headerSize": "medium",
+                    "designMode": false
                 }
             }
         ]

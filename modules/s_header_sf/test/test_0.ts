@@ -115,6 +115,9 @@ let _data = {
     ]
 };
 
+console.log(_data);
+
+
 // Restore saved form data from localStorage (survives refresh/navigation)
 // Version key: change this when default config changes to clear stale data
 const _LS_KEY = '__header_sf_data_v3';
