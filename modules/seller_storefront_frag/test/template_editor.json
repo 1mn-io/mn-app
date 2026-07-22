@@ -1,0 +1,57 @@
+{
+    "tabs": [
+        {
+            "label": "Carousal",
+            "id": "tab_1"
+        },
+        {
+            "label": "Header",
+            "id": "tab_2"
+        },
+        {
+            "label": "Collage",
+            "id": "tab_3"
+        },
+        {
+            "label": "hiii",
+            "id": "tab_4"
+        }
+    ],
+    "fragments": [
+        {
+            "tab_id" : "tab_1",
+            "content" : [
+                {
+                    "id": "7bc78c-carousel"
+                },
+                {
+                    "ce_file_id": "3ds78c-s_header_sf"
+                }
+            ]
+        },
+        {
+            "tab_id" : "tab_2",
+            "content": [
+                {
+                    "ce_file_id": "3ds78c-s_header_sf"
+                }
+            ]
+        },
+        {
+            "tab_id" : "tab_3",
+            "content" : [
+                {
+                    "ce_file_id": "gfd8c-s_collage_base"
+                }
+            ]
+        },
+        {
+            "tab_id" : "tab_4",
+            "content" : [
+                {
+                    "ce_file_id": "7bc78c-s_carousel"
+                }
+            ]
+        }
+    ]
+}
